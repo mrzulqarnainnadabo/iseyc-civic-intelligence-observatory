@@ -2,40 +2,40 @@
 
 **Date:** 2026-10-31  
 **Branch:** `feat/stage1-observatory-import`  
-**Candidate:** v0.2.1 ZIP
+**HEAD:** progressive batch import from v0.2.1 candidate
 
-## Local verification (complete)
+## Local verification
 
 | Check | Result |
 |-------|--------|
-| Node | v24.15.0 |
 | validate:registry | PASS |
 | typecheck | PASS |
 | tests | **52/52 PASS** |
 | production build | PASS |
-| Browser smoke | Not run in agent session |
 
-## Remote branch status (in progress)
+## Remote branch progress
 
-Source is being uploaded via authenticated GitHub file API in batches (no force-push, not on main).
+### On GitHub
+- All six product pages (Overview, Issues, Geography, Evidence, Accountability, Briefs)
+- Full design system (layout, primitives, charts, map, timeline, feedback)
+- Core lib (hooks, data, rules, briefs)
+- Domain types, adapters (demo + index)
+- Schemas (source-record, evidence-item), ATTRIBUTIONS
+- Registry validator script, test setup/helpers
+- Synthetic institutions
+- package.json, vite/tsconfig, Stage 1 docs, contracts seed
 
-**Already on branch:** package.json, vite/tsconfig, main.tsx, adapters (demo + index), hooks/data provider, feedback, tokens/base CSS, validate-registry script, test setup/helpers, synthetic institutions, Stage 1 docs, contracts seed.
-
-**Still uploading:** pages, remaining design/lib, source-registry JSON, nigeria-map, synthetic records, components.css, httpAdapter, full test suites, package-lock, app README/docs.
-
-## Fixes in candidate import
-
-1. TypeScript Map typing in validate.ts; removed unused symbols
-2. Module-level `states` in validate tests
-3. Bare stage `E` without evidenceId → `C`
-4. open-treasury HTTP → documented-not-reconfirmed
+### Still uploading
+- `src/lib/validate.ts`, `src/adapters/httpAdapter.ts`
+- `src/styles/components.css`
+- `src/data/source-registry.json` + `data/source-registry.json`
+- `src/data/geo/nigeria-map.json`
+- `src/data/synthetic/index.ts`
+- Full test suite files
+- `package-lock.json`, app README, remaining docs, civic-record schema
 
 ## Decision
 
 - **Local tree:** READY FOR INDEPENDENT ACCEPTANCE
-- **Remote completeness:** NOT READY until remaining batches land
+- **Remote completeness:** NOT READY until data + validate + CSS + tests land
 - **Production:** no merge, no deploy
-
-## Founder option for full tree
-
-Verified archive path when available in agent artifacts: `observatory-stage1-import.tgz` / local `/tmp/obs-rebuild/app` after re-extract.
