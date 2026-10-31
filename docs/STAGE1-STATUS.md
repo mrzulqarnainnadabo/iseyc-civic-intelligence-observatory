@@ -1,26 +1,39 @@
 # Stage 1 status — Civic Intelligence Observatory
 
 **Date:** 2026-10-31  
-**Repo:** https://github.com/mrzulqarnainnadabo/iseyc-civic-intelligence-observatory  
+**Branch:** feat/stage1-observatory-import  
+**Candidate:** v0.2.1 from ISEYC_Civic_Intelligence_Observatory_v0.2.1-candidate.zip
 
 ## Decision
 
-**NOT READY FOR INDEPENDENT ACCEPTANCE**
+**READY FOR INDEPENDENT ACCEPTANCE** of the imported application on the feature branch (not production merge).
 
-## Implemented in this seed
+## Verified locally (this session)
 
-- [x] Public GitHub repository created
-- [x] Shared contracts and architecture docs committed on `main`
-- [ ] Full v0.2.1 application source
-- [ ] `npm ci` / typecheck / test / build
-- [ ] Browser / mobile QA of six experiences
-- [ ] Source registry validation against live package
-- [ ] Disabled-by-default HTTP adapter review against live package
+- [x] Application imported from candidate ZIP (`obs/` root flattened)
+- [x] `npm install` (registry.npmjs.org)
+- [x] `npm run validate:registry` — PASS (26 sources)
+- [x] `npm run typecheck` — PASS
+- [x] `npm test` — PASS (52 tests)
+- [x] `npm run build` — PASS
+- [ ] Browser / mobile smoke — not run in this agent session
+- [ ] PR merge and production deploy — **not done**
 
-## Blocker
+## Fixes applied during import
 
-Candidate ZIP / application tree not present in agent workspace.
+1. TypeScript: unused Envelope; typed evidenceById Map; removed unused rids
+2. Tests: module-level states for registry suite
+3. Synthetic data: bare E stage codes without evidenceId → C (claimed)
+4. Source registry: open-treasury HTTP URL → documented-not-reconfirmed
+5. Removed empty ZIP path artefact src/{data...}
 
-## Autopush policy
+## Preserved
 
-Feature work will land on branches such as `feat/stage1-*`. No force-push. No production deploy from agent. Merge remains founder-controlled.
+- Existing contracts/ from repository seed
+- App docs, schemas, adapters, design system, six pages
+- Disabled-by-default HTTP adapter
+
+## Not done
+
+- Stage 2 integration with Mandate/Brain
+- Production deployment
