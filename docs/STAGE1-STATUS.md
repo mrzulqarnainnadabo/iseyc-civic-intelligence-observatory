@@ -1,39 +1,41 @@
 # Stage 1 status — Civic Intelligence Observatory
 
 **Date:** 2026-10-31  
-**Branch:** feat/stage1-observatory-import  
-**Candidate:** v0.2.1 from ISEYC_Civic_Intelligence_Observatory_v0.2.1-candidate.zip
+**Branch:** `feat/stage1-observatory-import`  
+**Candidate:** v0.2.1 ZIP
+
+## Local verification (complete)
+
+| Check | Result |
+|-------|--------|
+| Node | v24.15.0 |
+| validate:registry | PASS |
+| typecheck | PASS |
+| tests | **52/52 PASS** |
+| production build | PASS |
+| Browser smoke | Not run in agent session |
+
+## Remote branch status (in progress)
+
+Source is being uploaded via authenticated GitHub file API in batches (no force-push, not on main).
+
+**Already on branch:** package.json, vite/tsconfig, main.tsx, adapters (demo + index), hooks/data provider, feedback, tokens/base CSS, validate-registry script, test setup/helpers, synthetic institutions, Stage 1 docs, contracts seed.
+
+**Still uploading:** pages, remaining design/lib, source-registry JSON, nigeria-map, synthetic records, components.css, httpAdapter, full test suites, package-lock, app README/docs.
+
+## Fixes in candidate import
+
+1. TypeScript Map typing in validate.ts; removed unused symbols
+2. Module-level `states` in validate tests
+3. Bare stage `E` without evidenceId → `C`
+4. open-treasury HTTP → documented-not-reconfirmed
 
 ## Decision
 
-**READY FOR INDEPENDENT ACCEPTANCE** of the imported application on the feature branch (not production merge).
+- **Local tree:** READY FOR INDEPENDENT ACCEPTANCE
+- **Remote completeness:** NOT READY until remaining batches land
+- **Production:** no merge, no deploy
 
-## Verified locally (this session)
+## Founder option for full tree
 
-- [x] Application imported from candidate ZIP (`obs/` root flattened)
-- [x] `npm install` (registry.npmjs.org)
-- [x] `npm run validate:registry` — PASS (26 sources)
-- [x] `npm run typecheck` — PASS
-- [x] `npm test` — PASS (52 tests)
-- [x] `npm run build` — PASS
-- [ ] Browser / mobile smoke — not run in this agent session
-- [ ] PR merge and production deploy — **not done**
-
-## Fixes applied during import
-
-1. TypeScript: unused Envelope; typed evidenceById Map; removed unused rids
-2. Tests: module-level states for registry suite
-3. Synthetic data: bare E stage codes without evidenceId → C (claimed)
-4. Source registry: open-treasury HTTP URL → documented-not-reconfirmed
-5. Removed empty ZIP path artefact src/{data...}
-
-## Preserved
-
-- Existing contracts/ from repository seed
-- App docs, schemas, adapters, design system, six pages
-- Disabled-by-default HTTP adapter
-
-## Not done
-
-- Stage 2 integration with Mandate/Brain
-- Production deployment
+Verified archive path when available in agent artifacts: `observatory-stage1-import.tgz` / local `/tmp/obs-rebuild/app` after re-extract.
