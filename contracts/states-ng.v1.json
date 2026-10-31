@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "datasetName": "Nigeria states and FCT — name list for product filters",
+  "publisher": "ISEYC product contract (names aligned to common administrative usage)",
+  "version": "1.0.0",
+  "retrievedAt": "2026-10-30",
+  "licence": "Internal product reference; not a substitute for official gazette",
+  "coverageNotes": "State/FCT level only. LGA/ward not included in v1 to avoid inventing incomplete hierarchies. Map presence ≠ evidence coverage.",
+  "states": [
+    "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno",
+    "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "Gombe", "Imo",
+    "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara", "Lagos",
+    "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers",
+    "Sokoto", "Taraba", "Yobe", "Zamfara", "FCT"
+  ]
+}

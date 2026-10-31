@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iseyc.org/schemas/public-mandate-record.v1.json",
+  "title": "PublicMandateRecord",
+  "description": "Published-only civic demand record exposed to Observatory and Civic Brain. No private submitter fields.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "sentence", "status", "created"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "sentence": { "type": "string", "minLength": 1 },
+    "duty": { "type": ["string", "null"] },
+    "state": { "type": ["string", "null"] },
+    "lga": { "type": ["string", "null"] },
+    "ward": { "type": ["string", "null"] },
+    "status": { "const": "Published" },
+    "created": { "type": "string", "format": "date-time" },
+    "sourceUrl": { "type": ["string", "null"] }
+  }
+}
