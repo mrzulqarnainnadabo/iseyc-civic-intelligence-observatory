@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iseyc.invalid/schemas/source-record.schema.json",
+  "title": "SourceRecord (registry entry)",
+  "type": "object",
+  "required": ["id", "publisher", "name", "url", "urlStatus", "sectors", "kind", "geographicCoverage", "geoLevel", "dataType", "updateFrequency", "licence", "lastChecked", "checkedHow", "limitations", "notes"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string" }, "publisher": { "type": "string" }, "name": { "type": "string" },
+    "url": { "type": ["string", "null"], "pattern": "^https?://" },
+    "urlStatus": { "enum": ["confirmed", "domain-confirmed", "documented-not-reconfirmed", "not-applicable"] },
+    "sectors": { "type": "array", "minItems": 1, "items": { "enum": ["education", "health", "security", "infrastructure", "water-sanitation", "employment", "public-finance", "governance"] } },
+    "kind": { "enum": ["official-data", "published-research", "media-report", "community-submission", "independently-verified"] },
+    "geographicCoverage": { "type": "string" }, "geoLevel": { "enum": ["national", "zone", "state", "lga", "facility", "point", "varies"] },
+    "dataType": { "type": "string" }, "updateFrequency": { "type": "string" }, "licence": { "type": "string" },
+    "lastChecked": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "Null unless the link or domain was actually confirmed." },
+    "checkedHow": { "type": "string" }, "limitations": { "type": "array", "minItems": 1, "items": { "type": "string" } }, "notes": { "type": "string" }
+  }
+}
