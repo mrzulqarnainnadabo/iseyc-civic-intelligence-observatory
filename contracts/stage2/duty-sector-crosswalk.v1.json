@@ -1,1 +1,59 @@
-PLACEHOLDER
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iseyc.org/contracts/stage2/duty-sector-crosswalk.v1.json",
+  "title": "ISEYC Duty–Sector Crosswalk v1",
+  "description": "Versioned many-to-many mapping from Civic Mandate master duty IDs (18) to Observatory sector IDs (8). Duty IDs are authoritative. Sectors are presentation/aggregation facets only.",
+  "version": "1.0.0",
+  "effectiveDate": "2026-11-01",
+  "reviewStatus": "draft-for-founder-review",
+  "masterTaxonomy": {
+    "name": "Civic Mandate DUTIES",
+    "sourcePath": "2027-street-mandate/lib/constants.ts",
+    "count": 18,
+    "rule": "Preserve original dutyId on every Mandate record. Never collapse or discard a duty."
+  },
+  "facetTaxonomy": {
+    "name": "Observatory Sector",
+    "sourcePath": "iseyc-civic-intelligence-observatory/src/data/types.ts",
+    "count": 8,
+    "rule": "Sectors are UI/aggregation facets. A duty may map to one or more sectors."
+  },
+  "relationshipTypes": ["primary", "secondary", "legacy-alias"],
+  "unmappedPolicy": {
+    "description": "If a duty has no primary sector, consumers must treat sector as null and retain dutyId. Do not invent a sector.",
+    "fallbackSectorId": null
+  },
+  "versioning": {
+    "rule": "Bump mappingVersion on any row change. Consumers pin mappingVersion. Old mappings remain readable for historical records."
+  },
+  "mappings": [
+    {"dutyId": "Health", "sectorId": "health", "relationshipType": "primary", "mappingVersion": "1.0.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Direct match."},
+    {"dutyId": "Education", "sectorId": "education", "relationshipType": "primary", "mappingVersion": "1.0.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Direct match."},
+    {"dutyId": "Security", "sectorId": "security", "relationshipType": "primary", "mappingVersion": "1.0.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Direct match."},
+    {"dutyId": "Jobs & Economic Opportunity", "sectorId": "employment", "relationshipType": "primary", "mappingVersion": "1.0.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Jobs and livelihoods facet."},
+    {"dutyId": "Power", "sectorId": "infrastructure", "relationshipType": "primary", "mappingVersion": "1.0.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Power is critical infrastructure; no dedicated Observatory sector."},
+    {"dutyId": "Water", "sectorId": "water-sanitation", "relationshipType": "primary", "mappingVersion": "1.0.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Direct match to water-sanitation."},
+    {"dutyId": "Roads & Transport", "sectorId": "infrastructure", "relationshipType": "primary", "mappingVersion": "1.0.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Transport infrastructure."},
+    {"dutyId": "Agriculture", "sectorId": "employment", "relationshipType": "primary", "mappingVersion": "1.0.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "No dedicated agriculture sector; livelihoods is the closest facet."},
+    {"dutyId": "Housing", "sectorId": "infrastructure", "relationshipType": "primary", "mappingVersion": "1.0.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Housing treated as infrastructure facet pending taxonomy expansion."},
+    {"dutyId": "Environment", "sectorId": "governance", "relationshipType": "primary", "mappingVersion": "1.0.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "No environment sector; governance interim facet."},
+    {"dutyId": "Digital Infrastructure", "sectorId": "infrastructure", "relationshipType": "primary", "mappingVersion": "1.0.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Digital as infrastructure."},
+    {"dutyId": "Youth Development", "sectorId": "education", "relationshipType": "primary", "mappingVersion": "1.0.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Primary link to education/skills."},
+    {"dutyId": "Youth Development", "sectorId": "employment", "relationshipType": "secondary", "mappingVersion": "1.0.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Apprenticeship aspects."},
+    {"dutyId": "Women's Development", "sectorId": "governance", "relationshipType": "primary", "mappingVersion": "1.0.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Cross-cutting."},
+    {"dutyId": "Social Protection", "sectorId": "governance", "relationshipType": "primary", "mappingVersion": "1.0.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Social protection as public service governance."},
+    {"dutyId": "Public Finance", "sectorId": "public-finance", "relationshipType": "primary", "mappingVersion": "1.0.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Direct match."},
+    {"dutyId": "Anti-Corruption / Transparency", "sectorId": "governance", "relationshipType": "primary", "mappingVersion": "1.0.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Transparency under governance."},
+    {"dutyId": "Justice", "sectorId": "governance", "relationshipType": "primary", "mappingVersion": "1.0.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Justice under governance facet."},
+    {"dutyId": "Other", "sectorId": "governance", "relationshipType": "primary", "mappingVersion": "1.0.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Catch-all; retain dutyId Other."}
+  ],
+  "legacyDutyAliases": [
+    {"legacyLabel": "Security & Safety", "dutyId": "Security", "relationshipType": "legacy-alias", "mappingVersion": "1.0.0", "source": "LEGACY_DUTY_MAP"},
+    {"legacyLabel": "Jobs & Economy", "dutyId": "Jobs & Economic Opportunity", "relationshipType": "legacy-alias", "mappingVersion": "1.0.0", "source": "LEGACY_DUTY_MAP"},
+    {"legacyLabel": "Credible Candidates", "dutyId": "Anti-Corruption / Transparency", "relationshipType": "legacy-alias", "mappingVersion": "1.0.0", "source": "LEGACY_DUTY_MAP"},
+    {"legacyLabel": "Honest Elections", "dutyId": "Justice", "relationshipType": "legacy-alias", "mappingVersion": "1.0.0", "source": "LEGACY_DUTY_MAP"},
+    {"legacyLabel": "Education & Youth", "dutyId": "Education", "relationshipType": "legacy-alias", "mappingVersion": "1.0.0", "source": "LEGACY_DUTY_MAP"},
+    {"legacyLabel": "Health & Basic Services", "dutyId": "Health", "relationshipType": "legacy-alias", "mappingVersion": "1.0.0", "source": "LEGACY_DUTY_MAP"},
+    {"legacyLabel": "Electricity & Infrastructure", "dutyId": "Power", "relationshipType": "legacy-alias", "mappingVersion": "1.0.0", "source": "LEGACY_DUTY_MAP"}
+  ]
+}
