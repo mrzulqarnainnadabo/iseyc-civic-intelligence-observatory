@@ -2,7 +2,8 @@
 
 export type Sector =
   | 'education' | 'health' | 'security' | 'infrastructure'
-  | 'water-sanitation' | 'employment' | 'public-finance' | 'governance';
+  | 'water-sanitation' | 'employment' | 'public-finance' | 'governance'
+  | 'agriculture' | 'environment';
 
 /** The five evidence classes the product must keep distinct. */
 export type EvidenceKind =
@@ -26,7 +27,7 @@ export interface SourceRecord {
   dataType: string;
   updateFrequency: string;
   licence: string;
-  lastChecked: string | null; // ISO date; null = not checked
+  lastChecked: string | null;
   checkedHow: string;
   limitations: string[];
   notes: string;
@@ -34,16 +35,9 @@ export interface SourceRecord {
 
 export interface StateRef { id: string; name: string }
 
-/** Lifecycle stages from a citizen demand to independently verified delivery. */
 export const STAGES = ['published', 'referred', 'announced', 'funded', 'implemented', 'verified'] as const;
 export type Stage = typeof STAGES[number];
 
-/**
- * evidenced   = a cited evidence item supports this stage
- * claimed     = someone asserts it, but nothing independent supports it yet
- * unknown     = no information found
- * not-reached = nothing indicates this stage has happened
- */
 export type StageStatus = 'evidenced' | 'claimed' | 'unknown' | 'not-reached';
 export interface StageState { stage: Stage; status: StageStatus; evidenceId?: string; note?: string }
 
@@ -52,17 +46,15 @@ export type RecordOrigin = 'civic-mandate' | 'civic-brain' | 'observatory-demo';
 export interface CivicRecord {
   id: string;
   origin: RecordOrigin;
-  /** True for demonstration records. The UI must label these wherever shown. */
   synthetic: boolean;
   title: string;
   summary: string;
   sector: Sector;
   stateId: string;
   lga?: string;
-  /** Always a community submission class; a record never becomes "verified" by itself. */
   kind: 'community-submission';
   reviewStatus: 'published';
-  publishedMonth: string; // YYYY-MM
+  publishedMonth: string;
   institutionIds: string[];
   stages: StageState[];
   unknowns: string[];
@@ -78,11 +70,10 @@ export interface EvidenceItem {
   title: string;
   excerpt: string;
   publisherLabel: string;
-  date: string; // ISO date
+  date: string;
   sector: Sector;
   stateId: string;
   limitations: string[];
-  /** Required for real independently-verified evidence; never valid on synthetic evidence. */
   verification?: { reviewerId: string; reviewedAt: string; method: string };
 }
 
@@ -92,7 +83,6 @@ export interface Institution {
   name: string;
   tier: InstitutionTier;
   sectors: Sector[];
-  /** Responsibility mappings are researcher-curated and unverified until a legal basis is attached. */
   responsibilityBasis: 'unverified' | 'verified';
   basisNote: string;
 }
@@ -100,7 +90,6 @@ export interface Institution {
 export interface RecordQuery { sector?: Sector; stateId?: string; text?: string; institutionId?: string }
 export interface EvidenceQuery { kind?: EvidenceKind; status?: EvidenceStatus; sector?: Sector; stateId?: string; text?: string; recordId?: string }
 
-/** Everything the UI needs. Implemented by the demo adapter and (later) a live adapter. */
 export interface ObservatoryAdapter {
   readonly mode: 'demo' | 'live';
   readonly label: string;
@@ -115,6 +104,7 @@ export const SECTOR_LABEL: Record<Sector, string> = {
   education: 'Education', health: 'Healthcare', security: 'Security', infrastructure: 'Infrastructure',
   'water-sanitation': 'Water and sanitation', employment: 'Employment and livelihoods',
   'public-finance': 'Public finance and budgets', governance: 'Governance and service delivery',
+  agriculture: 'Agriculture', environment: 'Environment',
 };
 export const SECTORS = Object.keys(SECTOR_LABEL) as Sector[];
 
