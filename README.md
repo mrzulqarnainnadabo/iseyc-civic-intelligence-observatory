@@ -1,9 +1,34 @@
-# ISEYC Civic Intelligence Observatory
+# ISEYC Civic Intelligence Observatory (prototype v0.2)
 
-**Institution:** Initiative for Sustainable Evolution for Youth and Community (ISEYC)  
-**Role:** Public evidence, geography, source registry, accountability stages, and institutional briefs for Nigeria.
+A standalone, integration-ready prototype of ISEYC's national civic intelligence interface for Nigeria. It helps a citizen, researcher, journalist, civil-society organisation or public institution ask: *what is happening, where, to whom, on what evidence, who is responsible, what was announced, what was actually delivered and independently verified, what is unknown, and what should happen next.*
 
-This product is **non-partisan**. It is not a poll, ranking platform, endorsement tool, or campaign site.
+It is **not** a campaign tool, poll, ranking, candidate comparison or chatbot.
+
+> **Demonstration build.** The source registry (26 entries) and the state map are real project data. All civic records, evidence items and institution links are **synthetic** and say nothing about any real place. The UI labels them everywhere. The app is **not connected** to the live Civic Mandate or Civic Brain deployments and does not modify them.
+
+## Six experiences
+
+| Route | Experience | What it does |
+|---|---|---|
+| `#/` | National overview | Nine questions as navigation, evidence legend, real registry coverage and gaps, demonstration lifecycle funnel |
+| `#/issues` | Issues and sector explorer | Filter published demands by sector, state, text; see registered sources for the sector |
+| `#/geography` | Geographic explorer | Accessible state map with table alternative; sub-national sources for the selected state |
+| `#/evidence` | Evidence library | Real source registry (filter, expand limitations, CSV export) and synthetic evidence items with detail |
+| `#/accountability` | Institutional accountability | Six-stage lifecycle per record; claim-strength check; unverified responsibility mappings flagged |
+| `#/briefs` | Civic intelligence briefs | Deterministic nine-question brief for a state and sector; copy, download Markdown, print |
+
+## Quick start
+
+Requires Node.js 22.22.2 or later and npm 10 or later.
+
+```bash
+npm install
+npm run dev          # http://localhost:5173
+npm run verify       # registry check, type-check, tests, production build
+npm run build && npm run preview
+```
+
+Routing uses the URL hash. Review states: `?demo=empty`, `?demo=error` or `?demo=slow` before the hash.
 
 ## Ecosystem
 
@@ -13,48 +38,24 @@ This product is **non-partisan**. It is not a poll, ranking platform, endorsemen
 | [Civic Brain](https://github.com/mrzulqarnainnadabo/iseyc-civic-brain) | Evidence-grounded explanation and routing recommendations |
 | **Observatory (this repo)** | Coverage, source registry, accountability integrity, briefs |
 
-## Stage 1 status (2026-10-31)
+## Accountability integrity
 
-**Repository created.** Seeded with shared **versioned contracts** and architecture docs from the civic-intelligence foundation work.
+- Referral ≠ acknowledgement
+- Acknowledgement ≠ implementation
+- Announcement ≠ implementation
+- Implementation ≠ independently verified delivery
+- AI analysis ≠ independent verification
 
-**Not yet present:** the full application package  
-`ISEYC_Civic_Intelligence_Observatory_v0.2.1-candidate.zip`  
-(React/Vite/TypeScript app with six experiences, source registry, geo map, synthetic data, validators, tests).
+## Data rules
 
-That ZIP was **not available** in the engineering agent environment when this repo was created. Stage 1 verification (typecheck, tests, production build, browser QA) is **blocked** until the candidate package is committed.
-
-### What this seed contains
-
-- `contracts/` — Public Mandate DTO, evidence metadata, civic brief schema, geographic reference notes, institutional responsibility notes, states-ng reference
-- `docs/system-architecture.md` — two-product + contracts architecture
-- `docs/implementation-status.md` — foundation status
-
-### Accountability integrity (non-negotiable)
-
-- Referral ≠ acknowledgement  
-- Acknowledgement ≠ implementation  
-- Announcement ≠ implementation  
-- Implementation ≠ independently verified delivery  
-- AI analysis ≠ independent verification  
-
-### Data rules
-
-- Published-only public surfaces  
-- No invented national statistics or government actions  
-- Map of 36 states + FCT ≠ national evidence coverage  
-- Live HTTP adapters remain **disabled by default** until contracts and governance are approved  
-
-## Next step for founders
-
-1. Upload `ISEYC_Civic_Intelligence_Observatory_v0.2.1-candidate.zip` to chat or push its contents to branch `feat/stage1-candidate-import`.  
-2. Engineering agent will run Node ≥ 22.22.2 verification, fix Stage 1 defects, and open a review PR.  
-3. **Do not merge to production** until independent acceptance.
+- Published-only public surfaces
+- No invented national statistics or government actions
+- Live HTTP adapters remain **disabled by default**
+- Synthetic data is labelled everywhere
 
 ## Related production
 
-- Mandate: https://2027-street-mandate.vercel.app  
-- Brain: https://iseyc-civic-brain.vercel.app  
+- Mandate: https://2027-street-mandate.vercel.app
+- Brain: https://iseyc-civic-brain.vercel.app
 
-## License
-
-Project content for ISEYC institutional use. See individual contract headers for schema versioning.
+See `ATTRIBUTIONS.md`, `docs/`, and `schemas/` for contracts, licences and methodology.
