@@ -1,1 +1,74 @@
-see-local
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iseyc.org/contracts/stage2/duty-sector-crosswalk.v1.json",
+  "title": "ISEYC Duty-Sector Crosswalk v1.1",
+  "description": "Versioned many-to-many mapping from Civic Mandate master duty IDs (18) to Observatory sector IDs (10).",
+  "version": "1.1.0",
+  "effectiveDate": "2026-11-01",
+  "reviewStatus": "draft-for-founder-review",
+  "masterTaxonomy": {
+    "name": "Civic Mandate DUTIES",
+    "sourcePath": "2027-street-mandate/lib/constants.ts",
+    "count": 18,
+    "rule": "Preserve original dutyId on every Mandate record. Never collapse or discard a duty."
+  },
+  "facetTaxonomy": {
+    "name": "Observatory Sector v1.1",
+    "sourcePath": "iseyc-civic-intelligence-observatory/src/data/types.ts",
+    "count": 10,
+    "preservedFromV1": ["education", "health", "security", "infrastructure", "water-sanitation", "employment", "public-finance", "governance"],
+    "addedInV1_1": ["agriculture", "environment"],
+    "rule": "Do not rename or delete existing sector identifiers. New sectors are additive."
+  },
+  "relationshipTypes": ["primary", "secondary", "cross-cutting", "interim", "legacy-alias"],
+  "relationshipTypeDefinitions": {
+    "primary": "Default facet for aggregation and filters when one clear sector fits.",
+    "secondary": "Additional relevant facet; not a second primary classification.",
+    "cross-cutting": "Duty spans multiple domains; listed sectors are lenses, not exclusive homes.",
+    "interim": "Best available facet until a dedicated sector or policy decision exists; limitations must be documented.",
+    "legacy-alias": "Historical Mandate label mapped onto a current dutyId."
+  },
+  "unmappedPolicy": {
+    "description": "If a duty has no primary sector, consumers must treat sector as null and retain dutyId.",
+    "fallbackSectorId": null
+  },
+  "versioning": {
+    "rule": "Bump mappingVersion on any row change. Consumers pin mappingVersion."
+  },
+  "migrationImplications": {
+    "observatoryRecords": "Existing records using only the original eight sector ids remain valid. Filters for agriculture and environment return empty until records use those ids.",
+    "tests": "Update Sector type unions and SECTOR_LABEL; contract tests assert 10 sectors.",
+    "ui": "Sector filter chips should include Agriculture and Environment without removing existing chips.",
+    "backwardCompatibility": "Adapters that only know eight sectors must ignore unknown sector ids or map via dutyId."
+  },
+  "mappings": [
+    {"dutyId": "Health", "sectorId": "health", "relationshipType": "primary", "mappingVersion": "1.1.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Direct match."},
+    {"dutyId": "Education", "sectorId": "education", "relationshipType": "primary", "mappingVersion": "1.1.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Direct match."},
+    {"dutyId": "Security", "sectorId": "security", "relationshipType": "primary", "mappingVersion": "1.1.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Direct match."},
+    {"dutyId": "Jobs & Economic Opportunity", "sectorId": "employment", "relationshipType": "primary", "mappingVersion": "1.1.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Jobs and livelihoods facet."},
+    {"dutyId": "Power", "sectorId": "infrastructure", "relationshipType": "primary", "mappingVersion": "1.1.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Power as critical infrastructure."},
+    {"dutyId": "Water", "sectorId": "water-sanitation", "relationshipType": "primary", "mappingVersion": "1.1.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Direct match."},
+    {"dutyId": "Roads & Transport", "sectorId": "infrastructure", "relationshipType": "primary", "mappingVersion": "1.1.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Transport infrastructure."},
+    {"dutyId": "Agriculture", "sectorId": "agriculture", "relationshipType": "primary", "mappingVersion": "1.1.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Dedicated agriculture sector added in v1.1."},
+    {"dutyId": "Housing", "sectorId": "infrastructure", "relationshipType": "interim", "mappingVersion": "1.1.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "INTERIM: no dedicated housing sector."},
+    {"dutyId": "Environment", "sectorId": "environment", "relationshipType": "primary", "mappingVersion": "1.1.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Dedicated environment sector added in v1.1."},
+    {"dutyId": "Digital Infrastructure", "sectorId": "infrastructure", "relationshipType": "primary", "mappingVersion": "1.1.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Digital as infrastructure."},
+    {"dutyId": "Youth Development", "sectorId": "education", "relationshipType": "cross-cutting", "mappingVersion": "1.1.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "CROSS-CUTTING: not exclusive primary."},
+    {"dutyId": "Youth Development", "sectorId": "employment", "relationshipType": "cross-cutting", "mappingVersion": "1.1.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "CROSS-CUTTING: livelihoods lens."},
+    {"dutyId": "Women's Development", "sectorId": "governance", "relationshipType": "cross-cutting", "mappingVersion": "1.1.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "CROSS-CUTTING: not exclusive."},
+    {"dutyId": "Social Protection", "sectorId": "governance", "relationshipType": "interim", "mappingVersion": "1.1.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "INTERIM holding facet."},
+    {"dutyId": "Public Finance", "sectorId": "public-finance", "relationshipType": "primary", "mappingVersion": "1.1.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Direct match."},
+    {"dutyId": "Anti-Corruption / Transparency", "sectorId": "governance", "relationshipType": "primary", "mappingVersion": "1.1.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Under governance."},
+    {"dutyId": "Justice", "sectorId": "governance", "relationshipType": "primary", "mappingVersion": "1.1.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "Under governance."},
+    {"dutyId": "Other", "sectorId": "governance", "relationshipType": "interim", "mappingVersion": "1.1.0", "effectiveDate": "2026-11-01", "reviewStatus": "proposed", "note": "INTERIM catch-all; retain dutyId Other."}
+  ],
+  "legacyDutyAliases": [
+    {"legacyLabel": "Security & Safety", "dutyId": "Security", "relationshipType": "legacy-alias", "mappingVersion": "1.1.0", "source": "LEGACY_DUTY_MAP"},
+    {"legacyLabel": "Jobs & Economy", "dutyId": "Jobs & Economic Opportunity", "relationshipType": "legacy-alias", "mappingVersion": "1.1.0", "source": "LEGACY_DUTY_MAP"},
+    {"legacyLabel": "Credible Candidates", "dutyId": "Anti-Corruption / Transparency", "relationshipType": "legacy-alias", "mappingVersion": "1.1.0", "source": "LEGACY_DUTY_MAP"},
+    {"legacyLabel": "Honest Elections", "dutyId": "Justice", "relationshipType": "legacy-alias", "mappingVersion": "1.1.0", "source": "LEGACY_DUTY_MAP"},
+    {"legacyLabel": "Education & Youth", "dutyId": "Education", "relationshipType": "legacy-alias", "mappingVersion": "1.1.0", "source": "LEGACY_DUTY_MAP"},
+    {"legacyLabel": "Health & Basic Services", "dutyId": "Health", "relationshipType": "legacy-alias", "mappingVersion": "1.1.0", "source": "LEGACY_DUTY_MAP"},
+    {"legacyLabel": "Electricity & Infrastructure", "dutyId": "Power", "relationshipType": "legacy-alias", "mappingVersion": "1.1.0", "source": "LEGACY_DUTY_MAP"}
+  ]
+}
