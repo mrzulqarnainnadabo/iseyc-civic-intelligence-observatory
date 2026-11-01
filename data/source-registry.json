@@ -1,0 +1,628 @@
+[
+  {
+    "id": "nbs-nlfs",
+    "publisher": "National Bureau of Statistics (NBS)",
+    "name": "Nigeria Labour Force Survey (NLFS): reports and anonymised microdata",
+    "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "employment"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National",
+    "geoLevel": "national",
+    "dataType": "Household survey: quarterly reports and anonymised microdata",
+    "updateFrequency": "Quarterly reports since the revised methodology (Q4 2022 / Q1 2023 onward); release lag varies",
+    "licence": "Access conditions are stated on each catalogue entry; check before reuse.",
+    "lastChecked": "2026-10-30",
+    "checkedHow": "Search-result review of NBS microdata catalogue pages",
+    "limitations": [
+      "The catalogue describes the design as giving quarterly estimates with sufficient precision at national level; do not assume state-level precision.",
+      "NBS revised the NLFS methodology in 2023; earlier labour-force figures may not be directly comparable.",
+      "Survey estimates, not administrative records of jobs or programmes."
+    ],
+    "notes": "Catalogue entries for Q1 2024 and Q2 2024 were seen in search results."
+  },
+  {
+    "id": "nbs-site",
+    "publisher": "National Bureau of Statistics (NBS)",
+    "name": "NBS website and e-library (reports, releases, press statements)",
+    "url": "https://nigerianstat.gov.ng",
+    "urlStatus": "domain-confirmed",
+    "sectors": [
+      "employment",
+      "public-finance",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National",
+    "geoLevel": "national",
+    "dataType": "Statistical reports and releases",
+    "updateFrequency": "Varies by series",
+    "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
+    "lastChecked": "2026-10-30",
+    "checkedHow": "Domain appeared in official report search results",
+    "limitations": [
+      "Series, definitions and base years change; always cite the specific report and release date.",
+      "Individual report URLs on this site were not individually verified."
+    ],
+    "notes": ""
+  },
+  {
+    "id": "ndhs-2024",
+    "publisher": "National Population Commission; Federal Ministry of Health and Social Welfare; The DHS Program (ICF)",
+    "name": "Nigeria Demographic and Health Survey 2023\u201324: Final Report (FR395)",
+    "url": "https://dhsprogram.com/publications/publication-fr395-dhs-final-reports.cfm",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National; microdata carry a state variable",
+    "geoLevel": "state",
+    "dataType": "Household survey: report, key indicators, microdata (registration required)",
+    "updateFrequency": "Periodic; fieldwork 1 Dec 2023 to 7 May 2024; final report listed by DHS as October 2025",
+    "licence": "DHS microdata are released on registration under DHS Program terms; read them before use.",
+    "lastChecked": "2026-10-30",
+    "checkedHow": "Search-result review of DHS Program and World Bank Microdata Library pages",
+    "limitations": [
+      "Survey estimates: state-level indicator precision depends on sample size and must be checked per indicator.",
+      "Measures reported household experience, not service delivery by a named institution.",
+      "The World Bank catalogue lists the final report date as September 2025 while the DHS page says October 2025; cite the DHS page."
+    ],
+    "notes": "Also available via the World Bank Microdata Library entry NGA_2024_DHS_v01_M."
+  },
+  {
+    "id": "ubec-digest-2019-20",
+    "publisher": "Universal Basic Education Commission (UBEC)",
+    "name": "Digest of Basic Education Statistics in Nigeria 2019\u20132020 (Volumes I to III)",
+    "url": "https://ubec.gov.ng/wp-content/uploads/2024/04/2019-AND-2020-Digest-of-Statistics-Volume-I.pdf",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Basic education data submitted by the 36 State Universal Basic Education Boards and the FCT",
+    "geoLevel": "state",
+    "dataType": "Administrative school data digest (PDF)",
+    "updateFrequency": "Irregular; this edition covers the 2019 and 2020 sessions and was hosted on the UBEC site in 2024",
+    "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
+    "lastChecked": "2026-10-30",
+    "checkedHow": "Search-result review of UBEC digest PDFs",
+    "limitations": [
+      "Data years 2019\u20132020: outdated for current-state questions.",
+      "Administrative data compiled from state submissions; completeness and accuracy depend on state reporting.",
+      "Out-of-school child figures in Nigeria are contested across agencies; do not quote one headline number without its definition and age range."
+    ],
+    "notes": "Volumes II and III cover private schools and public and private combined respectively."
+  },
+  {
+    "id": "ubec-site",
+    "publisher": "Universal Basic Education Commission (UBEC)",
+    "name": "UBEC website (including the 2018 National Personnel Audit and later publications)",
+    "url": "https://ubec.gov.ng",
+    "urlStatus": "domain-confirmed",
+    "sectors": [
+      "education"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National and state (basic education)",
+    "geoLevel": "state",
+    "dataType": "Reports and statistical publications",
+    "updateFrequency": "Irregular",
+    "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
+    "lastChecked": "2026-10-30",
+    "checkedHow": "Domain appeared in search results; specific audit page not located",
+    "limitations": [
+      "Press coverage in 2025 reported that current out-of-school data was not found on UBEC, NCAOOSCE or NSSEC websites: treat as 'unavailable' until located.",
+      "The 2018 National Personnel Audit is the older reference point cited in the press; its report page was not located in this pass."
+    ],
+    "notes": ""
+  },
+  {
+    "id": "fme-nedi",
+    "publisher": "Federal Ministry of Education",
+    "name": "Nigeria Education Data Initiative (NEDI) and Digital National Education Management Information System (D-NEMIS)",
+    "url": "https://education.gov.ng",
+    "urlStatus": "documented-not-reconfirmed",
+    "sectors": [
+      "education"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National (reported as being built)",
+    "geoLevel": "national",
+    "dataType": "Education management information system",
+    "updateFrequency": "Unknown",
+    "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
+    "lastChecked": null,
+    "checkedHow": "Press reports only",
+    "limitations": [
+      "Reported in the press as a system under rollout; public data access and release schedule were not confirmed.",
+      "Treat as an expected future source, not a current one."
+    ],
+    "notes": "Press reports (Leadership, Technology Times) describe it; no official page was retrieved."
+  },
+  {
+    "id": "hfr",
+    "publisher": "Federal Ministry of Health and Social Welfare",
+    "name": "Health Facility Registry (Master Facility List)",
+    "url": "https://hfr.health.gov.ng",
+    "urlStatus": "documented-not-reconfirmed",
+    "sectors": [
+      "health"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National, with state-validated facility records",
+    "geoLevel": "facility",
+    "dataType": "Facility registry (public web application)",
+    "updateFrequency": "Continuous updating by state registration offices, per the registry's own guidelines",
+    "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
+    "lastChecked": null,
+    "checkedHow": "Documented in MEASURE Evaluation publications",
+    "limitations": [
+      "URL is documented in a MEASURE Evaluation public-access manual; live availability was not tested.",
+      "The last nationwide facility listing before the registry was completed in 2013 (per the guidelines); completeness and currency depend on state validation.",
+      "A facility being listed does not show that it is functioning or staffed."
+    ],
+    "notes": ""
+  },
+  {
+    "id": "budget-office",
+    "publisher": "Budget Office of the Federation",
+    "name": "Federal budget documents and appropriation data",
+    "url": "https://budgetoffice.gov.ng",
+    "urlStatus": "documented-not-reconfirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Federal budget by ministry, department and agency",
+    "geoLevel": "national",
+    "dataType": "Budget documents (PDF and portal)",
+    "updateFrequency": "Annual, with amendments",
+    "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
+    "lastChecked": null,
+    "checkedHow": "Listed from public knowledge; not re-verified",
+    "limitations": [
+      "Appropriation is a plan, not evidence of release or delivery.",
+      "Site availability and document completeness were not re-verified."
+    ],
+    "notes": ""
+  },
+  {
+    "id": "open-treasury",
+    "publisher": "Office of the Accountant-General of the Federation",
+    "name": "Open Treasury Portal",
+    "url": "http://opentreasury.gov.ng",
+    "urlStatus": "documented-not-reconfirmed",
+    "sectors": [
+      "public-finance",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Federal ministries, departments and agencies",
+    "geoLevel": "national",
+    "dataType": "Payment and budget-performance reports (daily, monthly, quarterly)",
+    "updateFrequency": "Policy launched 9 December 2019 requires daily reports for payments above N10 million (OAGF) and N5 million (MDAs)",
+    "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
+    "lastChecked": null,
+    "checkedHow": "Search-result review of news and civil-society reports",
+    "limitations": [
+      "Repeatedly reported gaps: an allAfrica/UDEME review dated 24 July 2026 says many daily reports are unavailable, for example January 2026.",
+      "Earlier reviews (Daily Trust, Dataphyte, BudgIT) found missing or vague payment descriptions.",
+      "Federal level only: state and local spending is not covered.",
+      "A payment record does not show that a project was delivered."
+    ],
+    "notes": "HTTP-only URL; documented-not-reconfirmed until HTTPS confirmation."
+  },
+  {
+    "id": "nocopo",
+    "publisher": "Bureau of Public Procurement (BPP)",
+    "name": "Nigeria Open Contracting Portal (NOCOPO) and Open Contracting Data Registry entry",
+    "url": "https://data.open-contracting.org/en/publication/64",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Federal procurement by contracting entities",
+    "geoLevel": "national",
+    "dataType": "Procurement plans and records in Open Contracting Data Standard format",
+    "updateFrequency": "The Open Contracting registry lists it as retrieved monthly (listing showed April 2025 at time of review)",
+    "licence": "Licence and publication policy are linked from the registry entry (nocopo.bpp.gov.ng/license); read before reuse.",
+    "lastChecked": "2026-10-30",
+    "checkedHow": "Search-result review of Open Contracting Data Registry and OGP pages",
+    "limitations": [
+      "Federal procurement only; contract completeness varies by entity.",
+      "Contract award data does not by itself show completion or quality of works.",
+      "Savings figures reported by BPP are the agency's own claims."
+    ],
+    "notes": "Portal address: https://nocopo.bpp.gov.ng"
+  },
+  {
+    "id": "neiti",
+    "publisher": "Nigeria Extractive Industries Transparency Initiative (NEITI)",
+    "name": "NEITI reports and data",
+    "url": "https://neiti.gov.ng",
+    "urlStatus": "documented-not-reconfirmed",
+    "sectors": [
+      "public-finance",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Extractive-sector revenue, federal and states",
+    "geoLevel": "national",
+    "dataType": "Industry audit and reconciliation reports",
+    "updateFrequency": "Periodic",
+    "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
+    "lastChecked": null,
+    "checkedHow": "Listed from public knowledge",
+    "limitations": [
+      "Sector-specific; not a general service-delivery source.",
+      "Not re-verified in this pass."
+    ],
+    "notes": ""
+  },
+  {
+    "id": "dmo",
+    "publisher": "Debt Management Office",
+    "name": "Public debt data",
+    "url": "https://www.dmo.gov.ng",
+    "urlStatus": "documented-not-reconfirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Federal and state public debt",
+    "geoLevel": "national",
+    "dataType": "Debt statistics",
+    "updateFrequency": "Periodic",
+    "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
+    "lastChecked": null,
+    "checkedHow": "Listed from public knowledge",
+    "limitations": [
+      "Not re-verified in this pass.",
+      "Debt stock does not show how funds were used."
+    ],
+    "notes": ""
+  },
+  {
+    "id": "npc",
+    "publisher": "National Population Commission",
+    "name": "Population and census information",
+    "url": "https://nationalpopulation.gov.ng",
+    "urlStatus": "documented-not-reconfirmed",
+    "sectors": [
+      "governance",
+      "health"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National",
+    "geoLevel": "national",
+    "dataType": "Census and demographic information",
+    "updateFrequency": "Irregular",
+    "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
+    "lastChecked": null,
+    "checkedHow": "Listed from public knowledge",
+    "limitations": [
+      "To the best of the literature reviewed, the most recent completed census was in 2006; whether a newer census exists was not confirmed. Per-capita figures therefore often rely on projections.",
+      "Not re-verified in this pass."
+    ],
+    "notes": ""
+  },
+  {
+    "id": "nerc",
+    "publisher": "Nigerian Electricity Regulatory Commission",
+    "name": "Regulatory reports and data",
+    "url": "https://nerc.gov.ng",
+    "urlStatus": "documented-not-reconfirmed",
+    "sectors": [
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Distribution companies and licensees",
+    "geoLevel": "national",
+    "dataType": "Regulatory reports",
+    "updateFrequency": "Periodic (quarterly reports are common)",
+    "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
+    "lastChecked": null,
+    "checkedHow": "Listed from public knowledge",
+    "limitations": [
+      "Reports operators' licence areas, not administrative boundaries.",
+      "Not re-verified in this pass."
+    ],
+    "notes": ""
+  },
+  {
+    "id": "jmp",
+    "publisher": "WHO/UNICEF Joint Monitoring Programme (JMP)",
+    "name": "JMP WASH household data",
+    "url": "https://washdata.org",
+    "urlStatus": "documented-not-reconfirmed",
+    "sectors": [
+      "water-sanitation"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "National, urban and rural",
+    "geoLevel": "national",
+    "dataType": "Harmonised household survey estimates",
+    "updateFrequency": "Periodic updates",
+    "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
+    "lastChecked": null,
+    "checkedHow": "Listed from public knowledge",
+    "limitations": [
+      "Modelled national estimates; not state-level.",
+      "Not re-verified in this pass."
+    ],
+    "notes": ""
+  },
+  {
+    "id": "mics6",
+    "publisher": "National Bureau of Statistics; UNICEF",
+    "name": "Multiple Indicator Cluster Survey (MICS) for Nigeria",
+    "url": "https://mics.unicef.org/surveys",
+    "urlStatus": "documented-not-reconfirmed",
+    "sectors": [
+      "health",
+      "education",
+      "water-sanitation"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National with sub-national estimates",
+    "geoLevel": "state",
+    "dataType": "Household survey",
+    "updateFrequency": "Periodic",
+    "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
+    "lastChecked": null,
+    "checkedHow": "Listed from public knowledge",
+    "limitations": [
+      "The specific Nigeria survey round and its state-level coverage were not re-verified; confirm in the survey's final report.",
+      "Survey estimates, not facility records."
+    ],
+    "notes": ""
+  },
+  {
+    "id": "grid3",
+    "publisher": "GRID3",
+    "name": "GRID3 geospatial data for Nigeria",
+    "url": "https://grid3.org",
+    "urlStatus": "documented-not-reconfirmed",
+    "sectors": [
+      "health",
+      "education",
+      "infrastructure"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "Settlement and facility geospatial layers",
+    "geoLevel": "facility",
+    "dataType": "Geospatial datasets",
+    "updateFrequency": "Varies by dataset",
+    "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
+    "lastChecked": null,
+    "checkedHow": "Listed from public knowledge",
+    "limitations": [
+      "Some layers are modelled or partly derived; check each dataset's method and date.",
+      "Not re-verified in this pass."
+    ],
+    "notes": ""
+  },
+  {
+    "id": "hdx-nga",
+    "publisher": "UN OCHA Humanitarian Data Exchange",
+    "name": "HDX datasets for Nigeria",
+    "url": "https://data.humdata.org/group/nga",
+    "urlStatus": "documented-not-reconfirmed",
+    "sectors": [
+      "security",
+      "health",
+      "water-sanitation"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Varies",
+    "geoLevel": "varies",
+    "dataType": "Aggregator of humanitarian datasets",
+    "updateFrequency": "Varies",
+    "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
+    "lastChecked": null,
+    "checkedHow": "Listed from public knowledge",
+    "limitations": [
+      "Aggregator: each dataset's own publisher, date and licence governs.",
+      "Not re-verified in this pass."
+    ],
+    "notes": ""
+  },
+  {
+    "id": "wb-microdata",
+    "publisher": "World Bank; National Bureau of Statistics",
+    "name": "World Bank Microdata Library: Nigeria household surveys (including the General Household Survey Panel)",
+    "url": "https://microdata.worldbank.org",
+    "urlStatus": "domain-confirmed",
+    "sectors": [
+      "employment",
+      "education",
+      "health",
+      "water-sanitation"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "National with sub-national identifiers in some surveys",
+    "geoLevel": "state",
+    "dataType": "Survey microdata and documentation",
+    "updateFrequency": "Survey-dependent",
+    "licence": "Per-dataset terms; registration may be required.",
+    "lastChecked": "2026-10-30",
+    "checkedHow": "Domain appeared in search results (NDHS entry)",
+    "limitations": [
+      "The Nigeria General Household Survey Panel entry was not individually verified in this pass.",
+      "Survey waves are infrequent and dated."
+    ],
+    "notes": "The 2023\u201324 NDHS entry was confirmed in this library."
+  },
+  {
+    "id": "acled",
+    "publisher": "ACLED",
+    "name": "Armed Conflict Location & Event Data: Nigeria events",
+    "url": "https://acleddata.com",
+    "urlStatus": "documented-not-reconfirmed",
+    "sectors": [
+      "security"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "Event-level, geocoded",
+    "geoLevel": "point",
+    "dataType": "Coded conflict event data",
+    "updateFrequency": "Frequent updates",
+    "licence": "Access and reuse are governed by ACLED's terms and may require registration and attribution; check before any redistribution.",
+    "lastChecked": null,
+    "checkedHow": "Listed from public knowledge",
+    "limitations": [
+      "Events are coded from media and partner reports: counts reflect reporting access, not complete incidence.",
+      "Fatality figures are estimates.",
+      "Not an official source; do not present as national security statistics."
+    ],
+    "notes": ""
+  },
+  {
+    "id": "nigeria-watch",
+    "publisher": "Nigeria Watch (IFRA-Nigeria)",
+    "name": "Nigeria Watch violence database",
+    "url": "https://www.nigeriawatch.org",
+    "urlStatus": "documented-not-reconfirmed",
+    "sectors": [
+      "security"
+    ],
+    "kind": "media-report",
+    "geographicCoverage": "Event-level",
+    "geoLevel": "point",
+    "dataType": "Database compiled from media sources",
+    "updateFrequency": "Unknown",
+    "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
+    "lastChecked": null,
+    "checkedHow": "Listed from public knowledge",
+    "limitations": [
+      "Whether it is currently updated was not confirmed.",
+      "Built from media reports: subject to reporting bias."
+    ],
+    "notes": ""
+  },
+  {
+    "id": "budgit",
+    "publisher": "BudgIT",
+    "name": "BudgIT budget analysis and public-finance tracking",
+    "url": "https://budgit.org",
+    "urlStatus": "documented-not-reconfirmed",
+    "sectors": [
+      "public-finance",
+      "governance"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "Federal and states",
+    "geoLevel": "national",
+    "dataType": "Civil-society analysis and data tools",
+    "updateFrequency": "Varies",
+    "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
+    "lastChecked": null,
+    "checkedHow": "Listed from public knowledge; citation seen in press",
+    "limitations": [
+      "Civil-society analysis, not official data; cite the specific report.",
+      "BudgIT's review of the Open Treasury Portal was cited in press coverage; the report itself was not retrieved."
+    ],
+    "notes": ""
+  },
+  {
+    "id": "icir",
+    "publisher": "International Centre for Investigative Reporting (ICIR)",
+    "name": "ICIR reporting and fact-checks",
+    "url": "https://www.icirnigeria.org",
+    "urlStatus": "domain-confirmed",
+    "sectors": [
+      "governance",
+      "education",
+      "public-finance"
+    ],
+    "kind": "media-report",
+    "geographicCoverage": "National",
+    "geoLevel": "national",
+    "dataType": "News and investigative reporting",
+    "updateFrequency": "Continuous",
+    "licence": "Copyright holds: cite and link; do not republish articles.",
+    "lastChecked": "2026-10-30",
+    "checkedHow": "Domain appeared in search results",
+    "limitations": [
+      "Media reports are leads, not verification, until corroborated.",
+      "Reports can be superseded by later official data."
+    ],
+    "notes": ""
+  },
+  {
+    "id": "dataphyte",
+    "publisher": "Dataphyte",
+    "name": "Dataphyte data journalism",
+    "url": "https://www.dataphyte.com",
+    "urlStatus": "domain-confirmed",
+    "sectors": [
+      "governance",
+      "public-finance"
+    ],
+    "kind": "media-report",
+    "geographicCoverage": "National",
+    "geoLevel": "national",
+    "dataType": "Data journalism and analysis",
+    "updateFrequency": "Continuous",
+    "licence": "Copyright holds: cite and link; do not republish articles.",
+    "lastChecked": "2026-10-30",
+    "checkedHow": "Domain appeared in search results",
+    "limitations": [
+      "Media reports are leads, not verification, until corroborated."
+    ],
+    "notes": ""
+  },
+  {
+    "id": "civic-mandate",
+    "publisher": "ISEYC",
+    "name": "Civic Mandate Nigeria: Published records",
+    "url": "https://2027-street-mandate.vercel.app",
+    "urlStatus": "documented-not-reconfirmed",
+    "sectors": [
+      "governance"
+    ],
+    "kind": "community-submission",
+    "geographicCoverage": "Citizen demands by state and, optionally, LGA",
+    "geoLevel": "state",
+    "dataType": "ISEYC-reviewed citizen submissions (public-shaped fields only)",
+    "updateFrequency": "Continuous as records are published",
+    "licence": "ISEYC product; reuse rules to be set by ISEYC.",
+    "lastChecked": null,
+    "checkedHow": "Project README reviewed; live site not queried",
+    "limitations": [
+      "Community submissions are not a representative survey: they show what people chose to submit, not how common a problem is.",
+      "Published means reviewed by ISEYC for clarity and safety. It is not a vote, ranking or verification of the claim.",
+      "Operator-only fields (such as device fingerprint, age band, gender, responsible institution and follow-up fields) must never reach the Observatory."
+    ],
+    "notes": "Described in the project's public README; the live API contract is not documented there and must be agreed with the maintainers."
+  },
+  {
+    "id": "iseyc-verification",
+    "publisher": "ISEYC",
+    "name": "ISEYC independent verification (planned workflow)",
+    "url": null,
+    "urlStatus": "not-applicable",
+    "sectors": [
+      "governance"
+    ],
+    "kind": "independently-verified",
+    "geographicCoverage": "To be defined",
+    "geoLevel": "varies",
+    "dataType": "Field or document verification by trained reviewers",
+    "updateFrequency": "Not started",
+    "licence": "To be set by ISEYC.",
+    "lastChecked": null,
+    "checkedHow": "Not applicable: planned",
+    "limitations": [
+      "No independently verified evidence exists in this prototype's real data.",
+      "Needs a published method, reviewer rules and a corrections process before any record may carry the 'Independently verified' badge."
+    ],
+    "notes": ""
+  }
+]
