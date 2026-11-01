@@ -1,41 +1,42 @@
 # Stage 1 status — Civic Intelligence Observatory
 
-**Date:** 2026-10-31  
+**Date:** 2026-11-01  
 **Branch:** `feat/stage1-observatory-import`  
-**HEAD:** progressive batch import from v0.2.1 candidate
+**HEAD:** see latest commit on branch
 
-## Local verification
+## Local verification (fresh this session)
 
 | Check | Result |
 |-------|--------|
-| validate:registry | PASS |
+| Registry | PASS — 26 sources, 4 confirmed, 5 domain-confirmed, 16 not re-confirmed |
 | typecheck | PASS |
 | tests | **52/52 PASS** |
 | production build | PASS |
+| Browser smoke | NOT RUN |
+
+## Integrity fixes in local candidate
+
+- `validate.ts` Map typing for evidence cross-checks
+- Bare stage `E` without evidenceId → `C`
+- `open-treasury` → documented-not-reconfirmed
+- `httpAdapter` unused Envelope type removed; remains disabled by default
 
 ## Remote branch progress
 
-### On GitHub
-- All six product pages (Overview, Issues, Geography, Evidence, Accountability, Briefs)
-- Full design system (layout, primitives, charts, map, timeline, feedback)
-- Core lib (hooks, data, rules, briefs)
-- Domain types, adapters (demo + index)
-- Schemas (source-record, evidence-item), ATTRIBUTIONS
-- Registry validator script, test setup/helpers
-- Synthetic institutions
-- package.json, vite/tsconfig, Stage 1 docs, contracts seed
+### Present
+Six pages, design system, core lib (hooks/data/rules/briefs), types, demo adapter + index, **httpAdapter**, institutions, schemas, ATTRIBUTIONS, registry validator, briefs/registry/rules tests, package.json, vite/tsconfig, contracts seed
 
-### Still uploading
-- `src/lib/validate.ts`, `src/adapters/httpAdapter.ts`
+### Still missing on GitHub
+- `src/lib/validate.ts`
 - `src/styles/components.css`
-- `src/data/source-registry.json` + `data/source-registry.json`
+- `src/data/source-registry.json` and `data/source-registry.json`
 - `src/data/geo/nigeria-map.json`
 - `src/data/synthetic/index.ts`
-- Full test suite files
-- `package-lock.json`, app README, remaining docs, civic-record schema
+- `tests/validate.test.ts`, `tests/adapters.test.ts`, `tests/components.test.tsx`
+- `package-lock.json`, app README (product), civic-record schema
 
-## Decision
+Without registry, map, synthetic, validate, and components.css the remote tree **cannot** run the full app.
 
-- **Local tree:** READY FOR INDEPENDENT ACCEPTANCE
-- **Remote completeness:** NOT READY until data + validate + CSS + tests land
-- **Production:** no merge, no deploy
+## Production
+
+No merge. No deploy.
