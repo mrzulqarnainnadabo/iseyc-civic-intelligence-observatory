@@ -1,0 +1,24 @@
+[
+  {
+    "id": "nbs-nlfs",
+    "publisher": "National Bureau of Statistics (NBS)",
+    "name": "Nigeria Labour Force Survey (NLFS): reports and anonymised microdata",
+    "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "employment"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National",
+    "geoLevel": "national",
+    "dataType": "Household survey",
+    "updateFrequency": "Quarterly",
+    "licence": "See catalogue",
+    "lastChecked": "2026-10-30",
+    "checkedHow": "Search-result review",
+    "limitations": [
+      "National precision only"
+    ],
+    "notes": "STUB - will be replaced with full 26-source registry"
+  }
+]
