@@ -1,6 +1,7 @@
 /**
  * Convert existing Pulse voice objects into PublicMandateRecord v1.
- * Does not call network. Does not modify /api/pulse.
+ * Constructs output from an explicit public-field allowlist only.
+ * Does not spread input objects. Does not call network. Does not modify /api/pulse.
  */
 import {
   PRIVATE_FIELD_DENYLIST,
@@ -16,15 +17,53 @@ export class PublicMandateContractError extends Error {
   }
 }
 
-const PRIVATE_LOWER = new Set(PRIVATE_FIELD_DENYLIST.map((k) => k.toLowerCase().replace(/\s+/g, '')));
+/** Pulse fields that may be read from an inbound public voice */
+export const PUBLIC_PULSE_FIELD_ALLOWLIST = [
+  'id',
+  'sentence',
+  'mandate',
+  'duty',
+  'office',
+  'state',
+  'lga',
+  'created',
+] as const;
+
+export type PublicPulseField = (typeof PUBLIC_PULSE_FIELD_ALLOWLIST)[number];
+
+const PRIVATE_LOWER = new Set(
+  PRIVATE_FIELD_DENYLIST.map((k) => k.toLowerCase().replace(/\s+/g, '')),
+);
+
+function normalizeKey(key: string): string {
+  return key.toLowerCase().replace(/\s+/g, '');
+}
+
+function isPrivateKey(key: string): boolean {
+  const norm = normalizeKey(key);
+  if (PRIVATE_LOWER.has(norm)) return true;
+  return (PRIVATE_FIELD_DENYLIST as readonly string[]).includes(key);
+}
 
 export function assertNoPrivateFields(obj: Record<string, unknown>): void {
   for (const key of Object.keys(obj)) {
-    const norm = key.toLowerCase().replace(/\s+/g, '');
-    if (PRIVATE_LOWER.has(norm) || PRIVATE_FIELD_DENYLIST.includes(key as (typeof PRIVATE_FIELD_DENYLIST)[number])) {
+    if (isPrivateKey(key)) {
       throw new PublicMandateContractError(`Private field not allowed on public contract: ${key}`);
     }
   }
+}
+
+/** Pick only allowlisted Pulse fields; never spreads the source object. */
+export function pickPublicPulseFields(
+  source: Record<string, unknown>,
+): Partial<Record<PublicPulseField, unknown>> {
+  const out: Partial<Record<PublicPulseField, unknown>> = {};
+  for (const key of PUBLIC_PULSE_FIELD_ALLOWLIST) {
+    if (Object.prototype.hasOwnProperty.call(source, key)) {
+      out[key] = source[key];
+    }
+  }
+  return out;
 }
 
 export type StateAliasResolver = (raw: string | null | undefined) => {
@@ -59,38 +98,88 @@ export function pulseVoiceToPublicMandate(
     sourceUrl?: string | null;
   },
 ): PublicMandateRecordV1 {
-  assertNoPrivateFields(voice as Record<string, unknown>);
+  if (voice == null || typeof voice !== 'object') {
+    throw new PublicMandateContractError('Pulse voice must be an object');
+  }
+
+  const source = voice as Record<string, unknown>;
+  assertNoPrivateFields(source);
+
   const status = opts?.publicationStatus ?? 'Published';
   if (status !== 'Published') {
-    throw new PublicMandateContractError(`Only Published records may enter PublicMandateRecord v1 (got ${status})`);
+    throw new PublicMandateContractError(
+      `Only Published records may enter PublicMandateRecord v1 (got ${status})`,
+    );
   }
-  if (!voice.id || !voice.sentence || !voice.created) {
-    throw new PublicMandateContractError('Pulse voice missing id, sentence, or created');
+
+  const picked = pickPublicPulseFields(source);
+
+  const id = picked.id;
+  const sentence = picked.sentence;
+  const created = picked.created;
+  if (typeof id !== 'string' || id.length === 0) {
+    throw new PublicMandateContractError('Pulse voice missing public id');
   }
+  if (typeof sentence !== 'string' || sentence.length === 0) {
+    throw new PublicMandateContractError('Pulse voice missing public sentence');
+  }
+  if (typeof created !== 'string' || created.length === 0) {
+    throw new PublicMandateContractError('Pulse voice missing public created timestamp');
+  }
+
+  const stateRaw =
+    typeof picked.state === 'string' || picked.state == null ? (picked.state as string | null | undefined) : null;
+  const lgaRaw =
+    typeof picked.lga === 'string' || picked.lga == null ? (picked.lga as string | null | undefined) : null;
+  const mandateRaw = typeof picked.mandate === 'string' ? picked.mandate : null;
+  const dutyRaw = typeof picked.duty === 'string' ? picked.duty : null;
+  const officeRaw = typeof picked.office === 'string' ? picked.office : null;
+
   const resolve = opts?.resolveState ?? DEFAULT_STATE_RESOLVER;
-  const geoRes = resolve(voice.state ?? null);
-  return {
+  const geoRes = resolve(stateRaw ?? null);
+
+  const record: PublicMandateRecordV1 = {
     schemaVersion: PUBLIC_MANDATE_RECORD_SCHEMA_VERSION,
-    id: voice.id,
-    sentence: voice.sentence,
-    mandate: voice.mandate ?? null,
-    dutyId: voice.duty ?? null,
-    duty: voice.duty ?? null,
-    officeId: voice.office ?? null,
-    office: voice.office ?? null,
+    id,
+    sentence,
+    mandate: mandateRaw ?? null,
+    dutyId: dutyRaw ?? null,
+    duty: dutyRaw ?? null,
+    officeId: officeRaw ?? null,
+    office: officeRaw ?? null,
     geo: {
       stateId: geoRes.stateId,
-      state: voice.state ?? null,
+      state: stateRaw ?? null,
       lgaId: null,
-      lga: voice.lga ?? null,
-      originalSubmittedText: voice.state ?? null,
+      lga: lgaRaw ?? null,
+      originalSubmittedText: stateRaw ?? null,
       resolution: geoRes.resolution,
     },
-    state: voice.state ?? null,
-    lga: voice.lga ?? null,
+    state: stateRaw ?? null,
+    lga: lgaRaw ?? null,
     publicationStatus: 'Published',
-    createdAt: voice.created,
+    createdAt: created,
     updatedAt: null,
     sourceUrl: opts?.sourceUrl ?? null,
   };
+
+  return record;
 }
+
+export const PUBLIC_MANDATE_OUTPUT_KEYS = [
+  'schemaVersion',
+  'id',
+  'sentence',
+  'mandate',
+  'dutyId',
+  'duty',
+  'officeId',
+  'office',
+  'geo',
+  'state',
+  'lga',
+  'publicationStatus',
+  'createdAt',
+  'updatedAt',
+  'sourceUrl',
+] as const;
