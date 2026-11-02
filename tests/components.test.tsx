@@ -79,6 +79,9 @@ describe('pages', () => {
   });
   it('Briefs build from scope and carry the caveats', () => {
     render(wrap(<Briefs />));
+    expect(screen.getByRole('heading', { name: /Civic Intelligence Brief: All sectors, All states/ })).toBeInTheDocument();
+    expect(screen.getByText(/Interface draft/)).toBeInTheDocument();
+    fireEvent.change(screen.getByLabelText('State'), { target: { value: 'kaduna' } });
     expect(screen.getByRole('heading', { name: /Civic Intelligence Brief: All sectors, Kaduna/ })).toBeInTheDocument();
     expect(screen.getByText(/Community submissions are not a representative survey/)).toBeInTheDocument();
   });
