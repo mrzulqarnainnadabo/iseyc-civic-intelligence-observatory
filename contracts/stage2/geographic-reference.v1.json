@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iseyc.org/contracts/stage2/geographic-reference.v1.json",
+  "title": "ISEYC Geographic Reference v1.1 — States and FCT",
+  "version": "1.1.0",
+  "effectiveDate": "2026-11-01",
+  "reviewStatus": "draft-for-founder-review",
+  "hierarchy": ["country", "state", "lga", "ward", "community", "public_service_location"],
+  "v1Scope": {
+    "frozenLevels": ["country", "state"],
+    "notInScope": ["lga", "ward", "community", "public_service_location"],
+    "rule": "Do not invent LGA, ward, or community identifiers in v1."
+  },
+  "authoritativeSources": [
+    {"role": "state_name_list_mandate", "path": "2027-street-mandate/lib/constants.ts STATES"},
+    {"role": "state_map_ids_observatory", "path": "src/data/geo/nigeria-map.json", "attribution": "@svg-maps/nigeria v2.0.0 CC BY 4.0"}
+  ],
+  "country": {"id": "ng", "name": "Nigeria", "level": "country"},
+  "states": [
+    {"id": "ng-abia", "mapId": "abia", "name": "Abia", "level": "state", "parentId": "ng"},
+    {"id": "ng-adamawa", "mapId": "adamawa", "name": "Adamawa", "level": "state", "parentId": "ng"},
+    {"id": "ng-akwa-ibom", "mapId": "akwa-ibom", "name": "Akwa Ibom", "level": "state", "parentId": "ng"},
+    {"id": "ng-anambra", "mapId": "anambra", "name": "Anambra", "level": "state", "parentId": "ng"},
+    {"id": "ng-bauchi", "mapId": "bauchi", "name": "Bauchi", "level": "state", "parentId": "ng"},
+    {"id": "ng-bayelsa", "mapId": "bayelsa", "name": "Bayelsa", "level": "state", "parentId": "ng"},
+    {"id": "ng-benue", "mapId": "benue", "name": "Benue", "level": "state", "parentId": "ng"},
+    {"id": "ng-borno", "mapId": "borno", "name": "Borno", "level": "state", "parentId": "ng"},
+    {"id": "ng-cross-river", "mapId": "cross-river", "name": "Cross River", "level": "state", "parentId": "ng"},
+    {"id": "ng-delta", "mapId": "delta", "name": "Delta", "level": "state", "parentId": "ng"},
+    {"id": "ng-ebonyi", "mapId": "ebonyi", "name": "Ebonyi", "level": "state", "parentId": "ng"},
+    {"id": "ng-edo", "mapId": "edo", "name": "Edo", "level": "state", "parentId": "ng"},
+    {"id": "ng-ekiti", "mapId": "ekiti", "name": "Ekiti", "level": "state", "parentId": "ng"},
+    {"id": "ng-enugu", "mapId": "enugu", "name": "Enugu", "level": "state", "parentId": "ng"},
+    {"id": "ng-fct", "mapId": "fct", "name": "Federal Capital Territory", "level": "state", "parentId": "ng", "mandateDisplayName": "FCT"},
+    {"id": "ng-gombe", "mapId": "gombe", "name": "Gombe", "level": "state", "parentId": "ng"},
+    {"id": "ng-imo", "mapId": "imo", "name": "Imo", "level": "state", "parentId": "ng"},
+    {"id": "ng-jigawa", "mapId": "jigawa", "name": "Jigawa", "level": "state", "parentId": "ng"},
+    {"id": "ng-kaduna", "mapId": "kaduna", "name": "Kaduna", "level": "state", "parentId": "ng"},
+    {"id": "ng-kano", "mapId": "kano", "name": "Kano", "level": "state", "parentId": "ng"},
+    {"id": "ng-katsina", "mapId": "katsina", "name": "Katsina", "level": "state", "parentId": "ng"},
+    {"id": "ng-kebbi", "mapId": "kebbi", "name": "Kebbi", "level": "state", "parentId": "ng"},
+    {"id": "ng-kogi", "mapId": "kogi", "name": "Kogi", "level": "state", "parentId": "ng"},
+    {"id": "ng-kwara", "mapId": "kwara", "name": "Kwara", "level": "state", "parentId": "ng"},
+    {"id": "ng-lagos", "mapId": "lagos", "name": "Lagos", "level": "state", "parentId": "ng"},
+    {"id": "ng-nasarawa", "mapId": "nassarawa", "name": "Nasarawa", "level": "state", "parentId": "ng"},
+    {"id": "ng-niger", "mapId": "niger", "name": "Niger", "level": "state", "parentId": "ng"},
+    {"id": "ng-ogun", "mapId": "ogun", "name": "Ogun", "level": "state", "parentId": "ng"},
+    {"id": "ng-ondo", "mapId": "ondo", "name": "Ondo", "level": "state", "parentId": "ng"},
+    {"id": "ng-osun", "mapId": "osun", "name": "Osun", "level": "state", "parentId": "ng"},
+    {"id": "ng-oyo", "mapId": "oyo", "name": "Oyo", "level": "state", "parentId": "ng"},
+    {"id": "ng-plateau", "mapId": "plateau", "name": "Plateau", "level": "state", "parentId": "ng"},
+    {"id": "ng-rivers", "mapId": "rivers", "name": "Rivers", "level": "state", "parentId": "ng"},
+    {"id": "ng-sokoto", "mapId": "sokoto", "name": "Sokoto", "level": "state", "parentId": "ng"},
+    {"id": "ng-taraba", "mapId": "taraba", "name": "Taraba", "level": "state", "parentId": "ng"},
+    {"id": "ng-yobe", "mapId": "yobe", "name": "Yobe", "level": "state", "parentId": "ng"},
+    {"id": "ng-zamfara", "mapId": "zamfara", "name": "Zamfara", "level": "state", "parentId": "ng"}
+  ],
+  "aliasRules": {
+    "resolveWhen": "unambiguous match to name, mandateDisplayName, mapId, or listed alias",
+    "onAmbiguous": "stateId null; preserve originalSubmittedText; do not guess",
+    "onUnknown": "stateId null; preserve originalSubmittedText",
+    "preserveOriginal": true,
+    "abujaRule": "Never auto-map bare Abuja to ng-fct without documented extra context."
+  },
+  "aliases": [
+    {"alias": "FCT", "stateId": "ng-fct", "confidence": "exact"},
+    {"alias": "Federal Capital Territory", "stateId": "ng-fct", "confidence": "exact"},
+    {"alias": "Abuja", "stateId": null, "confidence": "ambiguous", "note": "Do NOT auto-resolve to ng-fct."},
+    {"alias": "Nassarawa", "stateId": "ng-nasarawa", "confidence": "spelling-variant"},
+    {"alias": "nassarawa", "stateId": "ng-nasarawa", "confidence": "map-id"},
+    {"alias": "Akwa-Ibom", "stateId": "ng-akwa-ibom", "confidence": "punctuation-variant"},
+    {"alias": "Cross-River", "stateId": "ng-cross-river", "confidence": "punctuation-variant"}
+  ],
+  "coverageHonesty": [
+    "Map presence does not mean research coverage.",
+    "Pilot Mandate records are not nationally representative."
+  ]
+}

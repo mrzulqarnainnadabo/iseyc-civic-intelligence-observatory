@@ -1,0 +1,28 @@
+{
+  "description": "Sanitised snapshot derived from live GET /api/pulse. Public fields only.",
+  "total": 24,
+  "states": 3,
+  "truncated": false,
+  "voices": [
+    {
+      "id": "4005db88ef468116ae20ec69bc81b114",
+      "sentence": "Public access points in schools and civic centres.",
+      "mandate": "Digital Infrastructure",
+      "duty": "Digital Infrastructure",
+      "office": "President",
+      "state": "Ondo",
+      "lga": "Owo",
+      "created": "2026-10-21T18:15:00.000Z"
+    },
+    {
+      "id": "sample-health-kaduna",
+      "sentence": "Essential medicines available at primary health centres.",
+      "mandate": "Health",
+      "duty": "Health",
+      "office": "Governor",
+      "state": "Kaduna",
+      "lga": null,
+      "created": "2026-10-01T12:00:00.000Z"
+    }
+  ]
+}
