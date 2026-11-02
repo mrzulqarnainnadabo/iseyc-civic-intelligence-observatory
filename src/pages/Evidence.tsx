@@ -13,7 +13,14 @@ export default function Evidence() {
   const [tab, setTab] = useState<'items' | 'registry'>('registry');
   return (
     <>
-      <PageHeader title="Evidence library" lead="Every item and every source carries its type, date, status and known limits. Read the limits before you rely on anything." />
+      <PageHeader
+        title="Evidence library"
+        lead="Discover registered sources and evidence items. A registered source is not automatically verified. Every class stays distinct: official data, research, media, community submission, and independent verification."
+      />
+      <p className="hero__meta" style={{marginTop:0,marginBottom:'1rem'}}>
+        <span className="chip chip--real">Registry is project research data</span>
+        <span className="chip chip--synth">Evidence items in this build may be synthetic</span>
+      </p>
       <div className="tabs" role="tablist" aria-label="Evidence views">
         <button role="tab" id="t-reg" aria-selected={tab === 'registry'} aria-controls="p-reg" className={`tab${tab === 'registry' ? ' tab--on' : ''}`} onClick={() => setTab('registry')}>Source registry (real)</button>
         <button role="tab" id="t-items" aria-selected={tab === 'items'} aria-controls="p-items" className={`tab${tab === 'items' ? ' tab--on' : ''}`} onClick={() => setTab('items')}>Evidence items (demonstration)</button>

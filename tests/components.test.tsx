@@ -38,9 +38,10 @@ describe('design system', () => {
 });
 
 describe('pages', () => {
-  it('Overview offers nine questions and labels synthetic funnel data', () => {
+  it('Overview presents institutional entry points and labels synthetic funnel data', () => {
     render(wrap(<Overview />));
-    expect(screen.getByText('What is happening?')).toBeInTheDocument();
+    expect(screen.getByText(/Understand public evidence across Nigeria/i)).toBeInTheDocument();
+    expect(screen.getByText('Evidence library')).toBeInTheDocument();
     expect(screen.getAllByText('DEMONSTRATION DATA').length).toBeGreaterThan(0);
     expect(screen.getByText(/A referral does not mean action/)).toBeInTheDocument();
   });
