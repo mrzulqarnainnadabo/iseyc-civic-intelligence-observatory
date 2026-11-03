@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import {
   listIndicators,
-  fetchIndicatorObservations,
+  fetchViaGateway,
   formatIndicatorValue,
   getIndicatorCatalog,
 } from '../src/lib/indicators';
@@ -26,35 +26,44 @@ describe('indicator catalog', () => {
     expect(formatIndicatorValue(227882945, 'persons')).toMatch(/million|227/);
   });
 
-  it('maps World Bank payload into observations', async () => {
-    const ind = listIndicators()[0];
-    const payload = [
-      { page: 1 },
-      [
-        { date: '2022', value: 100 },
-        { date: '2023', value: 110 },
-        { date: '2021', value: null },
+  it('maps gateway payload into observations', async () => {
+    const payload = {
+      status: 'ok',
+      observations: [
+        {
+          observationId: 'a',
+          indicatorId: 'wb-nga-sp-pop-totl',
+          referencePeriod: '2022',
+          value: 100,
+          sourceAttribution: 'World Bank',
+          retrievedAt: '2026-11-03T00:00:00.000Z',
+        },
+        {
+          observationId: 'b',
+          indicatorId: 'wb-nga-sp-pop-totl',
+          referencePeriod: '2023',
+          value: 110,
+          sourceAttribution: 'World Bank',
+          retrievedAt: '2026-11-03T00:00:00.000Z',
+        },
       ],
-    ];
+      receipt: { outcome: 'success' },
+    };
     const fetchImpl = vi.fn(async () => ({
       ok: true,
       json: async () => payload,
     })) as unknown as typeof fetch;
-    const { observations, error } = await fetchIndicatorObservations(ind, fetchImpl);
-    expect(error).toBeUndefined();
-    expect(observations).toHaveLength(2);
-    expect(observations.map((o) => o.date)).toEqual(['2022', '2023']);
+    const r = await fetchViaGateway('wb-nga-sp-pop-totl', fetchImpl);
+    expect(r.observations).toHaveLength(2);
+    expect(r.observations.map((o) => o.referencePeriod)).toEqual(['2022', '2023']);
   });
 
-  it('fails soft on HTTP error', async () => {
-    const ind = listIndicators()[0];
-    const fetchImpl = vi.fn(async () => ({
-      ok: false,
-      status: 503,
-      json: async () => ({}),
-    })) as unknown as typeof fetch;
-    const { observations, error } = await fetchIndicatorObservations(ind, fetchImpl);
-    expect(observations).toEqual([]);
-    expect(error).toBe('HTTP_503');
+  it('fails soft when gateway unreachable', async () => {
+    const fetchImpl = vi.fn(async () => {
+      throw new Error('network');
+    }) as unknown as typeof fetch;
+    const r = await fetchViaGateway('wb-nga-sp-pop-totl', fetchImpl);
+    expect(r.observations).toEqual([]);
+    expect(r.errorClass).toBe('GATEWAY_UNREACHABLE');
   });
 });

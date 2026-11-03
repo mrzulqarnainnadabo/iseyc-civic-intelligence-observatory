@@ -6,7 +6,7 @@ import { EmptyState } from '../design/feedback';
 import { SourceCitation } from '../design/primitives';
 import {
   listIndicators,
-  fetchIndicatorObservations,
+  fetchViaGateway,
   formatIndicatorValue,
   type IndicatorDefinition,
   type IndicatorObservation,
@@ -15,13 +15,19 @@ import {
 function IndicatorBlock({ indicator }: { indicator: IndicatorDefinition }) {
   const [obs, setObs] = useState<IndicatorObservation[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [retrievedAt, setRetrievedAt] = useState<string | null>(null);
 
   useEffect(() => {
     let alive = true;
-    fetchIndicatorObservations(indicator).then((r) => {
+    fetchViaGateway(indicator.id).then((r) => {
       if (!alive) return;
       setObs(r.observations);
-      setError(r.error ?? null);
+      setError(r.status === 'error' || r.status === 'empty' ? r.errorClass || r.status : null);
+      setRetrievedAt(
+        r.observations[0]?.retrievedAt ||
+          (r.receipt as { retrievedAt?: string } | null)?.retrievedAt ||
+          null,
+      );
     });
     return () => {
       alive = false;
@@ -35,19 +41,28 @@ function IndicatorBlock({ indicator }: { indicator: IndicatorDefinition }) {
       <strong>{indicator.title}</strong>
       <p className="muted">{indicator.definition}</p>
       <p className="muted" style={{ fontSize: 13 }}>
-        Unit: {indicator.unit} · Type: {indicator.measurementType} · {indicator.geographicCoverage}
+        Unit: {indicator.unit} · Type: {indicator.measurementType} · {indicator.geographicCoverage} · geo level: national
       </p>
       {recent.length ? (
         <ul className="plain">
           {recent.map((o) => (
-            <li key={o.date}>
-              <strong>{o.date}</strong>: {formatIndicatorValue(o.value, indicator.unit)}
+            <li key={o.referencePeriod}>
+              <strong>Reference {o.referencePeriod}</strong>: {formatIndicatorValue(o.value, indicator.unit)}
             </li>
           ))}
         </ul>
       ) : (
-        <p className="muted">No observations loaded{error ? ` (${error})` : ''}.</p>
+        <p className="muted">
+          {error
+            ? `No observations (${error}). Synthetic data is not substituted.`
+            : 'No observations loaded.'}
+        </p>
       )}
+      {retrievedAt ? (
+        <p className="muted" style={{ fontSize: 12 }}>
+          Last retrieval (gateway): {retrievedAt}
+        </p>
+      ) : null}
       <p className="muted" style={{ fontSize: 12 }}>
         {indicator.methodologyNotes}
       </p>

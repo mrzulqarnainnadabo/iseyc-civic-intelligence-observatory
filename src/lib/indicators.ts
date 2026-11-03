@@ -14,7 +14,6 @@ export interface IndicatorDefinition {
   sourceDatasetId: string;
   sourcePublisher: string;
   sourceUrl: string;
-  api?: { provider: string; urlTemplate: string };
   methodologyNotes: string;
   licence: string;
   limitations: string[];
@@ -23,11 +22,30 @@ export interface IndicatorDefinition {
 }
 
 export interface IndicatorObservation {
+  observationId?: string;
   indicatorId: string;
-  date: string;
+  datasetId?: string;
+  geoCode?: string;
+  geoLevel?: string;
+  referencePeriod: string;
   value: number;
+  unit?: string;
+  sourceAttribution?: string;
   sourcePublisher: string;
+  sourceUrl?: string;
   retrievedAt: string;
+  qualityFlags?: string[];
+}
+
+export interface GatewayResult {
+  status: 'ok' | 'empty' | 'error';
+  errorClass?: string;
+  message?: string;
+  cache?: string;
+  indicator?: Record<string, unknown> | null;
+  observations: IndicatorObservation[];
+  receipt?: Record<string, unknown> | null;
+  persistence?: { mode: string; note: string };
 }
 
 export interface IndicatorCatalog {
@@ -47,38 +65,72 @@ export function listIndicators(): IndicatorDefinition[] {
   return getIndicatorCatalog().indicators;
 }
 
-/** Fetch observations for a World Bank-backed indicator. Fails soft with empty series. */
+/**
+ * Prefer Evidence Gateway. Never call arbitrary upstream URLs from the client.
+ * Optional fetchImpl for tests.
+ */
+export async function fetchViaGateway(
+  indicatorId: string,
+  fetchImpl: typeof fetch = fetch,
+  base = '',
+): Promise<GatewayResult> {
+  const url = `${base}/api/evidence/observations?indicatorId=${encodeURIComponent(indicatorId)}`;
+  try {
+    const res = await fetchImpl(url, { headers: { Accept: 'application/json' } });
+    const body = (await res.json()) as Record<string, unknown>;
+    if (!body || typeof body !== 'object') {
+      return { status: 'error', errorClass: 'MALFORMED_GATEWAY', observations: [] };
+    }
+    const rawObs = Array.isArray(body.observations) ? (body.observations as Record<string, unknown>[]) : [];
+    const observations: IndicatorObservation[] = rawObs
+      .filter((o) => o && typeof o.value === 'number' && (o.referencePeriod || o.date))
+      .map((o) => ({
+        observationId: typeof o.observationId === 'string' ? o.observationId : undefined,
+        indicatorId: String(o.indicatorId || indicatorId),
+        datasetId: typeof o.datasetId === 'string' ? o.datasetId : undefined,
+        geoCode: typeof o.geoCode === 'string' ? o.geoCode : undefined,
+        geoLevel: typeof o.geoLevel === 'string' ? o.geoLevel : undefined,
+        referencePeriod: String(o.referencePeriod || o.date),
+        value: o.value as number,
+        unit: typeof o.unit === 'string' ? o.unit : undefined,
+        sourceAttribution: typeof o.sourceAttribution === 'string' ? o.sourceAttribution : undefined,
+        sourcePublisher:
+          (typeof o.sourceAttribution === 'string' && o.sourceAttribution) ||
+          (typeof o.sourcePublisher === 'string' && o.sourcePublisher) ||
+          'Unknown source',
+        sourceUrl: typeof o.sourceUrl === 'string' ? o.sourceUrl : undefined,
+        retrievedAt: typeof o.retrievedAt === 'string' ? o.retrievedAt : new Date().toISOString(),
+        qualityFlags: Array.isArray(o.qualityFlags) ? (o.qualityFlags as string[]) : undefined,
+      }));
+    return {
+      status: (body.status as GatewayResult['status']) || (res.ok ? 'ok' : 'error'),
+      errorClass: typeof body.errorClass === 'string' ? body.errorClass : undefined,
+      message: typeof body.message === 'string' ? body.message : undefined,
+      cache: typeof body.cache === 'string' ? body.cache : undefined,
+      indicator: (body.indicator as Record<string, unknown> | null) ?? null,
+      observations,
+      receipt: (body.receipt as Record<string, unknown> | null) ?? null,
+      persistence: body.persistence as GatewayResult['persistence'],
+    };
+  } catch {
+    return { status: 'error', errorClass: 'GATEWAY_UNREACHABLE', observations: [] };
+  }
+}
+
+/** @deprecated Prefer fetchViaGateway — kept for tests that inject mock series */
 export async function fetchIndicatorObservations(
   indicator: IndicatorDefinition,
   fetchImpl: typeof fetch = fetch,
-): Promise<{ observations: IndicatorObservation[]; error?: string }> {
-  if (!indicator.api?.urlTemplate) {
-    return { observations: [], error: 'NO_API' };
+): Promise<{ observations: IndicatorObservation[]; error?: string; receipt?: unknown }> {
+  const result = await fetchViaGateway(indicator.id, fetchImpl);
+  if (result.status === 'error') {
+    return { observations: [], error: result.errorClass || 'ERROR', receipt: result.receipt };
   }
-  try {
-    const res = await fetchImpl(indicator.api.urlTemplate, { headers: { Accept: 'application/json' } });
-    if (!res.ok) return { observations: [], error: `HTTP_${res.status}` };
-    const body = (await res.json()) as unknown;
-    if (!Array.isArray(body) || body.length < 2 || !Array.isArray(body[1])) {
-      return { observations: [], error: 'MALFORMED' };
-    }
-    const retrievedAt = new Date().toISOString();
-    const observations: IndicatorObservation[] = [];
-    for (const row of body[1] as { date?: string; value?: number | null }[]) {
-      if (!row || row.value == null || typeof row.value !== 'number' || !row.date) continue;
-      observations.push({
-        indicatorId: indicator.id,
-        date: String(row.date),
-        value: row.value,
-        sourcePublisher: indicator.sourcePublisher,
-        retrievedAt,
-      });
-    }
-    observations.sort((a, b) => a.date.localeCompare(b.date));
-    return { observations };
-  } catch {
-    return { observations: [], error: 'FETCH_FAILED' };
-  }
+  return {
+    observations: result.observations,
+    error: result.status === 'empty' ? 'EMPTY' : undefined,
+    receipt: result.receipt,
+  };
 }
 
 export function formatIndicatorValue(value: number, unit: string): string {

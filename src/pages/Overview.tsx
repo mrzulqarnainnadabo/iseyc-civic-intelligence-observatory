@@ -8,7 +8,7 @@ import { KINDS, KIND_LABEL } from '../data/types';
 import { registryCoverage } from '../lib/rules';
 import {
   listIndicators,
-  fetchIndicatorObservations,
+  fetchViaGateway,
   formatIndicatorValue,
   type IndicatorDefinition,
   type IndicatorObservation,
@@ -26,15 +26,17 @@ const ENTRIES = [
 function PilotIndicatorCard({ indicator }: { indicator: IndicatorDefinition }) {
   const [obs, setObs] = useState<IndicatorObservation[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [retrievedAt, setRetrievedAt] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let alive = true;
     setLoading(true);
-    fetchIndicatorObservations(indicator).then((r) => {
+    fetchViaGateway(indicator.id).then((r) => {
       if (!alive) return;
       setObs(r.observations);
-      setError(r.error ?? null);
+      setError(r.status === 'error' || r.status === 'empty' ? r.errorClass || r.status : null);
+      setRetrievedAt(r.observations[0]?.retrievedAt || (r.receipt as { retrievedAt?: string } | null)?.retrievedAt || null);
       setLoading(false);
     });
     return () => {
@@ -47,21 +49,32 @@ function PilotIndicatorCard({ indicator }: { indicator: IndicatorDefinition }) {
   return (
     <Card>
       <p className="muted" style={{ margin: 0, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-        {indicator.sector} · {indicator.measurementType} · {indicator.geoLevel}
+        {indicator.sector} · {indicator.measurementType} · national only
       </p>
       <strong>{indicator.title}</strong>
       {loading ? (
-        <p className="muted">Loading series from source…</p>
+        <p className="muted">Loading via Evidence Gateway…</p>
       ) : latest ? (
-        <p>
-          <span style={{ fontSize: '1.4rem', fontWeight: 700 }}>{formatIndicatorValue(latest.value, indicator.unit)}</span>
-          <span className="muted"> · {latest.date}</span>
-        </p>
+        <>
+          <p>
+            <span style={{ fontSize: '1.4rem', fontWeight: 700 }}>{formatIndicatorValue(latest.value, indicator.unit)}</span>
+            <span className="muted"> · reference {latest.referencePeriod}</span>
+          </p>
+          <p className="muted" style={{ fontSize: 12 }}>
+            Retrieved {retrievedAt ? new Date(retrievedAt).toISOString().slice(0, 16) + 'Z' : '—'}. Source: {indicator.sourcePublisher}.
+          </p>
+        </>
       ) : (
-        <p className="muted">No value returned ({error || 'empty series'}).</p>
+        <p className="muted">
+          {error === 'GATEWAY_UNREACHABLE'
+            ? 'Evidence Gateway unreachable (deploy API routes or run local serverless).'
+            : error
+              ? `No observation available (${error}). Upstream was not replaced with synthetic data.`
+              : 'No observation available.'}
+        </p>
       )}
       <p className="muted" style={{ fontSize: 13 }}>
-        Source: {indicator.sourcePublisher}. Not produced by ISEYC.
+        Not produced by ISEYC. National aggregate — not state-level.
       </p>
       <a href={indicator.sourceUrl} target="_blank" rel="noopener noreferrer">
         Open source
