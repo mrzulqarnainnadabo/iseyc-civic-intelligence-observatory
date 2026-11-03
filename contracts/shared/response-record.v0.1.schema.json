@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iseyc.org/contracts/shared/response-record.v0.1.schema.json",
+  "title": "ResponseRecord",
+  "description": "Documented institutional or operator follow-up. Never invent contacts or resolutions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "contractVersion", "communityRecordId", "kind", "recordedAt", "humanConfirmed"],
+  "properties": {
+    "id": { "type": "string" },
+    "contractVersion": { "type": "string", "const": "0.1.0" },
+    "communityRecordId": { "type": "string" },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "evidence-reviewed",
+        "responsibility-proposed",
+        "referral-documented",
+        "official-response-recorded",
+        "commitment-documented",
+        "follow-up-evidence",
+        "outcome-assessed",
+        "outcome-unknown"
+      ]
+    },
+    "summary": { "type": "string" },
+    "sourceUrl": { "type": ["string", "null"] },
+    "recordedAt": { "type": "string" },
+    "humanConfirmed": { "type": "boolean", "const": true },
+    "doesNotProveDelivery": { "type": "boolean", "const": true }
+  }
+}
