@@ -48,11 +48,15 @@ export function AppShell() {
           </ul>
         </nav>
       </header>
-      {adapter.mode === 'demo' && (
+      {adapter.mode === 'demo' ? (
         <Banner tone="demo">
-          <strong>Demonstration build.</strong> The source registry and national map are project research data.
-          Civic records, evidence items and institution links shown below are <strong>synthetic</strong> and do not
-          describe real Nigerian places or outcomes.
+          <strong>Demonstration mode.</strong> Records and evidence items are synthetic. Open without{' '}
+          <code>?demo=</code> to load published Civic Mandate records.
+        </Banner>
+      ) : (
+        <Banner tone="info">
+          <strong>Published community records</strong> from Civic Mandate (human-reviewed for publication).
+          Not a national survey. Publication is not independent verification of delivery.
         </Banner>
       )}
       <main id="main" className="main" tabIndex={-1}>

@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useBundle } from '../lib/data';
+import { useAdapter } from '../lib/hooks';
 import { PageHeader, Section } from '../design/layout';
 import { Button, Card, ChipGroup, EvidenceBadge, SearchBox, SelectField, SourceCitation, StatusBadge, SyntheticChip } from '../design/primitives';
 import { EmptyState } from '../design/feedback';
@@ -10,6 +11,8 @@ import { matchesText } from '../lib/rules';
 function toCsv(rows: string[][]) { return rows.map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(',')).join('\n'); }
 
 export default function Evidence() {
+  const adapter = useAdapter();
+  const isDemo = adapter.mode === 'demo';
   const [tab, setTab] = useState<'items' | 'registry'>('registry');
   return (
     <>
@@ -19,7 +22,7 @@ export default function Evidence() {
       />
       <p className="hero__meta" style={{marginTop:0,marginBottom:'1rem'}}>
         <span className="chip chip--real">Registry is project research data</span>
-        <span className="chip chip--synth">Evidence items in this build may be synthetic</span>
+        {isDemo ? <span className="chip chip--synth">Evidence items may be synthetic</span> : <span className="chip chip--real">Pulse-backed items are published community reports (unverified outcomes)</span>}
       </p>
       <Card title="How to use this library">
         <ol className="plain">

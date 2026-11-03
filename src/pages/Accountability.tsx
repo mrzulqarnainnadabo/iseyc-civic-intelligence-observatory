@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useBundle } from '../lib/data';
+import { useAdapter } from '../lib/hooks';
 import { PageHeader, Section } from '../design/layout';
 import { Banner, EmptyState } from '../design/feedback';
 import { Card, SelectField, SyntheticChip } from '../design/primitives';
@@ -9,6 +10,8 @@ import { SECTOR_LABEL, STAGE_LABEL, STAGES } from '../data/types';
 import { CLAIM_LABEL, claimStrength, countBy } from '../lib/rules';
 
 export default function Accountability() {
+  const adapter = useAdapter();
+  const isDemo = adapter.mode === 'demo';
   const { records, evidence, institutions, states } = useBundle();
   const [inst, setInst] = useState('');
   const [open, setOpen] = useState('');
@@ -24,14 +27,14 @@ export default function Accountability() {
       />
       <p className="hero__meta" style={{marginTop:0,marginBottom:'1rem'}}>
         <span className="chip chip--real">Stages kept distinct</span>
-        <span className="chip chip--synth">Demo records only in this build</span>
+        {isDemo ? <span className="chip chip--synth">Demo records only</span> : <span className="chip chip--real">Published Mandate records</span>}
         <span className="chip chip--pilot">No invented institutional replies</span>
       </p>
       <Banner tone="warn"><strong>Responsibility mappings are unverified.</strong> They are illustrative here. Before any real publication, each mapping needs a legal basis (enabling Act or instrument) and two-reviewer approval.</Banner>
       <Card title="Filter"><SelectField label="Institution" value={inst} onChange={setInst} allLabel="All institutions" options={institutions.map(i => ({ value: i.id, label: `${i.name} (${i.tier})` }))} /></Card>
       <div className="grid2">
         <Section title="What the evidence supports" id="claims" note={<><SyntheticChip /> Invented records. Counts show how the claim check works.</>}>
-          {rows.length === 0 ? <EmptyState title="No records for this institution" /> :
+          {rows.length === 0 ? <EmptyState title="No published records for this filter">Only published records in the current dataset are listed. Empty does not mean the issue is absent on the ground.</EmptyState> :
             <BarChart ariaLabel="Records by claim strength" unit="records" items={Object.entries(CLAIM_LABEL).map(([k, label]) => ({ key: k, label, value: (claims as Record<string, number>)[k] ?? 0 }))} />}
         </Section>
         <Section title="Stage key" id="key">
@@ -40,7 +43,7 @@ export default function Accountability() {
         </Section>
       </div>
       <Section title={`Records (${rows.length})`} id="tbl">
-        {rows.length === 0 ? <EmptyState title="Nothing to show">No published records match.</EmptyState> : (
+        {rows.length === 0 ? <EmptyState title="Nothing to show in this dataset">No published records match these filters. That is not a claim about prevalence or resolution.</EmptyState> : (
           <>
             <div className="tablewrap tablewrap--desktop"><table className="table"><caption className="sr-only">Records with lifecycle strip and claim strength</caption>
               <thead><tr><th scope="col">Record</th><th scope="col">State</th><th scope="col">Institutions</th><th scope="col">Stages</th><th scope="col">Evidence says</th></tr></thead>
