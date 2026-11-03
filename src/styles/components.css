@@ -208,3 +208,67 @@ button.chip--on, .chip--on { background: var(--g800); color: #fff; border-color:
 .brief ul { padding-left: 1.2rem; }
 .brief__caveats { background: var(--warn-bg); padding: var(--s3) var(--s4); border-radius: var(--r-sm); margin-top: var(--s4); }
 .brief__status { display: inline-block; font-size: var(--fs-xs, .8rem); font-weight: 700; letter-spacing: .03em; text-transform: uppercase; color: var(--gold-text); margin-bottom: var(--s2); }
+
+
+/* Product quality pass */
+.footer__grid {
+  display: grid;
+  gap: var(--s5);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .footer__grid { grid-template-columns: 1.2fr 1fr; }
+}
+.footer__title {
+  font-size: var(--fs-1);
+  margin: 0 0 var(--s3);
+}
+.footer__mode { margin-top: var(--s3); }
+.nav__link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.65rem;
+}
+.tablewrap--desktop { display: none; }
+@media (min-width: 900px) {
+  .tablewrap--desktop { display: block; }
+  .acc-cards { display: none; }
+}
+.acc-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--s3);
+}
+.acc-card {
+  border: 1px solid var(--line);
+  border-radius: var(--r-md, 8px);
+  background: #fff;
+  padding: var(--s3);
+}
+.acc-card--on {
+  border-color: var(--g700);
+  box-shadow: 0 0 0 1px var(--g700);
+}
+.acc-card__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+.acc-card__claim {
+  font-size: var(--fs-sm, 0.9rem);
+  font-weight: 700;
+  color: var(--g800);
+}
+.acc-card__inst {
+  margin: var(--s2) 0 0;
+  font-size: var(--fs-sm, 0.9rem);
+}

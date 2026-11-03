@@ -21,6 +21,13 @@ export default function Evidence() {
         <span className="chip chip--real">Registry is project research data</span>
         <span className="chip chip--synth">Evidence items in this build may be synthetic</span>
       </p>
+      <Card title="How to use this library">
+        <ol className="plain">
+          <li>Start with <strong>Sources</strong> to see what is registered and whether the link was confirmed.</li>
+          <li>Open <strong>Evidence items</strong> only after you understand the source class and its limits.</li>
+          <li>Treat every limitation line as part of the finding — not optional fine print.</li>
+        </ol>
+      </Card>
       <div className="tabs" role="tablist" aria-label="Evidence views">
         <button role="tab" id="t-reg" aria-selected={tab === 'registry'} aria-controls="p-reg" className={`tab${tab === 'registry' ? ' tab--on' : ''}`} onClick={() => setTab('registry')}>Source registry (real)</button>
         <button role="tab" id="t-items" aria-selected={tab === 'items'} aria-controls="p-items" className={`tab${tab === 'items' ? ' tab--on' : ''}`} onClick={() => setTab('items')}>Evidence items (demonstration)</button>
