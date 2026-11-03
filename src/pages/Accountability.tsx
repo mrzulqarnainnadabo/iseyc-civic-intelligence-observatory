@@ -1,0 +1,53 @@
+import { useMemo, useState } from 'react';
+import { useBundle } from '../lib/data';
+import { PageHeader, Section } from '../design/layout';
+import { Banner, EmptyState } from '../design/feedback';
+import { Card, SelectField, SyntheticChip } from '../design/primitives';
+import { BarChart } from '../design/charts';
+import { LifecycleTimeline, StageStrip } from '../design/timeline';
+import { SECTOR_LABEL, STAGE_LABEL, STAGES } from '../data/types';
+import { CLAIM_LABEL, claimStrength, countBy } from '../lib/rules';
+
+export default function Accountability() {
+  const { records, evidence, institutions, states } = useBundle();
+  const [inst, setInst] = useState('');
+  const [open, setOpen] = useState('');
+  const rows = useMemo(() => records.filter(r => !inst || r.institutionIds.includes(inst)), [records, inst]);
+  const claims = countBy(rows, r => claimStrength(r, evidence));
+  const cur = records.find(r => r.id === open);
+  const instName = (id: string) => institutions.find(i => i.id === id)?.name ?? id;
+  return (
+    <>
+      <PageHeader title="Institutional accountability" lead="Follow each demand from publication to independently verified delivery. A referral, an announcement or a budget line is shown, but never counted as delivery." />
+      <Banner tone="warn"><strong>Responsibility mappings are unverified.</strong> They are illustrative here. Before any real publication, each mapping needs a legal basis (enabling Act or instrument) and two-reviewer approval.</Banner>
+      <Card title="Filter"><SelectField label="Institution" value={inst} onChange={setInst} allLabel="All institutions" options={institutions.map(i => ({ value: i.id, label: `${i.name} (${i.tier})` }))} /></Card>
+      <div className="grid2">
+        <Section title="What the evidence supports" id="claims" note={<><SyntheticChip /> Invented records. Counts show how the claim check works.</>}>
+          {rows.length === 0 ? <EmptyState title="No records for this institution" /> :
+            <BarChart ariaLabel="Records by claim strength" unit="records" items={Object.entries(CLAIM_LABEL).map(([k, label]) => ({ key: k, label, value: (claims as Record<string, number>)[k] ?? 0 }))} />}
+        </Section>
+        <Section title="Stage key" id="key">
+          <ol className="plain">{STAGES.map(s => <li key={s}><strong>{STAGE_LABEL[s]}</strong></li>)}</ol>
+          <p className="muted">Each record shows six cells in this order. Dark = evidenced, outlined = claimed only, pale = unknown, empty = not reached. Only the last cell, backed by independent evidence, establishes delivery.</p>
+        </Section>
+      </div>
+      <Section title={`Records (${rows.length})`} id="tbl">
+        {rows.length === 0 ? <EmptyState title="Nothing to show">No published records match.</EmptyState> : (
+          <div className="tablewrap"><table className="table"><caption className="sr-only">Records with lifecycle strip and claim strength</caption>
+            <thead><tr><th scope="col">Record</th><th scope="col">State</th><th scope="col">Institutions</th><th scope="col">Stages</th><th scope="col">Evidence says</th></tr></thead>
+            <tbody>{rows.map(r => (
+              <tr key={r.id} className={open === r.id ? 'row--on' : ''}>
+                <th scope="row"><button type="button" className="linkbtn" onClick={() => setOpen(r.id)}>{r.title.replace('Demonstration: ', '')}</button><br /><span className="muted">{SECTOR_LABEL[r.sector]} · {r.id}</span></th>
+                <td>{states.find(s => s.id === r.stateId)?.name}</td>
+                <td>{r.institutionIds.map(instName).join('; ')}</td>
+                <td><StageStrip record={r} /></td>
+                <td>{CLAIM_LABEL[claimStrength(r, evidence)]}</td>
+              </tr>))}</tbody></table></div>
+        )}
+      </Section>
+      {cur && <Section title={`Lifecycle: ${cur.id}`} id="life"><LifecycleTimeline record={cur} evidence={evidence} />
+        <h3>Unknowns</h3><ul className="plain">{cur.unknowns.length ? cur.unknowns.map(u => <li key={u}>{u}</li>) : <li>None recorded.</li>}</ul>
+        <h3>Next steps</h3><ul className="plain">{cur.nextSteps.map(u => <li key={u}>{u}</li>)}</ul></Section>}
+    </>
+  );
+}

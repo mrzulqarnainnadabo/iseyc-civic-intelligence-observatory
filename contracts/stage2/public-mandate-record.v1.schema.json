@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iseyc.org/contracts/stage2/public-mandate-record.v1.schema.json",
+  "title": "PublicMandateRecord v1",
+  "description": "Canonical public DTO for published Civic Mandate community records shared with Civic Brain and Observatory. Based on live /api/pulse allowlist. Private contributor fields are forbidden.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "sentence", "publicationStatus", "createdAt"],
+  "properties": {
+    "schemaVersion": { "const": "public-mandate-record.v1" },
+    "id": { "type": "string", "minLength": 1 },
+    "sentence": { "type": "string", "minLength": 1 },
+    "mandate": { "type": ["string", "null"] },
+    "dutyId": { "type": ["string", "null"] },
+    "duty": { "type": ["string", "null"] },
+    "officeId": { "type": ["string", "null"] },
+    "office": { "type": ["string", "null"] },
+    "geo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "stateId": { "type": ["string", "null"] },
+        "state": { "type": ["string", "null"] },
+        "lgaId": { "type": ["string", "null"] },
+        "lga": { "type": ["string", "null"] },
+        "originalSubmittedText": { "type": ["string", "null"] },
+        "resolution": { "type": "string", "enum": ["resolved", "ambiguous", "unknown", "not_applicable"] }
+      }
+    },
+    "state": { "type": ["string", "null"] },
+    "lga": { "type": ["string", "null"] },
+    "publicationStatus": { "const": "Published" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "updatedAt": { "type": ["string", "null"], "format": "date-time" },
+    "sourceUrl": { "type": ["string", "null"] }
+  }
+}

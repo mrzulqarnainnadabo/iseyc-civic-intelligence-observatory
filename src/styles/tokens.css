@@ -1,0 +1,13 @@
+/* ISEYC Observatory design tokens. Deep green, white, restrained gold. */
+:root {
+  --g900: #0E2F20; --g800: #14452F; --g700: #1C5A3E; --g500: #3F7F5C; --g300: #A9C9B4; --g100: #E6EFE9; --g50: #F2F7F4;
+  --gold: #B8975A; --gold-text: #7D6228; --gold-bg: #F7F0E0;
+  --paper: #FBFAF6; --white: #FFFFFF; --ink: #1B2420; --muted: #4A5750; --line: #D7DDD8;
+  --danger: #9B2C2C; --danger-bg: #FBEDED; --warn: #7A4F00; --warn-bg: #FFF4DD; --info: #1F4E79; --info-bg: #EAF2FA;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+  --s1: .25rem; --s2: .5rem; --s3: .75rem; --s4: 1rem; --s5: 1.5rem; --s6: 2rem; --s7: 3rem;
+  --r: 10px; --r-sm: 6px; --shadow: 0 1px 2px rgba(14,47,32,.08), 0 2px 8px rgba(14,47,32,.05);
+  --fs-0: 1rem; --fs-1: 1.125rem; --fs-2: 1.35rem; --fs-3: 1.8rem; --fs-4: 2.3rem; --fs-sm: .9rem;
+  --max: 1180px;
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iseyc.invalid/schemas/evidence-item.schema.json",
+  "title": "EvidenceItem (contract v1.0, proposed)",
+  "type": "object",
+  "required": ["id", "synthetic", "recordId", "kind", "status", "title", "excerpt", "publisherLabel", "date", "sector", "stateId", "limitations"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string" },
+    "synthetic": { "type": "boolean" },
+    "recordId": { "type": "string" },
+    "kind": { "enum": ["official-data", "published-research", "media-report", "community-submission", "independently-verified"] },
+    "status": { "enum": ["verified", "unverified", "outdated", "unavailable", "disputed"] },
+    "title": { "type": "string" },
+    "excerpt": { "type": "string", "description": "Short paraphrase or permitted excerpt. Respect source copyright." },
+    "publisherLabel": { "type": "string" },
+    "date": { "type": "string", "format": "date" },
+    "sector": { "type": "string" },
+    "stateId": { "type": "string" },
+    "limitations": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "verification": {
+      "type": "object",
+      "required": ["reviewerId", "reviewedAt", "method"],
+      "additionalProperties": false,
+      "properties": {
+        "reviewerId": { "type": "string", "minLength": 1 },
+        "reviewedAt": { "type": "string", "format": "date" },
+        "method": { "type": "string", "minLength": 1 }
+      }
+    }
+  },
+  "allOf": [
+    { "if": { "properties": { "kind": { "const": "community-submission" } } }, "then": { "properties": { "status": { "not": { "const": "verified" } } } } },
+    { "if": { "properties": { "synthetic": { "const": true } } }, "then": { "not": { "required": ["verification"] } } }
+  ]
+}
