@@ -58,15 +58,33 @@ export function AppShell() {
       <main id="main" className="main" tabIndex={-1}>
         <Outlet />
       </main>
-      <footer className="footer">
-        <p>
-          <strong>What this is not:</strong> a poll, ranking, endorsement, campaign tool or election forecast.
-          Community submissions are not a representative survey. Published means human-reviewed, not proven.
-        </p>
-        <p className="muted">
-          Initiative for Sustainable Evolution for Youth and Community (ISEYC). Observatory prototype — not connected
-          to live Civic Mandate or Civic Brain production data in this build.
-        </p>
+      <footer className="footer" role="contentinfo">
+        <div className="footer__grid">
+          <div>
+            <h2 className="footer__title">How to read this product</h2>
+            <ul className="plain">
+              <li>Registered sources are catalogued research targets — not automatically verified findings.</li>
+              <li>Community submissions show what was reported after review rules elsewhere, not how common a problem is.</li>
+              <li>Referral, announcement, funding, implementation and independent verification stay separate stages.</li>
+              <li>Institution links in this build are illustrative until a legal basis is attached and dual-reviewed.</li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="footer__title">Boundaries</h2>
+            <p>
+              <strong>Not</strong> a poll, ranking, endorsement, campaign tool or election forecast.
+              Published means human-reviewed for public display, not that a claim is proven.
+            </p>
+            <p className="muted footer__mode">
+              Data mode: <strong>{adapter.mode === 'demo' ? 'demonstration' : adapter.mode}</strong>
+              {' · '}
+              <span>{adapter.label}</span>
+            </p>
+            <p className="muted">
+              Initiative for Sustainable Evolution for Youth and Community (ISEYC) · Non-partisan civic intelligence
+            </p>
+          </div>
+        </div>
       </footer>
     </div>
   );

@@ -41,16 +41,31 @@ export default function Accountability() {
       </div>
       <Section title={`Records (${rows.length})`} id="tbl">
         {rows.length === 0 ? <EmptyState title="Nothing to show">No published records match.</EmptyState> : (
-          <div className="tablewrap"><table className="table"><caption className="sr-only">Records with lifecycle strip and claim strength</caption>
-            <thead><tr><th scope="col">Record</th><th scope="col">State</th><th scope="col">Institutions</th><th scope="col">Stages</th><th scope="col">Evidence says</th></tr></thead>
-            <tbody>{rows.map(r => (
-              <tr key={r.id} className={open === r.id ? 'row--on' : ''}>
-                <th scope="row"><button type="button" className="linkbtn" onClick={() => setOpen(r.id)}>{r.title.replace('Demonstration: ', '')}</button><br /><span className="muted">{SECTOR_LABEL[r.sector]} · {r.id}</span></th>
-                <td>{states.find(s => s.id === r.stateId)?.name}</td>
-                <td>{r.institutionIds.map(instName).join('; ')}</td>
-                <td><StageStrip record={r} /></td>
-                <td>{CLAIM_LABEL[claimStrength(r, evidence)]}</td>
-              </tr>))}</tbody></table></div>
+          <>
+            <div className="tablewrap tablewrap--desktop"><table className="table"><caption className="sr-only">Records with lifecycle strip and claim strength</caption>
+              <thead><tr><th scope="col">Record</th><th scope="col">State</th><th scope="col">Institutions</th><th scope="col">Stages</th><th scope="col">Evidence says</th></tr></thead>
+              <tbody>{rows.map(r => (
+                <tr key={r.id} className={open === r.id ? 'row--on' : ''}>
+                  <th scope="row"><button type="button" className="linkbtn" onClick={() => setOpen(r.id)}>{r.title.replace('Demonstration: ', '')}</button><br /><span className="muted">{SECTOR_LABEL[r.sector]} · {r.id}</span></th>
+                  <td>{states.find(s => s.id === r.stateId)?.name}</td>
+                  <td>{r.institutionIds.map(instName).join('; ')}</td>
+                  <td><StageStrip record={r} /></td>
+                  <td>{CLAIM_LABEL[claimStrength(r, evidence)]}</td>
+                </tr>))}</tbody></table></div>
+            <ul className="acc-cards" aria-label="Records (mobile layout)">
+              {rows.map(r => (
+                <li key={`m-${r.id}`} className={`acc-card${open === r.id ? ' acc-card--on' : ''}`}>
+                  <button type="button" className="acc-card__btn" onClick={() => setOpen(open === r.id ? '' : r.id)} aria-expanded={open === r.id}>
+                    <strong>{r.title.replace('Demonstration: ', '')}</strong>
+                    <span className="muted">{SECTOR_LABEL[r.sector]} · {states.find(s => s.id === r.stateId)?.name} · {r.id}</span>
+                    <span className="acc-card__claim">{CLAIM_LABEL[claimStrength(r, evidence)]}</span>
+                    <StageStrip record={r} />
+                  </button>
+                  <p className="muted acc-card__inst">{r.institutionIds.map(instName).join('; ')}</p>
+                </li>
+              ))}
+            </ul>
+          </>
         )}
       </Section>
       {cur && <Section title={`Lifecycle: ${cur.id}`} id="life"><LifecycleTimeline record={cur} evidence={evidence} />
