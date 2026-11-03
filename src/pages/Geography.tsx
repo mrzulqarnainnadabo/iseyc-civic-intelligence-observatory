@@ -23,7 +23,15 @@ export default function Geography() {
   const effective = lite && view === 'map' ? 'map' : view;
   return (
     <>
-      <PageHeader title="Geographic explorer" lead="See where published demands sit and which sources can report at state level or below. Counts are not rates and do not rank places." />
+      <PageHeader
+        title="Geography"
+        lead="Explore Nigeria’s 36 states and the FCT. Selecting a place shows demonstration records and registered sources that can report at state level or below. Map presence is not proof of evidence coverage. Counts are not rates and do not rank places."
+      />
+      <p className="hero__meta" style={{marginTop:0,marginBottom:'1rem'}}>
+        <span className="chip chip--real">36 states + FCT</span>
+        <span className="chip chip--synth">Record locations: synthetic demo</span>
+        <span className="chip chip--pilot">No invented LGA identifiers</span>
+      </p>
       <Card title="Layer">
         <ChipGroup<Sector> label="Sector" value={sector} onChange={setSector} options={SECTORS.map(s => ({ value: s, label: SECTOR_LABEL[s] }))} />
         <div className="viewtoggle" role="group" aria-label="View">

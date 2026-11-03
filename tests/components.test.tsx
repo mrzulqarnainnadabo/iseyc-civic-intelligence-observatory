@@ -38,9 +38,10 @@ describe('design system', () => {
 });
 
 describe('pages', () => {
-  it('Overview offers nine questions and labels synthetic funnel data', () => {
+  it('Overview presents institutional entry points and labels synthetic funnel data', () => {
     render(wrap(<Overview />));
-    expect(screen.getByText('What is happening?')).toBeInTheDocument();
+    expect(screen.getByText(/Understand public evidence across Nigeria/i)).toBeInTheDocument();
+    expect(screen.getByText('Evidence library')).toBeInTheDocument();
     expect(screen.getAllByText('DEMONSTRATION DATA').length).toBeGreaterThan(0);
     expect(screen.getByText(/A referral does not mean action/)).toBeInTheDocument();
   });
@@ -78,6 +79,9 @@ describe('pages', () => {
   });
   it('Briefs build from scope and carry the caveats', () => {
     render(wrap(<Briefs />));
+    expect(screen.getByRole('heading', { name: /Civic Intelligence Brief: All sectors, All states/ })).toBeInTheDocument();
+    expect(screen.getByText(/Interface draft/)).toBeInTheDocument();
+    fireEvent.change(screen.getByLabelText('State'), { target: { value: 'kaduna' } });
     expect(screen.getByRole('heading', { name: /Civic Intelligence Brief: All sectors, Kaduna/ })).toBeInTheDocument();
     expect(screen.getByText(/Community submissions are not a representative survey/)).toBeInTheDocument();
   });

@@ -14,7 +14,7 @@ export function ErrorState({ message, onRetry }: { message: string; onRetry?: ()
   );
 }
 export function EmptyState({ title, children, action }: { title: string; children?: ReactNode; action?: ReactNode }) {
-  return <div className="state state--empty"><h3>{title}</h3>{children && <p>{children}</p>}{action}</div>;
+  return <div className="empty state state--empty"><strong>{title}</strong>{children && <p>{children}</p>}{action}</div>;
 }
 export function Banner({ tone = 'info', children }: { tone?: 'info' | 'warn' | 'demo'; children: ReactNode }) {
   return <div className={`banner banner--${tone}`} role="note">{children}</div>;

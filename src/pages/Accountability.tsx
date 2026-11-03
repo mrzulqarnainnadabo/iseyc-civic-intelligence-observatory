@@ -18,7 +18,15 @@ export default function Accountability() {
   const instName = (id: string) => institutions.find(i => i.id === id)?.name ?? id;
   return (
     <>
-      <PageHeader title="Institutional accountability" lead="Follow each demand from publication to independently verified delivery. A referral, an announcement or a budget line is shown, but never counted as delivery." />
+      <PageHeader
+        title="Accountability"
+        lead="Trace the path from a published demand to duty, institution, public commitment, and any evidence of delivery. Announcement is not implementation. Budget is not expenditure. Expenditure is not verified service delivery."
+      />
+      <p className="hero__meta" style={{marginTop:0,marginBottom:'1rem'}}>
+        <span className="chip chip--real">Stages kept distinct</span>
+        <span className="chip chip--synth">Demo records only in this build</span>
+        <span className="chip chip--pilot">No invented institutional replies</span>
+      </p>
       <Banner tone="warn"><strong>Responsibility mappings are unverified.</strong> They are illustrative here. Before any real publication, each mapping needs a legal basis (enabling Act or instrument) and two-reviewer approval.</Banner>
       <Card title="Filter"><SelectField label="Institution" value={inst} onChange={setInst} allLabel="All institutions" options={institutions.map(i => ({ value: i.id, label: `${i.name} (${i.tier})` }))} /></Card>
       <div className="grid2">

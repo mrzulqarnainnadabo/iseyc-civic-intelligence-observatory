@@ -5,7 +5,7 @@ import { Banner } from './feedback';
 
 export const NAV = [
   { to: '/', label: 'Overview', end: true },
-  { to: '/issues', label: 'Issues and sectors' },
+  { to: '/issues', label: 'Sectors' },
   { to: '/geography', label: 'Geography' },
   { to: '/evidence', label: 'Evidence' },
   { to: '/accountability', label: 'Accountability' },
@@ -13,32 +13,102 @@ export const NAV = [
 ];
 
 export function AppShell() {
-  const adapter = useAdapter(); const { lite, setLite } = useLite();
+  const adapter = useAdapter();
+  const { lite, setLite } = useLite();
   return (
     <div className="shell">
       <a className="skip" href="#main">Skip to main content</a>
       <header className="topbar">
         <div className="topbar__inner">
-          <div className="brand"><span className="brand__mark" aria-hidden="true" /><div><strong>ISEYC Civic Intelligence Observatory</strong><span className="brand__sub">Evidence-led public intelligence. Non-partisan.</span></div></div>
-          <label className="lite"><input type="checkbox" checked={lite} onChange={e => setLite(e.target.checked)} /> Low-data mode</label>
+          <div className="brand">
+            <span className="brand__mark" aria-hidden="true" />
+            <div>
+              <strong>ISEYC Civic Intelligence Observatory</strong>
+              <span className="brand__sub">Evidence-led · Non-partisan · Nigeria</span>
+            </div>
+          </div>
+          <label className="lite">
+            <input type="checkbox" checked={lite} onChange={(e) => setLite(e.target.checked)} />
+            Low-data mode
+          </label>
         </div>
         <nav className="nav" aria-label="Main">
-          <ul>{NAV.map(n => <li key={n.to}><NavLink to={n.to} end={n.end} className={({ isActive }) => `nav__link${isActive ? ' nav__link--on' : ''}`}>{n.label}</NavLink></li>)}</ul>
+          <ul>
+            {NAV.map((n) => (
+              <li key={n.to}>
+                <NavLink
+                  to={n.to}
+                  end={n.end}
+                  className={({ isActive }) => `nav__link${isActive ? ' nav__link--on' : ''}`}
+                >
+                  {n.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
         </nav>
       </header>
-      {adapter.mode === 'demo' && <Banner tone="demo"><strong>Demonstration build.</strong> The source registry and map are real project data. All civic records, evidence items and institution links are <strong>synthetic</strong> and say nothing about any real place.</Banner>}
-      <main id="main" className="main" tabIndex={-1}><Outlet /></main>
+      {adapter.mode === 'demo' && (
+        <Banner tone="demo">
+          <strong>Demonstration build.</strong> The source registry and national map are project research data.
+          Civic records, evidence items and institution links shown below are <strong>synthetic</strong> and do not
+          describe real Nigerian places or outcomes.
+        </Banner>
+      )}
+      <main id="main" className="main" tabIndex={-1}>
+        <Outlet />
+      </main>
       <footer className="footer">
-        <p><strong>What this is not:</strong> a poll, a ranking, an endorsement, a campaign tool or an election forecast. Community submissions are not a representative survey. Published means reviewed, not proven.</p>
-        <p className="muted">ISEYC, Initiative for Sustainable Evolution for Youth and Community, Abuja. Prototype v0.1. Not connected to the live Civic Mandate or Civic Brain deployments.</p>
+        <p>
+          <strong>What this is not:</strong> a poll, ranking, endorsement, campaign tool or election forecast.
+          Community submissions are not a representative survey. Published means human-reviewed, not proven.
+        </p>
+        <p className="muted">
+          Initiative for Sustainable Evolution for Youth and Community (ISEYC). Observatory prototype — not connected
+          to live Civic Mandate or Civic Brain production data in this build.
+        </p>
       </footer>
     </div>
   );
 }
 
 export function PageHeader({ title, lead, children }: { title: string; lead: ReactNode; children?: ReactNode }) {
-  return <div className="pagehead"><h1>{title}</h1><p className="lead">{lead}</p>{children}</div>;
+  return (
+    <div className="pagehead">
+      <h1>{title}</h1>
+      <p className="lead">{lead}</p>
+      {children}
+    </div>
+  );
 }
-export function Section({ title, id, children, note }: { title: string; id?: string; children: ReactNode; note?: ReactNode }) {
-  return <section className="section" aria-labelledby={id}><h2 id={id}>{title}</h2>{note && <p className="muted section__note">{note}</p>}{children}</section>;
+
+export function Section({
+  title,
+  id,
+  note,
+  children,
+}: {
+  title: string;
+  id?: string;
+  note?: ReactNode;
+  children: ReactNode;
+}) {
+  return (
+    <section className="section" id={id} aria-labelledby={id ? `${id}-title` : undefined}>
+      <div className="section__head">
+        <h2 id={id ? `${id}-title` : undefined}>{title}</h2>
+        {note ? <p className="section__note">{note}</p> : null}
+      </div>
+      {children}
+    </section>
+  );
+}
+
+export function Card({ title, children }: { title?: string; children: ReactNode }) {
+  return (
+    <div className="card">
+      {title ? <h3>{title}</h3> : null}
+      {children}
+    </div>
+  );
 }
