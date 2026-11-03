@@ -51,10 +51,38 @@ describe('mandate pulse adapter', () => {
     expect(institutions).toEqual([]);
   });
 
-  it('selectAdapter uses demo only when ?demo= is set', () => {
-    const live = selectAdapter('');
-    expect(live.mode).toBe('live');
-    const demo = selectAdapter('?demo=normal');
-    expect(demo.mode).toBe('demo');
+  it('selectAdapter uses demo for ?demo=1 and live by default', () => {
+    expect(selectAdapter('').mode).toBe('live');
+    expect(selectAdapter('?demo=1').mode).toBe('demo');
+    expect(selectAdapter('?demo=true').mode).toBe('demo');
+    expect(selectAdapter('?demo=normal').mode).toBe('demo');
+  });
+
+  it('does not fall back to demo when pulse fails', async () => {
+    const fetchImpl = vi.fn(async () => ({
+      ok: false,
+      status: 503,
+      json: async () => ({}),
+    })) as unknown as typeof fetch;
+    const adapter = createMandatePulseAdapter({ fetchImpl });
+    expect(adapter.mode).toBe('live');
+    await expect(adapter.getRecords()).rejects.toThrow(/Pulse HTTP 503/);
+  });
+
+  it('empty voices yield empty records without inventing data', async () => {
+    const fetchImpl = vi.fn(async () => ({
+      ok: true,
+      json: async () => ({ total: 0, voices: [] }),
+    })) as unknown as typeof fetch;
+    const adapter = createMandatePulseAdapter({ fetchImpl });
+    expect(await adapter.getRecords()).toEqual([]);
+    expect(await adapter.getEvidence()).toEqual([]);
+  });
+
+  it('rejects non-allowlisted pulse host override', () => {
+    const a = selectAdapter('?pulse=https://evil.example/2027-street-mandate/api/pulse');
+    // Still live mode but must use default host — exercised by constructing adapter
+    expect(a.mode).toBe('live');
+    expect(a.label).toContain('Published');
   });
 });

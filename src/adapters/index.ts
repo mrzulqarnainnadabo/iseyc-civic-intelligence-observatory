@@ -2,10 +2,27 @@ import type { ObservatoryAdapter } from '../data/types';
 import { createDemoAdapter, type DemoBehaviour } from './demoAdapter';
 import { createMandatePulseAdapter, DEFAULT_PULSE_URL } from './mandatePulseAdapter';
 
+const ALLOWED_PULSE_HOSTS = new Set([
+  '2027-street-mandate.vercel.app',
+]);
+
+function resolvePulseUrl(raw: string | null): string {
+  if (!raw) return DEFAULT_PULSE_URL;
+  try {
+    const u = new URL(raw);
+    if (u.protocol !== 'https:') return DEFAULT_PULSE_URL;
+    if (!ALLOWED_PULSE_HOSTS.has(u.hostname)) return DEFAULT_PULSE_URL;
+    if (!u.pathname.includes('/api/pulse')) return DEFAULT_PULSE_URL;
+    return u.toString();
+  } catch {
+    return DEFAULT_PULSE_URL;
+  }
+}
+
 /**
  * Default: published Civic Mandate pulse (real moderated public records).
- * Demo synthetic set: add ?demo=normal|empty|error|slow (for tests and offline review).
- * Optional override: ?pulse=<url> (https only, host allowlisted to Mandate production/preview later if needed).
+ * Demo synthetic set: ?demo=1|true|normal|empty|error|slow
+ * Optional ?pulse= only if https host is allowlisted Mandate production host.
  */
 export function selectAdapter(
   search: string = typeof location !== 'undefined'
@@ -13,15 +30,11 @@ export function selectAdapter(
     : '',
 ): ObservatoryAdapter {
   const p = new URLSearchParams(search.replace(/^\?/, ''));
-  const demo = p.get('demo');
-  if (demo === 'empty' || demo === 'error' || demo === 'slow' || demo === 'normal') {
-    const behaviour: DemoBehaviour = demo === 'normal' ? 'normal' : demo;
+  const demo = (p.get('demo') || '').toLowerCase();
+  if (demo === '1' || demo === 'true' || demo === 'normal' || demo === 'empty' || demo === 'error' || demo === 'slow') {
+    const behaviour: DemoBehaviour =
+      demo === 'empty' || demo === 'error' || demo === 'slow' ? demo : 'normal';
     return createDemoAdapter({ behaviour });
   }
-  const pulse = p.get('pulse');
-  const pulseUrl =
-    pulse && pulse.startsWith('https://') && pulse.includes('2027-street-mandate')
-      ? pulse
-      : DEFAULT_PULSE_URL;
-  return createMandatePulseAdapter({ pulseUrl });
+  return createMandatePulseAdapter({ pulseUrl: resolvePulseUrl(p.get('pulse')) });
 }
