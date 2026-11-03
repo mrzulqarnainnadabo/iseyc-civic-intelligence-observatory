@@ -36,7 +36,7 @@ export default function Overview() {
         <div className="hero__meta">
           <span className="chip chip--real">Registry: {sources.length} sources</span>
           <span className="chip chip--pilot">{confirmed} link-confirmed</span>
-          <span className="chip chip--synth">Records in this build: synthetic demo</span>
+          <span className="chip chip--real">Default data: published Mandate pulse</span>
         </div>
         <div className="hero__actions">
           <Link className="btn btn--primary" to="/evidence">
