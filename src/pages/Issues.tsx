@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useBundle } from '../lib/data';
+import { useAdapter } from '../lib/hooks';
 import { PageHeader, Section, Card } from '../design/layout';
 import { SearchBox, SelectField, SyntheticChip, SourceCitation, StatusBadge } from '../design/primitives';
 import { BarChart } from '../design/charts';
@@ -9,6 +10,8 @@ import { SECTORS, SECTOR_LABEL, type Sector } from '../data/types';
 import { matchesText, countBy, CLAIM_LABEL, claimStrength } from '../lib/rules';
 
 export default function Issues() {
+  const adapter = useAdapter();
+  const isDemo = adapter.mode === 'demo';
   const { records, evidence, sources, states, institutions } = useBundle();
   const [sector, setSector] = useState<Sector | ''>('');
   const [stateId, setStateId] = useState('');
@@ -139,12 +142,12 @@ export default function Issues() {
         </Section>
         <div>
           <Section
-            title="Demo records by sector"
+            title={isDemo ? "Demo records by sector" : "Published records by sector"}
             id="bysector"
-            note="Demonstration counts only. Submissions show what people chose to report, not prevalence."
+            note={isDemo ? "Demonstration counts only. Not prevalence." : "Published record counts only. Not prevalence or severity."}
           >
             <BarChart
-              ariaLabel="Demonstration records by sector"
+              ariaLabel={isDemo ? "Demonstration records by sector" : "Published records by sector"}
               unit="records"
               items={SECTORS.map((s) => ({ key: s, label: SECTOR_LABEL[s], value: bySector[s] ?? 0 }))}
             />

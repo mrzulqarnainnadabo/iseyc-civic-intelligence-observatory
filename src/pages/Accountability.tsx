@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useBundle } from '../lib/data';
+import { useAdapter } from '../lib/hooks';
 import { PageHeader, Section } from '../design/layout';
 import { Banner, EmptyState } from '../design/feedback';
 import { Card, SelectField, SyntheticChip } from '../design/primitives';
@@ -9,6 +10,8 @@ import { SECTOR_LABEL, STAGE_LABEL, STAGES } from '../data/types';
 import { CLAIM_LABEL, claimStrength, countBy } from '../lib/rules';
 
 export default function Accountability() {
+  const adapter = useAdapter();
+  const isDemo = adapter.mode === 'demo';
   const { records, evidence, institutions, states } = useBundle();
   const [inst, setInst] = useState('');
   const [open, setOpen] = useState('');
@@ -24,7 +27,7 @@ export default function Accountability() {
       />
       <p className="hero__meta" style={{marginTop:0,marginBottom:'1rem'}}>
         <span className="chip chip--real">Stages kept distinct</span>
-        <span className="chip chip--synth">Demo records only in this build</span>
+        {isDemo ? <span className="chip chip--synth">Demo records only</span> : <span className="chip chip--real">Published Mandate records</span>}
         <span className="chip chip--pilot">No invented institutional replies</span>
       </p>
       <Banner tone="warn"><strong>Responsibility mappings are unverified.</strong> They are illustrative here. Before any real publication, each mapping needs a legal basis (enabling Act or instrument) and two-reviewer approval.</Banner>

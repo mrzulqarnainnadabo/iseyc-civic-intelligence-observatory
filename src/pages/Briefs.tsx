@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useBundle } from '../lib/data';
+import { useAdapter } from '../lib/hooks';
 import { PageHeader, Card } from '../design/layout';
 import { SelectField, Button, SyntheticChip } from '../design/primitives';
 import { EmptyState } from '../design/feedback';
@@ -7,6 +8,8 @@ import { SECTORS, SECTOR_LABEL, type Sector } from '../data/types';
 import { buildBrief, briefToMarkdown } from '../lib/briefs';
 
 export default function Briefs() {
+  const adapter = useAdapter();
+  const isDemo = adapter.mode === 'demo';
   const { records, evidence, institutions, states } = useBundle();
   const [stateId, setStateId] = useState('');
   const [sector, setSector] = useState('');
@@ -51,7 +54,7 @@ export default function Briefs() {
         lead="A brief answers fixed questions from the records on hand: what is known, what the evidence supports, what remains unknown, and what to check next. AI or automated text is never an approved institutional position without human review."
       />
       <p className="hero__meta" style={{ marginTop: 0, marginBottom: '1rem' }}>
-        <span className="chip chip--synth">Demonstration scope</span>
+        {isDemo ? <span className="chip chip--synth">Demonstration scope</span> : <span className="chip chip--real">Based on published records in scope</span>}
         <span className="chip chip--pilot">Draft / interface only — not published institutional briefs</span>
       </p>
       <Card title="Choose a scope">

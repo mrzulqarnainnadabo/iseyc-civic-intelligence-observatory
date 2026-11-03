@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useBundle } from '../lib/data';
+import { useAdapter } from '../lib/hooks';
 import { useLite } from '../lib/hooks';
 import { PageHeader, Section } from '../design/layout';
 import { ChipGroup, Card, Button, SyntheticChip, SourceCitation } from '../design/primitives';
@@ -9,6 +10,8 @@ import { SECTORS, SECTOR_LABEL, type Sector } from '../data/types';
 import { CLAIM_LABEL, claimStrength, countBy } from '../lib/rules';
 
 export default function Geography() {
+  const adapter = useAdapter();
+  const isDemo = adapter.mode === 'demo';
   const { records, states, sources, evidence } = useBundle();
   const { lite } = useLite();
   const [sector, setSector] = useState<Sector | ''>('');
@@ -29,7 +32,7 @@ export default function Geography() {
       />
       <p className="hero__meta" style={{marginTop:0,marginBottom:'1rem'}}>
         <span className="chip chip--real">36 states + FCT</span>
-        <span className="chip chip--synth">Record locations: synthetic demo</span>
+        {isDemo ? <span className="chip chip--synth">Record locations: synthetic demo</span> : <span className="chip chip--real">Record locations: published Mandate</span>}
         <span className="chip chip--pilot">No invented LGA identifiers</span>
       </p>
       <Card title="Layer">
@@ -41,11 +44,11 @@ export default function Geography() {
         </div>
       </Card>
       <div className="grid2 grid2--map">
-        <Section title="Demonstration records by state" id="mapsec" note={<><SyntheticChip /> Counts are invented. A darker state means more demonstration records, never a worse or better place.</>}>
+        <Section title={isDemo ? "Demonstration records by state" : "Published records by state"} id="mapsec" note={isDemo ? <><SyntheticChip /> Counts are invented. Darker is more demo records, not a worse place.</> : <>Published counts only. Darker means more published records in this dataset, not a worse place or higher prevalence.</>}>
           {records.length === 0 ? <EmptyState title="No published records yet">The map fills in as records are published and reviewed.</EmptyState> : effective === 'map' ? (
             <NigeriaMap values={counts} selected={selected} onSelect={setSelected} unit="demonstration records" ariaLabel="Map of Nigerian states shaded by demonstration record count. Each state is a button." />
           ) : (
-            <div className="tablewrap"><table className="table"><caption className="sr-only">Demonstration records by state</caption>
+            <div className="tablewrap"><table className="table"><caption className="sr-only">{isDemo ? "Demonstration records by state" : "Published records by state"}</caption>
               <thead><tr><th scope="col">State</th><th scope="col">Records</th><th scope="col"><span className="sr-only">Select</span></th></tr></thead>
               <tbody>{rows.map(s => <tr key={s.id} className={selected === s.id ? 'row--on' : ''}><th scope="row">{s.name}</th><td>{counts[s.id] ?? 0}</td><td><Button variant="ghost" aria-label={`Select ${s.name}`} onClick={() => setSelected(s.id)}>View</Button></td></tr>)}</tbody></table></div>
           )}
