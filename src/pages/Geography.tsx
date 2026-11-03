@@ -26,6 +26,11 @@ export default function Geography() {
   const effective = lite && view === 'map' ? 'map' : view;
   return (
     <>
+      <p className="muted" style={{ marginBottom: '1rem' }}>
+        National indicator pilots (Evidence library) are <strong>national aggregates</strong> — they are not state scores.
+        Community records below are a separate published stream. Zero published submissions does not mean zero needs.
+      </p>
+
       <PageHeader
         title="Geography"
         lead="Explore Nigeria’s 36 states and the FCT. Selecting a place shows demonstration records and registered sources that can report at state level or below. Map presence is not proof of evidence coverage. Counts are not rates and do not rank places."

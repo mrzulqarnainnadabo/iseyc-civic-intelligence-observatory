@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iseyc.org/contracts/shared/intelligence-brief.v0.1.schema.json",
+  "title": "IntelligenceBrief",
+  "description": "Human-governed brief. AI drafts must remain draft until approval.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "contractVersion", "publicationStatus", "title", "createdAt"],
+  "properties": {
+    "id": { "type": "string" },
+    "contractVersion": { "type": "string", "const": "0.1.0" },
+    "publicationStatus": {
+      "type": "string",
+      "enum": ["draft", "human-review", "published", "withdrawn"]
+    },
+    "title": { "type": "string" },
+    "summary": { "type": "string" },
+    "communityRecordIds": { "type": "array", "items": { "type": "string" } },
+    "observationIds": { "type": "array", "items": { "type": "string" } },
+    "sourceIds": { "type": "array", "items": { "type": "string" } },
+    "knowns": { "type": "array", "items": { "type": "string" } },
+    "unknowns": { "type": "array", "items": { "type": "string" } },
+    "nextChecks": { "type": "array", "items": { "type": "string" } },
+    "createdAt": { "type": "string" },
+    "publishedAt": { "type": ["string", "null"] },
+    "authorType": { "type": "string", "enum": ["human", "ai-draft", "mixed"] }
+  }
+}

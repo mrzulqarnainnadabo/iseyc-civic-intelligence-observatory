@@ -24,7 +24,7 @@ export function AppShell() {
             <span className="brand__mark" aria-hidden="true" />
             <div>
               <strong>ISEYC Civic Intelligence Observatory</strong>
-              <span className="brand__sub">Evidence-led · Non-partisan · Nigeria</span>
+              <span className="brand__sub">National civic intelligence · Non-partisan · Operated by ISEYC</span>
             </div>
           </div>
           <label className="lite">

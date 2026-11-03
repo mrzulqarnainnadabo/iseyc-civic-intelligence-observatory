@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iseyc.org/contracts/evidence/observation.v1.schema.json",
+  "title": "IndicatorObservation v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "observationId",
+    "indicatorId",
+    "datasetId",
+    "geoCode",
+    "geoLevel",
+    "referencePeriod",
+    "value",
+    "unit",
+    "sourceAttribution",
+    "sourceUrl",
+    "retrievedAt",
+    "contractVersion"
+  ],
+  "properties": {
+    "observationId": { "type": "string", "minLength": 1 },
+    "indicatorId": { "type": "string" },
+    "datasetId": { "type": "string" },
+    "geoCode": { "type": "string", "description": "ISO3 or ng-state slug" },
+    "geoLevel": { "type": "string", "enum": ["national", "state", "lga", "ward", "facility", "other"] },
+    "referencePeriod": { "type": "string", "description": "Source reference year or period" },
+    "value": { "type": ["number", "null"] },
+    "unit": { "type": "string" },
+    "sourceAttribution": { "type": "string" },
+    "sourceUrl": { "type": "string", "format": "uri" },
+    "retrievedAt": { "type": "string", "format": "date-time" },
+    "publicationDate": { "type": ["string", "null"] },
+    "qualityFlags": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["estimated", "modelled", "provisional", "revised", "missing-year", "national-only"] }
+    },
+    "methodologyRef": { "type": "string" },
+    "contractVersion": { "type": "string", "const": "1.0.0" }
+  }
+}

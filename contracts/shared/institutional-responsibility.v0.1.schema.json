@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iseyc.org/contracts/shared/institutional-responsibility.v0.1.schema.json",
+  "title": "InstitutionalResponsibility",
+  "description": "Documented mapping candidate. Not automatically a verified legal determination.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "contractVersion", "label", "confidence", "basis"],
+  "properties": {
+    "id": { "type": "string" },
+    "contractVersion": { "type": "string", "const": "0.1.0" },
+    "label": { "type": "string" },
+    "jurisdiction": { "type": ["string", "null"] },
+    "sector": { "type": ["string", "null"] },
+    "duty": { "type": ["string", "null"] },
+    "confidence": { "type": "string", "enum": ["candidate", "documented", "verified"] },
+    "basis": { "type": "string" },
+    "sourceUrl": { "type": ["string", "null"] }
+  }
+}

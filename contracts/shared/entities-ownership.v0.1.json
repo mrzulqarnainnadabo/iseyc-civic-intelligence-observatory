@@ -1,0 +1,59 @@
+{
+  "contractVersion": "0.1.0",
+  "entities": [
+    {
+      "name": "CommunityRecord",
+      "owner": "civic-mandate",
+      "schema": "community-record.v0.1.schema.json",
+      "publicApi": ["GET /api/pulse", "future versioned community API"]
+    },
+    {
+      "name": "EvidenceSource",
+      "owner": "observatory",
+      "schema": "via source-registry + evidence-registry docs",
+      "notes": "Metadata catalog; not automatic observations"
+    },
+    {
+      "name": "Dataset",
+      "owner": "observatory",
+      "schema": "evidence-registry / indicator catalog datasets[]"
+    },
+    {
+      "name": "Indicator",
+      "owner": "observatory",
+      "schema": "nga-pilot-indicators + gateway catalog"
+    },
+    {
+      "name": "IndicatorObservation",
+      "owner": "observatory-gateway",
+      "schema": "../evidence/observation.v1.schema.json"
+    },
+    {
+      "name": "InstitutionalResponsibility",
+      "owner": "shared-documented",
+      "schema": "institutional-responsibility.v0.1.schema.json"
+    },
+    {
+      "name": "InstitutionalCommitment",
+      "owner": "civic-mandate",
+      "schema": "Mandate commitment-public modules (existing)"
+    },
+    {
+      "name": "ResponseRecord",
+      "owner": "civic-mandate-ops",
+      "schema": "response-record.v0.1.schema.json"
+    },
+    {
+      "name": "IntelligenceBrief",
+      "owner": "human-desk",
+      "schema": "intelligence-brief.v0.1.schema.json",
+      "notes": "Brain may draft; Observatory shows published only"
+    },
+    {
+      "name": "RetrievalReceipt",
+      "owner": "observatory-gateway",
+      "schema": "../evidence/retrieval-receipt.v1.schema.json",
+      "persistence": "ephemeral until approved store"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iseyc.org/contracts/evidence/retrieval-receipt.v1.schema.json",
+  "title": "RetrievalReceipt v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receiptId",
+    "indicatorId",
+    "datasetId",
+    "sourceUrl",
+    "retrievedAt",
+    "httpStatus",
+    "contentHash",
+    "observationCount",
+    "outcome",
+    "contractVersion"
+  ],
+  "properties": {
+    "receiptId": { "type": "string" },
+    "indicatorId": { "type": "string" },
+    "datasetId": { "type": "string" },
+    "sourceUrl": { "type": "string" },
+    "retrievedAt": { "type": "string" },
+    "httpStatus": { "type": ["integer", "null"] },
+    "contentHash": { "type": ["string", "null"] },
+    "observationCount": { "type": "integer", "minimum": 0 },
+    "outcome": { "type": "string", "enum": ["success", "upstream_error", "timeout", "malformed", "not_allowed", "empty"] },
+    "errorClass": { "type": ["string", "null"] },
+    "contractVersion": { "type": "string", "const": "1.0.0" }
+  }
+}

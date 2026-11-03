@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "1.0.0",
+  "title": "ISEYC Nigeria pilot indicator set",
+  "description": "A small set of national indicators with full source metadata. Values are retrieved from the cited APIs at runtime. Not ISEYC statistics. Not a substitute for NBS official releases.",
+  "operator": "Initiative for Sustainable Evolution for Youth and Community (ISEYC)",
+  "indicators": [
+    {
+      "id": "wb-nga-sp-pop-totl",
+      "title": "Population, total",
+      "definition": "Total population counts all residents regardless of legal status or citizenship. Values are mid-year estimates.",
+      "unit": "persons",
+      "measurementType": "estimated",
+      "sector": "governance",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria (national aggregate)",
+      "sourceDatasetId": "world-bank-wdi",
+      "sourcePublisher": "World Bank — World Development Indicators",
+      "sourceUrl": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=NG",
+      "api": {
+        "provider": "world-bank",
+        "urlTemplate": "https://api.worldbank.org/v2/country/NGA/indicator/SP.POP.TOTL?format=json&per_page=20&date=2015:2024"
+      },
+      "methodologyNotes": "World Bank aggregates and estimates based on national statistical sources and UN Population Division where applicable. See WDI metadata for full method.",
+      "licence": "World Bank open data terms; attribution required.",
+      "limitations": [
+        "National aggregate only — not state or LGA resolution.",
+        "Estimates may be revised when new censuses or surveys are released.",
+        "ISEYC does not produce this series; we retrieve and display it with attribution."
+      ],
+      "updateFrequency": "Annual (source-dependent)",
+      "lastVerifiedAccess": "2026-11-03"
+    },
+    {
+      "id": "wb-nga-se-prm-enrr",
+      "title": "School enrollment, primary (% gross)",
+      "definition": "Gross enrollment ratio is the ratio of total enrollment, regardless of age, to the population of the age group that officially corresponds to the level of education shown.",
+      "unit": "percent (gross)",
+      "measurementType": "estimated",
+      "sector": "education",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria (national aggregate)",
+      "sourceDatasetId": "world-bank-wdi",
+      "sourcePublisher": "World Bank — World Development Indicators (underlying UNESCO UIS / national sources)",
+      "sourceUrl": "https://data.worldbank.org/indicator/SE.PRM.ENRR?locations=NG",
+      "api": {
+        "provider": "world-bank",
+        "urlTemplate": "https://api.worldbank.org/v2/country/NGA/indicator/SE.PRM.ENRR?format=json&per_page=20&date=2015:2024"
+      },
+      "methodologyNotes": "Gross ratios can exceed 100% when over-age or under-age enrollment occurs. Gaps in years mean the source did not publish a value for that year.",
+      "licence": "World Bank open data terms; attribution required.",
+      "limitations": [
+        "National aggregate only.",
+        "Does not measure learning outcomes or facility quality.",
+        "Missing years are absent data, not zero enrollment."
+      ],
+      "updateFrequency": "Annual (source-dependent)",
+      "lastVerifiedAccess": "2026-11-03"
+    },
+    {
+      "id": "wb-nga-sh-dyn-mort",
+      "title": "Mortality rate, under-5 (per 1,000 live births)",
+      "definition": "Probability per 1,000 that a newborn baby will die before reaching age five, if subject to age-specific mortality rates of the specified year.",
+      "unit": "per 1,000 live births",
+      "measurementType": "estimated",
+      "sector": "health",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria (national aggregate)",
+      "sourceDatasetId": "world-bank-wdi",
+      "sourcePublisher": "World Bank — World Development Indicators (UN IGME estimates)",
+      "sourceUrl": "https://data.worldbank.org/indicator/SH.DYN.MORT?locations=NG",
+      "api": {
+        "provider": "world-bank",
+        "urlTemplate": "https://api.worldbank.org/v2/country/NGA/indicator/SH.DYN.MORT?format=json&per_page=20&date=2015:2024"
+      },
+      "methodologyNotes": "UN Inter-agency Group for Child Mortality Estimation models underpin many WDI child mortality series. See source metadata for model details.",
+      "licence": "World Bank open data terms; attribution required.",
+      "limitations": [
+        "National estimate — not a state league table.",
+        "Modelled estimates carry uncertainty; do not treat as exact facility counts.",
+        "Not a measure of any single health programme's performance."
+      ],
+      "updateFrequency": "Annual (source-dependent)",
+      "lastVerifiedAccess": "2026-11-03"
+    }
+  ],
+  "datasets": [
+    {
+      "id": "world-bank-wdi",
+      "title": "World Development Indicators",
+      "publisher": "World Bank",
+      "sourceUrl": "https://databank.worldbank.org/source/world-development-indicators",
+      "licence": "World Bank open data terms",
+      "format": "JSON API",
+      "geographicCoverage": "Global including Nigeria",
+      "geoLevel": "national (for NGA series used here)",
+      "collectionMethod": "Compilation and estimation from national and international statistical systems",
+      "limitations": ["ISEYC retrieves selected series only; the full WDI catalogue is far larger."]
+    }
+  ]
+}
