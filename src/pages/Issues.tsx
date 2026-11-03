@@ -105,8 +105,8 @@ export default function Issues() {
           {filtered.length === 0 ? (
             <EmptyState title="No records match these filters">
               {records.length === 0
-                ? 'No published records are available yet.'
-                : 'Try clearing a filter. Absence of a record means nothing was submitted or published here, not that there is no problem.'}
+                ? 'No published records are currently available in this dataset. That is not a measure of community need.'
+                : 'Nothing in the current published set matches these filters. Try clearing a filter — absence of a match is not absence of need.'}
             </EmptyState>
           ) : (
             <div className="record-list">

@@ -140,7 +140,7 @@ export default function Overview() {
         }
       >
         {records.length === 0 ? (
-          <EmptyState title="No published records">When records are published they appear here with stage evidence.</EmptyState>
+          <EmptyState title="No published records in this dataset yet">This view only lists human-reviewed published records currently returned by Civic Mandate. An empty list does not mean communities have no needs.</EmptyState>
         ) : (
           <Funnel
             unit="records"

@@ -34,7 +34,7 @@ export default function Accountability() {
       <Card title="Filter"><SelectField label="Institution" value={inst} onChange={setInst} allLabel="All institutions" options={institutions.map(i => ({ value: i.id, label: `${i.name} (${i.tier})` }))} /></Card>
       <div className="grid2">
         <Section title="What the evidence supports" id="claims" note={<><SyntheticChip /> Invented records. Counts show how the claim check works.</>}>
-          {rows.length === 0 ? <EmptyState title="No records for this institution" /> :
+          {rows.length === 0 ? <EmptyState title="No published records for this filter">Only published records in the current dataset are listed. Empty does not mean the issue is absent on the ground.</EmptyState> :
             <BarChart ariaLabel="Records by claim strength" unit="records" items={Object.entries(CLAIM_LABEL).map(([k, label]) => ({ key: k, label, value: (claims as Record<string, number>)[k] ?? 0 }))} />}
         </Section>
         <Section title="Stage key" id="key">
@@ -43,7 +43,7 @@ export default function Accountability() {
         </Section>
       </div>
       <Section title={`Records (${rows.length})`} id="tbl">
-        {rows.length === 0 ? <EmptyState title="Nothing to show">No published records match.</EmptyState> : (
+        {rows.length === 0 ? <EmptyState title="Nothing to show in this dataset">No published records match these filters. That is not a claim about prevalence or resolution.</EmptyState> : (
           <>
             <div className="tablewrap tablewrap--desktop"><table className="table"><caption className="sr-only">Records with lifecycle strip and claim strength</caption>
               <thead><tr><th scope="col">Record</th><th scope="col">State</th><th scope="col">Institutions</th><th scope="col">Stages</th><th scope="col">Evidence says</th></tr></thead>

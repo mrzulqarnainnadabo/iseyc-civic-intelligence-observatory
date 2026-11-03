@@ -86,3 +86,13 @@ describe('mandate pulse adapter', () => {
     expect(a.label).toContain('Published');
   });
 });
+
+import { adapterSearchFromLocation } from '../src/lib/adapter-search';
+
+describe('adapter search from location', () => {
+  it('reads demo from hash query used by HashRouter', () => {
+    expect(adapterSearchFromLocation('', '#/?demo=1')).toContain('demo=1');
+    expect(selectAdapter(adapterSearchFromLocation('', '#/?demo=1')).mode).toBe('demo');
+    expect(selectAdapter(adapterSearchFromLocation('', '#/')).mode).toBe('live');
+  });
+});

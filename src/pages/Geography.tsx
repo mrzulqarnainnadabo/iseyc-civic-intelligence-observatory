@@ -45,8 +45,8 @@ export default function Geography() {
       </Card>
       <div className="grid2 grid2--map">
         <Section title={isDemo ? "Demonstration records by state" : "Published records by state"} id="mapsec" note={isDemo ? <><SyntheticChip /> Counts are invented. Darker is more demo records, not a worse place.</> : <>Published counts only. Darker means more published records in this dataset, not a worse place or higher prevalence.</>}>
-          {records.length === 0 ? <EmptyState title="No published records yet">The map fills in as records are published and reviewed.</EmptyState> : effective === 'map' ? (
-            <NigeriaMap values={counts} selected={selected} onSelect={setSelected} unit="demonstration records" ariaLabel="Map of Nigerian states shaded by demonstration record count. Each state is a button." />
+          {records.length === 0 ? <EmptyState title="No published records in this dataset yet">Only published Mandate locations appear here. Empty does not mean communities have no concerns. The map fills in as records are published and reviewed.</EmptyState> : effective === 'map' ? (
+            <NigeriaMap values={counts} selected={selected} onSelect={setSelected} unit={isDemo ? "demonstration records" : "published records"} ariaLabel={isDemo ? "Map of Nigerian states shaded by demonstration record count. Each state is a button." : "Map of Nigerian states shaded by published record count. Each state is a button."} />
           ) : (
             <div className="tablewrap"><table className="table"><caption className="sr-only">{isDemo ? "Demonstration records by state" : "Published records by state"}</caption>
               <thead><tr><th scope="col">State</th><th scope="col">Records</th><th scope="col"><span className="sr-only">Select</span></th></tr></thead>

@@ -47,12 +47,12 @@ describe('pages', () => {
   });
   it('Overview shows an honest empty state when there are no records', () => {
     render(wrap(<Overview />, { ...bundle, records: [], evidence: [] }));
-    expect(screen.getByText('No published records')).toBeInTheDocument();
+    expect(screen.getByText(/No published records in this dataset yet/)).toBeInTheDocument();
   });
   it('Issues filters by sector and reports empty results without implying no need', () => {
     render(wrap(<Issues />));
     fireEvent.change(screen.getByLabelText('Search records'), { target: { value: 'zzzz-no-match' } });
-    expect(screen.getByText(/Absence of a record means nothing was submitted/)).toBeInTheDocument();
+    expect(screen.getByText(/absence of a match is not absence of need/)).toBeInTheDocument();
   });
   it('Geography selects a state from the table view and lists registered sub-national sources', () => {
     render(wrap(<Geography />));
