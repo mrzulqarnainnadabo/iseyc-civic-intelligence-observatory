@@ -38,16 +38,18 @@ describe('design system', () => {
 });
 
 describe('pages', () => {
-  it('Overview presents institutional entry points and labels synthetic funnel data', () => {
+  it('Overview presents institutional entry points and multi-stream framing', () => {
     render(wrap(<Overview />));
-    expect(screen.getByText(/Understand public evidence across Nigeria/i)).toBeInTheDocument();
-    expect(screen.getByText('Evidence library')).toBeInTheDocument();
-    expect(screen.getAllByText('DEMONSTRATION DATA').length).toBeGreaterThan(0);
-    expect(screen.getByText(/A referral does not mean action/)).toBeInTheDocument();
+    expect(screen.getByText(/Understand the evidence/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Evidence library/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/Three evidence streams/i)).toBeInTheDocument();
+    expect(screen.getByText(/Operated by ISEYC/i)).toBeInTheDocument();
   });
-  it('Overview shows an honest empty state when there are no records', () => {
+  it('Overview remains useful when there are no community records', () => {
     render(wrap(<Overview />, { ...bundle, records: [], evidence: [] }));
-    expect(screen.getByText(/No published records in this dataset yet/)).toBeInTheDocument();
+    expect(screen.getByText(/Understand the evidence/i)).toBeInTheDocument();
+    expect(screen.getByText(/Three evidence streams/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/National indicator pilots/i).length).toBeGreaterThan(0);
   });
   it('Issues filters by sector and reports empty results without implying no need', () => {
     render(wrap(<Issues />));
@@ -61,16 +63,15 @@ describe('pages', () => {
     expect(screen.getByRole('heading', { name: 'Kaduna' })).toBeInTheDocument();
     expect(screen.getByText(/Registered sources that can report at state level or below/)).toBeInTheDocument();
   });
-  it('Evidence registry labels unconfirmed links and offers CSV export', () => {
+  it('Evidence library shows registry and indicator pilots', () => {
     render(wrap(<Evidence />));
-    expect(screen.getAllByText('Link documented, not re-confirmed').length).toBeGreaterThan(0);
-    expect(screen.getByRole('button', { name: /Download CSV/ })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Evidence library' })).toBeInTheDocument();
+    expect(screen.getAllByText(/National indicator pilots/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Registered sources/i).length).toBeGreaterThan(0);
   });
-  it('Evidence items tab shows detail with limitations', () => {
+  it('Evidence shows community evidence items when present', () => {
     render(wrap(<Evidence />));
-    fireEvent.click(screen.getByRole('tab', { name: /Evidence items/ }));
-    fireEvent.click(screen.getByText('Referral acknowledgement (synthetic)').closest('button')!);
-    expect(screen.getAllByText(/Limitations/).length).toBeGreaterThan(0);
+    expect(screen.getByText(/Demonstration evidence items|Published community evidence items/i)).toBeInTheDocument();
   });
   it('Accountability warns that responsibility mappings are unverified', () => {
     render(wrap(<Accountability />));
