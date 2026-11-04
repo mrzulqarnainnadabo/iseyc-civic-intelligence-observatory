@@ -2,7 +2,7 @@
 
 export type Sector =
   | 'education' | 'health' | 'security' | 'infrastructure'
-  | 'water-sanitation' | 'employment' | 'public-finance' | 'governance'
+  | 'water-sanitation' | 'employment' | 'public-finance' | 'governance' | 'unknown'
   | 'agriculture' | 'environment';
 
 /** The five evidence classes the product must keep distinct. */
@@ -104,7 +104,7 @@ export const SECTOR_LABEL: Record<Sector, string> = {
   education: 'Education', health: 'Healthcare', security: 'Security', infrastructure: 'Infrastructure',
   'water-sanitation': 'Water and sanitation', employment: 'Employment and livelihoods',
   'public-finance': 'Public finance and budgets', governance: 'Governance and service delivery',
-  agriculture: 'Agriculture', environment: 'Environment',
+  agriculture: 'Agriculture', environment: 'Environment', unknown: 'Unclassified',
 };
 export const SECTORS = Object.keys(SECTOR_LABEL) as Sector[];
 
