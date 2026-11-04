@@ -106,7 +106,10 @@ export const SECTOR_LABEL: Record<Sector, string> = {
   'public-finance': 'Public finance and budgets', governance: 'Governance and service delivery',
   agriculture: 'Agriculture', environment: 'Environment',
 };
-export const SECTORS = Object.keys(SECTOR_LABEL) as Sector[];
+export const SECTORS: Sector[] = [
+  'education', 'health', 'security', 'infrastructure', 'water-sanitation',
+  'employment', 'public-finance', 'governance', 'agriculture', 'environment',
+];
 
 export const KIND_LABEL: Record<EvidenceKind, string> = {
   'official-data': 'Official data', 'published-research': 'Published research', 'media-report': 'Media report',
