@@ -49,7 +49,7 @@ export default function Overview() {
     <Section title={isDemo ? 'Demonstration records' : 'Community records'} id="records" note={<Link to="/issues">All records</Link>}>
       {latestRecords.length === 0 ? <EmptyState title={isDemo ? 'No demonstration records' : 'No published records in the current feed'} /> : <div className="workspace-records">
         {latestRecords.map((record) => <Link className="workspace-record" key={record.id} to="/issues">
-          <span><span className="workspace-record__title">{record.title}</span><span className="workspace-record__meta">{states.find((state) => state.id === record.stateId)?.name || record.stateId} · {SECTOR_LABEL[record.sector]} · {isDemo ? 'Demonstration' : 'Published'}</span></span>
+          <span><span className="workspace-record__title">{record.title}</span><span className="workspace-record__meta">{states.find((state) => state.id === record.stateId)?.name || record.stateId} · {record.sector ? SECTOR_LABEL[record.sector] : 'Unclassified'} · {isDemo ? 'Demonstration' : 'Published'}</span></span>
           <span className="workspace-record__date">{record.publishedMonth === 'unknown' ? '' : record.publishedMonth}</span>
         </Link>)}
       </div>}
