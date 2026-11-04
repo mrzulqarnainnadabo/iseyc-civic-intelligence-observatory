@@ -4,6 +4,7 @@ import { useAdapter } from '../lib/hooks';
 import { Section, Card } from '../design/layout';
 import { EmptyState } from '../design/feedback';
 import { SourceCitation } from '../design/primitives';
+import inecPvc2023 from '../data/indicators/inec-pvc-2023.json';
 import {
   listIndicators,
   fetchViaGateway,
@@ -11,6 +12,36 @@ import {
   type IndicatorDefinition,
   type IndicatorObservation,
 } from '../lib/indicators';
+
+type PvcRow = typeof inecPvc2023.records[number];
+const numberFormat = new Intl.NumberFormat('en-NG');
+
+function ElectoralParticipation() {
+  const [stateQuery, setStateQuery] = useState('');
+  const rows = useMemo(() => {
+    const term = stateQuery.trim().toLowerCase();
+    return (inecPvc2023.records as PvcRow[]).filter((row) => !term || row.state.toLowerCase().includes(term));
+  }, [stateQuery]);
+  return <Section title="Electoral participation" id="electoral-participation" note="INEC historical baseline · 5 February 2023">
+    <div className="workspace-grid">
+      <Card title="Registered voters"><strong className="workspace-stat__value">{numberFormat.format(inecPvc2023.sourceReportedNationalTotals.registeredVoters)}</strong><span className="workspace-stat__period">2023 validated register</span></Card>
+      <Card title="PVCs collected"><strong className="workspace-stat__value">{numberFormat.format(inecPvc2023.sourceReportedNationalTotals.collectedPVCs)}</strong><span className="workspace-stat__period">As at 5 February 2023</span></Card>
+      <Card title="Collection rate"><strong className="workspace-stat__value">{inecPvc2023.sourceReportedNationalTotals.collectionRate.toFixed(1)}%</strong><span className="workspace-stat__period">Reported by INEC</span></Card>
+    </div>
+    <p className="muted">These are historical administrative figures, not a current 2026 register or a count of all eligible voters. Registered voters, PVC collection and actual turnout are different measures.</p>
+    <p><a href={inecPvc2023.sourceUrl} target="_blank" rel="noopener noreferrer">Open INEC's certified 2023 summary (PDF)</a></p>
+    <details className="record">
+      <summary>Explore state and FCT figures ({inecPvc2023.records.length} geographies)</summary>
+      <label className="field"><span>Find a state or FCT</span><input className="input" type="search" value={stateQuery} onChange={(event) => setStateQuery(event.target.value)} placeholder="Search geography" /></label>
+      <div className="data-table-wrap"><table className="data-table"><thead><tr><th scope="col">State / FCT</th><th scope="col">Registered</th><th scope="col">PVCs collected</th><th scope="col">Collection</th></tr></thead><tbody>{rows.map((row) => <tr key={row.state}><th scope="row">{row.state}</th><td>{numberFormat.format(row.registeredVoters)}</td><td>{numberFormat.format(row.collectedPVCs)}</td><td>{row.collectionRateReported.toFixed(1)}%</td></tr>)}</tbody></table></div>
+      {rows.length === 0 && <p className="muted">No matching geography.</p>}
+    </details>
+    <details className="record"><summary>Source quality and interpretation notes</summary>
+      <p>The registered-voter and collected-PVC state rows sum to INEC's printed national totals. The published uncollected-PVC figures do not reconcile: 16 state rows differ from registered minus collected; the published state-row sum is 6,259,231, the printed national total is 6,259,229, and the arithmetic difference is 6,260,001. ISEYC retains the reported and calculated values separately and does not use the uncollected total as a settled figure.</p>
+      <p className="muted">Source reference date: {inecPvc2023.sourceReferenceDate}. Retrieved: {inecPvc2023.retrievedAt}. This is a transcription of an INEC PDF, not an independently audited voter register.</p>
+    </details>
+  </Section>;
+}
 
 function IndicatorBlock({ indicator }: { indicator: IndicatorDefinition }) {
   const [observations, setObservations] = useState<IndicatorObservation[]>([]);
@@ -69,7 +100,7 @@ export default function Evidence() {
 
   return <>
     <header className="page-heading"><h1>Evidence</h1><span className="page-heading__meta">Public sources and observations</span></header>
-    <Section title="National indicators" id="indicators">
+    <ElectoralParticipation />\n    <Section title="National indicators" id="indicators">
       <div className="workspace-grid">{indicators.map((indicator) => <IndicatorBlock key={indicator.id} indicator={indicator} />)}</div>
     </Section>
     <Section title="Source registry" id="registry" note="A registered source is not necessarily an ingested dataset.">
