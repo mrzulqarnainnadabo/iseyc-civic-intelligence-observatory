@@ -725,16 +725,17 @@
     "updateFrequency": "Election-cycle and event-based; specific publication dates and reference cutoffs must be retained",
     "licence": "No blanket reuse licence confirmed; cite the exact INEC publication and check applicable terms.",
     "lastChecked": "2026-11-04",
-    "checkedHow": "INEC PVC Statistics page, 2023 nationwide registered-voter/PVC collection PDF, 2023 General Election Report, and 2026 Osun off-cycle PVC release reviewed.",
+    "checkedHow": "INEC official PVC statistics page, 13 August 2026 Osun release, 2025–2026 CVR closure notice, February 2026 Chairman remarks and 2023 nationwide PVC summary reviewed.",
     "limitations": [
       "Registered voters, newly registered CVR applicants, PVCs printed, PVCs distributed, PVCs collected and accredited voters are different measures and must not be combined.",
       "The nationwide 2023 collection snapshot is dated 5 February 2023; it is not a current 2026 PVC collection total.",
       "INEC's 2026 Osun release reports 1,518,485 collected PVCs for that election across 30 LGAs; it is a state election snapshot, not a nationwide total.",
       "Polling-unit and LGA coverage depends on the particular certified file; do not infer missing rows as zero.",
       "The official 2023 report and briefing should be used to reconcile denominators and state totals before calculating derived rates.",
-      "A programmatic reconciliation of the official 2023 PDF found that 16 state-level uncollected-PVC values do not equal registered voters minus collected PVCs; the state-row sum of published uncollected counts (6,259,231) also differs from INEC's printed national total (6,259,229), while the arithmetic difference is 6,260,001. The register and collected-PVC state rows do sum to their national totals."
+      "A programmatic reconciliation of the official 2023 PDF found that 16 state-level uncollected-PVC values do not equal registered voters minus collected PVCs; the state-row sum of published uncollected counts (6,259,231) also differs from INEC's printed national total (6,259,229), while the arithmetic difference is 6,260,001. The register and collected-PVC state rows do sum to their national totals.",
+      "INEC's CVR portal currently states that registration has ended and administrative processing of applications is ongoing. This is not the final validated register; a consolidated national and state/LGA post-CVR total has not been located."
     ],
-    "notes": "2023 nationwide snapshot: 93,469,008 registered voters; 87,209,007 PVCs collected as at 5 February 2023 (93.3% reported by INEC). Kaduna: 4,335,208 registered; 4,164,473 collected (96.1%). These are historical figures, not a current register. A structured 37-geography transcription is stored in data/indicators/inec-pvc-2023.json with both reported and calculated values kept separate. INEC's 2026 Osun off-cycle release reports 1,518,485 collected PVCs across 30 LGAs with a certified polling-unit-level breakdown. This is an Osun election snapshot, not a national total."
+    "notes": "2023 nationwide snapshot: 93,469,008 registered voters; 87,209,007 PVCs collected as at 5 February 2023 (93.3% reported by INEC). Kaduna: 4,335,208 registered; 4,164,473 collected (96.1%). These are historical figures, not a current register. A structured 37-geography transcription is stored in data/indicators/inec-pvc-2023.json with both reported and calculated values kept separate. INEC's 2026 Osun off-cycle release reports 1,518,485 collected PVCs across 30 LGAs with a certified polling-unit-level breakdown. This is an Osun election snapshot, not a national total. Current status: https://cvr.inecnigeria.org/Home/cvrEnded. The portal closure notice is a process-status update, not a final count. INEC's 13 August 2026 Osun PVC release reports 1,518,485 collected PVCs across 30 LGAs."
   },
   {
     "id": "inec-cvr-2025-26",
