@@ -1,61 +1,56 @@
-# ISEYC Civic Intelligence Observatory (prototype v0.2)
+# ISEYC Observatory
 
-A standalone, integration-ready prototype of ISEYC's national civic intelligence interface for Nigeria. It helps a citizen, researcher, journalist, civil-society organisation or public institution ask: *what is happening, where, to whom, on what evidence, who is responsible, what was announced, what was actually delivered and independently verified, what is unknown, and what should happen next.*
+The Observatory is the public evidence workspace within ISEYC's civic intelligence infrastructure. It connects published community records with public datasets, source provenance, geography and documented institutional accountability.
 
-It is **not** a campaign tool, poll, ranking, candidate comparison or chatbot.
+It is an early-stage national pilot. It is not a national statistics office, a representative survey, a government service-delivery monitor or a fully integrated national evidence system.
 
-> **Demonstration build.** The source registry (26 entries) and the state map are real project data. All civic records, evidence items and institution links are **synthetic** and say nothing about any real place. The UI labels them everywhere. The app is **not connected** to the live Civic Mandate or Civic Brain deployments and does not modify them.
+## Product responsibilities
 
-## Six experiences
+| Product | Responsibility |
+|---|---|
+| Civic Mandate Nigeria | Community intake, human review, publication and the system of record for CommunityRecords |
+| Civic Intelligence Observatory | Public evidence catalogue, observations, geographic exploration, source provenance and approved briefs |
+| Civic Brain | Evidence-grounded analysis, related-record discovery, gap identification and draft briefs for human review |
 
-| Route | Experience | What it does |
-|---|---|---|
-| `#/` | National overview | Nine questions as navigation, evidence legend, real registry coverage and gaps, demonstration lifecycle funnel |
-| `#/issues` | Issues and sector explorer | Filter published demands by sector, state, text; see registered sources for the sector |
-| `#/geography` | Geographic explorer | Accessible state map with table alternative; sub-national sources for the selected state |
-| `#/evidence` | Evidence library | Real source registry (filter, expand limitations, CSV export) and synthetic evidence items with detail |
-| `#/accountability` | Institutional accountability | Six-stage lifecycle per record; claim-strength check; unverified responsibility mappings flagged |
-| `#/briefs` | Civic intelligence briefs | Deterministic nine-question brief for a state and sector; copy, download Markdown, print |
+The products share versioned contracts but retain clear data ownership. See [the product operating model](docs/PRODUCT-OPERATING-MODEL-v1.md).
 
-## Quick start
+## Current implementation
+
+- Published Civic Mandate records are consumed through the public pulse compatibility endpoint.
+- The versioned CommunityRecord API is the intended primary contract and is not yet integrated in this client.
+- Three World Bank indicator pilots are defined for national-level observations.
+- The Evidence Gateway and shared civic evidence contracts are present in the repository.
+- The source registry is metadata; a listed source is not proof that observations have been ingested.
+- Nigeria's state boundaries support geographic navigation; boundary availability is not state-level evidence coverage.
+- Institutional responsibility, response and delivery claims require documentary evidence and human review.
+- Demonstration fixtures are isolated behind an explicit demo query and must never enter live data.
+
+## Evidence rules
+
+- Published does not mean independently verified.
+- Community reports do not establish prevalence or public opinion.
+- National observations are not state or LGA observations.
+- A budget allocation is not expenditure; expenditure is not verified delivery.
+- A named office in a submission is not a verified legal responsibility.
+- Empty, unavailable, stale, partial and failed retrieval are different states.
+- AI analysis is a draft, not an institutional finding or approved public brief.
+
+## Development
 
 Requires Node.js 22.22.2 or later and npm 10 or later.
 
 ```bash
 npm install
-npm run dev          # http://localhost:5173
-npm run verify       # registry check, type-check, tests, production build
+npm run dev
+npm run verify
 npm run build && npm run preview
 ```
 
-Routing uses the URL hash. Review states: `?demo=empty`, `?demo=error` or `?demo=slow` before the hash.
+## Deployment boundary
 
-## Ecosystem
+The merged main branch contains the Evidence Gateway implementation, but the Observatory still requires a configured Vercel project and production verification. Do not describe the gateway as publicly operational until the deployed API has been tested against its upstream source.
 
-| Product | Responsibility |
-|---------|----------------|
-| [Civic Mandate Nigeria](https://github.com/mrzulqarnainnadabo/2027-street-mandate) | Citizen demand intake + human-reviewed publication |
-| [Civic Brain](https://github.com/mrzulqarnainnadabo/iseyc-civic-brain) | Evidence-grounded explanation and routing recommendations |
-| **Observatory (this repo)** | Coverage, source registry, accountability integrity, briefs |
+## Related products
 
-## Accountability integrity
-
-- Referral ≠ acknowledgement
-- Acknowledgement ≠ implementation
-- Announcement ≠ implementation
-- Implementation ≠ independently verified delivery
-- AI analysis ≠ independent verification
-
-## Data rules
-
-- Published-only public surfaces
-- No invented national statistics or government actions
-- Live HTTP adapters remain **disabled by default**
-- Synthetic data is labelled everywhere
-
-## Related production
-
-- Mandate: https://2027-street-mandate.vercel.app
-- Brain: https://iseyc-civic-brain.vercel.app
-
-See `ATTRIBUTIONS.md`, `docs/`, and `schemas/` for contracts, licences and methodology.
+- [Civic Mandate Nigeria](https://2027-street-mandate.vercel.app)
+- [Civic Brain](https://iseyc-civic-brain.vercel.app)
