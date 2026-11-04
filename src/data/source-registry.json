@@ -734,7 +734,7 @@
       "The official 2023 report and briefing should be used to reconcile denominators and state totals before calculating derived rates.",
       "A programmatic reconciliation of the official 2023 PDF found that 16 state-level uncollected-PVC values do not equal registered voters minus collected PVCs; the state-row sum of published uncollected counts (6,259,231) also differs from INEC's printed national total (6,259,229), while the arithmetic difference is 6,260,001. The register and collected-PVC state rows do sum to their national totals."
     ],
-    "notes": "2023 nationwide snapshot: 93,469,008 registered voters; 87,209,007 PVCs collected as at 5 February 2023 (93.3% reported by INEC). Kaduna: 4,335,208 registered; 4,164,473 collected (96.1%). These are historical figures, not a current register. A structured 37-geography transcription is stored in data/indicators/inec-pvc-2023.json with both reported and calculated values kept separate."
+    "notes": "2023 nationwide snapshot: 93,469,008 registered voters; 87,209,007 PVCs collected as at 5 February 2023 (93.3% reported by INEC). Kaduna: 4,335,208 registered; 4,164,473 collected (96.1%). These are historical figures, not a current register. A structured 37-geography transcription is stored in data/indicators/inec-pvc-2023.json with both reported and calculated values kept separate. INEC's 2026 Osun off-cycle release reports 1,518,485 collected PVCs across 30 LGAs with a certified polling-unit-level breakdown. This is an Osun election snapshot, not a national total."
   },
   {
     "id": "inec-cvr-2025-26",
@@ -757,9 +757,11 @@
       "INEC reported 2,782,587 new eligible voters in phase one (18 August–10 December 2025) in the Chairman's remarks; a separate INEC press release reported 2,782,589. Preserve this two-person discrepancy until the Commission clarifies the authoritative total.",
       "The February 2026 statement described phase two as 5 January–17 April 2026 and the full exercise as scheduled to conclude 30 August 2026; this is a schedule, not evidence that the exercise concluded or the final total.",
       "As at this review, no final consolidated nationwide CVR result after the scheduled August 2026 conclusion was located.",
-      "CVR registrations are not the same as the validated final voter register or collected PVCs; duplicate and ineligible records may be removed during validation."
+      "CVR registrations are not the same as the validated final voter register or collected PVCs; duplicate and ineligible records may be removed during validation.",
+      "INEC's published CVR timetable lists phase three registration from 4 May to 17 August 2026 and display for claims/objections from 24 to 30 August 2026. This confirms the planned timetable, not the final validated nationwide register.",
+      "INEC's 9 June 2026 bulletin reports an Ekiti election register of 1,059,360, comprising a 2023 base of 987,647 plus 66,664 new registrants. These components sum to 1,054,311, leaving 5,049 voters unexplained in the bulletin; do not infer the reason without a reconciliation from INEC."
     ],
-    "notes": "Do not publish a single 'current registered voters' number by adding phase one CVR to the 2023 register. Obtain INEC's final post-CVR register and state/LGA tables, with validation date and treatment of transfers, duplicates and deceased registrants."
+    "notes": "Do not publish a single 'current registered voters' number by adding phase one CVR to the 2023 register. Obtain INEC's final post-CVR register and state/LGA tables, with validation date and treatment of transfers, duplicates and deceased registrants. A 9 June 2026 INEC bulletin gives an Ekiti-specific register of 1,059,360, 66,664 new registrants against a 2023 base of 987,647, and 2,103 double registrations invalidated; the arithmetic components do not reconcile and are stored as separate reported facts. No final national post-CVR total has been located."
   },
   {
     "id": "ubec-npa-2022-23",
