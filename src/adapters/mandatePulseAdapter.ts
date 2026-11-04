@@ -187,7 +187,7 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
 
   return {
     mode: 'live',
-    label: 'Published Civic Mandate records (public pulse)',
+    label: 'Published Mandate feed',
     async getSources() {
       return sources;
     },
