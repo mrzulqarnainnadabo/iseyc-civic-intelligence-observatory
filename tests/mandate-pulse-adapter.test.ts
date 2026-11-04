@@ -64,9 +64,9 @@ describe('mandate pulse adapter', () => {
       status: 503,
       json: async () => ({}),
     })) as unknown as typeof fetch;
-    const adapter = createMandatePulseAdapter({ fetchImpl });
+    const adapter = createMandatePulseAdapter({ fetchImpl, communityRecordsUrl: null });
     expect(adapter.mode).toBe('live');
-    await expect(adapter.getRecords()).rejects.toThrow(/Pulse HTTP 503/);
+    await expect(adapter.getRecords()).rejects.toThrow(/HTTP 503/);
   });
 
   it('empty voices yield empty records without inventing data', async () => {
@@ -74,7 +74,7 @@ describe('mandate pulse adapter', () => {
       ok: true,
       json: async () => ({ total: 0, voices: [] }),
     })) as unknown as typeof fetch;
-    const adapter = createMandatePulseAdapter({ fetchImpl });
+    const adapter = createMandatePulseAdapter({ fetchImpl, communityRecordsUrl: null });
     expect(await adapter.getRecords()).toEqual([]);
     expect(await adapter.getEvidence()).toEqual([]);
   });
