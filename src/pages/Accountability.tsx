@@ -25,7 +25,7 @@ export default function Accountability() {
         <caption className="sr-only">Community records and current evidence status</caption>
         <thead><tr><th scope="col">Record</th><th scope="col">Place</th><th scope="col">Evidence status</th><th scope="col"> </th></tr></thead>
         <tbody>{rows.map((record) => <tr key={record.id} className={open === record.id ? 'row--on' : ''}>
-          <th scope="row">{record.title}<br /><span className="muted">{SECTOR_LABEL[record.sector]}</span></th>
+          <th scope="row">{record.title}<br /><span className="muted">{record.sector ? SECTOR_LABEL[record.sector] : 'Unclassified'}</span></th>
           <td>{states.find((state) => state.id === record.stateId)?.name ?? record.stateId}</td>
           <td>{CLAIM_LABEL[claimStrength(record, evidence)]}</td>
           <td><Button variant="ghost" aria-expanded={open === record.id} onClick={() => setOpen(open === record.id ? '' : record.id)}> {open === record.id ? 'Close' : 'Review'} </Button></td>
@@ -34,7 +34,7 @@ export default function Accountability() {
     </Section>
     {current && <Section title={current.title} id="record-review">
       <p>{current.summary}</p>
-      <p className="muted">{states.find((state) => state.id === current.stateId)?.name ?? current.stateId} · {SECTOR_LABEL[current.sector]} · {isDemo ? 'Demonstration' : 'Published'}</p>
+      <p className="muted">{states.find((state) => state.id === current.stateId)?.name ?? current.stateId} · {current.sector ? SECTOR_LABEL[current.sector] : 'Unclassified'} · {isDemo ? 'Demonstration' : 'Published'}</p>
       <p><strong>Evidence status:</strong> {CLAIM_LABEL[claimStrength(current, evidence)]}</p>
       {current.institutionIds.length > 0 && <p className="muted">Institution references require legal-basis review: {current.institutionIds.map((id) => institutions.find((institution) => institution.id === id)?.name ?? id).join(', ')}</p>}
       <LifecycleTimeline record={current} evidence={evidence} />
