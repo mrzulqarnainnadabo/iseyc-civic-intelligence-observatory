@@ -181,7 +181,7 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
     const t = setTimeout(() => ctrl.abort(), timeoutMs);
     try {
       const res = await f(target, { signal: ctrl.signal, headers: { Accept: 'application/json' } });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
+      if (!res.ok) throw new Error((target === url ? 'Pulse' : 'CommunityRecord') + ' HTTP ' + res.status);
       return await res.json() as unknown;
     } finally {
       clearTimeout(t);
@@ -238,13 +238,9 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
         const reason = String(communityError);
         if (/Unsupported CommunityRecord|Invalid CommunityRecord|violated the published v0\.1 contract/.test(reason)) throw communityError;
         // Temporary migration fallback only: a valid empty v0.1 response never falls back.
-        try {
-          const body = await fetchJson(url) as PulseResponse;
-          if (!Array.isArray(body?.voices)) throw new Error('Invalid pulse response');
-          voices = body.voices;
-        } catch {
-          throw new Error('CommunityRecord unavailable; pulse fallback failed: ' + String(communityError));
-        }
+        const body = await fetchJson(url) as PulseResponse;
+        if (!Array.isArray(body?.voices)) throw new Error('Invalid pulse response');
+        voices = body.voices;
       }
     } else {
       const body = await fetchJson(url) as PulseResponse;
