@@ -160,6 +160,21 @@ describe('mandate pulse adapter', () => {
     expect(fetchImpl).toHaveBeenCalledTimes(1);
   });
 
+
+  it('fails closed on an upstream-truncated feed instead of showing it as complete', async () => {
+    const fetchImpl = vi.fn(async () => ({
+      ok: true,
+      json: async () => ({
+        contractVersion: '0.1.0', publicationBoundary: 'published-only',
+        page: 1, pageSize: 50, total: 100, totalPages: 2,
+        truncatedUpstream: true, records: [],
+      }),
+    })) as unknown as typeof fetch;
+    const adapter = createMandatePulseAdapter({ fetchImpl });
+    await expect(adapter.getRecords()).rejects.toThrow(/truncated upstream/);
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
+  });
+
   it('uses pulse temporarily when the versioned API is not deployed', async () => {
     const fetchImpl = vi.fn(async (input: RequestInfo | URL) => {
       if (String(input).includes('/api/v1/community-records')) return { ok: false, status: 404, json: async () => ({}) };
