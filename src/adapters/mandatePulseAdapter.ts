@@ -230,15 +230,17 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
   async function fetchCommunityRecords(): Promise<PulseVoice[]> {
     if (!communityUrl) throw new Error('CommunityRecord endpoint disabled');
     const first = await fetchJson(communityUrl + '?page=1&pageSize=50') as CommunityRecordsResponse;
-    if (!first || first.contractVersion !== COMMUNITY_CONTRACT_VERSION || first.publicationBoundary !== 'published-only' || !Array.isArray(first.records)) {
+    if (!first || first.contractVersion !== COMMUNITY_CONTRACT_VERSION || first.publicationBoundary !== 'published-only' || !Array.isArray(first.records) || first.page !== 1 || !Number.isInteger(first.totalPages) || first.totalPages < 1) {
       throw new Error('Unsupported CommunityRecord contract response');
     }
+    if (first.truncatedUpstream) throw new Error('CommunityRecord feed is truncated upstream; refusing to present it as complete');
     const all = [...first.records];
-    const totalPages = Math.max(1, Math.min(100, Number(first.totalPages) || 1));
+    const totalPages = Number(first.totalPages);
+    if (totalPages > 100) throw new Error('CommunityRecord pagination exceeds the safe page limit; refusing a partial feed');
     for (let page = 2; page <= totalPages; page++) {
       const next = await fetchJson(communityUrl + '?page=' + page + '&pageSize=50') as CommunityRecordsResponse;
-      if (!next || next.contractVersion !== COMMUNITY_CONTRACT_VERSION || next.publicationBoundary !== 'published-only' || !Array.isArray(next.records)) {
-        throw new Error('Invalid CommunityRecord pagination response');
+      if (!next || next.contractVersion !== COMMUNITY_CONTRACT_VERSION || next.publicationBoundary !== 'published-only' || !Array.isArray(next.records) || next.page !== page || next.truncatedUpstream) {
+        throw new Error('Invalid or truncated CommunityRecord pagination response');
       }
       all.push(...next.records);
     }
