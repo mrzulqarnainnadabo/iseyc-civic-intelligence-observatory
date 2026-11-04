@@ -638,17 +638,21 @@
     "kind": "official-data",
     "geographicCoverage": "Kaduna State; facility-level and operational snapshots are described by the platform",
     "geoLevel": "facility",
-    "dataType": "Health facility analytics platform covering readiness, service throughput, infrastructure, workforce, medicines, vaccines, supply chains and financing",
-    "updateFrequency": "Platform describes operational and snapshot datasets; exact refresh cadence not confirmed",
+    "dataType": "Public-facing facility directory, 2018 and 2025 health facility census material, facility analytics, GIS and a staff-facing data download centre",
+    "updateFrequency": "Partner documentation describes monthly facility-record update cycles triggered on the 25th; this cadence has not been independently audited.",
     "licence": "Not confirmed. Obtain the applicable data-use terms before downloading or reusing records.",
     "lastChecked": "2026-11-04",
-    "checkedHow": "HEFA portal and Kaduna State Government e-services listing checked; portal landing page loads but detailed dataset/API export access was not confirmed.",
+    "checkedHow": "HEFA public landing page checked; cross-checked with Natview Foundation publications on the 2025 census dissemination workshop (3 Dec 2025) and HEFA registry update training (23 Jun 2026).",
     "limitations": [
-      "A live portal is not proof that data exports or an unauthenticated API are available.",
-      "Dataset definitions, reporting periods, facility coverage, missingness and validation status must be checked before ingestion.",
-      "Readiness, throughput, staffing and commodity indicators are distinct measures and must not be combined into a single facility score without a validated methodology."
+      "The public landing page lists 2018/2025 health facility census material, a facility directory, analytics, GIS and a download centre; raw 2025 census data and public bulk-export access were not independently verified.",
+      "The HEFA download portal presents a staff sign-in page. No unauthenticated public API or public bulk export has been confirmed.",
+      "The monthly update cycle triggered on the 25th is described in a partner training publication; it has not been independently audited.",
+      "Facility functionality and security statuses are administrative fields. They do not independently establish clinical quality, staffing adequacy, medicine availability or service continuity.",
+      "The 2025 census dissemination publication describes preliminary findings and dashboard comparisons with 2018; do not treat a workshop report as the underlying census dataset.",
+      "Facility directory, census, supportive-supervision, longitudinal-study and service-throughput datasets are distinct sources with different reference periods and definitions; do not combine them without a data dictionary.",
+      "Licensing and permitted reuse conditions for the underlying HEFA datasets are not confirmed."
     ],
-    "notes": "Treat as a priority source-access target for the Kaduna PHC pilot. No HEFA observations have been ingested into the Observatory yet."
+    "notes": "Public portal: https://hefa.kdbs.ng/. Staff download/sign-in portal: https://download.hefa.kdbs.ng/login. Access route for public raw data remains unconfirmed. Partner sources describe a monthly update cycle on the 25th and facility coverage including COEs, PHCs and health clinics."
   },
   {
     "id": "kaduna-ksphcb-recruitment-plan-2025",
