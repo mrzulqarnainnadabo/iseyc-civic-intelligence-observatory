@@ -104,7 +104,7 @@ export const SECTOR_LABEL: Record<Sector, string> = {
   education: 'Education', health: 'Healthcare', security: 'Security', infrastructure: 'Infrastructure',
   'water-sanitation': 'Water and sanitation', employment: 'Employment and livelihoods',
   'public-finance': 'Public finance and budgets', governance: 'Governance and service delivery',
-  agriculture: 'Agriculture', environment: 'Environment', unknown: 'Unclassified',
+  agriculture: 'Agriculture', environment: 'Environment',
 };
 export const SECTORS = Object.keys(SECTOR_LABEL) as Sector[];
 
