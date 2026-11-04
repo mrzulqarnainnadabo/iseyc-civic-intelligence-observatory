@@ -321,5 +321,9 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
       // Do not invent institutional responsibility from pulse office strings.
       return [];
     },
+    async getCommunityObservations() {
+      // Separate feed: never fall back to demands, demo data or a synthetic substitute.
+      return fetchCommunityObservations({ url: DEFAULT_COMMUNITY_OBSERVATIONS_URL, fetchImpl: f, timeoutMs });
+    },
   };
 }
