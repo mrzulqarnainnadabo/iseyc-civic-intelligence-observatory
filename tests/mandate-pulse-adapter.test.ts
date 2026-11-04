@@ -97,7 +97,9 @@ describe('mandate pulse adapter', () => {
           records: [{
             id: 'cr-001', contractVersion: '0.1.0', publicationStatus: 'published',
             verificationStatus: 'unverified', text: 'A community requests reliable primary healthcare.',
-            duty: 'Health', state: null, lga: null, officeLabel: 'Governor',
+            duty: 'Health', sector: null, issueCategory: 'staffing', state: null, lga: null, officeLabel: 'Governor',
+            ward: null, facilityRef: null, reportedAt: null, publishedAt: null,
+            evidenceRefIds: ['ev-1'], followUpStatus: 'under-review', relatedSuggestedIds: ['cr-002'],
             createdAt: '2026-10-01T10:00:00.000Z',
           }],
         }),
@@ -111,6 +113,12 @@ describe('mandate pulse adapter', () => {
     expect(records[0].stateId).toBe('unknown');
     expect(records[0].reviewStatus).toBe('published');
     expect(records[0].unknowns.join(' ')).toContain('not a measure');
+    expect(records[0].sourceDuty).toBe('Health');
+    expect(records[0].officeLabel).toBe('Governor');
+    expect(records[0].issueCategory).toBe('staffing');
+    expect(records[0].evidenceRefIds).toEqual(['ev-1']);
+    expect(records[0].followUpStatus).toBe('under-review');
+    expect(records[0].relatedSuggestedIds).toEqual(['cr-002']);
   });
 
   it('follows CommunityRecord pagination before returning the complete feed', async () => {
