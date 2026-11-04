@@ -1,7 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useBundle } from '../lib/data';
 import { useAdapter } from '../lib/hooks';
-import { Section } from '../design/layout';
 import { SelectField, Button, SyntheticChip } from '../design/primitives';
 import { EmptyState } from '../design/feedback';
 import { SECTORS, SECTOR_LABEL, type Sector } from '../data/types';
