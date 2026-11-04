@@ -1,11 +1,11 @@
 import pvc2023 from '../../data/indicators/inec-pvc-2023.json' with { type: 'json' };
 import ekiti2026 from '../../data/indicators/inec-ekiti-2026.json' with { type: 'json' };
-import osun2026 from '../../data/indicators/inec-osun-2026.json' with { type: 'json' };
+import osun2026 from '../../data/indicators/inec-osun-2026.json' with { type: 'json' };\nimport cvr2025_26 from '../../data/indicators/inec-cvr-2025-26.json' with { type: 'json' };
 
 const DATASETS = {
   '2023-pvc': pvc2023,
   'ekiti-2026-register': ekiti2026,
-  'osun-2026-pvc': osun2026,
+  'osun-2026-pvc': osun2026,\n  'cvr-2025-26': cvr2025_26,
 };
 
 function send(res, status, body) {
