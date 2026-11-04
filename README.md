@@ -16,12 +16,12 @@ The products share versioned contracts but retain clear data ownership. See [the
 
 ## Current implementation
 
-- Published Civic Mandate records are consumed through the public pulse compatibility endpoint.
-- The client prefers Mandate's versioned, published-only CommunityRecord API, follows its pagination and preserves stable IDs.
-- The pulse endpoint remains a temporary fallback only while the versioned API is unavailable; an empty v0.1 response is treated as a real empty feed.
+- Published Civic Mandate records are consumed through the versioned, published-only CommunityRecord v0.1 API; the legacy `/api/pulse` endpoint is a temporary outage fallback only.
+- The Observatory adapter follows CommunityRecord pagination, preserves stable IDs and source metadata, and fails closed on malformed or truncated feeds; a valid empty v0.1 response remains empty.
 - Three World Bank indicator pilots are defined for national-level observations.
 - The Evidence Gateway and shared civic evidence contracts are present in the repository.
 - The source registry is metadata; a listed source is not proof that observations have been ingested.
+- The Kaduna PHC pilot has a documented source-readiness assessment covering HFR API-key access, HEFA data-access gaps and the KSPHCB March 2025 workforce baseline; no facility-level PHC observations have been ingested yet.
 - Nigeria's state boundaries support geographic navigation; boundary availability is not state-level evidence coverage.
 - Institutional responsibility, response and delivery claims require documentary evidence and human review.
 - Demonstration fixtures are isolated behind an explicit demo query and must never enter live data.
