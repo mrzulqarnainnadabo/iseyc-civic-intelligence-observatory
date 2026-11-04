@@ -12,13 +12,15 @@ It is an early-stage national pilot. It is not a national statistics office, a r
 | Civic Intelligence Observatory | Public evidence catalogue, observations, geographic exploration, source provenance and approved briefs |
 | Civic Brain | Evidence-grounded analysis, related-record discovery, gap identification and draft briefs for human review |
 
-The products share versioned contracts but retain clear data ownership. See [the product operating model](docs/PRODUCT-OPERATING-MODEL-v1.md).
+The products share versioned contracts but retain clear data ownership. See [the product operating model](docs/PRODUCT-OPERATING-MODEL-v1.md) and [national source-readiness assessment](docs/NATIONAL-SOURCE-READINESS-2026-11.md).
 
 ## Current implementation
 
 - Published Civic Mandate records are consumed through the versioned, published-only CommunityRecord v0.1 API; the legacy `/api/pulse` endpoint is a temporary outage fallback only.
 - The Observatory adapter follows CommunityRecord pagination, preserves stable IDs and source metadata, and fails closed on malformed or truncated feeds; a valid empty v0.1 response remains empty.
 - Three World Bank indicator pilots are defined for national-level observations.
+- The Evidence page includes a sourced historical INEC voter-register/PVC snapshot for all 36 states and FCT, with searchable state rows and explicit source arithmetic warnings.
+- Dataset-level source readiness is documented for INEC, UBEC, NBS, CBN, NPC, Budget Office, BPP/NOCOPO and health sources.
 - The Evidence Gateway and shared civic evidence contracts are present in the repository.
 - The source registry is metadata; a listed source is not proof that observations have been ingested.
 - The Kaduna PHC pilot has a documented source-readiness assessment covering HFR API-key access, HEFA data-access gaps and the KSPHCB March 2025 workforce baseline; no facility-level PHC observations have been ingested yet.
