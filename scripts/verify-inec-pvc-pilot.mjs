@@ -37,3 +37,12 @@ assert.equal(ekiti.records[0].unreconciledDifference, 5049);
 assert.equal(ekiti.records[0].doubleRegistrationsInvalidatedReported, 2103);
 assert.ok(ekiti.limitations.some((x) => x.includes("not a nationwide")));
 console.log("verify-inec-ekiti-2026: PASS (state register discrepancy retained)");
+
+const osun = JSON.parse(fs.readFileSync("data/indicators/inec-osun-2026.json", "utf8"));
+const osunApp = fs.readFileSync("src/data/indicators/inec-osun-2026.json", "utf8");
+const osunSource = fs.readFileSync("data/indicators/inec-osun-2026.json", "utf8");
+assert.equal(osunApp, osunSource, "Osun source and app copies must stay identical");
+assert.equal(osun.records[0].collectedPVCs, 1518485);
+assert.equal(osun.records[0].localGovernmentAreas, 30);
+assert.ok(osun.limitations.some((x) => x.includes("not a national CVR total")));
+console.log("verify-inec-osun-2026: PASS (state PVC count kept separate from register)");
