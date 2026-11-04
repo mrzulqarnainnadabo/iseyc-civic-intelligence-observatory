@@ -11,7 +11,11 @@ export const useBundle = (): Bundle => { const b = useContext(Ctx); if (!b) thro
 export function DataProvider({ children }: { children: ReactNode }) {
   const a = useAdapter();
   const st = useAsync<Bundle>(async () => {
-    const [sources, records, evidence, institutions, states, communityObservations] = await Promise.all([\n      a.getSources(), a.getRecords(), a.getEvidence(), a.getInstitutions(), a.getStates(),\n      a.getCommunityObservations ? a.getCommunityObservations() : Promise.resolve({ status: 'unavailable' as const, records: [], total: null, message: 'This adapter does not provide a community observation feed.' }),\n    ]);\n    return { sources, records, evidence, institutions, states, communityObservations };
+    const [sources, records, evidence, institutions, states, communityObservations] = await Promise.all([
+      a.getSources(), a.getRecords(), a.getEvidence(), a.getInstitutions(), a.getStates(),
+      a.getCommunityObservations ? a.getCommunityObservations() : Promise.resolve({ status: 'unavailable' as const, records: [], total: null, message: 'This adapter does not provide a community observation feed.' }),
+    ]);
+    return { sources, records, evidence, institutions, states, communityObservations };
   }, [a]);
   if (st.status === 'loading') return <div className="main"><Loading label="Loading the Observatory" /></div>;
   if (st.status === 'error') return <div className="main"><ErrorState message={st.message} onRetry={st.reload} /></div>;
