@@ -131,6 +131,7 @@ export async function fetchCommunityObservations(
   const fetchImpl = config.fetchImpl ?? (typeof fetch !== "undefined" ? fetch.bind(globalThis) : undefined);
   const timeoutMs = config.timeoutMs ?? 12_000;
   if (!fetchImpl) return unavailable("The community observation feed cannot be reached in this environment.");
+  const request = fetchImpl as typeof fetch;
 
   async function getPage(page: number): Promise<ApiResponse> {
     const target = new URL(url);
@@ -139,7 +140,7 @@ export async function fetchCommunityObservations(
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeoutMs);
     try {
-      const response = await fetchImpl(target.toString(), {
+      const response = await request(target.toString(), {
         signal: controller.signal,
         headers: { Accept: "application/json" },
       });
