@@ -87,4 +87,4 @@ These are not yet public. The population estimate is national context only.
 
 ## Current integration boundary
 
-The Observatory currently consumes Community Observations separately from Civic Mandate demands. The Evidence Vault API consumer is a subsequent integration step. Until that adapter is deployed and the public API returns a validated contract, the Observatory must not claim to display published Evidence Vault records or to have linked community observations to official evidence.
+The Observatory has separate read-only adapters for Community Observations and the Evidence Vault. Both fail closed when their public APIs are unavailable, invalid or incomplete. The Mandate production deployment and live Evidence Vault response still require verification; until that happens, the UI must show the unavailable state and must not claim to display published Evidence Vault records or linked evidence.

@@ -49,6 +49,7 @@ describe('Community Observation v0.1 adapter', () => {
     expect(result.records).toHaveLength(1);
     expect(result.records[0]).toMatchObject({
       id: 'observation-abc-123',
+      sourceRecordId: 'abc-123',
       synthetic: false,
       publicationStatus: 'published',
       verificationStatus: 'unverified',

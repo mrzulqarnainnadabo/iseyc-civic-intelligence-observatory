@@ -17,6 +17,7 @@ import type {
 import mapData from '../data/geo/nigeria-map.json';
 import registry from '../data/source-registry.json';
 import { DEFAULT_COMMUNITY_OBSERVATIONS_URL, fetchCommunityObservations } from './communityObservationsAdapter';
+import { DEFAULT_EVIDENCE_VAULT_URL, fetchEvidenceVaultRecords } from './evidenceVaultAdapter';
 
 export const DEFAULT_PULSE_URL = 'https://2027-street-mandate.vercel.app/api/pulse';
 export const DEFAULT_COMMUNITY_RECORDS_URL = 'https://2027-street-mandate.vercel.app/api/v1/community-records';
@@ -324,6 +325,10 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
     async getCommunityObservations() {
       // Separate feed: never fall back to demands, demo data or a synthetic substitute.
       return fetchCommunityObservations({ url: DEFAULT_COMMUNITY_OBSERVATIONS_URL, fetchImpl: f, timeoutMs });
+    },
+    async getEvidenceVaultRecords() {
+      // Evidence Vault is a separate, dual-reviewed source register; never substitute the source registry.
+      return fetchEvidenceVaultRecords({ url: DEFAULT_EVIDENCE_VAULT_URL, fetchImpl: f, timeoutMs });
     },
   };
 }

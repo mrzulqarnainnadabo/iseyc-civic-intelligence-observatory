@@ -20,7 +20,7 @@ The products share versioned contracts but retain clear data ownership. See [the
 - The Observatory adapter follows CommunityRecord pagination, preserves stable IDs and source metadata, and fails closed on malformed or truncated feeds; a valid empty v0.1 response remains empty.
 - Community Observations are a separate published-only feed, not Civic Mandate demands. The Observatory uses a distinct v0.1 adapter with strict public-field allowlisting, pagination checks and no pulse/demo fallback.
 - The observation feed exposes unavailable, invalid, incomplete, empty and ready states separately; a feed outage does not block the rest of the Observatory.
-- The Evidence Vault now has a defined public v0.1 contract and source provenance model. The Observatory does not yet consume published Evidence Vault records; a source-registry entry is not proof of ingested evidence.
+- The Observatory has a separate Evidence Vault v0.1 adapter and displays only published, dual-reviewed records. It validates source provenance, numeric values, geography and explicit observation relationships; it never substitutes the source registry for evidence.
 - Three World Bank indicator pilots are defined for national-level observations.
 - The Evidence Gateway and shared civic evidence contracts are present in the repository.
 - The source registry is metadata; a listed source is not proof that observations have been ingested.

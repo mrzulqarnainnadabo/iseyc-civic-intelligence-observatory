@@ -92,6 +92,7 @@ export interface EvidenceItem {
 export type CommunityObservationVerification = 'unverified' | 'corroborated' | 'independently-verified' | 'disputed';
 export interface CommunityObservation {
   id: string;
+  sourceRecordId: string;
   displayId: string | null;
   synthetic: false;
   contractVersion: '0.1.0';
@@ -119,6 +120,47 @@ export interface CommunityObservationFeed {
   message: string | null;
 }
 
+export type EvidenceVaultVerification = 'unverified' | 'source_confirmed' | 'content_corroborated' | 'disputed' | 'corrected' | 'superseded' | 'withdrawn';
+export type EvidenceRelation = 'not-assessed' | 'context-only' | 'corroborates' | 'contradicts' | 'unrelated';
+export interface EvidenceVaultRecord {
+  id: string;
+  displayId: string | null;
+  synthetic: false;
+  contractVersion: '0.1.0';
+  publicationStatus: 'published';
+  verificationStatus: EvidenceVaultVerification;
+  evidenceType: string;
+  evidenceScope: string;
+  title: string;
+  sourceTitle: string | null;
+  sourceUrl: string;
+  sourceId: string | null;
+  publisher: string | null;
+  indicatorCode: string | null;
+  measure: string | null;
+  unit: string | null;
+  observedValue: number | null;
+  valueStatus: string | null;
+  geographicLevel: string | null;
+  geographicUnit: string | null;
+  referencePeriod: string | null;
+  retrievedAt: string | null;
+  methodology: string | null;
+  limitations: string | null;
+  dataStatus: string | null;
+  evidenceLinkReview: string | null;
+  evidenceRelation: EvidenceRelation;
+  linkedCommunityObservationId: string | null;
+  linkedDemandId: string | null;
+  createdAt: string;
+}
+export interface EvidenceVaultFeed {
+  status: 'ready' | 'empty' | 'unavailable' | 'invalid' | 'incomplete' | 'not-in-demo';
+  records: EvidenceVaultRecord[];
+  total: number | null;
+  message: string | null;
+}
+
 export type InstitutionTier = 'federal' | 'state' | 'local' | 'other';
 export interface Institution {
   id: string;
@@ -141,6 +183,7 @@ export interface ObservatoryAdapter {
   getEvidence(q?: EvidenceQuery): Promise<EvidenceItem[]>;
   getInstitutions(): Promise<Institution[]>;
   getCommunityObservations?(): Promise<CommunityObservationFeed>;
+  getEvidenceVaultRecords?(): Promise<EvidenceVaultFeed>;
 }
 
 export const SECTOR_LABEL: Record<Sector, string> = {
