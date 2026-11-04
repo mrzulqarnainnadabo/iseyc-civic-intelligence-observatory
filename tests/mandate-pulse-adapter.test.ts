@@ -32,7 +32,7 @@ describe('mandate pulse adapter', () => {
       ok: true,
       json: async () => sample,
     })) as unknown as typeof fetch;
-    const adapter = createMandatePulseAdapter({ fetchImpl });
+    const adapter = createMandatePulseAdapter({ fetchImpl, communityRecordsUrl: null });
     expect(adapter.mode).toBe('live');
     const records = await adapter.getRecords();
     expect(records).toHaveLength(2);
@@ -85,6 +85,93 @@ describe('mandate pulse adapter', () => {
     expect(a.mode).toBe('live');
     expect(a.label).toContain('Published');
   });
+
+  it('prefers CommunityRecord v0.1 and preserves published IDs and unknown geography', async () => {
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) => {
+      const target = String(input);
+      if (target.includes('/api/v1/community-records')) return {
+        ok: true,
+        json: async () => ({
+          contractVersion: '0.1.0', publicationBoundary: 'published-only',
+          page: 1, pageSize: 50, total: 1, totalPages: 1, truncatedUpstream: false,
+          records: [{
+            id: 'cr-001', contractVersion: '0.1.0', publicationStatus: 'published',
+            verificationStatus: 'unverified', text: 'A community requests reliable primary healthcare.',
+            duty: 'Health', state: null, lga: null, officeLabel: 'Governor',
+            createdAt: '2026-10-01T10:00:00.000Z',
+          }],
+        }),
+      };
+      throw new Error('Pulse must not be called when CommunityRecord succeeds');
+    }) as unknown as typeof fetch;
+    const adapter = createMandatePulseAdapter({ fetchImpl });
+    const records = await adapter.getRecords();
+    expect(records).toHaveLength(1);
+    expect(records[0].id).toBe('mandate-cr-001');
+    expect(records[0].stateId).toBe('unknown');
+    expect(records[0].reviewStatus).toBe('published');
+    expect(records[0].unknowns.join(' ')).toContain('not a measure');
+  });
+
+  it('follows CommunityRecord pagination before returning the complete feed', async () => {
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) => {
+      const target = String(input);
+      const page = target.includes('page=2') ? 2 : 1;
+      return {
+        ok: true,
+        json: async () => ({
+          contractVersion: '0.1.0', publicationBoundary: 'published-only',
+          page, pageSize: 50, total: 51, totalPages: 2, truncatedUpstream: false,
+          records: [{
+            id: 'cr-' + page, contractVersion: '0.1.0', publicationStatus: 'published',
+            verificationStatus: 'unverified', text: 'Published concern ' + page,
+            duty: 'Health', state: 'Kaduna', lga: null, officeLabel: null,
+            createdAt: '2026-10-01T10:00:00.000Z',
+          }],
+        }),
+      };
+    }) as unknown as typeof fetch;
+    const adapter = createMandatePulseAdapter({ fetchImpl });
+    expect(await adapter.getRecords()).toHaveLength(2);
+    expect(fetchImpl).toHaveBeenCalledTimes(2);
+  });
+
+  it('does not fall back to pulse when CommunityRecord is valid but empty', async () => {
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) => {
+      if (String(input).includes('/api/v1/community-records')) return {
+        ok: true,
+        json: async () => ({
+          contractVersion: '0.1.0', publicationBoundary: 'published-only',
+          page: 1, pageSize: 50, total: 0, totalPages: 1, truncatedUpstream: false, records: [],
+        }),
+      };
+      throw new Error('Pulse fallback should not run for an empty feed');
+    }) as unknown as typeof fetch;
+    const adapter = createMandatePulseAdapter({ fetchImpl });
+    expect(await adapter.getRecords()).toEqual([]);
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
+  });
+
+  it('uses pulse temporarily when the versioned API is not deployed', async () => {
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) => {
+      if (String(input).includes('/api/v1/community-records')) return { ok: false, status: 404, json: async () => ({}) };
+      return { ok: true, json: async () => sample };
+    }) as unknown as typeof fetch;
+    const adapter = createMandatePulseAdapter({ fetchImpl });
+    expect(await adapter.getRecords()).toHaveLength(2);
+    expect(fetchImpl).toHaveBeenCalledTimes(2);
+  });
+
+  it('fails closed on an incompatible CommunityRecord contract instead of hiding it with pulse fallback', async () => {
+    const fetchImpl = vi.fn(async () => ({
+      ok: true,
+      json: async () => ({ contractVersion: '9.9.9', publicationBoundary: 'published-only', records: [] }),
+    })) as unknown as typeof fetch;
+    const adapter = createMandatePulseAdapter({ fetchImpl });
+    await expect(adapter.getRecords()).rejects.toThrow(/Unsupported CommunityRecord contract/);
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
+  });
+
 });
 
 import { adapterSearchFromLocation } from '../src/lib/adapter-search';
