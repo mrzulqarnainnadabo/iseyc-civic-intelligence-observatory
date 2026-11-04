@@ -129,7 +129,7 @@ export default function Evidence() {
   }, [sources, query]);
 
   const vault = evidenceVault ?? {
-    status: 'unavailable' as const,
+    status: (isDemo ? 'not-in-demo' : 'unavailable') as 'not-in-demo' | 'unavailable',
     records: [],
     total: null,
     message: 'The Evidence Vault feed is not configured for this adapter.',
@@ -150,7 +150,7 @@ export default function Evidence() {
       <label className="field"><span className="sr-only">Search sources</span><input className="input" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search sources" aria-label="Search sources" /></label>
       {filtered.length === 0 ? <EmptyState title="No matching sources" /> : <ul className="plain source-list">{filtered.map((source) => <li key={source.id}><SourceCitation s={source} /></li>)}</ul>}
     </Section>
-    <Section title={isDemo ? 'Demonstration demand evidence' : 'Civic Mandate evidence references'} id="community-evidence" note="Evidence references attached to published civic demands; separate from the Evidence Vault.">
+    <Section title={isDemo ? 'Demonstration evidence' : 'Civic Mandate community evidence references'} id="community-evidence" note="Evidence references attached to published civic demands; separate from the Evidence Vault.">
       {evidence.length === 0 ? <EmptyState title="No demand evidence references in this feed" /> : <ul className="plain">{evidence.slice(0, 40).map((item) => <li key={item.id}><strong>{item.title}</strong><br /><span className="muted">{item.kind} · {item.status} · {item.publisherLabel}</span></li>)}</ul>}
     </Section>
   </>;
