@@ -272,3 +272,13 @@ button.chip--on, .chip--on { background: var(--g800); color: #fff; border-color:
   margin: var(--s2) 0 0;
   font-size: var(--fs-sm, 0.9rem);
 }
+
+
+/* Compact, horizontally scrollable source table for low-width devices. */
+.data-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: var(--s3) 0; }
+.data-table { width: 100%; min-width: 34rem; border-collapse: collapse; font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
+.data-table th, .data-table td { padding: .65rem .75rem; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+.data-table thead th { color: var(--muted); font-weight: 700; background: var(--g50); }
+.data-table th:first-child, .data-table td:first-child { text-align: left; }
+.data-table tbody th { font-weight: 600; color: var(--g900); }
+.data-table tbody tr:hover { background: var(--g50); }
