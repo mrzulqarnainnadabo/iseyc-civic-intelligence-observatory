@@ -30,11 +30,11 @@ Proceed with a narrow Kaduna PHC evidence pilot, but do not build a facility sco
 - Kaduna State Government e-services lists the Ministry of Health facility analytics dashboard.
 - The portal describes integration of health facility readiness, service throughput, facility censuses, longitudinal studies, household and telepolling surveys, supportive supervision, infrastructure, human resources, medicines, vaccines, supply chains and healthcare financing.
 
-**What is confirmed:** The portal and its stated subject areas exist.
+**What is confirmed:** The public portal lists 2018/2025 census material, a facility directory, analytics, GIS, ISS and a download centre. Partner publications describe a 2025 census dissemination exercise, dashboard comparisons with 2018, monthly facility record updates on the 25th, and functionality/security fields.
 
-**What is not confirmed:** Public API access, bulk export, dataset-level definitions, update cadence, coverage, data dictionaries, facility identifiers, licensing and whether a public user can retrieve underlying records.
+**What remains unconfirmed:** The download portal presents a staff sign-in page. No unauthenticated public API or public bulk export, final census dataset, complete data dictionary, licensing terms or facility-level validation history has been confirmed. The monthly update cadence and field definitions are partner-described, not independently audited.
 
-**Integration decision:** Treat HEFA as a priority source-access discussion, not as an already integrated dataset. Ask for a public export or an approved, read-only API and a data dictionary.
+**Integration decision:** Treat HEFA as the preferred Kaduna PHC facility-level source-access target, not as an already ingested dataset. Request an approved export/API and data dictionary through KDBS / Ministry of Health. See [HEFA access review](./HEFA-ACCESS-REVIEW-2026-11.md) for the detailed source assessment.
 
 ### 3. Kaduna State Primary Health Care Board — workforce baseline
 
@@ -91,3 +91,8 @@ This does not match the **5,240** workforce baseline in the Board's March 2025 p
 - Kaduna HEFA — [Health Facility Analytics portal](https://hefa.kdbs.ng/)
 - NPHCDA — [Data Requisition Portal](https://portal.nphcda.gov.ng/)
 - Health Systems Development Fund — [Building the Frontline: Kaduna State's Primary Health Care Workforce](https://hsdf.org.ng/wp-content/uploads/2026/04/Building-the-Frontline-Kaduna-States-Primary-Health-Care-Workforce.pdf)
+
+
+## HEFA source-access update
+
+A subsequent review of the public HEFA portal and partner publications clarified the available public-facing modules and described update cycle. This strengthens the case for formal data access, but does not change the ingestion status: no HEFA facility-level observations have been imported into the Observatory.
