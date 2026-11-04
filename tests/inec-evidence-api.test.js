@@ -22,7 +22,8 @@ describe('INEC evidence endpoint', () => {
     expect(response.body.datasets.map((x) => x.datasetId)).toEqual([
       'inec-2023-registered-voters-pvc-collection',
       'inec-ekiti-2026-election-register-snapshot',
-      'inec-osun-2026-pvc-collection',\n      'inec-cvr-2025-26-phase-one-reported-counts',
+      'inec-osun-2026-pvc-collection',
+      'inec-cvr-2025-26-phase-one-reported-counts',
     ]);
     expect(response.body.note).toContain('Not a live INEC API');
   });
@@ -34,7 +35,11 @@ describe('INEC evidence endpoint', () => {
     const ekiti = response.body.datasets.find((x) => x.datasetId.includes('ekiti'));
     expect(ekiti.records[0].registeredVotersForElection).toBe(1059360);
     const osun = response.body.datasets.find((x) => x.datasetId.includes('osun'));
-    expect(osun.records[0].collectedPVCs).toBe(1518485);\n    const cvr = response.body.datasets.find((x) => x.datasetId.includes('cvr'));\n    expect(cvr.records.map((x) => x.newEligibleVotersReported)).toEqual([2782587, 2782589]);\n    expect(cvr.reconciliation.phaseOneCountDifference).toBe(2);\n    expect(cvr.nationalFinalPostCvrRegister).toBeNull();
+    expect(osun.records[0].collectedPVCs).toBe(1518485);
+    const cvr = response.body.datasets.find((x) => x.datasetId.includes('cvr'));
+    expect(cvr.records.map((x) => x.newEligibleVotersReported)).toEqual([2782587, 2782589]);
+    expect(cvr.reconciliation.phaseOneCountDifference).toBe(2);
+    expect(cvr.nationalFinalPostCvrRegister).toBeNull();
   });
 
   it('filters the 2023 dataset to an exact state name', () => {
