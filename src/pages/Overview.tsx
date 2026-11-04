@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useBundle } from '../lib/data';
+import { useAdapter } from '../lib/hooks';
 import { Section, Card } from '../design/layout';
 import { EmptyState } from '../design/feedback';
 import { SECTOR_LABEL } from '../data/types';
@@ -29,24 +30,26 @@ function Indicator({ indicator }: { indicator: IndicatorDefinition }) {
 }
 
 export default function Overview() {
+  const adapter = useAdapter();
+  const isDemo = adapter.mode === 'demo';
   const { records, states } = useBundle();
   const indicators = listIndicators();
   const representedStates = new Set(records.map((record) => record.stateId).filter(Boolean)).size;
   const latestRecords = records.slice(-8).reverse();
   return <>
-    <header className="page-heading"><h1>Nigeria</h1><span className="page-heading__meta">Civic intelligence</span></header>
-    <div className="workspace-grid" aria-label="Published community record coverage">
-      <Card title="Published records"><strong className="workspace-stat__value">{records.length}</strong><span className="workspace-stat__period">In current feed</span></Card>
-      <Card title="States represented"><strong className="workspace-stat__value">{representedStates}</strong><span className="workspace-stat__period">In current feed</span></Card>
-      <Card title="Public indicators"><strong className="workspace-stat__value">{indicators.length}</strong><span className="workspace-stat__period">National series</span></Card>
+    <header className="page-heading"><h1>Nigeria</h1><span className="page-heading__meta">{isDemo ? 'Demonstration data' : 'Published Civic Mandate feed'}</span></header>
+    <div className="workspace-grid" aria-label={isDemo ? 'Demonstration coverage' : 'Published community record coverage'}>
+      <Card title={isDemo ? 'Demonstration records' : 'Published records'}><strong className="workspace-stat__value">{records.length}</strong><span className="workspace-stat__period">{isDemo ? 'Synthetic test set' : 'Current published feed'}</span></Card>
+      <Card title={isDemo ? 'Demo states' : 'States represented'}><strong className="workspace-stat__value">{representedStates}</strong><span className="workspace-stat__period">{isDemo ? 'In synthetic test set' : 'In published feed'}</span></Card>
+      <Card title="National indicators"><strong className="workspace-stat__value">{indicators.length}</strong><span className="workspace-stat__period">World Bank series</span></Card>
     </div>
     <Section title="Public indicators" id="indicators">
       <div className="workspace-grid">{indicators.map((indicator) => <Indicator key={indicator.id} indicator={indicator} />)}</div>
     </Section>
-    <Section title="Community records" id="records" note={<Link to="/issues">All records</Link>}>
-      {latestRecords.length === 0 ? <EmptyState title="No published records in the current feed" /> : <div className="workspace-records">
+    <Section title={isDemo ? 'Demonstration records' : 'Community records'} id="records" note={<Link to="/issues">All records</Link>}>
+      {latestRecords.length === 0 ? <EmptyState title={isDemo ? 'No demonstration records' : 'No published records in the current feed'} /> : <div className="workspace-records">
         {latestRecords.map((record) => <Link className="workspace-record" key={record.id} to="/issues">
-          <span><span className="workspace-record__title">{record.title}</span><span className="workspace-record__meta">{states.find((state) => state.id === record.stateId)?.name || record.stateId} · {SECTOR_LABEL[record.sector]} · Published</span></span>
+          <span><span className="workspace-record__title">{record.title}</span><span className="workspace-record__meta">{states.find((state) => state.id === record.stateId)?.name || record.stateId} · {SECTOR_LABEL[record.sector]} · {isDemo ? 'Demonstration' : 'Published'}</span></span>
           <span className="workspace-record__date">{record.publishedMonth === 'unknown' ? '' : record.publishedMonth}</span>
         </Link>)}
       </div>}
