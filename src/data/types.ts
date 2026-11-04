@@ -50,6 +50,18 @@ export interface CivicRecord {
   title: string;
   summary: string;
   sector: Sector | null;
+  sourceDuty?: string | null;
+  issueCategory?: string | null;
+  officeLabel?: string | null;
+  verificationStatus?: string;
+  evidenceRefIds?: string[];
+  followUpStatus?: string;
+  relatedSuggestedIds?: string[];
+  ward?: string | null;
+  facilityRef?: string | null;
+  reportedAt?: string | null;
+  publishedAt?: string | null;
+  contractVersion?: string | null;
   stateId: string;
   lga?: string;
   kind: 'community-submission';
