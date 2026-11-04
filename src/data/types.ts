@@ -92,6 +92,7 @@ export interface EvidenceItem {
 export type CommunityObservationVerification = 'unverified' | 'corroborated' | 'independently-verified' | 'disputed';
 export interface CommunityObservation {
   id: string;
+  sourceRecordId: string;
   displayId: string | null;
   synthetic: false;
   contractVersion: '0.1.0';
