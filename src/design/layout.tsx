@@ -18,7 +18,7 @@ export function AppShell() {
       <a className="app-brand" href="#/" aria-label="ISEYC Observatory home"><span className="app-brand__mark" aria-hidden="true" /><span className="app-brand__name">Observatory</span></a>
       <nav className="app-nav" aria-label="Main navigation">{NAV.map((item) => <NavLink key={item.to} to={item.to} end={item.end} className={({ isActive }) => 'app-nav__link' + (isActive ? ' app-nav__link--on' : '')}>{item.label}</NavLink>)}</nav>
       <div className="app-sidebar__bottom">
-        <div className="app-mode" role="status"><span className={'app-mode__dot' + (adapter.mode === 'demo' ? ' app-mode__dot--demo' : '')} />{adapter.mode === 'demo' ? 'Demonstration data' : 'Civic Mandate feed'}</div>
+        <div className="app-mode" role="status"><span className={'app-mode__dot' + (adapter.mode === 'demo' ? ' app-mode__dot--demo' : '')} />{adapter.label}</div>
         <label className="app-lite"><input type="checkbox" checked={lite} onChange={(event) => setLite(event.target.checked)} />Low data</label>
       </div>
     </aside>
