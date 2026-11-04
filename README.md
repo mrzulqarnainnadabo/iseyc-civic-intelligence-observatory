@@ -17,7 +17,7 @@ The products share versioned contracts but retain clear data ownership. See [the
 ## Current implementation
 
 - Published Civic Mandate records are consumed through the versioned, published-only CommunityRecord v0.1 API; the legacy `/api/pulse` endpoint is a temporary outage fallback only.
-- The Observatory adapter follows CommunityRecord pagination, preserves stable IDs and source metadata, and fails closed on malformed or truncated feeds; a valid empty v0.1 response remains empty.
+- The Observatory adapter follows CommunityRecord pagination, preserves stable IDs and source metadata, and fails closed on malformed or truncated feeds; a valid empty v0.1 response remains empty.\n- Community Observations are a separate published-only feed, not Civic Mandate demands. The Observatory uses a distinct v0.1 adapter with strict public-field allowlisting, pagination checks and no pulse/demo fallback.\n- The observation feed exposes unavailable, invalid, incomplete, empty and ready states separately; a feed outage does not block the rest of the Observatory.
 - Three World Bank indicator pilots are defined for national-level observations.
 - The Evidence Gateway and shared civic evidence contracts are present in the repository.
 - The source registry is metadata; a listed source is not proof that observations have been ingested.
