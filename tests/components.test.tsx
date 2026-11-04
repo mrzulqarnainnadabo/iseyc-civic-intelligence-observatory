@@ -38,18 +38,20 @@ describe('design system', () => {
 });
 
 describe('pages', () => {
-  it('Overview presents institutional entry points and multi-stream framing', () => {
+  it('Overview is a compact national workspace and labels demonstration data', () => {
     render(wrap(<Overview />));
-    expect(screen.getByText(/Understand the evidence/i)).toBeInTheDocument();
-    expect(screen.getAllByText(/Evidence library/i).length).toBeGreaterThan(0);
-    expect(screen.getByText(/Three evidence streams/i)).toBeInTheDocument();
-    expect(screen.getByText(/Operated by ISEYC/i)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Nigeria' })).toBeInTheDocument();
+    expect(screen.getByText('Demonstration data')).toBeInTheDocument();
+    expect(screen.getByText('Demonstration records')).toBeInTheDocument();
+    expect(screen.getByText('National indicators')).toBeInTheDocument();
+    expect(screen.queryByText(/Three evidence streams/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Operated by ISEYC/i)).not.toBeInTheDocument();
   });
-  it('Overview remains useful when there are no community records', () => {
+  it('Overview remains useful with no community records', () => {
     render(wrap(<Overview />, { ...bundle, records: [], evidence: [] }));
-    expect(screen.getByText(/Understand the evidence/i)).toBeInTheDocument();
-    expect(screen.getByText(/Three evidence streams/i)).toBeInTheDocument();
-    expect(screen.getAllByText(/National indicator pilots/i).length).toBeGreaterThan(0);
+    expect(screen.getByText('No demonstration records')).toBeInTheDocument();
+    expect(screen.getByText('National indicators')).toBeInTheDocument();
+    expect(screen.getByText(/Population, total/)).toBeInTheDocument();
   });
   it('Issues filters by sector and reports empty results without implying no need', () => {
     render(wrap(<Issues />));
