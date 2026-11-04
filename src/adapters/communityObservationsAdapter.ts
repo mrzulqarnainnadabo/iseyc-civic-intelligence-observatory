@@ -98,6 +98,7 @@ function isRecord(value: unknown): value is ApiRecord {
 function mapRecord(record: ApiRecord): CommunityObservation {
   return {
     id: "observation-" + record.id,
+    sourceRecordId: record.id,
     displayId: record.displayId || null,
     synthetic: false,
     contractVersion: CONTRACT_VERSION,
