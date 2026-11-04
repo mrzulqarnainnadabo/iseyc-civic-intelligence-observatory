@@ -37,9 +37,9 @@ Readiness is not a measure of institutional credibility. An authoritative instit
 - INEC's 2023 General Election report states a validated register of 93,469,008 voters.
 - INEC's 2023 nationwide PVC summary reports 87,209,007 collected PVCs (93.3%) as at 5 February 2023.
 - The 2023 state summary reports Kaduna at 4,335,208 registered voters and 4,164,473 collected PVCs.
-- INEC's PVC statistics page publishes certified polling-unit breakdowns for selected off-cycle governorship elections, including the 2026 Osun election, with 1,518,485 collected PVCs across 30 LGAs.
+- INEC's PVC statistics page publishes certified polling-unit breakdowns for selected off-cycle governorship elections. Its 13 August 2026 Osun release reports 1,518,485 collected PVCs across 30 LGAs.
 - INEC's February 2026 Chairman's remarks state that 2,782,587 eligible voters were registered in CVR phase one (18 August–10 December 2025). A separate INEC press release reports 2,782,589. Preserve this two-person source discrepancy pending clarification.
-- The same February statement gave a scheduled CVR conclusion of 30 August 2026. A schedule is not proof of completion; a final consolidated post-exercise register and state/LGA tables are still required.
+- The same February statement gave a scheduled CVR conclusion of 30 August 2026. The portal now confirms the registration exercise has ended, but says administrative processing of applications remains underway. The closure notice is not a final validated register. A final consolidated post-exercise register and state/LGA tables are still required.
 
 **Important source-quality finding — 2023 PVC arithmetic**
 The INEC 2023 PDF's registered-voter and collected-PVC state rows sum to their printed national totals. Its uncollected-PVC data do not reconcile:
@@ -282,3 +282,6 @@ The strongest path is not to add dozens of agency names or launch a national das
 
 
 The Ekiti register snapshot is stored in `data/indicators/inec-ekiti-2026.json` and the 2023 register/PVC series in `data/indicators/inec-pvc-2023.json`. Both are source transcriptions with explicit reconciliation fields; neither should be described as a live national register.
+
+
+**Latest CVR status check (4 November 2026):** INEC's CVR portal displays “Continuous Voters Registration Exercise Ended” and says the Commission is completing administrative processing of applications. It advises applicants to await email notification after processing. This is a verified exercise-status notice, not the final validated register count. The Observatory therefore does not infer a new national voter total from the closure notice.
