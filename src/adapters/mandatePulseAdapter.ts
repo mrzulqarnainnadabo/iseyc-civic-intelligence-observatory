@@ -52,12 +52,27 @@ type PulseVoice = {
   state?: string;
   lga?: string;
   created?: string;
+  sector?: string | null;
+  issueCategory?: string | null;
+  officeLabel?: string | null;
+  verificationStatus?: string;
+  evidenceRefIds?: string[];
+  followUpStatus?: string;
+  relatedSuggestedIds?: string[];
+  ward?: string | null;
+  facilityRef?: string | null;
+  reportedAt?: string | null;
+  publishedAt?: string | null;
+  contractVersion?: string | null;
 };
 
 type CommunityRecordV01 = {
   id: string; contractVersion: string; publicationStatus: string; verificationStatus: string;
   text: string; duty: string | null; state: string | null; lga: string | null;
   officeLabel: string | null; createdAt: string;
+  sector: string | null; issueCategory: string | null; ward: string | null;
+  facilityRef: string | null; reportedAt: string | null; publishedAt: string | null;
+  evidenceRefIds: string[]; followUpStatus: string; relatedSuggestedIds: string[];
 };
 type CommunityRecordsResponse = {
   contractVersion: string; publicationBoundary: string; page: number; pageSize: number;
@@ -115,6 +130,18 @@ function voiceToRecord(v: PulseVoice, stateIds: Set<string>): CivicRecord | null
     title,
     summary: v.sentence.trim(),
     sector,
+    sourceDuty: v.duty || v.mandate || null,
+    issueCategory: v.issueCategory ?? null,
+    officeLabel: v.officeLabel || v.office || null,
+    verificationStatus: v.verificationStatus || 'unverified',
+    evidenceRefIds: Array.isArray(v.evidenceRefIds) ? v.evidenceRefIds : [],
+    followUpStatus: v.followUpStatus || 'unknown',
+    relatedSuggestedIds: Array.isArray(v.relatedSuggestedIds) ? v.relatedSuggestedIds : [],
+    ward: v.ward ?? null,
+    facilityRef: v.facilityRef ?? null,
+    reportedAt: v.reportedAt ?? null,
+    publishedAt: v.publishedAt ?? null,
+    contractVersion: v.contractVersion ?? null,
     stateId,
     lga: v.lga?.trim() || undefined,
     kind: 'community-submission',
@@ -223,6 +250,11 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
         id: String(r.id), sentence: r.text, duty: r.duty || undefined,
         state: r.state || undefined, lga: r.lga || undefined,
         office: r.officeLabel || undefined, created: r.createdAt || undefined,
+        sector: r.sector, issueCategory: r.issueCategory, officeLabel: r.officeLabel,
+        verificationStatus: r.verificationStatus, evidenceRefIds: r.evidenceRefIds,
+        followUpStatus: r.followUpStatus, relatedSuggestedIds: r.relatedSuggestedIds,
+        ward: r.ward, facilityRef: r.facilityRef, reportedAt: r.reportedAt,
+        publishedAt: r.publishedAt, contractVersion: r.contractVersion,
       };
     });
   }
