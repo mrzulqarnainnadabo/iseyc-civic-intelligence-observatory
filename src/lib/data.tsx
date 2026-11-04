@@ -1,9 +1,9 @@
 import { createContext, useContext, type ReactNode } from 'react';
-import type { CivicRecord, EvidenceItem, Institution, SourceRecord, StateRef } from '../data/types';
+import type { CivicRecord, CommunityObservationFeed, EvidenceItem, Institution, SourceRecord, StateRef } from '../data/types';
 import { useAdapter, useAsync } from './hooks';
 import { Loading, ErrorState } from '../design/feedback';
 
-export interface Bundle { sources: SourceRecord[]; records: CivicRecord[]; evidence: EvidenceItem[]; institutions: Institution[]; states: StateRef[] }
+export interface Bundle { sources: SourceRecord[]; records: CivicRecord[]; evidence: EvidenceItem[]; institutions: Institution[]; states: StateRef[]; communityObservations?: CommunityObservationFeed }
 const Ctx = createContext<Bundle | null>(null);
 export const useBundle = (): Bundle => { const b = useContext(Ctx); if (!b) throw new Error('DataProvider missing'); return b; };
 
@@ -11,8 +11,11 @@ export const useBundle = (): Bundle => { const b = useContext(Ctx); if (!b) thro
 export function DataProvider({ children }: { children: ReactNode }) {
   const a = useAdapter();
   const st = useAsync<Bundle>(async () => {
-    const [sources, records, evidence, institutions, states] = await Promise.all([a.getSources(), a.getRecords(), a.getEvidence(), a.getInstitutions(), a.getStates()]);
-    return { sources, records, evidence, institutions, states };
+    const [sources, records, evidence, institutions, states, communityObservations] = await Promise.all([
+      a.getSources(), a.getRecords(), a.getEvidence(), a.getInstitutions(), a.getStates(),
+      a.getCommunityObservations ? a.getCommunityObservations() : Promise.resolve({ status: 'unavailable' as const, records: [], total: null, message: 'This adapter does not provide a community observation feed.' }),
+    ]);
+    return { sources, records, evidence, institutions, states, communityObservations };
   }, [a]);
   if (st.status === 'loading') return <div className="main"><Loading label="Loading the Observatory" /></div>;
   if (st.status === 'error') return <div className="main"><ErrorState message={st.message} onRetry={st.reload} /></div>;

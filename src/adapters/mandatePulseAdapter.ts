@@ -16,6 +16,7 @@ import type {
 } from '../data/types';
 import mapData from '../data/geo/nigeria-map.json';
 import registry from '../data/source-registry.json';
+import { DEFAULT_COMMUNITY_OBSERVATIONS_URL, fetchCommunityObservations } from './communityObservationsAdapter';
 
 export const DEFAULT_PULSE_URL = 'https://2027-street-mandate.vercel.app/api/pulse';
 export const DEFAULT_COMMUNITY_RECORDS_URL = 'https://2027-street-mandate.vercel.app/api/v1/community-records';
@@ -319,6 +320,10 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
     async getInstitutions(): Promise<Institution[]> {
       // Do not invent institutional responsibility from pulse office strings.
       return [];
+    },
+    async getCommunityObservations() {
+      // Separate feed: never fall back to demands, demo data or a synthetic substitute.
+      return fetchCommunityObservations({ url: DEFAULT_COMMUNITY_OBSERVATIONS_URL, fetchImpl: f, timeoutMs });
     },
   };
 }

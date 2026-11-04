@@ -89,6 +89,36 @@ export interface EvidenceItem {
   verification?: { reviewerId: string; reviewedAt: string; method: string };
 }
 
+export type CommunityObservationVerification = 'unverified' | 'corroborated' | 'independently-verified' | 'disputed';
+export interface CommunityObservation {
+  id: string;
+  displayId: string | null;
+  synthetic: false;
+  contractVersion: '0.1.0';
+  publicationStatus: 'published';
+  verificationStatus: CommunityObservationVerification;
+  title: string;
+  reportType: string;
+  description: string;
+  sector: Sector | null;
+  stateId: string;
+  stateName: string;
+  lga: string | null;
+  ward: string | null;
+  placeOrFacility: string | null;
+  observedOn: string | null;
+  evidenceTypes: string[];
+  evidenceLink: string | null;
+  submittedAt: string;
+  publishedAt: string | null;
+}
+export interface CommunityObservationFeed {
+  status: 'ready' | 'empty' | 'unavailable' | 'invalid' | 'incomplete' | 'not-in-demo';
+  records: CommunityObservation[];
+  total: number | null;
+  message: string | null;
+}
+
 export type InstitutionTier = 'federal' | 'state' | 'local' | 'other';
 export interface Institution {
   id: string;
@@ -110,6 +140,7 @@ export interface ObservatoryAdapter {
   getRecords(q?: RecordQuery): Promise<CivicRecord[]>;
   getEvidence(q?: EvidenceQuery): Promise<EvidenceItem[]>;
   getInstitutions(): Promise<Institution[]>;
+  getCommunityObservations?(): Promise<CommunityObservationFeed>;
 }
 
 export const SECTOR_LABEL: Record<Sector, string> = {
