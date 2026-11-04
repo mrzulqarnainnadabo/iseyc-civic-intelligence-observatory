@@ -189,7 +189,7 @@ describe('mandate pulse adapter', () => {
     })) as unknown as typeof fetch;
     const adapter = createMandatePulseAdapter({ fetchImpl });
     const records = await adapter.getRecords();
-    expect(records[0].sector).toBe('unknown');
+    expect(records[0].sector).toBeNull();
   });
 
 });
