@@ -279,3 +279,6 @@ Do not use page views, submitted report counts or partner logos as proof of publ
 The strongest path is not to add dozens of agency names or launch a national dashboard prematurely. It is to deliver a small number of defensible public answers, starting with voter participation, basic education, public finance and Kaduna primary healthcare, then expand by evidence readiness.
 
 **National in ambition. Local in evidence. Transparent about what is not yet known.**
+
+
+The Ekiti register snapshot is stored in `data/indicators/inec-ekiti-2026.json` and the 2023 register/PVC series in `data/indicators/inec-pvc-2023.json`. Both are source transcriptions with explicit reconciliation fields; neither should be described as a live national register.
