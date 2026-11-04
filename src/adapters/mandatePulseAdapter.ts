@@ -18,6 +18,8 @@ import mapData from '../data/geo/nigeria-map.json';
 import registry from '../data/source-registry.json';
 
 export const DEFAULT_PULSE_URL = 'https://2027-street-mandate.vercel.app/api/pulse';
+export const DEFAULT_COMMUNITY_RECORDS_URL = 'https://2027-street-mandate.vercel.app/api/v1/community-records';
+const COMMUNITY_CONTRACT_VERSION = '0.1.0';
 
 /** Primary duty → sector (aligned with Stage 2 crosswalk primaries / interim). */
 const DUTY_TO_SECTOR: Record<string, Sector> = {
@@ -38,7 +40,7 @@ const DUTY_TO_SECTOR: Record<string, Sector> = {
   'Public Finance': 'public-finance',
   Governance: 'governance',
   Justice: 'governance',
-  Other: 'governance',
+
 };
 
 type PulseVoice = {
@@ -50,6 +52,31 @@ type PulseVoice = {
   state?: string;
   lga?: string;
   created?: string;
+  sector?: string | null;
+  issueCategory?: string | null;
+  officeLabel?: string | null;
+  verificationStatus?: string;
+  evidenceRefIds?: string[];
+  followUpStatus?: string;
+  relatedSuggestedIds?: string[];
+  ward?: string | null;
+  facilityRef?: string | null;
+  reportedAt?: string | null;
+  publishedAt?: string | null;
+  contractVersion?: string | null;
+};
+
+type CommunityRecordV01 = {
+  id: string; contractVersion: string; publicationStatus: string; verificationStatus: string;
+  text: string; duty: string | null; state: string | null; lga: string | null;
+  officeLabel: string | null; createdAt: string;
+  sector: string | null; issueCategory: string | null; ward: string | null;
+  facilityRef: string | null; reportedAt: string | null; publishedAt: string | null;
+  evidenceRefIds: string[]; followUpStatus: string; relatedSuggestedIds: string[];
+};
+type CommunityRecordsResponse = {
+  contractVersion: string; publicationBoundary: string; page: number; pageSize: number;
+  total: number; totalPages: number; truncatedUpstream: boolean; records: CommunityRecordV01[];
 };
 
 type PulseResponse = {
@@ -75,16 +102,17 @@ function monthFromIso(iso?: string): string {
   return /^\d{4}-\d{2}$/.test(d) ? d : 'unknown';
 }
 
-function mapDuty(duty?: string, mandate?: string): Sector {
-  const key = (duty || mandate || 'Other').trim();
-  return DUTY_TO_SECTOR[key] ?? 'governance';
+function mapDuty(duty?: string, mandate?: string): Sector | null {
+  const key = (duty || mandate || '').trim();
+  if (!key) return null;
+  return DUTY_TO_SECTOR[key] ?? null;
 }
 
 function voiceToRecord(v: PulseVoice, stateIds: Set<string>): CivicRecord | null {
   if (!v?.id || !v.sentence?.trim()) return null;
   const stateName = (v.state || '').trim();
-  if (!stateName) return null;
-  let stateId = slugState(stateName);
+  // CommunityRecord permits unknown geography; preserve the record without inventing a state.
+  let stateId = stateName ? slugState(stateName) : 'unknown';
   // Prefer geo file id when name matches
   if (!stateIds.has(stateId)) {
     const byName = [...stateIds].find((id) => id === stateId);
@@ -102,6 +130,18 @@ function voiceToRecord(v: PulseVoice, stateIds: Set<string>): CivicRecord | null
     title,
     summary: v.sentence.trim(),
     sector,
+    sourceDuty: v.duty || v.mandate || null,
+    issueCategory: v.issueCategory ?? null,
+    officeLabel: v.officeLabel || v.office || null,
+    verificationStatus: v.verificationStatus || 'unverified',
+    evidenceRefIds: Array.isArray(v.evidenceRefIds) ? v.evidenceRefIds : [],
+    followUpStatus: v.followUpStatus || 'unknown',
+    relatedSuggestedIds: Array.isArray(v.relatedSuggestedIds) ? v.relatedSuggestedIds : [],
+    ward: v.ward ?? null,
+    facilityRef: v.facilityRef ?? null,
+    reportedAt: v.reportedAt ?? null,
+    publishedAt: v.publishedAt ?? null,
+    contractVersion: v.contractVersion ?? null,
     stateId,
     lga: v.lga?.trim() || undefined,
     kind: 'community-submission',
@@ -144,12 +184,14 @@ function voiceToEvidence(v: PulseVoice, record: CivicRecord): EvidenceItem {
 
 export interface MandatePulseConfig {
   pulseUrl?: string;
+  communityRecordsUrl?: string | null;
   fetchImpl?: typeof fetch;
   timeoutMs?: number;
 }
 
 export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): ObservatoryAdapter {
   const url = cfg.pulseUrl || DEFAULT_PULSE_URL;
+  const communityUrl = cfg.communityRecordsUrl === null ? null : (cfg.communityRecordsUrl || DEFAULT_COMMUNITY_RECORDS_URL);
   const f = cfg.fetchImpl ?? (typeof fetch !== 'undefined' ? fetch.bind(globalThis) : undefined);
   const timeoutMs = cfg.timeoutMs ?? 12_000;
 
@@ -160,34 +202,92 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
   let cache: { records: CivicRecord[]; evidence: EvidenceItem[]; at: number } | null = null;
   const TTL = 60_000;
 
-  async function load() {
+  async function fetchJson(target: string): Promise<unknown> {
     if (!f) throw new Error('fetch is not available');
-    if (cache && Date.now() - cache.at < TTL) return cache;
     const ctrl = new AbortController();
     const t = setTimeout(() => ctrl.abort(), timeoutMs);
     try {
-      const res = await f(url, { signal: ctrl.signal, headers: { Accept: 'application/json' } });
-      if (!res.ok) throw new Error(`Pulse HTTP ${res.status}`);
-      const body = (await res.json()) as PulseResponse;
-      const voices = Array.isArray(body.voices) ? body.voices : [];
-      const records: CivicRecord[] = [];
-      const evidence: EvidenceItem[] = [];
-      for (const v of voices) {
-        const rec = voiceToRecord(v, stateIds);
-        if (!rec) continue;
-        records.push(rec);
-        evidence.push(voiceToEvidence(v, rec));
-      }
-      cache = { records, evidence, at: Date.now() };
-      return cache;
+      const res = await f(target, { signal: ctrl.signal, headers: { Accept: 'application/json' } });
+      if (!res.ok) throw new Error((target === url ? 'Pulse' : 'CommunityRecord') + ' HTTP ' + res.status);
+      return await res.json() as unknown;
     } finally {
       clearTimeout(t);
     }
   }
 
+  function mapVoices(voices: PulseVoice[]) {
+    const records: CivicRecord[] = [];
+    const evidence: EvidenceItem[] = [];
+    for (const v of voices) {
+      const rec = voiceToRecord(v, stateIds);
+      if (!rec) continue;
+      records.push(rec);
+      evidence.push(voiceToEvidence(v, rec));
+    }
+    return { records, evidence };
+  }
+
+  async function fetchCommunityRecords(): Promise<PulseVoice[]> {
+    if (!communityUrl) throw new Error('CommunityRecord endpoint disabled');
+    const first = await fetchJson(communityUrl + '?page=1&pageSize=50') as CommunityRecordsResponse;
+    if (!first || first.contractVersion !== COMMUNITY_CONTRACT_VERSION || first.publicationBoundary !== 'published-only' || !Array.isArray(first.records) || first.page !== 1 || !Number.isInteger(first.totalPages) || first.totalPages < 1) {
+      throw new Error('Unsupported CommunityRecord contract response');
+    }
+    if (first.truncatedUpstream) throw new Error('CommunityRecord feed is truncated upstream; refusing to present it as complete');
+    const all = [...first.records];
+    const totalPages = Number(first.totalPages);
+    if (totalPages > 100) throw new Error('CommunityRecord pagination exceeds the safe page limit; refusing a partial feed');
+    for (let page = 2; page <= totalPages; page++) {
+      const next = await fetchJson(communityUrl + '?page=' + page + '&pageSize=50') as CommunityRecordsResponse;
+      if (!next || next.contractVersion !== COMMUNITY_CONTRACT_VERSION || next.publicationBoundary !== 'published-only' || !Array.isArray(next.records) || next.page !== page || next.truncatedUpstream) {
+        throw new Error('Invalid or truncated CommunityRecord pagination response');
+      }
+      all.push(...next.records);
+    }
+    return all.map((r) => {
+      if (r.contractVersion !== COMMUNITY_CONTRACT_VERSION || r.publicationStatus !== 'published' || !r.id || !r.text?.trim()) {
+        throw new Error('CommunityRecord violated the published v0.1 contract');
+      }
+      return {
+        id: String(r.id), sentence: r.text, duty: r.duty || undefined,
+        state: r.state || undefined, lga: r.lga || undefined,
+        office: r.officeLabel || undefined, created: r.createdAt || undefined,
+        sector: r.sector, issueCategory: r.issueCategory, officeLabel: r.officeLabel,
+        verificationStatus: r.verificationStatus, evidenceRefIds: r.evidenceRefIds,
+        followUpStatus: r.followUpStatus, relatedSuggestedIds: r.relatedSuggestedIds,
+        ward: r.ward, facilityRef: r.facilityRef, reportedAt: r.reportedAt,
+        publishedAt: r.publishedAt, contractVersion: r.contractVersion,
+      };
+    });
+  }
+
+  async function load() {
+    if (cache && Date.now() - cache.at < TTL) return cache;
+    let voices: PulseVoice[];
+    if (communityUrl) {
+      try {
+        voices = await fetchCommunityRecords();
+      } catch (communityError) {
+        // A malformed or unsupported v0.1 payload is a contract failure, not an outage.
+        const reason = String(communityError);
+        if (/Unsupported CommunityRecord|Invalid CommunityRecord|violated the published v0\.1 contract|CommunityRecord feed is truncated|CommunityRecord pagination exceeds/.test(reason)) throw communityError;
+        // Temporary migration fallback only: a valid empty v0.1 response never falls back.
+        const body = await fetchJson(url) as PulseResponse;
+        if (!Array.isArray(body?.voices)) throw new Error('Invalid pulse response');
+        voices = body.voices;
+      }
+    } else {
+      const body = await fetchJson(url) as PulseResponse;
+      if (!Array.isArray(body?.voices)) throw new Error('Invalid pulse response');
+      voices = body.voices;
+    }
+    cache = { ...mapVoices(voices), at: Date.now() };
+    return cache;
+  }
+
   return {
     mode: 'live',
-    label: 'Published Civic Mandate records (public pulse)',
+    label: 'Published Mandate feed',
     async getSources() {
       return sources;
     },

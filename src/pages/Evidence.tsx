@@ -13,70 +13,42 @@ import {
 } from '../lib/indicators';
 
 function IndicatorBlock({ indicator }: { indicator: IndicatorDefinition }) {
-  const [obs, setObs] = useState<IndicatorObservation[]>([]);
-  const [error, setError] = useState<string | null>(null);
+  const [observations, setObservations] = useState<IndicatorObservation[]>([]);
+  const [status, setStatus] = useState<'loading' | 'ready' | 'empty' | 'unavailable'>('loading');
   const [retrievedAt, setRetrievedAt] = useState<string | null>(null);
 
   useEffect(() => {
-    let alive = true;
-    fetchViaGateway(indicator.id).then((r) => {
-      if (!alive) return;
-      setObs(r.observations);
-      setError(r.status === 'error' || r.status === 'empty' ? r.errorClass || r.status : null);
-      setRetrievedAt(
-        r.observations[0]?.retrievedAt ||
-          (r.receipt as { retrievedAt?: string } | null)?.retrievedAt ||
-          null,
-      );
+    let active = true;
+    fetchViaGateway(indicator.id).then((result) => {
+      if (!active) return;
+      setObservations(result.observations);
+      setStatus(result.status === 'error' ? 'unavailable' : result.status === 'empty' || !result.observations.length ? 'empty' : 'ready');
+      setRetrievedAt(result.observations[0]?.retrievedAt || (result.receipt as { retrievedAt?: string } | null)?.retrievedAt || null);
     });
-    return () => {
-      alive = false;
-    };
-  }, [indicator]);
+    return () => { active = false; };
+  }, [indicator.id]);
 
-  const recent = obs.slice(-5).reverse();
+  const recent = observations.slice(-5).reverse();
+  const latest = recent[0];
 
-  return (
-    <Card>
-      <strong>{indicator.title}</strong>
-      <p className="muted">{indicator.definition}</p>
-      <p className="muted" style={{ fontSize: 13 }}>
-        Unit: {indicator.unit} · Type: {indicator.measurementType} · {indicator.geographicCoverage} · geo level: national
-      </p>
-      {recent.length ? (
-        <ul className="plain">
-          {recent.map((o) => (
-            <li key={o.referencePeriod}>
-              <strong>Reference {o.referencePeriod}</strong>: {formatIndicatorValue(o.value, indicator.unit)}
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p className="muted">
-          {error
-            ? `No observations (${error}). Synthetic data is not substituted.`
-            : 'No observations loaded.'}
-        </p>
-      )}
-      {retrievedAt ? (
-        <p className="muted" style={{ fontSize: 12 }}>
-          Last retrieval (gateway): {retrievedAt}
-        </p>
-      ) : null}
-      <p className="muted" style={{ fontSize: 12 }}>
-        {indicator.methodologyNotes}
-      </p>
-      <p className="muted" style={{ fontSize: 12 }}>
-        Limitations: {indicator.limitations.join(' ')}
-      </p>
-      <p className="muted" style={{ fontSize: 12 }}>
-        Source: {indicator.sourcePublisher} · Licence: {indicator.licence}
-      </p>
-      <a href={indicator.sourceUrl} target="_blank" rel="noopener noreferrer">
-        Source page
-      </a>
-    </Card>
-  );
+  return <Card title={indicator.title}>
+    {status === 'loading' ? <p className="workspace-loading">Loading</p> : latest ? <>
+      <strong className="workspace-stat__value">{formatIndicatorValue(latest.value, indicator.unit)}</strong>
+      <span className="workspace-stat__period">{latest.referencePeriod} · National</span>
+    </> : <><strong className="workspace-stat__value">—</strong><span className="workspace-stat__period">{status === 'unavailable' ? 'Source unavailable' : 'No observation'}</span></>}
+    <span className="workspace-indicator__source">{indicator.sourcePublisher}</span>
+    {retrievedAt && <span className="workspace-indicator__source">Retrieved {retrievedAt}</span>}
+    <details className="record">
+      <summary>Method and limitations</summary>
+      <p>{indicator.definition}</p>
+      <p className="muted">{indicator.methodologyNotes}</p>
+      <p className="muted">{indicator.limitations.join(' ')}</p>
+      <p className="muted">Unit: {indicator.unit} · {indicator.measurementType} · {indicator.geographicCoverage}</p>
+      <p className="muted">Licence: {indicator.licence} · Update: {indicator.updateFrequency}</p>
+      <a href={indicator.sourceUrl} target="_blank" rel="noopener noreferrer">Open source</a>
+    </details>
+    {recent.length > 1 && <details className="record"><summary>Recent observations ({recent.length})</summary><ul className="plain">{recent.map((observation) => <li key={observation.referencePeriod}>{observation.referencePeriod}: {formatIndicatorValue(observation.value, indicator.unit)}</li>)}</ul></details>}
+  </Card>;
 }
 
 export default function Evidence() {
@@ -84,95 +56,28 @@ export default function Evidence() {
   const { mode } = useAdapter();
   const isDemo = mode === 'demo';
   const indicators = listIndicators();
-  const [q, setQ] = useState('');
+  const [query, setQuery] = useState('');
   const filtered = useMemo(() => {
-    const t = q.trim().toLowerCase();
-    if (!t) return sources;
-    return sources.filter(
-      (s) =>
-        s.name.toLowerCase().includes(t) ||
-        s.publisher.toLowerCase().includes(t) ||
-        (s.sectors || []).join(' ').toLowerCase().includes(t),
+    const term = query.trim().toLowerCase();
+    if (!term) return sources;
+    return sources.filter((source) =>
+      source.name.toLowerCase().includes(term) ||
+      source.publisher.toLowerCase().includes(term) ||
+      source.sectors.join(' ').toLowerCase().includes(term)
     );
-  }, [sources, q]);
+  }, [sources, query]);
 
-  return (
-    <>
-      <div className="pagehead">
-        <h1>Evidence library</h1>
-        <p className="lead">
-          Public source registry and pilot national indicators. Community submissions are listed separately and are not
-          national statistics.
-        </p>
-      </div>
-
-      <Section
-        title="National indicator pilots"
-        id="indicator-pilots"
-        note="Live retrieval from World Bank WDI. Values are not produced by ISEYC."
-      >
-        <div className="grid2">
-          {indicators.map((ind) => (
-            <IndicatorBlock key={ind.id} indicator={ind} />
-          ))}
-        </div>
-      </Section>
-
-      <Section
-        title="Registered sources"
-        id="registry"
-        note="Metadata catalogue. A listed source is not automatically loaded as observations."
-      >
-        <label className="field">
-          <span className="sr-only">Search sources</span>
-          <input
-            type="search"
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-            placeholder="Search name, publisher or sector"
-            aria-label="Search sources"
-          />
-        </label>
-        {filtered.length === 0 ? (
-          <EmptyState title="No sources match">Try a broader search.</EmptyState>
-        ) : (
-          <ul className="plain source-list">
-            {filtered.map((s) => (
-              <li key={s.id}>
-                <SourceCitation s={s} />
-              </li>
-            ))}
-          </ul>
-        )}
-      </Section>
-
-      <Section
-        title={isDemo ? 'Demonstration evidence items' : 'Published community evidence items'}
-        id="items"
-        note={
-          isDemo
-            ? 'Synthetic items for offline review only.'
-            : 'Drawn from published Civic Mandate records when the live adapter is active. Not a national sample.'
-        }
-      >
-        {evidence.length === 0 ? (
-          <EmptyState title="No community evidence items in this dataset">
-            This does not mean communities have no concerns. It means none are in the current published set.
-          </EmptyState>
-        ) : (
-          <ul className="plain">
-            {evidence.slice(0, 40).map((e) => (
-              <li key={e.id}>
-                <strong>{e.title}</strong>
-                <br />
-                <span className="muted">
-                  {e.kind} · {e.status} · {e.publisherLabel}
-                </span>
-              </li>
-            ))}
-          </ul>
-        )}
-      </Section>
-    </>
-  );
+  return <>
+    <header className="page-heading"><h1>Evidence</h1><span className="page-heading__meta">Public sources and observations</span></header>
+    <Section title="National indicators" id="indicators">
+      <div className="workspace-grid">{indicators.map((indicator) => <IndicatorBlock key={indicator.id} indicator={indicator} />)}</div>
+    </Section>
+    <Section title="Source registry" id="registry" note="A registered source is not necessarily an ingested dataset.">
+      <label className="field"><span className="sr-only">Search sources</span><input className="input" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search sources" aria-label="Search sources" /></label>
+      {filtered.length === 0 ? <EmptyState title="No matching sources" /> : <ul className="plain source-list">{filtered.map((source) => <li key={source.id}><SourceCitation s={source} /></li>)}</ul>}
+    </Section>
+    <Section title={isDemo ? 'Demonstration evidence' : 'Community evidence'} id="community-evidence">
+      {evidence.length === 0 ? <EmptyState title="No community evidence in this feed" /> : <ul className="plain">{evidence.slice(0, 40).map((item) => <li key={item.id}><strong>{item.title}</strong><br /><span className="muted">{item.kind} · {item.status} · {item.publisherLabel}</span></li>)}</ul>}
+    </Section>
+  </>;
 }

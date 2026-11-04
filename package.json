@@ -2,7 +2,7 @@
   "name": "iseyc-civic-intelligence-observatory",
   "private": true,
   "version": "0.2.1",
-  "description": "ISEYC Civic Intelligence Observatory — standalone, integration-ready prototype",
+  "description": "ISEYC Civic Intelligence Observatory — public evidence workspace",
   "type": "module",
   "scripts": {
     "dev": "vite",

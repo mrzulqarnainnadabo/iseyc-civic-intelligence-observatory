@@ -1,79 +1,47 @@
 import { useMemo, useState } from 'react';
 import { useBundle } from '../lib/data';
 import { useAdapter } from '../lib/hooks';
-import { PageHeader, Section } from '../design/layout';
-import { Banner, EmptyState } from '../design/feedback';
-import { Card, SelectField, SyntheticChip } from '../design/primitives';
-import { BarChart } from '../design/charts';
-import { LifecycleTimeline, StageStrip } from '../design/timeline';
-import { SECTOR_LABEL, STAGE_LABEL, STAGES } from '../data/types';
-import { CLAIM_LABEL, claimStrength, countBy } from '../lib/rules';
+import { Section } from '../design/layout';
+import { EmptyState } from '../design/feedback';
+import { Button, SyntheticChip } from '../design/primitives';
+import { LifecycleTimeline } from '../design/timeline';
+import { SECTOR_LABEL } from '../data/types';
+import { CLAIM_LABEL, claimStrength } from '../lib/rules';
 
 export default function Accountability() {
   const adapter = useAdapter();
   const isDemo = adapter.mode === 'demo';
-  const { records, evidence, institutions, states } = useBundle();
-  const [inst, setInst] = useState('');
+  const { records, evidence, states, institutions } = useBundle();
   const [open, setOpen] = useState('');
-  const rows = useMemo(() => records.filter(r => !inst || r.institutionIds.includes(inst)), [records, inst]);
-  const claims = countBy(rows, r => claimStrength(r, evidence));
-  const cur = records.find(r => r.id === open);
-  const instName = (id: string) => institutions.find(i => i.id === id)?.name ?? id;
-  return (
-    <>
-      <PageHeader
-        title="Accountability"
-        lead="Trace the path from a published demand to duty, institution, public commitment, and any evidence of delivery. Announcement is not implementation. Budget is not expenditure. Expenditure is not verified service delivery."
-      />
-      <p className="hero__meta" style={{marginTop:0,marginBottom:'1rem'}}>
-        <span className="chip chip--real">Stages kept distinct</span>
-        {isDemo ? <span className="chip chip--synth">Demo records only</span> : <span className="chip chip--real">Published Mandate records</span>}
-        <span className="chip chip--pilot">No invented institutional replies</span>
-      </p>
-      <Banner tone="warn"><strong>Responsibility mappings are unverified.</strong> They are illustrative here. Before any real publication, each mapping needs a legal basis (enabling Act or instrument) and two-reviewer approval.</Banner>
-      <Card title="Filter"><SelectField label="Institution" value={inst} onChange={setInst} allLabel="All institutions" options={institutions.map(i => ({ value: i.id, label: `${i.name} (${i.tier})` }))} /></Card>
-      <div className="grid2">
-        <Section title="What the evidence supports" id="claims" note={<><SyntheticChip /> Invented records. Counts show how the claim check works.</>}>
-          {rows.length === 0 ? <EmptyState title="No published records for this filter">Only published records in the current dataset are listed. Empty does not mean the issue is absent on the ground.</EmptyState> :
-            <BarChart ariaLabel="Records by claim strength" unit="records" items={Object.entries(CLAIM_LABEL).map(([k, label]) => ({ key: k, label, value: (claims as Record<string, number>)[k] ?? 0 }))} />}
-        </Section>
-        <Section title="Stage key" id="key">
-          <ol className="plain">{STAGES.map(s => <li key={s}><strong>{STAGE_LABEL[s]}</strong></li>)}</ol>
-          <p className="muted">Each record shows six cells in this order. Dark = evidenced, outlined = claimed only, pale = unknown, empty = not reached. Only the last cell, backed by independent evidence, establishes delivery.</p>
-        </Section>
-      </div>
-      <Section title={`Records (${rows.length})`} id="tbl">
-        {rows.length === 0 ? <EmptyState title="Nothing to show in this dataset">No published records match these filters. That is not a claim about prevalence or resolution.</EmptyState> : (
-          <>
-            <div className="tablewrap tablewrap--desktop"><table className="table"><caption className="sr-only">Records with lifecycle strip and claim strength</caption>
-              <thead><tr><th scope="col">Record</th><th scope="col">State</th><th scope="col">Institutions</th><th scope="col">Stages</th><th scope="col">Evidence says</th></tr></thead>
-              <tbody>{rows.map(r => (
-                <tr key={r.id} className={open === r.id ? 'row--on' : ''}>
-                  <th scope="row"><button type="button" className="linkbtn" onClick={() => setOpen(r.id)}>{r.title.replace('Demonstration: ', '')}</button><br /><span className="muted">{SECTOR_LABEL[r.sector]} · {r.id}</span></th>
-                  <td>{states.find(s => s.id === r.stateId)?.name}</td>
-                  <td>{r.institutionIds.map(instName).join('; ')}</td>
-                  <td><StageStrip record={r} /></td>
-                  <td>{CLAIM_LABEL[claimStrength(r, evidence)]}</td>
-                </tr>))}</tbody></table></div>
-            <ul className="acc-cards" aria-label="Records (mobile layout)">
-              {rows.map(r => (
-                <li key={`m-${r.id}`} className={`acc-card${open === r.id ? ' acc-card--on' : ''}`}>
-                  <button type="button" className="acc-card__btn" onClick={() => setOpen(open === r.id ? '' : r.id)} aria-expanded={open === r.id}>
-                    <strong>{r.title.replace('Demonstration: ', '')}</strong>
-                    <span className="muted">{SECTOR_LABEL[r.sector]} · {states.find(s => s.id === r.stateId)?.name} · {r.id}</span>
-                    <span className="acc-card__claim">{CLAIM_LABEL[claimStrength(r, evidence)]}</span>
-                    <StageStrip record={r} />
-                  </button>
-                  <p className="muted acc-card__inst">{r.institutionIds.map(instName).join('; ')}</p>
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
-      </Section>
-      {cur && <Section title={`Lifecycle: ${cur.id}`} id="life"><LifecycleTimeline record={cur} evidence={evidence} />
-        <h3>Unknowns</h3><ul className="plain">{cur.unknowns.length ? cur.unknowns.map(u => <li key={u}>{u}</li>) : <li>None recorded.</li>}</ul>
-        <h3>Next steps</h3><ul className="plain">{cur.nextSteps.map(u => <li key={u}>{u}</li>)}</ul></Section>}
-    </>
-  );
+  const rows = useMemo(() => records, [records]);
+  const current = rows.find((record) => record.id === open);
+
+  return <>
+    <header className="page-heading"><h1>Accountability</h1><span className="page-heading__meta">{isDemo ? 'Demonstration workflow' : 'Published community records'}</span></header>
+    {isDemo && <p><SyntheticChip /></p>}
+    <p className="muted">No verified institutional responses are connected to this feed yet.</p>
+    <Section title={`Records · ${rows.length}`} id="accountability-records">
+      {rows.length === 0 ? <EmptyState title="No records available" /> : <div className="tablewrap"><table className="table">
+        <caption className="sr-only">Community records and current evidence status</caption>
+        <thead><tr><th scope="col">Record</th><th scope="col">Place</th><th scope="col">Evidence status</th><th scope="col"> </th></tr></thead>
+        <tbody>{rows.map((record) => <tr key={record.id} className={open === record.id ? 'row--on' : ''}>
+          <th scope="row">{record.title}<br /><span className="muted">{record.sector ? SECTOR_LABEL[record.sector] : 'Unclassified'}</span></th>
+          <td>{states.find((state) => state.id === record.stateId)?.name ?? record.stateId}</td>
+          <td>{CLAIM_LABEL[claimStrength(record, evidence)]}</td>
+          <td><Button variant="ghost" aria-expanded={open === record.id} onClick={() => setOpen(open === record.id ? '' : record.id)}> {open === record.id ? 'Close' : 'Review'} </Button></td>
+        </tr>)}</tbody>
+      </table></div>}
+    </Section>
+    {current && <Section title={current.title} id="record-review">
+      <p>{current.summary}</p>
+      <p className="muted">{states.find((state) => state.id === current.stateId)?.name ?? current.stateId} · {current.sector ? SECTOR_LABEL[current.sector] : 'Unclassified'} · {isDemo ? 'Demonstration' : 'Published'}</p>
+      <p><strong>Evidence status:</strong> {CLAIM_LABEL[claimStrength(current, evidence)]}</p>
+      {current.institutionIds.length > 0 && <p className="muted">Institution references require legal-basis review: {current.institutionIds.map((id) => institutions.find((institution) => institution.id === id)?.name ?? id).join(', ')}</p>}
+      <LifecycleTimeline record={current} evidence={evidence} />
+      <h3>Unknowns</h3>
+      {current.unknowns.length ? <ul className="plain">{current.unknowns.map((item) => <li key={item}>{item}</li>)}</ul> : <p className="muted">No unknowns recorded.</p>}
+      <h3>Next checks</h3>
+      <ul className="plain">{current.nextSteps.map((item) => <li key={item}>{item}</li>)}</ul>
+    </Section>}
+  </>;
 }

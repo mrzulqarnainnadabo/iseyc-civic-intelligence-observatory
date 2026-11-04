@@ -49,7 +49,19 @@ export interface CivicRecord {
   synthetic: boolean;
   title: string;
   summary: string;
-  sector: Sector;
+  sector: Sector | null;
+  sourceDuty?: string | null;
+  issueCategory?: string | null;
+  officeLabel?: string | null;
+  verificationStatus?: string;
+  evidenceRefIds?: string[];
+  followUpStatus?: string;
+  relatedSuggestedIds?: string[];
+  ward?: string | null;
+  facilityRef?: string | null;
+  reportedAt?: string | null;
+  publishedAt?: string | null;
+  contractVersion?: string | null;
   stateId: string;
   lga?: string;
   kind: 'community-submission';
@@ -71,7 +83,7 @@ export interface EvidenceItem {
   excerpt: string;
   publisherLabel: string;
   date: string;
-  sector: Sector;
+  sector: Sector | null;
   stateId: string;
   limitations: string[];
   verification?: { reviewerId: string; reviewedAt: string; method: string };
@@ -106,7 +118,10 @@ export const SECTOR_LABEL: Record<Sector, string> = {
   'public-finance': 'Public finance and budgets', governance: 'Governance and service delivery',
   agriculture: 'Agriculture', environment: 'Environment',
 };
-export const SECTORS = Object.keys(SECTOR_LABEL) as Sector[];
+export const SECTORS: Sector[] = [
+  'education', 'health', 'security', 'infrastructure', 'water-sanitation',
+  'employment', 'public-finance', 'governance', 'agriculture', 'environment',
+];
 
 export const KIND_LABEL: Record<EvidenceKind, string> = {
   'official-data': 'Official data', 'published-research': 'Published research', 'media-report': 'Media report',
