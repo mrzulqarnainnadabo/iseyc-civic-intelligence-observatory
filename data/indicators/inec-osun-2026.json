@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "datasetId": "inec-osun-2026-pvc-collection",
+  "title": "Osun 2026 off-cycle governorship election — collected PVCs",
+  "publisher": "Independent National Electoral Commission (INEC)",
+  "sourceUrl": "https://www.inecnigeria.org/statistics/pvc",
+  "sourcePublicationDate": null,
+  "retrievedAt": "2026-11-04",
+  "election": "Osun State 2026 off-cycle governorship election",
+  "geographicLevel": "state",
+  "records": [
+    {
+      "state": "Osun",
+      "collectedPVCs": 1518485,
+      "localGovernmentAreas": 30,
+      "breakdown": "Certified polling-unit level breakdown is linked from the INEC PVC Statistics page."
+    }
+  ],
+  "methodology": "Direct transcription of the latest Osun 2026 release displayed on INEC's PVC Statistics page.",
+  "limitations": [
+    "The page identifies this as a certified polling-unit-level breakdown of 1,518,485 collected PVCs across 30 LGAs.",
+    "A specific publication date or PVC collection cutoff date was not displayed on the page reviewed; do not invent one.",
+    "This is an Osun election-specific collection count, not a national CVR total.",
+    "The page snippet does not provide the registered-voter denominator, so a collection rate cannot be calculated from this record alone."
+  ]
+}
