@@ -46,3 +46,13 @@ assert.equal(osun.records[0].collectedPVCs, 1518485);
 assert.equal(osun.records[0].localGovernmentAreas, 30);
 assert.ok(osun.limitations.some((x) => x.includes("not a national CVR total")));
 console.log("verify-inec-osun-2026: PASS (state PVC count kept separate from register)");
+
+const cvr = JSON.parse(fs.readFileSync("data/indicators/inec-cvr-2025-26.json", "utf8"));
+const cvrApp = fs.readFileSync("src/data/indicators/inec-cvr-2025-26.json", "utf8");
+const cvrSource = fs.readFileSync("data/indicators/inec-cvr-2025-26.json", "utf8");
+assert.equal(cvrApp, cvrSource, "CVR source and app copies must stay identical");
+assert.deepEqual(cvr.records.map((x) => x.newEligibleVotersReported), [2782587, 2782589]);
+assert.equal(cvr.reconciliation.phaseOneCountDifference, 2);
+assert.equal(cvr.nationalFinalPostCvrRegister, null);
+assert.equal(cvr.registrationTimetable.phase3.end, "2026-08-17");
+console.log("verify-inec-cvr-2025-26: PASS (both official values and no-final-total state retained)");
