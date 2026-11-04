@@ -172,6 +172,26 @@ describe('mandate pulse adapter', () => {
     expect(fetchImpl).toHaveBeenCalledTimes(1);
   });
 
+
+  it('does not classify a missing or unrecognised duty as governance', async () => {
+    const fetchImpl = vi.fn(async () => ({
+      ok: true,
+      json: async () => ({
+        contractVersion: '0.1.0', publicationBoundary: 'published-only',
+        page: 1, pageSize: 50, total: 1, totalPages: 1, truncatedUpstream: false,
+        records: [{
+          id: 'cr-unknown', contractVersion: '0.1.0', publicationStatus: 'published',
+          verificationStatus: 'unverified', text: 'A public concern with no assigned duty.',
+          duty: null, state: 'Kaduna', lga: null, officeLabel: null,
+          createdAt: '2026-10-01T10:00:00.000Z',
+        }],
+      }),
+    })) as unknown as typeof fetch;
+    const adapter = createMandatePulseAdapter({ fetchImpl });
+    const records = await adapter.getRecords();
+    expect(records[0].sector).toBe('unknown');
+  });
+
 });
 
 import { adapterSearchFromLocation } from '../src/lib/adapter-search';
