@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "1.0.0",
+  "datasetId": "inec-cvr-2025-26-phase-one-reported-counts",
+  "title": "Continuous Voter Registration 2025–2026 — official phase statements",
+  "publisher": "Independent National Electoral Commission (INEC)",
+  "retrievedAt": "2026-11-04",
+  "geographicLevel": "national",
+  "registrationTimetable": {
+    "phase1": {
+      "start": "2025-08-18",
+      "end": "2025-12-10"
+    },
+    "phase2": {
+      "start": "2026-01-05",
+      "end": "2026-04-17"
+    },
+    "phase3": {
+      "start": "2026-05-04",
+      "end": "2026-08-17"
+    },
+    "claimsAndObjectionsForPhase3Register": {
+      "start": "2026-08-24",
+      "end": "2026-08-30"
+    },
+    "timetableSourceUrl": "https://www.inecnigeria.org/wp-content/uploads/CONTINUOUS-VOTER-REGISTRATION-CVR-2025-2026.pdf"
+  },
+  "records": [
+    {
+      "statementId": "chairman-remarks-2026-02-05",
+      "publicationDate": "2026-02-05",
+      "phase": 1,
+      "registrationStart": "2025-08-18",
+      "registrationEnd": "2025-12-10",
+      "newEligibleVotersReported": 2782587,
+      "sourceUrl": "https://wp1.inecnigeria.org/remarks-by-the-honourable-chairman-independent-national-electoral-commission-inec-prof-joash-amupitan-san-at-the-first-regular-consultative-meeting-with-political-parties-held-at-the-inec-confe/"
+    },
+    {
+      "statementId": "inec-press-release-2026-02-04",
+      "publicationDate": "2026-02-04",
+      "phase": 1,
+      "registrationStart": "2025-08-18",
+      "registrationEnd": "2025-12-10",
+      "newEligibleVotersReported": 2782589,
+      "sourceUrl": "https://wp1.inecnigeria.org/news-all/inec-to-revalidate-and-clean-up-voters-register-nationwide-schedules-mock-accreditation-ahead-of-fct-area-council-elections/"
+    }
+  ],
+  "nationalFinalPostCvrRegister": null,
+  "reconciliation": {
+    "phaseOneCountDifference": 2,
+    "note": "Two official INEC statements report different phase-one totals by two voters. The reviewed official source set does not contain a final consolidated nationwide post-CVR register after the timetable's 30 August 2026 claims/objections period."
+  },
+  "methodology": "Transcription of INEC official Chairman's remarks, press release and published CVR timetable. These are statements and timetable milestones, not a final validated nationwide register.",
+  "limitations": [
+    "The two official phase-one statements differ by two registrations; retain both values until INEC clarifies the authoritative figure.",
+    "The timetable shows the scheduled phases and register display dates; it does not itself prove final completion or the final validated register.",
+    "No final consolidated nationwide post-CVR register total and state/LGA breakdown was located in the official sources reviewed on 4 November 2026.",
+    "New registrations are not the same as a validated register; transfers, corrections, duplicate removal and other adjustments may affect final totals.",
+    "Do not add the phase-one count to the 2023 national register to claim a current national total."
+  ]
+}
