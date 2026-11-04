@@ -171,24 +171,26 @@
     "id": "budget-office",
     "publisher": "Budget Office of the Federation",
     "name": "Federal budget documents and appropriation data",
-    "url": "https://budgetoffice.gov.ng",
-    "urlStatus": "documented-not-reconfirmed",
+    "url": "https://budgetoffice.gov.ng/index.php/resources/internal-resources/reports/quarterly-budget-implementation",
+    "urlStatus": "confirmed",
     "sectors": [
       "public-finance"
     ],
     "kind": "official-data",
     "geographicCoverage": "Federal budget by ministry, department and agency",
     "geoLevel": "national",
-    "dataType": "Budget documents (PDF and portal)",
-    "updateFrequency": "Annual, with amendments",
+    "dataType": "Federal appropriation documents, quarterly budget implementation reports and fiscal analysis",
+    "updateFrequency": "Annual appropriations; quarterly implementation reports where published",
     "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
-    "lastChecked": null,
-    "checkedHow": "Listed from public knowledge; not re-verified",
+    "lastChecked": "2026-11-04",
+    "checkedHow": "Official Budget Office quarterly implementation reports page and 2026 Q1 report page reviewed; 2026 Q1 report listed as published 2 November 2026.",
     "limitations": [
-      "Appropriation is a plan, not evidence of release or delivery.",
-      "Site availability and document completeness were not re-verified."
+      "Federal budget records do not describe state or local budgets unless those are separately published.",
+      "Appropriation is not release; release is not cash expenditure; expenditure is not verified physical delivery.",
+      "PDF availability does not establish machine-readable tables or transaction-level coverage.",
+      "Each report's period, accounting basis, budget version, MDA coverage and revisions must be retained."
     ],
-    "notes": ""
+    "notes": "The official reports index lists 2025 and 2026 reports. The 2026 Q1 Budget Implementation Report was listed as published 2 November 2026. Extract and validate tables before integration; do not treat a report title as an ingested dataset."
   },
   {
     "id": "open-treasury",
@@ -219,8 +221,8 @@
   {
     "id": "nocopo",
     "publisher": "Bureau of Public Procurement (BPP)",
-    "name": "Nigeria Open Contracting Portal (NOCOPO) and Open Contracting Data Registry entry",
-    "url": "https://data.open-contracting.org/en/publication/64",
+    "name": "Nigeria Open Contracting Portal (NOCOPO): procurement plans, procurement records and contract awards",
+    "url": "https://nocopo.bpp.gov.ng/",
     "urlStatus": "confirmed",
     "sectors": [
       "public-finance",
@@ -230,17 +232,19 @@
     "kind": "official-data",
     "geographicCoverage": "Federal procurement by contracting entities",
     "geoLevel": "national",
-    "dataType": "Procurement plans and records in Open Contracting Data Standard format",
-    "updateFrequency": "The Open Contracting registry lists it as retrieved monthly (listing showed April 2025 at time of review)",
+    "dataType": "Public procurement planning, tender, award and contract disclosure records; actual public fields and downloadable access require verification",
+    "updateFrequency": "Procuring entities are directed to publish contract awards monthly; completeness and timeliness vary by entity",
     "licence": "Licence and publication policy are linked from the registry entry (nocopo.bpp.gov.ng/license); read before reuse.",
-    "lastChecked": "2026-10-30",
-    "checkedHow": "Search-result review of Open Contracting Data Registry and OGP pages",
+    "lastChecked": "2026-11-04",
+    "checkedHow": "BPP Open Contracting Disclosure Guideline and 2025 procurement circular reviewed; both identify NOCOPO as the official publication route.",
     "limitations": [
-      "Federal procurement only; contract completeness varies by entity.",
-      "Contract award data does not by itself show completion or quality of works.",
-      "Savings figures reported by BPP are the agency's own claims."
+      "BPP guidance places information generation and upload responsibilities on procuring entities, with BPP validation before public disclosure; portal existence does not prove comprehensive coverage.",
+      "The 2025 BPP circular requires procuring entities to submit procurement records for prior two years and current-year procurement plans, and directs monthly publication of awards; actual compliance must be measured.",
+      "A contract award is not proof of payment, completion, quality or service delivery.",
+      "Public API, bulk export, historical completeness and state/local-government coverage were not confirmed in this review.",
+      "Confidential information and redactions may limit public disclosure."
     ],
-    "notes": "Portal address: https://nocopo.bpp.gov.ng"
+    "notes": "BPP identifies NOCOPO as the primary publication platform for open contracting disclosure. Request a documented public export/API and coverage metadata before building an automated adapter."
   },
   {
     "id": "neiti",
@@ -291,27 +295,29 @@
   },
   {
     "id": "npc",
-    "publisher": "National Population Commission",
-    "name": "Population and census information",
-    "url": "https://nationalpopulation.gov.ng",
-    "urlStatus": "documented-not-reconfirmed",
+    "publisher": "National Population Commission (NPC)",
+    "name": "Population and Housing Census, demographic and vital statistics",
+    "url": "https://nationalpopulation.gov.ng/",
+    "urlStatus": "confirmed",
     "sectors": [
       "governance",
       "health"
     ],
     "kind": "official-data",
-    "geographicCoverage": "National",
-    "geoLevel": "national",
-    "dataType": "Census and demographic information",
-    "updateFrequency": "Irregular",
-    "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
-    "lastChecked": null,
-    "checkedHow": "Listed from public knowledge",
+    "geographicCoverage": "National; census geography intended down to small areas, subject to published data and access",
+    "geoLevel": "varies",
+    "dataType": "Population census, demographic statistics and vital-registration programmes",
+    "updateFrequency": "Census is decennial in principle; administrative vital registration frequency and public release cadence require dataset-level confirmation",
+    "licence": "No blanket reuse licence confirmed; verify conditions for each NPC dataset and publication.",
+    "lastChecked": "2026-11-04",
+    "checkedHow": "NPC official census history, census-date clarification and State House census planning releases reviewed.",
     "limitations": [
-      "To the best of the literature reviewed, the most recent completed census was in 2006; whether a newer census exists was not confirmed. Per-capita figures therefore often rely on projections.",
-      "Not re-verified in this pass."
+      "NPC confirms that the last completed national population census was in 2006; the planned 2023 census was postponed and no later completed census dataset was confirmed in this review.",
+      "Population projections are estimates, not new census counts; preserve base year, projection method and uncertainty.",
+      "The 2025 State House statement described a committee and preparations, not a completed census or a newly approved enumeration date.",
+      "Birth/death registration completeness and geographic coverage must be assessed before using vital-registration totals as population rates."
     ],
-    "notes": ""
+    "notes": "Use 2006 census counts as historical census observations only. For current population denominators, identify the exact official projection series and its base year; do not present projections as census counts."
   },
   {
     "id": "nerc",
@@ -702,6 +708,169 @@
       "Any approved dataset must be reviewed for permitted purpose, aggregation, privacy, reporting period and geographic precision."
     ],
     "notes": "Potential route for requesting approved Kaduna-relevant PHC datasets where public data are unavailable."
+  },
+  {
+    "id": "inec-voter-register-pvc",
+    "publisher": "Independent National Electoral Commission (INEC)",
+    "name": "Voter register and Permanent Voter Card (PVC) collection statistics",
+    "url": "https://www.inecnigeria.org/statistics/pvc",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National, state, LGA, registration area and polling-unit level depending on the specific release",
+    "geoLevel": "varies",
+    "dataType": "Administrative voter-registration totals and certified PVC collection tables (PDF / web publications)",
+    "updateFrequency": "Election-cycle and event-based; specific publication dates and reference cutoffs must be retained",
+    "licence": "No blanket reuse licence confirmed; cite the exact INEC publication and check applicable terms.",
+    "lastChecked": "2026-11-04",
+    "checkedHow": "INEC official PVC statistics page, 13 August 2026 Osun release, 2025–2026 CVR closure notice, February 2026 Chairman remarks and 2023 nationwide PVC summary reviewed.",
+    "limitations": [
+      "Registered voters, newly registered CVR applicants, PVCs printed, PVCs distributed, PVCs collected and accredited voters are different measures and must not be combined.",
+      "The nationwide 2023 collection snapshot is dated 5 February 2023; it is not a current 2026 PVC collection total.",
+      "INEC's 2026 Osun release reports 1,518,485 collected PVCs for that election across 30 LGAs; it is a state election snapshot, not a nationwide total.",
+      "Polling-unit and LGA coverage depends on the particular certified file; do not infer missing rows as zero.",
+      "The official 2023 report and briefing should be used to reconcile denominators and state totals before calculating derived rates.",
+      "A programmatic reconciliation of the official 2023 PDF found that 16 state-level uncollected-PVC values do not equal registered voters minus collected PVCs; the state-row sum of published uncollected counts (6,259,231) also differs from INEC's printed national total (6,259,229), while the arithmetic difference is 6,260,001. The register and collected-PVC state rows do sum to their national totals.",
+      "INEC's CVR portal currently states that registration has ended and administrative processing of applications is ongoing. This is not the final validated register; a consolidated national and state/LGA post-CVR total has not been located."
+    ],
+    "notes": "2023 nationwide snapshot: 93,469,008 registered voters; 87,209,007 PVCs collected as at 5 February 2023 (93.3% reported by INEC). Kaduna: 4,335,208 registered; 4,164,473 collected (96.1%). These are historical figures, not a current register. A structured 37-geography transcription is stored in data/indicators/inec-pvc-2023.json with both reported and calculated values kept separate. INEC's 2026 Osun off-cycle release reports 1,518,485 collected PVCs across 30 LGAs with a certified polling-unit-level breakdown. This is an Osun election snapshot, not a national total. Current status: https://cvr.inecnigeria.org/Home/cvrEnded. The portal closure notice is a process-status update, not a final count. INEC's 13 August 2026 Osun PVC release reports 1,518,485 collected PVCs across 30 LGAs."
+  },
+  {
+    "id": "inec-cvr-2025-26",
+    "publisher": "Independent National Electoral Commission (INEC)",
+    "name": "Continuous Voter Registration (CVR), 2025–2026",
+    "url": "https://www.inecnigeria.org/press",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National; phase totals are currently documented in national statements; state/LGA disaggregation requires a separate official table",
+    "geoLevel": "national",
+    "dataType": "Administrative registration activity statements and press releases",
+    "updateFrequency": "Phase-based; final consolidated post-exercise release required",
+    "licence": "Cite INEC's exact statement; no blanket reuse licence confirmed.",
+    "lastChecked": "2026-11-04",
+    "checkedHow": "INEC Chairman's 4–5 February 2026 official remarks and INEC press release describing phase one and the scheduled exercise period reviewed.",
+    "limitations": [
+      "INEC reported 2,782,587 new eligible voters in phase one (18 August–10 December 2025) in the Chairman's remarks; a separate INEC press release reported 2,782,589. Preserve this two-person discrepancy until the Commission clarifies the authoritative total.",
+      "The February 2026 statement described phase two as 5 January–17 April 2026 and the full exercise as scheduled to conclude 30 August 2026; this is a schedule, not evidence that the exercise concluded or the final total.",
+      "As at this review, no final consolidated nationwide CVR result after the scheduled August 2026 conclusion was located.",
+      "CVR registrations are not the same as the validated final voter register or collected PVCs; duplicate and ineligible records may be removed during validation.",
+      "INEC's published CVR timetable lists phase three registration from 4 May to 17 August 2026 and display for claims/objections from 24 to 30 August 2026. This confirms the planned timetable, not the final validated nationwide register.",
+      "INEC's 9 June 2026 bulletin reports an Ekiti election register of 1,059,360, comprising a 2023 base of 987,647 plus 66,664 new registrants. These components sum to 1,054,311, leaving 5,049 voters unexplained in the bulletin; do not infer the reason without a reconciliation from INEC."
+    ],
+    "notes": "Do not publish a single 'current registered voters' number by adding phase one CVR to the 2023 register. Obtain INEC's final post-CVR register and state/LGA tables, with validation date and treatment of transfers, duplicates and deceased registrants. A 9 June 2026 INEC bulletin gives an Ekiti-specific register of 1,059,360, 66,664 new registrants against a 2023 base of 987,647, and 2,103 double registrations invalidated; the arithmetic components do not reconcile and are stored as separate reported facts. No final national post-CVR total has been located."
+  },
+  {
+    "id": "ubec-npa-2022-23",
+    "publisher": "Universal Basic Education Commission (UBEC)",
+    "name": "2022/2023 National Personnel Audit (NPA) of basic education",
+    "url": "https://ubec.gov.ng/wp-content/uploads/2024/2022-NPA-REPORT.pdf",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Public and private basic education institutions in all 36 states and FCT; school coordinates were collected",
+    "geoLevel": "state",
+    "dataType": "Census-style administrative audit of learners, teaching/non-teaching personnel, schools, SUBEBs and LGEAs",
+    "updateFrequency": "Periodic audit; 2022/2023 reference period",
+    "licence": "No blanket reuse licence confirmed; cite UBEC and check report/data terms.",
+    "lastChecked": "2026-11-04",
+    "checkedHow": "UBEC-hosted 2022/2023 NPA report and UBEC reports index reviewed.",
+    "limitations": [
+      "The report covers the 2022/2023 exercise; it is not a current 2026 enrolment or teacher count.",
+      "The exercise is described as a census of public and private basic education schools, but coverage and response quality should be checked in the report's methodology and tables.",
+      "School-level GPS capture does not guarantee that a public machine-readable school register is available.",
+      "Enrolment counts do not equal unique children in the population; school attendance, enrolment, completion and learning outcomes are different measures.",
+      "State-level comparisons require consistent definitions, private/public coverage and reporting completeness."
+    ],
+    "notes": "UBEC's reports index also lists a 2024 Annual Report and a 4th Quarter 2025 Key Performance Report. These are separate publications and should be assessed independently before integration."
+  },
+  {
+    "id": "ubec-reports-digests",
+    "publisher": "Universal Basic Education Commission (UBEC)",
+    "name": "UBEC reports and Digest of Basic Education Statistics",
+    "url": "https://ubec.gov.ng/reports/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National and state, depending on publication",
+    "geoLevel": "varies",
+    "dataType": "Annual reports, key performance reports, National Personnel Audit, school statistics digests and learning assessments",
+    "updateFrequency": "Mixed: annual, quarterly, audit-cycle and irregular statistical digests",
+    "licence": "No blanket reuse licence confirmed; check each publication.",
+    "lastChecked": "2026-11-04",
+    "checkedHow": "Official UBEC Reports and Digest of Statistics pages reviewed; listed editions include 2024 Annual Report, Q4 2025 Key Performance Report, 2022/2023 NPA and 2022 public/private school digests.",
+    "limitations": [
+      "The reports page lists documents but does not itself expose a validated harmonised time-series dataset.",
+      "The UBEC state pages displayed zero-valued headline counters in this review; those counters must not be interpreted as actual zero enrolment, schools or teachers.",
+      "The 2022 digest and 2022/2023 NPA are historical; do not use them as current status without a newer validated dataset.",
+      "The 2024 Annual Report and Q4 2025 Key Performance Report require table-level extraction and review of indicator definitions, reference periods and geographic disaggregation."
+    ],
+    "notes": "Useful entry points: https://ubec.gov.ng/reports/ and https://ubec.gov.ng/digest-of-statistics/. Kaduna SUBEB is linked from UBEC's state directory, but state portal coverage must be audited separately."
+  },
+  {
+    "id": "nbs-microdata-catalog",
+    "publisher": "National Bureau of Statistics (NBS)",
+    "name": "NBS Microdata Catalog (NADA)",
+    "url": "https://microdata.nigerianstat.gov.ng/index.php/home",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "employment",
+      "health",
+      "education",
+      "agriculture",
+      "governance",
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National; geographic levels and representativeness vary by dataset",
+    "geoLevel": "varies",
+    "dataType": "Study catalogue, survey documentation, microdata and associated documents",
+    "updateFrequency": "Dataset-specific; catalogued additions are irregular and survey-specific",
+    "licence": "Access conditions, registration and permitted reuse are specified per study; verify before downloading or redistributing.",
+    "lastChecked": "2026-11-04",
+    "checkedHow": "Official NBS Microdata Catalog home and dataset listing reviewed; page showed 107 datasets, including 79 microdata and 28 documents.",
+    "limitations": [
+      "The catalogue is a discovery index, not one harmonised dataset or a live API.",
+      "State/LGA representativeness must be verified for each survey, indicator and sampling design; do not assume all surveys support LGA estimates.",
+      "Microdata access may require registration, application or restricted-use conditions.",
+      "Survey estimates need weights, strata, clusters, confidence intervals and reference periods preserved."
+    ],
+    "notes": "As displayed on 4 November 2026, the catalog listed 107 datasets (79 microdata and 28 documents). Catalogue count is a platform inventory, not a measure of national data coverage."
+  },
+  {
+    "id": "cbn-statistics",
+    "publisher": "Central Bank of Nigeria (CBN)",
+    "name": "CBN Data and Statistics repository",
+    "url": "https://www.cbn.gov.ng/Rates/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "employment",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Primarily national macroeconomic and financial series; geographic granularity varies by series",
+    "geoLevel": "varies",
+    "dataType": "Exchange rates, inflation, GDP, financial data, money/credit, reserves, government securities, statistical bulletins and surveys",
+    "updateFrequency": "Daily, monthly, quarterly and annual depending on series",
+    "licence": "Check CBN publication and data-use terms for each dataset.",
+    "lastChecked": "2026-11-04",
+    "checkedHow": "Official CBN Data & Statistics index and linked Statistics Database / Statistical Bulletins reviewed.",
+    "limitations": [
+      "The index aggregates series with different definitions, units, frequencies and revisions.",
+      "National macroeconomic indicators do not describe local household experience or state-level outcomes unless a state series is explicitly published.",
+      "Some values may be revised; retain vintage, retrieval date and source table.",
+      "CBN inflation, exchange-rate and GDP series should not be treated as direct measures of individual household welfare."
+    ],
+    "notes": "Index lists crude oil, exchange rates, GDP, inflation, money and credit, reserves, statistical database, annual/quarterly bulletins, PMI and expectations surveys."
   },
   {
     "id": "worldbank-wdi-population",

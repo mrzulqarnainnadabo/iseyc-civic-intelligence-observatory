@@ -16,7 +16,7 @@ export function AppShell() {
   return <div className="app-shell">
     <a className="skip" href="#main">Skip to main content</a>
     <aside className="app-sidebar">
-      <a className="app-brand" href="#/" aria-label="ISEYC Observatory home"><span className="app-brand__mark" aria-hidden="true" /><span className="app-brand__name">Observatory</span></a>
+      <a className="app-brand" href="#/" aria-label="ISEYC Observatory home"><img className="app-brand__mark" src="/iseyc-seal.svg" alt="ISEYC official seal" width="36" height="36" /><span className="app-brand__text"><strong>ISEYC</strong><span>Civic Intelligence Observatory</span></span></a>
       <nav className="app-nav" aria-label="Main navigation">{NAV.map((item) => <NavLink key={item.to} to={item.to} end={item.end} className={({ isActive }) => 'app-nav__link' + (isActive ? ' app-nav__link--on' : '')}>{item.label}</NavLink>)}</nav>
       <div className="app-sidebar__bottom">
         <div className="app-mode" role="status"><span className={'app-mode__dot' + (adapter.mode === 'demo' ? ' app-mode__dot--demo' : '')} />{adapter.label}</div>

@@ -1,0 +1,519 @@
+{
+  "schemaVersion": "1.0.0",
+  "datasetId": "inec-2023-registered-voters-pvc-collection",
+  "title": "INEC registered voters and PVC collection by state — 2023 General Election",
+  "publisher": "Independent National Electoral Commission (INEC)",
+  "sourceUrl": "https://www.inecnigeria.org/wp-content/uploads/2023/02/PVCs-Collected-Registered-Voters.pdf",
+  "sourcePage": "Summary of Registered Voters & PVCs Collected; state table and totals",
+  "sourceReferenceDate": "2023-02-05",
+  "retrievedAt": "2026-11-04",
+  "dataKind": "official-administrative-statistics",
+  "geographicLevel": "state",
+  "geographicCoverage": "36 states and Federal Capital Territory",
+  "units": {
+    "registeredVoters": "persons on the 2023 validated register",
+    "collectedPVCs": "PVCs collected as reported by INEC",
+    "uncollectedPVCsReported": "uncollected PVCs as printed in the INEC source",
+    "uncollectedPVCsCalculated": "derived as registeredVoters minus collectedPVCs"
+  },
+  "methodology": "Direct transcription of INEC's state summary table. The calculated uncollected count is a transparent arithmetic derivation, not a separately published INEC count.",
+  "sourceReportedNationalTotals": {
+    "registeredVoters": 93469008,
+    "collectedPVCs": 87209007,
+    "collectionRate": 93.3,
+    "uncollectedPVCs": 6259229,
+    "uncollectedRate": 6.7
+  },
+  "sumOfStateRows": {
+    "registeredVoters": 93469008,
+    "collectedPVCs": 87209007,
+    "uncollectedPVCsReported": 6259231,
+    "uncollectedPVCsCalculated": 6260001
+  },
+  "reconciliation": {
+    "registeredVotersRowsMatchNationalTotal": true,
+    "collectedPVCsRowsMatchNationalTotal": true,
+    "sumOfPublishedStateUncollectedRows": 6259231,
+    "sourceReportedNationalUncollected": 6259229,
+    "calculatedNationalUncollected": 6260001,
+    "registeredMinusCollected": 6260001,
+    "stateRowsWithUncollectedArithmeticDiscrepancy": [
+      {
+        "state": "Abia",
+        "reported": 171626,
+        "calculated": 171611,
+        "difference": 15
+      },
+      {
+        "state": "Akwa Ibom",
+        "reported": 158795,
+        "calculated": 158790,
+        "difference": 5
+      },
+      {
+        "state": "Anambra",
+        "reported": 31690,
+        "calculated": 31673,
+        "difference": 17
+      },
+      {
+        "state": "Bauchi",
+        "reported": 27662,
+        "calculated": 27488,
+        "difference": 174
+      },
+      {
+        "state": "Cross River",
+        "reported": 93667,
+        "calculated": 93656,
+        "difference": 11
+      },
+      {
+        "state": "Edo",
+        "reported": 373030,
+        "calculated": 372793,
+        "difference": 237
+      },
+      {
+        "state": "Katsina",
+        "reported": 55274,
+        "calculated": 56774,
+        "difference": -1500
+      },
+      {
+        "state": "Kogi",
+        "reported": 118945,
+        "calculated": 118913,
+        "difference": 32
+      },
+      {
+        "state": "Kwara",
+        "reported": 158653,
+        "calculated": 158652,
+        "difference": 1
+      },
+      {
+        "state": "Nasarawa",
+        "reported": 51495,
+        "calculated": 51492,
+        "difference": 3
+      },
+      {
+        "state": "Ogun",
+        "reported": 410281,
+        "calculated": 410242,
+        "difference": 39
+      },
+      {
+        "state": "Ondo",
+        "reported": 261981,
+        "calculated": 261703,
+        "difference": 278
+      },
+      {
+        "state": "Osun",
+        "reported": 360794,
+        "calculated": 360734,
+        "difference": 60
+      },
+      {
+        "state": "Rivers",
+        "reported": 251418,
+        "calculated": 251405,
+        "difference": 13
+      },
+      {
+        "state": "Sokoto",
+        "reported": 74091,
+        "calculated": 74258,
+        "difference": -167
+      },
+      {
+        "state": "FCT",
+        "reported": 93868,
+        "calculated": 93856,
+        "difference": 12
+      }
+    ],
+    "note": "INEC's registered and collected state rows sum to the published national totals. The published uncollected counts do not reconcile: state-row sum, printed national total, and registered-minus-collected arithmetic differ. Preserve the source values and publish this discrepancy; do not substitute the calculated value for INEC's reported value."
+  },
+  "limitations": [
+    "Historical 2023 election snapshot, not a current 2026 voter register or PVC collection count.",
+    "Registered voters and collected PVCs are administrative counts, not counts of all eligible voters or actual election turnout.",
+    "This source is state-level; it does not support LGA, ward or polling-unit conclusions.",
+    "The uncollected PVC figures contain arithmetic inconsistencies in the source document; see reconciliation.",
+    "The published collection percentage is transcribed as printed; the calculated rate is shown separately to enable review."
+  ],
+  "records": [
+    {
+      "state": "Abia",
+      "registeredVoters": 2120808,
+      "collectedPVCs": 1949197,
+      "uncollectedPVCsReported": 171626,
+      "uncollectedPVCsCalculated": 171611,
+      "uncollectedDiscrepancy": 15,
+      "collectionRateReported": 91.9,
+      "collectionRateCalculated": 91.9
+    },
+    {
+      "state": "Adamawa",
+      "registeredVoters": 2196566,
+      "collectedPVCs": 1970650,
+      "uncollectedPVCsReported": 225916,
+      "uncollectedPVCsCalculated": 225916,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 89.7,
+      "collectionRateCalculated": 89.7
+    },
+    {
+      "state": "Akwa Ibom",
+      "registeredVoters": 2357418,
+      "collectedPVCs": 2198628,
+      "uncollectedPVCsReported": 158795,
+      "uncollectedPVCsCalculated": 158790,
+      "uncollectedDiscrepancy": 5,
+      "collectionRateReported": 93.3,
+      "collectionRateCalculated": 93.3
+    },
+    {
+      "state": "Anambra",
+      "registeredVoters": 2656437,
+      "collectedPVCs": 2624764,
+      "uncollectedPVCsReported": 31690,
+      "uncollectedPVCsCalculated": 31673,
+      "uncollectedDiscrepancy": 17,
+      "collectionRateReported": 98.8,
+      "collectionRateCalculated": 98.8
+    },
+    {
+      "state": "Bauchi",
+      "registeredVoters": 2749268,
+      "collectedPVCs": 2721780,
+      "uncollectedPVCsReported": 27662,
+      "uncollectedPVCsCalculated": 27488,
+      "uncollectedDiscrepancy": 174,
+      "collectionRateReported": 99,
+      "collectionRateCalculated": 99
+    },
+    {
+      "state": "Bayelsa",
+      "registeredVoters": 1056862,
+      "collectedPVCs": 1009895,
+      "uncollectedPVCsReported": 46967,
+      "uncollectedPVCsCalculated": 46967,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 95.6,
+      "collectionRateCalculated": 95.6
+    },
+    {
+      "state": "Benue",
+      "registeredVoters": 2777727,
+      "collectedPVCs": 2607141,
+      "uncollectedPVCsReported": 170586,
+      "uncollectedPVCsCalculated": 170586,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 93.9,
+      "collectionRateCalculated": 93.9
+    },
+    {
+      "state": "Borno",
+      "registeredVoters": 2513281,
+      "collectedPVCs": 2447209,
+      "uncollectedPVCsReported": 66072,
+      "uncollectedPVCsCalculated": 66072,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 97.4,
+      "collectionRateCalculated": 97.4
+    },
+    {
+      "state": "Cross River",
+      "registeredVoters": 1766466,
+      "collectedPVCs": 1672810,
+      "uncollectedPVCsReported": 93667,
+      "uncollectedPVCsCalculated": 93656,
+      "uncollectedDiscrepancy": 11,
+      "collectionRateReported": 94.7,
+      "collectionRateCalculated": 94.7
+    },
+    {
+      "state": "Delta",
+      "registeredVoters": 3221697,
+      "collectedPVCs": 2989514,
+      "uncollectedPVCsReported": 232183,
+      "uncollectedPVCsCalculated": 232183,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 92.8,
+      "collectionRateCalculated": 92.8
+    },
+    {
+      "state": "Ebonyi",
+      "registeredVoters": 1597646,
+      "collectedPVCs": 1551795,
+      "uncollectedPVCsReported": 45851,
+      "uncollectedPVCsCalculated": 45851,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 97.1,
+      "collectionRateCalculated": 97.1
+    },
+    {
+      "state": "Edo",
+      "registeredVoters": 2501081,
+      "collectedPVCs": 2128288,
+      "uncollectedPVCsReported": 373030,
+      "uncollectedPVCsCalculated": 372793,
+      "uncollectedDiscrepancy": 237,
+      "collectionRateReported": 85.1,
+      "collectionRateCalculated": 85.1
+    },
+    {
+      "state": "Ekiti",
+      "registeredVoters": 987647,
+      "collectedPVCs": 958052,
+      "uncollectedPVCsReported": 29595,
+      "uncollectedPVCsCalculated": 29595,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 97,
+      "collectionRateCalculated": 97
+    },
+    {
+      "state": "Enugu",
+      "registeredVoters": 2112793,
+      "collectedPVCs": 1995389,
+      "uncollectedPVCsReported": 117404,
+      "uncollectedPVCsCalculated": 117404,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 94.4,
+      "collectionRateCalculated": 94.4
+    },
+    {
+      "state": "Gombe",
+      "registeredVoters": 1575794,
+      "collectedPVCs": 1534954,
+      "uncollectedPVCsReported": 40840,
+      "uncollectedPVCsCalculated": 40840,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 97.4,
+      "collectionRateCalculated": 97.4
+    },
+    {
+      "state": "Imo",
+      "registeredVoters": 2419922,
+      "collectedPVCs": 2280339,
+      "uncollectedPVCsReported": 139583,
+      "uncollectedPVCsCalculated": 139583,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 94.2,
+      "collectionRateCalculated": 94.2
+    },
+    {
+      "state": "Jigawa",
+      "registeredVoters": 2351298,
+      "collectedPVCs": 2298365,
+      "uncollectedPVCsReported": 52933,
+      "uncollectedPVCsCalculated": 52933,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 97.7,
+      "collectionRateCalculated": 97.7
+    },
+    {
+      "state": "Kaduna",
+      "registeredVoters": 4335208,
+      "collectedPVCs": 4164473,
+      "uncollectedPVCsReported": 170735,
+      "uncollectedPVCsCalculated": 170735,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 96.1,
+      "collectionRateCalculated": 96.1
+    },
+    {
+      "state": "Kano",
+      "registeredVoters": 5921370,
+      "collectedPVCs": 5594193,
+      "uncollectedPVCsReported": 327177,
+      "uncollectedPVCsCalculated": 327177,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 94.5,
+      "collectionRateCalculated": 94.5
+    },
+    {
+      "state": "Katsina",
+      "registeredVoters": 3516719,
+      "collectedPVCs": 3459945,
+      "uncollectedPVCsReported": 55274,
+      "uncollectedPVCsCalculated": 56774,
+      "uncollectedDiscrepancy": -1500,
+      "collectionRateReported": 98.4,
+      "collectionRateCalculated": 98.4
+    },
+    {
+      "state": "Kebbi",
+      "registeredVoters": 2032041,
+      "collectedPVCs": 1980171,
+      "uncollectedPVCsReported": 51870,
+      "uncollectedPVCsCalculated": 51870,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 97.4,
+      "collectionRateCalculated": 97.4
+    },
+    {
+      "state": "Kogi",
+      "registeredVoters": 1932654,
+      "collectedPVCs": 1813741,
+      "uncollectedPVCsReported": 118945,
+      "uncollectedPVCsCalculated": 118913,
+      "uncollectedDiscrepancy": 32,
+      "collectionRateReported": 93.8,
+      "collectionRateCalculated": 93.8
+    },
+    {
+      "state": "Kwara",
+      "registeredVoters": 1695927,
+      "collectedPVCs": 1537275,
+      "uncollectedPVCsReported": 158653,
+      "uncollectedPVCsCalculated": 158652,
+      "uncollectedDiscrepancy": 1,
+      "collectionRateReported": 90.6,
+      "collectionRateCalculated": 90.6
+    },
+    {
+      "state": "Lagos",
+      "registeredVoters": 7060195,
+      "collectedPVCs": 6214970,
+      "uncollectedPVCsReported": 845225,
+      "uncollectedPVCsCalculated": 845225,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 88,
+      "collectionRateCalculated": 88
+    },
+    {
+      "state": "Nasarawa",
+      "registeredVoters": 1899244,
+      "collectedPVCs": 1847752,
+      "uncollectedPVCsReported": 51495,
+      "uncollectedPVCsCalculated": 51492,
+      "uncollectedDiscrepancy": 3,
+      "collectionRateReported": 97.3,
+      "collectionRateCalculated": 97.3
+    },
+    {
+      "state": "Niger",
+      "registeredVoters": 2698344,
+      "collectedPVCs": 2633728,
+      "uncollectedPVCsReported": 64616,
+      "uncollectedPVCsCalculated": 64616,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 97.6,
+      "collectionRateCalculated": 97.6
+    },
+    {
+      "state": "Ogun",
+      "registeredVoters": 2688305,
+      "collectedPVCs": 2278063,
+      "uncollectedPVCsReported": 410281,
+      "uncollectedPVCsCalculated": 410242,
+      "uncollectedDiscrepancy": 39,
+      "collectionRateReported": 84.7,
+      "collectionRateCalculated": 84.7
+    },
+    {
+      "state": "Ondo",
+      "registeredVoters": 1991344,
+      "collectedPVCs": 1729641,
+      "uncollectedPVCsReported": 261981,
+      "uncollectedPVCsCalculated": 261703,
+      "uncollectedDiscrepancy": 278,
+      "collectionRateReported": 86.9,
+      "collectionRateCalculated": 86.9
+    },
+    {
+      "state": "Osun",
+      "registeredVoters": 1954800,
+      "collectedPVCs": 1594066,
+      "uncollectedPVCsReported": 360794,
+      "uncollectedPVCsCalculated": 360734,
+      "uncollectedDiscrepancy": 60,
+      "collectionRateReported": 81.5,
+      "collectionRateCalculated": 81.5
+    },
+    {
+      "state": "Oyo",
+      "registeredVoters": 3276675,
+      "collectedPVCs": 2761421,
+      "uncollectedPVCsReported": 515254,
+      "uncollectedPVCsCalculated": 515254,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 84.3,
+      "collectionRateCalculated": 84.3
+    },
+    {
+      "state": "Plateau",
+      "registeredVoters": 2789528,
+      "collectedPVCs": 2687533,
+      "uncollectedPVCsReported": 101995,
+      "uncollectedPVCsCalculated": 101995,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 96.3,
+      "collectionRateCalculated": 96.3
+    },
+    {
+      "state": "Rivers",
+      "registeredVoters": 3537190,
+      "collectedPVCs": 3285785,
+      "uncollectedPVCsReported": 251418,
+      "uncollectedPVCsCalculated": 251405,
+      "uncollectedDiscrepancy": 13,
+      "collectionRateReported": 92.9,
+      "collectionRateCalculated": 92.9
+    },
+    {
+      "state": "Sokoto",
+      "registeredVoters": 2172056,
+      "collectedPVCs": 2097798,
+      "uncollectedPVCsReported": 74091,
+      "uncollectedPVCsCalculated": 74258,
+      "uncollectedDiscrepancy": -167,
+      "collectionRateReported": 96.6,
+      "collectionRateCalculated": 96.6
+    },
+    {
+      "state": "Taraba",
+      "registeredVoters": 2022374,
+      "collectedPVCs": 1825325,
+      "uncollectedPVCsReported": 197049,
+      "uncollectedPVCsCalculated": 197049,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 90.3,
+      "collectionRateCalculated": 90.3
+    },
+    {
+      "state": "Yobe",
+      "registeredVoters": 1485146,
+      "collectedPVCs": 1437851,
+      "uncollectedPVCsReported": 47295,
+      "uncollectedPVCsCalculated": 47295,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 96.8,
+      "collectionRateCalculated": 96.8
+    },
+    {
+      "state": "Zamfara",
+      "registeredVoters": 1926870,
+      "collectedPVCs": 1850055,
+      "uncollectedPVCsReported": 76815,
+      "uncollectedPVCsCalculated": 76815,
+      "uncollectedDiscrepancy": 0,
+      "collectionRateReported": 96,
+      "collectionRateCalculated": 96
+    },
+    {
+      "state": "FCT",
+      "registeredVoters": 1570307,
+      "collectedPVCs": 1476451,
+      "uncollectedPVCsReported": 93868,
+      "uncollectedPVCsCalculated": 93856,
+      "uncollectedDiscrepancy": 12,
+      "collectionRateReported": 94,
+      "collectionRateCalculated": 94
+    }
+  ]
+}

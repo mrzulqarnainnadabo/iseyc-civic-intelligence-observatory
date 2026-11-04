@@ -7,6 +7,7 @@ on:
     branches:
       - feat/stage1-observatory-import
       - feat/observatory-national-product-experience
+      - feat/national-source-readiness-and-inec-pilot
       - main
 
 concurrency:

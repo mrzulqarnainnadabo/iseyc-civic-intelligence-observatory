@@ -1,25 +1,25 @@
 /* ISEYC Observatory — institutional tokens. Deep green, paper, restrained gold. */
 :root {
-  --g950: #0A2418;
-  --g900: #0E2F20;
-  --g800: #14452F;
-  --g700: #1C5A3E;
-  --g600: #2A6B4A;
-  --g500: #3F7F5C;
+  --g950: #051C15;
+  --g900: #072A20;
+  --g800: #0B3D2E;
+  --g700: #0C3F2B;
+  --g600: #0F4D34;
+  --g500: #3D7A5C;
   --g300: #A9C9B4;
-  --g200: #C9DCCF;
-  --g100: #E6EFE9;
-  --g50: #F2F7F4;
+  --g200: #D9EBE3;
+  --g100: #F0F7F4;
+  --g50: #F7FAF8;
 
-  --gold: #B8975A;
-  --gold-text: #7D6228;
+  --gold: #C4A35A;
+  --gold-text: #80621F;
   --gold-bg: #F7F0E0;
   --gold-line: #E8D9B0;
 
-  --paper: #FBFAF6;
+  --paper: #F7F3E9;
   --white: #FFFFFF;
-  --ink: #1B2420;
-  --muted: #4A5750;
+  --ink: #16201B;
+  --muted: #49584F;
   --line: #D7DDD8;
   --line-strong: #B8C4BC;
 

@@ -2,7 +2,7 @@
 import { readFileSync } from 'node:fs';
 const reg = JSON.parse(readFileSync(new URL('../data/source-registry.json', import.meta.url), 'utf8'));
 const copy = readFileSync(new URL('../src/data/source-registry.json', import.meta.url), 'utf8');
-const SECTORS = ['education','health','security','infrastructure','water-sanitation','employment','public-finance','governance'];
+const SECTORS = ['education','health','security','infrastructure','water-sanitation','employment','public-finance','governance','agriculture','environment'];
 const KINDS = ['official-data','published-research','media-report','community-submission','independently-verified'];
 const GEO = ['national','zone','state','lga','facility','point','varies'];
 const URLS = ['confirmed','domain-confirmed','documented-not-reconfirmed','not-applicable'];

@@ -2,9 +2,10 @@ import { useEffect, useMemo, useState } from 'react';
 import { useBundle } from '../lib/data';
 import { useAdapter } from '../lib/hooks';
 import { Section, Card } from '../design/layout';
-import { EmptyState, Banner } from '../design/feedback';
+import { EmptyState } from '../design/feedback';
 import { SourceCitation } from '../design/primitives';
-import type { EvidenceVaultRecord } from '../data/types';
+import inecPvc2023 from '../data/indicators/inec-pvc-2023.json';
+import inecEkiti2026 from '../data/indicators/inec-ekiti-2026.json';
 import {
   listIndicators,
   fetchViaGateway,
@@ -13,64 +14,50 @@ import {
   type IndicatorObservation,
 } from '../lib/indicators';
 
-const VERIFICATION_LABEL: Record<string, string> = {
-  unverified: 'Unverified',
-  source_confirmed: 'Source confirmed',
-  content_corroborated: 'Content corroborated',
-  disputed: 'Disputed',
-  corrected: 'Corrected',
-  superseded: 'Superseded',
-  withdrawn: 'Withdrawn',
-};
-const RELATION_LABEL: Record<string, string> = {
-  'not-assessed': 'Relationship not assessed',
-  'context-only': 'Context only — not verification',
-  corroborates: 'Corroborates linked observation',
-  contradicts: 'Contradicts linked observation',
-  unrelated: 'Reviewed as unrelated',
-};
+type PvcRow = typeof inecPvc2023.records[number];
+const numberFormat = new Intl.NumberFormat('en-NG');
 
-function EvidenceVaultItem({ record, observations }: { record: EvidenceVaultRecord; observations: ReturnType<typeof useBundle>['communityObservations'] }) {
-  const linked = record.linkedCommunityObservationId
-    ? observations?.records.find((item) => item.sourceRecordId === record.linkedCommunityObservationId)
-    : undefined;
-  const value = record.observedValue === null
-    ? 'No numeric value stored'
-    : record.observedValue.toLocaleString() + (record.unit ? ' ' + record.unit : '');
-  const geography = [record.geographicLevel, record.geographicUnit].filter(Boolean).join(' · ') || 'Geography not specified';
-
-  return <details className="record">
-    <summary>
-      <span className="record__title">{record.title}</span>
-      <span className="record__meta">
-        <span className="chip chip--real">{record.displayId || record.evidenceScope}</span>
-        <span className="chip chip--pilot">{geography}</span>
-        <span className="muted">{VERIFICATION_LABEL[record.verificationStatus] || record.verificationStatus}</span>
-      </span>
-    </summary>
-    <dl className="facts">
-      <div><dt>Publisher</dt><dd>{record.publisher || 'Not specified'}</dd></div>
-      <div><dt>Source ID</dt><dd>{record.sourceId || 'Not specified'}</dd></div>
-      <div><dt>Scope</dt><dd>{record.evidenceScope}</dd></div>
-      <div><dt>Indicator</dt><dd>{record.indicatorCode || 'Not applicable'}</dd></div>
-      <div><dt>Measure</dt><dd>{record.measure || record.sourceTitle || 'Not specified'}</dd></div>
-      <div><dt>Value</dt><dd>{value}{record.valueStatus ? ' · ' + record.valueStatus : ''}</dd></div>
-      <div><dt>Reference period</dt><dd>{record.referencePeriod || 'Not specified'}</dd></div>
-      <div><dt>Retrieved</dt><dd>{record.retrievedAt || 'Not recorded'}</dd></div>
-      <div><dt>Data status</dt><dd>{record.dataStatus || 'Not specified'}</dd></div>
-      <div><dt>Source review</dt><dd>{record.evidenceLinkReview || 'Not reviewed'}</dd></div>
-      <div><dt>Evidence relationship</dt><dd>{RELATION_LABEL[record.evidenceRelation] || record.evidenceRelation}</dd></div>
-      {record.linkedCommunityObservationId && <div><dt>Linked observation</dt><dd>{linked?.displayId || record.linkedCommunityObservationId}</dd></div>}
-    </dl>
-    {record.linkedCommunityObservationId && <p><a href="/observations">View community observations</a></p>}
-    <a href={record.sourceUrl} target="_blank" rel="noopener noreferrer">Open original source</a>
+function ElectoralParticipation() {
+  const [stateQuery, setStateQuery] = useState('');
+  const rows = useMemo(() => {
+    const term = stateQuery.trim().toLowerCase();
+    return (inecPvc2023.records as PvcRow[]).filter((row) => !term || row.state.toLowerCase().includes(term));
+  }, [stateQuery]);
+  return <Section title="Electoral participation" id="electoral-participation" note="INEC official releases · different reference periods">
+    <div className="workspace-grid">
+      <Card title="Registered voters"><strong className="workspace-stat__value">{numberFormat.format(inecPvc2023.sourceReportedNationalTotals.registeredVoters)}</strong><span className="workspace-stat__period">2023 validated register</span></Card>
+      <Card title="PVCs collected"><strong className="workspace-stat__value">{numberFormat.format(inecPvc2023.sourceReportedNationalTotals.collectedPVCs)}</strong><span className="workspace-stat__period">As at 5 February 2023</span></Card>
+      <Card title="Collection rate"><strong className="workspace-stat__value">{inecPvc2023.sourceReportedNationalTotals.collectionRate.toFixed(1)}%</strong><span className="workspace-stat__period">Reported by INEC</span></Card>
+    </div>
+    <p className="muted">These are historical nationwide figures for the 2023 General Election. Registered voters, PVC collection and actual turnout are different measures.</p>
+    <p><a href={inecPvc2023.sourceUrl} target="_blank" rel="noopener noreferrer">Open INEC's certified 2023 summary (PDF)</a></p>
     <details className="record">
-      <summary>Methodology and limitations</summary>
-      {record.methodology && <p>{record.methodology}</p>}
-      {record.limitations && <p className="muted">{record.limitations}</p>}
+      <summary>Explore state and FCT figures ({inecPvc2023.records.length} geographies)</summary>
+      <label className="field"><span>Find a state or FCT</span><input className="input" type="search" value={stateQuery} onChange={(event) => setStateQuery(event.target.value)} placeholder="Search geography" /></label>
+      <div className="data-table-wrap"><table className="data-table"><thead><tr><th scope="col">State / FCT</th><th scope="col">Registered</th><th scope="col">PVCs collected</th><th scope="col">Collection</th></tr></thead><tbody>{rows.map((row) => <tr key={row.state}><th scope="row">{row.state}</th><td>{numberFormat.format(row.registeredVoters)}</td><td>{numberFormat.format(row.collectedPVCs)}</td><td>{row.collectionRateReported.toFixed(1)}%</td></tr>)}</tbody></table></div>
+      {rows.length === 0 && <p className="muted">No matching geography.</p>}
     </details>
-    <p className="muted">Source confirmation is not content corroboration. Only an explicit, reviewed relationship can connect this record to a community observation.</p>
-  </details>;
+    <details className="record"><summary>Source quality and interpretation notes</summary>
+      <p>The registered-voter and collected-PVC state rows sum to INEC's printed national totals. The published uncollected-PVC figures do not reconcile: 16 state rows differ from registered minus collected; the published state-row sum is 6,259,231, the printed national total is 6,259,229, and the arithmetic difference is 6,260,001. ISEYC retains the reported and calculated values separately and does not use the uncollected total as a settled figure.</p>
+      <p className="muted">Source reference date: {inecPvc2023.sourceReferenceDate}. Retrieved: {inecPvc2023.retrievedAt}. This is a transcription of an INEC PDF, not an independently audited voter register.</p>
+      <p>For the 2025–2026 Continuous Voter Registration, INEC’s February 2026 Chairman’s remarks report 2,782,587 eligible voters registered in phase one; a separate INEC press release reports 2,782,589. The CVR portal now states that registration has ended and that INEC is completing administrative processing of applications. That status does not itself establish the final validated count. A consolidated post-CVR national register and state/LGA breakdown have not yet been located in the official sources reviewed for this pilot. The two February 2026 official statements also differ by two in their phase-one count (2,782,587 vs 2,782,589); this discrepancy remains unresolved. <a href="https://cvr.inecnigeria.org/Home/cvrEnded" target="_blank" rel="noopener noreferrer">INEC CVR ended notice</a> · <a href="https://wp1.inecnigeria.org/remarks-by-the-honourable-chairman-independent-national-electoral-commission-inec-prof-joash-amupitan-san-at-the-first-regular-consultative-meeting-with-political-parties-held-at-the-inec-confe/" target="_blank" rel="noopener noreferrer">INEC Chairman’s remarks</a> · <a href="https://wp1.inecnigeria.org/news-all/inec-to-revalidate-and-clean-up-voters-register-nationwide-schedules-mock-accreditation-ahead-of-fct-area-council-elections/" target="_blank" rel="noopener noreferrer">INEC press release</a>.</p>
+    </details>
+  </Section>;
+}
+
+function StateElectionSnapshots() {
+  const ekiti = inecEkiti2026.records[0];
+  return <Section title="Recent state election snapshots" id="state-election-snapshots" note="State-specific figures · not a national CVR total">
+    <div className="workspace-grid">
+      <Card title="Ekiti voter register · 2026"><strong className="workspace-stat__value">{numberFormat.format(ekiti.registeredVotersForElection)}</strong><span className="workspace-stat__period">20 June 2026 election · 16 LGAs · 2,445 polling units</span><a href={inecEkiti2026.sourceUrl} target="_blank" rel="noopener noreferrer">INEC bulletin · 9 June 2026</a></Card>
+      <Card title="Osun PVCs collected · 2026"><strong className="workspace-stat__value">1,518,485</strong><span className="workspace-stat__period">30 LGAs · certified polling-unit breakdown</span><a href="https://www.inecnigeria.org/press/final-figures-of-collected-permanent-voter-cards-ahead-of-osun-governorship-election" target="_blank" rel="noopener noreferrer">INEC final Osun PVC release · 13 August 2026</a></Card>
+    </div>
+    <details className="record"><summary>Ekiti register reconciliation</summary>
+      <p>INEC reports a 2023 base register of {numberFormat.format(ekiti.baseRegister2023)} plus {numberFormat.format(ekiti.newRegistrantsReported)} new registrants, which totals {numberFormat.format(ekiti.calculatedBasePlusNew)}. The stated election register is {numberFormat.format(ekiti.registeredVotersForElection)}, leaving {numberFormat.format(ekiti.unreconciledDifference)} voters unexplained in the bulletin. INEC also reports {numberFormat.format(ekiti.doubleRegistrationsInvalidatedReported)} double registrations invalidated. The source does not provide a full reconciliation, so ISEYC does not infer the missing components.</p>
+      <p className="muted">This is a state election register, not a national register. It is stored as a dated official statement with the arithmetic gap visible.</p>
+    </details>
+    <p className="muted">INEC's CVR timetable scheduled Phase 3 registration for 4 May–17 August 2026 and display of the register for claims and objections from 24–30 August 2026. A final consolidated nationwide post-CVR register and state/LGA table has not been located in the official sources reviewed for this pilot.</p>
+  </Section>;
 }
 
 function IndicatorBlock({ indicator }: { indicator: IndicatorDefinition }) {
@@ -113,7 +100,7 @@ function IndicatorBlock({ indicator }: { indicator: IndicatorDefinition }) {
 }
 
 export default function Evidence() {
-  const { sources, evidence, evidenceVault, communityObservations } = useBundle();
+  const { sources, evidence } = useBundle();
   const { mode } = useAdapter();
   const isDemo = mode === 'demo';
   const indicators = listIndicators();
@@ -128,30 +115,19 @@ export default function Evidence() {
     );
   }, [sources, query]);
 
-  const vault = evidenceVault ?? {
-    status: (isDemo ? 'not-in-demo' : 'unavailable') as 'not-in-demo' | 'unavailable',
-    records: [],
-    total: null,
-    message: 'The Evidence Vault feed is not configured for this adapter.',
-  };
-
   return <>
-    <header className="page-heading"><h1>Evidence</h1><span className="page-heading__meta">Public sources, indicators and reviewed evidence</span></header>
-    <Section title="Published evidence records" id="evidence-vault" note="Source-linked records approved for publication. A source being reachable does not mean it corroborates a community report.">
-      {vault.status === 'not-in-demo' && <Banner tone="demo">Live Evidence Vault records are not included in demonstration data.</Banner>}
-      {(vault.status === 'unavailable' || vault.status === 'invalid' || vault.status === 'incomplete') && <Banner tone="warn">{vault.message || 'The Evidence Vault feed could not be validated. Records are withheld.'}</Banner>}
-      {vault.status === 'empty' && <EmptyState title="No evidence records have passed the publication gate yet">The private Evidence Vault may contain draft or pending records. No unpublished records are shown here.</EmptyState>}
-      {vault.status === 'ready' && <div className="workspace-records">{vault.records.map((record) => <EvidenceVaultItem key={record.id} record={record} observations={communityObservations} />)}</div>}
-    </Section>
-    <Section title="National indicators" id="indicators" note="National context only; these series do not verify a named state, LGA, ward or facility.">
+    <header className="page-heading"><h1>Evidence</h1><span className="page-heading__meta">Public sources and observations</span></header>
+    <ElectoralParticipation />
+    <StateElectionSnapshots />
+    <Section title="National indicators" id="indicators">
       <div className="workspace-grid">{indicators.map((indicator) => <IndicatorBlock key={indicator.id} indicator={indicator} />)}</div>
     </Section>
     <Section title="Source registry" id="registry" note="A registered source is not necessarily an ingested dataset.">
       <label className="field"><span className="sr-only">Search sources</span><input className="input" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search sources" aria-label="Search sources" /></label>
       {filtered.length === 0 ? <EmptyState title="No matching sources" /> : <ul className="plain source-list">{filtered.map((source) => <li key={source.id}><SourceCitation s={source} /></li>)}</ul>}
     </Section>
-    <Section title={isDemo ? 'Demonstration evidence' : 'Civic Mandate community evidence references'} id="community-evidence" note="Evidence references attached to published civic demands; separate from the Evidence Vault.">
-      {evidence.length === 0 ? <EmptyState title="No demand evidence references in this feed" /> : <ul className="plain">{evidence.slice(0, 40).map((item) => <li key={item.id}><strong>{item.title}</strong><br /><span className="muted">{item.kind} · {item.status} · {item.publisherLabel}</span></li>)}</ul>}
+    <Section title={isDemo ? 'Demonstration evidence' : 'Community evidence'} id="community-evidence">
+      {evidence.length === 0 ? <EmptyState title="No community evidence in this feed" /> : <ul className="plain">{evidence.slice(0, 40).map((item) => <li key={item.id}><strong>{item.title}</strong><br /><span className="muted">{item.kind} · {item.status} · {item.publisherLabel}</span></li>)}</ul>}
     </Section>
   </>;
 }

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0.0",
+  "datasetId": "inec-ekiti-2026-election-register-snapshot",
+  "title": "Ekiti State voter register — 2026 governorship election",
+  "publisher": "Independent National Electoral Commission (INEC)",
+  "sourceUrl": "https://wp1.inecnigeria.org/news-letters/why-we-appealed-court-judgments-on-2027-election-timetable-inec-chairman/",
+  "sourcePublicationDate": "2026-06-09",
+  "retrievedAt": "2026-11-04",
+  "electionDate": "2026-06-20",
+  "geographicLevel": "state",
+  "geography": "Ekiti State",
+  "records": [
+    {
+      "state": "Ekiti",
+      "registeredVotersForElection": 1059360,
+      "baseRegister2023": 987647,
+      "newRegistrantsReported": 66664,
+      "doubleRegistrationsInvalidatedReported": 2103,
+      "calculatedBasePlusNew": 1054311,
+      "unreconciledDifference": 5049,
+      "pollingUnits": 2445,
+      "localGovernmentAreas": 16
+    }
+  ],
+  "methodology": "Direct transcription of the INEC Chairman's 9 June 2026 Daily Bulletin statement on the Ekiti State Governorship Election register. Derived arithmetic is separately labelled and not attributed to INEC.",
+  "limitations": [
+    "This is an Ekiti State election-specific register snapshot, not a nationwide voter register.",
+    "The bulletin reports 1,059,360 registered voters, a 2023 base register of 987,647 and 66,664 new registrants. Base plus new registrants equals 1,054,311, leaving a difference of 5,049 that is not explained in the bulletin.",
+    "The bulletin also reports 2,103 double registrations invalidated; the statement does not provide a full reconciliation of all additions, transfers, deletions and invalidations.",
+    "Do not add this figure to the 2023 national register or treat it as a current national total.",
+    "The statement describes a register for the 20 June 2026 governorship election; preserve its date and election context."
+  ],
+  "sourceQualityNote": "Official INEC primary source, but its published register components do not reconcile arithmetically. The inconsistency is exposed rather than resolved by assumption."
+}
