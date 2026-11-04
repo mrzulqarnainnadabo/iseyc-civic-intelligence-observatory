@@ -76,10 +76,6 @@ export default function Observations() {
     {feed.status === 'empty' && <EmptyState title="No observations have passed the publication gate yet">This does not establish that there are no service gaps or community concerns.</EmptyState>}
 
     {feed.status === 'ready' && <>
-      <div className="workspace-grid">
-        <div className="workspace-stat"><span className="workspace-stat__label">Published observations</span><strong className="workspace-stat__value">{feed.records.length}</strong><span className="workspace-stat__period">Current published feed · not prevalence</span></div>
-        <div className="workspace-stat"><span className="workspace-stat__label">Verification states</span><strong className="workspace-stat__value">{new Set(feed.records.map((r) => r.verificationStatus)).size}</strong><span className="workspace-stat__period">Unverified and verified states remain distinct</span></div>
-      </div>
       <Section title="Find observations" id="observation-filters">
         <div className="filters">
           <SelectField label="Sector" value={sector} onChange={(v) => setSector(v as Sector | '')} allLabel="All sectors" options={SECTORS.map((s) => ({ value: s, label: SECTOR_LABEL[s] }))} />
