@@ -17,7 +17,8 @@ The products share versioned contracts but retain clear data ownership. See [the
 ## Current implementation
 
 - Published Civic Mandate records are consumed through the public pulse compatibility endpoint.
-- The versioned CommunityRecord API is the intended primary contract and is not yet integrated in this client.
+- The client prefers Mandate's versioned, published-only CommunityRecord API, follows its pagination and preserves stable IDs.
+- The pulse endpoint remains a temporary fallback only while the versioned API is unavailable; an empty v0.1 response is treated as a real empty feed.
 - Three World Bank indicator pilots are defined for national-level observations.
 - The Evidence Gateway and shared civic evidence contracts are present in the repository.
 - The source registry is metadata; a listed source is not proof that observations have been ingested.
@@ -33,6 +34,7 @@ The products share versioned contracts but retain clear data ownership. See [the
 - A budget allocation is not expenditure; expenditure is not verified delivery.
 - A named office in a submission is not a verified legal responsibility.
 - Empty, unavailable, stale, partial and failed retrieval are different states.
+- A malformed or unsupported CommunityRecord contract response fails closed; it is not silently hidden by the pulse fallback.
 - AI analysis is a draft, not an institutional finding or approved public brief.
 
 ## Development
