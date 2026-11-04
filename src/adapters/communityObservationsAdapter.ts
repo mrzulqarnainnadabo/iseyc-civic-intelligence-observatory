@@ -64,17 +64,32 @@ function stateSlug(value: string): string {
   return normalized.replace(/[^a-z0-9\s-]/g, "").replace(/\s+/g, "-").replace(/nassarawa/g, "nasarawa");
 }
 
+const PUBLIC_RECORD_KEYS = new Set([
+  "id", "displayId", "contractVersion", "publicationStatus", "verificationStatus",
+  "title", "reportType", "sector", "state", "lga", "ward", "placeOrFacility",
+  "observedOn", "description", "evidenceTypes", "evidenceLink", "submittedAt", "publishedAt",
+]);
+
+function isNullableString(value: unknown): boolean {
+  return value === null || typeof value === "string";
+}
+
 function isRecord(value: unknown): value is ApiRecord {
   if (!value || typeof value !== "object" || Array.isArray(value)) return false;
   const r = value as Record<string, unknown>;
+  if (Object.keys(r).some((key) => !PUBLIC_RECORD_KEYS.has(key))) return false;
   return r.contractVersion === CONTRACT_VERSION &&
     r.publicationStatus === "published" &&
     typeof r.id === "string" && r.id.length > 0 &&
+    isNullableString(r.displayId) &&
     typeof r.title === "string" && r.title.trim().length > 0 &&
     typeof r.description === "string" && r.description.trim().length > 0 &&
     typeof r.reportType === "string" && r.reportType.length > 0 &&
-    typeof r.sector === "string" && r.sector.length > 0 &&
+    typeof r.sector === "string" && Object.prototype.hasOwnProperty.call(SECTOR_MAP, r.sector) &&
     typeof r.state === "string" && r.state.length > 0 &&
+    isNullableString(r.lga) && isNullableString(r.ward) &&
+    isNullableString(r.placeOrFacility) && isNullableString(r.observedOn) &&
+    typeof r.submittedAt === "string" && isNullableString(r.publishedAt) &&
     Array.isArray(r.evidenceTypes) && r.evidenceTypes.every((x) => typeof x === "string") &&
     VALID_VERIFICATION.has(String(r.verificationStatus)) &&
     (r.evidenceLink === null || (typeof r.evidenceLink === "string" && r.evidenceLink.startsWith("https://")));
