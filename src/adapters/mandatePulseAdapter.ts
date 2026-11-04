@@ -40,7 +40,7 @@ const DUTY_TO_SECTOR: Record<string, Sector> = {
   'Public Finance': 'public-finance',
   Governance: 'governance',
   Justice: 'governance',
-  Other: 'unknown',
+
 };
 
 type PulseVoice = {
@@ -87,10 +87,10 @@ function monthFromIso(iso?: string): string {
   return /^\d{4}-\d{2}$/.test(d) ? d : 'unknown';
 }
 
-function mapDuty(duty?: string, mandate?: string): Sector {
+function mapDuty(duty?: string, mandate?: string): Sector | null {
   const key = (duty || mandate || '').trim();
-  if (!key) return 'unknown';
-  return DUTY_TO_SECTOR[key] ?? 'unknown';
+  if (!key) return null;
+  return DUTY_TO_SECTOR[key] ?? null;
 }
 
 function voiceToRecord(v: PulseVoice, stateIds: Set<string>): CivicRecord | null {
