@@ -2,7 +2,7 @@
 
 export type Sector =
   | 'education' | 'health' | 'security' | 'infrastructure'
-  | 'water-sanitation' | 'employment' | 'public-finance' | 'governance' | 'unknown'
+  | 'water-sanitation' | 'employment' | 'public-finance' | 'governance'
   | 'agriculture' | 'environment';
 
 /** The five evidence classes the product must keep distinct. */
@@ -49,7 +49,7 @@ export interface CivicRecord {
   synthetic: boolean;
   title: string;
   summary: string;
-  sector: Sector;
+  sector: Sector | null;
   stateId: string;
   lga?: string;
   kind: 'community-submission';
@@ -71,7 +71,7 @@ export interface EvidenceItem {
   excerpt: string;
   publisherLabel: string;
   date: string;
-  sector: Sector;
+  sector: Sector | null;
   stateId: string;
   limitations: string[];
   verification?: { reviewerId: string; reviewedAt: string; method: string };
