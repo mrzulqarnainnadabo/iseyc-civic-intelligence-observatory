@@ -5,6 +5,7 @@ import { Section, Card } from '../design/layout';
 import { EmptyState } from '../design/feedback';
 import { SourceCitation } from '../design/primitives';
 import inecPvc2023 from '../data/indicators/inec-pvc-2023.json';
+import inecEkiti2026 from '../data/indicators/inec-ekiti-2026.json';
 import {
   listIndicators,
   fetchViaGateway,
@@ -27,9 +28,8 @@ function ElectoralParticipation() {
       <Card title="Registered voters"><strong className="workspace-stat__value">{numberFormat.format(inecPvc2023.sourceReportedNationalTotals.registeredVoters)}</strong><span className="workspace-stat__period">2023 validated register</span></Card>
       <Card title="PVCs collected"><strong className="workspace-stat__value">{numberFormat.format(inecPvc2023.sourceReportedNationalTotals.collectedPVCs)}</strong><span className="workspace-stat__period">As at 5 February 2023</span></Card>
       <Card title="Collection rate"><strong className="workspace-stat__value">{inecPvc2023.sourceReportedNationalTotals.collectionRate.toFixed(1)}%</strong><span className="workspace-stat__period">Reported by INEC</span></Card>
-      <Card title="Latest state release"><strong className="workspace-stat__value">1,518,485</strong><span className="workspace-stat__period">Osun 2026 · collected PVCs across 30 LGAs · <a href="https://www.inecnigeria.org/statistics/pvc" target="_blank" rel="noopener noreferrer">INEC source</a></span></Card>
     </div>
-    <p className="muted">The first three figures are a historical nationwide baseline for the 2023 General Election. The Osun figure is a separate 2026 off-cycle state release, not a nationwide CVR total. Registered voters, PVC collection and actual turnout are different measures.</p>
+    <p className="muted">These are historical nationwide figures for the 2023 General Election. Registered voters, PVC collection and actual turnout are different measures.</p>
     <p><a href={inecPvc2023.sourceUrl} target="_blank" rel="noopener noreferrer">Open INEC's certified 2023 summary (PDF)</a></p>
     <details className="record">
       <summary>Explore state and FCT figures ({inecPvc2023.records.length} geographies)</summary>
@@ -42,6 +42,21 @@ function ElectoralParticipation() {
       <p className="muted">Source reference date: {inecPvc2023.sourceReferenceDate}. Retrieved: {inecPvc2023.retrievedAt}. This is a transcription of an INEC PDF, not an independently audited voter register.</p>
       <p>For the 2025–2026 Continuous Voter Registration, INEC’s February 2026 Chairman’s remarks report 2,782,587 eligible voters registered in phase one; a separate INEC press release reports 2,782,589. The final consolidated nationwide total after the exercise’s scheduled 30 August 2026 conclusion has not yet been confirmed in the source set reviewed for this pilot. <a href="https://wp1.inecnigeria.org/remarks-by-the-honourable-chairman-independent-national-electoral-commission-inec-prof-joash-amupitan-san-at-the-first-regular-consultative-meeting-with-political-parties-held-at-the-inec-confe/" target="_blank" rel="noopener noreferrer">INEC Chairman’s remarks</a> · <a href="https://wp1.inecnigeria.org/news-all/inec-to-revalidate-and-clean-up-voters-register-nationwide-schedules-mock-accreditation-ahead-of-fct-area-council-elections/" target="_blank" rel="noopener noreferrer">INEC press release</a>.</p>
     </details>
+  </Section>;
+}
+
+function StateElectionSnapshots() {
+  const ekiti = inecEkiti2026.records[0];
+  return <Section title="Recent state election snapshots" id="state-election-snapshots" note="State-specific figures · not a national CVR total">
+    <div className="workspace-grid">
+      <Card title="Ekiti voter register · 2026"><strong className="workspace-stat__value">{numberFormat.format(ekiti.registeredVotersForElection)}</strong><span className="workspace-stat__period">20 June 2026 election · 16 LGAs · 2,445 polling units</span><a href={inecEkiti2026.sourceUrl} target="_blank" rel="noopener noreferrer">INEC bulletin · 9 June 2026</a></Card>
+      <Card title="Osun PVCs collected · 2026"><strong className="workspace-stat__value">1,518,485</strong><span className="workspace-stat__period">30 LGAs · certified polling-unit breakdown</span><a href="https://www.inecnigeria.org/statistics/pvc" target="_blank" rel="noopener noreferrer">INEC PVC statistics</a></Card>
+    </div>
+    <details className="record"><summary>Ekiti register reconciliation</summary>
+      <p>INEC reports a 2023 base register of {numberFormat.format(ekiti.baseRegister2023)} plus {numberFormat.format(ekiti.newRegistrantsReported)} new registrants, which totals {numberFormat.format(ekiti.calculatedBasePlusNew)}. The stated election register is {numberFormat.format(ekiti.registeredVotersForElection)}, leaving {numberFormat.format(ekiti.unreconciledDifference)} voters unexplained in the bulletin. INEC also reports {numberFormat.format(ekiti.doubleRegistrationsInvalidatedReported)} double registrations invalidated. The source does not provide a full reconciliation, so ISEYC does not infer the missing components.</p>
+      <p className="muted">This is a state election register, not a national register. It is stored as a dated official statement with the arithmetic gap visible.</p>
+    </details>
+    <p className="muted">INEC's CVR timetable scheduled Phase 3 registration for 4 May–17 August 2026 and display of the register for claims and objections from 24–30 August 2026. A final consolidated nationwide post-CVR register and state/LGA table has not been located in the official sources reviewed for this pilot.</p>
   </Section>;
 }
 
@@ -103,6 +118,7 @@ export default function Evidence() {
   return <>
     <header className="page-heading"><h1>Evidence</h1><span className="page-heading__meta">Public sources and observations</span></header>
     <ElectoralParticipation />
+    <StateElectionSnapshots />
     <Section title="National indicators" id="indicators">
       <div className="workspace-grid">{indicators.map((indicator) => <IndicatorBlock key={indicator.id} indicator={indicator} />)}</div>
     </Section>
