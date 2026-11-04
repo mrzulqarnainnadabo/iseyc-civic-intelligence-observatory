@@ -51,7 +51,7 @@
   {
     "id": "ndhs-2024",
     "publisher": "National Population Commission; Federal Ministry of Health and Social Welfare; The DHS Program (ICF)",
-    "name": "Nigeria Demographic and Health Survey 2023\u201324: Final Report (FR395)",
+    "name": "Nigeria Demographic and Health Survey 2023–24: Final Report (FR395)",
     "url": "https://dhsprogram.com/publications/publication-fr395-dhs-final-reports.cfm",
     "urlStatus": "confirmed",
     "sectors": [
@@ -75,7 +75,7 @@
   {
     "id": "ubec-digest-2019-20",
     "publisher": "Universal Basic Education Commission (UBEC)",
-    "name": "Digest of Basic Education Statistics in Nigeria 2019\u20132020 (Volumes I to III)",
+    "name": "Digest of Basic Education Statistics in Nigeria 2019–2020 (Volumes I to III)",
     "url": "https://ubec.gov.ng/wp-content/uploads/2024/04/2019-AND-2020-Digest-of-Statistics-Volume-I.pdf",
     "urlStatus": "confirmed",
     "sectors": [
@@ -90,7 +90,7 @@
     "lastChecked": "2026-10-30",
     "checkedHow": "Search-result review of UBEC digest PDFs",
     "limitations": [
-      "Data years 2019\u20132020: outdated for current-state questions.",
+      "Data years 2019–2020: outdated for current-state questions.",
       "Administrative data compiled from state submissions; completeness and accuracy depend on state reporting.",
       "Out-of-school child figures in Nigeria are contested across agencies; do not quote one headline number without its definition and age range."
     ],
@@ -146,8 +146,8 @@
     "id": "hfr",
     "publisher": "Federal Ministry of Health and Social Welfare",
     "name": "Health Facility Registry (Master Facility List)",
-    "url": "https://hfr.health.gov.ng",
-    "urlStatus": "documented-not-reconfirmed",
+    "url": "https://hfr.fmohconnect.gov.ng/developers",
+    "urlStatus": "confirmed",
     "sectors": [
       "health"
     ],
@@ -157,14 +157,15 @@
     "dataType": "Facility registry (public web application)",
     "updateFrequency": "Continuous updating by state registration offices, per the registry's own guidelines",
     "licence": "Not confirmed in this research pass. Read the publisher's terms before reuse.",
-    "lastChecked": null,
-    "checkedHow": "Documented in MEASURE Evaluation publications",
+    "lastChecked": "2026-11-04",
+    "checkedHow": "Official Federal Ministry of Health HFR API documentation checked; read-only GET API, API-key authentication and facility endpoint documented.",
     "limitations": [
-      "URL is documented in a MEASURE Evaluation public-access manual; live availability was not tested.",
-      "The last nationwide facility listing before the registry was completed in 2013 (per the guidelines); completeness and currency depend on state validation.",
-      "A facility being listed does not show that it is functioning or staffed."
+      "API access requires an approved API key sent in the X-API-Key header; unauthenticated public API ingestion is not available.",
+      "The API documentation lists a national facility registry but does not establish that each facility is currently functional, staffed or stocked.",
+      "Facility status, ownership, service availability and last-validation fields must be inspected per returned record before use.",
+      "Do not equate registered facilities with operational facilities."
     ],
-    "notes": ""
+    "notes": "API base: https://backend.hfr.fmohconnect.gov.ng/api/v1. FHIR R4 base: https://backend.hfr.fmohconnect.gov.ng/api/fhir. Key request is required; no key is stored in this repository."
   },
   {
     "id": "budget-office",
@@ -457,7 +458,7 @@
       "The Nigeria General Household Survey Panel entry was not individually verified in this pass.",
       "Survey waves are infrequent and dated."
     ],
-    "notes": "The 2023\u201324 NDHS entry was confirmed in this library."
+    "notes": "The 2023–24 NDHS entry was confirmed in this library."
   },
   {
     "id": "acled",
@@ -624,5 +625,78 @@
       "Needs a published method, reviewer rules and a corrections process before any record may carry the 'Independently verified' badge."
     ],
     "notes": ""
+  },
+  {
+    "id": "kaduna-hefa",
+    "publisher": "Kaduna State Government — Kaduna State Bureau of Statistics / Ministry of Health",
+    "name": "Health Facility Analytics (HEFA)",
+    "url": "https://hefa.kdbs.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kaduna State; facility-level and operational snapshots are described by the platform",
+    "geoLevel": "facility",
+    "dataType": "Health facility analytics platform covering readiness, service throughput, infrastructure, workforce, medicines, vaccines, supply chains and financing",
+    "updateFrequency": "Platform describes operational and snapshot datasets; exact refresh cadence not confirmed",
+    "licence": "Not confirmed. Obtain the applicable data-use terms before downloading or reusing records.",
+    "lastChecked": "2026-11-04",
+    "checkedHow": "HEFA portal and Kaduna State Government e-services listing checked; portal landing page loads but detailed dataset/API export access was not confirmed.",
+    "limitations": [
+      "A live portal is not proof that data exports or an unauthenticated API are available.",
+      "Dataset definitions, reporting periods, facility coverage, missingness and validation status must be checked before ingestion.",
+      "Readiness, throughput, staffing and commodity indicators are distinct measures and must not be combined into a single facility score without a validated methodology."
+    ],
+    "notes": "Treat as a priority source-access target for the Kaduna PHC pilot. No HEFA observations have been ingested into the Observatory yet."
+  },
+  {
+    "id": "kaduna-ksphcb-recruitment-plan-2025",
+    "publisher": "Kaduna State Primary Health Care Board",
+    "name": "Access & Equity: Multiyear Recruitment and Deployment Plan, March 2025",
+    "url": "https://kdsg.gov.ng/download/2977/policy-and-plans/22470/ksphcb_recruitment_and_deployment_plan-2025",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kaduna State; workforce tables include cadre and LGA retirement forecast breakdowns",
+    "geoLevel": "state",
+    "dataType": "Administrative workforce baseline and five-year recruitment/deployment plan (2025–2029)",
+    "updateFrequency": "One-time planning document; progress updates must be sourced separately",
+    "licence": "Reuse terms not stated in the retrieved document; cite the Kaduna State Primary Health Care Board and confirm reuse conditions.",
+    "lastChecked": "2026-11-04",
+    "checkedHow": "Official Kaduna State Government PDF retrieved and its workforce analysis and recruitment tables reviewed.",
+    "limitations": [
+      "The document reports a planning baseline of 5,240 existing workforce against 14,240 required, with a stated gap of 9,000; this is a March 2025 plan baseline, not a current 2026 headcount.",
+      "The document's 37% figure is the Board's stated workforce coverage; it is not an independently audited measure of facility functionality or quality.",
+      "The plan describes intended recruitment and deployment for 2025–2029; it does not prove that planned staff were recruited, trained or deployed.",
+      "The staffing tables distinguish facility cadres from headquarters and zonal staff; do not collapse cadre totals without preserving the document's definitions."
+    ],
+    "notes": "The plan describes facility-by-facility deployment and quarterly monitoring. Treat planned actions, approved recruitment and verified deployment as separate lifecycle states."
+  },
+  {
+    "id": "nphcda-data-requisition",
+    "publisher": "National Primary Health Care Development Agency (NPHCDA)",
+    "name": "NPHCDA Data Requisition Portal",
+    "url": "https://portal.nphcda.gov.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National primary healthcare datasets; specific coverage depends on the requested dataset and access approval",
+    "geoLevel": "varies",
+    "dataType": "Official data access and requisition portal; not itself a public dataset",
+    "updateFrequency": "Access workflow; dataset refresh cadence varies",
+    "licence": "Access and reuse conditions must be confirmed with NPHCDA for each dataset.",
+    "lastChecked": "2026-11-04",
+    "checkedHow": "Official NPHCDA data requisition portal landing page checked.",
+    "limitations": [
+      "Portal existence does not imply public access to underlying datasets.",
+      "Access requires a formal request and may be restricted; no data have been ingested through this portal.",
+      "Any approved dataset must be reviewed for permitted purpose, aggregation, privacy, reporting period and geographic precision."
+    ],
+    "notes": "Potential route for requesting approved Kaduna-relevant PHC datasets where public data are unavailable."
   }
 ]
