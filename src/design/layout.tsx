@@ -4,6 +4,7 @@ import { useAdapter, useLite } from '../lib/hooks';
 export const NAV = [
   { to: '/', label: 'Overview', end: true },
   { to: '/issues', label: 'Issues' },
+  { to: '/observations', label: 'Observations' },
   { to: '/geography', label: 'Places' },
   { to: '/evidence', label: 'Evidence' },
   { to: '/accountability', label: 'Accountability' },

@@ -18,6 +18,9 @@ The products share versioned contracts but retain clear data ownership. See [the
 
 - Published Civic Mandate records are consumed through the versioned, published-only CommunityRecord v0.1 API; the legacy `/api/pulse` endpoint is a temporary outage fallback only.
 - The Observatory adapter follows CommunityRecord pagination, preserves stable IDs and source metadata, and fails closed on malformed or truncated feeds; a valid empty v0.1 response remains empty.
+- Community Observations are a separate published-only feed, not Civic Mandate demands. The Observatory uses a distinct v0.1 adapter with strict public-field allowlisting, pagination checks and no pulse/demo fallback.
+- The observation feed exposes unavailable, invalid, incomplete, empty and ready states separately; a feed outage does not block the rest of the Observatory.
+- The Observatory has a separate Evidence Vault v0.1 adapter and displays only published, dual-reviewed records. It validates source provenance, numeric values, geography and explicit observation relationships; it never substitutes the source registry for evidence.
 - Three World Bank indicator pilots are defined for national-level observations.
 - The Evidence page includes a sourced historical INEC voter-register/PVC snapshot for all 36 states and FCT, with searchable state rows and explicit source arithmetic warnings.
 - Dataset-level source readiness is documented for INEC, UBEC, NBS, CBN, NPC, Budget Office, BPP/NOCOPO and health sources.
@@ -58,3 +61,9 @@ The merged main branch contains the Evidence Gateway implementation, but the Obs
 
 - [Civic Mandate Nigeria](https://2027-street-mandate.vercel.app)
 - [Civic Brain](https://iseyc-civic-brain.vercel.app)
+
+
+Evidence governance: [Community Observation contract](docs/COMMUNITY-OBSERVATION-CONTRACT.md) · [Evidence Vault contract](docs/EVIDENCE-VAULT-CONTRACT-V1.md) · [Kaduna HEFA access review](docs/HEFA-ACCESS-REVIEW-2026-11.md)
+
+
+National evidence readiness: [Source readiness assessment](docs/NATIONAL-SOURCE-READINESS-2026-11.md) · [Community Observation contract](docs/COMMUNITY-OBSERVATION-CONTRACT.md) · [Evidence Vault contract](docs/EVIDENCE-VAULT-CONTRACT-V1.md) · [Kaduna HEFA access review](docs/HEFA-ACCESS-REVIEW-2026-11.md)

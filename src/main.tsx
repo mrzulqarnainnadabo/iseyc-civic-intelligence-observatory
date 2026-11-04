@@ -12,6 +12,7 @@ import { AppShell } from './design/layout';
 import { Loading } from './design/feedback';
 const Overview = lazy(() => import('./pages/Overview'));
 const Issues = lazy(() => import('./pages/Issues'));
+const Observations = lazy(() => import('./pages/Observations'));
 const Geography = lazy(() => import('./pages/Geography'));
 const Evidence = lazy(() => import('./pages/Evidence'));
 const Accountability = lazy(() => import('./pages/Accountability'));
@@ -27,7 +28,7 @@ function AppRoutes() {
     <LiteContext.Provider value={{ lite, setLite }}><DataProvider>
       <Suspense fallback={<div className="app-main__inner"><Loading /></div>}>
         <Routes><Route element={<AppShell />}>
-          <Route index element={<Overview />} /><Route path="issues" element={<Issues />} />
+          <Route index element={<Overview />} /><Route path="issues" element={<Issues />} /><Route path="observations" element={<Observations />} />
           <Route path="geography" element={<Geography />} /><Route path="evidence" element={<Evidence />} />
           <Route path="accountability" element={<Accountability />} /><Route path="briefs" element={<Briefs />} />
           <Route path="*" element={<div className="page-heading"><h1>Not found</h1></div>} />

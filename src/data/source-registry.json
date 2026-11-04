@@ -871,5 +871,81 @@
       "CBN inflation, exchange-rate and GDP series should not be treated as direct measures of individual household welfare."
     ],
     "notes": "Index lists crude oil, exchange rates, GDP, inflation, money and credit, reserves, statistical database, annual/quarterly bulletins, PMI and expectations surveys."
+  },
+  {
+    "id": "worldbank-wdi-population",
+    "publisher": "World Bank",
+    "name": "World Development Indicators — Population, total (SP.POP.TOTL)",
+    "url": "https://api.worldbank.org/v2/country/NGA/indicator/SP.POP.TOTL?format=json",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "education"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria national aggregate only",
+    "geoLevel": "national",
+    "dataType": "Annual national population estimate series; context denominator only",
+    "updateFrequency": "Annual; latest non-null period varies and revisions may occur",
+    "licence": "World Bank Open Data; confirm indicator-specific attribution and reuse terms before republication.",
+    "lastChecked": "2026-11-04",
+    "checkedHow": "Official World Bank API endpoint returned JSON for Nigeria. API metadata lastupdated=2026-02-24; 2025 value was null and 2024 was the latest non-null observation returned.",
+    "limitations": [
+      "National aggregate only; cannot support Kaduna, LGA, ward or facility-level claims.",
+      "The API returned a null 2025 value; do not treat the latest year label as an available observation. Latest non-null value in the checked response was 2024.",
+      "Population series are estimates and may be revised; they are not a census count.",
+      "Population is context/denominator information, not a direct measure of service availability or quality."
+    ],
+    "notes": "Pilot source in the Observatory evidence gateway. Durable observation receipts are not yet stored in the Evidence Vault."
+  },
+  {
+    "id": "worldbank-wdi-primary-enrolment",
+    "publisher": "World Bank",
+    "name": "World Development Indicators — School enrollment, primary, gross (SE.PRM.ENRR)",
+    "url": "https://api.worldbank.org/v2/country/NGA/indicator/SE.PRM.ENRR?format=json",
+    "urlStatus": "documented-not-reconfirmed",
+    "sectors": [
+      "education"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria national aggregate only",
+    "geoLevel": "national",
+    "dataType": "Annual gross primary school enrolment ratio series",
+    "updateFrequency": "Annual; latest non-null period and revisions are indicator-specific",
+    "licence": "World Bank Open Data; confirm indicator-specific attribution and reuse terms before republication.",
+    "checkedHow": "Configured in the Observatory World Bank gateway pilot; direct API response was not re-fetched in this review.",
+    "limitations": [
+      "National aggregate only; cannot establish Kaduna or facility-level enrolment.",
+      "Gross enrolment ratio is not the same as attendance, completion, learning outcomes or the share of children attending school.",
+      "The ratio may exceed 100% because numerator and denominator can differ by age/classification.",
+      "Annual estimates may be revised; preserve the reference period and indicator metadata."
+    ],
+    "notes": "Pilot source in the Observatory evidence gateway. Do not treat this indicator as a measure of school quality or classroom functionality.",
+    "lastChecked": null
+  },
+  {
+    "id": "worldbank-wdi-under5-mortality",
+    "publisher": "World Bank",
+    "name": "World Development Indicators — Mortality rate, under-5 (SH.DYN.MORT)",
+    "url": "https://api.worldbank.org/v2/country/NGA/indicator/SH.DYN.MORT?format=json",
+    "urlStatus": "documented-not-reconfirmed",
+    "sectors": [
+      "health"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria national aggregate only",
+    "geoLevel": "national",
+    "dataType": "Annual under-five mortality estimate per 1,000 live births",
+    "updateFrequency": "Annual; latest non-null period and revisions are indicator-specific",
+    "licence": "World Bank Open Data; confirm indicator-specific attribution and reuse terms before republication.",
+    "checkedHow": "Configured in the Observatory World Bank gateway pilot; direct API response was not re-fetched in this review.",
+    "limitations": [
+      "National aggregate only; cannot establish mortality at a Kaduna facility, LGA or ward.",
+      "This is a population-level estimate, not a count of deaths reported by a named PHC or hospital.",
+      "Do not infer facility performance or causality from this indicator alone.",
+      "Annual estimates may be revised; preserve source vintage, reference period and uncertainty notes."
+    ],
+    "notes": "Pilot source in the Observatory evidence gateway. Use as national context only unless a separately validated subnational source is obtained.",
+    "lastChecked": null
   }
 ]
