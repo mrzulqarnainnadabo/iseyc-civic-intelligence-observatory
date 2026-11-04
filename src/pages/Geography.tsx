@@ -46,7 +46,7 @@ export default function Geography() {
         <Section title={selectedState?.name ?? 'Select a state'} id="place-detail">
           {!selectedState ? <p className="muted">Choose a state to inspect its published records.</p> : <>
             <h3>Records ({selectedRecords.length})</h3>
-            {selectedRecords.length === 0 ? <EmptyState title="No records in this feed for this state" /> : <ul className="plain">{selectedRecords.map((record) => <li key={record.id}><strong>{record.title}</strong><br /><span className="muted">{SECTOR_LABEL[record.sector]} · {CLAIM_LABEL[claimStrength(record, evidence)]}</span></li>)}</ul>}
+            {selectedRecords.length === 0 ? <EmptyState title="No records in this feed for this state" /> : <ul className="plain">{selectedRecords.map((record) => <li key={record.id}><strong>{record.title}</strong><br /><span className="muted">{record.sector ? SECTOR_LABEL[record.sector] : 'Unclassified'} · {CLAIM_LABEL[claimStrength(record, evidence)]}</span></li>)}</ul>}
             <h3>Registered subnational sources</h3>
             <p className="muted">These sources list subnational coverage; this does not confirm observations for {selectedState.name}.</p>
             {subnationalSources.length === 0 ? <EmptyState title="No subnational sources registered" /> : subnationalSources.map((source) => <SourceCitation key={source.id} s={source} compact />)}
