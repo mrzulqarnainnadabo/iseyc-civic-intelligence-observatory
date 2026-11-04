@@ -233,6 +233,9 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
       try {
         voices = await fetchCommunityRecords();
       } catch (communityError) {
+        // A malformed or unsupported v0.1 payload is a contract failure, not an outage.
+        const reason = String(communityError);
+        if (/Unsupported CommunityRecord|Invalid CommunityRecord|violated the published v0\.1 contract/.test(reason)) throw communityError;
         // Temporary migration fallback only: a valid empty v0.1 response never falls back.
         try {
           const body = await fetchJson(url) as PulseResponse;
