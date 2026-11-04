@@ -139,7 +139,8 @@ export interface ObservatoryAdapter {
   getStates(): Promise<StateRef[]>;
   getRecords(q?: RecordQuery): Promise<CivicRecord[]>;
   getEvidence(q?: EvidenceQuery): Promise<EvidenceItem[]>;
-  getInstitutions(): Promise<Institution[]>;\n  getCommunityObservations?(): Promise<CommunityObservationFeed>;
+  getInstitutions(): Promise<Institution[]>;
+  getCommunityObservations?(): Promise<CommunityObservationFeed>;
 }
 
 export const SECTOR_LABEL: Record<Sector, string> = {
