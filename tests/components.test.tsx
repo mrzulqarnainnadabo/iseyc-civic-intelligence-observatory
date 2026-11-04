@@ -55,35 +55,38 @@ describe('pages', () => {
   });
   it('Issues filters by sector and reports empty results without implying no need', () => {
     render(wrap(<Issues />));
-    fireEvent.change(screen.getByLabelText('Search records'), { target: { value: 'zzzz-no-match' } });
-    expect(screen.getByText(/absence of a match is not absence of need/)).toBeInTheDocument();
+    fireEvent.change(screen.getByLabelText('Search'), { target: { value: 'zzzz-no-match' } });
+    expect(screen.getByText(/A missing match is not evidence that a need is absent/)).toBeInTheDocument();
   });
-  it('Geography selects a state from the table view and lists registered sub-national sources', () => {
+  it('Places selects a state from the table view and lists source coverage without claiming state observations', () => {
     render(wrap(<Geography />));
     fireEvent.click(screen.getByRole('button', { name: 'Table' }));
     fireEvent.click(screen.getByRole('button', { name: 'Select Kaduna' }));
     expect(screen.getByRole('heading', { name: 'Kaduna' })).toBeInTheDocument();
-    expect(screen.getByText(/Registered sources that can report at state level or below/)).toBeInTheDocument();
+    expect(screen.getByText(/Registered subnational sources/)).toBeInTheDocument();
+    expect(screen.getByText(/does not confirm observations for Kaduna/)).toBeInTheDocument();
   });
-  it('Evidence library shows registry and indicator pilots', () => {
+  it('Evidence shows national indicators and registered sources', () => {
     render(wrap(<Evidence />));
-    expect(screen.getByRole('heading', { name: 'Evidence library' })).toBeInTheDocument();
-    expect(screen.getAllByText(/National indicator pilots/i).length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/Registered sources/i).length).toBeGreaterThan(0);
+    expect(screen.getByRole('heading', { name: 'Evidence' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'National indicators' }).length).toBeGreaterThan(0);
+    expect(screen.getByRole('heading', { name: 'Source registry' }).length).toBeGreaterThan(0);
   });
   it('Evidence shows community evidence items when present', () => {
     render(wrap(<Evidence />));
-    expect(screen.getByText(/Demonstration evidence items|Published community evidence items/i)).toBeInTheDocument();
+    expect(screen.getByText(/Demonstration evidence|Community evidence/i)).toBeInTheDocument();
   });
-  it('Accountability warns that responsibility mappings are unverified', () => {
+  it('Accountability makes the missing response integration explicit', () => {
     render(wrap(<Accountability />));
-    expect(screen.getByText(/Responsibility mappings are unverified/)).toBeInTheDocument();
-    expect(screen.getAllByText('Delivery independently verified').length).toBeGreaterThan(0);
+    expect(screen.getByText(/No verified institutional responses are connected/)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Records ·/ })).toBeInTheDocument();
+    fireEvent.click(screen.getAllByRole('button', { name: 'Review' })[0]);
+    expect(screen.getByRole('heading', { name: /Demonstration:/ })).toBeInTheDocument();
   });
-  it('Briefs build from scope and carry the caveats', () => {
+  it('Briefs builds a draft from scope and carries the caveats', () => {
     render(wrap(<Briefs />));
     expect(screen.getByRole('heading', { name: /Civic Intelligence Brief: All sectors, All states/ })).toBeInTheDocument();
-    expect(screen.getByText(/Interface draft/)).toBeInTheDocument();
+    expect(screen.getByText(/Draft · not approved for publication/)).toBeInTheDocument();
     fireEvent.change(screen.getByLabelText('State'), { target: { value: 'kaduna' } });
     expect(screen.getByRole('heading', { name: /Civic Intelligence Brief: All sectors, Kaduna/ })).toBeInTheDocument();
     expect(screen.getByText(/Community submissions are not a representative survey/)).toBeInTheDocument();
