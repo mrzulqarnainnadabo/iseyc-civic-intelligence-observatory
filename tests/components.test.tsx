@@ -42,7 +42,7 @@ describe('pages', () => {
     render(wrap(<Overview />));
     expect(screen.getByRole('heading', { name: 'Nigeria' })).toBeInTheDocument();
     expect(screen.getByText('Demonstration data')).toBeInTheDocument();
-    expect(screen.getByText('Demonstration records')).toBeInTheDocument();
+    expect(screen.getAllByText('Demonstration records').length).toBeGreaterThan(0);
     expect(screen.getByText('National indicators')).toBeInTheDocument();
     expect(screen.queryByText(/Three evidence streams/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/Operated by ISEYC/i)).not.toBeInTheDocument();
@@ -69,8 +69,8 @@ describe('pages', () => {
   it('Evidence shows national indicators and registered sources', () => {
     render(wrap(<Evidence />));
     expect(screen.getByRole('heading', { name: 'Evidence' })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: 'National indicators' }).length).toBeGreaterThan(0);
-    expect(screen.getByRole('heading', { name: 'Source registry' }).length).toBeGreaterThan(0);
+    expect(screen.getByRole('heading', { name: 'National indicators' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Source registry' })).toBeInTheDocument();
   });
   it('Evidence shows community evidence items when present', () => {
     render(wrap(<Evidence />));
