@@ -24,3 +24,16 @@ assert.equal(data.records.find((r) => r.state === "Kaduna").collectedPVCs, 41644
 assert.ok(data.limitations.some((x) => x.includes("Historical 2023")));
 assert.ok(data.limitations.some((x) => x.includes("arithmetic inconsistencies")));
 console.log("verify-inec-pvc-pilot: PASS (37 geographies; source arithmetic warnings retained)");
+
+const ekiti = JSON.parse(fs.readFileSync("data/indicators/inec-ekiti-2026.json", "utf8"));
+const ekitiApp = fs.readFileSync("src/data/indicators/inec-ekiti-2026.json", "utf8");
+const ekitiSource = fs.readFileSync("data/indicators/inec-ekiti-2026.json", "utf8");
+assert.equal(ekitiApp, ekitiSource, "Ekiti source and app copies must stay identical");
+assert.equal(ekiti.records[0].registeredVotersForElection, 1059360);
+assert.equal(ekiti.records[0].baseRegister2023, 987647);
+assert.equal(ekiti.records[0].newRegistrantsReported, 66664);
+assert.equal(ekiti.records[0].calculatedBasePlusNew, 1054311);
+assert.equal(ekiti.records[0].unreconciledDifference, 5049);
+assert.equal(ekiti.records[0].doubleRegistrationsInvalidatedReported, 2103);
+assert.ok(ekiti.limitations.some((x) => x.includes("not a nationwide")));
+console.log("verify-inec-ekiti-2026: PASS (state register discrepancy retained)");
