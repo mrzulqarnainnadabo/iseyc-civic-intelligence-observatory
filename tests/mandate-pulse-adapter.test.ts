@@ -143,7 +143,7 @@ describe('mandate pulse adapter', () => {
     }) as unknown as typeof fetch;
     const adapter = createMandatePulseAdapter({ fetchImpl });
     expect(await adapter.getRecords()).toHaveLength(2);
-    expect(adapter.getCommunityFeedStatus?.()).toMatchObject({ source: 'pulse-compatibility', fallbackReason: 'community_record_http_404', status: 'ready', returnedCount: 2 });
+    expect(adapter.getCommunityFeedStatus?.()).toMatchObject({ source: 'community-records-v0.1', fallbackReason: null, status: 'ready', returnedCount: 2 });
     expect(fetchImpl).toHaveBeenCalledTimes(2);
   });
 
@@ -186,6 +186,7 @@ describe('mandate pulse adapter', () => {
     }) as unknown as typeof fetch;
     const adapter = createMandatePulseAdapter({ fetchImpl });
     expect(await adapter.getRecords()).toHaveLength(2);
+    expect(adapter.getCommunityFeedStatus?.()).toMatchObject({ source: 'pulse-compatibility', fallbackReason: 'community_record_http_404', status: 'ready', returnedCount: 2 });
     expect(fetchImpl).toHaveBeenCalledTimes(2);
   });
 
