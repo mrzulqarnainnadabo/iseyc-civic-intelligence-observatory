@@ -6,7 +6,7 @@ import {
   clearGatewayCache,
   listPilotCatalog,
 } from '../api/_lib/gateway.js';
-import { isAllowedHost, buildWorldBankUrl, ALLOWED_HOSTS } from '../api/_lib/config.js';
+import { isAllowedHost, buildWorldBankUrl, ALLOWED_HOSTS, MAX_RESPONSE_BYTES } from '../api/_lib/config.js';
 
 describe('evidence gateway allowlist', () => {
   it('allows only world bank host', () => {
@@ -134,6 +134,55 @@ describe('retrieveObservations', () => {
     await retrieveObservations({ indicatorId: 'wb-nga-sp-pop-totl', fetchImpl });
     await retrieveObservations({ indicatorId: 'wb-nga-sp-pop-totl', fetchImpl });
     expect(fetchImpl).toHaveBeenCalledTimes(1);
+  });
+
+  it('cancels an upstream stream that exceeds the response-size limit', async () => {
+    const cancel = vi.fn(async () => undefined);
+    const oversized = new Uint8Array(MAX_RESPONSE_BYTES + 1);
+    const fetchImpl = vi.fn(async () => ({
+      ok: true,
+      status: 200,
+      body: {
+        getReader: () => ({
+          read: async () => ({ done: false, value: oversized }),
+          cancel,
+        }),
+      },
+      text: async () => {
+        throw new Error('text fallback must not be used for a streamed response');
+      },
+    })) as unknown as typeof fetch;
+
+    const body = await retrieveObservations({
+      indicatorId: 'wb-nga-sp-pop-totl',
+      fetchImpl,
+      bypassCache: true,
+    });
+
+    expect(body.status).toBe('error');
+    expect(body.errorClass).toBe('RESPONSE_TOO_LARGE');
+    expect(body.observations).toEqual([]);
+    expect(cancel).toHaveBeenCalledTimes(1);
+  });
+
+  it('requests only the allowlisted World Bank endpoint', async () => {
+    const fetchImpl = vi.fn(async () => ({
+      ok: true,
+      status: 200,
+      body: null,
+      text: async () => JSON.stringify([{ page: 1 }, [{ date: '2023', value: 1 }]]),
+    })) as unknown as typeof fetch;
+
+    await retrieveObservations({
+      indicatorId: 'wb-nga-sp-pop-totl',
+      fetchImpl,
+      bypassCache: true,
+    });
+
+    const requestedUrl = new URL(String(fetchImpl.mock.calls[0][0]));
+    expect(requestedUrl.protocol).toBe('https:');
+    expect(requestedUrl.hostname).toBe('api.worldbank.org');
+    expect(requestedUrl.pathname).toContain('/v2/country/NGA/indicator/');
   });
 
   it('rejects missing indicatorId without calling fetch', async () => {
