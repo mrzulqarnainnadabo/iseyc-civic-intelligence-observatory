@@ -6,7 +6,7 @@ import {
   clearGatewayCache,
   listPilotCatalog,
 } from '../api/_lib/gateway.js';
-import { isAllowedHost, buildWorldBankUrl, ALLOWED_HOSTS } from '../api/_lib/config.js';
+import { isAllowedHost, buildWorldBankUrl, ALLOWED_HOSTS, MAX_RESPONSE_BYTES } from '../api/_lib/config.js';
 
 describe('evidence gateway allowlist', () => {
   it('allows only world bank host', () => {
@@ -141,5 +141,59 @@ describe('retrieveObservations', () => {
     const body = await retrieveObservations({ indicatorId: '', fetchImpl: fetchImpl as unknown as typeof fetch });
     expect(body.errorClass).toBe('INVALID_INDICATOR');
     expect(fetchImpl).not.toHaveBeenCalled();
+  });
+});
+
+
+describe('upstream resource guards', () => {
+  beforeEach(() => clearGatewayCache());
+
+  it('aborts and cancels an upstream stream that exceeds the response limit', async () => {
+    const cancel = vi.fn(async () => {});
+    const fetchImpl = vi.fn(async () => ({
+      ok: true,
+      status: 200,
+      body: {
+        getReader: () => ({
+          read: async () => ({ done: false, value: new Uint8Array(MAX_RESPONSE_BYTES + 1) }),
+          cancel,
+        }),
+      },
+      text: async () => '',
+    })) as unknown as typeof fetch;
+
+    const body = await retrieveObservations({
+      indicatorId: 'wb-nga-sp-pop-totl',
+      fetchImpl,
+      bypassCache: true,
+    });
+
+    expect(body.status).toBe('error');
+    expect(body.errorClass).toBe('RESPONSE_TOO_LARGE');
+    expect(cancel).toHaveBeenCalledTimes(1);
+  });
+
+  it('classifies an upstream abort caused by the timeout', async () => {
+    const fetchImpl = vi.fn((_url: string, init?: RequestInit) => new Promise((_, reject) => {
+      const signal = init?.signal;
+      if (signal?.aborted) {
+        reject(Object.assign(new Error('aborted'), { name: 'AbortError' }));
+        return;
+      }
+      signal?.addEventListener('abort', () => {
+        reject(Object.assign(new Error('aborted'), { name: 'AbortError' }));
+      }, { once: true });
+    })) as unknown as typeof fetch;
+
+    const body = await retrieveObservations({
+      indicatorId: 'wb-nga-sp-pop-totl',
+      fetchImpl,
+      bypassCache: true,
+      timeoutMs: 5,
+    });
+
+    expect(body.status).toBe('error');
+    expect(body.errorClass).toBe('TIMEOUT');
+    expect(body.observations).toEqual([]);
   });
 });
