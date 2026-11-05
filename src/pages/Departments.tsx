@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useBundle } from '../lib/data';
 import { fetchViaGateway, type IndicatorObservation } from '../lib/indicators';
-import { fetchDepartmentCommunityRecords, departmentMatchesRecord, type DepartmentCommunityFeed, type PublishedDepartmentRecord } from '../adapters/departmentCommunityRecords';
+import { fetchDepartmentCommunityRecords, departmentMatchesRecord, kadunaRecordScope, type DepartmentCommunityFeed, type PublishedDepartmentRecord } from '../adapters/departmentCommunityRecords';
 import { DEPARTMENT_EMPTY_STATE, type DepartmentId, type DepartmentEvidence, validateDepartmentEvidence } from '../data/departmentEvidence';
 import { PageHeader, Section } from '../design/layout';
 import inecPvc2023 from '../data/indicators/inec-pvc-2023.json';
@@ -39,13 +39,6 @@ const DEPARTMENTS: DepartmentConfig[] = [
     hypotheses:['A concentration of published submissions may indicate where further investigation is useful, but not prevalence or public consensus.'] },
 ];
 const LOCATION = 'Kaduna South, Kaduna State';
-
-function isKadunaState(record: PublishedDepartmentRecord): boolean {
-  return (record.state || '').toLowerCase() === 'kaduna';
-}
-function isKadunaSouthLga(record: PublishedDepartmentRecord): boolean {
-  return !!record.lga && /kaduna\s*south/i.test(record.lga);
-}
 
 function RecordList({ records, scopeLabel }: { records: PublishedDepartmentRecord[]; scopeLabel: string }) {
   if (records.length === 0) return null;
@@ -95,9 +88,9 @@ export default function Departments() {
     if (!config || !feed) return { localRecords: local, stateContextRecords: stateOnly };
     for (const record of feed.records) {
       if (!departmentMatchesRecord(config.id, record)) continue;
-      if (!isKadunaState(record)) continue;
-      if (isKadunaSouthLga(record)) local.push(record);
-      else stateOnly.push(record);
+      const scope = kadunaRecordScope(record);
+      if (scope === 'local') local.push(record);
+      else if (scope === 'state-context') stateOnly.push(record);
     }
     return { localRecords: local, stateContextRecords: stateOnly };
   }, [feed, departmentId, config]);
