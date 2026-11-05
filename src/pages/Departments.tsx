@@ -7,6 +7,7 @@ import { DEPARTMENT_EMPTY_STATE, type DepartmentId, type DepartmentEvidence, val
 import { PageHeader, Section } from '../design/layout';
 import inecPvc2023 from '../data/indicators/inec-pvc-2023.json';
 import inecCvr2025 from '../data/indicators/inec-cvr-2025-26.json';
+import stateReference from '../../contracts/states-ng.v1.json';
 
 type DepartmentConfig = {
   id: DepartmentId; title: string; summary: string; sources: string[];
@@ -38,7 +39,9 @@ const DEPARTMENTS: DepartmentConfig[] = [
     facts:['The CommunityRecord feed contains published records only.','INEC reference periods and measure definitions must be preserved; registration, PVC collection and turnout are different measures.'],
     hypotheses:['A concentration of published submissions may indicate where further investigation is useful, but not prevalence or public consensus.'] },
 ];
-const LOCATION = 'Kaduna South, Kaduna State';
+const PILOT_LOCATION = 'Kaduna South, Kaduna State';
+const STATE_OPTIONS = stateReference.states;
+const ALL_STATES = 'All states + FCT';
 
 function RecordList({ records, scopeLabel }: { records: PublishedDepartmentRecord[]; scopeLabel: string }) {
   if (records.length === 0) return null;
@@ -61,6 +64,7 @@ export default function Departments() {
   const { departmentId } = useParams();
   const { sources } = useBundle();
   const [feed, setFeed] = useState<DepartmentCommunityFeed | null>(null);
+  const [selectedState, setSelectedState] = useState('Kaduna');
   const [observations, setObservations] = useState<Record<string, { status: string; observations: IndicatorObservation[] }>>({});
   const [loadingEvidence, setLoadingEvidence] = useState(true);
   const config = DEPARTMENTS.find((item) => item.id === departmentId);
@@ -88,21 +92,21 @@ export default function Departments() {
     if (!config || !feed) return { localRecords: local, stateContextRecords: stateOnly };
     for (const record of feed.records) {
       if (!departmentMatchesRecord(config.id, record)) continue;
-      const scope = kadunaRecordScope(record);
+      const scope = stateRecordScope(record, selectedState);
       if (scope === 'local') local.push(record);
-      else if (scope === 'state-context') stateOnly.push(record);
+      else if (scope === 'state-context' || scope === 'national-context') stateOnly.push(record);
     }
     return { localRecords: local, stateContextRecords: stateOnly };
-  }, [feed, departmentId, config]);
+  }, [feed, departmentId, config, selectedState]);
   if (!departmentId) return <>
     <PageHeader title="Department intelligence" lead="Four departmental entry points. Evidence, published community records and explicit unknowns." />
     <div className="dept-grid">{DEPARTMENTS.map((item) => <Link className="dept-card" key={item.id} to={'/departments/' + item.id}><span className="dept-card__kicker">ISEYC department</span><strong>{item.title}</strong><span>{item.summary}</span><span className="dept-card__action">Open intelligence →</span></Link>)}</div>
-    <p className="dept-note">Geographic focus: {LOCATION}. A missing local figure is shown as missing, never as zero.</p>
+    <p className="dept-note">Nigeria · pilot focus: Kaduna South where local figures are shown. CommunityRecords are published submissions, not a census or prevalence estimate.</p>
   </>;
   if (!config) return <><PageHeader title="Department not found" /><Link to="/departments">Return to departments</Link></>;
   return <>
     <PageHeader title={config.title} lead={config.summary}>
-      <p className="dept-location">Geographic focus · {LOCATION}</p>
+      <p className="dept-location">Nigeria · pilot focus: Kaduna South where local figures are shown.</p>
       <Link to="/departments" className="dept-back">← All departments</Link>
     </PageHeader>
     <Section title="A. Official evidence" id="official-evidence">
@@ -116,7 +120,7 @@ export default function Departments() {
           departmentId: config.id, indicatorId: indicator?.id || 'not-integrated', sourceId: source.id,
           publisher: source.publisher, sourceUrl: source.url || '', referencePeriod: localObservation?.referencePeriod || 'Not available for Kaduna South',
           retrievedAt: localObservation?.retrievedAt || 'not-retrieved',
-          geography: { level:'lga', code:'kaduna-south', label:LOCATION },
+          geography: { level:'lga', code:'kaduna-south', label:PILOT_LOCATION },
           value: localObservation?.value ?? null, unit: localObservation?.unit || null,
           evidenceStatus: localObservation ? 'integrated' : (indicator && result?.status === 'error' ? 'unavailable' : 'not-integrated'),
           limitations: [...source.limitations, 'No Kaduna South figure is displayed unless the retrieved observation explicitly identifies this LGA.'],
@@ -157,12 +161,20 @@ export default function Departments() {
     </Section>
     <Section title="B. Related published CommunityRecords" id="community-records">
       <div className="dept-feed-meta"><span>Source: {feed?.source || 'Loading Mandate CommunityRecord v0.1'}</span><span>{feed?.fallbackReason ? 'Fallback reason: ' + feed.fallbackReason : feed?.status === 'ready' ? 'Primary contract · v0.1.0' : ''}</span></div>
+      <div className="dept-state-filter">
+        <label htmlFor="department-state-filter">Filter published submissions by state</label>
+        <select id="department-state-filter" value={selectedState} onChange={(event) => setSelectedState(event.target.value)}>
+          <option value="All states + FCT">All Nigeria · 36 states + FCT</option>
+          {STATE_OPTIONS.map((state) => <option key={state} value={state}>{state}</option>)}
+        </select>
+      </div>
+      <p className="dept-note">This filter applies to published CommunityRecords only. Official indicators retain their source geography; national figures remain national context.</p>
       {!feed ? <p>Loading published records…</p> :
        feed.status === 'unavailable' || feed.status === 'invalid' ? <div className="dept-empty">{feed.message} <small>Reason: {feed.fallbackReason}</small></div> :
-       localRecords.length === 0 && stateContextRecords.length === 0 ? <div className="dept-empty">No related published CommunityRecords are currently available for this department in Kaduna. This does not mean the need is absent.</div> :
+       localRecords.length === 0 && stateContextRecords.length === 0 ? <div className="dept-empty">No related published CommunityRecords are currently available for this department in {selectedState === ALL_STATES ? 'Nigeria across the selected national feed' : selectedState}. This does not mean the need is absent.</div> :
        <>
-         <RecordList records={localRecords} scopeLabel="Kaduna South (LGA-matched published records only)." />
-         <RecordList records={stateContextRecords} scopeLabel="Kaduna State context (statewide or other LGA). Not claimed as Kaduna South local records." />
+         {selectedState === 'Kaduna' && <RecordList records={localRecords} scopeLabel="Kaduna South, Kaduna State · LGA-matched published records only." />}
+         <RecordList records={stateContextRecords} scopeLabel={selectedState === ALL_STATES ? 'Nigeria · published submissions across all available states and FCT. These records are not a census or prevalence measure.' : selectedState === 'Kaduna' ? 'Kaduna State context · statewide or other-LGA submissions. Not claimed as Kaduna South local records.' : selectedState + ' · published submissions with state-level matching; no LGA-level dataset is inferred.'} />
        </>}
       {feed?.limitations.map((limit) => <p className="dept-note" key={limit}>{limit}</p>)}
     </Section>
