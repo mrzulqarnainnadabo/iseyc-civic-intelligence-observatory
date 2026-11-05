@@ -58,6 +58,7 @@ function EvidenceCard({ item }: { item: DepartmentEvidence }) {
       {item.unit ? <small> {item.unit}</small> : null}
     </div>
     <p className="dept-evidence-card__geo">{item.geography.label} · {item.geography.level}</p>
+    <p className="dept-evidence-card__geo">Source ID: {item.sourceId} · Retrieved: {item.retrievedAt}</p>
     <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">Open source ↗</a>
     {item.limitations.length ? <ul className="dept-limitations">{item.limitations.map((v, i) => <li key={i}>{v}</li>)}</ul> : null}
   </article>;
@@ -210,7 +211,7 @@ export default function DepartmentPage() {
       <div className="dept-panel__head"><div><p className="dept-kicker">03 · Unknowns and limitations</p><h2 id="unknowns-title">What remains unknown</h2></div></div>
       {!hasLocalEvidence ? <p className="dept-local-limit">No current Kaduna South local figure is integrated for this department. National and historical values must not be presented as local current conditions.</p> : null}
       {registeredSources.length ? <ul className="dept-source-list">{registeredSources.map((source) => {
-        const integrated = integratedSourceIds.has(source.id) || integratedSourceIds.has(source.id.replace(/^worldbank-wdi-/, 'worldbank-wdi'));
+        const integrated = integratedSourceIds.has(source.id) || officialEvidence.some((item) => item.publisher.toLowerCase().includes(source.publisher.toLowerCase()));
         return <li key={source.id}>
           <span><strong>{source.name}</strong><small>{source.publisher} · {source.geographicCoverage} · Last checked: {source.lastChecked || 'not recorded'}</small></span>
           <span className={'dept-status dept-status--' + (integrated ? 'integrated' : 'not-integrated')}>{integrated ? 'integrated' : 'registered, not integrated here'}</span>
