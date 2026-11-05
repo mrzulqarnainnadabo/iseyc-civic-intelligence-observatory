@@ -95,7 +95,7 @@ function IndicatorBlock({ indicator }: { indicator: IndicatorDefinition }) {
       <summary>Retrieval receipt · {persistence?.mode === 'ephemeral' ? 'not retained' : 'receipt details'}</summary>
       <p className="muted">{persistence?.note || 'Receipt retention status is not reported by this source.'}</p>
       {typeof receipt.receiptId === 'string' && <p>Receipt ID: <code>{receipt.receiptId}</code></p>}
-      {typeof receipt.contentHash === 'string' && <p>SHA-256 source-response hash: <code>{receipt.contentHash}</code></p>}
+      {typeof receipt.contentHash === 'string' && <><p>SHA-256 source-response hash: <code>{receipt.contentHash}</code></p><p className="muted">This hash fingerprints the fetched response; it is not an independent verification of the publisher or source authenticity.</p></>}
       {typeof receipt.httpStatus === 'number' && <p>Upstream HTTP status: {receipt.httpStatus}</p>}
     </details>}
     <details className="record">
