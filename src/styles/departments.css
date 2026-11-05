@@ -35,3 +35,7 @@
 .dept-civic-metrics > div { min-width:0; padding:11px; border:1px solid var(--line); border-radius:8px; background:#fbfcfb; }
 .dept-civic-metrics strong { display:block; color:var(--g900); font-size:clamp(16px,2.4vw,22px); overflow-wrap:anywhere; }
 .dept-civic-metrics span { display:block; margin-top:5px; color:var(--muted); font-size:10px; }
+
+.dept-state-filter { display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; margin:12px 0 8px; }
+.dept-state-filter label { color:var(--g900); font-size:12px; font-weight:650; }
+.dept-state-filter select { min-width:min(100%,240px); min-height:40px; padding:8px 34px 8px 11px; border:1px solid var(--line); border-radius:8px; background:#fff; color:var(--g900); font-size:13px; }
