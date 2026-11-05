@@ -119,6 +119,12 @@ export default function Department() {
 
   return <>
     <PageHeader title={department.label} lead={<>{department.summary} <span className="muted">· Evidence is shown only when a registered retrieval path returns it.</span></>} />
+    <nav className="department-sequence" aria-label="Problem to evidence to responsibility to gap">
+      <a href="#published-community-records"><span>01</span> Problem</a>
+      <a href="#official-evidence"><span>02</span> Evidence</a>
+      <a href="#field-guidance"><span>03</span> Responsibility</a>
+      <a href="#unknowns"><span>04</span> Gap</a>
+    </nav>
     <div className="department-location-note" role="note">
       <strong>Geography rule</strong>
       <span>Figures retain their source geography. National or historical values are never presented as current Kaduna South facts.</span>
@@ -175,7 +181,7 @@ export default function Department() {
       {departmentId === 'civic' && <p className="muted">Published demands, community observations, official statistics and verified implementation evidence are separate evidence classes.</p>}
     </Section>
 
-    <Section title="4. Field guidance" id="field-guidance" note="What an ISEYC member may state responsibly">
+    <Section title="4. Field guidance & responsibility" id="field-guidance" note="What an ISEYC member may state responsibly">
       <FieldGuidance departmentId={departmentId} />
     </Section>
   </>;
