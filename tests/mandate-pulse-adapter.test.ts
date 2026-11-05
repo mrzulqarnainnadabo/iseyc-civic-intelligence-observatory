@@ -66,7 +66,11 @@ describe('mandate pulse adapter', () => {
     })) as unknown as typeof fetch;
     const adapter = createMandatePulseAdapter({ fetchImpl, communityRecordsUrl: null });
     expect(adapter.mode).toBe('live');
-    await expect(adapter.getRecords()).rejects.toThrow(/HTTP 503/);
+    expect(await adapter.getRecords()).toEqual([]);
+    const provenance = await adapter.getCommunityRecordProvenance?.();
+    expect(provenance?.status).toBe('unavailable');
+    expect(provenance?.source).toBe('unavailable');
+    expect(provenance?.fallbackReason).toMatch(/HTTP 503/);
   });
 
   it('empty voices yield empty records without inventing data', async () => {
@@ -121,6 +125,52 @@ describe('mandate pulse adapter', () => {
     expect(records[0].relatedSuggestedIds).toEqual(['cr-002']);
   });
 
+  it('exposes CommunityRecord as primary provenance when v0.1 succeeds', async () => {
+    const fetchImpl = vi.fn(async () => ({
+      ok: true,
+      json: async () => ({
+        contractVersion: '0.1.0', publicationBoundary: 'published-only',
+        page: 1, pageSize: 50, total: 1, totalPages: 1, truncatedUpstream: false,
+        records: [{ id: 'cr-prov', contractVersion: '0.1.0', publicationStatus: 'published',
+          verificationStatus: 'unverified', text: 'Published health demand', duty: 'Health',
+          state: 'Kaduna', lga: 'Kaduna South', officeLabel: 'LGA',
+          createdAt: '2026-11-01T00:00:00.000Z' }],
+      }),
+    })) as unknown as typeof fetch;
+    const adapter = createMandatePulseAdapter({ fetchImpl });
+    expect(await adapter.getRecords()).toHaveLength(1);
+    const provenance = await adapter.getCommunityRecordProvenance?.();
+    expect(provenance?.status).toBe('primary');
+    expect(provenance?.source).toBe('civic-mandate-community-records-v0.1');
+    expect(provenance?.fallbackReason).toBeNull();
+  });
+
+  it('exposes an explicit pulse fallback reason after CommunityRecord HTTP failure', async () => {
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) => {
+      if (String(input).includes('/api/v1/community-records')) return { ok: false, status: 404, json: async () => ({}) };
+      return { ok: true, json: async () => sample };
+    }) as unknown as typeof fetch;
+    const adapter = createMandatePulseAdapter({ fetchImpl });
+    expect(await adapter.getRecords()).toHaveLength(2);
+    const provenance = await adapter.getCommunityRecordProvenance?.();
+    expect(provenance?.status).toBe('fallback');
+    expect(provenance?.source).toBe('civic-mandate-pulse-published-only');
+    expect(provenance?.fallbackReason).toContain('CommunityRecord HTTP 404');
+  });
+
+  it('reports both source failures without demo or substitute records', async () => {
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) => {
+      if (String(input).includes('/api/v1/community-records')) return { ok: false, status: 404, json: async () => ({}) };
+      return { ok: false, status: 503, json: async () => ({}) };
+    }) as unknown as typeof fetch;
+    const adapter = createMandatePulseAdapter({ fetchImpl });
+    expect(await adapter.getRecords()).toEqual([]);
+    const provenance = await adapter.getCommunityRecordProvenance?.();
+    expect(provenance?.status).toBe('unavailable');
+    expect(provenance?.fallbackReason).toContain('CommunityRecord HTTP 404');
+    expect(provenance?.fallbackReason).toContain('Pulse HTTP 503');
+  });
+
   it('follows CommunityRecord pagination before returning the complete feed', async () => {
     const fetchImpl = vi.fn(async (input: RequestInfo | URL) => {
       const target = String(input);
@@ -171,7 +221,10 @@ describe('mandate pulse adapter', () => {
       }),
     })) as unknown as typeof fetch;
     const adapter = createMandatePulseAdapter({ fetchImpl });
-    await expect(adapter.getRecords()).rejects.toThrow(/truncated upstream/);
+    expect(await adapter.getRecords()).toEqual([]);
+    const provenance = await adapter.getCommunityRecordProvenance?.();
+    expect(provenance?.status).toBe('invalid');
+    expect(provenance?.fallbackReason).toBe('community_record_invalid_contract');
     expect(fetchImpl).toHaveBeenCalledTimes(1);
   });
 
@@ -191,7 +244,10 @@ describe('mandate pulse adapter', () => {
       json: async () => ({ contractVersion: '9.9.9', publicationBoundary: 'published-only', records: [] }),
     })) as unknown as typeof fetch;
     const adapter = createMandatePulseAdapter({ fetchImpl });
-    await expect(adapter.getRecords()).rejects.toThrow(/Unsupported CommunityRecord contract/);
+    expect(await adapter.getRecords()).toEqual([]);
+    const provenance = await adapter.getCommunityRecordProvenance?.();
+    expect(provenance?.status).toBe('invalid');
+    expect(provenance?.fallbackReason).toBe('community_record_invalid_contract');
     expect(fetchImpl).toHaveBeenCalledTimes(1);
   });
 
