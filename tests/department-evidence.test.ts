@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { DEPARTMENT_EMPTY_STATE, validateDepartmentEvidence } from '../src/data/departmentEvidence';
-import { departmentMatchesRecord, fetchDepartmentCommunityRecords } from '../src/adapters/departmentCommunityRecords';
+import { departmentMatchesRecord, fetchDepartmentCommunityRecords, kadunaRecordScope, type PublishedDepartmentRecord } from '../src/adapters/departmentCommunityRecords';
 const valid = {
   departmentId:'health',indicatorId:'mortality',sourceId:'worldbank-wdi-under5-mortality',
   publisher:'World Bank',sourceUrl:'https://example.org/source',referencePeriod:'Not available for Kaduna South',
@@ -63,5 +63,31 @@ describe('published CommunityRecord client', () => {
     const record = {sector:'health',duty:'Health'} as any;
     expect(departmentMatchesRecord('health',record)).toBe(true);
     expect(departmentMatchesRecord('education',record)).toBe(false);
+  });
+});
+describe('Kaduna geographic scope boundaries', () => {
+  const record = (state: string | null, lga: string | null): PublishedDepartmentRecord => ({
+    id:state + '-' + lga,text:'Published health record',duty:'Health',sector:'health',issueCategory:null,
+    officeLabel:null,state,lga,ward:null,facilityRef:null,createdAt:null,publishedAt:null,
+    verificationStatus:'unverified',followUpStatus:'unknown',contractVersion:'0.1.0',
+    publicationStatus:'published',publicUrl:'https://example.org/record',
+  });
+  it('places an explicit Kaduna South LGA match in the local list', () => {
+    const local = record('Kaduna','Kaduna South');
+    expect(kadunaRecordScope(local)).toBe('local');
+    expect([local].filter((item) => kadunaRecordScope(item) === 'local')).toEqual([local]);
+  });
+  it('places statewide and other-Kaduna-LGA records only in state context', () => {
+    const statewide = record('Kaduna',null);
+    const otherLga = record('Kaduna','Chikun');
+    const items = [statewide,otherLga];
+    expect(items.filter((item) => kadunaRecordScope(item) === 'local')).toEqual([]);
+    expect(items.filter((item) => kadunaRecordScope(item) === 'state-context')).toEqual(items);
+  });
+  it('excludes non-Kaduna records from both local and state-context lists', () => {
+    const nonKaduna = record('Kano','Kaduna South');
+    expect(kadunaRecordScope(nonKaduna)).toBe('excluded');
+    expect([nonKaduna].filter((item) => kadunaRecordScope(item) === 'local')).toEqual([]);
+    expect([nonKaduna].filter((item) => kadunaRecordScope(item) === 'state-context')).toEqual([]);
   });
 });
