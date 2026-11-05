@@ -36,7 +36,7 @@ describe('evidence gateway receipt propagation', () => {
     expect(result.receipt?.receiptId).toBe('receipt-123');
     expect(result.receipt?.contentHash).toBe('a'.repeat(64));
     expect(result.persistence?.mode).toBe('ephemeral');
-    expect(result.persistence?.note).toContain('not configured');
+    expect(result.persistence?.note).toContain('durable storage is deferred');
     expect(result.observations).toHaveLength(1);
   });
 });
