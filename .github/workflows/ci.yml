@@ -41,7 +41,6 @@ jobs:
           if-no-files-found: error
       - name: Audit dependency vulnerabilities
         run: npm audit --audit-level=high
-        run: npm audit --audit-level=high
 
       - name: Validate source registry
         run: npm run validate:registry
