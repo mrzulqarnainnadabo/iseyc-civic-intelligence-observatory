@@ -144,3 +144,24 @@
 @media (prefers-reduced-motion: reduce) {
   .app-nav__link { transition: none; }
 }
+
+.app-footer {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding: 18px clamp(18px, 4vw, 48px);
+  border-top: 1px solid var(--line);
+  background: var(--g900);
+  color: var(--paper);
+  font-size: 11px;
+}
+.app-footer > div { display: grid; gap: 3px; }
+.app-footer > div span { color: rgba(247,243,233,.72); }
+.app-footer nav { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.app-footer a { color: var(--gold); }
+@media (max-width: 760px) {
+  .app-footer { padding: 16px 18px; }
+}
