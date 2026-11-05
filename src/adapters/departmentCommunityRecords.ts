@@ -40,7 +40,7 @@ function mapPublicRecord(raw: Raw): PublishedDepartmentRecord {
 }
 function failureReason(error: unknown): string {
   const message = error instanceof Error ? error.message : String(error);
-  const status = message.match(/HTTP (\d{3})/)?.[1];
+  const status = message.match(/HTTP (\\d{3})/)?.[1];
   if (status) return 'community_record_http_' + status;
   if (message === 'community_record_invalid_contract') return message;
   if (/JSON|parse/i.test(message)) return 'community_record_invalid_json';
@@ -92,4 +92,11 @@ export function departmentMatchesRecord(department: DepartmentId, record: Publis
   if (department === 'health') return sector === 'health' || /health|primary healthcare|well-being/.test(duty);
   if (department === 'software-technology') return /software|technology|digital infrastructure/.test(sector + ' ' + duty);
   return sector === 'governance' || /governance|justice|public finance|electoral|civic/.test(duty);
+}
+
+/** Classifies only explicit Kaduna geography. Statewide and other-LGA records are context, never LGA-local evidence. */
+export function kadunaRecordScope(record: PublishedDepartmentRecord): 'local' | 'state-context' | 'excluded' {
+  if ((record.state || '').trim().toLowerCase() !== 'kaduna') return 'excluded';
+  if (record.lga && /^kaduna\\s*south$/i.test(record.lga.trim().replace(/[-_]/g, ' '))) return 'local';
+  return 'state-context';
 }
