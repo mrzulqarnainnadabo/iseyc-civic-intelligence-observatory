@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { DEPARTMENT_EMPTY_STATE, validateDepartmentEvidence } from '../src/data/departmentEvidence';
-import { departmentMatchesRecord, fetchDepartmentCommunityRecords, kadunaRecordScope, type PublishedDepartmentRecord } from '../src/adapters/departmentCommunityRecords';
+import { departmentMatchesRecord, fetchDepartmentCommunityRecords, kadunaRecordScope, stateRecordScope, type PublishedDepartmentRecord } from '../src/adapters/departmentCommunityRecords';
 const valid = {
   departmentId:'health',indicatorId:'mortality',sourceId:'worldbank-wdi-under5-mortality',
   publisher:'World Bank',sourceUrl:'https://example.org/source',referencePeriod:'Not available for Kaduna South',
@@ -91,5 +91,27 @@ describe('Kaduna geographic scope boundaries', () => {
     expect(kadunaRecordScope(nonKaduna)).toBe('excluded');
     expect([nonKaduna].filter((item) => kadunaRecordScope(item) === 'local')).toEqual([]);
     expect([nonKaduna].filter((item) => kadunaRecordScope(item) === 'state-context')).toEqual([]);
+  });
+});
+
+
+describe('national state selector scope', () => {
+  const record = (state: string | null, lga: string | null): PublishedDepartmentRecord => ({
+    id:String(state) + '-' + String(lga),text:'Published record',duty:'Health',sector:'health',issueCategory:null,
+    officeLabel:null,state,lga,ward:null,facilityRef:null,createdAt:null,publishedAt:null,
+    verificationStatus:'unverified',followUpStatus:'unknown',contractVersion:'0.1.0',
+    publicationStatus:'published',publicUrl:'https://example.org/record',
+  });
+  it('keeps Kaduna South local only when Kaduna is selected', () => {
+    expect(stateRecordScope(record('Kaduna State','Kaduna South'),'Kaduna')).toBe('local');
+    expect(stateRecordScope(record('Kaduna','Chikun'),'Kaduna')).toBe('state-context');
+  });
+  it('filters other states without inventing LGA coverage', () => {
+    expect(stateRecordScope(record('Kano','Kano Municipal'),'Kano')).toBe('state-context');
+    expect(stateRecordScope(record('Kano','Kano Municipal'),'Kaduna')).toBe('excluded');
+  });
+  it('supports the national all-states view without treating it as prevalence', () => {
+    expect(stateRecordScope(record('Rivers','Port Harcourt'),'All states + FCT')).toBe('national-context');
+    expect(stateRecordScope(record('FCT',null),'All states + FCT')).toBe('national-context');
   });
 });
