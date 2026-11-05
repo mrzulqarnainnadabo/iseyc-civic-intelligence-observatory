@@ -174,6 +174,13 @@ export interface Institution {
 export interface RecordQuery { sector?: Sector; stateId?: string; text?: string; institutionId?: string }
 export interface EvidenceQuery { kind?: EvidenceKind; status?: EvidenceStatus; sector?: Sector; stateId?: string; text?: string; recordId?: string }
 
+export interface CommunityFeedStatus {
+  status: 'loading' | 'ready' | 'empty' | 'unavailable';
+  source: 'community-records-v0.1' | 'pulse-compatibility' | 'unavailable' | null;
+  fallbackReason: string | null;
+  returnedCount: number | null;
+}
+
 export interface ObservatoryAdapter {
   readonly mode: 'demo' | 'live';
   readonly label: string;
@@ -184,6 +191,7 @@ export interface ObservatoryAdapter {
   getInstitutions(): Promise<Institution[]>;
   getCommunityObservations?(): Promise<CommunityObservationFeed>;
   getEvidenceVaultRecords?(): Promise<EvidenceVaultFeed>;
+  getCommunityFeedStatus?(): CommunityFeedStatus;
 }
 
 export const SECTOR_LABEL: Record<Sector, string> = {
