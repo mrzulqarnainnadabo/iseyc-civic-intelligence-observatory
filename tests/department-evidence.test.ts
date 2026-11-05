@@ -72,10 +72,12 @@ describe('Kaduna geographic scope boundaries', () => {
     verificationStatus:'unverified',followUpStatus:'unknown',contractVersion:'0.1.0',
     publicationStatus:'published',publicUrl:'https://example.org/record',
   });
-  it('places an explicit Kaduna South LGA match in the local list', () => {
+  it('places an explicit Kaduna South LGA match in the local list, including normalized official labels', () => {
     const local = record('Kaduna','Kaduna South');
+    const normalizedLabel = record('Kaduna State','Kaduna-South');
     expect(kadunaRecordScope(local)).toBe('local');
-    expect([local].filter((item) => kadunaRecordScope(item) === 'local')).toEqual([local]);
+    expect(kadunaRecordScope(normalizedLabel)).toBe('local');
+    expect([local,normalizedLabel].filter((item) => kadunaRecordScope(item) === 'local')).toEqual([local,normalizedLabel]);
   });
   it('places statewide and other-Kaduna-LGA records only in state context', () => {
     const statewide = record('Kaduna',null);
