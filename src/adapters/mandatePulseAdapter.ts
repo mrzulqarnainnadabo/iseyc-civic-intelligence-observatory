@@ -202,6 +202,7 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
   const sources = registry as SourceRecord[];
 
   let cache: { records: CivicRecord[]; evidence: EvidenceItem[]; at: number } | null = null;
+  let communityFeedStatus: import('../data/types').CommunityFeedStatus = { status: 'loading', source: null, fallbackReason: null, returnedCount: null };
   const TTL = 60_000;
 
   async function fetchJson(target: string): Promise<unknown> {
@@ -263,25 +264,70 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
     });
   }
 
+  function retrievalReason(error: unknown, source: 'community_record' | 'pulse'): string {
+    const message = String(error instanceof Error ? error.message : error);
+    const status = message.match(/HTTP (\d{3})/i)?.[1];
+    if (status) return source + '_http_' + status;
+    if (/abort|timeout/i.test(message)) return source + '_timeout';
+    if (/json/i.test(message)) return source + '_invalid_json';
+    return source + '_network_or_contract_error';
+  }
+
   async function load() {
     if (cache && Date.now() - cache.at < TTL) return cache;
     let voices: PulseVoice[];
     if (communityUrl) {
       try {
         voices = await fetchCommunityRecords();
+        communityFeedStatus = {
+          status: voices.length ? 'ready' : 'empty',
+          source: 'community-records-v0.1',
+          fallbackReason: null,
+          returnedCount: voices.length,
+        };
       } catch (communityError) {
-        // A malformed or unsupported v0.1 payload is a contract failure, not an outage.
         const reason = String(communityError);
-        if (/Unsupported CommunityRecord|Invalid CommunityRecord|violated the published v0\.1 contract|CommunityRecord feed is truncated|CommunityRecord pagination exceeds/.test(reason)) throw communityError;
-        // Temporary migration fallback only: a valid empty v0.1 response never falls back.
+        // A malformed or truncated v0.1 payload is a contract failure, not an outage.
+        if (/Unsupported CommunityRecord|Invalid CommunityRecord|violated the published v0\.1 contract|CommunityRecord feed is truncated|CommunityRecord pagination exceeds/.test(reason)) {
+          communityFeedStatus = { status: 'unavailable', source: 'unavailable', fallbackReason: 'community_record_invalid_contract', returnedCount: null };
+          throw communityError;
+        }
+        // Pulse is compatibility-only and is used solely when CommunityRecord retrieval fails.
+        try {
+          const body = await fetchJson(url) as PulseResponse;
+          if (!Array.isArray(body?.voices)) throw new Error('Invalid pulse response');
+          voices = body.voices;
+          communityFeedStatus = {
+            status: voices.length ? 'ready' : 'empty',
+            source: 'pulse-compatibility',
+            fallbackReason: retrievalReason(communityError, 'community_record'),
+            returnedCount: voices.length,
+          };
+        } catch (pulseError) {
+          communityFeedStatus = {
+            status: 'unavailable',
+            source: 'unavailable',
+            fallbackReason: retrievalReason(communityError, 'community_record') + ';' + retrievalReason(pulseError, 'pulse'),
+            returnedCount: null,
+          };
+          throw new Error('CommunityRecord and pulse retrieval unavailable: ' + communityFeedStatus.fallbackReason);
+        }
+      }
+    } else {
+      try {
         const body = await fetchJson(url) as PulseResponse;
         if (!Array.isArray(body?.voices)) throw new Error('Invalid pulse response');
         voices = body.voices;
+        communityFeedStatus = {
+          status: voices.length ? 'ready' : 'empty',
+          source: 'pulse-compatibility',
+          fallbackReason: 'community_record_endpoint_disabled',
+          returnedCount: voices.length,
+        };
+      } catch (pulseError) {
+        communityFeedStatus = { status: 'unavailable', source: 'unavailable', fallbackReason: retrievalReason(pulseError, 'pulse'), returnedCount: null };
+        throw pulseError;
       }
-    } else {
-      const body = await fetchJson(url) as PulseResponse;
-      if (!Array.isArray(body?.voices)) throw new Error('Invalid pulse response');
-      voices = body.voices;
     }
     cache = { ...mapVoices(voices), at: Date.now() };
     return cache;
@@ -290,6 +336,7 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
   return {
     mode: 'live',
     label: 'Published Mandate feed',
+    getCommunityFeedStatus() { return { ...communityFeedStatus }; },
     async getSources() {
       return sources;
     },
