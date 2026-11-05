@@ -65,7 +65,7 @@ export default function Departments() {
   const related = useMemo(() => feed?.records.filter((record) => {
     if (!config || !departmentMatchesRecord(config.id, record)) return false;
     if (record.state && record.state.toLowerCase() !== 'kaduna') return false;
-    if (record.lga && !/kaduna south/i.test(record.lga)) return false;
+    if (!record.lga || !/kaduna south/i.test(record.lga)) return false;
     return true;
   }) ?? [], [feed, departmentId]);
   if (!departmentId) return <>
@@ -100,7 +100,7 @@ export default function Departments() {
           <div className="dept-source__head"><strong>{source.name}</strong><span className={'dept-status dept-status--' + mapped.evidenceStatus}>{mapped.evidenceStatus}</span></div>
           <p className="dept-source__publisher">{source.publisher} · registered coverage: {source.geographicCoverage}</p>
           {indicator && loadingEvidence ? <p>Checking the registered Evidence Gateway…</p> :
-            <p className="dept-source__empty">{mapped.value === null ? DEPARTMENT_EMPTY_STATE : mapped.value.toLocaleString() + ' ' + (mapped.unit || '') + ' · ' + mapped.referencePeriod}</p>}
+            <p className="dept-source__empty">{result?.status === 'error' ? 'Evidence Gateway unavailable. No substitute figure is shown.' : mapped.value === null ? DEPARTMENT_EMPTY_STATE : mapped.value.toLocaleString() + ' ' + (mapped.unit || '') + ' · ' + mapped.referencePeriod}</p>}
           {result?.observations.find((obs) => obs.geoLevel === 'national') && <p className="dept-note">National context only: {result.observations.find((obs) => obs.geoLevel === 'national')!.value.toLocaleString()} {result.observations.find((obs) => obs.geoLevel === 'national')!.unit || ''} · {result.observations.find((obs) => obs.geoLevel === 'national')!.referencePeriod}. This is not a Kaduna South figure.</p>}
           {source.url && <a href={source.url} target="_blank" rel="noopener noreferrer">Open registered source ↗</a>}
           <details><summary>Limitations and interpretation</summary><ul>{mapped.limitations.map((limit) => <li key={limit}>{limit}</li>)}</ul></details>
