@@ -12,6 +12,7 @@ import {
   formatIndicatorValue,
   type IndicatorDefinition,
   type IndicatorObservation,
+  type GatewayResult,
 } from '../lib/indicators';
 
 type PvcRow = typeof inecPvc2023.records[number];
@@ -64,12 +65,16 @@ function IndicatorBlock({ indicator }: { indicator: IndicatorDefinition }) {
   const [observations, setObservations] = useState<IndicatorObservation[]>([]);
   const [status, setStatus] = useState<'loading' | 'ready' | 'empty' | 'unavailable'>('loading');
   const [retrievedAt, setRetrievedAt] = useState<string | null>(null);
+  const [receipt, setReceipt] = useState<GatewayResult['receipt']>(null);
+  const [persistence, setPersistence] = useState<GatewayResult['persistence']>(undefined);
 
   useEffect(() => {
     let active = true;
     fetchViaGateway(indicator.id).then((result) => {
       if (!active) return;
       setObservations(result.observations);
+      setReceipt(result.receipt ?? null);
+      setPersistence(result.persistence);
       setStatus(result.status === 'error' ? 'unavailable' : result.status === 'empty' || !result.observations.length ? 'empty' : 'ready');
       setRetrievedAt(result.observations[0]?.retrievedAt || (result.receipt as { retrievedAt?: string } | null)?.retrievedAt || null);
     });
@@ -86,6 +91,13 @@ function IndicatorBlock({ indicator }: { indicator: IndicatorDefinition }) {
     </> : <><strong className="workspace-stat__value">—</strong><span className="workspace-stat__period">{status === 'unavailable' ? 'Source unavailable' : 'No observation'}</span></>}
     <span className="workspace-indicator__source">{indicator.sourcePublisher}</span>
     {retrievedAt && <span className="workspace-indicator__source">Retrieved {retrievedAt}</span>}
+    {receipt && <details className="record">
+      <summary>Retrieval receipt · {persistence?.mode === 'ephemeral' ? 'not retained' : 'receipt details'}</summary>
+      <p className="muted">{persistence?.note || 'Receipt retention status is not reported by this source.'}</p>
+      {typeof receipt.receiptId === 'string' && <p>Receipt ID: <code>{receipt.receiptId}</code></p>}
+      {typeof receipt.contentHash === 'string' && <p>SHA-256 source-response hash: <code>{receipt.contentHash}</code></p>}
+      {typeof receipt.httpStatus === 'number' && <p>Upstream HTTP status: {receipt.httpStatus}</p>}
+    </details>}
     <details className="record">
       <summary>Method and limitations</summary>
       <p>{indicator.definition}</p>
