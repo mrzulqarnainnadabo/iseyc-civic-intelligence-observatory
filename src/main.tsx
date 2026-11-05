@@ -5,6 +5,7 @@ import './styles/tokens.css';
 import './styles/base.css';
 import './styles/components.css';
 import './styles/experience.css';
+import './styles/departments.css';
 import { AdapterContext, LiteContext, initialLite, persistLite } from './lib/hooks';
 import { selectAdapter } from './adapters';
 import { DataProvider } from './lib/data';
@@ -17,6 +18,7 @@ const Geography = lazy(() => import('./pages/Geography'));
 const Evidence = lazy(() => import('./pages/Evidence'));
 const Accountability = lazy(() => import('./pages/Accountability'));
 const Briefs = lazy(() => import('./pages/Briefs'));
+const Departments = lazy(() => import('./pages/Departments'));
 import { adapterSearchFromLocation } from './lib/adapter-search';
 function AppRoutes() {
   const location = useLocation();
@@ -30,7 +32,7 @@ function AppRoutes() {
         <Routes><Route element={<AppShell />}>
           <Route index element={<Overview />} /><Route path="issues" element={<Issues />} /><Route path="observations" element={<Observations />} />
           <Route path="geography" element={<Geography />} /><Route path="evidence" element={<Evidence />} />
-          <Route path="accountability" element={<Accountability />} /><Route path="briefs" element={<Briefs />} />
+          <Route path="accountability" element={<Accountability />} /><Route path="briefs" element={<Briefs />} /><Route path="departments" element={<Departments />} /><Route path="departments/:departmentId" element={<Departments />} />
           <Route path="*" element={<div className="page-heading"><h1>Not found</h1></div>} />
         </Route></Routes>
       </Suspense>
