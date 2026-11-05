@@ -43,6 +43,14 @@ export function AppShell() {
       </div>
     </aside>
     <main id="main" className="app-main" tabIndex={-1}><div className="app-main__inner"><Outlet /></div></main>
+    <footer className="app-footer">
+      <div><strong>ISEYC · Strictly non-partisan</strong><span>Understanding Public Needs. Interpreting Evidence. Strengthening Accountability.</span></div>
+      <nav aria-label="Institutional links">
+        <a href="https://2027-street-mandate.vercel.app/methodology" target="_blank" rel="noopener noreferrer">Methodology</a>
+        <a href="https://2027-street-mandate.vercel.app/about" target="_blank" rel="noopener noreferrer">Non-partisan charter</a>
+        <a href="mailto:iseycglobal@gmail.com">Contact ISEYC</a>
+      </nav>
+    </footer>
   </div>;
 }
 export function PageHeader({ title, lead, children }: { title: string; lead?: ReactNode; children?: ReactNode }) {
