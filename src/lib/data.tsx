@@ -1,5 +1,5 @@
 import { createContext, useContext, type ReactNode } from 'react';
-import type { CivicRecord, CommunityObservationFeed, EvidenceVaultFeed, EvidenceItem, Institution, SourceRecord, StateRef } from '../data/types';
+import type { CivicRecord, CommunityObservationFeed, CommunityRecordProvenance, EvidenceVaultFeed, EvidenceItem, Institution, SourceRecord, StateRef } from '../data/types';
 import { useAdapter, useAsync } from './hooks';
 import { Loading, ErrorState } from '../design/feedback';
 
