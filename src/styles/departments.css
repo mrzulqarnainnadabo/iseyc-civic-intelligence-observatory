@@ -30,3 +30,8 @@
 .dept-source details summary { cursor:pointer; }
 @media(max-width:640px) { .dept-grid { grid-template-columns:1fr; } .dept-guidance { grid-template-columns:1fr; } .dept-card { min-height:0; } }
 @media(prefers-reduced-motion:reduce) { .dept-card { transition:none; } }
+
+.dept-civic-metrics { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:12px 0; }
+.dept-civic-metrics > div { min-width:0; padding:11px; border:1px solid var(--line); border-radius:8px; background:#fbfcfb; }
+.dept-civic-metrics strong { display:block; color:var(--g900); font-size:clamp(16px,2.4vw,22px); overflow-wrap:anywhere; }
+.dept-civic-metrics span { display:block; margin-top:5px; color:var(--muted); font-size:10px; }
