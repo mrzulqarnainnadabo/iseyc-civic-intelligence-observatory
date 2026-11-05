@@ -5,6 +5,7 @@ import './styles/tokens.css';
 import './styles/base.css';
 import './styles/components.css';
 import './styles/experience.css';
+import './styles/departments.css';
 import { AdapterContext, LiteContext, initialLite, persistLite } from './lib/hooks';
 import { selectAdapter } from './adapters';
 import { DataProvider } from './lib/data';
