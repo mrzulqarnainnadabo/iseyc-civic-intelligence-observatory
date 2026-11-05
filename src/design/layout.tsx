@@ -32,7 +32,7 @@ export function AppShell() {
         <div className="app-products" aria-label="ISEYC public products">
           <a href="https://2027-street-mandate.vercel.app" target="_blank" rel="noopener noreferrer">Mandate ↗</a>
           <a href="https://iseyc-civic-brain.vercel.app" target="_blank" rel="noopener noreferrer">Brain ↗</a>
-          <a href="https://iseyc-civic-intelligence-observator.vercel.app" aria-current="page">Observatory</a>
+          <a href="https://iseyc-civic-intelligence-observatory.vercel.app" aria-current="page">Observatory</a>
         </div>
       </div>
     </aside>
