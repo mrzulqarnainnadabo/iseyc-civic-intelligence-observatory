@@ -5,6 +5,7 @@
  */
 import type {
   CivicRecord,
+  CommunityRecordProvenance,
   EvidenceItem,
   EvidenceQuery,
   Institution,
@@ -201,7 +202,7 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
   const stateIds = new Set(states.map((s) => s.id));
   const sources = registry as SourceRecord[];
 
-  let cache: { records: CivicRecord[]; evidence: EvidenceItem[]; at: number } | null = null;
+  let cache: { records: CivicRecord[]; evidence: EvidenceItem[]; provenance: CommunityRecordProvenance; at: number } | null = null;
   const TTL = 60_000;
 
   async function fetchJson(target: string): Promise<unknown> {
@@ -265,25 +266,103 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
 
   async function load() {
     if (cache && Date.now() - cache.at < TTL) return cache;
-    let voices: PulseVoice[];
+    const checkedAt = new Date().toISOString();
+    let voices: PulseVoice[] = [];
+    let provenance: CommunityRecordProvenance;
+
     if (communityUrl) {
       try {
         voices = await fetchCommunityRecords();
+        provenance = {
+          status: 'primary',
+          source: 'civic-mandate-community-records-v0.1',
+          fallbackReason: null,
+          contractVersion: COMMUNITY_CONTRACT_VERSION,
+          limitations: [
+            'Published CommunityRecords only; publication is not independent verification.',
+            'Community record counts are not prevalence estimates.',
+          ],
+        };
       } catch (communityError) {
-        // A malformed or unsupported v0.1 payload is a contract failure, not an outage.
-        const reason = String(communityError);
-        if (/Unsupported CommunityRecord|Invalid CommunityRecord|violated the published v0\.1 contract|CommunityRecord feed is truncated|CommunityRecord pagination exceeds/.test(reason)) throw communityError;
-        // Temporary migration fallback only: a valid empty v0.1 response never falls back.
-        const body = await fetchJson(url) as PulseResponse;
-        if (!Array.isArray(body?.voices)) throw new Error('Invalid pulse response');
-        voices = body.voices;
+        const reason = communityError instanceof Error ? communityError.message : String(communityError);
+        const isContractFailure = /Unsupported CommunityRecord|Invalid CommunityRecord|violated the published v0\.1 contract|CommunityRecord feed is truncated|CommunityRecord pagination exceeds/.test(reason);
+        if (isContractFailure) {
+          const empty = mapVoices([]);
+          cache = {
+            ...empty,
+            provenance: {
+              status: 'invalid',
+              source: 'unavailable',
+              fallbackReason: 'community_record_invalid_contract',
+              contractVersion: null,
+              limitations: ['The CommunityRecord response failed contract validation. Pulse fallback was intentionally not used.'],
+            },
+            at: Date.now(),
+          };
+          return cache;
+        }
+        try {
+          const body = await fetchJson(url) as PulseResponse & { error?: string };
+          if (body?.error || !Array.isArray(body?.voices)) throw new Error('Invalid pulse response');
+          voices = body.voices;
+          provenance = {
+            status: 'fallback',
+            source: 'civic-mandate-pulse-published-only',
+            fallbackReason: reason || 'community_record_unavailable',
+            contractVersion: null,
+            limitations: [
+              'Legacy pulse compatibility feed is in use because CommunityRecord retrieval failed.',
+              'Published records only; this feed is not a representative national survey.',
+              'Publication is not independent verification.',
+            ],
+          };
+        } catch (pulseError) {
+          const pulseReason = pulseError instanceof Error ? pulseError.message : String(pulseError);
+          const empty = mapVoices([]);
+          cache = {
+            ...empty,
+            provenance: {
+              status: 'unavailable',
+              source: 'unavailable',
+              fallbackReason: `community_record_failure_and_${pulseReason}`,
+              contractVersion: null,
+              limitations: ['Both the authoritative CommunityRecord API and legacy pulse compatibility feed are unavailable. No substitute records are shown.'],
+            },
+            at: Date.now(),
+          };
+          return cache;
+        }
       }
     } else {
-      const body = await fetchJson(url) as PulseResponse;
-      if (!Array.isArray(body?.voices)) throw new Error('Invalid pulse response');
-      voices = body.voices;
+      try {
+        const body = await fetchJson(url) as PulseResponse & { error?: string };
+        if (body?.error || !Array.isArray(body?.voices)) throw new Error('Invalid pulse response');
+        voices = body.voices;
+        provenance = {
+          status: 'fallback',
+          source: 'civic-mandate-pulse-published-only',
+          fallbackReason: 'community_record_endpoint_not_configured',
+          contractVersion: null,
+          limitations: ['CommunityRecord endpoint is not configured; legacy pulse compatibility feed is in use.'],
+        };
+      } catch (pulseError) {
+        const empty = mapVoices([]);
+        cache = {
+          ...empty,
+          provenance: {
+            status: 'unavailable',
+            source: 'unavailable',
+            fallbackReason: pulseError instanceof Error ? pulseError.message : 'pulse_unavailable',
+            contractVersion: null,
+            limitations: ['The published community feed is unavailable. No substitute records are shown.'],
+          },
+          at: Date.now(),
+        };
+        return cache;
+      }
     }
-    cache = { ...mapVoices(voices), at: Date.now() };
+
+    cache = { ...mapVoices(voices), provenance, at: Date.now() };
     return cache;
   }
 
@@ -306,7 +385,7 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
           (!q?.text || `${r.title} ${r.summary}`.toLowerCase().includes(q.text.toLowerCase())),
       );
     },
-    async getEvidence(q?: EvidenceQuery) {
+    async getCommunityRecordProvenance() {\n      return (await load()).provenance;\n    },\n    async getEvidence(q?: EvidenceQuery) {
       const { evidence } = await load();
       return evidence.filter(
         (e) =>
