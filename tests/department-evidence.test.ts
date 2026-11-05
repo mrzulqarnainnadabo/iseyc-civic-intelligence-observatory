@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { DEPARTMENT_EMPTY_STATE, validateDepartmentEvidence } from '../src/data/departmentEvidence';
+import stateReference from '../contracts/states-ng.v1.json';
 import { departmentMatchesRecord, fetchDepartmentCommunityRecords, kadunaRecordScope, stateRecordScope, type PublishedDepartmentRecord } from '../src/adapters/departmentCommunityRecords';
 const valid = {
   departmentId:'health',indicatorId:'mortality',sourceId:'worldbank-wdi-under5-mortality',
@@ -113,5 +114,15 @@ describe('national state selector scope', () => {
   it('supports the national all-states view without treating it as prevalence', () => {
     expect(stateRecordScope(record('Rivers','Port Harcourt'),'All states + FCT')).toBe('national-context');
     expect(stateRecordScope(record('FCT',null),'All states + FCT')).toBe('national-context');
+  });
+});
+
+
+describe('national geography reference', () => {
+  it('contains all 36 states and the FCT exactly once', () => {
+    expect(stateReference.states).toHaveLength(37);
+    expect(new Set(stateReference.states).size).toBe(37);
+    expect(stateReference.states).toContain('FCT');
+    expect(stateReference.states).toContain('Kaduna');
   });
 });
