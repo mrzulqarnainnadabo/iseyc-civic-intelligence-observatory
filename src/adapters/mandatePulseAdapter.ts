@@ -387,7 +387,8 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
     },
     async getCommunityRecordProvenance() {
       return (await load()).provenance;
-    },\n    async getEvidence(q?: EvidenceQuery) {
+    },
+    async getEvidence(q?: EvidenceQuery) {
       const { evidence } = await load();
       return evidence.filter(
         (e) =>
