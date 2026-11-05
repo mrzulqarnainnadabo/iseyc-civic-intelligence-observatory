@@ -17,6 +17,7 @@ const Geography = lazy(() => import('./pages/Geography'));
 const Evidence = lazy(() => import('./pages/Evidence'));
 const Accountability = lazy(() => import('./pages/Accountability'));
 const Briefs = lazy(() => import('./pages/Briefs'));
+const Departments = lazy(() => import('./pages/Departments'));
 import { adapterSearchFromLocation } from './lib/adapter-search';
 function AppRoutes() {
   const location = useLocation();
