@@ -1,6 +1,6 @@
 {
   "$schema":"https://json-schema.org/draft/2020-12/schema",
-  "$id":"https://iseyc.org/contracts/department-evidence.v1.schema.json",
+  "$id":"urn:iseyc:department-evidence:v1",
   "title":"ISEYC DepartmentEvidence v1","type":"object","additionalProperties":false,
   "required":["departmentId","indicatorId","sourceId","publisher","sourceUrl","referencePeriod","retrievedAt","geography","value","unit","evidenceStatus","limitations"],
   "properties":{
