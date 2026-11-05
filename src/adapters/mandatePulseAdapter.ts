@@ -323,7 +323,7 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
             provenance: {
               status: 'unavailable',
               source: 'unavailable',
-              fallbackReason: `community_record_failure_and_${pulseReason}`,
+              fallbackReason: `${reason}; ${pulseReason}`,
               contractVersion: null,
               limitations: ['Both the authoritative CommunityRecord API and legacy pulse compatibility feed are unavailable. No substitute records are shown.'],
             },
