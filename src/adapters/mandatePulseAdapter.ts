@@ -385,7 +385,9 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
           (!q?.text || `${r.title} ${r.summary}`.toLowerCase().includes(q.text.toLowerCase())),
       );
     },
-    async getCommunityRecordProvenance() {\n      return (await load()).provenance;\n    },\n    async getEvidence(q?: EvidenceQuery) {
+    async getCommunityRecordProvenance() {
+      return (await load()).provenance;
+    },\n    async getEvidence(q?: EvidenceQuery) {
       const { evidence } = await load();
       return evidence.filter(
         (e) =>
