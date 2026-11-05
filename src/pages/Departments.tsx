@@ -89,7 +89,7 @@ export default function Departments() {
         const localObservation = result?.observations.find((obs) =>
           obs.geoLevel === 'lga' && /kaduna south/i.test((obs.geoCode || '').replace(/[-_]/g, ' ')));
         const mapped: DepartmentEvidence = {
-          departmentId: config.id, indicatorId: indicator?.id || source.id, sourceId: source.id,
+          departmentId: config.id, indicatorId: indicator?.id || 'not-integrated', sourceId: source.id,
           publisher: source.publisher, sourceUrl: source.url || '', referencePeriod: localObservation?.referencePeriod || 'Not available for Kaduna South',
           retrievedAt: localObservation?.retrievedAt || 'not-retrieved',
           geography: { level:'lga', code:'kaduna-south', label:LOCATION },
@@ -124,10 +124,9 @@ export default function Departments() {
           <div className="dept-source__head"><strong>INEC Continuous Voter Registration · phase-one statements</strong><span className="dept-status dept-status--partial">partial</span></div>
           <p className="dept-source__publisher">Independent National Electoral Commission · national · statements published 4 and 5 February 2026</p>
           <div className="dept-civic-metrics">
-            {inecCvr2025.records.map((record) => <div key={record.statementId}><strong>{record.newEligibleVotersReported.toLocaleString('en-NG')}</strong><span>{record.publicationDate} official statement</span></div>)}
+            {inecCvr2025.records.map((record) => <div key={record.statementId}><strong>{record.newEligibleVotersReported.toLocaleString('en-NG')}</strong><a href={record.sourceUrl} target="_blank" rel="noopener noreferrer">{record.publicationDate} official statement ↗</a></div>)}
           </div>
           <p className="dept-note">The two official statements differ by two registrations. No final validated post-CVR national register or Kaduna South breakdown is integrated.</p>
-          <a href={inecCvr2025.sourceUrl} target="_blank" rel="noopener noreferrer">Open INEC Chairman's remarks ↗</a>
           <details><summary>Source limitations</summary><ul>{inecCvr2025.limitations.map((limit) => <li key={limit}>{limit}</li>)}</ul></details>
         </article>
       </>}
