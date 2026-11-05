@@ -17,6 +17,7 @@ const Geography = lazy(() => import('./pages/Geography'));
 const Evidence = lazy(() => import('./pages/Evidence'));
 const Accountability = lazy(() => import('./pages/Accountability'));
 const Briefs = lazy(() => import('./pages/Briefs'));
+const Department = lazy(() => import('./pages/Department'));
 import { adapterSearchFromLocation } from './lib/adapter-search';
 function AppRoutes() {
   const location = useLocation();
@@ -30,7 +31,7 @@ function AppRoutes() {
         <Routes><Route element={<AppShell />}>
           <Route index element={<Overview />} /><Route path="issues" element={<Issues />} /><Route path="observations" element={<Observations />} />
           <Route path="geography" element={<Geography />} /><Route path="evidence" element={<Evidence />} />
-          <Route path="accountability" element={<Accountability />} /><Route path="briefs" element={<Briefs />} />
+          <Route path="accountability" element={<Accountability />} /><Route path="briefs" element={<Briefs />} /><Route path="departments/:departmentId" element={<Department />} />
           <Route path="*" element={<div className="page-heading"><h1>Not found</h1></div>} />
         </Route></Routes>
       </Suspense>
