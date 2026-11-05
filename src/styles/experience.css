@@ -160,7 +160,7 @@
  .app-departments { display:flex; align-items:center; gap:4px; overflow-x:auto; margin:0 -12px; padding:5px 12px 8px; border-top:0; border-bottom:1px solid var(--line); }
  .app-departments > span { flex:0 0 auto; margin:0 4px 0 0; }
  .app-departments a { flex:0 0 auto; min-height:28px; padding:0 8px; background:#f3f5f3; }
- .app-sidebar__bottom { display:flex; align-items:center; gap:10px; }
+ .app-sidebar__bottom { position:static; display:flex; align-items:center; gap:10px; margin:0; padding:0 0 8px; }
  .app-products { margin:0; gap:7px; }
  .app-products a { font-size:9px; }
 }
