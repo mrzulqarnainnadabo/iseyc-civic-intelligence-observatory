@@ -40,10 +40,10 @@ function mapPublicRecord(raw: Raw): PublishedDepartmentRecord {
 }
 function failureReason(error: unknown): string {
   const message = error instanceof Error ? error.message : String(error);
-  const status = message.match(/HTTP (\\d{3})/)?.[1];
-  if (status) return 'community_record_http_' + status;
+  const status = message.split('HTTP ')[1]?.slice(0, 3);
+  if (status && /^\\d{3}$/.test(status)) return 'community_record_http_' + status;
   if (message === 'community_record_invalid_contract') return message;
-  if (/JSON|parse/i.test(message)) return 'community_record_invalid_json';
+  if (message.toLowerCase().includes('json') || message.toLowerCase().includes('parse')) return 'community_record_invalid_json';
   return 'community_record_network_error';
 }
 export async function fetchDepartmentCommunityRecords(fetchImpl: typeof fetch = fetch, endpoint = COMMUNITY_RECORDS_URL): Promise<DepartmentCommunityFeed> {
