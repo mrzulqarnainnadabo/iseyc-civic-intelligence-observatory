@@ -39,6 +39,7 @@ describe('mandate pulse adapter', () => {
     expect(records.every((r) => r.synthetic === false)).toBe(true);
     expect(records.every((r) => r.origin === 'civic-mandate')).toBe(true);
     expect(records.every((r) => r.reviewStatus === 'published')).toBe(true);
+    expect(adapter.getCommunityFeedStatus?.()).toMatchObject({ source: 'pulse-compatibility', fallbackReason: 'community_record_endpoint_disabled', status: 'ready', returnedCount: 2 });
     expect(records[0].sector).toBe('health');
     expect(records[1].sector).toBe('infrastructure');
     expect(records[0].stateId).toBe('kaduna');
@@ -109,6 +110,7 @@ describe('mandate pulse adapter', () => {
     const adapter = createMandatePulseAdapter({ fetchImpl });
     const records = await adapter.getRecords();
     expect(records).toHaveLength(1);
+    expect(adapter.getCommunityFeedStatus?.()).toMatchObject({ source: 'community-records-v0.1', fallbackReason: null, status: 'ready', returnedCount: 1 });
     expect(records[0].id).toBe('mandate-cr-001');
     expect(records[0].stateId).toBe('unknown');
     expect(records[0].reviewStatus).toBe('published');
@@ -141,6 +143,7 @@ describe('mandate pulse adapter', () => {
     }) as unknown as typeof fetch;
     const adapter = createMandatePulseAdapter({ fetchImpl });
     expect(await adapter.getRecords()).toHaveLength(2);
+    expect(adapter.getCommunityFeedStatus?.()).toMatchObject({ source: 'pulse-compatibility', fallbackReason: 'community_record_http_404', status: 'ready', returnedCount: 2 });
     expect(fetchImpl).toHaveBeenCalledTimes(2);
   });
 
@@ -157,6 +160,7 @@ describe('mandate pulse adapter', () => {
     }) as unknown as typeof fetch;
     const adapter = createMandatePulseAdapter({ fetchImpl });
     expect(await adapter.getRecords()).toEqual([]);
+    expect(adapter.getCommunityFeedStatus?.()).toMatchObject({ source: 'community-records-v0.1', fallbackReason: null, status: 'empty', returnedCount: 0 });
     expect(fetchImpl).toHaveBeenCalledTimes(1);
   });
 
@@ -192,7 +196,22 @@ describe('mandate pulse adapter', () => {
     })) as unknown as typeof fetch;
     const adapter = createMandatePulseAdapter({ fetchImpl });
     await expect(adapter.getRecords()).rejects.toThrow(/Unsupported CommunityRecord contract/);
+    expect(adapter.getCommunityFeedStatus?.()).toMatchObject({ source: 'unavailable', fallbackReason: 'community_record_invalid_contract', status: 'unavailable' });
     expect(fetchImpl).toHaveBeenCalledTimes(1);
+  });
+
+  it('reports both-source outage without claiming a fallback', async () => {
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) => {
+      if (String(input).includes('/api/v1/community-records')) return { ok: false, status: 404, json: async () => ({}) };
+      return { ok: false, status: 503, json: async () => ({}) };
+    }) as unknown as typeof fetch;
+    const adapter = createMandatePulseAdapter({ fetchImpl });
+    await expect(adapter.getRecords()).rejects.toThrow(/CommunityRecord and pulse retrieval unavailable/);
+    expect(adapter.getCommunityFeedStatus?.()).toMatchObject({
+      source: 'unavailable',
+      fallbackReason: 'community_record_http_404;pulse_http_503',
+      status: 'unavailable',
+    });
   });
 
 
