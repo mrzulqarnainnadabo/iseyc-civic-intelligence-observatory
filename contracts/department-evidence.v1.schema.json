@@ -7,7 +7,7 @@
     "departmentId":{"enum":["education","health","software-technology","civic"]},
     "indicatorId":{"type":"string","minLength":1},"sourceId":{"type":"string","minLength":1},
     "publisher":{"type":"string"},"sourceUrl":{"type":"string","format":"uri"},
-    "referencePeriod":{"type":"string"},"retrievedAt":{"type":"string","format":"date-time"},
+    "referencePeriod":{"type":"string"},"retrievedAt":{"type":"string","minLength":1},
     "geography":{"type":"object","additionalProperties":false,"required":["level","code","label"],
       "properties":{"level":{"enum":["national","state","lga","ward","facility"]},"code":{"type":["string","null"]},"label":{"type":"string"}}},
     "value":{"type":["number","null"]},"unit":{"type":["string","null"]},
