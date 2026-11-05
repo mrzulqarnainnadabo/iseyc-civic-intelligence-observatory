@@ -105,6 +105,13 @@ export async function retrieveObservations(opts) {
         if (done) break;
         total += value.byteLength;
         if (total > MAX_RESPONSE_BYTES) {
+          // Stop consuming an oversized upstream response instead of leaving
+          // the stream open after the gateway has already rejected it.
+          try {
+            await reader.cancel();
+          } catch {
+            // Cancellation is best-effort; the public result remains generic.
+          }
           clearTimeout(timer);
           return errorPayload(pilot, sourceUrl, 'upstream_error', 'RESPONSE_TOO_LARGE', httpStatus, 0, null);
         }
