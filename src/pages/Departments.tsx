@@ -30,7 +30,7 @@ const DEPARTMENTS: DepartmentConfig[] = [
     facts:['The Observatory currently has no integrated official figure for this department.'],
     hypotheses:['Anecdotes about connectivity, device access or digital skills are leads for structured research, not population estimates.'] },
   { id:'civic', title:'Civic Department', summary:'Civic participation, published public concerns and official electoral evidence.',
-    sources:['inec-voter-register-pvc','inec-cvr-2025-26','civic-mandate'],
+    sources:['inec-voter-register-pvc','inec-cvr-2025-26'],
     indicators:[],
     unknowns:['A final validated post-CVR national register and Kaduna South breakdown are not integrated.','Published community records do not establish how common a civic concern is.'],
     facts:['The CommunityRecord feed contains published records only.','INEC reference periods and measure definitions must be preserved; registration, PVC collection and turnout are different measures.'],
@@ -89,7 +89,7 @@ export default function Departments() {
         const mapped: DepartmentEvidence = {
           departmentId: config.id, indicatorId: indicator?.id || source.id, sourceId: source.id,
           publisher: source.publisher, sourceUrl: source.url || '', referencePeriod: localObservation?.referencePeriod || 'Not available for Kaduna South',
-          retrievedAt: localObservation?.retrievedAt || new Date().toISOString(),
+          retrievedAt: localObservation?.retrievedAt || 'not-retrieved',
           geography: { level:'lga', code:'kaduna-south', label:LOCATION },
           value: localObservation?.value ?? null, unit: localObservation?.unit || null,
           evidenceStatus: localObservation ? 'integrated' : (indicator && result?.status === 'error' ? 'unavailable' : 'not-integrated'),
@@ -101,6 +101,7 @@ export default function Departments() {
           <p className="dept-source__publisher">{source.publisher} · registered coverage: {source.geographicCoverage}</p>
           {indicator && loadingEvidence ? <p>Checking the registered Evidence Gateway…</p> :
             <p className="dept-source__empty">{mapped.value === null ? DEPARTMENT_EMPTY_STATE : mapped.value.toLocaleString() + ' ' + (mapped.unit || '') + ' · ' + mapped.referencePeriod}</p>}
+          {result?.observations.find((obs) => obs.geoLevel === 'national') && <p className="dept-note">National context only: {result.observations.find((obs) => obs.geoLevel === 'national')!.value.toLocaleString()} {result.observations.find((obs) => obs.geoLevel === 'national')!.unit || ''} · {result.observations.find((obs) => obs.geoLevel === 'national')!.referencePeriod}. This is not a Kaduna South figure.</p>}
           {source.url && <a href={source.url} target="_blank" rel="noopener noreferrer">Open registered source ↗</a>}
           <details><summary>Limitations and interpretation</summary><ul>{mapped.limitations.map((limit) => <li key={limit}>{limit}</li>)}</ul></details>
         </article>;
