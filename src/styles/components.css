@@ -324,3 +324,10 @@ button.chip--on, .chip--on { background: var(--g800); color: #fff; border-color:
 @media (prefers-reduced-motion: reduce) {
   .department-evidence-card,.department-record { transition: none; }
 }
+
+@media (max-width: 760px) {
+  .app-nav-section { display: flex; align-items: center; gap: 3px; overflow-x: auto; padding: 2px 0 7px; scrollbar-width: none; }
+  .app-nav-section::-webkit-scrollbar { display: none; }
+  .app-nav-section__label { flex: 0 0 auto; margin: 0 5px 0 0; white-space: nowrap; font-size: .62rem; }
+  .app-nav-section .app-nav__link { flex: 0 0 auto; min-height: 30px; padding: 0 8px; font-size: 11px; white-space: nowrap; }
+}
