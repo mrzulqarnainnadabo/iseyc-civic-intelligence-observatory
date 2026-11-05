@@ -41,7 +41,7 @@ function mapPublicRecord(raw: Raw): PublishedDepartmentRecord {
 function failureReason(error: unknown): string {
   const message = error instanceof Error ? error.message : String(error);
   const status = message.split('HTTP ')[1]?.slice(0, 3);
-  if (status && /^\\d{3}$/.test(status)) return 'community_record_http_' + status;
+  if (status && status.length === 3 && [...status].every((character) => character >= '0' && character <= '9')) return 'community_record_http_' + status;
   if (message === 'community_record_invalid_contract') return message;
   if (message.toLowerCase().includes('json') || message.toLowerCase().includes('parse')) return 'community_record_invalid_json';
   return 'community_record_network_error';
