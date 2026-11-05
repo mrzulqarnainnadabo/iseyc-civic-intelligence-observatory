@@ -291,3 +291,36 @@ button.chip--on, .chip--on { background: var(--g800); color: #fff; border-color:
   .app-nav-section { padding-inline: 8px; }
   .app-feed-status { font-size: .68rem; }
 }
+
+.department-location-note,.department-empty-state,.department-feed-provenance,.department-gap {
+  display: grid; gap: .45rem; padding: 1rem; border: 1px solid var(--line); border-radius: var(--r); background: var(--white);
+}
+.department-location-note { margin: 1rem 0; border-left: 3px solid var(--gold); }
+.department-evidence-list,.department-record-list { display: grid; gap: .75rem; }
+.department-evidence-card,.department-record,.department-source-register article {
+  display: grid; gap: .45rem; padding: 1rem; border: 1px solid var(--line); border-radius: var(--r); background: var(--white);
+}
+.department-evidence-card__top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem; }
+.department-evidence-card__value { color: var(--g900); font-size: clamp(1.5rem, 6vw, 2rem); font-weight: 750; line-height: 1.15; overflow-wrap: anywhere; }
+.department-evidence-card__value small { font-size: .85rem; font-weight: 500; }
+.department-evidence-card p,.department-record p,.department-gap p,.department-source-register p { margin: 0; }
+.department-evidence-card details { margin-top: .35rem; }
+.department-feed-provenance { margin-bottom: .75rem; background: var(--g50); font-size: .82rem; overflow-wrap: anywhere; }
+.department-empty-state { border-style: dashed; background: var(--gold-bg); }
+.department-gap { margin-bottom: .5rem; }
+.department-source-register { display: grid; gap: .75rem; margin-top: 1rem; }
+.department-source-register h3 { margin: 0; font-size: 1rem; }
+.department-guidance { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .75rem; }
+.department-guidance > div { padding: 1rem; border: 1px solid var(--line); border-radius: var(--r); background: var(--white); }
+.department-guidance h3 { margin: 0 0 .5rem; font-size: .95rem; }
+.department-guidance ul { margin: 0; padding-left: 1.2rem; }
+.department-guidance li { margin: .4rem 0; }
+.status { display: inline-flex; padding: .2rem .5rem; border-radius: 999px; background: var(--g100); color: var(--g800); font-size: .7rem; font-weight: 750; text-transform: uppercase; }
+.status--warning { background: var(--warn-bg); color: var(--warn); }
+@media (max-width: 640px) {
+  .department-guidance { grid-template-columns: 1fr; }
+  .department-evidence-card,.department-record,.department-source-register article { padding: .85rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .department-evidence-card,.department-record { transition: none; }
+}
