@@ -7,14 +7,25 @@ export interface Bundle { sources: SourceRecord[]; records: CivicRecord[]; evide
 const Ctx = createContext<Bundle | null>(null);
 export const useBundle = (): Bundle => { const b = useContext(Ctx); if (!b) throw new Error('DataProvider missing'); return b; };
 
-/** Loads everything once; handles loading and error for every page. */
+/** Loads each read-only feed independently so one upstream outage does not hide other evidence. */
 export function DataProvider({ children }: { children: ReactNode }) {
   const a = useAdapter();
   const st = useAsync<Bundle>(async () => {
+    const safe = async <T,>(request: Promise<T>, fallback: T): Promise<T> => {
+      try { return await request; } catch { return fallback; }
+    };
     const [sources, records, evidence, institutions, states, communityObservations, evidenceVault] = await Promise.all([
-      a.getSources(), a.getRecords(), a.getEvidence(), a.getInstitutions(), a.getStates(),
-      a.getCommunityObservations ? a.getCommunityObservations() : Promise.resolve({ status: 'unavailable' as const, records: [], total: null, message: 'This adapter does not provide a community observation feed.' }),
-      a.getEvidenceVaultRecords ? a.getEvidenceVaultRecords() : Promise.resolve({ status: 'unavailable' as const, records: [], total: null, message: 'This adapter does not provide a published Evidence Vault feed.' }),
+      safe(a.getSources(), [] as SourceRecord[]),
+      safe(a.getRecords(), [] as CivicRecord[]),
+      safe(a.getEvidence(), [] as EvidenceItem[]),
+      safe(a.getInstitutions(), [] as Institution[]),
+      safe(a.getStates(), [] as StateRef[]),
+      a.getCommunityObservations
+        ? safe(a.getCommunityObservations(), { status: 'unavailable' as const, records: [], total: null, message: 'Community observation retrieval is unavailable.' })
+        : Promise.resolve({ status: 'unavailable' as const, records: [], total: null, message: 'This adapter does not provide a community observation feed.' }),
+      a.getEvidenceVaultRecords
+        ? safe(a.getEvidenceVaultRecords(), { status: 'unavailable' as const, records: [], total: null, message: 'Published Evidence Vault retrieval is unavailable.' })
+        : Promise.resolve({ status: 'unavailable' as const, records: [], total: null, message: 'This adapter does not provide a published Evidence Vault feed.' }),
     ]);
     return { sources, records, evidence, institutions, states, communityObservations, evidenceVault };
   }, [a]);
