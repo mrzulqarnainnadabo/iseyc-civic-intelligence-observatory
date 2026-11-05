@@ -37,7 +37,7 @@ export default function Overview() {
   const representedStates = new Set(records.map((record) => record.stateId).filter(Boolean)).size;
   const latestRecords = records.slice(-8).reverse();
   return <>
-    <header className="page-heading"><h1>Nigeria</h1><span className="page-heading__meta">{isDemo ? 'Demonstration data' : 'Published Civic Mandate feed'}</span></header>
+    <header className="page-heading"><h1>Nigeria</h1><span className="page-heading__meta">{isDemo ? 'Demonstration data' : 'Published Civic Mandate feed'}</span><p className="dept-note">National civic intelligence infrastructure. Community records are published submissions, not a census or prevalence estimate.</p></header>
     <div className="workspace-grid" aria-label={isDemo ? 'Demonstration coverage' : 'Published community record coverage'}>
       <Card title={isDemo ? 'Demonstration records' : 'Published records'}><strong className="workspace-stat__value">{records.length}</strong><span className="workspace-stat__period">{isDemo ? 'Synthetic test set' : 'Current published feed'}</span></Card>
       <Card title={isDemo ? 'Demo states' : 'States represented'}><strong className="workspace-stat__value">{representedStates}</strong><span className="workspace-stat__period">{isDemo ? 'In synthetic test set' : 'In published feed'}</span></Card>
