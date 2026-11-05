@@ -48,7 +48,7 @@ export function buildDepartmentEvidence(
   result: {
     status: 'ok' | 'empty' | 'error'; errorClass?: string; message?: string;
     observations: Array<{
-      indicatorId: string; referencePeriod: string; value: number; unit?: string;
+      indicatorId: string; datasetId?: string; referencePeriod: string; value: number; unit?: string;
       sourcePublisher: string; sourceUrl?: string; retrievedAt: string;
       geoCode?: string; geoLevel?: string; qualityFlags?: string[];
     }>;
