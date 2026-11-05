@@ -166,12 +166,13 @@ describe('retrieveObservations', () => {
   });
 
   it('requests only the allowlisted World Bank endpoint', async () => {
-    const fetchImpl = vi.fn(async () => ({
+    const fetchMock = vi.fn(async (_input: RequestInfo | URL) => ({
       ok: true,
       status: 200,
       body: null,
       text: async () => JSON.stringify([{ page: 1 }, [{ date: '2023', value: 1 }]]),
-    })) as unknown as typeof fetch;
+    }));
+    const fetchImpl = fetchMock as unknown as typeof fetch;
 
     await retrieveObservations({
       indicatorId: 'wb-nga-sp-pop-totl',
@@ -179,7 +180,7 @@ describe('retrieveObservations', () => {
       bypassCache: true,
     });
 
-    const requestedUrl = new URL(String(fetchImpl.mock.calls[0][0]));
+    const requestedUrl = new URL(String(fetchMock.mock.calls[0][0]));
     expect(requestedUrl.protocol).toBe('https:');
     expect(requestedUrl.hostname).toBe('api.worldbank.org');
     expect(requestedUrl.pathname).toContain('/v2/country/NGA/indicator/');
