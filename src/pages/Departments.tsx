@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useBundle } from '../lib/data';
 import { fetchViaGateway, type IndicatorObservation } from '../lib/indicators';
-import { fetchDepartmentCommunityRecords, departmentMatchesRecord, type DepartmentCommunityFeed } from '../adapters/departmentCommunityRecords';
+import { fetchDepartmentCommunityRecords, departmentMatchesRecord, type DepartmentCommunityFeed, type PublishedDepartmentRecord } from '../adapters/departmentCommunityRecords';
 import { DEPARTMENT_EMPTY_STATE, type DepartmentId, type DepartmentEvidence, validateDepartmentEvidence } from '../data/departmentEvidence';
 import { PageHeader, Section } from '../design/layout';
 import inecPvc2023 from '../data/indicators/inec-pvc-2023.json';
@@ -39,6 +39,31 @@ const DEPARTMENTS: DepartmentConfig[] = [
     hypotheses:['A concentration of published submissions may indicate where further investigation is useful, but not prevalence or public consensus.'] },
 ];
 const LOCATION = 'Kaduna South, Kaduna State';
+
+function isKadunaState(record: PublishedDepartmentRecord): boolean {
+  return (record.state || '').toLowerCase() === 'kaduna';
+}
+function isKadunaSouthLga(record: PublishedDepartmentRecord): boolean {
+  return !!record.lga && /kaduna\s*south/i.test(record.lga);
+}
+
+function RecordList({ records, scopeLabel }: { records: PublishedDepartmentRecord[]; scopeLabel: string }) {
+  if (records.length === 0) return null;
+  return (
+    <div className="dept-records">
+      <p className="dept-note">{scopeLabel}</p>
+      {records.map((record) => (
+        <article className="dept-record" key={record.id}>
+          <strong>{record.text}</strong>
+          <p>{record.duty || 'Duty not specified'} · {record.state || 'State not specified'}{record.lga ? ' · ' + record.lga : ' · LGA not specified'}</p>
+          <span>Published · {record.verificationStatus} · not a prevalence measure</span>
+          <a href={record.publicUrl} target="_blank" rel="noopener noreferrer">Read published record ↗</a>
+        </article>
+      ))}
+    </div>
+  );
+}
+
 export default function Departments() {
   const { departmentId } = useParams();
   const { sources } = useBundle();
@@ -64,12 +89,18 @@ export default function Departments() {
     return () => { alive = false; };
   }, [departmentId]);
   const registeredSources = useMemo(() => config ? sources.filter((source) => config.sources.includes(source.id)) : [], [sources, departmentId]);
-  const related = useMemo(() => feed?.records.filter((record) => {
-    if (!config || !departmentMatchesRecord(config.id, record)) return false;
-    if (record.state && record.state.toLowerCase() !== 'kaduna') return false;
-    if (!record.lga || !/kaduna south/i.test(record.lga)) return false;
-    return true;
-  }) ?? [], [feed, departmentId]);
+  const { localRecords, stateContextRecords } = useMemo(() => {
+    const local: PublishedDepartmentRecord[] = [];
+    const stateOnly: PublishedDepartmentRecord[] = [];
+    if (!config || !feed) return { localRecords: local, stateContextRecords: stateOnly };
+    for (const record of feed.records) {
+      if (!departmentMatchesRecord(config.id, record)) continue;
+      if (!isKadunaState(record)) continue;
+      if (isKadunaSouthLga(record)) local.push(record);
+      else stateOnly.push(record);
+    }
+    return { localRecords: local, stateContextRecords: stateOnly };
+  }, [feed, departmentId, config]);
   if (!departmentId) return <>
     <PageHeader title="Department intelligence" lead="Four departmental entry points. Evidence, published community records and explicit unknowns." />
     <div className="dept-grid">{DEPARTMENTS.map((item) => <Link className="dept-card" key={item.id} to={'/departments/' + item.id}><span className="dept-card__kicker">ISEYC department</span><strong>{item.title}</strong><span>{item.summary}</span><span className="dept-card__action">Open intelligence →</span></Link>)}</div>
@@ -135,8 +166,11 @@ export default function Departments() {
       <div className="dept-feed-meta"><span>Source: {feed?.source || 'Loading Mandate CommunityRecord v0.1'}</span><span>{feed?.fallbackReason ? 'Fallback reason: ' + feed.fallbackReason : feed?.status === 'ready' ? 'Primary contract · v0.1.0' : ''}</span></div>
       {!feed ? <p>Loading published records…</p> :
        feed.status === 'unavailable' || feed.status === 'invalid' ? <div className="dept-empty">{feed.message} <small>Reason: {feed.fallbackReason}</small></div> :
-       related.length === 0 ? <div className="dept-empty">No related published CommunityRecords are currently available for this department and Kaduna South filter. This does not mean the need is absent.</div> :
-       <div className="dept-records">{related.map((record) => <article className="dept-record" key={record.id}><strong>{record.text}</strong><p>{record.duty || 'Duty not specified'} · {record.state || 'State not specified'}{record.lga ? ' · ' + record.lga : ' · LGA not specified'}</p><span>Published · {record.verificationStatus} · not a prevalence measure</span><a href={record.publicUrl} target="_blank" rel="noopener noreferrer">Read published record ↗</a></article>)}</div>}
+       localRecords.length === 0 && stateContextRecords.length === 0 ? <div className="dept-empty">No related published CommunityRecords are currently available for this department in Kaduna. This does not mean the need is absent.</div> :
+       <>
+         <RecordList records={localRecords} scopeLabel="Kaduna South (LGA-matched published records only)." />
+         <RecordList records={stateContextRecords} scopeLabel="Kaduna State context (statewide or other LGA). Not claimed as Kaduna South local records." />
+       </>}
       {feed?.limitations.map((limit) => <p className="dept-note" key={limit}>{limit}</p>)}
     </Section>
     <Section title="C. Unknowns and limitations" id="unknowns">
