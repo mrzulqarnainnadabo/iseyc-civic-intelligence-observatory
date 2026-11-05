@@ -266,7 +266,6 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
 
   async function load() {
     if (cache && Date.now() - cache.at < TTL) return cache;
-    const checkedAt = new Date().toISOString();
     let voices: PulseVoice[] = [];
     let provenance: CommunityRecordProvenance;
 
