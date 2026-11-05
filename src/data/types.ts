@@ -35,6 +35,15 @@ export interface SourceRecord {
 
 export interface StateRef { id: string; name: string }
 
+export interface CommunityRecordProvenance {
+  status: 'primary' | 'fallback' | 'unavailable' | 'invalid' | 'not-configured';
+  source: string;
+  fallbackReason: string | null;
+  contractVersion: string | null;
+  limitations: string[];
+}
+
+
 export const STAGES = ['published', 'referred', 'announced', 'funded', 'implemented', 'verified'] as const;
 export type Stage = typeof STAGES[number];
 
@@ -184,6 +193,7 @@ export interface ObservatoryAdapter {
   getInstitutions(): Promise<Institution[]>;
   getCommunityObservations?(): Promise<CommunityObservationFeed>;
   getEvidenceVaultRecords?(): Promise<EvidenceVaultFeed>;
+  getCommunityRecordProvenance?(): Promise<CommunityRecordProvenance>;
 }
 
 export const SECTOR_LABEL: Record<Sector, string> = {
