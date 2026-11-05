@@ -103,3 +103,17 @@ export function kadunaRecordScope(record: PublishedDepartmentRecord): 'local' | 
   if (lga === 'kaduna south') return 'local';
   return 'state-context';
 }
+
+
+/** Match the national state selector without inferring LGA-level coverage. */
+export function stateRecordScope(record: PublishedDepartmentRecord, selectedState: string): 'local' | 'state-context' | 'national-context' | 'excluded' {
+  const normalize = (value: string | null) => {
+    const normalized = (value || '').trim().toLowerCase().replace(/\\s+state$/i, '').replace(/\\s+/g, ' ');
+    if (normalized === 'federal capital territory' || normalized === 'abuja') return 'fct';
+    return normalized;
+  };
+  if (selectedState === 'All states + FCT') return 'national-context';
+  if (normalize(record.state) !== normalize(selectedState)) return 'excluded';
+  if (normalize(selectedState) === 'kaduna' && normalize(record.lga) === 'kaduna south') return 'local';
+  return 'state-context';
+}
