@@ -96,7 +96,9 @@ export function departmentMatchesRecord(department: DepartmentId, record: Publis
 
 /** Classifies only explicit Kaduna geography. Statewide and other-LGA records are context, never LGA-local evidence. */
 export function kadunaRecordScope(record: PublishedDepartmentRecord): 'local' | 'state-context' | 'excluded' {
-  if ((record.state || '').trim().toLowerCase() !== 'kaduna') return 'excluded';
-  if (record.lga && /^kaduna\\s*south$/i.test(record.lga.trim().replace(/[-_]/g, ' '))) return 'local';
+  const state = (record.state || '').trim().toLowerCase().replace(/\\s+state$/, '');
+  if (state !== 'kaduna') return 'excluded';
+  const lga = (record.lga || '').trim().toLowerCase().replace(/[-_]/g, ' ').replace(/\\s+/g, ' ');
+  if (lga === 'kaduna south') return 'local';
   return 'state-context';
 }
