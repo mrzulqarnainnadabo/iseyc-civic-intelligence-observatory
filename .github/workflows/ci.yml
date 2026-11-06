@@ -10,6 +10,9 @@ on:
       - feat/national-source-readiness-and-inec-pilot
       - main
 
+permissions:
+  contents: read
+
 concurrency:
   group: ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
