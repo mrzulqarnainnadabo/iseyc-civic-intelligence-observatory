@@ -128,6 +128,7 @@ function voiceToRecord(v: PulseVoice, stateIds: Set<string>): CivicRecord | null
   return {
     id: `mandate-${v.id}`,
     origin: 'civic-mandate',
+    sourceRecordId: String(v.id),
     synthetic: false,
     title,
     summary: v.sentence.trim(),
