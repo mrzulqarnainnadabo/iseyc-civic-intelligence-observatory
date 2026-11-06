@@ -135,14 +135,20 @@
         "difference": 12
       }
     ],
-    "note": "INEC's registered and collected state rows sum to the published national totals. The published uncollected counts do not reconcile: state-row sum, printed national total, and registered-minus-collected arithmetic differ. Preserve the source values and publish this discrepancy; do not substitute the calculated value for INEC's reported value."
+    "note": "INEC's registered and collected state rows sum to the published national totals. The published uncollected counts do not reconcile: state-row sum, printed national total, and registered-minus-collected arithmetic differ. Preserve the source values and publish this discrepancy; do not substitute the calculated value for INEC's reported value. The same INEC 2023 General Election Report narrative in Section 8.4 states that 87,394,106 PVCs were collected, while its Table 8.13 and the 5 February 2023 summary report 87,209,007. This is a 185,099 difference within the same official report. Preserve both statements; neither is silently substituted for the other.",
+    "narrativeReportedCollectedPVCs": 87394106,
+    "tableReportedCollectedPVCs": 87209007,
+    "narrativeVsTableDifference": 185099,
+    "narrativeSourceUrl": "https://www.inecnigeria.org/wp-content/uploads/2024/02/2023-GENERAL-ELECTION-REPORT-1.pdf",
+    "narrativeSourceSection": "Section 8.4, paragraph immediately before Table 8.13"
   },
   "limitations": [
     "Historical 2023 election snapshot, not a current 2026 voter register or PVC collection count.",
     "Registered voters and collected PVCs are administrative counts, not counts of all eligible voters or actual election turnout.",
     "This source is state-level; it does not support LGA, ward or polling-unit conclusions.",
     "The uncollected PVC figures contain arithmetic inconsistencies in the source document; see reconciliation.",
-    "The published collection percentage is transcribed as printed; the calculated rate is shown separately to enable review."
+    "The published collection percentage is transcribed as printed; the calculated rate is shown separately to enable review.",
+    "The 2023 General Election Report narrative states 87,394,106 collected PVCs, while Table 8.13 and the 5 February 2023 summary state 87,209,007; the 185,099 discrepancy remains unreconciled."
   ],
   "records": [
     {
