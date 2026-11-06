@@ -61,6 +61,35 @@ describe('mandate CommunityRecord adapter', () => {
     expect(records[0].lga).toBeUndefined();
   });
 
+  it('rejects missing required nullable fields and extra page metadata', async () => {
+    const missingField = makeRecord() as Record<string, unknown>;
+    delete missingField.officeLabel;
+    const fetchMissing = vi.fn(async () => ({
+      ok: true, json: async () => makePage([missingField as ReturnType<typeof makeRecord>]),
+    })) as unknown as typeof fetch;
+    await expect(createMandatePulseAdapter({ fetchImpl: fetchMissing }).getRecords()).rejects.toThrow(/allowlist or field contract/);
+
+    const fetchExtraPage = vi.fn(async () => ({
+      ok: true, json: async () => makePage([makeRecord()], { internalDebug: true }),
+    })) as unknown as typeof fetch;
+    await expect(createMandatePulseAdapter({ fetchImpl: fetchExtraPage }).getRecords()).rejects.toThrow(/Unsupported, inconsistent/);
+  });
+
+  it('rejects duplicate IDs across otherwise complete pages', async () => {
+    const first = Array.from({ length: 50 }, (_, i) => makeRecord({ id: 'dup-' + i }));
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) => {
+      const n = Number(new URL(String(input)).searchParams.get('page') || 1);
+      return {
+        ok: true,
+        json: async () => makePage(
+          n === 1 ? first : [makeRecord({ id: 'dup-0' })],
+          { page: n, total: 51, totalPages: 2 },
+        ),
+      };
+    }) as unknown as typeof fetch;
+    await expect(createMandatePulseAdapter({ fetchImpl }).getRecords()).rejects.toThrow(/duplicate record IDs/);
+  });
+
   it('rejects additional/private properties and invalid verification states', async () => {
     for (const bad of [
       makeRecord({ email: 'private@example.test' }),

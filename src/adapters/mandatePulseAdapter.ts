@@ -19,7 +19,6 @@ import registry from '../data/source-registry.json';
 import { DEFAULT_COMMUNITY_OBSERVATIONS_URL, fetchCommunityObservations } from './communityObservationsAdapter';
 import { DEFAULT_EVIDENCE_VAULT_URL, fetchEvidenceVaultRecords } from './evidenceVaultAdapter';
 
-export const DEFAULT_PULSE_URL = 'https://2027-street-mandate.vercel.app/api/pulse';
 export const DEFAULT_COMMUNITY_RECORDS_URL = 'https://2027-street-mandate.vercel.app/api/v1/community-records';
 const COMMUNITY_CONTRACT_VERSION = '0.1.0';
 const COMMUNITY_RECORD_KEYS = new Set([
@@ -92,14 +91,6 @@ type CommunityRecordV01 = {
 type CommunityRecordsResponse = {
   contractVersion: string; publicationBoundary: string; page: number; pageSize: number;
   total: number; totalPages: number; truncatedUpstream: boolean; records: CommunityRecordV01[];
-};
-
-type PulseResponse = {
-  voices?: PulseVoice[];
-  total?: number;
-  states?: unknown;
-  tally?: unknown;
-  timestamp?: string;
 };
 
 function slugState(name: string): string {
@@ -197,15 +188,13 @@ function voiceToEvidence(v: PulseVoice, record: CivicRecord): EvidenceItem {
 }
 
 export interface MandatePulseConfig {
-  pulseUrl?: string;
-  communityRecordsUrl?: string | null;
+  communityRecordsUrl?: string;
   fetchImpl?: typeof fetch;
   timeoutMs?: number;
 }
 
 export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): ObservatoryAdapter {
-  const url = cfg.pulseUrl || DEFAULT_PULSE_URL;
-  const communityUrl = cfg.communityRecordsUrl === null ? null : (cfg.communityRecordsUrl || DEFAULT_COMMUNITY_RECORDS_URL);
+  const communityUrl = cfg.communityRecordsUrl || DEFAULT_COMMUNITY_RECORDS_URL;
   const f = cfg.fetchImpl ?? (typeof fetch !== 'undefined' ? fetch.bind(globalThis) : undefined);
   const timeoutMs = cfg.timeoutMs ?? 12_000;
 
@@ -222,7 +211,7 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
     const t = setTimeout(() => ctrl.abort(), timeoutMs);
     try {
       const res = await f(target, { signal: ctrl.signal, headers: { Accept: 'application/json' } });
-      if (!res.ok) throw new Error((target === url ? 'Pulse' : 'CommunityRecord') + ' HTTP ' + res.status);
+      if (!res.ok) throw new Error('CommunityRecord HTTP ' + res.status);
       return await res.json() as unknown;
     } finally {
       clearTimeout(t);
@@ -244,7 +233,9 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
   function validateCommunityRecord(r: unknown): asserts r is CommunityRecordV01 {
     if (!r || typeof r !== 'object' || Array.isArray(r)) throw new Error('Invalid CommunityRecord object');
     const record = r as Record<string, unknown>;
-    if (Object.keys(record).some((key) => !COMMUNITY_RECORD_KEYS.has(key)) ||
+    if (Object.keys(record).length !== COMMUNITY_RECORD_KEYS.size ||
+        Object.keys(record).some((key) => !COMMUNITY_RECORD_KEYS.has(key)) ||
+        [...COMMUNITY_RECORD_KEYS].some((key) => !Object.prototype.hasOwnProperty.call(record, key)) ||
         record.contractVersion !== COMMUNITY_CONTRACT_VERSION ||
         record.publicationStatus !== 'published' ||
         typeof record.id !== 'string' || !record.id.trim() ||
@@ -260,7 +251,7 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
     }
     for (const key of ['sector', 'duty', 'issueCategory', 'state', 'lga', 'ward', 'facilityRef', 'officeLabel', 'reportedAt', 'publishedAt']) {
       const value = record[key];
-      if (value !== undefined && value !== null && typeof value !== 'string') {
+      if (value !== null && typeof value !== 'string') {
         throw new Error('Invalid CommunityRecord field: ' + key);
       }
     }
@@ -269,7 +260,12 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
   function validatePage(value: unknown, expectedPage: number, first?: CommunityRecordsResponse): asserts value is CommunityRecordsResponse {
     if (!value || typeof value !== 'object') throw new Error('Unsupported CommunityRecord contract response');
     const page = value as CommunityRecordsResponse;
-    if (page.contractVersion !== COMMUNITY_CONTRACT_VERSION ||
+    const pageKeys = new Set(['contractVersion', 'publicationBoundary', 'page', 'pageSize', 'total', 'totalPages', 'truncatedUpstream', 'records']);
+    const rawPage = value as Record<string, unknown>;
+    if (Object.keys(rawPage).length !== pageKeys.size ||
+        Object.keys(rawPage).some((key) => !pageKeys.has(key)) ||
+        [...pageKeys].some((key) => !Object.prototype.hasOwnProperty.call(rawPage, key)) ||
+        page.contractVersion !== COMMUNITY_CONTRACT_VERSION ||
         page.publicationBoundary !== 'published-only' ||
         page.page !== expectedPage ||
         !Number.isInteger(page.pageSize) || page.pageSize < 1 ||
@@ -297,6 +293,8 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
       all.push(...next.records);
     }
     if (all.length !== first.total) throw new Error('CommunityRecord pagination did not return the declared complete record count');
+    const ids = all.map((record) => record.id);
+    if (new Set(ids).size !== ids.length) throw new Error('CommunityRecord pagination returned duplicate record IDs');
     return all.map((r) => ({
       id: String(r.id), sentence: r.text, duty: r.duty || undefined,
       state: r.state || undefined, lga: r.lga || undefined,
@@ -311,15 +309,7 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
 
   async function load() {
     if (cache && Date.now() - cache.at < TTL) return cache;
-    let voices: PulseVoice[];
-    if (communityUrl) {
-      voices = await fetchCommunityRecords();
-    } else {
-      // Explicit opt-in for legacy adapter tests/migration diagnostics only.
-      const body = await fetchJson(url) as PulseResponse;
-      if (!Array.isArray(body?.voices)) throw new Error('Invalid pulse response');
-      voices = body.voices;
-    }
+    const voices = await fetchCommunityRecords();
     cache = { ...mapVoices(voices), at: Date.now() };
     return cache;
   }
