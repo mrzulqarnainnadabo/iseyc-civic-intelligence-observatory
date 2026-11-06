@@ -46,6 +46,8 @@ export type RecordOrigin = 'civic-mandate' | 'civic-brain' | 'observatory-demo';
 export interface CivicRecord {
   id: string;
   origin: RecordOrigin;
+  /** Original source-system identifier, preserved when the Observatory namespaces its local id. */
+  sourceRecordId?: string;
   synthetic: boolean;
   title: string;
   summary: string;
