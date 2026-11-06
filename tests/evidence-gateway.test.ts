@@ -166,17 +166,21 @@ describe('upstream resource guards', () => {
 
   it('aborts and cancels an upstream stream that exceeds the response limit', async () => {
     const cancel = vi.fn(async () => {});
-    const fetchImpl = vi.fn(async () => ({
-      ok: true,
-      status: 200,
-      body: {
-        getReader: () => ({
-          read: async () => ({ done: false, value: new Uint8Array(MAX_RESPONSE_BYTES + 1) }),
-          cancel,
-        }),
-      },
-      text: async () => '',
-    })) as unknown as typeof fetch;
+    let upstreamSignal: AbortSignal | undefined;
+    const fetchImpl = vi.fn(async (_url: RequestInfo | URL, init?: RequestInit) => {
+      upstreamSignal = init?.signal as AbortSignal | undefined;
+      return {
+        ok: true,
+        status: 200,
+        body: {
+          getReader: () => ({
+            read: async () => ({ done: false, value: new Uint8Array(MAX_RESPONSE_BYTES + 1) }),
+            cancel,
+          }),
+        },
+        text: async () => '',
+      };
+    }) as unknown as typeof fetch;
 
     const body = await retrieveObservations({
       indicatorId: 'wb-nga-sp-pop-totl',
@@ -186,6 +190,7 @@ describe('upstream resource guards', () => {
 
     expect(body.status).toBe('error');
     expect(body.errorClass).toBe('RESPONSE_TOO_LARGE');
+    expect(upstreamSignal?.aborted).toBe(true);
     expect(cancel).toHaveBeenCalledTimes(1);
   });
 
