@@ -12,6 +12,7 @@ import {
   formatIndicatorValue,
   type IndicatorDefinition,
   type IndicatorObservation,
+  type GatewayResult,
 } from '../lib/indicators';
 
 type PvcRow = typeof inecPvc2023.records[number];
@@ -38,7 +39,6 @@ function ElectoralParticipation() {
       {rows.length === 0 && <p className="muted">No matching geography.</p>}
     </details>
     <details className="record"><summary>Source quality and interpretation notes</summary>
-      <p>INEC's 2023 General Election Report contains an additional unresolved PVC collection discrepancy: the Section 8.4 narrative states 87,394,106 PVCs collected, while Table 8.13 and INEC's 5 February 2023 summary report 87,209,007. The difference is 185,099. Both official statements are preserved as published; ISEYC does not choose or reconcile one without an authoritative clarification. <a href="https://www.inecnigeria.org/wp-content/uploads/2024/02/2023-GENERAL-ELECTION-REPORT-1.pdf" target="_blank" rel="noopener noreferrer">Open INEC's 2023 General Election Report (Section 8.4 and Table 8.13)</a>.</p>
       <p>The registered-voter and collected-PVC state rows sum to INEC's printed national totals. The published uncollected-PVC figures do not reconcile: 16 state rows differ from registered minus collected; the published state-row sum is 6,259,231, the printed national total is 6,259,229, and the arithmetic difference is 6,260,001. ISEYC retains the reported and calculated values separately and does not use the uncollected total as a settled figure.</p>
       <p className="muted">Source reference date: {inecPvc2023.sourceReferenceDate}. Retrieved: {inecPvc2023.retrievedAt}. This is a transcription of an INEC PDF, not an independently audited voter register.</p>
       <p>For the 2025–2026 Continuous Voter Registration, INEC’s February 2026 Chairman’s remarks report 2,782,587 eligible voters registered in phase one; a separate INEC press release reports 2,782,589. The CVR portal now states that registration has ended and that INEC is completing administrative processing of applications. That status does not itself establish the final validated count. A consolidated post-CVR national register and state/LGA breakdown have not yet been located in the official sources reviewed for this pilot. The two February 2026 official statements also differ by two in their phase-one count (2,782,587 vs 2,782,589); this discrepancy remains unresolved. <a href="https://cvr.inecnigeria.org/Home/cvrEnded" target="_blank" rel="noopener noreferrer">INEC CVR ended notice</a> · <a href="https://wp1.inecnigeria.org/remarks-by-the-honourable-chairman-independent-national-electoral-commission-inec-prof-joash-amupitan-san-at-the-first-regular-consultative-meeting-with-political-parties-held-at-the-inec-confe/" target="_blank" rel="noopener noreferrer">INEC Chairman’s remarks</a> · <a href="https://wp1.inecnigeria.org/news-all/inec-to-revalidate-and-clean-up-voters-register-nationwide-schedules-mock-accreditation-ahead-of-fct-area-council-elections/" target="_blank" rel="noopener noreferrer">INEC press release</a>.</p>
@@ -65,12 +65,16 @@ function IndicatorBlock({ indicator }: { indicator: IndicatorDefinition }) {
   const [observations, setObservations] = useState<IndicatorObservation[]>([]);
   const [status, setStatus] = useState<'loading' | 'ready' | 'empty' | 'unavailable'>('loading');
   const [retrievedAt, setRetrievedAt] = useState<string | null>(null);
+  const [receipt, setReceipt] = useState<GatewayResult['receipt']>(null);
+  const [persistence, setPersistence] = useState<GatewayResult['persistence']>(undefined);
 
   useEffect(() => {
     let active = true;
     fetchViaGateway(indicator.id).then((result) => {
       if (!active) return;
       setObservations(result.observations);
+      setReceipt(result.receipt ?? null);
+      setPersistence(result.persistence);
       setStatus(result.status === 'error' ? 'unavailable' : result.status === 'empty' || !result.observations.length ? 'empty' : 'ready');
       setRetrievedAt(result.observations[0]?.retrievedAt || (result.receipt as { retrievedAt?: string } | null)?.retrievedAt || null);
     });
@@ -87,6 +91,13 @@ function IndicatorBlock({ indicator }: { indicator: IndicatorDefinition }) {
     </> : <><strong className="workspace-stat__value">—</strong><span className="workspace-stat__period">{status === 'unavailable' ? 'Source unavailable' : 'No observation'}</span></>}
     <span className="workspace-indicator__source">{indicator.sourcePublisher}</span>
     {retrievedAt && <span className="workspace-indicator__source">Retrieved {retrievedAt}</span>}
+    {receipt && <details className="record">
+      <summary>Retrieval receipt · {persistence?.mode === 'ephemeral' ? 'not retained' : 'receipt details'}</summary>
+      <p className="muted">{persistence?.note || 'Receipt retention status is not reported by this source.'}</p>
+      {typeof receipt.receiptId === 'string' && <p>Receipt ID: <code>{receipt.receiptId}</code></p>}
+      {typeof receipt.contentHash === 'string' && <><p>SHA-256 source-response hash: <code>{receipt.contentHash}</code></p><p className="muted">This hash fingerprints the fetched response; it is not an independent verification of the publisher or source authenticity.</p></>}
+      {typeof receipt.httpStatus === 'number' && <p>Upstream HTTP status: {receipt.httpStatus}</p>}
+    </details>}
     <details className="record">
       <summary>Method and limitations</summary>
       <p>{indicator.definition}</p>
