@@ -29,6 +29,11 @@ assert.equal(data.reconciliation.narrativeVsTableDifference, 185099);
 assert.ok(data.reconciliation.narrativeSourceUrl.startsWith("https://www.inecnigeria.org/"));
 assert.ok(data.reconciliation.note.includes("185,099"));
 assert.ok(data.limitations.some((x) => x.includes("87,394,106") && x.includes("87,209,007")));
+const evidencePage = fs.readFileSync("src/pages/Evidence.tsx", "utf8");
+assert.match(evidencePage, /87,394,106/);
+assert.match(evidencePage, /87,209,007/);
+assert.match(evidencePage, /185,099/);
+assert.match(evidencePage, /2023-GENERAL-ELECTION-REPORT-1\.pdf/);
 console.log("verify-inec-pvc-pilot: PASS (37 geographies; source arithmetic warnings retained)");
 
 const ekiti = JSON.parse(fs.readFileSync("data/indicators/inec-ekiti-2026.json", "utf8"));
