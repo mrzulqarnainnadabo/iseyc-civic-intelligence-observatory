@@ -1,4 +1,4 @@
-/**
+/** 
  * Published-only Civic Mandate adapter.
  * Uses CommunityRecord v0.1 by default and never silently falls back to the legacy pulse feed.
  * Published community records are not a national survey or independently verified outcomes.
@@ -22,6 +22,18 @@ import { DEFAULT_EVIDENCE_VAULT_URL, fetchEvidenceVaultRecords } from './evidenc
 export const DEFAULT_PULSE_URL = 'https://2027-street-mandate.vercel.app/api/pulse';
 export const DEFAULT_COMMUNITY_RECORDS_URL = 'https://2027-street-mandate.vercel.app/api/v1/community-records';
 const COMMUNITY_CONTRACT_VERSION = '0.1.0';
+const COMMUNITY_RECORD_KEYS = new Set([
+  'id', 'contractVersion', 'publicationStatus', 'verificationStatus', 'text',
+  'sector', 'duty', 'issueCategory', 'state', 'lga', 'ward', 'facilityRef',
+  'officeLabel', 'reportedAt', 'publishedAt', 'createdAt', 'evidenceRefIds',
+  'followUpStatus', 'relatedSuggestedIds',
+]);
+const VERIFICATION_STATUSES = new Set([
+  'unverified', 'partially-verified', 'independently-verified', 'unknown',
+]);
+const FOLLOW_UP_STATUSES = new Set([
+  'none', 'under-review', 'response-documented', 'outcome-unknown', 'unknown',
+]);
 
 /** Primary duty → sector (aligned with Stage 2 crosswalk primaries / interim). */
 const DUTY_TO_SECTOR: Record<string, Sector> = {
@@ -42,7 +54,6 @@ const DUTY_TO_SECTOR: Record<string, Sector> = {
   'Public Finance': 'public-finance',
   Governance: 'governance',
   Justice: 'governance',
-
 };
 
 type PulseVoice = {
@@ -69,12 +80,14 @@ type PulseVoice = {
 };
 
 type CommunityRecordV01 = {
-  id: string; contractVersion: string; publicationStatus: string; verificationStatus: string;
+  id: string; contractVersion: string; publicationStatus: string;
+  verificationStatus: 'unverified' | 'partially-verified' | 'independently-verified' | 'unknown';
   text: string; duty: string | null; state: string | null; lga: string | null;
   officeLabel: string | null; createdAt: string;
   sector: string | null; issueCategory: string | null; ward: string | null;
   facilityRef: string | null; reportedAt: string | null; publishedAt: string | null;
-  evidenceRefIds: string[]; followUpStatus: string; relatedSuggestedIds: string[];
+  evidenceRefIds: string[]; followUpStatus: 'none' | 'under-review' | 'response-documented' | 'outcome-unknown' | 'unknown';
+  relatedSuggestedIds: string[];
 };
 type CommunityRecordsResponse = {
   contractVersion: string; publicationBoundary: string; page: number; pageSize: number;
@@ -113,9 +126,7 @@ function mapDuty(duty?: string, mandate?: string): Sector | null {
 function voiceToRecord(v: PulseVoice, stateIds: Set<string>): CivicRecord | null {
   if (!v?.id || !v.sentence?.trim()) return null;
   const stateName = (v.state || '').trim();
-  // CommunityRecord permits unknown geography; preserve the record without inventing a state.
   let stateId = stateName ? slugState(stateName) : 'unknown';
-  // Prefer geo file id when name matches
   if (!stateIds.has(stateId)) {
     const byName = [...stateIds].find((id) => id === stateId);
     if (!byName) {
@@ -230,46 +241,78 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
     return { records, evidence };
   }
 
+  function validateCommunityRecord(r: unknown): asserts r is CommunityRecordV01 {
+    if (!r || typeof r !== 'object' || Array.isArray(r)) throw new Error('Invalid CommunityRecord object');
+    const record = r as Record<string, unknown>;
+    if (Object.keys(record).some((key) => !COMMUNITY_RECORD_KEYS.has(key)) ||
+        record.contractVersion !== COMMUNITY_CONTRACT_VERSION ||
+        record.publicationStatus !== 'published' ||
+        typeof record.id !== 'string' || !record.id.trim() ||
+        typeof record.text !== 'string' || !record.text.trim() ||
+        typeof record.createdAt !== 'string' ||
+        !VERIFICATION_STATUSES.has(String(record.verificationStatus)) ||
+        !FOLLOW_UP_STATUSES.has(String(record.followUpStatus)) ||
+        !Array.isArray(record.evidenceRefIds) ||
+        !record.evidenceRefIds.every((value) => typeof value === 'string') ||
+        !Array.isArray(record.relatedSuggestedIds) ||
+        !record.relatedSuggestedIds.every((value) => typeof value === 'string')) {
+      throw new Error('CommunityRecord violated the published v0.1 allowlist or field contract');
+    }
+    for (const key of ['sector', 'duty', 'issueCategory', 'state', 'lga', 'ward', 'facilityRef', 'officeLabel', 'reportedAt', 'publishedAt']) {
+      const value = record[key];
+      if (value !== undefined && value !== null && typeof value !== 'string') {
+        throw new Error('Invalid CommunityRecord field: ' + key);
+      }
+    }
+  }
+
+  function validatePage(value: unknown, expectedPage: number, first?: CommunityRecordsResponse): asserts value is CommunityRecordsResponse {
+    if (!value || typeof value !== 'object') throw new Error('Unsupported CommunityRecord contract response');
+    const page = value as CommunityRecordsResponse;
+    if (page.contractVersion !== COMMUNITY_CONTRACT_VERSION ||
+        page.publicationBoundary !== 'published-only' ||
+        page.page !== expectedPage ||
+        !Number.isInteger(page.pageSize) || page.pageSize < 1 ||
+        !Number.isInteger(page.total) || page.total < 0 ||
+        !Number.isInteger(page.totalPages) || page.totalPages < 1 ||
+        page.totalPages !== Math.max(1, Math.ceil(page.total / page.pageSize)) ||
+        page.truncatedUpstream !== false ||
+        !Array.isArray(page.records) || page.records.length > page.pageSize ||
+        (first && (page.pageSize !== first.pageSize || page.total !== first.total || page.totalPages !== first.totalPages))) {
+      throw new Error('Unsupported, inconsistent, or truncated CommunityRecord pagination response');
+    }
+    page.records.forEach(validateCommunityRecord);
+  }
+
   async function fetchCommunityRecords(): Promise<PulseVoice[]> {
     if (!communityUrl) throw new Error('CommunityRecord endpoint disabled');
     const first = await fetchJson(communityUrl + '?page=1&pageSize=50') as CommunityRecordsResponse;
-    if (!first || first.contractVersion !== COMMUNITY_CONTRACT_VERSION || first.publicationBoundary !== 'published-only' || !Array.isArray(first.records) || first.page !== 1 || !Number.isInteger(first.totalPages) || first.totalPages < 1) {
-      throw new Error('Unsupported CommunityRecord contract response');
-    }
-    if (first.truncatedUpstream) throw new Error('CommunityRecord feed is truncated upstream; refusing to present it as complete');
+    validatePage(first, 1);
     const all = [...first.records];
-    const totalPages = Number(first.totalPages);
+    const totalPages = first.totalPages;
     if (totalPages > 100) throw new Error('CommunityRecord pagination exceeds the safe page limit; refusing a partial feed');
     for (let page = 2; page <= totalPages; page++) {
       const next = await fetchJson(communityUrl + '?page=' + page + '&pageSize=50') as CommunityRecordsResponse;
-      if (!next || next.contractVersion !== COMMUNITY_CONTRACT_VERSION || next.publicationBoundary !== 'published-only' || !Array.isArray(next.records) || next.page !== page || next.truncatedUpstream) {
-        throw new Error('Invalid or truncated CommunityRecord pagination response');
-      }
+      validatePage(next, page, first);
       all.push(...next.records);
     }
-    return all.map((r) => {
-      if (r.contractVersion !== COMMUNITY_CONTRACT_VERSION || r.publicationStatus !== 'published' || !r.id || !r.text?.trim()) {
-        throw new Error('CommunityRecord violated the published v0.1 contract');
-      }
-      return {
-        id: String(r.id), sentence: r.text, duty: r.duty || undefined,
-        state: r.state || undefined, lga: r.lga || undefined,
-        office: r.officeLabel || undefined, created: r.createdAt || undefined,
-        sector: r.sector, issueCategory: r.issueCategory, officeLabel: r.officeLabel,
-        verificationStatus: r.verificationStatus, evidenceRefIds: r.evidenceRefIds,
-        followUpStatus: r.followUpStatus, relatedSuggestedIds: r.relatedSuggestedIds,
-        ward: r.ward, facilityRef: r.facilityRef, reportedAt: r.reportedAt,
-        publishedAt: r.publishedAt, contractVersion: r.contractVersion,
-      };
-    });
+    if (all.length !== first.total) throw new Error('CommunityRecord pagination did not return the declared complete record count');
+    return all.map((r) => ({
+      id: String(r.id), sentence: r.text, duty: r.duty || undefined,
+      state: r.state || undefined, lga: r.lga || undefined,
+      office: r.officeLabel || undefined, created: r.createdAt || undefined,
+      sector: r.sector, issueCategory: r.issueCategory, officeLabel: r.officeLabel,
+      verificationStatus: r.verificationStatus, evidenceRefIds: r.evidenceRefIds,
+      followUpStatus: r.followUpStatus, relatedSuggestedIds: r.relatedSuggestedIds,
+      ward: r.ward, facilityRef: r.facilityRef, reportedAt: r.reportedAt,
+      publishedAt: r.publishedAt, contractVersion: r.contractVersion,
+    }));
   }
 
   async function load() {
     if (cache && Date.now() - cache.at < TTL) return cache;
     let voices: PulseVoice[];
     if (communityUrl) {
-      // Fail closed on both contract errors and upstream outages. A legacy pulse response
-      // must never disguise a failed CommunityRecord v0.1 source as a successful live feed.
       voices = await fetchCommunityRecords();
     } else {
       // Explicit opt-in for legacy adapter tests/migration diagnostics only.
@@ -313,15 +356,12 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
       );
     },
     async getInstitutions(): Promise<Institution[]> {
-      // Do not invent institutional responsibility from pulse office strings.
       return [];
     },
     async getCommunityObservations() {
-      // Separate feed: never fall back to demands, demo data or a synthetic substitute.
       return fetchCommunityObservations({ url: DEFAULT_COMMUNITY_OBSERVATIONS_URL, fetchImpl: f, timeoutMs });
     },
     async getEvidenceVaultRecords() {
-      // Evidence Vault is a separate, dual-reviewed source register; never substitute the source registry.
       return fetchEvidenceVaultRecords({ url: DEFAULT_EVIDENCE_VAULT_URL, fetchImpl: f, timeoutMs });
     },
   };
