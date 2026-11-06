@@ -1,7 +1,7 @@
 /**
- * Published-only Civic Mandate pulse adapter.
- * Consumes the public /api/pulse contract. Does not read private submission fields.
- * Published community records are real moderated outputs — not a national survey and not independently verified outcomes.
+ * Published-only Civic Mandate adapter.
+ * Uses CommunityRecord v0.1 by default and never silently falls back to the legacy pulse feed.
+ * Published community records are not a national survey or independently verified outcomes.
  */
 import type {
   CivicRecord,
@@ -267,18 +267,11 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
     if (cache && Date.now() - cache.at < TTL) return cache;
     let voices: PulseVoice[];
     if (communityUrl) {
-      try {
-        voices = await fetchCommunityRecords();
-      } catch (communityError) {
-        // A malformed or unsupported v0.1 payload is a contract failure, not an outage.
-        const reason = String(communityError);
-        if (/Unsupported CommunityRecord|Invalid CommunityRecord|violated the published v0\.1 contract|CommunityRecord feed is truncated|CommunityRecord pagination exceeds/.test(reason)) throw communityError;
-        // Temporary migration fallback only: a valid empty v0.1 response never falls back.
-        const body = await fetchJson(url) as PulseResponse;
-        if (!Array.isArray(body?.voices)) throw new Error('Invalid pulse response');
-        voices = body.voices;
-      }
+      // Fail closed on both contract errors and upstream outages. A legacy pulse response
+      // must never disguise a failed CommunityRecord v0.1 source as a successful live feed.
+      voices = await fetchCommunityRecords();
     } else {
+      // Explicit opt-in for legacy adapter tests/migration diagnostics only.
       const body = await fetchJson(url) as PulseResponse;
       if (!Array.isArray(body?.voices)) throw new Error('Invalid pulse response');
       voices = body.voices;
@@ -289,7 +282,7 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
 
   return {
     mode: 'live',
-    label: 'Published Mandate feed',
+    label: 'Published CommunityRecord feed',
     async getSources() {
       return sources;
     },
