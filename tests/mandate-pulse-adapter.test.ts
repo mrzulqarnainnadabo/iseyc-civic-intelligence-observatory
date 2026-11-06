@@ -56,6 +56,8 @@ describe('mandate pulse adapter', () => {
     expect(selectAdapter('?demo=1').mode).toBe('demo');
     expect(selectAdapter('?demo=true').mode).toBe('demo');
     expect(selectAdapter('?demo=normal').mode).toBe('demo');
+    expect(selectAdapter('?demo=unknown').mode).toBe('live');
+    expect(selectAdapter('?demo=0').mode).toBe('live');
   });
 
   it('does not fall back to demo when pulse fails', async () => {
@@ -175,14 +177,15 @@ describe('mandate pulse adapter', () => {
     expect(fetchImpl).toHaveBeenCalledTimes(1);
   });
 
-  it('uses pulse temporarily when the versioned API is not deployed', async () => {
+  it('fails closed when CommunityRecord v0.1 is unavailable and never reports pulse fallback as live success', async () => {
     const fetchImpl = vi.fn(async (input: RequestInfo | URL) => {
-      if (String(input).includes('/api/v1/community-records')) return { ok: false, status: 404, json: async () => ({}) };
+      if (String(input).includes('/api/v1/community-records')) return { ok: false, status: 503, json: async () => ({}) };
       return { ok: true, json: async () => sample };
     }) as unknown as typeof fetch;
     const adapter = createMandatePulseAdapter({ fetchImpl });
-    expect(await adapter.getRecords()).toHaveLength(2);
-    expect(fetchImpl).toHaveBeenCalledTimes(2);
+    expect(adapter.label).toContain('CommunityRecord');
+    await expect(adapter.getRecords()).rejects.toThrow(/HTTP 503/);
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
   });
 
   it('fails closed on an incompatible CommunityRecord contract instead of hiding it with pulse fallback', async () => {
