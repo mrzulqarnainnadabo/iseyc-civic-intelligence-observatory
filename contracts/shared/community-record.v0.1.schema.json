@@ -5,35 +5,138 @@
   "description": "Public published community intelligence unit. Owned by Civic Mandate. Not a verified fact by default.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["id", "contractVersion", "publicationStatus", "text", "createdAt"],
+  "required": [
+    "id",
+    "contractVersion",
+    "publicationStatus",
+    "verificationStatus",
+    "text",
+    "sector",
+    "duty",
+    "issueCategory",
+    "state",
+    "lga",
+    "ward",
+    "facilityRef",
+    "officeLabel",
+    "reportedAt",
+    "publishedAt",
+    "createdAt",
+    "evidenceRefIds",
+    "followUpStatus",
+    "relatedSuggestedIds"
+  ],
   "properties": {
-    "id": { "type": "string", "minLength": 1 },
-    "contractVersion": { "type": "string", "const": "0.1.0" },
-    "publicationStatus": { "type": "string", "const": "published" },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contractVersion": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "publicationStatus": {
+      "type": "string",
+      "const": "published"
+    },
     "verificationStatus": {
       "type": "string",
-      "enum": ["unverified", "partially-verified", "independently-verified", "unknown"]
+      "enum": [
+        "unverified",
+        "partially-verified",
+        "independently-verified",
+        "unknown"
+      ]
     },
-    "text": { "type": "string" },
-    "sector": { "type": ["string", "null"] },
-    "duty": { "type": ["string", "null"] },
-    "issueCategory": { "type": ["string", "null"] },
-    "state": { "type": ["string", "null"] },
-    "lga": { "type": ["string", "null"] },
-    "ward": { "type": ["string", "null"] },
-    "facilityRef": { "type": ["string", "null"] },
-    "officeLabel": { "type": ["string", "null"], "description": "Citizen/moderator navigation label — not a legal determination" },
-    "reportedAt": { "type": ["string", "null"] },
-    "publishedAt": { "type": ["string", "null"] },
-    "createdAt": { "type": "string" },
-    "evidenceRefIds": { "type": "array", "items": { "type": "string" } },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sector": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "duty": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "issueCategory": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "state": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lga": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ward": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "facilityRef": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "officeLabel": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Citizen/moderator navigation label — not a legal determination"
+    },
+    "reportedAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "publishedAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "evidenceRefIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "followUpStatus": {
       "type": "string",
-      "enum": ["none", "under-review", "response-documented", "outcome-unknown", "unknown"]
+      "enum": [
+        "none",
+        "under-review",
+        "response-documented",
+        "outcome-unknown",
+        "unknown"
+      ]
     },
     "relatedSuggestedIds": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "description": "Suggested only until human confirms"
     }
   }

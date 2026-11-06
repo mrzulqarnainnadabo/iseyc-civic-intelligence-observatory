@@ -57,6 +57,8 @@ export default function Issues() {
             </span>
           </summary>
           <p>{record.summary}</p>
+          {record.verificationStatus && <p><strong>Verification status:</strong> {record.verificationStatus.replace(/-/g, ' ')}</p>}
+          {record.origin === 'civic-mandate' && record.sourceRecordId && <p className="muted"><strong>Source record:</strong> <a href={`https://2027-street-mandate.vercel.app/mandate/${encodeURIComponent(record.sourceRecordId)}`} target="_blank" rel="noopener noreferrer">Open original Civic Mandate record ↗</a></p>}
           <p><strong>Evidence status:</strong> {CLAIM_LABEL[claimStrength(record, evidence)]}</p>
           {record.institutionIds.length > 0 && <p className="muted">Institution mapping requires separate verification.</p>}
           <LifecycleTimeline record={record} evidence={evidence} />
