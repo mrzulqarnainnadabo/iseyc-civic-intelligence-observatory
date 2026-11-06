@@ -17,7 +17,7 @@ export function AppShell() {
   return <div className="app-shell">
     <a className="skip" href="#main">Skip to main content</a>
     <aside className="app-sidebar">
-      <a className="app-brand" href="#/" aria-label="ISEYC Observatory home"><img className="app-brand__mark" src="/iseyc-seal.svg" alt="ISEYC official seal" width="36" height="36" /><span className="app-brand__text"><strong>ISEYC</strong><span>Civic Intelligence Observatory</span></span></a>
+      <a className="app-brand" href="#/" aria-label="ISEYC Observatory home"><img className="app-brand__mark" src="/iseyc-seal.svg" alt="ISEYC official seal" width="36" height="36" /><span className="app-brand__text"><strong>ISEYC</strong><span>Initiative for Sustainable Evolution for Youth and Community</span><span>Civic Intelligence Observatory</span></span></a>
       <nav className="app-nav" aria-label="Main navigation">{NAV.map((item) => <NavLink key={item.to} to={item.to} end={item.end} className={({ isActive }) => 'app-nav__link' + (isActive ? ' app-nav__link--on' : '')}>{item.label}</NavLink>)}</nav>
       <div className="app-departments" aria-label="Department entry points">
         <span>DEPARTMENTS</span>
@@ -36,7 +36,7 @@ export function AppShell() {
         </div>
       </div>
     </aside>
-    <main id="main" className="app-main" tabIndex={-1}><div className="app-main__inner"><Outlet /></div><footer className="app-footer"><p><strong>ISEYC · Understanding Public Needs. Interpreting Evidence. Strengthening Accountability.</strong></p><p>Non-partisan civic intelligence. Published community records are not prevalence estimates; publication is not independent verification.</p><div><a href="https://github.com/mrzulqarnainnadabo/iseyc-civic-intelligence-observatory/blob/main/docs/EVIDENCE-GATEWAY.md" target="_blank" rel="noopener noreferrer">Methodology</a><a href="https://github.com/mrzulqarnainnadabo/iseyc-civic-intelligence-observatory/blob/main/docs/PRODUCT-OPERATING-MODEL-v1.md" target="_blank" rel="noopener noreferrer">Non-partisan operating principles</a></div></footer></main>
+    <main id="main" className="app-main" tabIndex={-1}><div className="app-main__inner"><Outlet /></div><footer className="app-footer"><p><strong>Initiative for Sustainable Evolution for Youth and Community</strong></p><p>Non-partisan civic intelligence. Published community records are not prevalence estimates; publication is not independent verification.</p><div><a href="https://github.com/mrzulqarnainnadabo/iseyc-civic-intelligence-observatory/blob/main/docs/EVIDENCE-GATEWAY.md" target="_blank" rel="noopener noreferrer">Methodology</a><a href="https://github.com/mrzulqarnainnadabo/iseyc-civic-intelligence-observatory/blob/main/docs/PRODUCT-OPERATING-MODEL-v1.md" target="_blank" rel="noopener noreferrer">Non-partisan operating principles</a></div></footer></main>
   </div>;
 }
 export function PageHeader({ title, lead, children }: { title: string; lead?: ReactNode; children?: ReactNode }) {
