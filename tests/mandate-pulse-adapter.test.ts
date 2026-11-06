@@ -112,6 +112,7 @@ describe('mandate pulse adapter', () => {
     const records = await adapter.getRecords();
     expect(records).toHaveLength(1);
     expect(records[0].id).toBe('mandate-cr-001');
+    expect(records[0].sourceRecordId).toBe('cr-001');
     expect(records[0].stateId).toBe('unknown');
     expect(records[0].reviewStatus).toBe('published');
     expect(records[0].unknowns.join(' ')).toContain('not a measure');
