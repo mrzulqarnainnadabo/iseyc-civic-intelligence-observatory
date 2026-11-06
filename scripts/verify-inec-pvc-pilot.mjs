@@ -26,7 +26,7 @@ assert.ok(data.limitations.some((x) => x.includes("arithmetic inconsistencies"))
 assert.equal(data.reconciliation.narrativeReportedCollectedPVCs, 87394106);
 assert.equal(data.reconciliation.tableReportedCollectedPVCs, 87209007);
 assert.equal(data.reconciliation.narrativeVsTableDifference, 185099);
-assert.match(data.reconciliation.narrativeSourceUrl, /^https:\/\/www\\.inecnigeria\\.org\//);
+assert.ok(data.reconciliation.narrativeSourceUrl.startsWith("https://www.inecnigeria.org/"));
 assert.ok(data.reconciliation.note.includes("185,099"));
 assert.ok(data.limitations.some((x) => x.includes("87,394,106") && x.includes("87,209,007")));
 console.log("verify-inec-pvc-pilot: PASS (37 geographies; source arithmetic warnings retained)");
