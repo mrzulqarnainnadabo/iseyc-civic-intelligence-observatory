@@ -1,28 +1,11 @@
 import type { ObservatoryAdapter } from '../data/types';
 import { createDemoAdapter, type DemoBehaviour } from './demoAdapter';
-import { createMandatePulseAdapter, DEFAULT_PULSE_URL } from './mandatePulseAdapter';
-
-const ALLOWED_PULSE_HOSTS = new Set([
-  '2027-street-mandate.vercel.app',
-]);
-
-function resolvePulseUrl(raw: string | null): string {
-  if (!raw) return DEFAULT_PULSE_URL;
-  try {
-    const u = new URL(raw);
-    if (u.protocol !== 'https:') return DEFAULT_PULSE_URL;
-    if (!ALLOWED_PULSE_HOSTS.has(u.hostname)) return DEFAULT_PULSE_URL;
-    if (!u.pathname.includes('/api/pulse')) return DEFAULT_PULSE_URL;
-    return u.toString();
-  } catch {
-    return DEFAULT_PULSE_URL;
-  }
-}
+import { createMandatePulseAdapter } from './mandatePulseAdapter';
 
 /**
- * Default: published Civic Mandate pulse (real moderated public records).
- * Demo synthetic set: ?demo=1|true|normal|empty|error|slow
- * Optional ?pulse= only if https host is allowlisted Mandate production host.
+ * Default: published Civic Mandate CommunityRecord v0.1 feed.
+ * Synthetic demonstration fixtures are selected only by an explicit ?demo= flag.
+ * A CommunityRecord outage or invalid response is surfaced as unavailable; no pulse fallback.
  */
 export function selectAdapter(
   search: string = typeof location !== 'undefined'
@@ -36,5 +19,5 @@ export function selectAdapter(
       demo === 'empty' || demo === 'error' || demo === 'slow' ? demo : 'normal';
     return createDemoAdapter({ behaviour });
   }
-  return createMandatePulseAdapter({ pulseUrl: resolvePulseUrl(p.get('pulse')) });
+  return createMandatePulseAdapter();
 }
