@@ -8,6 +8,7 @@ import NationalSnapshotGrid from '../components/NationalSnapshotGrid';
 import { PageHeader, Section } from '../design/layout';
 import inecPvc2023 from '../data/indicators/inec-pvc-2023.json';
 import inecCvr2025 from '../data/indicators/inec-cvr-2025-26.json';
+import nationalSnapshots from '../data/indicators/national-department-snapshots.v1.json';
 import stateReference from '../../contracts/states-ng.v1.json';
 
 type DepartmentConfig = {
@@ -43,6 +44,7 @@ const DEPARTMENTS: DepartmentConfig[] = [
 const PILOT_LOCATION = 'Kaduna South, Kaduna State';
 const STATE_OPTIONS = stateReference.states;
 const ALL_STATES = 'All states + FCT';
+const SNAPSHOT_SOURCE_IDS = new Set(nationalSnapshots.records.map((record) => record.sourceId));
 
 function RecordList({ records, scopeLabel }: { records: PublishedDepartmentRecord[]; scopeLabel: string }) {
   if (records.length === 0) return null;
@@ -111,7 +113,7 @@ export default function Departments() {
       <Link to="/departments" className="dept-back">← All departments</Link>
     </PageHeader>
     <Section title="A. Official evidence" id="official-evidence">
-      <p className="dept-note">Only registered publisher sources and dated evidence snapshots are shown. A source listing is not an integrated dataset.</p>\n      <NationalSnapshotGrid departmentId={config.id} />
+      <p className="dept-note">Registered sources distinguish live indicators, dated snapshot-only records and sources not yet integrated.</p>\n      <NationalSnapshotGrid departmentId={config.id} />
       {registeredSources.length === 0 ? <div className="dept-empty">{DEPARTMENT_EMPTY_STATE}</div> : registeredSources.map((source) => {
         const indicator = config.indicators.find((item) => item.sourceId === source.id);
         const result = indicator ? observations[indicator.id] : undefined;
@@ -123,7 +125,7 @@ export default function Departments() {
           retrievedAt: localObservation?.retrievedAt || 'not-retrieved',
           geography: { level:'lga', code:'kaduna-south', label:PILOT_LOCATION },
           value: localObservation?.value ?? null, unit: localObservation?.unit || null,
-          evidenceStatus: localObservation ? 'integrated' : (indicator && result?.status === 'error' ? 'unavailable' : 'not-integrated'),
+          evidenceStatus: localObservation ? 'integrated' : (indicator && result?.status === 'error' ? 'unavailable' : SNAPSHOT_SOURCE_IDS.has(source.id) ? 'snapshot-only' : 'not-integrated'),
           limitations: [...source.limitations, 'No Kaduna South figure is displayed unless the retrieved observation explicitly identifies this LGA.'],
         };
         if (!validateDepartmentEvidence(mapped)) return <article className="dept-source" key={source.id}><strong>{source.name}</strong><p>Evidence metadata did not pass the DepartmentEvidence contract.</p></article>;
