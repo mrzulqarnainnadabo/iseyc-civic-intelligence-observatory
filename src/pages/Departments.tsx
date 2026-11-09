@@ -36,7 +36,7 @@ const DEPARTMENTS: DepartmentConfig[] = [
     facts:['NITDA publishes a national programme dashboard with dated verified training records.','ISN’s 2026 assessment reports structural capacity constraints across the national hub ecosystem.','The ISN directory lists selected hubs in Kaduna, Kano, Abuja, Lagos and other states.','NASENI and NBTI publish innovation and incubation programmes; outcomes require separate award, disbursement and product evidence.'],
     hypotheses:['Anecdotes about connectivity, device access or digital skills are leads for structured research, not population estimates.'] },
   { id:'civic', title:'Civic Department', summary:'Civic participation, published public concerns and official electoral evidence.',
-    sources:['inec-voter-register-pvc','inec-cvr-2025-26','nimc-enrolment-oct-2025','startup-support-engagement-portal'],
+    sources:['inec-voter-register-pvc','inec-cvr-2025-26','nimc-enrolment-oct-2025'],
     indicators:[],
     unknowns:['A final validated post-CVR national register and Kaduna South breakdown are not integrated.','Published community records do not establish how common a civic concern is.'],
     facts:['The CommunityRecord feed contains published records only.','INEC reference periods and measure definitions must be preserved; registration, PVC collection and turnout are different measures.'],
@@ -45,7 +45,7 @@ const DEPARTMENTS: DepartmentConfig[] = [
 const PILOT_LOCATION = 'Kaduna South, Kaduna State';
 const STATE_OPTIONS = stateReference.states;
 const ALL_STATES = 'All states + FCT';
-const SNAPSHOT_SOURCE_IDS = new Set(nationalSnapshots.records.map((record) => record.sourceId));
+const SNAPSHOT_SOURCE_IDS = new Set([...nationalSnapshots.records.map((record) => record.sourceId), 'isn-hubs-directory-2026']);
 
 function RecordList({ records, scopeLabel }: { records: PublishedDepartmentRecord[]; scopeLabel: string }) {
   if (records.length === 0) return null;
