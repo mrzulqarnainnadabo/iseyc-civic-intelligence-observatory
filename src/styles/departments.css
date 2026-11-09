@@ -68,3 +68,6 @@
   .national-snapshots__grid { grid-template-columns:1fr; }
   .national-snapshots__head { align-items:flex-start; flex-direction:column; }
 }
+
+
+.dept-status--snapshot-only { background:#eaf2fa; color:#1f4e79; }
