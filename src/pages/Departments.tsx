@@ -5,6 +5,7 @@ import { fetchViaGateway, type IndicatorObservation } from '../lib/indicators';
 import { fetchDepartmentCommunityRecords, departmentMatchesRecord, stateRecordScope, type DepartmentCommunityFeed, type PublishedDepartmentRecord } from '../adapters/departmentCommunityRecords';
 import { DEPARTMENT_EMPTY_STATE, type DepartmentId, type DepartmentEvidence, validateDepartmentEvidence } from '../data/departmentEvidence';
 import NationalSnapshotGrid from '../components/NationalSnapshotGrid';
+import InnovationHubDirectory from '../components/InnovationHubDirectory';
 import { PageHeader, Section } from '../design/layout';
 import inecPvc2023 from '../data/indicators/inec-pvc-2023.json';
 import inecCvr2025 from '../data/indicators/inec-cvr-2025-26.json';
@@ -18,7 +19,7 @@ type DepartmentConfig = {
 };
 const DEPARTMENTS: DepartmentConfig[] = [
   { id:'education', title:'Education & Capacity Building', summary:'Schooling, education access, capacity and learning evidence.',
-    sources:['ubec-digest-2019-20','ubec-npa-2022-23','ubec-reports-digests','worldbank-wdi-primary-enrolment','nbs-microdata-catalog','nitda-dl4all-dashboard','nitda-national-digital-literacy-framework'],
+    sources:['ubec-digest-2019-20','ubec-npa-2022-23','ubec-reports-digests','worldbank-wdi-primary-enrolment','nbs-microdata-catalog','nitda-dl4all-dashboard','nitda-national-digital-literacy-framework','isn-hubs-directory-2026','isn-hub-assessment-2026','startup-support-engagement-portal','nbti-incubation-centres','afrilabs-nigeria-hubs','cchub-programmes'],
     indicators:[{id:'wb-nga-se-prm-enrr',sourceId:'worldbank-wdi-primary-enrolment',label:'Primary school gross enrolment ratio'}],
     unknowns:['Current Kaduna South school-level enrolment, attendance and completion are not integrated.','Current teacher availability and learning outcomes for Kaduna South are not established by the registered national series.'],
     facts:['A source may be described by its publisher, dataset, reference period and stated geographic coverage.','A national gross enrolment ratio is not a Kaduna South school attendance rate.'],
@@ -29,13 +30,13 @@ const DEPARTMENTS: DepartmentConfig[] = [
     unknowns:['Current Kaduna South facility staffing, medicine availability and service continuity are not integrated.','The Kaduna PHC recruitment plan is a March 2025 planning baseline, not a current headcount or proof of deployment.','HFR access requires an approved API key; HEFA raw data and public bulk export are not currently integrated.'],
     facts:['A registered facility is not proof that it is staffed, stocked or operational.','A national modelled mortality estimate cannot establish performance at a named PHC.'],
     hypotheses:['A published report about a facility can guide a follow-up question; it is not proof of a system-wide condition.'] },
-  { id:'software-technology', title:'Software & Technology', summary:'Digital systems, software capacity and technology access — without unsupported indicators.',
-    sources:['nitda-dl4all-dashboard','nitda-national-digital-literacy-framework','naseni-innovation-hub'], indicators:[],
+  { id:'software-technology', title:'Software & Technology', summary:'Digital systems, software capacity, innovation infrastructure and the national hub ecosystem.',
+    sources:['nitda-dl4all-dashboard','nitda-national-digital-literacy-framework','naseni-innovation-hub','isn-hubs-directory-2026','isn-hub-assessment-2026','startup-support-engagement-portal','nbti-incubation-centres','afrilabs-nigeria-hubs','cchub-programmes','nipost-digital-postcode-hub-api-2026'], indicators:[],
     unknowns:['No official Kaduna South digital-access, software-sector or technology-employment figure is integrated.','NITDA programme reach is not a national digital-literacy prevalence measure; NASENI announcements are not proof of funded or commercialised innovations.'],
-    facts:['NITDA publishes a national programme dashboard with dated verified training records.','NASENI publishes innovation programme announcements; outcomes require separate award, disbursement and product evidence.'],
+    facts:['NITDA publishes a national programme dashboard with dated verified training records.','ISN’s 2026 assessment reports structural capacity constraints across the national hub ecosystem.','The ISN directory lists selected hubs in Kaduna, Kano, Abuja, Lagos and other states.','NASENI and NBTI publish innovation and incubation programmes; outcomes require separate award, disbursement and product evidence.'],
     hypotheses:['Anecdotes about connectivity, device access or digital skills are leads for structured research, not population estimates.'] },
   { id:'civic', title:'Civic Department', summary:'Civic participation, published public concerns and official electoral evidence.',
-    sources:['inec-voter-register-pvc','inec-cvr-2025-26','nimc-enrolment-oct-2025'],
+    sources:['inec-voter-register-pvc','inec-cvr-2025-26','nimc-enrolment-oct-2025','startup-support-engagement-portal'],
     indicators:[],
     unknowns:['A final validated post-CVR national register and Kaduna South breakdown are not integrated.','Published community records do not establish how common a civic concern is.'],
     facts:['The CommunityRecord feed contains published records only.','INEC reference periods and measure definitions must be preserved; registration, PVC collection and turnout are different measures.'],
@@ -113,7 +114,7 @@ export default function Departments() {
       <Link to="/departments" className="dept-back">← All departments</Link>
     </PageHeader>
     <Section title="A. Official evidence" id="official-evidence">
-      <p className="dept-note">Registered sources distinguish live indicators, dated snapshot-only records and sources not yet integrated.</p>\n      <NationalSnapshotGrid departmentId={config.id} />
+      <p className="dept-note">Registered sources distinguish live indicators, dated snapshot-only records and sources not yet integrated.</p>\n      <NationalSnapshotGrid departmentId={config.id} />\n      {config.id === 'software-technology' && <InnovationHubDirectory />}
       {registeredSources.length === 0 ? <div className="dept-empty">{DEPARTMENT_EMPTY_STATE}</div> : registeredSources.map((source) => {
         const indicator = config.indicators.find((item) => item.sourceId === source.id);
         const result = indicator ? observations[indicator.id] : undefined;
