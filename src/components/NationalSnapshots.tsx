@@ -2,7 +2,7 @@ import '../styles/national-snapshots.css';
 import { useEffect, useMemo, useState } from 'react';
 
 type Snapshot = {
-  id: string; title: string; value: number; unit: string; referencePeriod: string;
+  id: string; title: string; value: number; unit: string; valueQualifier?: string; referencePeriod: string;
   measurementType: string; geoLevel: string; geographicCoverage: string; sourceId: string;
   sourcePublisher: string; sourceUrl: string; departments: string[]; interpretation: string;
   limitations: string[];
