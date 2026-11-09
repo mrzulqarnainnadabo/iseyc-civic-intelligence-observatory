@@ -17,7 +17,7 @@ The source catalogue and application registry are kept in sync:
 
 ## Dated source snapshots now displayed
 
-The Overview and relevant Department pages display compact, provenance-first cards from `src/data/indicators/national-department-snapshots.v1.json`.
+The Overview and relevant Department pages display compact, provenance-first cards from `src/data/indicators/national-department-snapshots.v1.json`.\n\nA read-only endpoint now exposes the same curated contract at `/api/evidence/snapshots` (optional `departmentId` filter; `catalog=1` returns metadata only). It is an ISEYC-curated snapshot API, not a live WHO/NIMC/NITDA/NASENI/NBS API.
 
 | Evidence | Reference period | What the product may state |
 |---|---|---|
