@@ -24,7 +24,8 @@
         "National estimate only; no Kaduna State, LGA, ward or facility inference.",
         "WHO source data and reference year must be retained; do not combine with estimates from another agency without checking method.",
         "This is not a count of deaths recorded by a named hospital or PHC."
-      ]
+      ],
+      "sourceType": "official_source"
     },
     {
       "id": "who-nga-life-expectancy-male-2023",
@@ -45,7 +46,8 @@
       "limitations": [
         "National aggregate only.",
         "Estimate depends on mortality tables and source methodology; it is not a direct count of individual lifespans."
-      ]
+      ],
+      "sourceType": "official_source"
     },
     {
       "id": "who-nga-life-expectancy-female-2023",
@@ -66,7 +68,8 @@
       "limitations": [
         "National aggregate only.",
         "Estimate depends on mortality tables and source methodology; it is not a direct count of individual lifespans."
-      ]
+      ],
+      "sourceType": "official_source"
     },
     {
       "id": "who-nga-health-expenditure-gdp-2023",
@@ -87,7 +90,8 @@
       "limitations": [
         "National percentage only; it does not identify federal, state or LGA spending distribution.",
         "Health expenditure share is not a measure of service quality or access."
-      ]
+      ],
+      "sourceType": "official_source"
     },
     {
       "id": "who-nga-health-expenditure-capita-2023",
@@ -108,7 +112,8 @@
       "limitations": [
         "National average masks geographic and income differences.",
         "Do not interpret as a direct allocation to each person or as a measure of effective coverage."
-      ]
+      ],
+      "sourceType": "official_source"
     },
     {
       "id": "nitda-dl4all-verified-records-2026-10-24",
@@ -132,7 +137,8 @@
         "The 50 million denominator is a programme target, not a population estimate.",
         "Dashboard reporting depends on participating organisations and their submissions; this is not a nationally representative skills assessment.",
         "Preserve the dashboard update date and the six competence areas; do not convert this count into a national digital-literacy prevalence rate."
-      ]
+      ],
+      "sourceType": "official_source"
     },
     {
       "id": "nimc-nin-enrolment-2025-06-30",
@@ -154,7 +160,8 @@
         "Reference date is 30 June 2025, not a current 2026 count.",
         "NIN enrolment records are not interchangeable with census population, eligible population or voter-register totals.",
         "State-level enrolment differences do not by themselves establish exclusion or coverage rates without an appropriate population denominator."
-      ]
+      ],
+      "sourceType": "official_source"
     },
     {
       "id": "imf-nga-real-gdp-growth-2024",
@@ -179,7 +186,8 @@
         "National macroeconomic aggregate only.",
         "Do not mix IMF estimates with NBS official national accounts without retaining the source and vintage.",
         "The IMF report contains estimates and projections for other years; this card displays only the 2024 actual row."
-      ]
+      ],
+      "sourceType": "official_source"
     },
     {
       "id": "isn-nigeria-active-innovation-hubs-2026-05-22",
@@ -202,7 +210,8 @@
         "The assessment's definitions, survey coverage and active-status criteria must be checked before comparison or ranking.",
         "This is not a live directory of currently operating hubs."
       ],
-      "valueQualifier": "more than"
+      "valueQualifier": "more than",
+      "sourceType": "published_research"
     },
     {
       "id": "naseni-innovatenaija-finalists-undated",
@@ -225,7 +234,8 @@
         "The source page does not state a publication or reference date; retain this as undated until confirmed.",
         "Finalists are not equivalent to all innovators, startups or operating technology firms.",
         "The source page excludes three states from the finalist count; do not infer no innovation activity in those states."
-      ]
+      ],
+      "sourceType": "official_source"
     }
   ],
   "catalogOnlySources": [
