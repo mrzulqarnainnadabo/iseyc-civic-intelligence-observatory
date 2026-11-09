@@ -308,6 +308,29 @@
         "The count is a dashboard-reported programme metric, not independent verification of every locality.",
         "Do not infer household or individual access from geographic coverage alone."
       ]
+    },
+    {
+      "id": "who-nga-healthy-life-expectancy-2023",
+      "title": "Healthy life expectancy at birth",
+      "value": 54.1,
+      "unit": "years",
+      "referencePeriod": "2023",
+      "measurementType": "WHO estimate",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "who-gho-nigeria",
+      "sourcePublisher": "WHO Regional Office for Africa · Global Health Observatory",
+      "sourceUrl": "https://www.afro.who.int/node/992",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "interpretation": "WHO's national healthy-life-expectancy estimate; it accounts for time lived in less than full health and is not an individual forecast.",
+      "limitations": [
+        "National aggregate only; not a Kaduna State, LGA or facility measure.",
+        "This measure differs from life expectancy at birth; do not compare the two as if they were the same indicator.",
+        "Retain the 2023 reference year and WHO methodology."
+      ]
     }
   ],
   "catalogOnlySources": [
