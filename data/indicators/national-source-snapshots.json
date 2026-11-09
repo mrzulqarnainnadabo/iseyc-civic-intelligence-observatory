@@ -1,0 +1,1135 @@
+{
+  "schemaVersion": "1.0.0",
+  "title": "Nigeria national evidence snapshots",
+  "description": "Manually transcribed, source-attributed snapshots from official and published sources. These are not live feeds. Every observation retains its reference period, source date, geographic scope and limitations.",
+  "checkedAt": "2026-11-09",
+  "observations": [
+    {
+      "id": "who-nga-under5-mortality-2024",
+      "title": "Under-five mortality rate",
+      "value": 59.5,
+      "unit": "deaths per 1,000 live births",
+      "referencePeriod": "2024",
+      "measurementType": "WHO estimate",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "who-gho-nigeria",
+      "sourcePublisher": "WHO Regional Office for Africa · Global Health Observatory",
+      "sourceUrl": "https://www.afro.who.int/node/992",
+      "departments": [
+        "health"
+      ],
+      "interpretation": "National population-health estimate; not a facility performance measure.",
+      "limitations": [
+        "National estimate only; no Kaduna State, LGA, ward or facility inference.",
+        "WHO source data and reference year must be retained; do not combine with estimates from another agency without checking method.",
+        "This is not a count of deaths recorded by a named hospital or PHC."
+      ],
+      "sourceType": "official_source"
+    },
+    {
+      "id": "who-nga-life-expectancy-male-2023",
+      "title": "Life expectancy at birth · male",
+      "value": 61.4,
+      "unit": "years",
+      "referencePeriod": "2023",
+      "measurementType": "WHO estimate",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "who-gho-nigeria",
+      "sourcePublisher": "WHO Regional Office for Africa · Global Health Observatory",
+      "sourceUrl": "https://www.afro.who.int/node/992",
+      "departments": [
+        "health"
+      ],
+      "interpretation": "National life-expectancy estimate, not an individual forecast.",
+      "limitations": [
+        "National aggregate only.",
+        "Estimate depends on mortality tables and source methodology; it is not a direct count of individual lifespans."
+      ],
+      "sourceType": "official_source"
+    },
+    {
+      "id": "who-nga-life-expectancy-female-2023",
+      "title": "Life expectancy at birth · female",
+      "value": 64.5,
+      "unit": "years",
+      "referencePeriod": "2023",
+      "measurementType": "WHO estimate",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "who-gho-nigeria",
+      "sourcePublisher": "WHO Regional Office for Africa · Global Health Observatory",
+      "sourceUrl": "https://www.afro.who.int/node/992",
+      "departments": [
+        "health"
+      ],
+      "interpretation": "National life-expectancy estimate, not an individual forecast.",
+      "limitations": [
+        "National aggregate only.",
+        "Estimate depends on mortality tables and source methodology; it is not a direct count of individual lifespans."
+      ],
+      "sourceType": "official_source"
+    },
+    {
+      "id": "who-nga-health-expenditure-gdp-2023",
+      "title": "Health expenditure",
+      "value": 3.9,
+      "unit": "% of GDP",
+      "referencePeriod": "2023",
+      "measurementType": "WHO-reported estimate",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "who-gho-nigeria",
+      "sourcePublisher": "WHO Regional Office for Africa · Global Health Observatory",
+      "sourceUrl": "https://www.afro.who.int/node/992",
+      "departments": [
+        "health"
+      ],
+      "interpretation": "National health-spending context; not a Kaduna health budget or facility allocation.",
+      "limitations": [
+        "National percentage only; it does not identify federal, state or LGA spending distribution.",
+        "Health expenditure share is not a measure of service quality or access."
+      ],
+      "sourceType": "official_source"
+    },
+    {
+      "id": "who-nga-health-expenditure-capita-2023",
+      "title": "Health expenditure per capita",
+      "value": 61.6,
+      "unit": "US dollars per person",
+      "referencePeriod": "2023",
+      "measurementType": "WHO-reported estimate",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "who-gho-nigeria",
+      "sourcePublisher": "WHO Regional Office for Africa · Global Health Observatory",
+      "sourceUrl": "https://www.afro.who.int/node/992",
+      "departments": [
+        "health"
+      ],
+      "interpretation": "National per-capita spending estimate; not household out-of-pocket spending.",
+      "limitations": [
+        "National average masks geographic and income differences.",
+        "Do not interpret as a direct allocation to each person or as a measure of effective coverage."
+      ],
+      "sourceType": "official_source"
+    },
+    {
+      "id": "nitda-dl4all-verified-records-2026-10-24",
+      "title": "Digital literacy records reported as verified",
+      "value": 2783731,
+      "unit": "dashboard-reported records",
+      "referencePeriod": "2026-10-24",
+      "measurementType": "Administrative programme dashboard count",
+      "geoLevel": "varies",
+      "geographicCoverage": "Dashboard reports coverage across 36 states, FCT and 774 LGAs",
+      "sourceId": "nitda-dl4all-dashboard",
+      "sourcePublisher": "National Information Technology Development Agency (NITDA) · DL4ALL National Digital Literacy Dashboard",
+      "sourceUrl": "https://dashboard.digitalliteracy.nitda.gov.ng/",
+      "departments": [
+        "education",
+        "software-technology"
+      ],
+      "interpretation": "The dashboard labels this as verified digitally literate; it is a programme dashboard count, not a national literacy survey.",
+      "limitations": [
+        "Do not assume each record represents a unique person unless deduplication rules are published and checked.",
+        "The 50 million denominator is a programme target, not a population estimate.",
+        "Dashboard reporting depends on participating organisations and their submissions; this is not a nationally representative skills assessment.",
+        "Preserve the dashboard update date and the six competence areas; do not convert this count into a national digital-literacy prevalence rate."
+      ],
+      "sourceType": "official_source"
+    },
+    {
+      "id": "nimc-nin-enrolment-2025-06-30",
+      "title": "National Identification Number enrolment",
+      "value": 121404601,
+      "unit": "NIN enrolment records",
+      "referencePeriod": "2025-06-30",
+      "measurementType": "Administrative register count",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria and diaspora",
+      "sourceId": "nimc-nin-enrolment-2025",
+      "sourcePublisher": "National Identity Management Commission (NIMC)",
+      "sourceUrl": "https://nimc.gov.ng/nin/enrolment-report/june-2025",
+      "departments": [
+        "civic"
+      ],
+      "interpretation": "NIMC reported 121,404,601 enrolment records as at 30 June 2025; this is not a population census.",
+      "limitations": [
+        "Reference date is 30 June 2025, not a current 2026 count.",
+        "NIN enrolment records are not interchangeable with census population, eligible population or voter-register totals.",
+        "State-level enrolment differences do not by themselves establish exclusion or coverage rates without an appropriate population denominator."
+      ],
+      "sourceType": "official_source"
+    },
+    {
+      "id": "imf-nga-real-gdp-growth-2024",
+      "title": "Real GDP growth",
+      "value": 4.1,
+      "unit": "% annual change",
+      "referencePeriod": "2024",
+      "measurementType": "IMF staff table · actual",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "imf-article-iv-2026",
+      "sourcePublisher": "International Monetary Fund (IMF) · Nigeria 2026 Article IV Consultation",
+      "sourceUrl": "https://www.imf.org/en/news/articles/2026/06/09/pr26190-nigeria-imf-executive-board-concludes-2026-article-iv-consultation-with-nigeria",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "The IMF report table labels 2024 as actual; this is macroeconomic context, not evidence of household welfare or sector outcomes.",
+      "limitations": [
+        "National macroeconomic aggregate only.",
+        "Do not mix IMF estimates with NBS official national accounts without retaining the source and vintage.",
+        "The IMF report contains estimates and projections for other years; this card displays only the 2024 actual row."
+      ],
+      "sourceType": "official_source"
+    },
+    {
+      "id": "isn-nigeria-active-innovation-hubs-2026-05-22",
+      "title": "Active innovation hubs in the ISN assessment",
+      "value": 190,
+      "unit": "active hubs",
+      "referencePeriod": "2026-05-22",
+      "measurementType": "Published ecosystem assessment count",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "isn-innovation-hub-assessment",
+      "sourcePublisher": "Innovation Support Network (ISN) · Nigerian Innovation Hub Assessment",
+      "sourceUrl": "https://isnhubs.org.ng/nigerias-innovation-landmark-isn-launches-comprehensive-hub-assessment-report-and-unveils-2026-2030-strategic-outlook/",
+      "departments": [
+        "software-technology"
+      ],
+      "interpretation": "ISN reported more than 190 active hubs within an ecosystem of over 250 active and partially active spaces.",
+      "limitations": [
+        "Published by an ecosystem network, not a government statistical agency.",
+        "The assessment's definitions, survey coverage and active-status criteria must be checked before comparison or ranking.",
+        "This is not a live directory of currently operating hubs."
+      ],
+      "valueQualifier": "more than",
+      "sourceType": "published_research"
+    },
+    {
+      "id": "naseni-innovatenaija-finalists-undated",
+      "title": "InnovateNaija state finalists",
+      "value": 108,
+      "unit": "innovators across 34 states",
+      "referencePeriod": "Not stated by source",
+      "measurementType": "Official programme finalist count",
+      "geoLevel": "varies",
+      "geographicCoverage": "34 states; Ebonyi, Sokoto and Zamfara excluded on the source page",
+      "sourceId": "naseni-innovation-hub",
+      "sourcePublisher": "NASENI Innovation Hub · InnovateNaija",
+      "sourceUrl": "https://innovation.naseni.gov.ng/finalist/",
+      "departments": [
+        "education",
+        "software-technology"
+      ],
+      "interpretation": "NASENI's page lists 108 finalists across 34 states; this is a programme selection count, not a national innovation census.",
+      "limitations": [
+        "The source page does not state a publication or reference date; retain this as undated until confirmed.",
+        "Finalists are not equivalent to all innovators, startups or operating technology firms.",
+        "The source page excludes three states from the finalist count; do not infer no innovation activity in those states."
+      ],
+      "sourceType": "official_source"
+    },
+    {
+      "id": "nitda-dl4all-progress-target-2026-10-24",
+      "title": "Progress towards 70% digital-literacy programme target",
+      "value": 5.57,
+      "unit": "% of programme target",
+      "referencePeriod": "2026-10-24",
+      "measurementType": "Administrative programme dashboard ratio",
+      "geoLevel": "varies",
+      "geographicCoverage": "Dashboard reports 36 states, FCT and 774 LGAs",
+      "sourceId": "nitda-dl4all-dashboard",
+      "sourcePublisher": "National Information Technology Development Agency (NITDA) · DL4ALL National Digital Literacy Dashboard",
+      "sourceUrl": "https://dashboard.digitalliteracy.nitda.gov.ng/",
+      "departments": [
+        "education",
+        "software-technology"
+      ],
+      "sourceType": "official_source",
+      "interpretation": "Dashboard-reported progress towards a 70% programme target by 2027; this is not a national digital-literacy prevalence rate.",
+      "limitations": [
+        "The 50 million target population is a programme denominator, not a measured population denominator.",
+        "Progress depends on programme reporting and the dashboard's verification rules.",
+        "Do not compare this target-progress percentage with survey-based digital-literacy prevalence."
+      ]
+    },
+    {
+      "id": "nitda-dl4all-communities-reached-2026-10-24",
+      "title": "Communities reached in DL4ALL dashboard",
+      "value": 14747,
+      "unit": "communities",
+      "referencePeriod": "2026-10-24",
+      "measurementType": "Administrative programme dashboard count",
+      "geoLevel": "varies",
+      "geographicCoverage": "Dashboard reports 36 states, FCT and 774 LGAs",
+      "sourceId": "nitda-dl4all-dashboard",
+      "sourcePublisher": "National Information Technology Development Agency (NITDA) · DL4ALL National Digital Literacy Dashboard",
+      "sourceUrl": "https://dashboard.digitalliteracy.nitda.gov.ng/",
+      "departments": [
+        "education",
+        "software-technology"
+      ],
+      "sourceType": "official_source",
+      "interpretation": "NITDA dashboard-reported geographic reach; not a count of all communities with sustained digital-skills access.",
+      "limitations": [
+        "The dashboard does not establish equal intensity, duration or quality of training in each community.",
+        "Coverage is programme-reported, not a representative community survey.",
+        "Do not infer the number of unique learners from this count."
+      ]
+    },
+    {
+      "id": "nitda-dl4all-lgas-reached-2026-10-24",
+      "title": "LGAs covered in DL4ALL dashboard",
+      "value": 774,
+      "unit": "LGAs",
+      "referencePeriod": "2026-10-24",
+      "measurementType": "Administrative programme dashboard coverage count",
+      "geoLevel": "varies",
+      "geographicCoverage": "Dashboard reports 36 states, FCT and 774 LGAs",
+      "sourceId": "nitda-dl4all-dashboard",
+      "sourcePublisher": "National Information Technology Development Agency (NITDA) · DL4ALL National Digital Literacy Dashboard",
+      "sourceUrl": "https://dashboard.digitalliteracy.nitda.gov.ng/",
+      "departments": [
+        "education",
+        "software-technology"
+      ],
+      "sourceType": "official_source",
+      "interpretation": "The dashboard reports reach across all 774 LGAs; this is a programme coverage marker, not proof of uniform training or outcomes in every LGA.",
+      "limitations": [
+        "Coverage does not establish equal intensity, participation or learning outcomes in every LGA.",
+        "The count is a dashboard-reported programme metric, not independent verification of every locality.",
+        "Do not infer household or individual access from geographic coverage alone."
+      ]
+    },
+    {
+      "id": "who-nga-healthy-life-expectancy-2023",
+      "title": "Healthy life expectancy at birth",
+      "value": 54.1,
+      "unit": "years",
+      "referencePeriod": "2023",
+      "measurementType": "WHO estimate",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "who-gho-nigeria",
+      "sourcePublisher": "WHO Regional Office for Africa · Global Health Observatory",
+      "sourceUrl": "https://www.afro.who.int/node/992",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "interpretation": "WHO's national healthy-life-expectancy estimate; it accounts for time lived in less than full health and is not an individual forecast.",
+      "limitations": [
+        "National aggregate only; not a Kaduna State, LGA or facility measure.",
+        "This measure differs from life expectancy at birth; do not compare the two as if they were the same indicator.",
+        "Retain the 2023 reference year and WHO methodology."
+      ]
+    },
+    {
+      "id": "fme-asc-total-schools-2024-25",
+      "title": "Schools in the EMIS Annual School Census display",
+      "value": 215033,
+      "unit": "schools",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative count",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "The portal displays 215,033 total schools; only 124,543 were reported in this census view. The denominator and reporting completeness must be read together.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-schools-reported-2024-25",
+      "title": "Schools reported in Annual School Census",
+      "value": 124543,
+      "unit": "schools",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative count",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "Schools that submitted data in the 2024/2025 census view; this is not the full school universe.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-reporting-rate-2024-25",
+      "title": "Annual School Census reporting rate",
+      "value": 57.9,
+      "unit": "% of displayed school count",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census reporting rate",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "Only 57.9% of the displayed school count is reported in this portal view; this is a major completeness limitation.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-learners-reported-2024-25",
+      "title": "Learners in reported census records",
+      "value": 40126175,
+      "unit": "learner records",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative count",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "The portal displays 40,126,175 learners; interpret this alongside the 57.9% school reporting rate, not as a complete national enrolment count.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-learner-teacher-ratio-2024-25",
+      "title": "Learner–teacher ratio",
+      "value": 33.6,
+      "unit": "learners per teacher",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative ratio",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "The portal reports 33.6 learners per teacher for Nigeria; this is based on the census records available in the portal.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-learner-classroom-ratio-2024-25",
+      "title": "Learner–classroom ratio",
+      "value": 60.1,
+      "unit": "learners per classroom",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative ratio",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "The portal reports 60.1 learners per classroom for Nigeria; this is not a direct observation of classroom condition or teaching quality.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-learner-toilet-ratio-2024-25",
+      "title": "Learner–toilet ratio",
+      "value": 66.1,
+      "unit": "learners per toilet",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative ratio",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "The portal reports 66.1 learners per toilet for Nigeria; this does not establish whether toilets are functional, safe or accessible.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-kaduna-learners-2024-25",
+      "title": "Learners recorded in Kaduna State",
+      "value": 2718039,
+      "unit": "learner records",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative count",
+      "geoLevel": "state",
+      "geographicCoverage": "Kaduna State",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "The Kaduna State table displays 2,718,039 learners. This is state-level administrative data, not Kaduna South or LGA enrolment.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-kaduna-learner-teacher-ratio-2024-25",
+      "title": "Kaduna State learner–teacher ratio",
+      "value": 51.3,
+      "unit": "learners per teacher",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative ratio",
+      "geoLevel": "state",
+      "geographicCoverage": "Kaduna State",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "The Kaduna State table reports 51.3 learners per teacher; the 57.9% national reporting rate and state-specific completeness must be considered.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-kaduna-learner-classroom-ratio-2024-25",
+      "title": "Kaduna State learner–classroom ratio",
+      "value": 56.9,
+      "unit": "learners per classroom",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative ratio",
+      "geoLevel": "state",
+      "geographicCoverage": "Kaduna State",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "The Kaduna State table reports 56.9 learners per classroom; this is not Kaduna South or an individual school measure.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-kaduna-learner-toilet-ratio-2024-25",
+      "title": "Kaduna State learner–toilet ratio",
+      "value": 139.5,
+      "unit": "learners per toilet",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative ratio",
+      "geoLevel": "state",
+      "geographicCoverage": "Kaduna State",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "The Kaduna State table reports 139.5 learners per toilet; this does not establish toilet functionality, safety or accessibility at a named school.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "nphcda-phc-revitalised-aug-2025",
+      "title": "PHCs reported revitalised",
+      "value": 1295,
+      "unit": "PHCs",
+      "referencePeriod": "As of August 2025",
+      "measurementType": "Agency-reported programme progress",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported 1,295 PHCs revitalised against a four-year target of 17,600.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-phc-revitalisation-underway-aug-2025",
+      "title": "PHCs at various stages of revitalisation",
+      "value": 3469,
+      "unit": "PHCs",
+      "referencePeriod": "As of August 2025",
+      "measurementType": "Agency-reported programme progress",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported another 3,469 PHCs at various stages of revitalisation; these are not counted as completed.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-solar-power-completed-2025",
+      "title": "PHCs with solar power installation completed",
+      "value": 38,
+      "unit": "PHCs",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported infrastructure output",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported solar power installation completed in 38 PHCs; the source also reported 34 ongoing.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-solar-power-ongoing-2025",
+      "title": "PHCs with solar power installation ongoing",
+      "value": 34,
+      "unit": "PHCs",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported infrastructure progress",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported solar power installation ongoing in 34 PHCs; this is not a completed installation count.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-solar-boreholes-2025",
+      "title": "PHCs with solar boreholes installed",
+      "value": 61,
+      "unit": "PHCs",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported infrastructure output",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported solar boreholes installed in 61 PHCs to support safe water supply.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-mnh-commodities-facilities-2025",
+      "title": "PHCs receiving lifesaving maternal and newborn health commodities",
+      "value": 1936,
+      "unit": "PHCs across 10 states",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported commodity distribution",
+      "geoLevel": "varies",
+      "geographicCoverage": "10 states; states not listed in the source summary",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported distribution of lifesaving maternal and newborn health commodities to 1,936 PHC facilities in 10 states; this is not a current stock-on-hand measure.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-sdd-refrigerators-2025",
+      "title": "Solar direct-drive refrigerators deployed",
+      "value": 1653,
+      "unit": "refrigerators",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported cold-chain output",
+      "geoLevel": "varies",
+      "geographicCoverage": "36 states and FCT",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported 1,653 additional solar direct-drive refrigerators procured and deployed to PHC facilities across 36 states and FCT.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-bhcpf-disbursement-2023-mid2025",
+      "title": "BHCPF funds disbursed to PHCs",
+      "value": 50.8,
+      "unit": "billion NGN",
+      "referencePeriod": "2023 to mid-2025",
+      "measurementType": "Agency-reported fund disbursement",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported ₦50.8 billion disbursed to 8,309 PHCs between 2023 and mid-2025; disbursement is not proof of completed service delivery.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-bhcpf-disbursement-h1-2025",
+      "title": "BHCPF disbursement in first half of 2025",
+      "value": 12.4,
+      "unit": "billion NGN",
+      "referencePeriod": "First half of 2025",
+      "measurementType": "Agency-reported fund disbursement",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported ₦12.4 billion disbursed in the first half of 2025; this is part of the wider 2023–mid-2025 figure.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-bhcpf-level2-upgrades-2025",
+      "title": "Facilities upgraded to Level 2 standard under BHCPF",
+      "value": 2341,
+      "unit": "facilities",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported facility upgrade count",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported 2,341 facilities upgraded to Level 2 standard under BHCPF funding.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-pfmo-deployments-2025",
+      "title": "Performance and Financial Management Officers deployed",
+      "value": 774,
+      "unit": "officers",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported workforce deployment",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria · one per LGA",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported 774 youths deployed as Performance and Financial Management Officers, one per LGA, to support PHC monitoring.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-frontline-workers-trained-2025",
+      "title": "Frontline health workers trained",
+      "value": 69106,
+      "unit": "workers",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported workforce training count",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported 69,106 frontline health workers trained against a four-year target of 120,000; this is a training count, not a competency assessment.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-kaduna-yobe-sba-recruitment-2025",
+      "title": "Skilled birth attendants recruited in Kaduna and Yobe",
+      "value": 380,
+      "unit": "staff across two states",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported workforce recruitment",
+      "geoLevel": "state",
+      "geographicCoverage": "Kaduna State and Yobe State combined",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported Kaduna and Yobe had completed recruitment of 380 skilled birth attendants combined; the source does not split the count by state.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-kaduna-yobe-cbhw-recruitment-2025",
+      "title": "Community-based health workers recruited in Kaduna and Yobe",
+      "value": 1227,
+      "unit": "staff across two states",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported workforce recruitment",
+      "geoLevel": "state",
+      "geographicCoverage": "Kaduna State and Yobe State combined",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported Kaduna and Yobe had completed recruitment of 1,227 community-based health workers combined; the source does not split the count by state.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    }
+  ],
+  "catalogOnlySources": [
+    {
+      "id": "nbs-cpi-catalog",
+      "publisher": "National Bureau of Statistics (NBS)",
+      "title": "Consumer Price Index and inflation reports catalogue",
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/related-materials",
+      "status": "catalogue",
+      "note": "The official catalogue lists the September 2026 CPI report, published 15 October 2026, as a downloadable ZIP with PDF and XLSX tables. The report tables have not yet been extracted and validated into observations. CPI metadata uses a 2024 price base and 2023 weight reference.",
+      "departments": [
+        "health",
+        "education",
+        "software-technology",
+        "civic"
+      ]
+    },
+    {
+      "id": "ondi-innovation",
+      "publisher": "Office for Nigerian Digital Innovation (ONDI), NITDA",
+      "title": "Office for Nigerian Digital Innovation",
+      "url": "https://www.ondi.nitda.gov.ng/",
+      "status": "catalogue",
+      "note": "Official ecosystem support and innovation programme information; published headline metrics require their own reference dates and methodology before being treated as national indicators.",
+      "departments": [
+        "software-technology"
+      ]
+    },
+    {
+      "id": "naseni-innovation-hub",
+      "publisher": "NASENI Innovation Hub",
+      "title": "NASENI Innovation Hub programmes and innovation support",
+      "url": "https://innovation.naseni.gov.ng/",
+      "status": "partial",
+      "note": "A finalist-count snapshot is integrated; broader NASENI programme outputs, commercialisation results and innovation-support datasets are not yet integrated.",
+      "departments": [
+        "software-technology",
+        "education"
+      ]
+    },
+    {
+      "id": "ubec-statistics",
+      "publisher": "Universal Basic Education Commission (UBEC)",
+      "title": "Digest of Statistics and Reports",
+      "url": "https://ubec.gov.ng/reports/",
+      "status": "catalogue",
+      "note": "UBEC lists a 2024 Annual Report, 2022/2023 National Personnel Audit, 2022 public/private school digests and a 2025 Q4 key performance report. Table extraction and period harmonisation are pending.",
+      "departments": [
+        "education"
+      ]
+    },
+    {
+      "id": "unicef-nalabe-2022",
+      "publisher": "UNICEF Nigeria and UBEC",
+      "title": "National Assessment of Learning Achievement in Basic Education (NALABE 2022)",
+      "url": "https://www.unicef.org/nigeria/reports/national-assessment-learning-achievement-basic-education",
+      "status": "catalogue",
+      "note": "Published December 2025; assesses P3, P5 and JS2 learners across all states and FCT. Result tables by grade, subject and proficiency level are not yet extracted into observations.",
+      "departments": [
+        "education"
+      ]
+    },
+    {
+      "id": "nemis-downloads",
+      "publisher": "Federal Ministry of Education — NEMIS",
+      "title": "NEMIS data visuals and education digest downloads",
+      "url": "https://nemis.education.gov.ng/downloads",
+      "status": "catalogue",
+      "note": "The public downloads page lists older national education digest editions and school-census materials. Keep it separate from the 2024/2025 FME EMIS portal until definitions and reporting frames are reconciled.",
+      "departments": [
+        "education"
+      ]
+    },
+    {
+      "id": "federal-ministry-health-msdat",
+      "publisher": "Federal Ministry of Health and Social Welfare",
+      "title": "MultiSource Data Analytics & Triangulation Platform (MSDAT)",
+      "url": "https://fmohconnect.gov.ng/msdat/",
+      "status": "catalogue",
+      "note": "The Ministry describes MSDAT as a transparent view across routine data, surveys and global estimates. Indicator-level extraction, source provenance and method reconciliation are pending.",
+      "departments": [
+        "health"
+      ]
+    },
+    {
+      "id": "health-facility-registry",
+      "publisher": "Federal Ministry of Health and Social Welfare",
+      "title": "Nigeria Health Facility Registry (NHFR) and External API",
+      "url": "https://hfr.fmohconnect.gov.ng/developers",
+      "status": "catalogue",
+      "note": "The official developer documentation describes read-only REST and FHIR endpoints requiring an approved API key. API access and data-quality review are pending; registration does not prove facility functionality.",
+      "departments": [
+        "health"
+      ]
+    },
+    {
+      "id": "federal-ministry-health-reports",
+      "publisher": "Federal Ministry of Health and Social Welfare",
+      "title": "Health reports and publications",
+      "url": "https://health.gov.ng/reports/",
+      "status": "catalogue",
+      "note": "Public report categories include Family Health, Public Health, Hospital Services, Food and Drugs, and Nutrition. Individual reports must be extracted with their own date, geography and method.",
+      "departments": [
+        "health"
+      ]
+    },
+    {
+      "id": "budget-office-federal",
+      "publisher": "Budget Office of the Federation",
+      "title": "Federal budget, appropriation and implementation reports",
+      "url": "https://budgetoffice.gov.ng/?page_id=1366",
+      "status": "catalogue",
+      "note": "The official page lists the 2026 Q1 Budget Implementation Report (2 November 2026) and Q2 report (7 November 2026). Appropriation, release, expenditure and completed delivery must remain separate; report tables are not yet integrated.",
+      "departments": [
+        "civic",
+        "education",
+        "health",
+        "software-technology"
+      ]
+    },
+    {
+      "id": "nphcda-phc-functionality-dashboard",
+      "publisher": "NPHCDA",
+      "title": "PHC Functionality Dashboard and revitalised facility directory",
+      "url": "https://phc.nphcda.gov.ng/infographic",
+      "status": "catalogue",
+      "note": "NPHCDA describes this as a live PHC functionality dashboard. The page resolved but did not expose readable structured data in this review. Facility-level extraction and freshness checks are pending.",
+      "departments": [
+        "health"
+      ]
+    },
+    {
+      "id": "nphcda-data-requisition",
+      "publisher": "NPHCDA",
+      "title": "NPHCDA Data Requisition Portal",
+      "url": "https://portal.nphcda.gov.ng/",
+      "status": "catalogue",
+      "note": "Formal request route for NPHCDA PHC datasets. Dataset access, data dictionaries, permitted use and privacy conditions require approval; no dataset is integrated yet.",
+      "departments": [
+        "health"
+      ]
+    },
+    {
+      "id": "federal-state-health-report-2024",
+      "publisher": "Federal Ministry of Health and Social Welfare",
+      "title": "The State of Health of the Nation Report 2024",
+      "url": "https://fmohconnect.gov.ng/wp-content/uploads/2025/05/The-State-of-Health-of-the-Nation-Report-2024.pdf",
+      "status": "catalogue",
+      "note": "Official national health-sector report covering PHC, health financing, workforce and commodities. Tables and chapter-specific reference periods are not yet extracted into observations.",
+      "departments": [
+        "health"
+      ]
+    },
+    {
+      "id": "federal-health-logistics-programme",
+      "publisher": "Federal Ministry of Health and Social Welfare",
+      "title": "National Product Supply Chain Management Programme",
+      "url": "https://health.gov.ng/food-and-drug-programs/",
+      "status": "catalogue",
+      "note": "Official programme and publication source for essential medicines and health commodities. Current facility-level PHC stock-on-hand, consumption and losses data are not publicly ingested.",
+      "departments": [
+        "health"
+      ]
+    }
+  ]
+}
