@@ -116,7 +116,7 @@ export default function Departments() {
     </PageHeader>
     <Section title="A. Official evidence" id="official-evidence">
       <p className="dept-note">Only sources in the Observatory registry are shown. A registered source is not automatically an integrated indicator.</p>
-      {registeredSources.length === 0 ? <div className="dept-empty">{DEPARTMENT_EMPTY_STATE}</div> : registeredSources.map((source) => {
+      {registeredSources.length === 0 ? <div className="dept-empty">No LGA-level official indicator is integrated for this department yet. Source-attributed national/state snapshots and catalogue-only sources are shown below; they are not local findings.</div> : registeredSources.map((source) => {
         const indicator = config.indicators.find((item) => item.sourceId === source.id);
         const result = indicator ? observations[indicator.id] : undefined;
         const localObservation = result?.observations.find((obs) =>
