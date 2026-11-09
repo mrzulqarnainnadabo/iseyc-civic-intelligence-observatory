@@ -12,7 +12,7 @@ describe("selected ISN innovation hub directory", () => {
   it("registers the public innovation ecosystem sources used by the departments", () => {
     const required = [
       "isn-hubs-directory-2026", "isn-hub-assessment-2026", "startup-support-engagement-portal",
-      "nbti-incubation-centres", "afrilabs-nigeria-hubs", "cchub-programmes", "nipost-digital-postcode-hub-api-2026",
+      "nbti-incubation-centres", "afrilabs-nigeria-hubs", "cchub-programmes-2026", "nipost-digital-postcode-hub-api-2026",
     ];
     for (const id of required) expect(sources.some((source) => source.id === id)).toBe(true);
   });
