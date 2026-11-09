@@ -22,6 +22,7 @@ function valueLabel(value: number, unit: string, qualifier?: string) {
 
 export default function NationalSnapshots({ departmentId, compact = false }: { departmentId?: string; compact?: boolean }) {
   const [bundle, setBundle] = useState<SnapshotBundle | null>(null);
+  const [showAll, setShowAll] = useState(false);
   const [status, setStatus] = useState<'loading' | 'ready' | 'unavailable'>('loading');
   useEffect(() => {
     let alive = true;
@@ -37,16 +38,17 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
 
   const observations = useMemo(() => (bundle?.observations || []).filter((item) => !departmentId || item.departments.includes(departmentId)), [bundle, departmentId]);
   const catalogOnly = useMemo(() => (bundle?.catalogOnlySources || []).filter((item) => !departmentId || item.departments.includes(departmentId)), [bundle, departmentId]);
+  const visibleObservations = showAll ? observations : observations.slice(0, 6);
 
   return (
     <section className={compact ? 'national-snapshots national-snapshots--compact' : 'national-snapshots'} aria-labelledby={departmentId ? 'department-snapshots-title' : 'national-snapshots-title'}>
       <div className="national-snapshots__head">
         <div><span className="national-snapshots__kicker">Source-attributed data</span><h2 id={departmentId ? 'department-snapshots-title' : 'national-snapshots-title'}>{departmentId ? 'National context for this department' : 'National evidence snapshots'}</h2></div>
-        <span className="national-snapshots__meta">{status === 'ready' ? 'Checked ' + bundle?.checkedAt : status === 'loading' ? 'Loading source snapshots' : 'Snapshot service unavailable'}</span>
+        <span className="national-snapshots__meta">{status === 'ready' ? observations.length + ' snapshots · checked ' + bundle?.checkedAt : status === 'loading' ? 'Loading source snapshots' : 'Snapshot service unavailable'}</span>
       </div>
       {status === 'loading' ? <p className="national-snapshots__empty">Retrieving curated source snapshots…</p> :
        status === 'unavailable' ? <p className="national-snapshots__empty">Source snapshots could not be loaded. No substitute figures are displayed.</p> :
-       observations.length ? <div className="national-snapshot-grid">{observations.map((item) => (
+       observations.length ? <div className="national-snapshot-grid">{visibleObservations.map((item) => (
          <article className="national-snapshot" key={item.id}>
            <div className="national-snapshot__top"><span>{item.measurementType}</span><span>{item.geoLevel === 'national' ? 'National' : item.geoLevel === 'varies' ? 'Multi-level' : item.geoLevel}</span></div>
            <h3>{item.title}</h3>
@@ -57,7 +59,7 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
            <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">Original source ↗</a>
            <details><summary>Limitations</summary><ul>{item.limitations.map((limit) => <li key={limit}>{limit}</li>)}</ul></details>
          </article>
-       ))}</div> : <p className="national-snapshots__empty">No curated snapshot is currently assigned to {departmentId ? DEPARTMENT_LABEL[departmentId] || 'this department' : 'this view'}.</p>}
+       ))}</div>{observations.length > 6 && <button type="button" className="national-snapshots__toggle" onClick={() => setShowAll((value) => !value)}>{showAll ? 'Show fewer snapshots' : 'Show all ' + observations.length + ' snapshots'}</button>} : <p className="national-snapshots__empty">No curated snapshot is currently assigned to {departmentId ? DEPARTMENT_LABEL[departmentId] || 'this department' : 'this view'}.</p>}
       {catalogOnly.length > 0 && <div className="national-catalogue">
         <div className="national-catalogue__head"><strong>Sources under assessment</strong><span>Catalogue status is source-specific</span></div>
         <div className="national-catalogue__grid">{catalogOnly.map((item) => <article key={item.id}><span>{item.publisher} · {item.status === "partial" ? "Partial integration" : "Catalogue only"}</span><strong>{item.title}</strong><p>{item.note}</p><a href={item.url} target="_blank" rel="noopener noreferrer">Open source ↗</a></article>)}</div>
