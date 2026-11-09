@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import NationalSnapshots from '../components/NationalSnapshots';
 import { useBundle } from '../lib/data';
 import { fetchViaGateway, type IndicatorObservation } from '../lib/indicators';
 import { fetchDepartmentCommunityRecords, departmentMatchesRecord, stateRecordScope, type DepartmentCommunityFeed, type PublishedDepartmentRecord } from '../adapters/departmentCommunityRecords';
@@ -19,24 +20,24 @@ const DEPARTMENTS: DepartmentConfig[] = [
     sources:['ubec-digest-2019-20','ubec-npa-2022-23','ubec-reports-digests','worldbank-wdi-primary-enrolment'],
     indicators:[{id:'wb-nga-se-prm-enrr',sourceId:'worldbank-wdi-primary-enrolment',label:'Primary school gross enrolment ratio'}],
     unknowns:['Current Kaduna South school-level enrolment, attendance and completion are not integrated.','Current teacher availability and learning outcomes for Kaduna South are not established by the registered national series.'],
-    facts:['A source may be described by its publisher, dataset, reference period and stated geographic coverage.','A national gross enrolment ratio is not a Kaduna South school attendance rate.'],
+    facts:['A source may be described by its publisher, dataset, reference period and stated geographic coverage.','A national gross enrolment ratio is not a Kaduna South school attendance rate.','NITDA DL4ALL reports programme-level digital-literacy records; this is not a national learning-outcome or school-attendance survey.'],
     hypotheses:['A community report about a school may indicate a question for field inquiry; it does not establish how widespread the condition is.'] },
   { id:'health', title:'Health & Well-being', summary:'Population health evidence, health-system sources and published community concerns.',
     sources:['ndhs-2024','kaduna-ksphcb-recruitment-plan-2025','hfr','kaduna-hefa','nphcda-data-requisition','worldbank-wdi-under5-mortality'],
     indicators:[{id:'wb-nga-sh-dyn-mort',sourceId:'worldbank-wdi-under5-mortality',label:'Under-five mortality rate'}],
     unknowns:['Current Kaduna South facility staffing, medicine availability and service continuity are not integrated.','The Kaduna PHC recruitment plan is a March 2025 planning baseline, not a current headcount or proof of deployment.','HFR access requires an approved API key; HEFA raw data and public bulk export are not currently integrated.'],
-    facts:['A registered facility is not proof that it is staffed, stocked or operational.','A national modelled mortality estimate cannot establish performance at a named PHC.'],
+    facts:['A registered facility is not proof that it is staffed, stocked or operational.','WHO reports a national under-five mortality estimate of 59.5 per 1,000 live births for 2024; it cannot establish performance at a named PHC.','WHO national health-expenditure estimates are not Kaduna State or LGA budget allocations.'],
     hypotheses:['A published report about a facility can guide a follow-up question; it is not proof of a system-wide condition.'] },
   { id:'software-technology', title:'Software & Technology', summary:'Digital systems, software capacity and technology access — without unsupported indicators.',
     sources:[], indicators:[],
-    unknowns:['No dedicated Software & Technology indicator or retrievable official dataset is integrated in the current Observatory registry.','No Kaduna South digital-access, software-sector or technology-employment figure is available in this department pack.'],
-    facts:['The Observatory currently has no integrated official figure for this department.'],
+    unknowns:['No Kaduna South digital-access, software-sector employment, innovation investment or company-survival dataset is integrated.','National programme counts and hub assessments do not establish the number of active technology firms in a specific LGA.'],
+    facts:['NITDA DL4ALL reports verified digital-literacy programme records across Nigeria; the dashboard is not a representative digital-skills survey.','The Innovation Support Network reported more than 190 active hubs in its 2026 assessment; this is a published ecosystem assessment, not a live government register.','NASENI lists 108 InnovateNaija finalists across 34 states; this is a programme selection count, not a national innovation census.'],
     hypotheses:['Anecdotes about connectivity, device access or digital skills are leads for structured research, not population estimates.'] },
   { id:'civic', title:'Civic Department', summary:'Civic participation, published public concerns and official electoral evidence.',
     sources:['inec-voter-register-pvc','inec-cvr-2025-26'],
     indicators:[],
     unknowns:['A final validated post-CVR national register and Kaduna South breakdown are not integrated.','Published community records do not establish how common a civic concern is.'],
-    facts:['The CommunityRecord feed contains published records only.','INEC reference periods and measure definitions must be preserved; registration, PVC collection and turnout are different measures.'],
+    facts:['The CommunityRecord feed contains published records only.','NIMC reported 121,404,601 NIN enrolment records as at 30 June 2025; this is not a population census.','INEC reference periods and measure definitions must be preserved; registration, PVC collection and turnout are different measures.'],
     hypotheses:['A concentration of published submissions may indicate where further investigation is useful, but not prevalence or public consensus.'] },
 ];
 const PILOT_LOCATION = 'Kaduna South, Kaduna State';
@@ -159,7 +160,8 @@ export default function Departments() {
         </article>
       </>}
     </Section>
-    <Section title="B. Related published CommunityRecords" id="community-records">
+    <NationalSnapshots departmentId={config.id} compact />
+        <Section title="B. Related published CommunityRecords" id="community-records">
       <div className="dept-feed-meta"><span>Source: {feed?.source || 'Loading Mandate CommunityRecord v0.1'}</span><span>{feed?.fallbackReason ? 'Fallback reason: ' + feed.fallbackReason : feed?.status === 'ready' ? 'Primary contract · v0.1.0' : ''}</span></div>
       <div className="dept-state-filter">
         <label htmlFor="department-state-filter">Filter published submissions by state</label>
