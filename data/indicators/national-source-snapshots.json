@@ -236,6 +236,78 @@
         "The source page excludes three states from the finalist count; do not infer no innovation activity in those states."
       ],
       "sourceType": "official_source"
+    },
+    {
+      "id": "nitda-dl4all-progress-target-2026-10-24",
+      "title": "Progress towards 70% digital-literacy programme target",
+      "value": 5.57,
+      "unit": "% of programme target",
+      "referencePeriod": "2026-10-24",
+      "measurementType": "Administrative programme dashboard ratio",
+      "geoLevel": "varies",
+      "geographicCoverage": "Dashboard reports 36 states, FCT and 774 LGAs",
+      "sourceId": "nitda-dl4all-dashboard",
+      "sourcePublisher": "National Information Technology Development Agency (NITDA) · DL4ALL National Digital Literacy Dashboard",
+      "sourceUrl": "https://dashboard.digitalliteracy.nitda.gov.ng/",
+      "departments": [
+        "education",
+        "software-technology"
+      ],
+      "sourceType": "official_source",
+      "interpretation": "Dashboard-reported progress towards a 70% programme target by 2027; this is not a national digital-literacy prevalence rate.",
+      "limitations": [
+        "The 50 million target population is a programme denominator, not a measured population denominator.",
+        "Progress depends on programme reporting and the dashboard's verification rules.",
+        "Do not compare this target-progress percentage with survey-based digital-literacy prevalence."
+      ]
+    },
+    {
+      "id": "nitda-dl4all-communities-reached-2026-10-24",
+      "title": "Communities reached in DL4ALL dashboard",
+      "value": 14747,
+      "unit": "communities",
+      "referencePeriod": "2026-10-24",
+      "measurementType": "Administrative programme dashboard count",
+      "geoLevel": "varies",
+      "geographicCoverage": "Dashboard reports 36 states, FCT and 774 LGAs",
+      "sourceId": "nitda-dl4all-dashboard",
+      "sourcePublisher": "National Information Technology Development Agency (NITDA) · DL4ALL National Digital Literacy Dashboard",
+      "sourceUrl": "https://dashboard.digitalliteracy.nitda.gov.ng/",
+      "departments": [
+        "education",
+        "software-technology"
+      ],
+      "sourceType": "official_source",
+      "interpretation": "NITDA dashboard-reported geographic reach; not a count of all communities with sustained digital-skills access.",
+      "limitations": [
+        "The dashboard does not establish equal intensity, duration or quality of training in each community.",
+        "Coverage is programme-reported, not a representative community survey.",
+        "Do not infer the number of unique learners from this count."
+      ]
+    },
+    {
+      "id": "nitda-dl4all-lgas-reached-2026-10-24",
+      "title": "LGAs covered in DL4ALL dashboard",
+      "value": 774,
+      "unit": "LGAs",
+      "referencePeriod": "2026-10-24",
+      "measurementType": "Administrative programme dashboard coverage count",
+      "geoLevel": "varies",
+      "geographicCoverage": "Dashboard reports 36 states, FCT and 774 LGAs",
+      "sourceId": "nitda-dl4all-dashboard",
+      "sourcePublisher": "National Information Technology Development Agency (NITDA) · DL4ALL National Digital Literacy Dashboard",
+      "sourceUrl": "https://dashboard.digitalliteracy.nitda.gov.ng/",
+      "departments": [
+        "education",
+        "software-technology"
+      ],
+      "sourceType": "official_source",
+      "interpretation": "The dashboard reports reach across all 774 LGAs; this is a programme coverage marker, not proof of uniform training or outcomes in every LGA.",
+      "limitations": [
+        "Coverage does not establish equal intensity, participation or learning outcomes in every LGA.",
+        "The count is a dashboard-reported programme metric, not independent verification of every locality.",
+        "Do not infer household or individual access from geographic coverage alone."
+      ]
     }
   ],
   "catalogOnlySources": [
@@ -245,7 +317,7 @@
       "title": "Consumer Price Index and inflation reports catalogue",
       "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/related-materials",
       "status": "catalogue",
-      "note": "Official catalogue for monthly CPI reports. Rebased CPI uses 2024 price base and 2023 weight reference; do not splice pre-rebase and post-rebase series without the NBS bridge methodology.",
+      "note": "The official catalogue lists the September 2026 CPI report, published 15 October 2026, as a downloadable ZIP with PDF and XLSX tables. The report tables have not yet been extracted and validated into observations. CPI metadata uses a 2024 price base and 2023 weight reference.",
       "departments": [
         "health",
         "education",
