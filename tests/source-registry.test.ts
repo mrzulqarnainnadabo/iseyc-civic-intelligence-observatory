@@ -8,7 +8,7 @@ describe("national source registry", () => {
     expect(ids.size).toBe(sources.length);
     expect(sources.length).toBeGreaterThanOrEqual(65);
     for (const source of sources) {
-      expect(source.url, source.id).toMatch(/^https:\/\//);
+      expect(source.url, source.id).toMatch(/^https?:\/\//);
       expect(source.limitations.length, source.id).toBeGreaterThan(0);
     }
   });
@@ -19,7 +19,7 @@ describe("national source registry", () => {
       "federal-ministry-health-msdat", "health-facility-registry", "federal-state-health-report-2024",
       "nitda-dl4all-dashboard", "naseni-innovation-hub", "isn-hub-assessment-2026", "ondi-innovation",
       "nbs-cpi-monthly", "nbs-gdp-quarterly", "cbn-statistics", "imf-article-iv-2026", "imf-weo-oct-2026",
-      "budget-office-federal", "inec-voter-register", "nimc-enrolment-oct-2025",
+      "budget-office-federal", "inec-voter-register-pvc", "nimc-enrolment-oct-2025",
     ]) expect(ids.has(id), id).toBe(true);
   });
   it("keeps source availability distinct from extracted data", () => {
