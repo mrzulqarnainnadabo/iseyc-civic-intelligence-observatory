@@ -1074,7 +1074,7 @@
       "Pre-rebase and post-rebase series must not be joined without the NBS bridge methodology.",
       "The catalogue is a report index, not a harmonised live API; every report's tables and reference month require extraction and review before indicator integration."
     ],
-    "notes": "CPI methodology metadata states a 2024 price reference base, 2023 weight reference and 934 product varieties across 13 COICOP divisions."
+    "notes": "The official catalogue lists the September 2026 CPI report, published 15 October 2026, as a downloadable ZIP with PDF and XLSX tables. The report tables have not yet been extracted and validated into observations. CPI metadata states a 2024 price base, 2023 weight reference and 934 product varieties across 13 COICOP divisions."
   },
   {
     "id": "naseni-innovation-hub",
