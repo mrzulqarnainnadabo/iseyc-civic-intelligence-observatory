@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import NationalSnapshots from '../components/NationalSnapshots';
+import '../styles/ecosystem.css';
 import { useEffect, useMemo, useState } from 'react';
 import { useBundle } from '../lib/data';
 import { useAdapter } from '../lib/hooks';
