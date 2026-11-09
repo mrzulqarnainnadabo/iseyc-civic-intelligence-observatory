@@ -4,6 +4,7 @@ import { useBundle } from '../lib/data';
 import { fetchViaGateway, type IndicatorObservation } from '../lib/indicators';
 import { fetchDepartmentCommunityRecords, departmentMatchesRecord, stateRecordScope, type DepartmentCommunityFeed, type PublishedDepartmentRecord } from '../adapters/departmentCommunityRecords';
 import { DEPARTMENT_EMPTY_STATE, type DepartmentId, type DepartmentEvidence, validateDepartmentEvidence } from '../data/departmentEvidence';
+import NationalSnapshotGrid from '../components/NationalSnapshotGrid';
 import { PageHeader, Section } from '../design/layout';
 import inecPvc2023 from '../data/indicators/inec-pvc-2023.json';
 import inecCvr2025 from '../data/indicators/inec-cvr-2025-26.json';
@@ -16,13 +17,13 @@ type DepartmentConfig = {
 };
 const DEPARTMENTS: DepartmentConfig[] = [
   { id:'education', title:'Education & Capacity Building', summary:'Schooling, education access, capacity and learning evidence.',
-    sources:['ubec-digest-2019-20','ubec-npa-2022-23','ubec-reports-digests','worldbank-wdi-primary-enrolment'],
+    sources:['ubec-digest-2019-20','ubec-npa-2022-23','ubec-reports-digests','worldbank-wdi-primary-enrolment','nbs-microdata-catalog'],
     indicators:[{id:'wb-nga-se-prm-enrr',sourceId:'worldbank-wdi-primary-enrolment',label:'Primary school gross enrolment ratio'}],
     unknowns:['Current Kaduna South school-level enrolment, attendance and completion are not integrated.','Current teacher availability and learning outcomes for Kaduna South are not established by the registered national series.'],
     facts:['A source may be described by its publisher, dataset, reference period and stated geographic coverage.','A national gross enrolment ratio is not a Kaduna South school attendance rate.'],
     hypotheses:['A community report about a school may indicate a question for field inquiry; it does not establish how widespread the condition is.'] },
   { id:'health', title:'Health & Well-being', summary:'Population health evidence, health-system sources and published community concerns.',
-    sources:['ndhs-2024','kaduna-ksphcb-recruitment-plan-2025','hfr','kaduna-hefa','nphcda-data-requisition','worldbank-wdi-under5-mortality'],
+    sources:['ndhs-2024','kaduna-ksphcb-recruitment-plan-2025','hfr','kaduna-hefa','nphcda-data-requisition','worldbank-wdi-under5-mortality','who-gho-nigeria'],
     indicators:[{id:'wb-nga-sh-dyn-mort',sourceId:'worldbank-wdi-under5-mortality',label:'Under-five mortality rate'}],
     unknowns:['Current Kaduna South facility staffing, medicine availability and service continuity are not integrated.','The Kaduna PHC recruitment plan is a March 2025 planning baseline, not a current headcount or proof of deployment.','HFR access requires an approved API key; HEFA raw data and public bulk export are not currently integrated.'],
     facts:['A registered facility is not proof that it is staffed, stocked or operational.','A national modelled mortality estimate cannot establish performance at a named PHC.'],
@@ -33,7 +34,7 @@ const DEPARTMENTS: DepartmentConfig[] = [
     facts:['The Observatory currently has no integrated official figure for this department.'],
     hypotheses:['Anecdotes about connectivity, device access or digital skills are leads for structured research, not population estimates.'] },
   { id:'civic', title:'Civic Department', summary:'Civic participation, published public concerns and official electoral evidence.',
-    sources:['inec-voter-register-pvc','inec-cvr-2025-26'],
+    sources:['inec-voter-register-pvc','inec-cvr-2025-26','nimc-enrolment-oct-2025'],
     indicators:[],
     unknowns:['A final validated post-CVR national register and Kaduna South breakdown are not integrated.','Published community records do not establish how common a civic concern is.'],
     facts:['The CommunityRecord feed contains published records only.','INEC reference periods and measure definitions must be preserved; registration, PVC collection and turnout are different measures.'],
@@ -110,7 +111,7 @@ export default function Departments() {
       <Link to="/departments" className="dept-back">← All departments</Link>
     </PageHeader>
     <Section title="A. Official evidence" id="official-evidence">
-      <p className="dept-note">Only sources in the Observatory registry are shown. A registered source is not automatically an integrated indicator.</p>
+      <p className="dept-note">Only registered publisher sources and dated evidence snapshots are shown. A source listing is not an integrated dataset.</p>\n      <NationalSnapshotGrid departmentId={config.id} />
       {registeredSources.length === 0 ? <div className="dept-empty">{DEPARTMENT_EMPTY_STATE}</div> : registeredSources.map((source) => {
         const indicator = config.indicators.find((item) => item.sourceId === source.id);
         const result = indicator ? observations[indicator.id] : undefined;
