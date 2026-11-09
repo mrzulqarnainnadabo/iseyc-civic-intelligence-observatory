@@ -20,8 +20,10 @@ describe("national source snapshot endpoint", () => {
     expect(response.body.contractVersion).toBe("1.0.0");
     expect(response.body.source).toBe("iseyc-observatory-national-snapshots-v1");
     expect(response.body.status).toBe("ok");
-    expect(response.body.records.length).toBe(6);
+    expect(response.body.records.length).toBe(10);
     expect(response.body.records.every((record) => record.sourceUrl && record.referencePeriod && record.limitations.length)).toBe(true);
+    expect(response.body.records.some((record) => record.id === "fme-annual-school-census-2024-25")).toBe(true);
+    expect(response.body.records.some((record) => record.id === "worldbank-ndu-2026-10")).toBe(true);
     expect(response.body.note).toMatch(/not a continuously refreshed data feed/);
   });
 
