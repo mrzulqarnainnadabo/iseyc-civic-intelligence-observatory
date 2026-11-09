@@ -9,7 +9,7 @@ const departments = fs.readFileSync('src/pages/Departments.tsx', 'utf8');
 const component = fs.readFileSync('src/components/NationalSnapshots.tsx', 'utf8');
 
 assert.equal(data.schemaVersion, '1.0.0');
-assert.ok(data.observations.length >= 8, 'national source snapshots must cover multiple institutions');
+assert.ok(data.observations.length >= 20, 'national source snapshots must cover multiple institutions and departments');
 const sourceIds = new Set(registry.map((item) => item.id));
 for (const item of data.observations) {
   assert.ok(item.id && item.title, 'snapshot needs a stable id and title');
@@ -24,7 +24,7 @@ for (const item of data.observations) {
 for (const item of data.catalogOnlySources) {
   assert.ok(sourceIds.has(item.id), 'catalogue-only source must exist in registry: ' + item.id);
 }
-for (const id of ['who-gho-nigeria','nitda-dl4all-dashboard','nimc-nin-enrolment-2025','imf-article-iv-2026','nbs-cpi-catalog','naseni-innovation-hub','isn-innovation-hub-assessment','ondi-innovation']) {
+for (const id of ['who-gho-nigeria','nitda-dl4all-dashboard','nimc-nin-enrolment-2025','imf-article-iv-2026','nbs-cpi-catalog','naseni-innovation-hub','isn-innovation-hub-assessment','ondi-innovation','fme-education-emis-asc-2024-25']) {
   assert.ok(sourceIds.has(id), 'national registry is missing ' + id);
 }
 assert.match(api, /validObservation/);
@@ -34,4 +34,6 @@ assert.match(departments, /NationalSnapshots departmentId=\{config.id\}/);
 assert.match(component, /Reference period/);
 assert.match(component, /Original source/);
 assert.match(component, /Catalogue only/);
+assert.ok(data.observations.some((item) => item.id === 'fme-asc-reporting-rate-2024-25' && item.value === 57.9));
+assert.ok(data.observations.some((item) => item.id === 'fme-asc-kaduna-learner-teacher-ratio-2024-25' && item.value === 51.3 && item.geographicCoverage === 'Kaduna State'));
 console.log('National source snapshots and department evidence checks passed.');
