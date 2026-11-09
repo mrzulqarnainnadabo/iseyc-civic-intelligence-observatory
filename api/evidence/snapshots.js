@@ -1,19 +1,35 @@
 import snapshotData from '../../data/indicators/national-source-snapshots.json' with { type: 'json' };
+import sourceRegistry from '../../data/source-registry.json' with { type: 'json' };
+
+const sourceById = new Map(sourceRegistry.map((source) => [source.id, source]));
+const allowedDepartments = new Set(['education', 'health', 'software-technology', 'civic']);
 
 function validObservation(item) {
+  const source = sourceById.get(item?.sourceId);
+  let sourceHost = '';
+  let registryHost = '';
+  try {
+    sourceHost = new URL(item?.sourceUrl).hostname;
+    registryHost = new URL(source?.url).hostname;
+  } catch { return false; }
   return Boolean(
     item && typeof item.id === 'string' && item.id &&
     typeof item.title === 'string' && item.title &&
     typeof item.value === 'number' && Number.isFinite(item.value) &&
     typeof item.unit === 'string' && item.unit &&
     typeof item.referencePeriod === 'string' && item.referencePeriod &&
-    typeof item.sourceId === 'string' && item.sourceId &&
+    typeof item.sourceId === 'string' && source &&
+    ['official_source', 'published_research'].includes(item.sourceType) &&
     typeof item.sourcePublisher === 'string' && item.sourcePublisher &&
-    typeof item.sourceUrl === 'string' && item.sourceUrl.startsWith('https://') &&
-    Array.isArray(item.departments) && Array.isArray(item.limitations)
+    item.sourceUrl.startsWith('https://') && sourceHost === registryHost &&
+    ['national', 'state', 'varies'].includes(item.geoLevel) &&
+    Array.isArray(item.departments) && item.departments.length > 0 &&
+    item.departments.every((department) => allowedDepartments.has(department)) &&
+    Array.isArray(item.limitations) && item.limitations.length > 0 &&
+    item.limitations.every((limitation) => typeof limitation === 'string' && limitation.length > 0) &&
+    (item.sourceUpdateDate === undefined || /^\\d{4}-\\d{2}-\\d{2}$/.test(item.sourceUpdateDate))
   );
 }
-
 /**
  * GET /api/evidence/snapshots
  * Curated source transcriptions only; never presented as a live upstream feed.
