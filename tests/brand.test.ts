@@ -7,7 +7,7 @@ describe("ISEYC institutional brand", () => {
     const seal = readFileSync("public/iseyc-seal.svg", "utf8");
     const shell = readFileSync("src/design/layout.tsx", "utf8");
     const guide = readFileSync("docs/ISEYC-BRAND-SYSTEM.md", "utf8");
-    expect(wordmark).toContain('href="/iseyc-seal.svg"');
+    expect(wordmark).toContain('href="data:image/png;base64,');
     expect(wordmark).toContain("Empowering Youth, Shaping Communities");
     expect(seal).toContain("ISEYC official seal");
     expect(shell).toContain('src="/iseyc-wordmark.svg"');
