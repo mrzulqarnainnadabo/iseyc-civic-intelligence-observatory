@@ -17,7 +17,7 @@ type DepartmentConfig = {
 };
 const DEPARTMENTS: DepartmentConfig[] = [
   { id:'education', title:'Education & Capacity Building', summary:'Schooling, education access, capacity and learning evidence.',
-    sources:['ubec-digest-2019-20','ubec-npa-2022-23','ubec-reports-digests','worldbank-wdi-primary-enrolment','nbs-microdata-catalog'],
+    sources:['ubec-digest-2019-20','ubec-npa-2022-23','ubec-reports-digests','worldbank-wdi-primary-enrolment','nbs-microdata-catalog','nitda-dl4all-dashboard','nitda-national-digital-literacy-framework'],
     indicators:[{id:'wb-nga-se-prm-enrr',sourceId:'worldbank-wdi-primary-enrolment',label:'Primary school gross enrolment ratio'}],
     unknowns:['Current Kaduna South school-level enrolment, attendance and completion are not integrated.','Current teacher availability and learning outcomes for Kaduna South are not established by the registered national series.'],
     facts:['A source may be described by its publisher, dataset, reference period and stated geographic coverage.','A national gross enrolment ratio is not a Kaduna South school attendance rate.'],
