@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "title": "ISEYC national evidence snapshots",
   "retrievedAt": "2026-11-10",
-  "note": "Dated transcriptions from the linked publisher sources. These are not a continuously refreshed data feed. Every value retains its own reference period, geography, evidence type and limitations.",
+  "note": "Dated transcriptions from linked publisher sources. These are not continuously refreshed feeds. Every value retains its own reference period, geography, evidence type and limitations.",
   "records": [
     {
       "id": "who-nigeria-health-2021-23",
@@ -561,6 +561,158 @@
           "measurementType": "administrative reporting"
         }
       ]
+    },
+    {
+      "id": "fme-annual-school-census-national-2024-25",
+      "departmentId": "education",
+      "title": "Federal Ministry of Education · Annual School Census",
+      "publisher": "Federal Ministry of Education · Digital Nigeria Education Management Information System",
+      "sourceId": "fme-annual-school-census",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "referencePeriod": "2024/2025 school year · portal generated 22 September 2026",
+      "retrievedAt": "2026-11-10",
+      "geography": {
+        "level": "national",
+        "label": "Nigeria"
+      },
+      "evidenceType": "Official administrative school-census dashboard",
+      "metrics": [
+        {
+          "label": "Total schools displayed",
+          "value": "230,844",
+          "unit": "schools",
+          "period": "2024/2025"
+        },
+        {
+          "label": "Schools reported",
+          "value": "124,066",
+          "unit": "schools",
+          "period": "2024/2025"
+        },
+        {
+          "label": "Reporting rate",
+          "value": "53.7%",
+          "unit": "of displayed schools",
+          "period": "2024/2025"
+        },
+        {
+          "label": "Learners",
+          "value": "39,825,932",
+          "unit": "learner records",
+          "period": "2024/2025"
+        },
+        {
+          "label": "Teachers",
+          "value": "1,185,610",
+          "unit": "teacher records",
+          "period": "2024/2025"
+        },
+        {
+          "label": "Learner–teacher ratio",
+          "value": "33.6",
+          "unit": "learners per teacher",
+          "period": "2024/2025"
+        },
+        {
+          "label": "Learner–classroom ratio",
+          "value": "60.1",
+          "unit": "learners per classroom",
+          "period": "2024/2025"
+        },
+        {
+          "label": "Learner–toilet ratio",
+          "value": "65.9",
+          "unit": "learners per toilet",
+          "period": "2024/2025"
+        },
+        {
+          "label": "Female learners",
+          "value": "49.6%",
+          "unit": "of learner records",
+          "period": "2024/2025"
+        },
+        {
+          "label": "Female teachers",
+          "value": "55.7%",
+          "unit": "of teacher records",
+          "period": "2024/2025"
+        }
+      ],
+      "limitations": [
+        "Only 124,066 of 230,844 displayed schools are reported: a 53.7% reporting rate. Do not present learner, teacher or resource counts as complete national coverage.",
+        "These are administrative records from the 2024/2025 school year, not a household survey or a measure of learning outcomes.",
+        "The portal was generated on 22 September 2026; the dashboard may change when updated.",
+        "National aggregates do not establish state, LGA, school or classroom conditions.",
+        "Ratios are dashboard aggregates and do not establish school functionality, teaching quality or the condition of a named school."
+      ],
+      "interpretation": "Use the reporting rate alongside every count. The 53.7% reporting rate is a material completeness limitation, not a footnote."
+    },
+    {
+      "id": "fme-annual-school-census-kaduna-2024-25",
+      "departmentId": "education",
+      "title": "Federal Ministry of Education · Kaduna State school indicators",
+      "publisher": "Federal Ministry of Education · Digital Nigeria Education Management Information System",
+      "sourceId": "fme-annual-school-census",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "referencePeriod": "2024/2025 school year · portal generated 22 September 2026",
+      "retrievedAt": "2026-11-10",
+      "geography": {
+        "level": "state",
+        "label": "Kaduna State"
+      },
+      "evidenceType": "Official state-level administrative school-census dashboard",
+      "metrics": [
+        {
+          "label": "Learners",
+          "value": "2,718,125",
+          "unit": "learner records",
+          "period": "2024/2025"
+        },
+        {
+          "label": "Learner–teacher ratio",
+          "value": "51.3",
+          "unit": "learners per teacher",
+          "period": "2024/2025"
+        },
+        {
+          "label": "Learner–classroom ratio",
+          "value": "57.0",
+          "unit": "learners per classroom",
+          "period": "2024/2025"
+        },
+        {
+          "label": "Learner–toilet ratio",
+          "value": "139.5",
+          "unit": "learners per toilet",
+          "period": "2024/2025"
+        },
+        {
+          "label": "Female learners",
+          "value": "49.9%",
+          "unit": "of learner records",
+          "period": "2024/2025"
+        },
+        {
+          "label": "Female teachers",
+          "value": "54.2%",
+          "unit": "of teacher records",
+          "period": "2024/2025"
+        },
+        {
+          "label": "Learners with special needs",
+          "value": "16,520",
+          "unit": "learner records",
+          "period": "2024/2025"
+        }
+      ],
+      "limitations": [
+        "This is Kaduna State data, not Kaduna South, another LGA, a ward or a named school.",
+        "The national dashboard reports a 53.7% school reporting rate. State and learner aggregates must be interpreted with the source's reporting completeness and administrative methodology.",
+        "These are administrative records from the 2024/2025 school year, not a household survey or a measure of learning outcomes.",
+        "The portal was generated on 22 September 2026; the dashboard may change when updated.",
+        "Ratios do not establish the functionality, safety, accessibility or quality of an individual school."
+      ],
+      "interpretation": "A state-level signal for research prioritisation. It does not describe Kaduna South or any individual school and must not be used as a local estimate."
     }
   ]
 }
