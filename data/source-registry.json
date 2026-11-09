@@ -1409,5 +1409,33 @@
       "Reference school year is 2024/2025; do not label the values as 2026 current conditions."
     ],
     "notes": "Dashboard includes national totals and state/LGA filtering. Retain the reporting rate alongside every count."
+  },
+  {
+    "id": "worldbank-ndu-2026-10",
+    "publisher": "World Bank",
+    "name": "Nigeria Development Update — October 2026: Beyond the Federal Purse",
+    "url": "https://www.worldbank.org/en/country/nigeria/publication/nigeria-development-update-ndu",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "employment",
+      "governance",
+      "infrastructure"
+    ],
+    "kind": "international-development-data",
+    "geographicCoverage": "National",
+    "geoLevel": "national",
+    "dataType": "Macroeconomic and public-finance assessment using official national sources",
+    "updateFrequency": "Biannual report series",
+    "licence": "World Bank publication; check the report's terms before reuse.",
+    "lastChecked": "2026-11-10",
+    "checkedHow": "World Bank Nigeria Development Update page and 8 October 2026 press release reviewed.",
+    "limitations": [
+      "The headline growth estimate covers H1 2026 and is not a state or LGA growth rate.",
+      "Current-account and reserve figures are national macroeconomic aggregates, not household welfare or service-delivery measures.",
+      "The World Bank report is an analytical publication; retain the underlying official source definitions and reference periods when using individual indicators.",
+      "Do not mix estimates, projections and actuals from different editions of the Nigeria Development Update."
+    ],
+    "notes": "October 2026 edition discusses national growth, fiscal revenue, external balances and state spending priorities."
   }
 ]
