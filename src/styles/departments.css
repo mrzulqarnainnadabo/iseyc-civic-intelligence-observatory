@@ -71,3 +71,12 @@
 
 
 .dept-status--snapshot-only { background:#eaf2fa; color:#1f4e79; }
+
+
+.national-snapshot__related { margin:5px 0 0; font-size:10px; }
+.national-snapshot__related a { color:var(--g800); font-weight:700; }
+.national-snapshot__additional { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; margin:8px 0; }
+.national-snapshot__additional > div { padding:7px; border-radius:6px; background:var(--g50); }
+.national-snapshot__additional strong { display:block; color:var(--g900); font-size:13px; }
+.national-snapshot__additional span,.national-snapshot__additional em { display:block; color:var(--muted); font-size:9px; line-height:1.4; }
+.national-snapshot__additional em { margin-top:2px; font-style:normal; }
