@@ -1153,5 +1153,33 @@
       "The site is a programme information source, not a comprehensive national startup or hub census."
     ],
     "notes": "Useful for mapping public innovation support programmes and infrastructure; do not treat programme descriptions as impact evidence."
+  },
+  {
+    "id": "fme-education-emis-asc-2024-25",
+    "publisher": "Federal Ministry of Education, Nigeria — Digital Nigeria Education Management Information System",
+    "name": "Nigeria Education Statistics 2024 — Annual School Census 2024/2025",
+    "url": "https://emis.education.gov.ng/portal/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria national and state-level tables; state-level figures do not establish LGA or school-level conditions",
+    "geoLevel": "varies",
+    "dataType": "Annual School Census administrative counts and school resource ratios",
+    "updateFrequency": "School-year census publication; portal generated 18 July 2026",
+    "licence": "See Federal Ministry of Education portal terms; reuse conditions not separately reviewed.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Federal Ministry of Education Annual School Census portal reviewed; school year, national reporting totals and Kaduna State table transcribed from the portal.",
+    "limitations": [
+      "Portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+      "Learner and resource counts must be read in the context of incomplete reporting; do not automatically describe them as a complete national census total.",
+      "State-level Kaduna ratios are not Kaduna South, LGA, ward or named-school measurements.",
+      "The portal is generated on 18 July 2026; values may change when the portal is updated.",
+      "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+    ],
+    "notes": "School year 2024/2025. Portal generated 18 July 2026. Kaduna State table shows 2,718,039 learners, learner–teacher ratio 51.3, learner–classroom ratio 56.9 and learner–toilet ratio 139.5."
   }
 ]
