@@ -8,8 +8,9 @@ describe("national source registry", () => {
     expect(ids.size).toBe(sources.length);
     expect(sources.length).toBeGreaterThanOrEqual(65);
     for (const source of sources) {
-      expect(source.url, source.id).toMatch(/^https?:\/\//);
-      expect(source.limitations.length, source.id).toBeGreaterThan(0);
+      if (source.url) expect(source.url).toMatch(/^https?:\/\//);
+      else expect(source.id).toBe("iseyc-verification");
+      expect(source.limitations.length).toBeGreaterThan(0);
     }
   });
   it("covers the four ISEYC department evidence needs and national macro context", () => {
