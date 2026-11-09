@@ -39,3 +39,10 @@
 .dept-state-filter { display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; margin:12px 0 8px; }
 .dept-state-filter label { color:var(--g900); font-size:12px; font-weight:650; }
 .dept-state-filter select { min-width:min(100%,240px); min-height:40px; padding:8px 34px 8px 11px; border:1px solid var(--line); border-radius:8px; background:#fff; color:var(--g900); font-size:13px; }
+
+.dept-priorities { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
+.dept-priority { display:flex; flex-direction:column; min-height:145px; padding:15px; border:1px solid var(--line,#e2e8e2); border-radius:8px; background:#fff; }
+.dept-priority>span { color:#9a7437; font-size:9px; font-weight:800; letter-spacing:.12em; }
+.dept-priority>strong { margin:12px 0 14px; color:#24382c; font-size:12px; line-height:1.45; }
+.dept-priority>a { margin-top:auto; color:#194b3b; font-size:10px; font-weight:750; text-decoration:underline; text-underline-offset:3px; }
+@media(max-width:760px) { .dept-priorities { grid-template-columns:1fr; } .dept-priority { min-height:0; } }
