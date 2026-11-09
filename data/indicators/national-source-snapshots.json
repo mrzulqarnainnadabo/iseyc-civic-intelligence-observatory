@@ -331,6 +331,292 @@
         "This measure differs from life expectancy at birth; do not compare the two as if they were the same indicator.",
         "Retain the 2023 reference year and WHO methodology."
       ]
+    },
+    {
+      "id": "fme-asc-total-schools-2024-25",
+      "title": "Schools in the EMIS Annual School Census display",
+      "value": 215033,
+      "unit": "schools",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative count",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "The portal displays 215,033 total schools; only 124,543 were reported in this census view. The denominator and reporting completeness must be read together.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-schools-reported-2024-25",
+      "title": "Schools reported in Annual School Census",
+      "value": 124543,
+      "unit": "schools",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative count",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "Schools that submitted data in the 2024/2025 census view; this is not the full school universe.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-reporting-rate-2024-25",
+      "title": "Annual School Census reporting rate",
+      "value": 57.9,
+      "unit": "% of displayed school count",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census reporting rate",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "Only 57.9% of the displayed school count is reported in this portal view; this is a major completeness limitation.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-learners-reported-2024-25",
+      "title": "Learners in reported census records",
+      "value": 40126175,
+      "unit": "learner records",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative count",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "The portal displays 40,126,175 learners; interpret this alongside the 57.9% school reporting rate, not as a complete national enrolment count.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-learner-teacher-ratio-2024-25",
+      "title": "Learner–teacher ratio",
+      "value": 33.6,
+      "unit": "learners per teacher",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative ratio",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "The portal reports 33.6 learners per teacher for Nigeria; this is based on the census records available in the portal.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-learner-classroom-ratio-2024-25",
+      "title": "Learner–classroom ratio",
+      "value": 60.1,
+      "unit": "learners per classroom",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative ratio",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "The portal reports 60.1 learners per classroom for Nigeria; this is not a direct observation of classroom condition or teaching quality.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-learner-toilet-ratio-2024-25",
+      "title": "Learner–toilet ratio",
+      "value": 66.1,
+      "unit": "learners per toilet",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative ratio",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "The portal reports 66.1 learners per toilet for Nigeria; this does not establish whether toilets are functional, safe or accessible.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-kaduna-learners-2024-25",
+      "title": "Learners recorded in Kaduna State",
+      "value": 2718039,
+      "unit": "learner records",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative count",
+      "geoLevel": "state",
+      "geographicCoverage": "Kaduna State",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "The Kaduna State table displays 2,718,039 learners. This is state-level administrative data, not Kaduna South or LGA enrolment.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-kaduna-learner-teacher-ratio-2024-25",
+      "title": "Kaduna State learner–teacher ratio",
+      "value": 51.3,
+      "unit": "learners per teacher",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative ratio",
+      "geoLevel": "state",
+      "geographicCoverage": "Kaduna State",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "The Kaduna State table reports 51.3 learners per teacher; the 57.9% national reporting rate and state-specific completeness must be considered.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-kaduna-learner-classroom-ratio-2024-25",
+      "title": "Kaduna State learner–classroom ratio",
+      "value": 56.9,
+      "unit": "learners per classroom",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative ratio",
+      "geoLevel": "state",
+      "geographicCoverage": "Kaduna State",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "The Kaduna State table reports 56.9 learners per classroom; this is not Kaduna South or an individual school measure.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
+    },
+    {
+      "id": "fme-asc-kaduna-learner-toilet-ratio-2024-25",
+      "title": "Kaduna State learner–toilet ratio",
+      "value": 139.5,
+      "unit": "learners per toilet",
+      "referencePeriod": "2024/2025",
+      "measurementType": "Annual School Census administrative ratio",
+      "geoLevel": "state",
+      "geographicCoverage": "Kaduna State",
+      "sourceId": "fme-education-emis-asc-2024-25",
+      "sourcePublisher": "Federal Ministry of Education, Nigeria · Digital Nigeria Education Management Information System",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-07-18",
+      "interpretation": "The Kaduna State table reports 139.5 learners per toilet; this does not establish toilet functionality, safety or accessibility at a named school.",
+      "limitations": [
+        "The portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+        "Learner and resource counts must be read in the context of incomplete reporting; do not describe them as a complete national census total.",
+        "State-level Kaduna values are not Kaduna South, LGA, ward or named-school measurements.",
+        "The portal was generated on 18 July 2026; values may change when the portal is updated.",
+        "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+      ]
     }
   ],
   "catalogOnlySources": [
