@@ -20,7 +20,7 @@ describe("national source snapshot endpoint", () => {
     expect(response.body.contractVersion).toBe("1.0.0");
     expect(response.body.source).toBe("iseyc-observatory-national-snapshots-v1");
     expect(response.body.status).toBe("ok");
-    expect(response.body.records.length).toBe(5);
+    expect(response.body.records.length).toBe(6);
     expect(response.body.records.every((record) => record.sourceUrl && record.referencePeriod && record.limitations.length)).toBe(true);
     expect(response.body.note).toMatch(/not a continuously refreshed data feed/);
   });
@@ -29,7 +29,7 @@ describe("national source snapshot endpoint", () => {
     const education = request("/api/evidence/snapshots?departmentId=education");
     expect(education.statusCode).toBe(200);
     expect(education.body.records.some((record) => record.id === "nitda-dl4all-2026-10")).toBe(true);
-    expect(education.body.records.some((record) => record.id === "naseni-innovatenaija-2025")).toBe(true);
+    expect(education.body.records.some((record) => record.id === "naseni-innovatenaija-2025")).toBe(true);\n    expect(education.body.records.some((record) => record.id === "isn-innovation-hub-assessment-2026")).toBe(true);
     expect(education.body.records.some((record) => record.id === "nimc-enrolment-2025-10")).toBe(false);
   });
 
