@@ -24,7 +24,7 @@ for (const item of data.observations) {
 for (const item of data.catalogOnlySources) {
   assert.ok(sourceIds.has(item.id), 'catalogue-only source must exist in registry: ' + item.id);
 }
-for (const id of ['who-gho-nigeria','nitda-dl4all-dashboard','nimc-nin-enrolment-2025','imf-article-iv-2026','nbs-cpi-catalog','naseni-innovation-hub','isn-innovation-hub-assessment','ondi-innovation','fme-education-emis-asc-2024-25']) {
+for (const id of ['who-gho-nigeria','nitda-dl4all-dashboard','nimc-nin-enrolment-2025','imf-article-iv-2026','nbs-cpi-catalog','naseni-innovation-hub','isn-innovation-hub-assessment','ondi-innovation','fme-education-emis-asc-2024-25','ubec-statistics','unicef-nalabe-2022','nemis-downloads','federal-ministry-health-msdat','health-facility-registry','federal-ministry-health-reports','budget-office-federal']) {
   assert.ok(sourceIds.has(id), 'national registry is missing ' + id);
 }
 assert.match(api, /validObservation/);
@@ -34,6 +34,7 @@ assert.match(departments, /NationalSnapshots departmentId=\{config.id\}/);
 assert.match(component, /Reference period/);
 assert.match(component, /Original source/);
 assert.match(component, /Catalogue only/);
+assert.ok(data.catalogOnlySources.length >= 8, 'department source watch must include pending source acquisition work');
 assert.ok(data.observations.some((item) => item.id === 'fme-asc-reporting-rate-2024-25' && item.value === 57.9));
 assert.ok(data.observations.some((item) => item.id === 'fme-asc-kaduna-learner-teacher-ratio-2024-25' && item.value === 51.3 && item.geographicCoverage === 'Kaduna State'));
 console.log('National source snapshots and department evidence checks passed.');
