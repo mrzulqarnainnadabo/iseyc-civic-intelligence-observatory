@@ -1384,5 +1384,30 @@
       "Approved hub partner list and usage metrics are not included in the page reviewed."
     ],
     "notes": "The programme invited registered Nigerian hubs with at least three years' operating track record and an active portfolio of 10–15 startups/developers to apply for Digital Postcode API access."
+  },
+  {
+    "id": "fme-annual-school-census",
+    "publisher": "Federal Ministry of Education",
+    "name": "Nigeria Education Statistics 2024 — Annual School Census 2024/2025",
+    "url": "https://emis.education.gov.ng/portal/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National, state and LGA dashboard views",
+    "geoLevel": "national",
+    "dataType": "Annual school census dashboard · administrative reporting",
+    "updateFrequency": "Annual school census; dashboard reflects school year 2024/2025",
+    "licence": "Dashboard access is public; reuse terms should be checked with the publisher.",
+    "lastChecked": "2026-11-10",
+    "checkedHow": "Official Federal Ministry of Education EMIS dashboard page reviewed on 10 November 2026.",
+    "limitations": [
+      "The dashboard reports a 53.7% school reporting rate. Do not treat reported school, learner, teacher or facility totals as complete national coverage.",
+      "Administrative counts depend on school submissions and reporting completeness; they are not household survey estimates.",
+      "Learner-to-teacher and learner-to-classroom ratios are dashboard aggregates and do not establish conditions at a specific school.",
+      "Reference school year is 2024/2025; do not label the values as 2026 current conditions."
+    ],
+    "notes": "Dashboard includes national totals and state/LGA filtering. Retain the reporting rate alongside every count."
   }
 ]
