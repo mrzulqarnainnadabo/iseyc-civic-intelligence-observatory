@@ -28,7 +28,7 @@ for (const id of ['who-gho-nigeria','nitda-dl4all-dashboard','nimc-nin-enrolment
   assert.ok(sourceIds.has(id), 'national registry is missing ' + id);
 }
 assert.match(api, /validObservation/);
-assert.match(api, /Curated transcriptions, not live feeds/);
+assert.match(api, /manually transcribed source snapshots, not live feeds/);
 assert.match(overview, /NationalSnapshots/);
 assert.match(departments, /NationalSnapshots departmentId=\{config.id\}/);
 assert.match(component, /Reference period/);
