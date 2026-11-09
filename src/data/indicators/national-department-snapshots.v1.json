@@ -201,7 +201,7 @@
     },
     {
       "id": "nbs-gdp-q1-2026",
-      "departmentId": "civic",
+      "departmentId": null,
       "title": "NBS · Real GDP growth",
       "publisher": "National Bureau of Statistics",
       "sourceId": "nbs-gdp-quarterly",
