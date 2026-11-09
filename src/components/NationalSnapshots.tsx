@@ -15,11 +15,11 @@ const DEPARTMENT_LABEL: Record<string, string> = {
   'software-technology': 'Software & Technology', civic: 'Civic Department',
 };
 
-function valueLabel(value: number, unit: string) {
+function valueLabel(value: number, unit: string, qualifier?: string) {
   const formatted = value >= 1_000_000
     ? (value / 1_000_000).toLocaleString('en-NG', { maximumFractionDigits: 2 }) + ' million'
     : value.toLocaleString('en-NG', { maximumFractionDigits: 1 });
-  return formatted + (unit.startsWith('%') ? ' ' + unit : ' ' + unit);
+  return (qualifier ? qualifier + ' ' : '') + formatted + (unit.startsWith('%') ? ' ' + unit : ' ' + unit);
 }
 
 export default function NationalSnapshots({ departmentId, compact = false }: { departmentId?: string; compact?: boolean }) {
@@ -52,7 +52,7 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
          <article className="national-snapshot" key={item.id}>
            <div className="national-snapshot__top"><span>{item.measurementType}</span><span>{item.geoLevel === 'national' ? 'National' : item.geoLevel === 'varies' ? 'Multi-level' : item.geoLevel}</span></div>
            <h3>{item.title}</h3>
-           <strong className="national-snapshot__value">{valueLabel(item.value, item.unit)}</strong>
+           <strong className="national-snapshot__value">{valueLabel(item.value, item.unit, item.valueQualifier)}</strong>
            <p className="national-snapshot__period">Reference period · {item.referencePeriod}</p>
            <p className="national-snapshot__publisher">{item.sourcePublisher}</p>
            <p className="national-snapshot__interpretation">{item.interpretation}</p>
