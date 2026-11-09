@@ -30,7 +30,7 @@ export default function NationalSnapshotGrid({ departmentId }: { departmentId?: 
     <section className="national-snapshots" aria-label="Dated national evidence snapshots">
       <div className="national-snapshots__head">
         <div><span className="observatory-kicker observatory-kicker--dark">Publisher-reported evidence</span><h3>National source snapshots</h3></div>
-        <span className="national-snapshots__date">Reviewed 9 Nov 2026</span>
+        <span className="national-snapshots__date">Reviewed 10 Nov 2026</span>
       </div>
       <div className="national-snapshots__grid">
         {visible.map((record) => (
