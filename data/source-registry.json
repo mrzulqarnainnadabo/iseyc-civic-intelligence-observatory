@@ -947,5 +947,249 @@
     ],
     "notes": "Pilot source in the Observatory evidence gateway. Use as national context only unless a separately validated subnational source is obtained.",
     "lastChecked": null
+  },
+  {
+    "id": "who-gho-nigeria",
+    "publisher": "World Health Organization (WHO)",
+    "name": "Global Health Observatory — Nigeria country profile and indicator data",
+    "url": "https://www.who.int/data/gho/data/countries/country-details/GHO/nigeria",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria national aggregate; indicator-specific geography and disaggregation vary",
+    "geoLevel": "national",
+    "dataType": "Country health indicators, estimates, survey-derived and administrative series; World Health Data Hub / OData interfaces",
+    "updateFrequency": "Indicator-specific; source reference periods vary",
+    "licence": "WHO data.who.int published outputs: CC BY-NC-SA 3.0 IGO; comply with attribution and non-endorsement terms",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "WHO Nigeria country profile, WHO Global Health Observatory and API documentation reviewed",
+    "limitations": [
+      "Every indicator has its own reference year, methodology, uncertainty interval and source; do not treat the profile as one current-year dataset.",
+      "WHO states that Nigerian death-registration data are unavailable or unusable for cause-of-death analysis; related mortality figures are statistical estimates and require caution.",
+      "National estimates do not establish state, LGA, facility or household outcomes.",
+      "The legacy GHO OData API is being retired; use the current World Health Data Hub interface and revalidate API contracts before ingestion.",
+      "WHO data use does not imply WHO endorsement; do not use WHO emblems or logos."
+    ],
+    "notes": "WHO API documentation: https://www.who.int/data/gho/info/gho-odata-api. The country profile is a discovery and indicator source, not a substitute for original Nigerian administrative records."
+  },
+  {
+    "id": "imf-weo-oct-2026",
+    "publisher": "International Monetary Fund (IMF)",
+    "name": "World Economic Outlook database — October 2026 vintage",
+    "url": "https://data.imf.org/datasets/WEO",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "employment",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National macroeconomic indicators and international aggregates",
+    "geoLevel": "national",
+    "dataType": "Annual macroeconomic time series: national accounts, inflation, unemployment, fiscal indicators, trade and external balances; historical values, staff estimates and projections",
+    "updateFrequency": "Twice yearly, typically April and October",
+    "licence": "IMF data usage and copyright terms apply; verify dataset-specific reuse conditions before redistribution",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "IMF Data Portal October 2026 WEO dataset and DataMapper API documentation reviewed",
+    "limitations": [
+      "WEO mixes historical observations, IMF staff estimates and projections; every displayed year must carry its status and vintage.",
+      "IMF staff estimates may be used as proxies where complete information is unavailable and can differ from official national statistics.",
+      "Do not present projected values as observed facts or merge them into historical series without clear visual separation.",
+      "Annual national aggregates cannot explain state or LGA household/service outcomes.",
+      "Retain vintage, release date, units, definitions and revisions for every imported value."
+    ],
+    "notes": "IMF DataMapper API documentation: https://www.imf.org/external/datamapper/api/. October 2026 WEO is the current source vintage reviewed; forecast years must remain explicitly labelled."
+  },
+  {
+    "id": "nimc-enrolment-oct-2025",
+    "publisher": "National Identity Management Commission (NIMC)",
+    "name": "NIN enrolment dashboard — 31 October 2025",
+    "url": "https://nimc.gov.ng/nin/enrolment-report/october-2025",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National, state and diaspora cumulative enrolment records",
+    "geoLevel": "state",
+    "dataType": "Cumulative NIN enrolment records, disaggregated by state and sex; dashboard snapshot",
+    "updateFrequency": "Irregular dashboard releases; reference date is stated on each snapshot",
+    "licence": "NIMC reuse terms not confirmed; retain attribution and seek permission for bulk redistribution",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NIMC October 2025 enrolment dashboard reviewed; published national and state totals extracted",
+    "limitations": [
+      "Enrolment records are not a population census, active identity count or measure of access to public services.",
+      "Do not calculate coverage without a compatible population denominator, reference year and methodology.",
+      "Cumulative records may include duplicates or administrative corrections unless the source explicitly defines them as unique records.",
+      "This is a historical snapshot dated 31 October 2025, not a live 2026 count."
+    ],
+    "notes": "NIMC dashboard reports 123,906,318 total enrolment records nationally and 7,326,730 for Kaduna State as at 31 October 2025. These figures are source-reported, not independently audited by ISEYC."
+  },
+  {
+    "id": "nitda-dl4all-dashboard",
+    "publisher": "National Information Technology Development Agency (NITDA)",
+    "name": "Digital Literacy for All (DL4ALL) — National Digital Literacy Dashboard",
+    "url": "https://dashboard.digitalliteracy.nitda.gov.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "governance",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National, 36 states and FCT, 774 LGAs and reported communities",
+    "geoLevel": "varies",
+    "dataType": "Programme dashboard: verified digital-literacy training records, reach, competence areas, delivery modes, beneficiaries and partner organisations",
+    "updateFrequency": "Dashboard updated 24 October 2026; ongoing updates claimed, cadence not published",
+    "licence": "Dashboard data reuse terms not confirmed; cite NITDA and seek permission for bulk republication",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NITDA-linked DL4ALL national dashboard reviewed; headline counters, coverage and update timestamp recorded",
+    "limitations": [
+      "The dashboard's verified-beneficiary definition and deduplication method must be obtained before comparing with other training programmes.",
+      "Training or completion records do not independently establish durable competence, employment outcomes or population-wide digital literacy.",
+      "The 70% by 2027 and 95% by 2030 targets are targets, not achieved outcomes.",
+      "Dashboard counters are programme-reported; retain retrieval date and do not infer missing demographic or geographic values.",
+      "The dashboard reports different measures (people, organisations, training counts and competency counts); do not add them together."
+    ],
+    "notes": "Dashboard snapshot: 2,783,731 verified digitally literate beneficiaries; 36 states + FCT, 774 LGAs and 14,747 communities reached; 33% female participation; 2,100,027 youth under 35. It reports 5.57% progress against a 50 million target; this is programme progress against a target, not Nigeria's national digital literacy rate."
+  },
+  {
+    "id": "nitda-national-digital-literacy-framework",
+    "publisher": "National Information Technology Development Agency (NITDA)",
+    "name": "National Digital Literacy Framework (NDLF)",
+    "url": "https://nitda.gov.ng/wp-content/uploads/2023/07/Digital-Literacy-Framework.pdf",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "governance",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National policy and competence framework",
+    "geoLevel": "national",
+    "dataType": "Policy and measurement framework: six competence areas and eight proficiency levels",
+    "updateFrequency": "Policy framework; revisions not confirmed",
+    "licence": "NITDA document reuse terms not confirmed; cite the source and verify before republication",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NITDA-hosted framework PDF reviewed",
+    "limitations": [
+      "A framework defines competencies and targets; it is not evidence that citizens have achieved them.",
+      "Targets and policy statements must be separated from measured programme outcomes.",
+      "Competence-area counts should not be interpreted as unique people without a documented counting method."
+    ],
+    "notes": "Framework defines six competence areas and eight proficiency levels. Use it to align ISEYC digital skills assessment, not to claim national attainment."
+  },
+  {
+    "id": "naseni-innovation-hub",
+    "publisher": "National Agency for Science and Engineering Infrastructure (NASENI)",
+    "name": "NASENI Innovation Hub — programmes, partnerships and innovation activity",
+    "url": "https://innovation.naseni.gov.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National programmes and initiatives; geographic coverage varies by programme",
+    "geoLevel": "varies",
+    "dataType": "Official programme pages, challenge announcements, innovation support pathways, partnerships and published milestones",
+    "updateFrequency": "Irregular programme announcements and updates",
+    "licence": "Programme content reuse terms not confirmed; cite original announcements and do not imply NASENI endorsement",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NASENI Innovation Hub site, InnovateNaija announcement and FutureMakers programme pages reviewed",
+    "limitations": [
+      "Programme announcements and prize pools are not proof of grants disbursed, products commercialised, jobs created or innovations independently validated.",
+      "Keep announced, open, closed, selected, funded, deployed and independently verified stages separate.",
+      "Do not infer nationwide reach from an invitation to applicants across states; use published participant and outcome records only."
+    ],
+    "notes": "Related sources: https://innovation.naseni.gov.ng/blog/ and https://innovation.naseni.gov.ng/futuremakers/. InnovateNaija announcement describes a ₦250 million challenge and intended 37 state/FCT winners; outcome and disbursement evidence must be separately acquired."
+  },
+  {
+    "id": "nbs-cpi-monthly",
+    "publisher": "National Bureau of Statistics (NBS)",
+    "name": "Consumer Price Index and Inflation — monthly releases",
+    "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/related-materials",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "governance",
+      "employment"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National, urban/rural and state profiles where provided in each release",
+    "geoLevel": "varies",
+    "dataType": "Monthly CPI and inflation reports with PDF and spreadsheet tables; 2024 base year and 2023 weight reference period",
+    "updateFrequency": "Monthly",
+    "licence": "NBS microdata catalogue terms and report-specific reuse conditions apply; verify before redistribution",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "NBS Microdata Catalog verified September 2026 CPI report (published 15 October 2026) and 2024 rebasing metadata",
+    "limitations": [
+      "Do not compare pre- and post-rebasing rates without a documented bridge and source methodology.",
+      "Headline, food, core, urban, rural and other CPI series are different measures; label each.",
+      "A national CPI rate is not a household-specific cost-of-living measure or a Kaduna South price.",
+      "The latest listed report is not necessarily the latest available by the time a user reads the product; refresh the catalogue before presenting it as current."
+    ],
+    "notes": "The NBS catalogue lists the September 2026 report as published 15 October 2026. CPI base year is 2024; weight reference period is 2023; the rebased basket covers 934 product varieties across 13 COICOP divisions."
+  },
+  {
+    "id": "nbs-gdp-quarterly",
+    "publisher": "National Bureau of Statistics (NBS)",
+    "name": "Gross Domestic Product — quarterly reports and tables",
+    "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/147/related-materials",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "employment",
+      "governance",
+      "agriculture",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National quarterly national accounts; sectoral and industry breakdowns",
+    "geoLevel": "national",
+    "dataType": "Quarterly GDP reports and downloadable PDF/Excel tables; rebased national accounts",
+    "updateFrequency": "Quarterly",
+    "licence": "NBS microdata catalogue terms and report-specific reuse conditions apply; verify before redistribution",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "NBS GDP catalog reviewed; Q2 2026 report listed as published 31 August 2026 and Q1 2026 report as published 25 May 2026",
+    "limitations": [
+      "GDP is a national accounts estimate; it does not measure household welfare or local public-service quality.",
+      "Retain the GDP base year, current/constant price basis, sector, quarter and year-on-year/quarter-on-quarter definition.",
+      "Do not compare series across the 2025 rebasing without checking NBS methodological notes.",
+      "A report listing is not proof that every table has been ingested or validated."
+    ],
+    "notes": "NBS Q1 2026 release reported real GDP growth of 3.89% year-on-year. Q2 2026 report is listed in the catalogue; no Q2 rate is transcribed here until its table is extracted and checked."
+  },
+  {
+    "id": "nbs-food-price-watch",
+    "publisher": "National Bureau of Statistics (NBS)",
+    "name": "Selected Food Price Watch — monthly state and national price tables",
+    "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/162/related-materials",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "agriculture",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National, all 36 states and FCT; source describes price collection across all 774 LGAs",
+    "geoLevel": "varies",
+    "dataType": "Monthly food-price survey reports and Excel tables based on price collection from over 10,000 respondents and locations",
+    "updateFrequency": "Monthly, with release lag",
+    "licence": "NBS microdata catalogue terms and report-specific reuse conditions apply; verify before redistribution",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "NBS May 2026 Selected Food Price Watch report listing and survey methodology reviewed",
+    "limitations": [
+      "The source reports state and national averages; LGA-level collection does not automatically mean public LGA-level estimates are published.",
+      "Prices are specific to commodity, unit, location, market and reference month; do not compare mismatched units or quality grades.",
+      "A national average does not represent every household or market.",
+      "The catalogue currently lists May 2026 as the latest food-price report found in this review; refresh before describing it as current."
+    ],
+    "notes": "The May 2026 report is listed as published 25 June 2026. NBS describes fieldwork by over 700 staff, more than 10,000 respondents/locations and collection across all 774 LGAs; use the actual published tables for any numeric value."
   }
 ]
