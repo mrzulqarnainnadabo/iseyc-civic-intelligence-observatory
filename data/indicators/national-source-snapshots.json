@@ -617,6 +617,356 @@
         "The portal was generated on 18 July 2026; values may change when the portal is updated.",
         "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
       ]
+    },
+    {
+      "id": "nphcda-phc-revitalised-aug-2025",
+      "title": "PHCs reported revitalised",
+      "value": 1295,
+      "unit": "PHCs",
+      "referencePeriod": "As of August 2025",
+      "measurementType": "Agency-reported programme progress",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported 1,295 PHCs revitalised against a four-year target of 17,600.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-phc-revitalisation-underway-aug-2025",
+      "title": "PHCs at various stages of revitalisation",
+      "value": 3469,
+      "unit": "PHCs",
+      "referencePeriod": "As of August 2025",
+      "measurementType": "Agency-reported programme progress",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported another 3,469 PHCs at various stages of revitalisation; these are not counted as completed.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-solar-power-completed-2025",
+      "title": "PHCs with solar power installation completed",
+      "value": 38,
+      "unit": "PHCs",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported infrastructure output",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported solar power installation completed in 38 PHCs; the source also reported 34 ongoing.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-solar-power-ongoing-2025",
+      "title": "PHCs with solar power installation ongoing",
+      "value": 34,
+      "unit": "PHCs",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported infrastructure progress",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported solar power installation ongoing in 34 PHCs; this is not a completed installation count.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-solar-boreholes-2025",
+      "title": "PHCs with solar boreholes installed",
+      "value": 61,
+      "unit": "PHCs",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported infrastructure output",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported solar boreholes installed in 61 PHCs to support safe water supply.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-mnh-commodities-facilities-2025",
+      "title": "PHCs receiving lifesaving maternal and newborn health commodities",
+      "value": 1936,
+      "unit": "PHCs across 10 states",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported commodity distribution",
+      "geoLevel": "varies",
+      "geographicCoverage": "10 states; states not listed in the source summary",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported distribution of lifesaving maternal and newborn health commodities to 1,936 PHC facilities in 10 states; this is not a current stock-on-hand measure.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-sdd-refrigerators-2025",
+      "title": "Solar direct-drive refrigerators deployed",
+      "value": 1653,
+      "unit": "refrigerators",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported cold-chain output",
+      "geoLevel": "varies",
+      "geographicCoverage": "36 states and FCT",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported 1,653 additional solar direct-drive refrigerators procured and deployed to PHC facilities across 36 states and FCT.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-bhcpf-disbursement-2023-mid2025",
+      "title": "BHCPF funds disbursed to PHCs",
+      "value": 50.8,
+      "unit": "billion NGN",
+      "referencePeriod": "2023 to mid-2025",
+      "measurementType": "Agency-reported fund disbursement",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported ₦50.8 billion disbursed to 8,309 PHCs between 2023 and mid-2025; disbursement is not proof of completed service delivery.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-bhcpf-disbursement-h1-2025",
+      "title": "BHCPF disbursement in first half of 2025",
+      "value": 12.4,
+      "unit": "billion NGN",
+      "referencePeriod": "First half of 2025",
+      "measurementType": "Agency-reported fund disbursement",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported ₦12.4 billion disbursed in the first half of 2025; this is part of the wider 2023–mid-2025 figure.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-bhcpf-level2-upgrades-2025",
+      "title": "Facilities upgraded to Level 2 standard under BHCPF",
+      "value": 2341,
+      "unit": "facilities",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported facility upgrade count",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported 2,341 facilities upgraded to Level 2 standard under BHCPF funding.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-pfmo-deployments-2025",
+      "title": "Performance and Financial Management Officers deployed",
+      "value": 774,
+      "unit": "officers",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported workforce deployment",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria · one per LGA",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported 774 youths deployed as Performance and Financial Management Officers, one per LGA, to support PHC monitoring.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-frontline-workers-trained-2025",
+      "title": "Frontline health workers trained",
+      "value": 69106,
+      "unit": "workers",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported workforce training count",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported 69,106 frontline health workers trained against a four-year target of 120,000; this is a training count, not a competency assessment.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-kaduna-yobe-sba-recruitment-2025",
+      "title": "Skilled birth attendants recruited in Kaduna and Yobe",
+      "value": 380,
+      "unit": "staff across two states",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported workforce recruitment",
+      "geoLevel": "state",
+      "geographicCoverage": "Kaduna State and Yobe State combined",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported Kaduna and Yobe had completed recruitment of 380 skilled birth attendants combined; the source does not split the count by state.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-kaduna-yobe-cbhw-recruitment-2025",
+      "title": "Community-based health workers recruited in Kaduna and Yobe",
+      "value": 1227,
+      "unit": "staff across two states",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported workforce recruitment",
+      "geoLevel": "state",
+      "geographicCoverage": "Kaduna State and Yobe State combined",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported Kaduna and Yobe had completed recruitment of 1,227 community-based health workers combined; the source does not split the count by state.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
     }
   ],
   "catalogOnlySources": [
