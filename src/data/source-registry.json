@@ -947,5 +947,167 @@
     ],
     "notes": "Pilot source in the Observatory evidence gateway. Use as national context only unless a separately validated subnational source is obtained.",
     "lastChecked": null
+  },
+  {
+    "id": "who-gho-nigeria",
+    "publisher": "World Health Organization (WHO)",
+    "name": "Global Health Observatory — Nigeria country profile and indicator data",
+    "url": "https://www.who.int/data/gho/data/countries/country-details/GHO/nigeria",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria national aggregate; indicator-specific geography and disaggregation vary",
+    "geoLevel": "national",
+    "dataType": "Country health indicators, estimates, survey-derived and administrative series; World Health Data Hub / OData interfaces",
+    "updateFrequency": "Indicator-specific; source reference periods vary",
+    "licence": "WHO data.who.int published outputs: CC BY-NC-SA 3.0 IGO; comply with attribution and non-endorsement terms",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "WHO Nigeria country profile, WHO Global Health Observatory and API documentation reviewed",
+    "limitations": [
+      "Every indicator has its own reference year, methodology, uncertainty interval and source; do not treat the profile as one current-year dataset.",
+      "WHO states that Nigerian death-registration data are unavailable or unusable for cause-of-death analysis; related mortality figures are statistical estimates and require caution.",
+      "National estimates do not establish state, LGA, facility or household outcomes.",
+      "The legacy GHO OData API is being retired; use the current World Health Data Hub interface and revalidate API contracts before ingestion.",
+      "WHO data use does not imply WHO endorsement; do not use WHO emblems or logos."
+    ],
+    "notes": "WHO API documentation: https://www.who.int/data/gho/info/gho-odata-api. The country profile is a discovery and indicator source, not a substitute for original Nigerian administrative records."
+  },
+  {
+    "id": "imf-weo-oct-2026",
+    "publisher": "International Monetary Fund (IMF)",
+    "name": "World Economic Outlook database — October 2026 vintage",
+    "url": "https://data.imf.org/datasets/WEO",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "employment",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National macroeconomic indicators and international aggregates",
+    "geoLevel": "national",
+    "dataType": "Annual macroeconomic time series: national accounts, inflation, unemployment, fiscal indicators, trade and external balances; historical values, staff estimates and projections",
+    "updateFrequency": "Twice yearly, typically April and October",
+    "licence": "IMF data usage and copyright terms apply; verify dataset-specific reuse conditions before redistribution",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "IMF Data Portal October 2026 WEO dataset and DataMapper API documentation reviewed",
+    "limitations": [
+      "WEO mixes historical observations, IMF staff estimates and projections; every displayed year must carry its status and vintage.",
+      "IMF staff estimates may be used as proxies where complete information is unavailable and can differ from official national statistics.",
+      "Do not present projected values as observed facts or merge them into historical series without clear visual separation.",
+      "Annual national aggregates cannot explain state or LGA household/service outcomes.",
+      "Retain vintage, release date, units, definitions and revisions for every imported value."
+    ],
+    "notes": "IMF DataMapper API documentation: https://www.imf.org/external/datamapper/api/. October 2026 WEO is the current source vintage reviewed; forecast years must remain explicitly labelled."
+  },
+  {
+    "id": "nimc-enrolment-oct-2025",
+    "publisher": "National Identity Management Commission (NIMC)",
+    "name": "NIN enrolment dashboard — 31 October 2025",
+    "url": "https://nimc.gov.ng/nin/enrolment-report/october-2025",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National, state and diaspora cumulative enrolment records",
+    "geoLevel": "state",
+    "dataType": "Cumulative NIN enrolment records, disaggregated by state and sex; dashboard snapshot",
+    "updateFrequency": "Irregular dashboard releases; reference date is stated on each snapshot",
+    "licence": "NIMC reuse terms not confirmed; retain attribution and seek permission for bulk redistribution",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NIMC October 2025 enrolment dashboard reviewed; published national and state totals extracted",
+    "limitations": [
+      "Enrolment records are not a population census, active identity count or measure of access to public services.",
+      "Do not calculate coverage without a compatible population denominator, reference year and methodology.",
+      "Cumulative records may include duplicates or administrative corrections unless the source explicitly defines them as unique records.",
+      "This is a historical snapshot dated 31 October 2025, not a live 2026 count."
+    ],
+    "notes": "NIMC dashboard reports 123,906,318 total enrolment records nationally and 7,326,730 for Kaduna State as at 31 October 2025. These figures are source-reported, not independently audited by ISEYC."
+  },
+  {
+    "id": "nitda-dl4all-dashboard",
+    "publisher": "National Information Technology Development Agency (NITDA)",
+    "name": "Digital Literacy for All (DL4ALL) — National Digital Literacy Dashboard",
+    "url": "https://dashboard.digitalliteracy.nitda.gov.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "governance",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National, 36 states and FCT, 774 LGAs and reported communities",
+    "geoLevel": "varies",
+    "dataType": "Programme dashboard: verified digital-literacy training records, reach, competence areas, delivery modes, beneficiaries and partner organisations",
+    "updateFrequency": "Dashboard updated 24 October 2026; ongoing updates claimed, cadence not published",
+    "licence": "Dashboard data reuse terms not confirmed; cite NITDA and seek permission for bulk republication",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NITDA-linked DL4ALL national dashboard reviewed; headline counters, coverage and update timestamp recorded",
+    "limitations": [
+      "The dashboard's verified-beneficiary definition and deduplication method must be obtained before comparing with other training programmes.",
+      "Training or completion records do not independently establish durable competence, employment outcomes or population-wide digital literacy.",
+      "The 70% by 2027 and 95% by 2030 targets are targets, not achieved outcomes.",
+      "Dashboard counters are programme-reported; retain retrieval date and do not infer missing demographic or geographic values.",
+      "The dashboard reports different measures (people, organisations, training counts and competency counts); do not add them together."
+    ],
+    "notes": "Dashboard snapshot: 2,783,731 verified digitally literate beneficiaries; 36 states + FCT, 774 LGAs and 14,747 communities reached; 33% female participation; 2,100,027 youth under 35. It reports 5.57% progress against a 50 million target; this is programme progress against a target, not Nigeria's national digital literacy rate."
+  },
+  {
+    "id": "nitda-national-digital-literacy-framework",
+    "publisher": "National Information Technology Development Agency (NITDA)",
+    "name": "National Digital Literacy Framework (NDLF)",
+    "url": "https://nitda.gov.ng/wp-content/uploads/2023/07/Digital-Literacy-Framework.pdf",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "governance",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National policy and competence framework",
+    "geoLevel": "national",
+    "dataType": "Policy and measurement framework: six competence areas and eight proficiency levels",
+    "updateFrequency": "Policy framework; revisions not confirmed",
+    "licence": "NITDA document reuse terms not confirmed; cite the source and verify before republication",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NITDA-hosted framework PDF reviewed",
+    "limitations": [
+      "A framework defines competencies and targets; it is not evidence that citizens have achieved them.",
+      "Targets and policy statements must be separated from measured programme outcomes.",
+      "Competence-area counts should not be interpreted as unique people without a documented counting method."
+    ],
+    "notes": "Framework defines six competence areas and eight proficiency levels. Use it to align ISEYC digital skills assessment, not to claim national attainment."
+  },
+  {
+    "id": "naseni-innovation-hub",
+    "publisher": "National Agency for Science and Engineering Infrastructure (NASENI)",
+    "name": "NASENI Innovation Hub — programmes, partnerships and innovation activity",
+    "url": "https://innovation.naseni.gov.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National programmes and initiatives; geographic coverage varies by programme",
+    "geoLevel": "varies",
+    "dataType": "Official programme pages, challenge announcements, innovation support pathways, partnerships and published milestones",
+    "updateFrequency": "Irregular programme announcements and updates",
+    "licence": "Programme content reuse terms not confirmed; cite original announcements and do not imply NASENI endorsement",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NASENI Innovation Hub site, InnovateNaija announcement and FutureMakers programme pages reviewed",
+    "limitations": [
+      "Programme announcements and prize pools are not proof of grants disbursed, products commercialised, jobs created or innovations independently validated.",
+      "Keep announced, open, closed, selected, funded, deployed and independently verified stages separate.",
+      "Do not infer nationwide reach from an invitation to applicants across states; use published participant and outcome records only."
+    ],
+    "notes": "Related sources: https://innovation.naseni.gov.ng/blog/ and https://innovation.naseni.gov.ng/futuremakers/. InnovateNaija announcement describes a ₦250 million challenge and intended 37 state/FCT winners; outcome and disbursement evidence must be separately acquired."
   }
 ]
