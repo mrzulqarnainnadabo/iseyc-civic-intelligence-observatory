@@ -48,18 +48,23 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
       </div>
       {status === 'loading' ? <p className="national-snapshots__empty">Retrieving curated source snapshots…</p> :
        status === 'unavailable' ? <p className="national-snapshots__empty">Source snapshots could not be loaded. No substitute figures are displayed.</p> :
-       observations.length ? <div className="national-snapshot-grid">{visibleObservations.map((item) => (
-         <article className="national-snapshot" key={item.id}>
-           <div className="national-snapshot__top"><span>{item.measurementType}</span><span>{item.geoLevel === 'national' ? 'National' : item.geoLevel === 'varies' ? 'Multi-level' : item.geoLevel}</span></div>
-           <h3>{item.title}</h3>
-           <strong className="national-snapshot__value">{valueLabel(item.value, item.unit, item.valueQualifier)}</strong>
-           <p className="national-snapshot__period">Reference period · {item.referencePeriod}</p>
-           <p className="national-snapshot__publisher">{item.sourcePublisher}</p>
-           <p className="national-snapshot__interpretation">{item.interpretation}</p>
-           <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">Original source ↗</a>
-           <details><summary>Limitations</summary><ul>{item.limitations.map((limit) => <li key={limit}>{limit}</li>)}</ul></details>
-         </article>
-       ))}</div>{observations.length > 6 && <button type="button" className="national-snapshots__toggle" onClick={() => setShowAll((value) => !value)}>{showAll ? 'Show fewer snapshots' : 'Show all ' + observations.length + ' snapshots'}</button>} : <p className="national-snapshots__empty">No curated snapshot is currently assigned to {departmentId ? DEPARTMENT_LABEL[departmentId] || 'this department' : 'this view'}.</p>}
+       observations.length ? (
+         <>
+           <div className="national-snapshot-grid">{visibleObservations.map((item) => (
+             <article className="national-snapshot" key={item.id}>
+               <div className="national-snapshot__top"><span>{item.measurementType}</span><span>{item.geoLevel === 'national' ? 'National' : item.geoLevel === 'varies' ? 'Multi-level' : item.geoLevel}</span></div>
+               <h3>{item.title}</h3>
+               <strong className="national-snapshot__value">{valueLabel(item.value, item.unit, item.valueQualifier)}</strong>
+               <p className="national-snapshot__period">Reference period · {item.referencePeriod}</p>
+               <p className="national-snapshot__publisher">{item.sourcePublisher}</p>
+               <p className="national-snapshot__interpretation">{item.interpretation}</p>
+               <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">Original source ↗</a>
+               <details><summary>Limitations</summary><ul>{item.limitations.map((limit) => <li key={limit}>{limit}</li>)}</ul></details>
+             </article>
+           ))}</div>
+           {observations.length > 6 && <button type="button" className="national-snapshots__toggle" onClick={() => setShowAll((value) => !value)}>{showAll ? 'Show fewer snapshots' : 'Show all ' + observations.length + ' snapshots'}</button>}
+         </>
+       ) : <p className="national-snapshots__empty">No curated snapshot is currently assigned to {departmentId ? DEPARTMENT_LABEL[departmentId] || 'this department' : 'this view'}.</p>}
       {catalogOnly.length > 0 && <div className="national-catalogue">
         <div className="national-catalogue__head"><strong>Sources under assessment</strong><span>Catalogue status is source-specific</span></div>
         <div className="national-catalogue__grid">{catalogOnly.map((item) => <article key={item.id}><span>{item.publisher} · {item.status === "partial" ? "Partial integration" : "Catalogue only"}</span><strong>{item.title}</strong><p>{item.note}</p><a href={item.url} target="_blank" rel="noopener noreferrer">Open source ↗</a></article>)}</div>
