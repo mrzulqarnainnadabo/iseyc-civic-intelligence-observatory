@@ -1,0 +1,269 @@
+{
+  "schemaVersion": "1.0.0",
+  "title": "Nigeria national evidence snapshots",
+  "description": "Manually transcribed, source-attributed snapshots from official and published sources. These are not live feeds. Every observation retains its reference period, source date, geographic scope and limitations.",
+  "checkedAt": "2026-11-09",
+  "observations": [
+    {
+      "id": "who-nga-under5-mortality-2024",
+      "title": "Under-five mortality rate",
+      "value": 59.5,
+      "unit": "deaths per 1,000 live births",
+      "referencePeriod": "2024",
+      "measurementType": "WHO estimate",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "who-gho-nigeria",
+      "sourcePublisher": "WHO Regional Office for Africa · Global Health Observatory",
+      "sourceUrl": "https://www.afro.who.int/node/992",
+      "departments": [
+        "health"
+      ],
+      "interpretation": "National population-health estimate; not a facility performance measure.",
+      "limitations": [
+        "National estimate only; no Kaduna State, LGA, ward or facility inference.",
+        "WHO source data and reference year must be retained; do not combine with estimates from another agency without checking method.",
+        "This is not a count of deaths recorded by a named hospital or PHC."
+      ]
+    },
+    {
+      "id": "who-nga-life-expectancy-male-2023",
+      "title": "Life expectancy at birth · male",
+      "value": 61.4,
+      "unit": "years",
+      "referencePeriod": "2023",
+      "measurementType": "WHO estimate",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "who-gho-nigeria",
+      "sourcePublisher": "WHO Regional Office for Africa · Global Health Observatory",
+      "sourceUrl": "https://www.afro.who.int/node/992",
+      "departments": [
+        "health"
+      ],
+      "interpretation": "National life-expectancy estimate, not an individual forecast.",
+      "limitations": [
+        "National aggregate only.",
+        "Estimate depends on mortality tables and source methodology; it is not a direct count of individual lifespans."
+      ]
+    },
+    {
+      "id": "who-nga-life-expectancy-female-2023",
+      "title": "Life expectancy at birth · female",
+      "value": 64.5,
+      "unit": "years",
+      "referencePeriod": "2023",
+      "measurementType": "WHO estimate",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "who-gho-nigeria",
+      "sourcePublisher": "WHO Regional Office for Africa · Global Health Observatory",
+      "sourceUrl": "https://www.afro.who.int/node/992",
+      "departments": [
+        "health"
+      ],
+      "interpretation": "National life-expectancy estimate, not an individual forecast.",
+      "limitations": [
+        "National aggregate only.",
+        "Estimate depends on mortality tables and source methodology; it is not a direct count of individual lifespans."
+      ]
+    },
+    {
+      "id": "who-nga-health-expenditure-gdp-2023",
+      "title": "Health expenditure",
+      "value": 3.9,
+      "unit": "% of GDP",
+      "referencePeriod": "2023",
+      "measurementType": "WHO-reported estimate",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "who-gho-nigeria",
+      "sourcePublisher": "WHO Regional Office for Africa · Global Health Observatory",
+      "sourceUrl": "https://www.afro.who.int/node/992",
+      "departments": [
+        "health"
+      ],
+      "interpretation": "National health-spending context; not a Kaduna health budget or facility allocation.",
+      "limitations": [
+        "National percentage only; it does not identify federal, state or LGA spending distribution.",
+        "Health expenditure share is not a measure of service quality or access."
+      ]
+    },
+    {
+      "id": "who-nga-health-expenditure-capita-2023",
+      "title": "Health expenditure per capita",
+      "value": 61.6,
+      "unit": "US dollars per person",
+      "referencePeriod": "2023",
+      "measurementType": "WHO-reported estimate",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "who-gho-nigeria",
+      "sourcePublisher": "WHO Regional Office for Africa · Global Health Observatory",
+      "sourceUrl": "https://www.afro.who.int/node/992",
+      "departments": [
+        "health"
+      ],
+      "interpretation": "National per-capita spending estimate; not household out-of-pocket spending.",
+      "limitations": [
+        "National average masks geographic and income differences.",
+        "Do not interpret as a direct allocation to each person or as a measure of effective coverage."
+      ]
+    },
+    {
+      "id": "nitda-dl4all-verified-records-2026-10-24",
+      "title": "Digital literacy records reported as verified",
+      "value": 2783731,
+      "unit": "dashboard-reported records",
+      "referencePeriod": "2026-10-24",
+      "measurementType": "Administrative programme dashboard count",
+      "geoLevel": "varies",
+      "geographicCoverage": "Dashboard reports coverage across 36 states, FCT and 774 LGAs",
+      "sourceId": "nitda-dl4all-dashboard",
+      "sourcePublisher": "National Information Technology Development Agency (NITDA) · DL4ALL National Digital Literacy Dashboard",
+      "sourceUrl": "https://dashboard.digitalliteracy.nitda.gov.ng/",
+      "departments": [
+        "education",
+        "software-technology"
+      ],
+      "interpretation": "The dashboard labels this as verified digitally literate; it is a programme dashboard count, not a national literacy survey.",
+      "limitations": [
+        "Do not assume each record represents a unique person unless deduplication rules are published and checked.",
+        "The 50 million denominator is a programme target, not a population estimate.",
+        "Dashboard reporting depends on participating organisations and their submissions; this is not a nationally representative skills assessment.",
+        "Preserve the dashboard update date and the six competence areas; do not convert this count into a national digital-literacy prevalence rate."
+      ]
+    },
+    {
+      "id": "nimc-nin-enrolment-2025-06-30",
+      "title": "National Identification Number enrolment",
+      "value": 121404601,
+      "unit": "NIN enrolment records",
+      "referencePeriod": "2025-06-30",
+      "measurementType": "Administrative register count",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria and diaspora",
+      "sourceId": "nimc-nin-enrolment-2025",
+      "sourcePublisher": "National Identity Management Commission (NIMC)",
+      "sourceUrl": "https://nimc.gov.ng/nin/enrolment-report/june-2025",
+      "departments": [
+        "civic"
+      ],
+      "interpretation": "NIMC reported 121,404,601 enrolment records as at 30 June 2025; this is not a population census.",
+      "limitations": [
+        "Reference date is 30 June 2025, not a current 2026 count.",
+        "NIN enrolment records are not interchangeable with census population, eligible population or voter-register totals.",
+        "State-level enrolment differences do not by themselves establish exclusion or coverage rates without an appropriate population denominator."
+      ]
+    },
+    {
+      "id": "imf-nga-real-gdp-growth-2024",
+      "title": "Real GDP growth",
+      "value": 4.1,
+      "unit": "% annual change",
+      "referencePeriod": "2024",
+      "measurementType": "IMF staff table · actual",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "imf-article-iv-2026",
+      "sourcePublisher": "International Monetary Fund (IMF) · Nigeria 2026 Article IV Consultation",
+      "sourceUrl": "https://www.imf.org/en/news/articles/2026/06/09/pr26190-nigeria-imf-executive-board-concludes-2026-article-iv-consultation-with-nigeria",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "The IMF report table labels 2024 as actual; this is macroeconomic context, not evidence of household welfare or sector outcomes.",
+      "limitations": [
+        "National macroeconomic aggregate only.",
+        "Do not mix IMF estimates with NBS official national accounts without retaining the source and vintage.",
+        "The IMF report contains estimates and projections for other years; this card displays only the 2024 actual row."
+      ]
+    },
+    {
+      "id": "isn-nigeria-active-innovation-hubs-2026-05-22",
+      "title": "Active innovation hubs in the ISN assessment",
+      "value": 190,
+      "unit": "hubs assessed as active",
+      "referencePeriod": "2026-05-22",
+      "measurementType": "Published ecosystem assessment count",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "isn-innovation-hub-assessment",
+      "sourcePublisher": "Innovation Support Network (ISN) · Nigerian Innovation Hub Assessment",
+      "sourceUrl": "https://isnhubs.org.ng/nigerias-innovation-landmark-isn-launches-comprehensive-hub-assessment-report-and-unveils-2026-2030-strategic-outlook/",
+      "departments": [
+        "software-technology"
+      ],
+      "interpretation": "ISN reported more than 190 active hubs within an ecosystem of over 250 active and partially active spaces.",
+      "limitations": [
+        "Published by an ecosystem network, not a government statistical agency.",
+        "The assessment's definitions, survey coverage and active-status criteria must be checked before comparison or ranking.",
+        "This is not a live directory of currently operating hubs."
+      ]
+    },
+    {
+      "id": "naseni-innovatenaija-finalists-undated",
+      "title": "InnovateNaija state finalists",
+      "value": 108,
+      "unit": "innovators across 34 states",
+      "referencePeriod": "Not stated by source",
+      "measurementType": "Official programme finalist count",
+      "geoLevel": "varies",
+      "geographicCoverage": "34 states; Ebonyi, Sokoto and Zamfara excluded on the source page",
+      "sourceId": "naseni-innovation-hub",
+      "sourcePublisher": "NASENI Innovation Hub · InnovateNaija",
+      "sourceUrl": "https://innovation.naseni.gov.ng/finalist/",
+      "departments": [
+        "education",
+        "software-technology"
+      ],
+      "interpretation": "NASENI's page lists 108 finalists across 34 states; this is a programme selection count, not a national innovation census.",
+      "limitations": [
+        "The source page does not state a publication or reference date; retain this as undated until confirmed.",
+        "Finalists are not equivalent to all innovators, startups or operating technology firms.",
+        "The source page excludes three states from the finalist count; do not infer no innovation activity in those states."
+      ]
+    }
+  ],
+  "catalogOnlySources": [
+    {
+      "id": "nbs-cpi-catalog",
+      "publisher": "National Bureau of Statistics (NBS)",
+      "title": "Consumer Price Index and inflation reports catalogue",
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/related-materials",
+      "status": "catalogue",
+      "note": "Official catalogue for monthly CPI reports. Rebased CPI uses 2024 price base and 2023 weight reference; do not splice pre-rebase and post-rebase series without the NBS bridge methodology.",
+      "departments": [
+        "health",
+        "education",
+        "software-technology",
+        "civic"
+      ]
+    },
+    {
+      "id": "ondi-innovation",
+      "publisher": "Office for Nigerian Digital Innovation (ONDI), NITDA",
+      "title": "Office for Nigerian Digital Innovation",
+      "url": "https://www.ondi.nitda.gov.ng/",
+      "status": "catalogue",
+      "note": "Official ecosystem support and innovation programme information; published headline metrics require their own reference dates and methodology before being treated as national indicators.",
+      "departments": [
+        "software-technology"
+      ]
+    },
+    {
+      "id": "naseni-innovation-hub",
+      "publisher": "NASENI Innovation Hub",
+      "title": "NASENI Innovation Hub programmes and innovation support",
+      "url": "https://innovation.naseni.gov.ng/",
+      "status": "catalogue",
+      "note": "Programme and institutional information; do not infer national R&D expenditure, commercialisation rate or startup survival from programme descriptions.",
+      "departments": [
+        "software-technology",
+        "education"
+      ]
+    }
+  ]
+}
