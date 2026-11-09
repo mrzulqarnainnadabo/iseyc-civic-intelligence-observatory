@@ -14,7 +14,7 @@ describe("dated national evidence snapshots", () => {
       expect(new URL(record.sourceUrl).origin).toBe(new URL(source!.url!).origin);
       expect(record.metrics.length).toBeGreaterThan(0);
       expect(record.limitations.length).toBeGreaterThan(0);
-      expect(record.retrievedAt).toMatch(/^2026-11-\\d{2}$/);
+      expect(record.retrievedAt).toMatch(/^2026-11-\d{2}$/);
     }
   });
   it("preserves WHO estimate intervals and separate reference years", () => {
