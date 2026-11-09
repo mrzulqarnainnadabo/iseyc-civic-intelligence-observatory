@@ -1,3 +1,4 @@
+import '../styles/national-snapshots.css';
 import { useEffect, useMemo, useState } from 'react';
 
 type Snapshot = {
