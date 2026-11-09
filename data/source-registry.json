@@ -1422,7 +1422,7 @@
       "governance",
       "infrastructure"
     ],
-    "kind": "international-development-data",
+    "kind": "official-data",
     "geographicCoverage": "National",
     "geoLevel": "national",
     "dataType": "Macroeconomic and public-finance assessment using official national sources",
