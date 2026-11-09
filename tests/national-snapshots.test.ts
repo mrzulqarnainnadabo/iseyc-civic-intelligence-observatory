@@ -67,4 +67,13 @@ describe("dated national evidence snapshots", () => {
     expect(gdp.metrics[0].value).toBe("3.89%");
     expect(gdp.limitations.join(" ")).toMatch(/not a Kaduna State or LGA growth rate/);
   });
+  it("keeps the Federal Ministry school census reporting rate attached to all national education counts", () => {
+    const census = snapshots.records.find((record) => record.id === "fme-annual-school-census-2024-25")!;
+    expect(census.departmentId).toBe("education");
+    expect(census.metrics.find((item) => item.label === "School reporting rate")?.value).toBe("53.7%");
+    expect(census.metrics.find((item) => item.label === "Learners recorded")?.value).toBe("39,825,932");
+    expect(census.limitations.join(" ")).toMatch(/not complete national totals/);
+    expect(census.referencePeriod).toBe("School year 2024/2025");
+  });
+
 });
