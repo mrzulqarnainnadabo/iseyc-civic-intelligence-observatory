@@ -2,13 +2,13 @@
 
 ## What changed
 
-The source registry now contains **47 sources** (up from 38 on the previous main baseline). New source families include:
+The source registry now contains **54 sources** (up from 38 on the previous main baseline). New source families include:
 
 - WHO Global Health Observatory — Nigeria profile and indicator access.
 - IMF World Economic Outlook — October 2026 vintage and DataMapper/API documentation.
 - NIMC NIN enrolment dashboard — October 2025 state snapshot.
 - NITDA Digital Literacy for All dashboard and National Digital Literacy Framework.
-- NASENI Innovation Hub programme and innovation activity.
+- NASENI Innovation Hub programme and innovation activity.\n- Innovation Support Network (ISN) national hub directory and 2026 assessment summary.\n- Nigeria Startup Support and Engagement Portal, NBTI incubation-centre records, AfriLabs Nigeria hub profiles, CcHUB programme updates and NIPOST Digital Postcode hub API programme.
 - NBS monthly CPI, quarterly GDP and Selected Food Price Watch collections.
 
 The source catalogue and application registry are kept in sync:
@@ -25,7 +25,7 @@ The Overview and relevant Department pages display compact, provenance-first car
 | NIMC enrolment | 31 October 2025 | 123,906,318 national enrolment records; Kaduna State 7,326,730 |
 | NITDA DL4ALL dashboard | Updated 24 October 2026 | 2,783,731 verified programme beneficiaries; 36 states + FCT, 774 LGAs and 14,747 communities reached, plus reported inclusion measures for persons with disabilities, rural beneficiaries and informal-sector workers |
 | NASENI InnovateNaija | Announcement dated 3 September 2025 | Announced programme terms; the current campaign page says applications are closed and Phase 2 voting has ended, but no claim of verified winners, disbursement or commercialisation |
-| NBS real GDP growth | Q1 2026 | 3.89% year-on-year official national-accounts estimate |
+| NBS real GDP growth | Q1 2026 | 3.89% year-on-year official national-accounts estimate |\n| ISN Nigerian Innovation Hub Assessment | Summary released 22 May 2026; survey period not stated | 190+ active hubs surveyed/covered from 250+ active and partially active spaces; 68.35% with fewer than 10 staff; 90% offer structured training |
 
 ## Interpretation safeguards
 
@@ -40,7 +40,7 @@ The Overview and relevant Department pages display compact, provenance-first car
 ## Department connections
 
 - **Health & Well-being:** WHO profile and national estimates; existing NDHS, NPHCDA, HFR and Kaduna health source records remain separate.
-- **Software & Technology:** NITDA DL4ALL operational dashboard, NDLF competency framework and NASENI innovation programme records.
+- **Software & Technology:** NITDA DL4ALL operational dashboard, NDLF competency framework, NASENI innovation programme, ISN hub assessment and selected ISN directory listings.\n- **Education & Capacity Building:** UBEC and World Bank evidence plus NITDA training reach, ISN hub training/mentorship findings and NBTI incubation sources.
 - **Civic Department:** INEC electoral evidence and NIMC identity-registration administration.
 - **Education & Capacity Building:** existing UBEC and World Bank evidence; NITDA's digital-literacy programme is cross-linked through its source record and interpretation notes.
 - **National overview:** NBS GDP context appears outside the four operational department workspaces.
@@ -53,6 +53,6 @@ The Overview and relevant Department pages display compact, provenance-first car
 - NITDA DL4ALL API feed. The dashboard is currently a dated source snapshot; API partner access must be confirmed before automated ingestion.
 - NASENI grant award, selection, disbursement and innovation-outcome dataset.
 - NBS CPI and food-price table extraction into validated indicator records.
-- Current Kaduna South facility, school and digital-access measures.
+- Current Kaduna South facility, school and digital-access measures.\n- The full ISN assessment methodology and underlying respondent-level tables; the current product uses only the public launch summary.\n- A complete, independently verified national hub census or live hub-activity feed; the visible hub directory is a selected subset of ISN listings.
 
 **A source listed in the registry is not an integrated dataset. A dashboard counter is not independent verification. A published target is not an achieved result.** The product displays those distinctions directly rather than hiding them in a long methodology essay.
