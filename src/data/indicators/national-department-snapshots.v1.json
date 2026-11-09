@@ -713,6 +713,51 @@
         "Ratios do not establish the functionality, safety, accessibility or quality of an individual school."
       ],
       "interpretation": "A state-level signal for research prioritisation. It does not describe Kaduna South or any individual school and must not be used as a local estimate."
+    },
+    {
+      "id": "worldbank-ndu-2026-10",
+      "departmentId": null,
+      "title": "World Bank · Nigeria Development Update",
+      "publisher": "World Bank",
+      "sourceId": "worldbank-ndu-2026-10",
+      "sourceUrl": "https://www.worldbank.org/en/news/press-release/2026/10/08/higher-revenues-better-lives-strengthening-state-spending-growth-jobs-services",
+      "referencePeriod": "H1 2026 GDP; Q1 2026 current account; end-July 2026 reserves",
+      "retrievedAt": "2026-11-10",
+      "geography": {
+        "level": "national",
+        "label": "Nigeria"
+      },
+      "evidenceType": "International development institution assessment · national macroeconomic indicators",
+      "metrics": [
+        {
+          "label": "Real GDP growth",
+          "value": "4.2%",
+          "unit": "year-on-year growth",
+          "period": "H1 2026",
+          "measurementType": "reported estimate"
+        },
+        {
+          "label": "Current account surplus",
+          "value": "US$5.0 billion",
+          "unit": "US dollars",
+          "period": "Q1 2026",
+          "measurementType": "national accounts"
+        },
+        {
+          "label": "Gross reserves",
+          "value": "US$51.9 billion",
+          "unit": "US dollars",
+          "period": "End-July 2026",
+          "measurementType": "reported reserve stock"
+        }
+      ],
+      "limitations": [
+        "The 4.2% growth figure is a national H1 2026 estimate; it is not a state, LGA or household growth rate.",
+        "The current-account surplus and gross-reserve stock are national macroeconomic aggregates, not measures of household welfare or public-service quality.",
+        "This is a World Bank assessment and press-release summary; retain the underlying source definitions and release date when reusing the figures.",
+        "Do not mix these reported values with projections or estimates from earlier or later Nigeria Development Update editions."
+      ],
+      "interpretation": "Useful national context for understanding the macroeconomic environment and public-finance backdrop. It does not show how growth or additional revenues are distributed across individual states, LGAs or households."
     }
   ]
 }
