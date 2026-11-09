@@ -106,7 +106,7 @@
         "Missing years are not zero; estimates may be revised by the source."
       ],
       "updateFrequency": "Annual (source-dependent)",
-      "lastVerifiedAccess": "2026-11-09"
+      "lastVerifiedAccess": "Not independently verified in this change"
     },
     {
       "id": "wb-nga-it-net-user-zs",
@@ -132,7 +132,7 @@
         "Missing years are not zero; estimates may be revised by the source."
       ],
       "updateFrequency": "Annual (source-dependent)",
-      "lastVerifiedAccess": "2026-11-09"
+      "lastVerifiedAccess": "Not independently verified in this change"
     },
     {
       "id": "wb-nga-sl-uem-totl-zs",
@@ -158,7 +158,7 @@
         "Not directly interchangeable with Nigeria Labour Force Survey estimates under different methods or reference periods."
       ],
       "updateFrequency": "Annual (source-dependent)",
-      "lastVerifiedAccess": "2026-11-09"
+      "lastVerifiedAccess": "Not independently verified in this change"
     }
   ],
   "datasets": [
