@@ -87,7 +87,6 @@
     },
     {
       "id": "nitda-dl4all-2026-10",
-      "departmentId": "software-technology",
       "title": "NITDA · Digital Literacy for All",
       "publisher": "National Information Technology Development Agency",
       "sourceId": "nitda-dl4all-dashboard",
@@ -150,11 +149,14 @@
         "The 5.57% figure is progress against the programme's 50 million target, not Nigeria's national digital literacy rate.",
         "Programme dashboard data are source-reported and should not be described as independently audited by ISEYC."
       ],
-      "interpretation": "A strong operational source for tracking the digital-skills programme and its geographic reach. It can inform ISEYC's Software & Technology and Education departments, but must not be confused with a national digital-literacy prevalence survey."
+      "interpretation": "A strong operational source for tracking the digital-skills programme and its geographic reach. It can inform ISEYC's Software & Technology and Education departments, but must not be confused with a national digital-literacy prevalence survey.",
+      "departmentIds": [
+        "software-technology",
+        "education"
+      ]
     },
     {
       "id": "naseni-innovatenaija-2025",
-      "departmentId": "software-technology",
       "title": "NASENI · InnovateNaija challenge",
       "publisher": "National Agency for Science and Engineering Infrastructure · NASENI Innovation Hub",
       "sourceId": "naseni-innovation-hub",
@@ -197,7 +199,11 @@
         "The announcement's planned selection and final event dates do not prove that winners were selected or products commercialised.",
         "No independently verified beneficiary, grant-disbursement, product-readiness or employment outcome dataset is integrated here."
       ],
-      "interpretation": "Treat as an innovation-policy and programme activity record. Upgrade its status only when official selection, award, disbursement and outcome evidence is obtained."
+      "interpretation": "Treat as an innovation-policy and programme activity record. Upgrade its status only when official selection, award, disbursement and outcome evidence is obtained.",
+      "departmentIds": [
+        "software-technology",
+        "education"
+      ]
     },
     {
       "id": "nbs-gdp-q1-2026",
