@@ -23,6 +23,7 @@ function valueLabel(value: number, unit: string, qualifier?: string) {
 export default function NationalSnapshots({ departmentId, compact = false }: { departmentId?: string; compact?: boolean }) {
   const [bundle, setBundle] = useState<SnapshotBundle | null>(null);
   const [showAll, setShowAll] = useState(false);
+  const [showAllCatalogue, setShowAllCatalogue] = useState(false);
   const [status, setStatus] = useState<'loading' | 'ready' | 'unavailable'>('loading');
   useEffect(() => {
     let alive = true;
@@ -39,6 +40,7 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
   const observations = useMemo(() => (bundle?.observations || []).filter((item) => !departmentId || item.departments.includes(departmentId)), [bundle, departmentId]);
   const catalogOnly = useMemo(() => (bundle?.catalogOnlySources || []).filter((item) => !departmentId || item.departments.includes(departmentId)), [bundle, departmentId]);
   const visibleObservations = showAll ? observations : observations.slice(0, 6);
+  const visibleCatalogue = showAllCatalogue ? catalogOnly : catalogOnly.slice(0, 3);
 
   return (
     <section className={compact ? 'national-snapshots national-snapshots--compact' : 'national-snapshots'} aria-labelledby={departmentId ? 'department-snapshots-title' : 'national-snapshots-title'}>
@@ -67,8 +69,9 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
        ) : <p className="national-snapshots__empty">No curated snapshot is currently assigned to {departmentId ? DEPARTMENT_LABEL[departmentId] || 'this department' : 'this view'}.</p>}
       {catalogOnly.length > 0 && <div className="national-catalogue">
         <div className="national-catalogue__head"><strong>Sources under assessment</strong><span>Catalogue status is source-specific</span></div>
-        <div className="national-catalogue__grid">{catalogOnly.map((item) => <article key={item.id}><span>{item.publisher} · {item.status === "partial" ? "Partial integration" : "Catalogue only"}</span><strong>{item.title}</strong><p>{item.note}</p><a href={item.url} target="_blank" rel="noopener noreferrer">Open source ↗</a></article>)}</div>
+        <div className="national-catalogue__grid">{visibleCatalogue.map((item) => <article key={item.id}><span>{item.publisher} · {item.status === "partial" ? "Partial integration" : "Catalogue only"}</span><strong>{item.title}</strong><p>{item.note}</p><a href={item.url} target="_blank" rel="noopener noreferrer">Open source ↗</a></article>)}</div>
       </div>}
+      {catalogOnly.length > 3 && <button type="button" className="national-snapshots__toggle" onClick={() => setShowAllCatalogue((value) => !value)}>{showAllCatalogue ? "Show fewer sources" : "View all " + catalogOnly.length + " sources"}</button>}
       {!compact && <p className="national-snapshots__disclaimer">Curated transcriptions, not live feeds. Source publishers own the original data. A national statistic is not a local service-delivery finding.</p>}
     </section>
   );
