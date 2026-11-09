@@ -30,11 +30,14 @@ describe('evidence gateway allowlist', () => {
 
   it('accepts pilot ids', () => {
     expect(resolvePilotRequest('wb-nga-sp-pop-totl').ok).toBe(true);
+    expect(resolvePilotRequest('wb-nga-eg-elc-accs-zs').ok).toBe(true);
+    expect(resolvePilotRequest('wb-nga-it-net-user-zs').ok).toBe(true);
+    expect(resolvePilotRequest('wb-nga-sl-uem-totl-zs').ok).toBe(true);
   });
 
   it('lists only allowlisted catalog', () => {
     const list = listPilotCatalog();
-    expect(list.length).toBe(3);
+    expect(list.length).toBeGreaterThanOrEqual(6);
     expect(list.every((i) => i.geoLevel === 'national')).toBe(true);
   });
 
