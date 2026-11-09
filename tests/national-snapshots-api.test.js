@@ -29,7 +29,8 @@ describe("national source snapshot endpoint", () => {
     const education = request("/api/evidence/snapshots?departmentId=education");
     expect(education.statusCode).toBe(200);
     expect(education.body.records.some((record) => record.id === "nitda-dl4all-2026-10")).toBe(true);
-    expect(education.body.records.some((record) => record.id === "naseni-innovatenaija-2025")).toBe(true);\n    expect(education.body.records.some((record) => record.id === "isn-innovation-hub-assessment-2026")).toBe(true);
+    expect(education.body.records.some((record) => record.id === "naseni-innovatenaija-2025")).toBe(true);
+    expect(education.body.records.some((record) => record.id === "isn-innovation-hub-assessment-2026")).toBe(true);
     expect(education.body.records.some((record) => record.id === "nimc-enrolment-2025-10")).toBe(false);
   });
 
