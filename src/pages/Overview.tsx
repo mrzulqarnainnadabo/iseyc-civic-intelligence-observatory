@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import NationalSnapshots from '../components/NationalSnapshots';
 import { useEffect, useMemo, useState } from 'react';
 import { useBundle } from '../lib/data';
 import { useAdapter } from '../lib/hooks';
@@ -60,7 +61,7 @@ export default function Overview() {
     <div className="workspace-grid observatory-kpis" aria-label={isDemo ? 'Demonstration coverage' : 'Published civic record coverage'}>
       <div className="workspace-stat"><span className="workspace-stat__label">{isDemo ? 'Demonstration records' : 'Published records'}</span><strong className="workspace-stat__value">{records.length}</strong><span className="workspace-stat__period">{isDemo ? 'Synthetic test set' : 'Current published feed'}</span></div>
       <div className="workspace-stat"><span className="workspace-stat__label">States represented</span><strong className="workspace-stat__value">{representedStates} <small>/ {states.length}</small></strong><span className="workspace-stat__period">{isDemo ? 'In synthetic test set' : 'In published community feed'}</span></div>
-      <div className="workspace-stat"><span className="workspace-stat__label">National indicators</span><strong className="workspace-stat__value">{indicators.length}</strong><span className="workspace-stat__period">Allowlisted World Bank series · national only</span></div>
+      <div className="workspace-stat"><span className="workspace-stat__label">National indicators</span><strong className="workspace-stat__value">{indicators.length}</strong><span className="workspace-stat__period">Source-retrieved World Bank series · national only</span></div>
     </div>
 
     {isDemo && <p className="observatory-demo-note">Demonstration mode: synthetic records are not real community submissions or national statistics.</p>}
@@ -74,6 +75,8 @@ export default function Overview() {
       <div className="indicator-grid">{visibleIndicators.map((indicator) => <IndicatorCard key={indicator.id} indicator={indicator} />)}</div>
       <p className="observatory-caveat"><strong>Read carefully.</strong> These indicators are national aggregates. They cannot establish differences between states or LGAs, facility-level service quality, programme delivery or causal impact. Missing observations are not zero.</p>
     </section>
+
+    <NationalSnapshots />
 
     <section className="observatory-lower-grid">
       <div className="observatory-panel"><div className="observatory-panel__head"><div><span className="observatory-kicker observatory-kicker--dark">Public voice</span><h2>{isDemo ? 'Demonstration records' : 'Latest published community records'}</h2></div><Link to="/issues">All records →</Link></div>
