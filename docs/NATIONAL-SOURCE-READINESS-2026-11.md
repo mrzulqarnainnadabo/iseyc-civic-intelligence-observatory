@@ -7,12 +7,31 @@ ISEYC has a credible institutional source foundation, but it does not yet have a
 The next stage is to turn the catalogue into a governed acquisition and evidence system. Prioritise usable datasets and clear citizen questions over the number of institutions listed.
 
 **Current implementation facts**
-- The Observatory has a source registry and three national World Bank WDI indicator pilots.
+- The Observatory has a 46-source registry, six national World Bank WDI indicator pilots, and a separate curated snapshot endpoint for selected WHO, NITDA, NIMC, IMF, NASENI and Innovation Support Network publications.
 - Civic Mandate CommunityRecords and Community Observations are separate streams.
 - The Kaduna PHC pilot has source-readiness work but no imported HEFA facility observations.
 - A structured 2023 INEC voter-register/PVC table has now been transcribed for all 36 states and the FCT. Its arithmetic exceptions are explicitly retained.
 - No national current 2026 voter-register total after the scheduled CVR conclusion has yet been confirmed in the sources reviewed here.
 - No complete national school-level, PHC facility-level, procurement-award or government project-completion dataset has yet been established in the Observatory.
+
+
+## Curated national source snapshots — 9 November 2026
+
+The Observatory now exposes `GET /api/evidence/snapshots`. This is a **curated transcription layer**, not a live source feed. Each observation carries a source ID, publisher, source URL, reference period, geographic scope, measurement type, department mapping and explicit limitations. The endpoint does not silently replace missing data or infer local values.
+
+Initial source-backed observations:
+- **WHO Global Health Observatory:** Nigeria under-five mortality estimate 59.5 per 1,000 live births (2024); life expectancy at birth 61.4 years male and 64.5 years female (2023); health expenditure 3.9% of GDP and US$61.6 per capita (2023).
+- **NITDA DL4ALL:** dashboard-reported 2,783,731 records labelled “verified digitally literate” on the 24 October 2026 dashboard snapshot. This is a programme dashboard count, not a representative national digital-literacy survey or automatically a deduplicated count of unique people.
+- **NIMC:** 121,404,601 NIN enrolment records as at 30 June 2025. This is an administrative enrolment count, not a population census or a current 2026 population total.
+- **IMF 2026 Article IV:** 2024 real GDP growth of 4.1%, shown as the report's actual value. IMF estimates and projections for other years are not presented as observed facts.
+- **Innovation Support Network:** its 22 May 2026 publication reports more than 190 active hubs within an ecosystem of more than 250 active and partially active spaces. This is a published ecosystem assessment, not a government census or live directory.
+- **NASENI Innovation Hub:** the InnovateNaija page lists 108 finalists across 34 states. The page does not state a publication/reference date; the Observatory preserves that missing date instead of inventing one.
+
+Source catalogue additions also include NBS CPI reports, ONDI and NASENI programme information. Catalogue-only entries are explicitly separated from datasets with an observation. The NBS CPI metadata states a 2024 price base and 2023 weight reference; pre-rebase and post-rebase series must not be spliced without the official bridge methodology.
+
+**Department use:** Health receives WHO national context; Education and Software & Technology receive the NITDA dashboard snapshot; Software & Technology receives the ISN and NASENI programme snapshots; Civic receives NIMC and IMF context. These values remain national or programme-level context. They do not establish Kaduna South, LGA, school, PHC or facility conditions.
+
+**Next acquisition gate:** extract the source tables and update dates from the current NBS CPI release, obtain NITDA dashboard data dictionary and deduplication rules, request machine-readable WHO/IMF series where available, and establish permitted reuse and update cadence for the ISN and NASENI materials. No automatic refresh is claimed for these manual snapshots.
 
 ## Source-readiness vocabulary
 
