@@ -947,5 +947,211 @@
     ],
     "notes": "Pilot source in the Observatory evidence gateway. Use as national context only unless a separately validated subnational source is obtained.",
     "lastChecked": null
+  },
+  {
+    "id": "who-gho-nigeria",
+    "publisher": "World Health Organization (WHO) — Regional Office for Africa",
+    "name": "Nigeria Data & Statistics — Global Health Observatory",
+    "url": "https://www.afro.who.int/node/992",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria (national aggregate)",
+    "geoLevel": "national",
+    "dataType": "Health estimates and national health-system indicators",
+    "updateFrequency": "Source-dependent; indicator-specific",
+    "licence": "WHO publication and data terms apply; attribution required; no WHO endorsement implied.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "WHO AFRO country data page reviewed; displayed indicator values and reference years transcribed.",
+    "limitations": [
+      "The page contains indicators with different reference years; retain the reference year for every value.",
+      "National estimates cannot establish state, LGA, ward or facility-level service conditions.",
+      "WHO estimates may differ from Nigerian administrative statistics because of source methods, modelling and revisions.",
+      "Do not use the WHO name or emblem to imply endorsement of ISEYC."
+    ],
+    "notes": "Initial source snapshots include under-five mortality (2024), life expectancy (2023) and health expenditure (2023)."
+  },
+  {
+    "id": "nitda-dl4all-dashboard",
+    "publisher": "National Information Technology Development Agency (NITDA)",
+    "name": "DL4ALL National Digital Literacy Dashboard",
+    "url": "https://dashboard.digitalliteracy.nitda.gov.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Dashboard reports all 36 states, FCT and 774 LGAs",
+    "geoLevel": "varies",
+    "dataType": "Administrative digital-literacy programme reporting dashboard",
+    "updateFrequency": "Dashboard updates; cadence not independently established",
+    "licence": "See NITDA dashboard terms; reuse conditions not separately reviewed.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Public NITDA dashboard reviewed; displayed national progress, reporting organisations and geographic coverage transcribed with dashboard update date.",
+    "limitations": [
+      "Dashboard-reported programme achievements are not a nationally representative digital-skills survey.",
+      "Do not assume each dashboard record is a unique person unless deduplication rules are published and checked.",
+      "The 50 million target is a programme target, not a population estimate.",
+      "Reported coverage across LGAs does not establish equal intensity, quality or learning outcomes in every LGA."
+    ],
+    "notes": "The dashboard displayed 2,783,731 as 'verified digitally literate' and 5.57% of a 50 million target on 24 October 2026; preserve the exact dashboard label and update date."
+  },
+  {
+    "id": "nimc-nin-enrolment-2025",
+    "publisher": "National Identity Management Commission (NIMC)",
+    "name": "NIN Enrolment Dashboard — June 2025",
+    "url": "https://nimc.gov.ng/nin/enrolment-report/june-2025",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria, states and diaspora",
+    "geoLevel": "varies",
+    "dataType": "Administrative identity-enrolment records",
+    "updateFrequency": "Periodic dashboard publication; cadence not stated",
+    "licence": "See NIMC publication terms; reuse conditions not separately reviewed.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "NIMC public enrolment dashboard reviewed; national and state totals transcribed for 30 June 2025.",
+    "limitations": [
+      "The published total is dated 30 June 2025, not a current 2026 total.",
+      "NIN enrolment records are not a population census or a measure of eligible-population coverage.",
+      "Do not infer identity inclusion or exclusion without an appropriate population denominator and deduplication methodology."
+    ],
+    "notes": "NIMC reported 121,404,601 total enrolment records as at 30 June 2025."
+  },
+  {
+    "id": "imf-article-iv-2026",
+    "publisher": "International Monetary Fund (IMF)",
+    "name": "Nigeria 2026 Article IV Consultation — Press Release and Staff Report",
+    "url": "https://www.imf.org/en/news/articles/2026/06/09/pr26190-nigeria-imf-executive-board-concludes-2026-article-iv-consultation-with-nigeria",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "employment",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria (national macroeconomic aggregates)",
+    "geoLevel": "national",
+    "dataType": "Macroeconomic national accounts, fiscal and external-sector analysis",
+    "updateFrequency": "Article IV consultation; periodic",
+    "licence": "IMF publication terms and attribution apply.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "IMF Executive Board release and linked 2026 Article IV material reviewed; 2024 actual row separated from estimates and projections.",
+    "limitations": [
+      "IMF staff estimates may differ from official Nigerian statistical releases; retain the source and vintage.",
+      "The report includes actual, estimated and projected years; never display projections as observed facts.",
+      "National macroeconomic aggregates do not describe local household conditions or department-level service delivery."
+    ],
+    "notes": "The initial snapshot uses only 2024 real GDP growth labelled 'actual' in the IMF staff table; projections are not imported as observed facts."
+  },
+  {
+    "id": "nbs-cpi-catalog",
+    "publisher": "National Bureau of Statistics (NBS)",
+    "name": "Consumer Price Index and Inflation — report catalogue",
+    "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/related-materials",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "employment",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; index tables include national and state profiles depending on release",
+    "geoLevel": "varies",
+    "dataType": "Monthly consumer price index reports and downloadable tables",
+    "updateFrequency": "Monthly publication schedule; release availability varies",
+    "licence": "NBS publication terms; attribution required.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NBS Microdata Catalog page reviewed; CPI metadata and downloadable report catalogue checked.",
+    "limitations": [
+      "NBS rebased CPI with 2024 price base and 2023 weight reference; preserve the correct series and methodology.",
+      "Pre-rebase and post-rebase series must not be joined without the NBS bridge methodology.",
+      "The catalogue is a report index, not a harmonised live API; every report's tables and reference month require extraction and review before indicator integration."
+    ],
+    "notes": "CPI methodology metadata states a 2024 price reference base, 2023 weight reference and 934 product varieties across 13 COICOP divisions."
+  },
+  {
+    "id": "naseni-innovation-hub",
+    "publisher": "National Agency for Science and Engineering Infrastructure (NASENI) — Innovation Hub",
+    "name": "NASENI Innovation Hub programmes and InnovateNaija",
+    "url": "https://innovation.naseni.gov.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; programme coverage varies by initiative",
+    "geoLevel": "varies",
+    "dataType": "Innovation programmes, finalist lists and institutional programme information",
+    "updateFrequency": "Programme-specific",
+    "licence": "See NASENI Innovation Hub publication terms; reuse conditions not separately reviewed.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NASENI Innovation Hub programme and finalist pages reviewed.",
+    "limitations": [
+      "Programme finalist counts are not a national census of innovators, startups or technology firms.",
+      "Some pages do not state publication or reference dates; retain 'date not stated' where applicable.",
+      "Programme announcements and selection lists do not prove commercialisation, job creation or sustained operations."
+    ],
+    "notes": "The InnovateNaija finalist page lists 108 innovators across 34 states; the page does not state a publication date."
+  },
+  {
+    "id": "isn-innovation-hub-assessment",
+    "publisher": "Innovation Support Network (ISN)",
+    "name": "Nigerian Innovation Hub Assessment Report and 2026–2030 Strategic Outlook",
+    "url": "https://isnhubs.org.ng/nigerias-innovation-landmark-isn-launches-comprehensive-hub-assessment-report-and-unveils-2026-2030-strategic-outlook/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "Nigeria (national ecosystem assessment)",
+    "geoLevel": "national",
+    "dataType": "Innovation hub ecosystem assessment and directory research",
+    "updateFrequency": "Report edition; not a live register",
+    "licence": "See ISN report terms; reuse conditions not separately reviewed.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "ISN publication dated 22 May 2026 reviewed; reported active-hub and ecosystem counts transcribed.",
+    "limitations": [
+      "Published by an ecosystem network, not a government statistical agency.",
+      "The report's definition of active, partially active and surveyed hub must be checked before comparison.",
+      "Do not treat the reported count as a live directory or proof that every listed hub remains operational."
+    ],
+    "notes": "ISN reports more than 190 active hubs within an ecosystem of more than 250 active and partially active spaces."
+  },
+  {
+    "id": "ondi-innovation",
+    "publisher": "Office for Nigerian Digital Innovation (ONDI) — NITDA",
+    "name": "Office for Nigerian Digital Innovation",
+    "url": "https://www.ondi.nitda.gov.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; programmes and partnerships may include international participants",
+    "geoLevel": "varies",
+    "dataType": "Institutional programme, innovation-support and ecosystem information",
+    "updateFrequency": "Programme-specific",
+    "licence": "See ONDI/NITDA publication terms; reuse conditions not separately reviewed.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official ONDI public website reviewed; institutional purpose and programme information checked.",
+    "limitations": [
+      "Institutional headline metrics require their own reference date, definition and methodology before indicator use.",
+      "Programme engagement counts do not by themselves establish startup survival, investment or job creation.",
+      "The site is a programme information source, not a comprehensive national startup or hub census."
+    ],
+    "notes": "Useful for mapping public innovation support programmes and infrastructure; do not treat programme descriptions as impact evidence."
   }
 ]
