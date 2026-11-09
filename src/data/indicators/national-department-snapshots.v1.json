@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "title": "ISEYC national evidence snapshots",
   "retrievedAt": "2026-11-10",
-  "note": "Dated transcriptions from linked publisher sources. These are not continuously refreshed feeds. Every value retains its own reference period, geography, evidence type and limitations.",
+  "note": "Dated transcriptions from linked publisher sources. These are not a continuously refreshed data feed. Every value retains its own reference period, geography, evidence type and limitations.",
   "records": [
     {
       "id": "who-nigeria-health-2021-23",
