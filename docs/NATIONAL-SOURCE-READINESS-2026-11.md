@@ -19,15 +19,15 @@ The next stage is to turn the catalogue into a governed acquisition and evidence
 
 The Observatory now exposes `GET /api/evidence/snapshots`. This is a **curated transcription layer**, not a live source feed. Each observation carries a source ID, publisher, source URL, reference period, geographic scope, measurement type, department mapping and explicit limitations. The endpoint does not silently replace missing data or infer local values.
 
-Initial source-backed observations:
+Initial source-backed observations (14 rows across six institutions):
 - **WHO Global Health Observatory:** Nigeria under-five mortality estimate 59.5 per 1,000 live births (2024); life expectancy at birth 61.4 years male and 64.5 years female (2023); health expenditure 3.9% of GDP and US$61.6 per capita (2023).
-- **NITDA DL4ALL:** dashboard-reported 2,783,731 records labelled “verified digitally literate” on the 24 October 2026 dashboard snapshot. This is a programme dashboard count, not a representative national digital-literacy survey or automatically a deduplicated count of unique people.
+- **NITDA DL4ALL:** dashboard-reported 2,783,731 records labelled “verified digitally literate”, 5.57% progress towards the 70% programme target, 14,747 communities reached and 774 LGAs covered on the 24 October 2026 dashboard snapshot. These are programme reporting metrics, not a representative national digital-literacy survey or automatically a deduplicated count of unique people; geographic reach does not prove equal intensity or outcomes.
 - **NIMC:** 121,404,601 NIN enrolment records as at 30 June 2025. This is an administrative enrolment count, not a population census or a current 2026 population total.
 - **IMF 2026 Article IV:** 2024 real GDP growth of 4.1%, shown as the report's actual value. IMF estimates and projections for other years are not presented as observed facts.
 - **Innovation Support Network:** its 22 May 2026 publication reports more than 190 active hubs within an ecosystem of more than 250 active and partially active spaces. This is a published ecosystem assessment, not a government census or live directory.
 - **NASENI Innovation Hub:** the InnovateNaija page lists 108 finalists across 34 states. The page does not state a publication/reference date; the Observatory preserves that missing date instead of inventing one.
 
-Source catalogue additions also include NBS CPI reports, ONDI and NASENI programme information. Catalogue-only entries are explicitly separated from datasets with an observation. The NBS CPI metadata states a 2024 price base and 2023 weight reference; pre-rebase and post-rebase series must not be spliced without the official bridge methodology.
+Source catalogue additions also include NBS CPI reports, ONDI and NASENI programme information. The official NBS catalogue lists the September 2026 CPI report, published 15 October 2026, as a downloadable ZIP containing PDF and XLSX tables; those tables have not yet been extracted and validated into observations. Catalogue-only entries are explicitly separated from datasets with an observation. The NBS CPI metadata states a 2024 price base and 2023 weight reference; pre-rebase and post-rebase series must not be spliced without the official bridge methodology.
 
 **Department use:** Health receives WHO national context; Education and Software & Technology receive the NITDA dashboard snapshot; Software & Technology receives the ISN and NASENI programme snapshots; Civic receives NIMC and IMF context. These values remain national or programme-level context. They do not establish Kaduna South, LGA, school, PHC or facility conditions.
 
