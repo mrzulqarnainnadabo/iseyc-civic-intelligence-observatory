@@ -1191,5 +1191,198 @@
       "The catalogue currently lists May 2026 as the latest food-price report found in this review; refresh before describing it as current."
     ],
     "notes": "The May 2026 report is listed as published 25 June 2026. NBS describes fieldwork by over 700 staff, more than 10,000 respondents/locations and collection across all 774 LGAs; use the actual published tables for any numeric value."
+  },
+  {
+    "id": "isn-hubs-directory-2026",
+    "publisher": "Innovation Support Network (ISN)",
+    "name": "Nigeria innovation hub member directory",
+    "url": "https://isnhubs.org.ng/hubs-directory/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "National directory; hub locations and focus areas vary by listing",
+    "geoLevel": "varies",
+    "dataType": "Member directory of innovation, technology and impact hubs; location, sector focus and ISN certification/member status",
+    "updateFrequency": "Ongoing directory; update cadence not stated",
+    "licence": "ISN directory reuse terms not confirmed; link to original listings and do not bulk-republish without permission",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "ISN public member and hubs directory reviewed; Kaduna and Kano listings checked",
+    "limitations": [
+      "The directory is a network/member listing, not a census of every innovation hub in Nigeria.",
+      "A directory listing does not independently prove current operating status, active programmes, funding, job creation or impact.",
+      "ISN's ISO Certified label is the network's Innovation Support Organisation certification status; do not imply ISO 9001 or another international standards certification.",
+      "Hub location and sector tags are publisher-listed and may change; verify directly before partnership or referral."
+    ],
+    "notes": "Listings reviewed include StartZone Kaduna, Kano Digital Innovation Hub, CcHUB, Ventures Platform, Innovation Growth Hub, Enugu Tech Corridor and Ibadan Innovation Hub. The displayed subset is not exhaustive."
+  },
+  {
+    "id": "isn-hub-assessment-2026",
+    "publisher": "Innovation Support Network (ISN)",
+    "name": "Nigerian Innovation Hub Assessment Report — 2026 summary",
+    "url": "https://isnhubs.org.ng/nigerias-innovation-landmark-isn-launches-comprehensive-hub-assessment-report-and-unveils-2026-2030-strategic-outlook/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "National; six geopolitical zones and named state/city clusters",
+    "geoLevel": "national",
+    "dataType": "Industry ecosystem assessment summary: hub activity, size, geographic respondent shares, services, staffing, revenue and infrastructure constraints",
+    "updateFrequency": "Assessment release 22 May 2026; periodic assessments not confirmed",
+    "licence": "ISN report reuse terms apply; cite the original report and verify permission before reproducing tables or figures",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "ISN's 22 May 2026 public assessment launch summary reviewed; underlying full report link identified but its complete methodology and tables were not parsed in this review",
+    "limitations": [
+      "The public article is an executive summary; sample frame, collection period, respondent definitions, weighting and full methodology require the full report.",
+      "Geographic percentages are described as shares of respondents, not a census share of all Nigerian hubs or absolute hub counts.",
+      "More than 190 active hubs surveyed/covered and an ecosystem of more than 250 active and partially active spaces are different denominators; do not combine them.",
+      "Percentages for staffing, training, mentorship, revenue and power outages are survey-summary findings and should be attributed to ISN.",
+      "The 2026–2030 funding and startup support figures are strategic targets, not achieved results."
+    ],
+    "notes": "ISN reports over 190 active hubs surveyed/covered from an ecosystem of more than 250 active and partially active spaces. Summary findings include Lagos 32% and Abuja 16% of respondents; Kano, Kaduna, Enugu, Rivers and Abia 4% each; 68.35% with fewer than 10 full-time staff; 90% offering structured training; 60% mentorship; over 70% annual revenue below US$50,000; and over 60% experiencing recurrent power outages. Full report is referenced at https://isnhubs.org.ng/hub-assessment-report."
+  },
+  {
+    "id": "startup-support-engagement-portal",
+    "publisher": "Nigeria Startup Support and Engagement Portal",
+    "name": "Nigeria Startup Act — Startup Support and Engagement Portal",
+    "url": "https://startup.gov.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National startup ecosystem; registration and labelling records",
+    "geoLevel": "national",
+    "dataType": "Government portal for startup labelling and registration of venture capital companies, accelerators, incubators, innovation hubs and civil society organisations under the Nigeria Startup Act 2022",
+    "updateFrequency": "Ongoing portal; data refresh cadence not stated",
+    "licence": "Government portal terms and Nigeria Startup Act requirements apply; verify data access and reuse terms",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official Startup Support and Engagement Portal and About page reviewed",
+    "limitations": [
+      "Portal registration or startup labelling does not prove active operations, product quality, investment received, employment or commercial success.",
+      "Use the Startup Act definitions and registration status; do not treat all ecosystem organisations as startups.",
+      "Bulk data/API availability and reuse terms must be confirmed before automated ingestion."
+    ],
+    "notes": "The portal was established to collate and classify startups and register VCs, hubs and innovation centres in support of the Nigeria Startup Act 2022."
+  },
+  {
+    "id": "nbti-incubation-centres",
+    "publisher": "National Board for Technology Incubation (NBTI)",
+    "name": "Technology Incubation Centres, incubatees and patented products",
+    "url": "https://nbti.gov.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National; zonal offices and technology incubation centres",
+    "geoLevel": "varies",
+    "dataType": "Official directories and records for Technology Incubation Centres, incubatees, patented products, post-incubation and extension services",
+    "updateFrequency": "Irregular official updates; document dates must be retained",
+    "licence": "NBTI publication and database reuse terms not confirmed; cite source and verify before bulk redistribution",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NBTI website sections for TIC Centre and Address, Patented Products, Incubatees and Post Incubation reviewed",
+    "limitations": [
+      "A listed centre or incubatee is not proof of current activity, commercialisation, employment or independent product validation.",
+      "Downloadable directories may have different reference dates; preserve the document date and geography.",
+      "Patent listing is not proof of commercial success or market readiness."
+    ],
+    "notes": "Useful institutional source for mapping public technology incubation infrastructure and the pipeline from incubation to post-incubation."
+  },
+  {
+    "id": "afrilabs-nigeria-hubs",
+    "publisher": "AfriLabs",
+    "name": "AfriLabs Nigeria hub directory",
+    "url": "https://www.afrilabs.com/hub_country/nigeria/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "Nigeria hub profiles within a pan-African network",
+    "geoLevel": "varies",
+    "dataType": "Network member profiles, hub descriptions, locations and focus areas",
+    "updateFrequency": "Ongoing member directory; update cadence not stated",
+    "licence": "AfriLabs website content reuse terms apply; cite each profile and verify before republishing",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "AfriLabs Nigeria hub-country directory reviewed",
+    "limitations": [
+      "AfriLabs membership is not a complete national hub census.",
+      "Profiles are organisation-submitted or network-maintained; do not treat descriptions as independent performance evaluations.",
+      "Membership does not establish current operational capacity, programme outcomes or funding."
+    ],
+    "notes": "Useful cross-check and discovery source for Nigerian hub profiles; includes NASENI Innovation Hub and other regional and specialist hubs."
+  },
+  {
+    "id": "cchub-programmes-2026",
+    "publisher": "Co-creation HUB Africa (CcHUB)",
+    "name": "CcHUB programmes, research and ecosystem updates",
+    "url": "https://cchub.africa/blog/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "Nigeria and pan-African programmes; coverage varies by initiative",
+    "geoLevel": "varies",
+    "dataType": "Programme announcements, research, accelerator and innovation hub activities, partner initiatives and published outcome stories",
+    "updateFrequency": "Ongoing news and programme updates",
+    "licence": "CcHUB content reuse terms apply; cite original posts and seek permission for republication",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "CcHUB official website and blog reviewed; 2026 Nigeria GATEWAY, SAIL Innovation Lab and GCIP Nigeria items identified",
+    "limitations": [
+      "Programme announcements and partner stories are not independent evaluations.",
+      "Participant, jobs, funding and outcome counts must be tied to the specific programme, period and source method.",
+      "Do not generalise a programme's reach to the whole Nigerian innovation ecosystem."
+    ],
+    "notes": "Current public posts include Nigeria GATEWAY, SAIL Innovation Lab, GCIP Nigeria and ecosystem research; use individual programme pages for dates and outcome details."
+  },
+  {
+    "id": "nipost-digital-postcode-hub-api-2026",
+    "publisher": "Nigeria Postal Service (NIPOST) and Office for Nigerian Digital Innovation (ONDI)",
+    "name": "Digital Postcode API — innovation hub partner programme",
+    "url": "https://www.postcode.gov.ng/innovation",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National; hub partners and their startup/developer portfolios",
+    "geoLevel": "varies",
+    "dataType": "Government API-access programme for qualifying innovation hubs; partner eligibility, technical onboarding and application timeline",
+    "updateFrequency": "Time-bound application windows; this round closed 13 October 2026",
+    "licence": "Digital Postcode API terms and partner access conditions apply; API tokens are restricted to approved use",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NIPOST Digital Postcode innovation programme page reviewed",
+    "limitations": [
+      "The 8–13 October 2026 application window is closed; do not present it as open.",
+      "Eligibility criteria are not a list of selected or approved hubs.",
+      "An API access opportunity is not evidence of actual integration, usage or user outcomes.",
+      "Approved hub partner list and usage metrics are not included in the page reviewed."
+    ],
+    "notes": "The programme invited registered Nigerian hubs with at least three years' operating track record and an active portfolio of 10–15 startups/developers to apply for Digital Postcode API access."
   }
 ]
