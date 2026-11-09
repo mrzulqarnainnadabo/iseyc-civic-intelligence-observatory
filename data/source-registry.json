@@ -1358,5 +1358,109 @@
       "Federal allocations do not represent state or LGA spending."
     ],
     "notes": "Official page lists the 2026 Q1 Budget Implementation Report (2 November 2026) and Q2 report (7 November 2026), plus the 2026 Appropriation Act and earlier consolidated reports."
+  },
+  {
+    "id": "nphcda-phc-progress-2025",
+    "publisher": "National Primary Health Care Development Agency (NPHCDA)",
+    "name": "Insights into Priority PHC Initiative — progress as of August 2025",
+    "url": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "infrastructure",
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; some programme figures are national, zonal or combined state counts",
+    "geoLevel": "varies",
+    "dataType": "Agency-reported PHC revitalisation, BHCPF, workforce and commodity programme progress",
+    "updateFrequency": "Programme update; page dated 15 September 2025",
+    "licence": "Public agency publication; attribution required; no NPHCDA endorsement implied.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "NPHCDA official progress page dated 15 September 2025 reviewed; reference dates and programme figures transcribed.",
+    "limitations": [
+      "Figures are agency-reported programme progress, not independently audited outcomes.",
+      "The page is dated 15 September 2025 and reports some figures as of August 2025 or mid-2025; it is not a current 2026 status.",
+      "National and combined-state figures must not be presented as Kaduna South or individual-facility results.",
+      "Revitalisation, installation, procurement, distribution, disbursement and service functionality are different measures."
+    ],
+    "notes": "Reports 1,295 PHCs revitalised as of August 2025; BHCPF disbursements and workforce training are reported for 2023 to mid-2025; Kaduna and Yobe recruitment figures are combined."
+  },
+  {
+    "id": "nphcda-phc-functionality-dashboard",
+    "publisher": "National Primary Health Care Development Agency (NPHCDA)",
+    "name": "PHC Functionality Dashboard and revitalised facility directory",
+    "url": "https://phc.nphcda.gov.ng/infographic",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; facility-level dashboard",
+    "geoLevel": "facility",
+    "dataType": "Primary health-care facility functionality and revitalisation dashboard",
+    "updateFrequency": "Dashboard described as live; actual refresh cadence not independently established",
+    "licence": "Public dashboard; confirm reuse and API terms before bulk extraction.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NPHCDA progress page links to the PHC Functionality Dashboard; dashboard URL resolves but its data is not machine-readable in this review.",
+    "limitations": [
+      "Dashboard content was not available as readable structured data during this review.",
+      "Do not treat a dashboard link as an extracted or verified facility record.",
+      "Verify facility identity, status, coordinates, reporting date, staffing, commodities and service availability before publishing a local finding."
+    ],
+    "notes": "NPHCDA says the PHC Functionality Dashboard and facility directory were integrated into its website in May 2025. Machine-readable extraction remains pending."
+  },
+  {
+    "id": "federal-state-health-report-2024",
+    "publisher": "Federal Ministry of Health and Social Welfare, Nigeria",
+    "name": "The State of Health of the Nation Report 2024",
+    "url": "https://fmohconnect.gov.ng/wp-content/uploads/2025/05/The-State-of-Health-of-the-Nation-Report-2024.pdf",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "public-finance",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; chapter and indicator geography varies",
+    "geoLevel": "varies",
+    "dataType": "National health-sector performance, financing, PHC, workforce and commodity report",
+    "updateFrequency": "Annual report edition",
+    "licence": "Government report; retain attribution and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Federal Ministry-hosted 2024 State of Health report page and PDF listing reviewed.",
+    "limitations": [
+      "Report covers 2024 and is not a live 2026 dashboard.",
+      "Each figure must retain its chapter, source, reference period and geographic scope.",
+      "Policy announcements and programme descriptions are not proof of completed implementation or outcomes."
+    ],
+    "notes": "The report discusses PHC, essential medicines, health workforce and the National Health Logistics Management Information System; relevant tables require extraction."
+  },
+  {
+    "id": "federal-health-logistics-programme",
+    "publisher": "Federal Ministry of Health and Social Welfare, Nigeria — Food and Drug Services",
+    "name": "National Product Supply Chain Management Programme and essential medicines logistics",
+    "url": "https://health.gov.ng/food-and-drug-programs/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "infrastructure",
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; federal and state programme coverage varies",
+    "geoLevel": "varies",
+    "dataType": "Essential medicines, vaccines and health commodity supply-chain programme documents",
+    "updateFrequency": "Programme-specific",
+    "licence": "Government programme publications; confirm dataset-specific terms.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official Ministry Food and Drug Services programme page and State of Health report references reviewed.",
+    "limitations": [
+      "Programme documents are not current PHC stock-on-hand data.",
+      "Medicine availability requires facility-level stock-on-hand, consumption, losses/adjustments and reporting date.",
+      "Federal tertiary-hospital inventory initiatives must not be presented as PHC medicine availability."
+    ],
+    "notes": "The Ministry lists National Product Supply Chain Management Programme and health logistics publications. Current facility-level PHC medicine data are not yet ingested."
   }
 ]
