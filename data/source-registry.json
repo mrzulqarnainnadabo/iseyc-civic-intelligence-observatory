@@ -1437,5 +1437,338 @@
       "Do not mix estimates, projections and actuals from different editions of the Nigeria Development Update."
     ],
     "notes": "October 2026 edition discusses national growth, fiscal revenue, external balances and state spending priorities."
+  },
+  {
+    "id": "imf-article-iv-2026",
+    "publisher": "International Monetary Fund (IMF)",
+    "name": "Nigeria 2026 Article IV Consultation — Press Release and Staff Report",
+    "url": "https://www.imf.org/en/news/articles/2026/06/09/pr26190-nigeria-imf-executive-board-concludes-2026-article-iv-consultation-with-nigeria",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "employment",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria (national macroeconomic aggregates)",
+    "geoLevel": "national",
+    "dataType": "Macroeconomic national accounts, fiscal and external-sector analysis",
+    "updateFrequency": "Article IV consultation; periodic",
+    "licence": "IMF publication terms and attribution apply.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "IMF Executive Board release and linked 2026 Article IV material reviewed; 2024 actual row separated from estimates and projections.",
+    "limitations": [
+      "IMF staff estimates may differ from official Nigerian statistical releases; retain the source and vintage.",
+      "The report includes actual, estimated and projected years; never display projections as observed facts.",
+      "National macroeconomic aggregates do not describe local household conditions or department-level service delivery."
+    ],
+    "notes": "The initial snapshot uses only 2024 real GDP growth labelled 'actual' in the IMF staff table; projections are not imported as observed facts."
+  },
+  {
+    "id": "ondi-innovation",
+    "publisher": "Office for Nigerian Digital Innovation (ONDI) — NITDA",
+    "name": "Office for Nigerian Digital Innovation",
+    "url": "https://www.ondi.nitda.gov.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; programmes and partnerships may include international participants",
+    "geoLevel": "varies",
+    "dataType": "Institutional programme, innovation-support and ecosystem information",
+    "updateFrequency": "Programme-specific",
+    "licence": "See ONDI/NITDA publication terms; reuse conditions not separately reviewed.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official ONDI public website reviewed; institutional purpose and programme information checked.",
+    "limitations": [
+      "Institutional headline metrics require their own reference date, definition and methodology before indicator use.",
+      "Programme engagement counts do not by themselves establish startup survival, investment or job creation.",
+      "The site is a programme information source, not a comprehensive national startup or hub census."
+    ],
+    "notes": "Useful for mapping public innovation support programmes and infrastructure; do not treat programme descriptions as impact evidence."
+  },
+  {
+    "id": "ubec-statistics",
+    "publisher": "Universal Basic Education Commission (UBEC)",
+    "name": "Digest of Statistics and Reports",
+    "url": "https://ubec.gov.ng/reports/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; state and school coverage varies by report",
+    "geoLevel": "varies",
+    "dataType": "Basic education annual reports, school digests, personnel audits and performance reports",
+    "updateFrequency": "Report-specific",
+    "licence": "See UBEC publication terms; reuse conditions not separately reviewed.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "UBEC official reports and Digest of Statistics pages reviewed.",
+    "limitations": [
+      "The available school digest and report editions have different reference years; preserve the edition and school year.",
+      "A report title or publication date does not mean the tables have been extracted or validated.",
+      "School administrative records may have incomplete reporting and should not be treated as a full census without the report's coverage method."
+    ],
+    "notes": "Public catalogue lists 2024 Annual Report, 2022/2023 National Personnel Audit, 2022 Digest of Public/Private Schools and 2025 Q4 key performance report."
+  },
+  {
+    "id": "unicef-nalabe-2022",
+    "publisher": "UNICEF Nigeria and Universal Basic Education Commission (UBEC)",
+    "name": "National Assessment of Learning Achievement in Basic Education (NALABE 2022)",
+    "url": "https://www.unicef.org/nigeria/reports/national-assessment-learning-achievement-basic-education",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "National sample across 36 states and FCT",
+    "geoLevel": "national",
+    "dataType": "National learning achievement assessment of P3, P5 and JS2 learners",
+    "updateFrequency": "Assessment edition; not a live feed",
+    "licence": "See UNICEF report reuse terms; attribution required.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "UNICEF report page reviewed; sample sizes, grade levels, subjects and publication date checked.",
+    "limitations": [
+      "The assessment refers to 2022 learning achievement; it is not a 2026 measure.",
+      "Preserve grade, subject, proficiency level and sampling design when extracting results.",
+      "National results do not establish performance of a specific Kaduna school or LGA."
+    ],
+    "notes": "Published December 2025. Sample includes 75,067 P3 learners, 71,041 P5 learners and 23,564 JS2 learners across sampled schools in all states and FCT. Full result tables are not yet ingested."
+  },
+  {
+    "id": "nemis-downloads",
+    "publisher": "Federal Ministry of Education — Nigeria Education Management Information System (NEMIS)",
+    "name": "NEMIS Data Visuals, School Census and Education Digest Downloads",
+    "url": "https://nemis.education.gov.ng/downloads",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; school census, state and zone tables vary by publication",
+    "geoLevel": "varies",
+    "dataType": "Education management information system downloads, school census tools and annual education digests",
+    "updateFrequency": "Publication-specific",
+    "licence": "See Federal Ministry of Education/NEMIS terms; reuse conditions not separately reviewed.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NEMIS download page reviewed; listed editions and data visual categories recorded.",
+    "limitations": [
+      "The public download page lists older national digest editions alongside current EMIS products; do not infer current coverage from an old report title.",
+      "A dashboard or data visual requires its own reference period, geography and data-quality review.",
+      "Do not merge NEMIS and the 2024/2025 Annual School Census portal without reconciling definitions and reporting frames."
+    ],
+    "notes": "The public downloads page lists 2022 and earlier Digest of Education Statistics editions, data visuals and school-census materials. The newer 2024/2025 FME EMIS portal is registered separately."
+  },
+  {
+    "id": "federal-ministry-health-msdat",
+    "publisher": "Federal Ministry of Health and Social Welfare, Nigeria",
+    "name": "MultiSource Data Analytics & Triangulation Platform (MSDAT)",
+    "url": "https://fmohconnect.gov.ng/msdat/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; indicator geography varies by underlying routine, survey and global-estimate source",
+    "geoLevel": "varies",
+    "dataType": "Health indicator comparison and triangulation platform",
+    "updateFrequency": "Underlying source-specific; not independently established",
+    "licence": "See Federal Ministry of Health platform terms; reuse conditions not separately reviewed.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Federal Ministry of Health MSDAT page reviewed; platform purpose and source categories checked.",
+    "limitations": [
+      "The platform compares routine data, surveys and global estimates; these are not interchangeable.",
+      "Every displayed indicator requires its own source, reference period, geography and method before reuse.",
+      "A dashboard view is not independent verification of facility-level service availability."
+    ],
+    "notes": "The Ministry describes MSDAT as a transparent view of key health indicators across routine, survey and global-estimate sources."
+  },
+  {
+    "id": "health-facility-registry",
+    "publisher": "Federal Ministry of Health and Social Welfare, Nigeria — Nigeria Health Facility Registry",
+    "name": "Nigeria Health Facility Registry (NHFR) and External API",
+    "url": "https://hfr.fmohconnect.gov.ng/developers",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "All 36 states and FCT; facility coverage depends on registry records",
+    "geoLevel": "facility",
+    "dataType": "National health-facility register and read-only REST/FHIR APIs",
+    "updateFrequency": "Registry updates; cadence not stated",
+    "licence": "API key required; obtain written access and reuse conditions before ingestion.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NHFR public portal and developer documentation reviewed.",
+    "limitations": [
+      "External API requires an approved API key; no authenticated data has been ingested.",
+      "Registered facility does not prove the facility is open, staffed, stocked or providing services.",
+      "Facility records must be deduplicated and checked for status, ownership, coordinates and update dates."
+    ],
+    "notes": "The public developer page documents read-only REST and FHIR endpoints with API-key authentication. Access request is a dependency for automated facility data."
+  },
+  {
+    "id": "federal-ministry-health-reports",
+    "publisher": "Federal Ministry of Health and Social Welfare, Nigeria",
+    "name": "Federal Ministry of Health Reports and Publications",
+    "url": "https://health.gov.ng/reports/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; report-specific",
+    "geoLevel": "varies",
+    "dataType": "Public health, family health, hospital services, nutrition and food/drugs reports",
+    "updateFrequency": "Publication-specific",
+    "licence": "See Ministry publication terms; reuse conditions not separately reviewed.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official Ministry reports page reviewed; report categories and public access confirmed.",
+    "limitations": [
+      "Report categories are not a harmonised indicator feed.",
+      "Each report must be reviewed for reference period, scope, geography, methods and whether findings are national or subnational.",
+      "A programme announcement is not evidence of implementation or outcomes."
+    ],
+    "notes": "The public reports page groups materials into Family Health, Public Health, Hospital Services, Food and Drugs, and Nutrition."
+  },
+  {
+    "id": "budget-office-federal",
+    "publisher": "Budget Office of the Federation, Federal Republic of Nigeria",
+    "name": "Federal Budget, Appropriation and Budget Implementation Reports",
+    "url": "https://budgetoffice.gov.ng/?page_id=1366",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "governance",
+      "education",
+      "health",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Federal Government of Nigeria; MDA and programme schedules vary by report",
+    "geoLevel": "national",
+    "dataType": "Appropriation acts, budget implementation reports, fiscal strategy papers and expenditure schedules",
+    "updateFrequency": "Quarterly and annual reports; appropriation cycles",
+    "licence": "Public government publications; verify document-specific reuse terms.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Budget Office official publication list reviewed; 2026 Q1 and Q2 budget implementation report dates checked.",
+    "limitations": [
+      "Appropriation is not actual release, cash disbursement, expenditure or completed delivery.",
+      "Budget implementation reports require line-item, MDA, programme and period reconciliation before analysis.",
+      "Federal allocations do not represent state or LGA spending."
+    ],
+    "notes": "Official page lists the 2026 Q1 Budget Implementation Report (2 November 2026) and Q2 report (7 November 2026), plus the 2026 Appropriation Act and earlier consolidated reports."
+  },
+  {
+    "id": "nphcda-phc-progress-2025",
+    "publisher": "National Primary Health Care Development Agency (NPHCDA)",
+    "name": "Insights into Priority PHC Initiative — progress as of August 2025",
+    "url": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "infrastructure",
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; some programme figures are national, zonal or combined state counts",
+    "geoLevel": "varies",
+    "dataType": "Agency-reported PHC revitalisation, BHCPF, workforce and commodity programme progress",
+    "updateFrequency": "Programme update; page dated 15 September 2025",
+    "licence": "Public agency publication; attribution required; no NPHCDA endorsement implied.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "NPHCDA official progress page dated 15 September 2025 reviewed; reference dates and programme figures transcribed.",
+    "limitations": [
+      "Figures are agency-reported programme progress, not independently audited outcomes.",
+      "The page is dated 15 September 2025 and reports some figures as of August 2025 or mid-2025; it is not a current 2026 status.",
+      "National and combined-state figures must not be presented as Kaduna South or individual-facility results.",
+      "Revitalisation, installation, procurement, distribution, disbursement and service functionality are different measures."
+    ],
+    "notes": "Reports 1,295 PHCs revitalised as of August 2025; BHCPF disbursements and workforce training are reported for 2023 to mid-2025; Kaduna and Yobe recruitment figures are combined."
+  },
+  {
+    "id": "nphcda-phc-functionality-dashboard",
+    "publisher": "National Primary Health Care Development Agency (NPHCDA)",
+    "name": "PHC Functionality Dashboard and revitalised facility directory",
+    "url": "https://phc.nphcda.gov.ng/infographic",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; facility-level dashboard",
+    "geoLevel": "facility",
+    "dataType": "Primary health-care facility functionality and revitalisation dashboard",
+    "updateFrequency": "Dashboard described as live; actual refresh cadence not independently established",
+    "licence": "Public dashboard; confirm reuse and API terms before bulk extraction.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NPHCDA progress page links to the PHC Functionality Dashboard; dashboard URL resolves but its data is not machine-readable in this review.",
+    "limitations": [
+      "Dashboard content was not available as readable structured data during this review.",
+      "Do not treat a dashboard link as an extracted or verified facility record.",
+      "Verify facility identity, status, coordinates, reporting date, staffing, commodities and service availability before publishing a local finding."
+    ],
+    "notes": "NPHCDA says the PHC Functionality Dashboard and facility directory were integrated into its website in May 2025. Machine-readable extraction remains pending."
+  },
+  {
+    "id": "federal-state-health-report-2024",
+    "publisher": "Federal Ministry of Health and Social Welfare, Nigeria",
+    "name": "The State of Health of the Nation Report 2024",
+    "url": "https://fmohconnect.gov.ng/wp-content/uploads/2025/05/The-State-of-Health-of-the-Nation-Report-2024.pdf",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "public-finance",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; chapter and indicator geography varies",
+    "geoLevel": "varies",
+    "dataType": "National health-sector performance, financing, PHC, workforce and commodity report",
+    "updateFrequency": "Annual report edition",
+    "licence": "Government report; retain attribution and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Federal Ministry-hosted 2024 State of Health report page and PDF listing reviewed.",
+    "limitations": [
+      "Report covers 2024 and is not a live 2026 dashboard.",
+      "Each figure must retain its chapter, source, reference period and geographic scope.",
+      "Policy announcements and programme descriptions are not proof of completed implementation or outcomes."
+    ],
+    "notes": "The report discusses PHC, essential medicines, health workforce and the National Health Logistics Management Information System; relevant tables require extraction."
+  },
+  {
+    "id": "federal-health-logistics-programme",
+    "publisher": "Federal Ministry of Health and Social Welfare, Nigeria — Food and Drug Services",
+    "name": "National Product Supply Chain Management Programme and essential medicines logistics",
+    "url": "https://health.gov.ng/food-and-drug-programs/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "infrastructure",
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; federal and state programme coverage varies",
+    "geoLevel": "varies",
+    "dataType": "Essential medicines, vaccines and health commodity supply-chain programme documents",
+    "updateFrequency": "Programme-specific",
+    "licence": "Government programme publications; confirm dataset-specific terms.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official Ministry Food and Drug Services programme page and State of Health report references reviewed.",
+    "limitations": [
+      "Programme documents are not current PHC stock-on-hand data.",
+      "Medicine availability requires facility-level stock-on-hand, consumption, losses/adjustments and reporting date.",
+      "Federal tertiary-hospital inventory initiatives must not be presented as PHC medicine availability."
+    ],
+    "notes": "The Ministry lists National Product Supply Chain Management Programme and health logistics publications. Current facility-level PHC medicine data are not yet ingested."
   }
 ]
