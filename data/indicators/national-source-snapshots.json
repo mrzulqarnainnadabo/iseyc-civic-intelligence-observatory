@@ -258,8 +258,8 @@
       "publisher": "NASENI Innovation Hub",
       "title": "NASENI Innovation Hub programmes and innovation support",
       "url": "https://innovation.naseni.gov.ng/",
-      "status": "catalogue",
-      "note": "Programme and institutional information; do not infer national R&D expenditure, commercialisation rate or startup survival from programme descriptions.",
+      "status": "partial",
+      "note": "A finalist-count snapshot is integrated; broader NASENI programme outputs, commercialisation results and innovation-support datasets are not yet integrated.",
       "departments": [
         "software-technology",
         "education"
