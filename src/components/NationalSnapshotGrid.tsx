@@ -1,6 +1,6 @@
 import snapshots from "../data/indicators/national-department-snapshots.v1.json";
 
-type SnapshotMetric = { label: string; value: string; unit: string; period: string; interval?: string };
+type SnapshotMetric = { label: string; value: string; unit: string; period: string; interval?: string; measurementType?: string };
 type SnapshotRecord = {
   id: string;
   departmentId?: string | null;
@@ -43,7 +43,7 @@ export default function NationalSnapshotGrid({ departmentId }: { departmentId?: 
                 <div className="national-snapshot__metric" key={metric.label}>
                   <strong>{metric.value}{metric.interval ? <small> [{metric.interval}]</small> : null}</strong>
                   <span>{metric.label}</span>
-                  <em>{metric.unit} · {metric.period}</em>
+                  <em>{metric.unit} · {metric.period}{metric.measurementType ? ' · ' + metric.measurementType : ''}</em>
                 </div>
               ))}
             </div>
