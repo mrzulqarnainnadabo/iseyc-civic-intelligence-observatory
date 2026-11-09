@@ -66,6 +66,8 @@ export default function Overview() {
 
     {isDemo && <p className="observatory-demo-note">Demonstration mode: synthetic records are not real community submissions or national statistics.</p>}
 
+    <NationalSnapshotGrid />
+
     <section className="observatory-section" aria-labelledby="indicators-heading">
       <div className="observatory-section__head"><div><span className="observatory-kicker observatory-kicker--dark">National data</span><h2 id="indicators-heading">Indicators that help explain the picture</h2><p>Source-retrieved series. Values are not ISEYC-produced statistics.</p></div><Link to="/evidence">Evidence library ↗</Link></div>
       <div className="sector-filter" role="group" aria-label="Filter indicators by sector">
