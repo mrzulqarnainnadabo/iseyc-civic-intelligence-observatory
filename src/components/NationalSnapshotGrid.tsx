@@ -3,7 +3,8 @@ import snapshots from "../data/indicators/national-department-snapshots.v1.json"
 type SnapshotMetric = { label: string; value: string; unit: string; period: string; interval?: string };
 type SnapshotRecord = {
   id: string;
-  departmentId: string | null;
+  departmentId?: string | null;
+  departmentIds?: string[];
   title: string;
   publisher: string;
   sourceId: string;
@@ -20,7 +21,7 @@ type SnapshotRecord = {
 const records = snapshots.records as SnapshotRecord[];
 
 export default function NationalSnapshotGrid({ departmentId }: { departmentId?: string }) {
-  const visible = records.filter((record) => !departmentId || record.departmentId === departmentId);
+  const visible = records.filter((record) => !departmentId || record.departmentId === departmentId || record.departmentIds?.includes(departmentId));
   if (!visible.length) return null;
 
   return (
