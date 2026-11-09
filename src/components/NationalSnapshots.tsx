@@ -69,7 +69,7 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
        ) : <p className="national-snapshots__empty">No curated snapshot is currently assigned to {departmentId ? DEPARTMENT_LABEL[departmentId] || 'this department' : 'this view'}.</p>}
       {catalogOnly.length > 0 && <div className="national-catalogue">
         <div className="national-catalogue__head"><strong>Sources under assessment</strong><span>Catalogue status is source-specific</span></div>
-        <div className="national-catalogue__grid">{visibleCatalogue.map((item) => <article key={item.id}><span>{item.publisher} · {item.status === "partial" ? "Partial integration" : "Catalogue only"}</span><strong>{item.title}</strong><p>{item.note}</p><a href={item.url} target="_blank" rel="noopener noreferrer">Open source ↗</a></article>)}</div>
+        <div className="national-catalogue__grid">{visibleCatalogue.map((item) => <article key={item.id}><span>{item.publisher} · {item.status === "partial" ? "Partial integration" : "Catalogue only"}</span><strong>{item.title}</strong><details><summary>Coverage & access</summary><p>{item.note}</p></details><a href={item.url} target="_blank" rel="noopener noreferrer">Open source ↗</a></article>)}</div>
       </div>}
       {catalogOnly.length > 3 && <button type="button" className="national-snapshots__toggle" onClick={() => setShowAllCatalogue((value) => !value)}>{showAllCatalogue ? "Show fewer sources" : "View all " + catalogOnly.length + " sources"}</button>}
       {!compact && <p className="national-snapshots__disclaimer">Curated transcriptions, not live feeds. Source publishers own the original data. A national statistic is not a local service-delivery finding.</p>}
