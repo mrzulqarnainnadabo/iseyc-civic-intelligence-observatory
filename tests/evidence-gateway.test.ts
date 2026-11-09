@@ -30,11 +30,14 @@ describe('evidence gateway allowlist', () => {
 
   it('accepts pilot ids', () => {
     expect(resolvePilotRequest('wb-nga-sp-pop-totl').ok).toBe(true);
+    expect(resolvePilotRequest('wb-nga-eg-elc-accs-zs').ok).toBe(true);
+    expect(resolvePilotRequest('wb-nga-it-net-user-zs').ok).toBe(true);
+    expect(resolvePilotRequest('wb-nga-sl-uem-totl-zs').ok).toBe(true);
   });
 
   it('lists only allowlisted catalog', () => {
     const list = listPilotCatalog();
-    expect(list.length).toBe(3);
+    expect(list.length).toBeGreaterThanOrEqual(6);
     expect(list.every((i) => i.geoLevel === 'national')).toBe(true);
   });
 
@@ -89,6 +92,22 @@ describe('retrieveObservations', () => {
     expect(body.receipt?.contentHash).toBeTruthy();
     expect(body.receipt?.observationCount).toBe(2);
     expect(body.persistence?.mode).toBe('ephemeral');
+  });
+
+  it('preserves modelled classification for modelled indicators', async () => {
+    const fetchImpl = vi.fn(async () => ({
+      ok: true,
+      status: 200,
+      body: null,
+      text: async () => JSON.stringify([{ page: 1 }, [{ date: '2023', value: 5.2 }]]),
+    })) as unknown as typeof fetch;
+    const body = await retrieveObservations({
+      indicatorId: 'wb-nga-sl-uem-totl-zs',
+      fetchImpl,
+      bypassCache: true,
+    });
+    expect(body.observations[0].qualityFlags).toContain('modelled');
+    expect(body.observations[0].qualityFlags).not.toContain('estimated');
   });
 
   it('does not invent data on HTTP failure', async () => {

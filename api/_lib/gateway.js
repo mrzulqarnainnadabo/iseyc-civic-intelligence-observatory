@@ -169,7 +169,7 @@ export async function retrieveObservations(opts) {
         sourceUrl: pilot.sourceUrl,
         retrievedAt,
         publicationDate: null,
-        qualityFlags: ['estimated', 'national-only'],
+        qualityFlags: [pilot.measurementType, 'national-only'],
         methodologyRef: pilot.methodologyNotes,
         contractVersion: CONTRACT_VERSION,
       });

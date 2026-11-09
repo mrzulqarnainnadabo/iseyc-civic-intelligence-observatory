@@ -81,6 +81,84 @@
       ],
       "updateFrequency": "Annual (source-dependent)",
       "lastVerifiedAccess": "2026-11-03"
+    },
+    {
+      "id": "wb-nga-eg-elc-accs-zs",
+      "title": "Access to electricity (% of population)",
+      "definition": "Share of the population with access to electricity, as defined by the World Bank indicator metadata.",
+      "unit": "percent of population",
+      "measurementType": "estimated",
+      "sector": "infrastructure",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria (national aggregate)",
+      "sourceDatasetId": "world-bank-wdi",
+      "sourcePublisher": "World Bank — World Development Indicators",
+      "sourceUrl": "https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS?locations=NG",
+      "api": {
+        "provider": "world-bank",
+        "urlTemplate": "https://api.worldbank.org/v2/country/NGA/indicator/EG.ELC.ACCS.ZS?format=json&per_page=30&date=2015:2024"
+      },
+      "methodologyNotes": "World Bank WDI. National series compiled from nationally reported and internationally harmonised sources; consult original metadata for observation-specific source and method.",
+      "licence": "World Bank open data terms; attribution required.",
+      "limitations": [
+        "National aggregate only; not state, LGA or household-level evidence.",
+        "Access does not establish reliability, affordability, hours of supply or quality.",
+        "Missing years are not zero; estimates may be revised by the source."
+      ],
+      "updateFrequency": "Annual (source-dependent)",
+      "lastVerifiedAccess": "Not independently verified in this change"
+    },
+    {
+      "id": "wb-nga-it-net-user-zs",
+      "title": "Individuals using the Internet (% of population)",
+      "definition": "Percentage of individuals who used the Internet from any location and for any purpose, using the source definition.",
+      "unit": "percent of population",
+      "measurementType": "estimated",
+      "sector": "infrastructure",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria (national aggregate)",
+      "sourceDatasetId": "world-bank-wdi",
+      "sourcePublisher": "World Bank — World Development Indicators",
+      "sourceUrl": "https://data.worldbank.org/indicator/IT.NET.USER.ZS?locations=NG",
+      "api": {
+        "provider": "world-bank",
+        "urlTemplate": "https://api.worldbank.org/v2/country/NGA/indicator/IT.NET.USER.ZS?format=json&per_page=30&date=2015:2024"
+      },
+      "methodologyNotes": "World Bank WDI. The series is based on source-reported estimates and harmonised telecommunications statistics; see indicator metadata for source details and revisions.",
+      "licence": "World Bank open data terms; attribution required.",
+      "limitations": [
+        "National aggregate only; does not show state, LGA, gender or age-group differences.",
+        "Internet use does not measure connection quality, affordability, device ownership or digital skills.",
+        "Missing years are not zero; estimates may be revised by the source."
+      ],
+      "updateFrequency": "Annual (source-dependent)",
+      "lastVerifiedAccess": "Not independently verified in this change"
+    },
+    {
+      "id": "wb-nga-sl-uem-totl-zs",
+      "title": "Unemployment, total (% of total labour force)",
+      "definition": "Share of the labour force without work but available for and seeking employment, following the ILO modelled estimate definition.",
+      "unit": "percent of total labour force",
+      "measurementType": "modelled",
+      "sector": "employment",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria (national aggregate)",
+      "sourceDatasetId": "world-bank-wdi",
+      "sourcePublisher": "World Bank — World Development Indicators (ILO modelled estimates)",
+      "sourceUrl": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=NG",
+      "api": {
+        "provider": "world-bank",
+        "urlTemplate": "https://api.worldbank.org/v2/country/NGA/indicator/SL.UEM.TOTL.ZS?format=json&per_page=30&date=2015:2024"
+      },
+      "methodologyNotes": "World Bank WDI, ILO modelled estimates. This is a modelled labour-market series; it is not a count of registered unemployed people or a measure of job quality.",
+      "licence": "World Bank open data terms; attribution required.",
+      "limitations": [
+        "National aggregate only; do not infer state or LGA unemployment from this series.",
+        "Modelled estimates depend on harmonised labour-force concepts and may differ from NBS national labour-force survey measures.",
+        "Not directly interchangeable with Nigeria Labour Force Survey estimates under different methods or reference periods."
+      ],
+      "updateFrequency": "Annual (source-dependent)",
+      "lastVerifiedAccess": "Not independently verified in this change"
     }
   ],
   "datasets": [
@@ -94,7 +172,9 @@
       "geographicCoverage": "Global including Nigeria",
       "geoLevel": "national (for NGA series used here)",
       "collectionMethod": "Compilation and estimation from national and international statistical systems",
-      "limitations": ["ISEYC retrieves selected series only; the full WDI catalogue is far larger."]
+      "limitations": [
+        "ISEYC retrieves selected series only; the full WDI catalogue is far larger."
+      ]
     }
   ]
 }
