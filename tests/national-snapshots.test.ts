@@ -76,4 +76,19 @@ describe("dated national evidence snapshots", () => {
     expect(census.referencePeriod).toBe("School year 2024/2025");
   });
 
+
+  it("uses the current Federal Ministry of Education school-census snapshot with its reporting limitation", () => {
+    const national = snapshots.records.find((record) => record.id === "fme-annual-school-census-national-2024-25")!;
+    const kaduna = snapshots.records.find((record) => record.id === "fme-annual-school-census-kaduna-2024-25")!;
+    expect(national.sourceId).toBe("fme-annual-school-census");
+    expect(national.metrics.find((item) => item.label === "Reporting rate")?.value).toBe("53.7%");
+    expect(national.metrics.find((item) => item.label === "Schools reported")?.value).toBe("124,066");
+    expect(national.metrics.find((item) => item.label === "Total schools displayed")?.value).toBe("230,844");
+    expect(national.limitations.join(" ")).toMatch(/53.7% reporting rate/);
+    expect(kaduna.geography.label).toBe("Kaduna State");
+    expect(kaduna.metrics.find((item) => item.label === "Learners")?.value).toBe("2,718,125");
+    expect(kaduna.metrics.find((item) => item.label === "Learner–teacher ratio")?.value).toBe("51.3");
+    expect(kaduna.limitations.join(" ")).toMatch(/not Kaduna South/);
+  });
+
 });
