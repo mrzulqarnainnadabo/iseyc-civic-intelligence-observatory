@@ -16,9 +16,7 @@ const DEPARTMENT_LABEL: Record<string, string> = {
 };
 
 function valueLabel(value: number, unit: string, qualifier?: string) {
-  const formatted = value >= 1_000_000
-    ? (value / 1_000_000).toLocaleString('en-NG', { maximumFractionDigits: 2 }) + ' million'
-    : value.toLocaleString('en-NG', { maximumFractionDigits: 1 });
+  const formatted = value.toLocaleString('en-NG', { maximumFractionDigits: 2 });
   return (qualifier ? qualifier + ' ' : '') + formatted + (unit.startsWith('%') ? ' ' + unit : ' ' + unit);
 }
 
