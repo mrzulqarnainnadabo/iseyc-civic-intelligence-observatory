@@ -9,6 +9,13 @@ describe("selected ISN innovation hub directory", () => {
     expect(hubs.hubs).toHaveLength(8);
     expect(sources.some((source) => source.id === hubs.sourceId && source.url === hubs.sourceUrl)).toBe(true);
   });
+  it("registers the public innovation ecosystem sources used by the departments", () => {
+    const required = [
+      "isn-hubs-directory-2026", "isn-hub-assessment-2026", "startup-support-engagement-portal",
+      "nbti-incubation-centres", "afrilabs-nigeria-hubs", "cchub-programmes", "nipost-digital-postcode-hub-api-2026",
+    ];
+    for (const id of required) expect(sources.some((source) => source.id === id)).toBe(true);
+  });
   it("includes the Kaduna and Kano listings needed for northern ecosystem discovery", () => {
     expect(hubs.hubs.find((hub) => hub.id === "startzone-kaduna")).toMatchObject({
       name: "StartZone Kaduna", city: "Kaduna", state: "Kaduna", isnStatus: "Network Member",
