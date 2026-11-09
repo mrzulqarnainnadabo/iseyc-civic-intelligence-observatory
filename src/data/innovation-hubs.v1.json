@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "1.0.0",
+  "sourceId": "isn-hubs-directory-2026",
+  "sourceUrl": "https://isnhubs.org.ng/hubs-directory/",
+  "retrievedAt": "2026-11-09",
+  "note": "Selected listings from the public ISN member directory, not a complete national census. Location, focus areas and ISN certification/member status are reproduced as listed by ISN.",
+  "hubs": [
+    {
+      "id": "cchub-lagos",
+      "name": "Co-Creation Hub (CcHUB)",
+      "city": "Yaba",
+      "state": "Lagos",
+      "focus": [
+        "Deep Tech",
+        "FinTech"
+      ],
+      "isnStatus": "ISO Certified"
+    },
+    {
+      "id": "ventures-platform-abuja",
+      "name": "Ventures Platform",
+      "city": "Abuja",
+      "state": "FCT",
+      "focus": [
+        "FinTech",
+        "HealthTech"
+      ],
+      "isnStatus": "ISO Certified"
+    },
+    {
+      "id": "naijahacks-lagos",
+      "name": "NaijaHacks Hub",
+      "city": "Ikeja",
+      "state": "Lagos",
+      "focus": [
+        "ICT",
+        "EdTech"
+      ],
+      "isnStatus": "Network Member"
+    },
+    {
+      "id": "innovation-growth-hub",
+      "name": "Innovation Growth Hub",
+      "city": "Port Harcourt",
+      "state": "Rivers",
+      "focus": [
+        "AgriTech",
+        "CleanTech"
+      ],
+      "isnStatus": "ISO Certified"
+    },
+    {
+      "id": "startzone-kaduna",
+      "name": "StartZone Kaduna",
+      "city": "Kaduna",
+      "state": "Kaduna",
+      "focus": [
+        "E-commerce",
+        "FinTech"
+      ],
+      "isnStatus": "Network Member"
+    },
+    {
+      "id": "enugu-tech-corridor",
+      "name": "Enugu Tech Corridor",
+      "city": "Enugu",
+      "state": "Enugu",
+      "focus": [
+        "Deep Tech",
+        "Manufacturing"
+      ],
+      "isnStatus": "ISO Certified"
+    },
+    {
+      "id": "ibadan-innovation-hub",
+      "name": "Ibadan Innovation Hub",
+      "city": "Ibadan",
+      "state": "Oyo",
+      "focus": [
+        "EdTech",
+        "HealthTech"
+      ],
+      "isnStatus": "Network Member"
+    },
+    {
+      "id": "kano-digital-innovation-hub",
+      "name": "Kano Digital Innovation Hub",
+      "city": "Kano",
+      "state": "Kano",
+      "focus": [
+        "ICT",
+        "E-commerce"
+      ],
+      "isnStatus": "ISO Certified"
+    }
+  ]
+}
