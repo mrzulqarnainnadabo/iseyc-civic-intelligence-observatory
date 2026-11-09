@@ -53,6 +53,14 @@ describe("dated national evidence snapshots", () => {
     expect(naseni.metrics.find((item) => item.label === "Phase 2 public voting")?.value).toBe("Ended");
     expect(naseni.relatedSources?.[0].title).toContain("announcement");
   });
+  it("preserves the ISN assessment as a survey summary, not a hub census or target result", () => {
+    const isn = snapshots.records.find((record) => record.id === "isn-innovation-hub-assessment-2026")!;
+    expect(isn.metrics.find((item) => item.label === "Hubs with fewer than 10 full-time employees")?.value).toBe("68.35%");
+    expect(isn.additionalMetrics?.find((item) => item.label === "Hubs reporting recurrent power outages")?.value).toBe(">60%");
+    expect(isn.limitations.join(" ")).toMatch(/not a census share of all Nigerian hubs/);
+    expect(isn.limitations.join(" ")).toMatch(/strategic targets, not achieved results/);
+    expect(isn.departmentIds).toEqual(["software-technology", "education"]);
+  });
   it("keeps NBS national GDP context outside the four operational departments", () => {
     const gdp = snapshots.records.find((record) => record.id === "nbs-gdp-q1-2026")!;
     expect(gdp.departmentId).toBeNull();
