@@ -149,10 +149,48 @@
         "The 5.57% figure is progress against the programme's 50 million target, not Nigeria's national digital literacy rate.",
         "Programme dashboard data are source-reported and should not be described as independently audited by ISEYC."
       ],
-      "interpretation": "A strong operational source for tracking the digital-skills programme and its geographic reach. It can inform ISEYC's Software & Technology and Education departments, but must not be confused with a national digital-literacy prevalence survey.",
+      "interpretation": "A strong operational source for tracking the digital-skills programme and its geographic reach. It can inform ISEYC's Software & Technology and Education departments, but must not be confused with a national digital-literacy prevalence survey. The dashboard also reports inclusion and partner participation; contributor totals may overlap and should not be summed as unique people.",
       "departmentIds": [
         "software-technology",
         "education"
+      ],
+      "additionalMetrics": [
+        {
+          "label": "Persons with disabilities trained",
+          "value": "17,157",
+          "unit": "people",
+          "period": "Dashboard update"
+        },
+        {
+          "label": "Rural beneficiaries",
+          "value": "72,747",
+          "unit": "people",
+          "period": "Dashboard update"
+        },
+        {
+          "label": "Informal-sector workers",
+          "value": "1,609,283",
+          "unit": "people",
+          "period": "Dashboard update"
+        },
+        {
+          "label": "Active reporting organisations",
+          "value": "262",
+          "unit": "organisations",
+          "period": "Dashboard update"
+        },
+        {
+          "label": "Companies reporting",
+          "value": "155",
+          "unit": "organisations",
+          "period": "Dashboard update"
+        },
+        {
+          "label": "Government organisations reporting",
+          "value": "45",
+          "unit": "organisations",
+          "period": "Dashboard update"
+        }
       ]
     },
     {
@@ -160,8 +198,8 @@
       "title": "NASENI · InnovateNaija challenge",
       "publisher": "National Agency for Science and Engineering Infrastructure · NASENI Innovation Hub",
       "sourceId": "naseni-innovation-hub",
-      "sourceUrl": "https://innovation.naseni.gov.ng/naseni-launches-innovatenaija-%E2%82%A6250-million-challenge-nigerias-biggest-innovation-challenge-to-empower-youth-innovation-in-nigeria-backed-by-presidential-support-naseni-innovation-h/",
-      "referencePeriod": "Announcement · 3 September 2025",
+      "sourceUrl": "https://innovation.naseni.gov.ng/innovatenaija-campaign/",
+      "referencePeriod": "Announcement · 3 September 2025; current campaign page reviewed 9 November 2026",
       "retrievedAt": "2026-11-09",
       "geography": {
         "level": "national",
@@ -192,17 +230,36 @@
           "value": "₦100 million",
           "unit": "top national winner",
           "period": "Programme announcement"
+        },
+        {
+          "label": "Application status",
+          "value": "Closed",
+          "unit": "campaign status",
+          "period": "Current campaign page · 9 Nov 2026"
+        },
+        {
+          "label": "Phase 2 public voting",
+          "value": "Ended",
+          "unit": "campaign status",
+          "period": "Current campaign page · 9 Nov 2026"
         }
       ],
       "limitations": [
         "These are announced programme terms, not evidence that the funds were disbursed.",
         "The announcement's planned selection and final event dates do not prove that winners were selected or products commercialised.",
-        "No independently verified beneficiary, grant-disbursement, product-readiness or employment outcome dataset is integrated here."
+        "No independently verified beneficiary, grant-disbursement, product-readiness or employment outcome dataset is integrated here.",
+        "The official campaign page states that applications are closed and Phase 2 voting has ended; this does not identify verified winners or prove that any announced grant was paid."
       ],
       "interpretation": "Treat as an innovation-policy and programme activity record. Upgrade its status only when official selection, award, disbursement and outcome evidence is obtained.",
       "departmentIds": [
         "software-technology",
         "education"
+      ],
+      "relatedSources": [
+        {
+          "title": "Original ₦250m announcement",
+          "url": "https://innovation.naseni.gov.ng/naseni-launches-innovatenaija-%E2%82%A6250-million-challenge-nigerias-biggest-innovation-challenge-to-empower-youth-innovation-in-nigeria-backed-by-presidential-support-naseni-innovation-h/"
+        }
       ]
     },
     {
