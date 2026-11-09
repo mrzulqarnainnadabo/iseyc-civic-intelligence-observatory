@@ -34,6 +34,7 @@ describe("dated national evidence snapshots", () => {
     const nitda = snapshots.records.find((record) => record.id === "nitda-dl4all-2026-10")!;
     expect(nitda.metrics.find((item) => item.label === "Progress against 50m programme target")?.value).toBe("5.57%");
     expect(nitda.limitations.join(" ")).toMatch(/not Nigeria's national digital literacy rate/);
+    expect(nitda.additionalMetrics?.some((item) => item.label === "Persons with disabilities trained")).toBe(true);
   });
   it("cross-links digital literacy and innovation evidence to both education and technology", () => {
     const nitda = snapshots.records.find((record) => record.id === "nitda-dl4all-2026-10")!;
@@ -45,6 +46,9 @@ describe("dated national evidence snapshots", () => {
     const naseni = snapshots.records.find((record) => record.id === "naseni-innovatenaija-2025")!;
     expect(naseni.evidenceType).toMatch(/announcement/);
     expect(naseni.limitations.join(" ")).toMatch(/not evidence that the funds were disbursed/);
+    expect(naseni.metrics.find((item) => item.label === "Application status")?.value).toBe("Closed");
+    expect(naseni.metrics.find((item) => item.label === "Phase 2 public voting")?.value).toBe("Ended");
+    expect(naseni.relatedSources?.[0].title).toContain("announcement");
   });
   it("keeps NBS national GDP context outside the four operational departments", () => {
     const gdp = snapshots.records.find((record) => record.id === "nbs-gdp-q1-2026")!;
