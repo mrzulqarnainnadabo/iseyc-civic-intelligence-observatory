@@ -21,7 +21,7 @@ The Overview and relevant Department pages display compact, provenance-first car
 
 | Evidence | Reference period | What the product may state |
 |---|---|---|
-| WHO Nigeria health indicators | 2022, 2023 and 2025, per indicator | WHO statistical estimates with uncertainty intervals; national context only |
+| WHO Nigeria health indicators | 2021–2023, per indicator | WHO health estimates and reported series with uncertainty intervals; the profile shows no 2023 new-HIV value; national context only |
 | NIMC enrolment | 31 October 2025 | 123,906,318 national enrolment records; Kaduna State 7,326,730 |
 | NITDA DL4ALL dashboard | Updated 24 October 2026 | 2,783,731 verified programme beneficiaries; 36 states + FCT, 774 LGAs and 14,747 communities reached, plus reported inclusion measures for persons with disabilities, rural beneficiaries and informal-sector workers |
 | NASENI InnovateNaija | Announcement dated 3 September 2025 | Announced programme terms; the current campaign page says applications are closed and Phase 2 voting has ended, but no claim of verified winners, disbursement or commercialisation |
