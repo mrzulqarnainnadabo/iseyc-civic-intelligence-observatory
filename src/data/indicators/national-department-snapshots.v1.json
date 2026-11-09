@@ -354,6 +354,128 @@
         "The linked catalogue lists the Q1 2026 report; the exact table and rebasing notes should be retained with any production indicator record."
       ],
       "interpretation": "Use as national economic context only. The Observatory should extract and validate the original NBS table before treating this snapshot as a reusable time series."
+    },
+    {
+      "id": "isn-innovation-hub-assessment-2026",
+      "departmentIds": [
+        "software-technology",
+        "education"
+      ],
+      "title": "ISN · Nigerian Innovation Hub Assessment",
+      "publisher": "Innovation Support Network (ISN)",
+      "sourceId": "isn-hub-assessment-2026",
+      "sourceUrl": "https://isnhubs.org.ng/nigerias-innovation-landmark-isn-launches-comprehensive-hub-assessment-report-and-unveils-2026-2030-strategic-outlook/",
+      "referencePeriod": "Summary released 22 May 2026 · survey reference period not stated in summary",
+      "retrievedAt": "2026-11-09",
+      "geography": {
+        "level": "national",
+        "label": "Nigeria · six geopolitical zones and named state/city clusters"
+      },
+      "evidenceType": "Industry ecosystem assessment summary · survey findings as reported by ISN",
+      "metrics": [
+        {
+          "label": "Active hubs surveyed / covered",
+          "value": "190+",
+          "unit": "innovation hubs",
+          "period": "2026 assessment summary",
+          "measurementType": "ISN-reported survey coverage"
+        },
+        {
+          "label": "Active and partially active ecosystem spaces",
+          "value": "250+",
+          "unit": "spaces",
+          "period": "2026 assessment summary",
+          "measurementType": "ISN-reported ecosystem estimate"
+        },
+        {
+          "label": "Hubs with fewer than 10 full-time employees",
+          "value": "68.35%",
+          "unit": "of respondents",
+          "period": "2026 assessment summary",
+          "measurementType": "survey respondent share"
+        },
+        {
+          "label": "Hubs offering structured training",
+          "value": "90%",
+          "unit": "of respondents",
+          "period": "2026 assessment summary",
+          "measurementType": "survey respondent share"
+        }
+      ],
+      "additionalMetrics": [
+        {
+          "label": "Lagos share of respondents",
+          "value": "32%",
+          "unit": "respondent share",
+          "period": "2026 assessment summary",
+          "measurementType": "survey respondent share"
+        },
+        {
+          "label": "Abuja share of respondents",
+          "value": "16%",
+          "unit": "respondent share",
+          "period": "2026 assessment summary",
+          "measurementType": "survey respondent share"
+        },
+        {
+          "label": "Kano, Kaduna, Enugu, Rivers and Abia",
+          "value": "4% each",
+          "unit": "respondent share",
+          "period": "2026 assessment summary",
+          "measurementType": "survey respondent share"
+        },
+        {
+          "label": "Hubs offering direct professional mentorship",
+          "value": "60%",
+          "unit": "of respondents",
+          "period": "2026 assessment summary",
+          "measurementType": "survey respondent share"
+        },
+        {
+          "label": "Hubs with annual revenue below US$50,000",
+          "value": ">70%",
+          "unit": "of respondents",
+          "period": "2026 assessment summary",
+          "measurementType": "survey respondent share"
+        },
+        {
+          "label": "Hubs reporting recurrent power outages",
+          "value": ">60%",
+          "unit": "of respondents",
+          "period": "2026 assessment summary",
+          "measurementType": "survey respondent share"
+        },
+        {
+          "label": "Four leading focus areas combined",
+          "value": "60%",
+          "unit": "of reported focus areas",
+          "period": "2026 assessment summary",
+          "measurementType": "survey respondent share · ICT/Software, AgriTech, FinTech, EdTech"
+        },
+        {
+          "label": "ISN 2027 funding target",
+          "value": "60+ hubs",
+          "unit": "target hubs",
+          "period": "2026–2030 strategic outlook",
+          "measurementType": "strategic target"
+        },
+        {
+          "label": "ISN 2027 startup/MSME support target",
+          "value": "150",
+          "unit": "startups/MSMEs",
+          "period": "2026–2030 strategic outlook",
+          "measurementType": "strategic target"
+        }
+      ],
+      "limitations": [
+        "The public article is an executive summary; sample frame, collection period, respondent definitions, weighting and full methodology require the full report.",
+        "Geographic percentages are described as shares of respondents, not a census share of all Nigerian hubs or absolute hub counts.",
+        "More than 190 active hubs surveyed/covered and an ecosystem of more than 250 active and partially active spaces are different denominators; do not combine them.",
+        "Percentages for staffing, training, mentorship, revenue and power outages are survey-summary findings and should be attributed to ISN.",
+        "The 2026–2030 funding and startup support figures are strategic targets, not achieved results.",
+        "The directory and assessment summary do not establish current operational capacity or local outcomes for any individual hub."
+      ],
+      "interpretation": "Use this assessment to understand structural constraints in Nigeria's innovation ecosystem and design capacity-building, digital-skills and partnership programmes. Treat it as a survey summary, not a complete national census or a live performance dashboard."
     }
   ]
 }
