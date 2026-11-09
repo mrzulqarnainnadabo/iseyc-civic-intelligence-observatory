@@ -32,6 +32,8 @@ assert.match(api, /validObservation/);
 assert.match(api, /manually transcribed source snapshots, not live feeds/);
 assert.match(overview, /NationalSnapshots/);
 assert.match(departments, /NationalSnapshots departmentId=\{config.id\}/);
+assert.equal((departments.match(/priorities:\[/g) || []).length, 4, 'all four departments must define a research agenda');
+assert.match(departments, /Research agenda/);
 assert.match(component, /Reference period/);
 assert.match(component, /Original source/);
 assert.match(component, /Catalogue only/);
