@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "title": "ISEYC national evidence snapshots",
-  "retrievedAt": "2026-11-09",
+  "retrievedAt": "2026-11-10",
   "note": "Dated transcriptions from the linked publisher sources. These are not a continuously refreshed data feed. Every value retains its own reference period, geography, evidence type and limitations.",
   "records": [
     {
@@ -476,6 +476,91 @@
         "The directory and assessment summary do not establish current operational capacity or local outcomes for any individual hub."
       ],
       "interpretation": "Use this assessment to understand structural constraints in Nigeria's innovation ecosystem and design capacity-building, digital-skills and partnership programmes. Treat it as a survey summary, not a complete national census or a live performance dashboard."
+    },
+    {
+      "id": "fme-annual-school-census-2024-25",
+      "departmentId": "education",
+      "title": "Federal Ministry of Education · Annual School Census 2024/2025",
+      "publisher": "Federal Ministry of Education",
+      "sourceId": "fme-annual-school-census",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "referencePeriod": "School year 2024/2025",
+      "retrievedAt": "2026-11-10",
+      "geography": {
+        "level": "national",
+        "label": "Nigeria"
+      },
+      "evidenceType": "Government education management information system · annual school census administrative reporting",
+      "metrics": [
+        {
+          "label": "Schools listed on dashboard",
+          "value": "230,844",
+          "unit": "schools",
+          "period": "2024/2025"
+        },
+        {
+          "label": "Schools reported",
+          "value": "124,066",
+          "unit": "schools",
+          "period": "2024/2025"
+        },
+        {
+          "label": "School reporting rate",
+          "value": "53.7%",
+          "unit": "of listed schools",
+          "period": "2024/2025"
+        },
+        {
+          "label": "Learners recorded",
+          "value": "39,825,932",
+          "unit": "learners",
+          "period": "2024/2025"
+        },
+        {
+          "label": "Teachers recorded",
+          "value": "1,185,610",
+          "unit": "teachers",
+          "period": "2024/2025"
+        }
+      ],
+      "limitations": [
+        "The dashboard reports a 53.7% school reporting rate. Learner, teacher, classroom and sanitation counts must be treated as reported administrative records, not complete national totals.",
+        "The dashboard's listed school count and reporting count are different measures; do not use one as the denominator for learner or teacher ratios without checking the publisher's methodology.",
+        "Administrative school submissions are not a household survey and may not capture non-reporting schools.",
+        "Reference period is the 2024/2025 school year; this is not a 2026 current-condition measure.",
+        "National aggregates do not establish conditions at a particular state, LGA or school."
+      ],
+      "interpretation": "A useful national administrative baseline for school participation and learning-environment questions. The 53.7% reporting rate is essential context: show it beside all reported counts, and do not treat the totals as complete national coverage.",
+      "additionalMetrics": [
+        {
+          "label": "Learner–teacher ratio",
+          "value": "33.6",
+          "unit": "learners per teacher",
+          "period": "2024/2025",
+          "measurementType": "dashboard aggregate"
+        },
+        {
+          "label": "Learner–classroom ratio",
+          "value": "60.1",
+          "unit": "learners per classroom",
+          "period": "2024/2025",
+          "measurementType": "dashboard aggregate"
+        },
+        {
+          "label": "Learner–toilet ratio",
+          "value": "65.9",
+          "unit": "learners per toilet",
+          "period": "2024/2025",
+          "measurementType": "dashboard aggregate"
+        },
+        {
+          "label": "Female learners",
+          "value": "49.6%",
+          "unit": "of learners recorded",
+          "period": "2024/2025",
+          "measurementType": "administrative reporting"
+        }
+      ]
     }
   ]
 }
