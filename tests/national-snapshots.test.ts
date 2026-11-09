@@ -18,8 +18,11 @@ describe("dated national evidence snapshots", () => {
     }
   });
   it("preserves WHO estimate intervals and separate reference years", () => {
-    const who = snapshots.records.find((record) => record.id === "who-nigeria-health-2025")!;
-    expect(who.metrics.map((item) => item.period)).toEqual(["2025", "2023", "2022"]);
+    const who = snapshots.records.find((record) => record.id === "who-nigeria-health-2021-23")!;
+    expect(who.metrics.map((item) => item.period)).toEqual(["2022", "2022", "2023"]);
+    expect(who.metrics.some((item) => item.label === "New HIV infections")).toBe(false);
+    expect(who.limitations.join(" ")).toMatch(/no 2023 value for new HIV infections/);
+    expect(who.additionalMetrics?.some((item) => item.measurementType === "modelled estimate")).toBe(true);
     expect(who.metrics.every((item) => Boolean(item.interval))).toBe(true);
     expect(who.limitations.join(" ")).toMatch(/statistical estimates/);
   });
