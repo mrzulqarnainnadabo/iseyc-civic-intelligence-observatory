@@ -35,6 +35,12 @@ describe("dated national evidence snapshots", () => {
     expect(nitda.metrics.find((item) => item.label === "Progress against 50m programme target")?.value).toBe("5.57%");
     expect(nitda.limitations.join(" ")).toMatch(/not Nigeria's national digital literacy rate/);
   });
+  it("cross-links digital literacy and innovation evidence to both education and technology", () => {
+    const nitda = snapshots.records.find((record) => record.id === "nitda-dl4all-2026-10")!;
+    const naseni = snapshots.records.find((record) => record.id === "naseni-innovatenaija-2025")!;
+    expect(nitda.departmentIds).toEqual(["software-technology", "education"]);
+    expect(naseni.departmentIds).toEqual(["software-technology", "education"]);
+  });
   it("keeps NASENI prize terms as an announcement, not a delivery claim", () => {
     const naseni = snapshots.records.find((record) => record.id === "naseni-innovatenaija-2025")!;
     expect(naseni.evidenceType).toMatch(/announcement/);
