@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 type Snapshot = {
   id: string; title: string; value: number; unit: string; valueQualifier?: string; referencePeriod: string;
-  measurementType: string; geoLevel: string; geographicCoverage: string; sourceId: string;
+  measurementType: string; geoLevel: string; geographicCoverage: string; sourceId: string; sourceUpdateDate?: string;
   sourcePublisher: string; sourceUrl: string; departments: string[]; interpretation: string;
   limitations: string[];
 };
@@ -43,7 +43,7 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
   return (
     <section className={compact ? 'national-snapshots national-snapshots--compact' : 'national-snapshots'} aria-labelledby={departmentId ? 'department-snapshots-title' : 'national-snapshots-title'}>
       <div className="national-snapshots__head">
-        <div><span className="national-snapshots__kicker">Source-attributed data</span><h2 id={departmentId ? 'department-snapshots-title' : 'national-snapshots-title'}>{departmentId ? 'National context for this department' : 'National evidence snapshots'}</h2></div>
+        <div><span className="national-snapshots__kicker">Source-attributed data</span><h2 id={departmentId ? 'department-snapshots-title' : 'national-snapshots-title'}>{departmentId ? 'Evidence context for this department' : 'National evidence snapshots'}</h2></div>
         <span className="national-snapshots__meta">{status === 'ready' ? observations.length + ' snapshots · checked ' + bundle?.checkedAt : status === 'loading' ? 'Loading source snapshots' : 'Snapshot service unavailable'}</span>
       </div>
       {status === 'loading' ? <p className="national-snapshots__empty">Retrieving curated source snapshots…</p> :
@@ -52,10 +52,10 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
          <>
            <div className="national-snapshot-grid">{visibleObservations.map((item) => (
              <article className="national-snapshot" key={item.id}>
-               <div className="national-snapshot__top"><span>{item.measurementType}</span><span>{item.geoLevel === 'national' ? 'National' : item.geoLevel === 'varies' ? 'Multi-level' : item.geoLevel}</span></div>
+               <div className="national-snapshot__top"><span>{item.measurementType}</span><span>{item.geographicCoverage}</span></div>
                <h3>{item.title}</h3>
                <strong className="national-snapshot__value">{valueLabel(item.value, item.unit, item.valueQualifier)}</strong>
-               <p className="national-snapshot__period">Reference period · {item.referencePeriod}</p>
+               <p className="national-snapshot__period">Reference period · {item.referencePeriod}{item.sourceUpdateDate ? ' · Source generated ' + item.sourceUpdateDate : ''}</p>
                <p className="national-snapshot__publisher">{item.sourcePublisher}</p>
                <p className="national-snapshot__interpretation">{item.interpretation}</p>
                <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">Original source ↗</a>
