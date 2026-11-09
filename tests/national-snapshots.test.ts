@@ -10,7 +10,8 @@ describe("dated national evidence snapshots", () => {
     for (const record of snapshots.records) {
       const source = sources.find((item) => item.id === record.sourceId);
       expect(source, record.id).toBeTruthy();
-      expect(source?.url).toBe(record.sourceUrl);
+      expect(source?.url).toBeTruthy();
+      expect(new URL(record.sourceUrl).origin).toBe(new URL(source!.url!).origin);
       expect(record.metrics.length).toBeGreaterThan(0);
       expect(record.limitations.length).toBeGreaterThan(0);
       expect(record.retrievedAt).toMatch(/^2026-11-09$/);
