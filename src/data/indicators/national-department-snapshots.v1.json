@@ -350,7 +350,7 @@
       "limitations": [
         "This is a national quarterly GDP estimate, not a measure of household welfare or local economic conditions.",
         "The NBS GDP series was rebased; preserve the base year and methodology when comparing across vintages.",
-        "Do not present this as a Kaduna State or LGA growth rate.",
+        "This is not a Kaduna State or LGA growth rate.",
         "The linked catalogue lists the Q1 2026 report; the exact table and rebasing notes should be retained with any production indicator record."
       ],
       "interpretation": "Use as national economic context only. The Observatory should extract and validate the original NBS table before treating this snapshot as a reusable time series."
