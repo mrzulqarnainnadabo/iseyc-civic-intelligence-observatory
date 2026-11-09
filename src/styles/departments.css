@@ -80,3 +80,27 @@
 .national-snapshot__additional strong { display:block; color:var(--g900); font-size:13px; }
 .national-snapshot__additional span,.national-snapshot__additional em { display:block; color:var(--muted); font-size:9px; line-height:1.4; }
 .national-snapshot__additional em { margin-top:2px; font-style:normal; }
+
+
+.innovation-hubs { margin:20px 0 24px; padding:15px; border:1px solid var(--line); border-radius:11px; background:#fff; }
+.innovation-hubs__head { display:flex; justify-content:space-between; align-items:flex-end; gap:12px; margin-bottom:12px; }
+.innovation-hubs__head h3 { margin:3px 0 2px; color:var(--g900); font-size:17px; }
+.innovation-hubs__head p { margin:0; color:var(--muted); font-size:10px; }
+.innovation-hubs__head > a { color:var(--g800); font-size:10px; font-weight:750; white-space:nowrap; }
+.innovation-hubs__search { display:grid; gap:5px; margin-bottom:10px; color:var(--muted); font-size:10px; font-weight:700; }
+.innovation-hubs__search input { width:100%; min-height:40px; padding:0 11px; border:1px solid var(--line); border-radius:7px; color:var(--ink); background:#fbfcfb; font:inherit; font-size:12px; }
+.innovation-hubs__grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+.innovation-hub { min-width:0; padding:11px; border:1px solid var(--line); border-radius:8px; background:#fbfcfb; }
+.innovation-hub__top { display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; color:var(--muted); font-size:9px; }
+.innovation-hub__status { padding:3px 6px; border-radius:99px; background:#edf2f1; color:var(--g800); font-size:8px; font-weight:750; }
+.innovation-hub__status--certified { background:#e7f0e9; color:#235b3d; }
+.innovation-hub h4 { margin:7px 0; color:var(--g900); font-size:13px; line-height:1.3; }
+.innovation-hub__focus { display:flex; flex-wrap:wrap; gap:5px; }
+.innovation-hub__focus span { padding:3px 6px; border:1px solid var(--line); border-radius:5px; color:var(--ink); font-size:9px; }
+.innovation-hubs__empty { grid-column:1/-1; color:var(--muted); font-size:11px; }
+.innovation-hubs__note { margin:10px 0 0; color:var(--muted); font-size:9px; line-height:1.45; }
+@media(max-width:640px) {
+  .innovation-hubs { padding:12px; }
+  .innovation-hubs__head { align-items:flex-start; flex-direction:column; }
+  .innovation-hubs__grid { grid-template-columns:1fr; }
+}
