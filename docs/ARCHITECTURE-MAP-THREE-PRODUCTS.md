@@ -98,11 +98,11 @@ Private staff, partner and contact data remain separate from public evidence rec
 
 ## 7. Current evidence posture — 9 November 2026
 
-- Observatory source registry: **54 registered sources**.
-- Curated source snapshot layer: **25 source-attributed observations across seven source institutions**; manual transcriptions, not live feeds.
+- Observatory source registry: **58 registered sources**.
+- Curated source snapshot layer: **39 source-attributed observations across eight source institutions**; manual transcriptions, not live feeds.
 - Source catalogue: additional education, health, innovation and federal budget sources are registered as catalogue-only or partial until tables/API access are acquired and validated.
 - Education includes the FME 2024/2025 Annual School Census national and Kaduna State rows, with the portal's **57.9% reporting rate** and geographic limits preserved.
-- Health includes WHO national context; MSDAT and NHFR remain source-acquisition priorities. NHFR API use requires an approved key.
+- Health includes WHO national context and NPHCDA's 2025 PHC programme snapshots; MSDAT, NHFR, NPHCDA's live PHC Functionality Dashboard and medicine-logistics sources remain source-acquisition priorities. NHFR API use requires an approved key.
 - Brain retrieves relevant national snapshots and prioritises Kaduna State evidence when a question explicitly names Kaduna.
 - Mandate's civic-learning-first entry explains rights, duties, institutions and responsible participation before the public-demand workflow.
 
