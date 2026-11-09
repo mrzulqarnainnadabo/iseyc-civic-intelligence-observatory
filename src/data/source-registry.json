@@ -1109,5 +1109,87 @@
       "Do not infer nationwide reach from an invitation to applicants across states; use published participant and outcome records only."
     ],
     "notes": "Related sources: https://innovation.naseni.gov.ng/blog/ and https://innovation.naseni.gov.ng/futuremakers/. InnovateNaija announcement describes a ₦250 million challenge and intended 37 state/FCT winners; outcome and disbursement evidence must be separately acquired."
+  },
+  {
+    "id": "nbs-cpi-monthly",
+    "publisher": "National Bureau of Statistics (NBS)",
+    "name": "Consumer Price Index and Inflation — monthly releases",
+    "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/related-materials",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "governance",
+      "employment"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National, urban/rural and state profiles where provided in each release",
+    "geoLevel": "varies",
+    "dataType": "Monthly CPI and inflation reports with PDF and spreadsheet tables; 2024 base year and 2023 weight reference period",
+    "updateFrequency": "Monthly",
+    "licence": "NBS microdata catalogue terms and report-specific reuse conditions apply; verify before redistribution",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "NBS Microdata Catalog verified September 2026 CPI report (published 15 October 2026) and 2024 rebasing metadata",
+    "limitations": [
+      "Do not compare pre- and post-rebasing rates without a documented bridge and source methodology.",
+      "Headline, food, core, urban, rural and other CPI series are different measures; label each.",
+      "A national CPI rate is not a household-specific cost-of-living measure or a Kaduna South price.",
+      "The latest listed report is not necessarily the latest available by the time a user reads the product; refresh the catalogue before presenting it as current."
+    ],
+    "notes": "The NBS catalogue lists the September 2026 report as published 15 October 2026. CPI base year is 2024; weight reference period is 2023; the rebased basket covers 934 product varieties across 13 COICOP divisions."
+  },
+  {
+    "id": "nbs-gdp-quarterly",
+    "publisher": "National Bureau of Statistics (NBS)",
+    "name": "Gross Domestic Product — quarterly reports and tables",
+    "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/147/related-materials",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "employment",
+      "governance",
+      "agriculture",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National quarterly national accounts; sectoral and industry breakdowns",
+    "geoLevel": "national",
+    "dataType": "Quarterly GDP reports and downloadable PDF/Excel tables; rebased national accounts",
+    "updateFrequency": "Quarterly",
+    "licence": "NBS microdata catalogue terms and report-specific reuse conditions apply; verify before redistribution",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "NBS GDP catalog reviewed; Q2 2026 report listed as published 31 August 2026 and Q1 2026 report as published 25 May 2026",
+    "limitations": [
+      "GDP is a national accounts estimate; it does not measure household welfare or local public-service quality.",
+      "Retain the GDP base year, current/constant price basis, sector, quarter and year-on-year/quarter-on-quarter definition.",
+      "Do not compare series across the 2025 rebasing without checking NBS methodological notes.",
+      "A report listing is not proof that every table has been ingested or validated."
+    ],
+    "notes": "NBS Q1 2026 release reported real GDP growth of 3.89% year-on-year. Q2 2026 report is listed in the catalogue; no Q2 rate is transcribed here until its table is extracted and checked."
+  },
+  {
+    "id": "nbs-food-price-watch",
+    "publisher": "National Bureau of Statistics (NBS)",
+    "name": "Selected Food Price Watch — monthly state and national price tables",
+    "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/162/related-materials",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "agriculture",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National, all 36 states and FCT; source describes price collection across all 774 LGAs",
+    "geoLevel": "varies",
+    "dataType": "Monthly food-price survey reports and Excel tables based on price collection from over 10,000 respondents and locations",
+    "updateFrequency": "Monthly, with release lag",
+    "licence": "NBS microdata catalogue terms and report-specific reuse conditions apply; verify before redistribution",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "NBS May 2026 Selected Food Price Watch report listing and survey methodology reviewed",
+    "limitations": [
+      "The source reports state and national averages; LGA-level collection does not automatically mean public LGA-level estimates are published.",
+      "Prices are specific to commodity, unit, location, market and reference month; do not compare mismatched units or quality grades.",
+      "A national average does not represent every household or market.",
+      "The catalogue currently lists May 2026 as the latest food-price report found in this review; refresh before describing it as current."
+    ],
+    "notes": "The May 2026 report is listed as published 25 June 2026. NBS describes fieldwork by over 700 staff, more than 10,000 respondents/locations and collection across all 774 LGAs; use the actual published tables for any numeric value."
   }
 ]
