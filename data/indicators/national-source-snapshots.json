@@ -185,7 +185,7 @@
       "id": "isn-nigeria-active-innovation-hubs-2026-05-22",
       "title": "Active innovation hubs in the ISN assessment",
       "value": 190,
-      "unit": "hubs assessed as active",
+      "unit": "active hubs",
       "referencePeriod": "2026-05-22",
       "measurementType": "Published ecosystem assessment count",
       "geoLevel": "national",
@@ -201,7 +201,8 @@
         "Published by an ecosystem network, not a government statistical agency.",
         "The assessment's definitions, survey coverage and active-status criteria must be checked before comparison or ranking.",
         "This is not a live directory of currently operating hubs."
-      ]
+      ],
+      "valueQualifier": "more than"
     },
     {
       "id": "naseni-innovatenaija-finalists-undated",
