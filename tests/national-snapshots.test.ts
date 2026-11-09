@@ -91,4 +91,13 @@ describe("dated national evidence snapshots", () => {
     expect(kaduna.limitations.join(" ")).toMatch(/not Kaduna South/);
   });
 
+  it("keeps World Bank national macroeconomic figures tied to their distinct observed periods", () => {
+    const wb = snapshots.records.find((record) => record.id === "worldbank-ndu-2026-10")!;
+    expect(wb.departmentId).toBeNull();
+    expect(wb.metrics.find((item) => item.label === "Real GDP growth")?.value).toBe("4.2%");
+    expect(wb.metrics.find((item) => item.label === "Real GDP growth")?.period).toBe("H1 2026");
+    expect(wb.metrics.find((item) => item.label === "Current account surplus")?.period).toBe("Q1 2026");
+    expect(wb.limitations.join(" ")).toMatch(/not a state, LGA or household growth rate/);
+  });
+
 });
