@@ -1,0 +1,233 @@
+{
+  "schemaVersion": "1.0.0",
+  "title": "ISEYC national evidence snapshots",
+  "retrievedAt": "2026-11-09",
+  "note": "Dated transcriptions from the linked publisher sources. These are not a continuously refreshed data feed. Every value retains its own reference period, geography, evidence type and limitations.",
+  "records": [
+    {
+      "id": "who-nigeria-health-2025",
+      "departmentId": "health",
+      "title": "WHO · Nigeria health indicators",
+      "publisher": "World Health Organization",
+      "sourceId": "who-gho-nigeria",
+      "sourceUrl": "https://www.who.int/data/gho/data/countries/country-details/GHO/nigeria",
+      "referencePeriod": "Indicator-specific · 2022–2025",
+      "retrievedAt": "2026-11-09",
+      "geography": {
+        "level": "national",
+        "label": "Nigeria"
+      },
+      "evidenceType": "WHO statistical estimates",
+      "metrics": [
+        {
+          "label": "New HIV infections",
+          "value": "0.27",
+          "unit": "per 1,000 uninfected population",
+          "period": "2025",
+          "interval": "0.21–0.39"
+        },
+        {
+          "label": "Under-five mortality",
+          "value": "108.1",
+          "unit": "per 1,000 live births",
+          "period": "2023",
+          "interval": "77.5–153.8"
+        },
+        {
+          "label": "Neonatal mortality",
+          "value": "34.3",
+          "unit": "per 1,000 live births",
+          "period": "2022",
+          "interval": "23.74–50.03"
+        }
+      ],
+      "limitations": [
+        "These are WHO statistical estimates, not direct counts from a complete national vital-registration system.",
+        "WHO reports Nigerian death-registration data as unavailable or unusable for cause-of-death analysis.",
+        "The reference years differ; do not present these as one 2025 snapshot or as Kaduna State figures.",
+        "Confidence/uncertainty intervals are part of the reported evidence and must remain visible."
+      ],
+      "interpretation": "Use for national health context and research questions. Do not use these national estimates to grade an individual facility or state programme."
+    },
+    {
+      "id": "nimc-enrolment-2025-10",
+      "departmentId": "civic",
+      "title": "NIMC · National identity enrolment",
+      "publisher": "National Identity Management Commission",
+      "sourceId": "nimc-enrolment-oct-2025",
+      "sourceUrl": "https://nimc.gov.ng/nin/enrolment-report/october-2025",
+      "referencePeriod": "As at 31 October 2025",
+      "retrievedAt": "2026-11-09",
+      "geography": {
+        "level": "national-and-state",
+        "label": "Nigeria · national and state records"
+      },
+      "evidenceType": "Official cumulative administrative enrolment snapshot",
+      "metrics": [
+        {
+          "label": "Total enrolment records",
+          "value": "123,906,318",
+          "unit": "records",
+          "period": "31 Oct 2025"
+        },
+        {
+          "label": "Kaduna State enrolment",
+          "value": "7,326,730",
+          "unit": "records",
+          "period": "31 Oct 2025"
+        }
+      ],
+      "limitations": [
+        "Enrolment records are not a population census, active identity count or measure of access to services.",
+        "Do not calculate coverage without a compatible population denominator, reference year and methodology.",
+        "This is a historical dashboard snapshot, not a live 2026 figure.",
+        "Kaduna State is not Kaduna South; no LGA-level value is inferred."
+      ],
+      "interpretation": "Useful for understanding identity-registration administration and geographic distribution, not as a direct measure of citizenship, service access or population coverage."
+    },
+    {
+      "id": "nitda-dl4all-2026-10",
+      "departmentId": "software-technology",
+      "title": "NITDA · Digital Literacy for All",
+      "publisher": "National Information Technology Development Agency",
+      "sourceId": "nitda-dl4all-dashboard",
+      "sourceUrl": "https://dashboard.digitalliteracy.nitda.gov.ng/",
+      "referencePeriod": "Dashboard updated 24 October 2026",
+      "retrievedAt": "2026-11-09",
+      "geography": {
+        "level": "national-and-subnational",
+        "label": "Nigeria · 36 states + FCT, LGAs and communities"
+      },
+      "evidenceType": "Government programme dashboard · verified training records",
+      "metrics": [
+        {
+          "label": "Verified digital-literacy beneficiaries",
+          "value": "2,783,731",
+          "unit": "people",
+          "period": "Since Jan 2022"
+        },
+        {
+          "label": "Geographic coverage",
+          "value": "36 states + FCT",
+          "unit": "coverage",
+          "period": "Dashboard update"
+        },
+        {
+          "label": "LGAs reached",
+          "value": "774",
+          "unit": "LGAs",
+          "period": "Dashboard update"
+        },
+        {
+          "label": "Communities reached",
+          "value": "14,747",
+          "unit": "communities",
+          "period": "Dashboard update"
+        },
+        {
+          "label": "Female participation",
+          "value": "33%",
+          "unit": "of beneficiaries",
+          "period": "Dashboard update"
+        },
+        {
+          "label": "Youth under 35",
+          "value": "2,100,027",
+          "unit": "people",
+          "period": "Dashboard update"
+        },
+        {
+          "label": "Progress against 50m programme target",
+          "value": "5.57%",
+          "unit": "of target",
+          "period": "Dashboard update"
+        }
+      ],
+      "limitations": [
+        "The dashboard's verified-beneficiary definition and deduplication method must be obtained before comparison with other programmes.",
+        "Training or completion records do not independently establish durable competence, employment outcomes or population-wide digital literacy.",
+        "The 70% by 2027 and 95% by 2030 targets are targets, not achieved outcomes.",
+        "The 5.57% figure is progress against the programme's 50 million target, not Nigeria's national digital literacy rate.",
+        "Programme dashboard data are source-reported and should not be described as independently audited by ISEYC."
+      ],
+      "interpretation": "A strong operational source for tracking the digital-skills programme and its geographic reach. It can inform ISEYC's Software & Technology and Education departments, but must not be confused with a national digital-literacy prevalence survey."
+    },
+    {
+      "id": "naseni-innovatenaija-2025",
+      "departmentId": "software-technology",
+      "title": "NASENI · InnovateNaija challenge",
+      "publisher": "National Agency for Science and Engineering Infrastructure · NASENI Innovation Hub",
+      "sourceId": "naseni-innovation-hub",
+      "sourceUrl": "https://innovation.naseni.gov.ng/naseni-launches-innovatenaija-%E2%82%A6250-million-challenge-nigerias-biggest-innovation-challenge-to-empower-youth-innovation-in-nigeria-backed-by-presidential-support-naseni-innovation-h/",
+      "referencePeriod": "Announcement · 3 September 2025",
+      "retrievedAt": "2026-11-09",
+      "geography": {
+        "level": "national",
+        "label": "National programme · intended state/FCT participation"
+      },
+      "evidenceType": "Official programme announcement",
+      "metrics": [
+        {
+          "label": "Announced prize pool",
+          "value": "₦250 million",
+          "unit": "programme terms",
+          "period": "3 Sep 2025"
+        },
+        {
+          "label": "Planned state/FCT finalists",
+          "value": "37",
+          "unit": "one per state and FCT",
+          "period": "Programme announcement"
+        },
+        {
+          "label": "Planned state-level grant",
+          "value": "₦2.5 million",
+          "unit": "per selected innovator",
+          "period": "Programme announcement"
+        },
+        {
+          "label": "Announced grand prize",
+          "value": "₦100 million",
+          "unit": "top national winner",
+          "period": "Programme announcement"
+        }
+      ],
+      "limitations": [
+        "These are announced programme terms, not evidence that the funds were disbursed.",
+        "The announcement's planned selection and final event dates do not prove that winners were selected or products commercialised.",
+        "No independently verified beneficiary, grant-disbursement, product-readiness or employment outcome dataset is integrated here."
+      ],
+      "interpretation": "Treat as an innovation-policy and programme activity record. Upgrade its status only when official selection, award, disbursement and outcome evidence is obtained."
+    },
+    {
+      "id": "nbs-gdp-q1-2026",
+      "departmentId": "civic",
+      "title": "NBS · Real GDP growth",
+      "publisher": "National Bureau of Statistics",
+      "sourceId": "nbs-gdp-quarterly",
+      "sourceUrl": "https://microdata.nigerianstat.gov.ng/index.php/catalog/147/related-materials",
+      "referencePeriod": "Q1 2026",
+      "retrievedAt": "2026-11-09",
+      "geography": {
+        "level": "national",
+        "label": "Nigeria"
+      },
+      "evidenceType": "Official quarterly national-accounts estimate",
+      "metrics": [
+        {
+          "label": "Real GDP growth, year-on-year",
+          "value": "3.89%",
+          "unit": "annual percentage change",
+          "period": "Q1 2026"
+        }
+      ],
+      "limitations": [
+        "This is a national quarterly GDP estimate, not a measure of household welfare or local economic conditions.",
+        "The NBS GDP series was rebased; preserve the base year and methodology when comparing across vintages.",
+        "Do not present this as a Kaduna State or LGA growth rate.",
+        "The linked catalogue lists the Q1 2026 report; the exact table and rebasing notes should be retained with any production indicator record."
+      ],
+      "interpretation": "Use as national economic context only. The Observatory should extract and validate the original NBS table before treating this snapshot as a reusable time series."
+    }
+  ]
+}
