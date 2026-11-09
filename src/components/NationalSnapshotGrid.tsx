@@ -14,6 +14,8 @@ type SnapshotRecord = {
   geography: { level: string; label: string };
   evidenceType: string;
   metrics: SnapshotMetric[];
+  additionalMetrics?: SnapshotMetric[];
+  relatedSources?: { title: string; url: string }[];
   limitations: string[];
   interpretation: string;
 };
@@ -46,7 +48,8 @@ export default function NationalSnapshotGrid({ departmentId }: { departmentId?: 
               ))}
             </div>
             <div className="national-snapshot__foot"><a href={record.sourceUrl} target="_blank" rel="noopener noreferrer">Original source ↗</a><span>Reference: {record.referencePeriod}</span></div>
-            <details><summary>Interpretation & limitations</summary><p>{record.interpretation}</p><ul>{record.limitations.map((item) => <li key={item}>{item}</li>)}</ul></details>
+            {record.relatedSources?.map((source) => <p className="national-snapshot__related" key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title} ↗</a></p>)}
+            <details><summary>More source detail & limitations</summary>{record.additionalMetrics?.length ? <div className="national-snapshot__additional">{record.additionalMetrics.map((metric) => <div key={metric.label}><strong>{metric.value}</strong><span>{metric.label}</span><em>{metric.unit} · {metric.period}</em></div>)}</div> : null}<p>{record.interpretation}</p><ul>{record.limitations.map((item) => <li key={item}>{item}</li>)}</ul></details>
           </article>
         ))}
       </div>
