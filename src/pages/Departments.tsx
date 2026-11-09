@@ -13,7 +13,7 @@ import stateReference from '../../contracts/states-ng.v1.json';
 type DepartmentConfig = {
   id: DepartmentId; title: string; summary: string; sources: string[];
   indicators: { id: string; sourceId: string; label: string }[];
-  unknowns: string[]; facts: string[]; hypotheses: string[];
+  unknowns: string[]; facts: string[]; hypotheses: string[]; priorities: string[];
 };
 const DEPARTMENTS: DepartmentConfig[] = [
   { id:'education', title:'Education & Capacity Building', summary:'Schooling, education access, capacity and learning evidence.',
@@ -21,24 +21,28 @@ const DEPARTMENTS: DepartmentConfig[] = [
     indicators:[{id:'wb-nga-se-prm-enrr',sourceId:'worldbank-wdi-primary-enrolment',label:'Primary school gross enrolment ratio'}],
     unknowns:['Current Kaduna South school-level enrolment, attendance and completion are not integrated.','Current teacher availability and learning outcomes for Kaduna South are not established by the registered national series.'],
     facts:['A source may be described by its publisher, dataset, reference period and stated geographic coverage.','A national gross enrolment ratio is not a Kaduna South school attendance rate.','NITDA DL4ALL reports programme-level digital-literacy records; this is not a national learning-outcome or school-attendance survey.','The Federal Ministry of Education 2024/2025 Annual School Census portal reports a 57.9% school reporting rate; national and Kaduna State ratios must be interpreted with that completeness limit.','The Kaduna State portal row reports a 51.3 learner–teacher ratio, 56.9 learner–classroom ratio and 139.5 learner–toilet ratio; these are not Kaduna South or individual-school findings.'],
-    hypotheses:['A community report about a school may indicate a question for field inquiry; it does not establish how widespread the condition is.'] },
+    hypotheses:['A community report about a school may indicate a question for field inquiry; it does not establish how widespread the condition is.'],
+    priorities:['Find the latest LGA-level attendance and completion data for Kaduna South.','Validate school staffing, classrooms and sanitation against named school records.','Extract NALABE learning results by grade, subject and proficiency level.'] },
   { id:'health', title:'Health & Well-being', summary:'Population health evidence, health-system sources and published community concerns.',
     sources:['ndhs-2024','kaduna-ksphcb-recruitment-plan-2025','hfr','kaduna-hefa','nphcda-data-requisition','worldbank-wdi-under5-mortality'],
     indicators:[{id:'wb-nga-sh-dyn-mort',sourceId:'worldbank-wdi-under5-mortality',label:'Under-five mortality rate'}],
     unknowns:['Current Kaduna South facility staffing, medicine availability and service continuity are not integrated.','The Kaduna PHC recruitment plan is a March 2025 planning baseline, not a current headcount or proof of deployment.','HFR access requires an approved API key; HEFA raw data and public bulk export are not currently integrated.'],
     facts:['A registered facility is not proof that it is staffed, stocked or operational.','WHO reports a national under-five mortality estimate of 59.5 per 1,000 live births for 2024; it cannot establish performance at a named PHC.','WHO national health-expenditure estimates are not Kaduna State or LGA budget allocations.'],
-    hypotheses:['A published report about a facility can guide a follow-up question; it is not proof of a system-wide condition.'] },
+    hypotheses:['A published report about a facility can guide a follow-up question; it is not proof of a system-wide condition.'],
+    priorities:['Verify which Kaduna South PHCs are open, staffed and stocked with essential medicines.','Acquire current NHFR facility records and reconcile them with Kaduna State PHC data.','Separate routine service data, survey estimates and WHO modelled indicators.'] },
   { id:'software-technology', title:'Software & Technology', summary:'Digital systems, software capacity and technology access — without unsupported indicators.',
     sources:[], indicators:[],
     unknowns:['No Kaduna South digital-access, software-sector employment, innovation investment or company-survival dataset is integrated.','National programme counts and hub assessments do not establish the number of active technology firms in a specific LGA.'],
     facts:['NITDA DL4ALL reports verified digital-literacy programme records across Nigeria; the dashboard is not a representative digital-skills survey.','The Innovation Support Network reported more than 190 active hubs in its 2026 assessment; this is a published ecosystem assessment, not a live government register.','NASENI lists 108 InnovateNaija finalists across 34 states; this is a programme selection count, not a national innovation census.'],
-    hypotheses:['Anecdotes about connectivity, device access or digital skills are leads for structured research, not population estimates.'] },
+    hypotheses:['Anecdotes about connectivity, device access or digital skills are leads for structured research, not population estimates.'],
+    priorities:['Build a dated register of active Kaduna innovation hubs and technology firms.','Acquire digital-skills completion and outcome data by state and LGA.','Track public innovation programmes from budget to disbursement and measurable results.'] },
   { id:'civic', title:'Civic Department', summary:'Civic participation, published public concerns and official electoral evidence.',
     sources:['inec-voter-register-pvc','inec-cvr-2025-26'],
     indicators:[],
     unknowns:['A final validated post-CVR national register and Kaduna South breakdown are not integrated.','Published community records do not establish how common a civic concern is.'],
     facts:['The CommunityRecord feed contains published records only.','NIMC reported 121,404,601 NIN enrolment records as at 30 June 2025; this is not a population census.','INEC reference periods and measure definitions must be preserved; registration, PVC collection and turnout are different measures.'],
-    hypotheses:['A concentration of published submissions may indicate where further investigation is useful, but not prevalence or public consensus.'] },
+    hypotheses:['A concentration of published submissions may indicate where further investigation is useful, but not prevalence or public consensus.'],
+    priorities:['Acquire current INEC register and CVR data with state and LGA breakdowns.','Track public budget allocations, releases, expenditure and delivery as separate stages.','Make constitutional rights, FOI access and institutional duties understandable to citizens.'] },
 ];
 const PILOT_LOCATION = 'Kaduna South, Kaduna State';
 const STATE_OPTIONS = stateReference.states;
@@ -180,11 +184,15 @@ export default function Departments() {
        </>}
       {feed?.limitations.map((limit) => <p className="dept-note" key={limit}>{limit}</p>)}
     </Section>
-    <Section title="C. Unknowns and limitations" id="unknowns">
+    <Section title="C. Research agenda" id="research-agenda">
+      <p className="dept-note">Priority questions for investigation. These are research tasks, not claims about current conditions.</p>
+      <div className="dept-priorities">{config.priorities.map((item, index) => <article className="dept-priority" key={item}><span>PRIORITY 0{index + 1}</span><strong>{item}</strong><Link to="/evidence">Explore source evidence ↗</Link></article>)}</div>
+    </Section>
+    <Section title="D. Unknowns and limitations" id="unknowns">
       <ul className="dept-list">{config.unknowns.map((item) => <li key={item}>{item}</li>)}</ul>
       <p className="dept-note">Official announcement ≠ implementation ≠ independent verification. Each stage requires its own evidence.</p>
     </Section>
-    <Section title="D. Field guidance" id="field-guidance">
+    <Section title="E. Field guidance" id="field-guidance">
       <div className="dept-guidance">
         <div><h3>What you may state as fact</h3><ul>{config.facts.map((item) => <li key={item}>{item}</li>)}</ul></div>
         <div><h3>What remains a hypothesis</h3><ul>{config.hypotheses.map((item) => <li key={item}>{item}</li>)}</ul></div>
