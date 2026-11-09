@@ -6,6 +6,9 @@ import { useAdapter } from '../lib/hooks';
 import { SECTOR_LABEL, SECTORS, type Sector } from '../data/types';
 import { listIndicators, fetchViaGateway, formatIndicatorValue, type IndicatorDefinition, type IndicatorObservation } from '../lib/indicators';
 
+const MANDATE_URL = 'https://2027-street-mandate.vercel.app';
+const BRAIN_URL = 'https://iseyc-civic-brain.vercel.app';
+
 function IndicatorCard({ indicator }: { indicator: IndicatorDefinition }) {
   const [observations, setObservations] = useState<IndicatorObservation[]>([]);
   const [status, setStatus] = useState<'loading' | 'ready' | 'unavailable' | 'empty'>('loading');
@@ -54,8 +57,23 @@ export default function Overview() {
 
   return <>
     <section className="observatory-hero">
-      <div className="observatory-hero__copy"><span className="observatory-kicker">ISEYC · Civic intelligence</span><span className="observatory-mode">{isDemo ? "Demonstration data" : "Published Civic Mandate feed"}</span><h1>Nigeria</h1><p className="observatory-hero__dek">Understood through evidence.</p><p>Explore public records, national indicators and source material. Every figure keeps its publisher, reference period and limitations attached.</p><div className="observatory-hero__actions"><Link to="/evidence">Explore evidence <span aria-hidden="true">↗</span></Link><Link to="/geography">Open national map</Link></div></div>
-      <div className="observatory-hero__seal" aria-hidden="true"><span>ISEYC</span><strong>Evidence<br/>before<br/>conclusion</strong><i>National observatory</i></div>
+      <div className="observatory-hero__copy"><span className="observatory-kicker">ISEYC · Civic intelligence</span><span className="observatory-mode">{isDemo ? "Demonstration data" : "Published Civic Mandate feed"}</span><h1>Nigeria</h1><p className="observatory-hero__dek">Understanding public needs. Interpreting evidence. Strengthening accountability.</p><p>Explore public records, national indicators and source material. Every figure keeps its publisher, reference period and limitations attached.</p><div className="observatory-hero__actions"><Link to="/evidence">Explore evidence <span aria-hidden="true">↗</span></Link><Link to="/geography">Open national map</Link></div></div>
+      <div className="observatory-hero__seal"><img src="/iseyc-seal.svg" alt="ISEYC official seal" width="68" height="68"/><span>ISEYC</span><strong>Evidence<br/>before<br/>conclusion</strong><i>National observatory</i></div>
+    </section>
+
+    <section className="ecosystem-section" aria-labelledby="ecosystem-title">
+      <div className="ecosystem-section__head"><div><span className="observatory-kicker observatory-kicker--dark">One institutional intelligence loop</span><h2 id="ecosystem-title">Three products. One evidence system.</h2></div><span>ISEYC national infrastructure</span></div>
+      <div className="ecosystem-grid">
+        <a href={MANDATE_URL} target="_blank" rel="noopener noreferrer" className="ecosystem-card"><span>01 · CITIZEN ENTRY</span><strong>Civic Mandate Nigeria</strong><p>Learn, observe, report and track public concerns.</p><b>Open Mandate ↗</b></a>
+        <a href={BRAIN_URL} target="_blank" rel="noopener noreferrer" className="ecosystem-card"><span>02 · INTERPRETATION</span><strong>Civic Brain</strong><p>Explain evidence, uncertainty and institutional responsibility.</p><b>Open Brain ↗</b></a>
+        <div className="ecosystem-card ecosystem-card--active"><span>03 · EVIDENCE FOUNDATION</span><strong>Civic Intelligence Observatory</strong><p>Explore national sources, indicators, geography and accountability.</p><b>Current workspace</b></div>
+      </div>
+      <div className="ecosystem-departments"><span>DEPARTMENT DESKS</span>
+        <Link to="/departments/education">Education &amp; Capacity Building <b>↗</b></Link>
+        <Link to="/departments/health">Health &amp; Well-being <b>↗</b></Link>
+        <Link to="/departments/software-technology">Software &amp; Technology <b>↗</b></Link>
+        <Link to="/departments/civic">Civic Affairs <b>↗</b></Link>
+      </div>
     </section>
 
     <div className="workspace-grid observatory-kpis" aria-label={isDemo ? 'Demonstration coverage' : 'Published civic record coverage'}>
