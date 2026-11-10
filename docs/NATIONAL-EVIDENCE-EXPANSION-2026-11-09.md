@@ -27,6 +27,21 @@ The Overview and relevant Department pages display compact, provenance-first car
 | NASENI InnovateNaija | Announcement dated 3 September 2025 | Announced programme terms; the current campaign page says applications are closed and Phase 2 voting has ended, but no claim of verified winners, disbursement or commercialisation |
 | NBS real GDP growth | Q1 2026 | 3.89% year-on-year official national-accounts estimate |\n| ISN Nigerian Innovation Hub Assessment | Summary released 22 May 2026; survey period not stated | 190+ active hubs surveyed/covered from 250+ active and partially active spaces; 68.35% with fewer than 10 staff; 90% offer structured training |
 
+## Department snapshot coverage and current gaps
+
+The current snapshot bundle contains nine dated records. Its department coverage is intentionally uneven and must not be presented as a complete four-department dataset.
+
+| Department | Curated snapshot evidence in this release candidate | What remains limited or unintegrated |
+|---|---|---|
+| Education and Capacity Building | FME 2024/2025 national and Kaduna State school-census dashboard snapshots; NITDA DL4ALL, NASENI InnovateNaija and ISN assessment records are cross-linked | FME national school reporting is 53.7%; the Kaduna record is state-level, not Kaduna South; no current local school-level attendance or learning outcome series |
+| Department of Health and Well-being | WHO Nigeria profile indicators for 2021–2023, with indicator-specific periods and uncertainty intervals; existing national World Bank pilot indicator | One curated WHO snapshot record, not a complete health dataset; NDHS, NPHCDA, HFR and Kaduna health sources require their own validated ingestion and geography checks; no current Kaduna South facility staffing or medicine series |
+| Software and Technology | NITDA DL4ALL, NASENI InnovateNaija and ISN hub assessment snapshots; selected ISN-listed hub directory | Programme-reported reach is not national digital-literacy prevalence; the directory is a selected listing, not a complete or independently verified hub census; no official Kaduna South digital-access or software-employment measure |
+| Civic Department | NIMC October 2025 national and Kaduna State enrolment snapshot; existing INEC evidence sources remain separately registered | NIMC enrolment is not a population coverage measure; INEC registration, PVC collection and turnout remain separate measures; no final validated post-CVR national register or Kaduna South civic-participation estimate |
+
+**Cross-department national context:** NBS Q1 2026 GDP and the World Bank Nigeria Development Update are national macroeconomic context, not department performance measures or state/LGA estimates.
+
+The API accepts the DOC stable department identifiers `education`, `health`, `digital-systems` and `civic-affairs`. Existing Observatory route identifiers remain supported as compatibility aliases. The API response exposes the stable identifiers so DOC, Brain and other consumers do not need to adopt the Observatory's historical route slugs.
+
 ## Interpretation safeguards
 
 - WHO values remain labelled statistical estimates and retain uncertainty intervals. WHO warns that Nigerian death-registration data are unavailable or unusable for cause-of-death analysis.
@@ -39,8 +54,8 @@ The Overview and relevant Department pages display compact, provenance-first car
 
 ## Department connections
 
-- **Health & Well-being:** WHO profile and national estimates; existing NDHS, NPHCDA, HFR and Kaduna health source records remain separate.
-- **Software & Technology:** NITDA DL4ALL operational dashboard, NDLF competency framework, NASENI innovation programme, ISN hub assessment and selected ISN directory listings.\n- **Education & Capacity Building:** UBEC and World Bank evidence plus NITDA training reach, ISN hub training/mentorship findings and NBTI incubation sources.
+- **Department of Health and Well-being:** WHO profile and national estimates; existing NDHS, NPHCDA, HFR and Kaduna health source records remain separate.
+- **Software and Technology:** NITDA DL4ALL operational dashboard, NDLF competency framework, NASENI innovation programme, ISN hub assessment and selected ISN directory listings.\n- **Education and Capacity Building:** UBEC and World Bank evidence plus NITDA training reach, ISN hub training/mentorship findings and NBTI incubation sources.
 - **Civic Department:** INEC electoral evidence and NIMC identity-registration administration.
 - **Education & Capacity Building:** existing UBEC and World Bank evidence; NITDA's digital-literacy programme is cross-linked through its source record and interpretation notes.
 - **National overview:** NBS GDP context appears outside the four operational department workspaces.
