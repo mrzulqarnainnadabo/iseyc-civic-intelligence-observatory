@@ -8,7 +8,7 @@
 ISEYC is the parent institutional identity. Departments and civic intelligence products are distinct experiences inside one institution, not competing brands.
 
 - Institution: ISEYC
-- Departments: Education & Capacity Building; Health & Well-being; Software & Technology; Civic Department
+- Departments: Education and Capacity Building; Department of Health and Well-being; Software and Technology; Civic Department
 - Citizen entry: Civic Mandate Nigeria
 - Interpretation: Civic Brain
 - Evidence foundation: Intelligence Observatory
