@@ -3,10 +3,23 @@ import snapshotData from "../../src/data/indicators/national-department-snapshot
 const MAX_RECORDS = 20;
 const SOURCE_ID = "iseyc-observatory-national-snapshots-v1";
 
+// Existing Observatory route IDs are translated to the DOC stable IDs at the API boundary.
+const TO_INTERNAL_DEPARTMENT_ID = { "digital-systems": "software-technology", "civic-affairs": "civic" };
+const TO_PUBLIC_DEPARTMENT_ID = { "software-technology": "digital-systems", civic: "civic-affairs" };
+
+function publicDepartmentRecord(record) {
+  return {
+    ...record,
+    ...(record.departmentId ? { departmentId: TO_PUBLIC_DEPARTMENT_ID[record.departmentId] || record.departmentId } : {}),
+    ...(Array.isArray(record.departmentIds) ? { departmentIds: record.departmentIds.map((id) => TO_PUBLIC_DEPARTMENT_ID[id] || id) } : {}),
+  };
+}
+
 export function selectSnapshotRecords(records, departmentId) {
+  const internalDepartmentId = TO_INTERNAL_DEPARTMENT_ID[departmentId] || departmentId;
   const matching = records.filter((record) => {
-    if (!departmentId) return true;
-    return record.departmentId === departmentId || record.departmentIds?.includes(departmentId);
+    if (!internalDepartmentId) return true;
+    return record.departmentId === internalDepartmentId || record.departmentIds?.includes(internalDepartmentId);
   });
   return matching.slice(0, MAX_RECORDS);
 }
@@ -43,7 +56,7 @@ export default function handler(req, res) {
 
   const url = new URL(req.url || "/", "http://localhost");
   const departmentId = url.searchParams.get("departmentId");
-  const allowedDepartments = new Set(["education", "health", "software-technology", "civic"]);
+  const allowedDepartments = new Set(["education", "health", "digital-systems", "civic-affairs", "software-technology", "civic"]);
 
   if (departmentId && !allowedDepartments.has(departmentId)) {
     send(res, 400, { contractVersion: "1.0.0", status: "error", error: "DEPARTMENT_NOT_ALLOWED", records: [] });
