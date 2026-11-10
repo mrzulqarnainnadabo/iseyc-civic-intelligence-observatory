@@ -131,13 +131,15 @@
           "label": "Total enrolment records",
           "value": "123,906,318",
           "unit": "records",
-          "period": "31 Oct 2025"
+          "period": "31 Oct 2025",
+          "measurementType": "Cumulative administrative enrolment count"
         },
         {
           "label": "Kaduna State enrolment",
           "value": "7,326,730",
           "unit": "records",
-          "period": "31 Oct 2025"
+          "period": "31 Oct 2025",
+          "measurementType": "Administrative enrolment count"
         }
       ],
       "limitations": [
@@ -166,43 +168,50 @@
           "label": "Verified digital-literacy beneficiaries",
           "value": "2,783,731",
           "unit": "people",
-          "period": "Since Jan 2022"
+          "period": "Since Jan 2022",
+          "measurementType": "Programme-reported beneficiary count"
         },
         {
           "label": "Geographic coverage",
           "value": "36 states + FCT",
           "unit": "coverage",
-          "period": "Dashboard update"
+          "period": "Dashboard update",
+          "measurementType": "Programme geographic coverage"
         },
         {
           "label": "LGAs reached",
           "value": "774",
           "unit": "LGAs",
-          "period": "Dashboard update"
+          "period": "Dashboard update",
+          "measurementType": "Programme-reported geographic reach count"
         },
         {
           "label": "Communities reached",
           "value": "14,747",
           "unit": "communities",
-          "period": "Dashboard update"
+          "period": "Dashboard update",
+          "measurementType": "Programme-reported geographic reach count"
         },
         {
           "label": "Female participation",
           "value": "33%",
           "unit": "of beneficiaries",
-          "period": "Dashboard update"
+          "period": "Dashboard update",
+          "measurementType": "Share of programme beneficiaries"
         },
         {
           "label": "Youth under 35",
           "value": "2,100,027",
           "unit": "people",
-          "period": "Dashboard update"
+          "period": "Dashboard update",
+          "measurementType": "Programme-reported subgroup count"
         },
         {
           "label": "Progress against 50m programme target",
           "value": "5.57%",
           "unit": "of target",
-          "period": "Dashboard update"
+          "period": "Dashboard update",
+          "measurementType": "Progress against programme target"
         }
       ],
       "limitations": [
@@ -222,37 +231,43 @@
           "label": "Persons with disabilities trained",
           "value": "17,157",
           "unit": "people",
-          "period": "Dashboard update"
+          "period": "Dashboard update",
+          "measurementType": "Programme-reported subgroup count"
         },
         {
           "label": "Rural beneficiaries",
           "value": "72,747",
           "unit": "people",
-          "period": "Dashboard update"
+          "period": "Dashboard update",
+          "measurementType": "Programme-reported subgroup count"
         },
         {
           "label": "Informal-sector workers",
           "value": "1,609,283",
           "unit": "people",
-          "period": "Dashboard update"
+          "period": "Dashboard update",
+          "measurementType": "Programme-reported subgroup count"
         },
         {
           "label": "Active reporting organisations",
           "value": "262",
           "unit": "organisations",
-          "period": "Dashboard update"
+          "period": "Dashboard update",
+          "measurementType": "Programme reporting-organisation count"
         },
         {
           "label": "Companies reporting",
           "value": "155",
           "unit": "organisations",
-          "period": "Dashboard update"
+          "period": "Dashboard update",
+          "measurementType": "Programme reporting-organisation count"
         },
         {
           "label": "Government organisations reporting",
           "value": "45",
           "unit": "organisations",
-          "period": "Dashboard update"
+          "period": "Dashboard update",
+          "measurementType": "Programme reporting-organisation count"
         }
       ]
     },
@@ -274,37 +289,43 @@
           "label": "Announced prize pool",
           "value": "₦250 million",
           "unit": "programme terms",
-          "period": "3 Sep 2025"
+          "period": "3 Sep 2025",
+          "measurementType": "Announced programme prize pool"
         },
         {
           "label": "Planned state/FCT finalists",
           "value": "37",
           "unit": "one per state and FCT",
-          "period": "Programme announcement"
+          "period": "Programme announcement",
+          "measurementType": "Planned selection count"
         },
         {
           "label": "Planned state-level grant",
           "value": "₦2.5 million",
           "unit": "per selected innovator",
-          "period": "Programme announcement"
+          "period": "Programme announcement",
+          "measurementType": "Planned award amount"
         },
         {
           "label": "Announced grand prize",
           "value": "₦100 million",
           "unit": "top national winner",
-          "period": "Programme announcement"
+          "period": "Programme announcement",
+          "measurementType": "Announced top prize"
         },
         {
           "label": "Application status",
           "value": "Closed",
           "unit": "campaign status",
-          "period": "Current campaign page · 9 Nov 2026"
+          "period": "Current campaign page · 9 Nov 2026",
+          "measurementType": "Campaign status"
         },
         {
           "label": "Phase 2 public voting",
           "value": "Ended",
           "unit": "campaign status",
-          "period": "Current campaign page · 9 Nov 2026"
+          "period": "Current campaign page · 9 Nov 2026",
+          "measurementType": "Campaign status"
         }
       ],
       "limitations": [
@@ -344,7 +365,8 @@
           "label": "Real GDP growth, year-on-year",
           "value": "3.89%",
           "unit": "annual percentage change",
-          "period": "Q1 2026"
+          "period": "Q1 2026",
+          "measurementType": "Official quarterly growth estimate"
         }
       ],
       "limitations": [
@@ -496,61 +518,71 @@
           "label": "Total schools displayed",
           "value": "230,844",
           "unit": "schools",
-          "period": "2024/2025"
+          "period": "2024/2025",
+          "measurementType": "Administrative count"
         },
         {
           "label": "Schools reported",
           "value": "124,066",
           "unit": "schools",
-          "period": "2024/2025"
+          "period": "2024/2025",
+          "measurementType": "Administrative count"
         },
         {
           "label": "Reporting rate",
           "value": "53.7%",
           "unit": "of displayed schools",
-          "period": "2024/2025"
+          "period": "2024/2025",
+          "measurementType": "Administrative reporting rate"
         },
         {
           "label": "Learners",
           "value": "39,825,932",
           "unit": "learner records",
-          "period": "2024/2025"
+          "period": "2024/2025",
+          "measurementType": "Administrative count"
         },
         {
           "label": "Teachers",
           "value": "1,185,610",
           "unit": "teacher records",
-          "period": "2024/2025"
+          "period": "2024/2025",
+          "measurementType": "Administrative count"
         },
         {
           "label": "Learner–teacher ratio",
           "value": "33.6",
           "unit": "learners per teacher",
-          "period": "2024/2025"
+          "period": "2024/2025",
+          "measurementType": "Dashboard-derived ratio"
         },
         {
           "label": "Learner–classroom ratio",
           "value": "60.1",
           "unit": "learners per classroom",
-          "period": "2024/2025"
+          "period": "2024/2025",
+          "measurementType": "Dashboard-derived ratio"
         },
         {
           "label": "Learner–toilet ratio",
           "value": "65.9",
           "unit": "learners per toilet",
-          "period": "2024/2025"
+          "period": "2024/2025",
+          "measurementType": "Dashboard-derived ratio"
         },
         {
           "label": "Female learners",
           "value": "49.6%",
           "unit": "of learner records",
-          "period": "2024/2025"
+          "period": "2024/2025",
+          "measurementType": "Share of reported learner records"
         },
         {
           "label": "Female teachers",
           "value": "55.7%",
           "unit": "of teacher records",
-          "period": "2024/2025"
+          "period": "2024/2025",
+          "measurementType": "Share of reported teacher records"
         }
       ],
       "limitations": [
@@ -581,43 +613,50 @@
           "label": "Learners",
           "value": "2,718,125",
           "unit": "learner records",
-          "period": "2024/2025"
+          "period": "2024/2025",
+          "measurementType": "Administrative count"
         },
         {
           "label": "Learner–teacher ratio",
           "value": "51.3",
           "unit": "learners per teacher",
-          "period": "2024/2025"
+          "period": "2024/2025",
+          "measurementType": "Dashboard-derived ratio"
         },
         {
           "label": "Learner–classroom ratio",
           "value": "57.0",
           "unit": "learners per classroom",
-          "period": "2024/2025"
+          "period": "2024/2025",
+          "measurementType": "Dashboard-derived ratio"
         },
         {
           "label": "Learner–toilet ratio",
           "value": "139.5",
           "unit": "learners per toilet",
-          "period": "2024/2025"
+          "period": "2024/2025",
+          "measurementType": "Dashboard-derived ratio"
         },
         {
           "label": "Female learners",
           "value": "49.9%",
           "unit": "of learner records",
-          "period": "2024/2025"
+          "period": "2024/2025",
+          "measurementType": "Share of reported learner records"
         },
         {
           "label": "Female teachers",
           "value": "54.2%",
           "unit": "of teacher records",
-          "period": "2024/2025"
+          "period": "2024/2025",
+          "measurementType": "Share of reported teacher records"
         },
         {
           "label": "Learners with special needs",
           "value": "16,520",
           "unit": "learner records",
-          "period": "2024/2025"
+          "period": "2024/2025",
+          "measurementType": "Administrative count"
         }
       ],
       "limitations": [

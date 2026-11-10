@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import handler from "../api/evidence/snapshots.js";
+import handler, { selectSnapshotRecords } from "../api/evidence/snapshots.js";
 
 function request(url, method = "GET") {
   const res = {
@@ -35,6 +35,17 @@ describe("national source snapshot endpoint", () => {
     expect(education.body.records.some((record) => record.id === "naseni-innovatenaija-2025")).toBe(true);
     expect(education.body.records.some((record) => record.id === "isn-innovation-hub-assessment-2026")).toBe(true);
     expect(education.body.records.some((record) => record.id === "nimc-enrolment-2025-10")).toBe(false);
+  });
+
+  it("filters department records before applying the response cap", () => {
+    const records = Array.from({ length: 25 }, (_, index) => ({
+      id: `record-${index}`,
+      departmentId: index < 20 ? "education" : "health",
+    }));
+    expect(selectSnapshotRecords(records, "health").map((record) => record.id)).toEqual([
+      "record-20", "record-21", "record-22", "record-23", "record-24",
+    ]);
+    expect(selectSnapshotRecords(records, null)).toHaveLength(20);
   });
 
   it("keeps national context outside the four department-specific feeds", () => {

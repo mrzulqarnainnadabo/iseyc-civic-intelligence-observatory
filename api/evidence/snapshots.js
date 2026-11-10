@@ -3,6 +3,14 @@ import snapshotData from "../../src/data/indicators/national-department-snapshot
 const MAX_RECORDS = 20;
 const SOURCE_ID = "iseyc-observatory-national-snapshots-v1";
 
+export function selectSnapshotRecords(records, departmentId) {
+  const matching = records.filter((record) => {
+    if (!departmentId) return true;
+    return record.departmentId === departmentId || record.departmentIds?.includes(departmentId);
+  });
+  return matching.slice(0, MAX_RECORDS);
+}
+
 function send(res, status, body) {
   res.statusCode = status;
   res.end(JSON.stringify(body));
@@ -42,10 +50,7 @@ export default function handler(req, res) {
     return;
   }
 
-  const records = snapshotData.records.slice(0, MAX_RECORDS).filter((record) => {
-    if (!departmentId) return true;
-    return record.departmentId === departmentId || record.departmentIds?.includes(departmentId);
-  });
+  const records = selectSnapshotRecords(snapshotData.records, departmentId);
 
   if (url.searchParams.get("catalog") === "1") {
     send(res, 200, {
