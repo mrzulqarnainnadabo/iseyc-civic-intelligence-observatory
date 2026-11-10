@@ -35,6 +35,10 @@ describe("national source snapshot endpoint", () => {
     expect(education.body.records.some((record) => record.id === "naseni-innovatenaija-2025")).toBe(true);
     expect(education.body.records.some((record) => record.id === "isn-innovation-hub-assessment-2026")).toBe(true);
     expect(education.body.records.some((record) => record.id === "nimc-enrolment-2025-10")).toBe(false);
+    const software = request("/api/evidence/snapshots?departmentId=digital-systems");
+    expect(software.statusCode).toBe(200);
+    expect(software.body.records.some((record) => record.id === "nitda-dl4all-2026-10")).toBe(true);
+    expect(software.body.records.find((record) => record.id === "nitda-dl4all-2026-10").departmentIds).toContain("digital-systems");
   });
 
   it("filters department records before applying the response cap", () => {
@@ -49,8 +53,12 @@ describe("national source snapshot endpoint", () => {
   });
 
   it("keeps national context outside the four department-specific feeds", () => {
-    const civic = request("/api/evidence/snapshots?departmentId=civic");
+    const civic = request("/api/evidence/snapshots?departmentId=civic-affairs");
+    expect(civic.body.records.some((record) => record.id === "nimc-enrolment-2025-10")).toBe(true);
+    expect(civic.body.records.find((record) => record.id === "nimc-enrolment-2025-10").departmentId).toBe("civic-affairs");
     expect(civic.body.records.some((record) => record.id === "nbs-gdp-q1-2026")).toBe(false);
+    const legacyCivic = request("/api/evidence/snapshots?departmentId=civic");
+    expect(legacyCivic.body.records.some((record) => record.id === "nimc-enrolment-2025-10")).toBe(true);
     const all = request("/api/evidence/snapshots");
     expect(all.body.records.some((record) => record.id === "nbs-gdp-q1-2026")).toBe(true);
   });
