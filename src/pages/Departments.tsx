@@ -18,19 +18,19 @@ type DepartmentConfig = {
   unknowns: string[]; facts: string[]; hypotheses: string[];
 };
 const DEPARTMENTS: DepartmentConfig[] = [
-  { id:'education', title:'Education & Capacity Building', summary:'Schooling, education access, capacity and learning evidence.',
+  { id:'education', title:'Education and Capacity Building', summary:'Schooling, education access, capacity and learning evidence.',
     sources:['ubec-digest-2019-20','ubec-npa-2022-23','ubec-reports-digests','worldbank-wdi-primary-enrolment','nbs-microdata-catalog','nitda-dl4all-dashboard','nitda-national-digital-literacy-framework','isn-hubs-directory-2026','isn-hub-assessment-2026','startup-support-engagement-portal','nbti-incubation-centres','afrilabs-nigeria-hubs','cchub-programmes-2026'],
     indicators:[{id:'wb-nga-se-prm-enrr',sourceId:'worldbank-wdi-primary-enrolment',label:'Primary school gross enrolment ratio'}],
     unknowns:['Current Kaduna South school-level enrolment, attendance and completion are not integrated.','Current teacher availability and learning outcomes for Kaduna South are not established by the registered national series.'],
     facts:['A source may be described by its publisher, dataset, reference period and stated geographic coverage.','A national gross enrolment ratio is not a Kaduna South school attendance rate.'],
     hypotheses:['A community report about a school may indicate a question for field inquiry; it does not establish how widespread the condition is.'] },
-  { id:'health', title:'Health & Well-being', summary:'Population health evidence, health-system sources and published community concerns.',
+  { id:'health', title:'Department of Health and Well-being', summary:'Population health evidence, health-system sources and published community concerns.',
     sources:['ndhs-2024','kaduna-ksphcb-recruitment-plan-2025','hfr','kaduna-hefa','nphcda-data-requisition','worldbank-wdi-under5-mortality','who-gho-nigeria'],
     indicators:[{id:'wb-nga-sh-dyn-mort',sourceId:'worldbank-wdi-under5-mortality',label:'Under-five mortality rate'}],
     unknowns:['Current Kaduna South facility staffing, medicine availability and service continuity are not integrated.','The Kaduna PHC recruitment plan is a March 2025 planning baseline, not a current headcount or proof of deployment.','HFR access requires an approved API key; HEFA raw data and public bulk export are not currently integrated.'],
     facts:['A registered facility is not proof that it is staffed, stocked or operational.','A national modelled mortality estimate cannot establish performance at a named PHC.'],
     hypotheses:['A published report about a facility can guide a follow-up question; it is not proof of a system-wide condition.'] },
-  { id:'software-technology', title:'Software & Technology', summary:'Digital systems, software capacity, innovation infrastructure and the national hub ecosystem.',
+  { id:'software-technology', title:'Software and Technology', summary:'Digital systems, software capacity, innovation infrastructure and the national hub ecosystem.',
     sources:['nitda-dl4all-dashboard','nitda-national-digital-literacy-framework','naseni-innovation-hub','isn-hubs-directory-2026','isn-hub-assessment-2026','startup-support-engagement-portal','nbti-incubation-centres','afrilabs-nigeria-hubs','cchub-programmes-2026','nipost-digital-postcode-hub-api-2026'], indicators:[],
     unknowns:['No official Kaduna South digital-access, software-sector or technology-employment figure is integrated.','NITDA programme reach is not a national digital-literacy prevalence measure; NASENI announcements are not proof of funded or commercialised innovations.'],
     facts:['NITDA publishes a national programme dashboard with dated verified training records.','ISN’s 2026 assessment reports structural capacity constraints across the national hub ecosystem.','The ISN directory lists selected hubs in Kaduna, Kano, Abuja, Lagos and other states.','NASENI and NBTI publish innovation and incubation programmes; outcomes require separate award, disbursement and product evidence.'],
