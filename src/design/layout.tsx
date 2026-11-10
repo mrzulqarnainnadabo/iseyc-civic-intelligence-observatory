@@ -21,9 +21,9 @@ export function AppShell() {
       <nav className="app-nav" aria-label="Main navigation">{NAV.map((item) => <NavLink key={item.to} to={item.to} end={item.end} className={({ isActive }) => 'app-nav__link' + (isActive ? ' app-nav__link--on' : '')}>{item.label}</NavLink>)}</nav>
       <div className="app-departments" aria-label="Department entry points">
         <span>DEPARTMENTS</span>
-        <NavLink to="/departments/education">Education &amp; Capacity Building</NavLink>
-        <NavLink to="/departments/health">Health &amp; Well-being</NavLink>
-        <NavLink to="/departments/software-technology">Software &amp; Technology</NavLink>
+        <NavLink to="/departments/education">Education and Capacity Building</NavLink>
+        <NavLink to="/departments/health">Department of Health and Well-being</NavLink>
+        <NavLink to="/departments/software-technology">Software and Technology</NavLink>
         <NavLink to="/departments/civic">Civic Department</NavLink>
       </div>
       <div className="app-sidebar__bottom">
