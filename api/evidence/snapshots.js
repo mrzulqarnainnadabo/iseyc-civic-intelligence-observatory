@@ -92,7 +92,7 @@ export default function handler(req, res) {
     source: SOURCE_ID,
     retrievedAt: snapshotData.retrievedAt,
     recordCount: records.length,
-    records,
+    records: records.map(publicDepartmentRecord),
     note: snapshotData.note,
     limitations: [
       "Snapshots are manually curated transcriptions and are not continuously refreshed.",
