@@ -10,8 +10,8 @@
       "title": "WHO · Nigeria health indicators",
       "publisher": "World Health Organization",
       "sourceId": "who-gho-nigeria",
-      "sourceUrl": "https://www.who.int/data/gho/data/countries/country-details/GHO/nigeria",
-      "referencePeriod": "Indicator-specific · 2021–2023",
+      "sourceUrl": "https://data.who.int/countries/566",
+      "referencePeriod": "Indicator-specific · 2021–2025",
       "retrievedAt": "2026-11-09",
       "geography": {
         "level": "national",
@@ -21,74 +21,23 @@
       "metrics": [
         {
           "label": "Under-five mortality",
-          "value": "108.1",
+          "value": "117.46",
           "unit": "per 1,000 live births",
           "period": "2022",
-          "interval": "77.5–153.8",
-          "measurementType": "estimated"
-        },
-        {
-          "label": "Neonatal mortality",
-          "value": "34.3",
-          "unit": "per 1,000 live births",
-          "period": "2022",
-          "interval": "23.74–50.03",
-          "measurementType": "estimated"
-        },
-        {
-          "label": "Maternal mortality ratio",
-          "value": "1,000",
-          "unit": "per 100,000 live births",
-          "period": "2023",
-          "interval": "700–1,500",
-          "measurementType": "estimated"
+          "interval": "104.01–132.8",
+          "measurementType": "WHO statistical estimate"
         }
       ],
       "limitations": [
-        "WHO indicator reference years differ; do not present these values as one current-year snapshot or as Kaduna State figures.",
-        "Under-five mortality, neonatal mortality and maternal mortality are statistical estimates and retain their uncertainty intervals.",
-        "The WHO profile currently shows no 2023 value for new HIV infections; no substitute value is used.",
+        "WHO indicators have different reference years, methods and uncertainty intervals; do not present them as one current-year dataset.",
+        "Under-five mortality and life expectancy are statistical/modelled estimates; preserve the published uncertainty intervals.",
+        "The WHO country profile currently displays a 2025 new-HIV-infection estimate; it does not provide a 2023 value in the displayed profile, so no 2023 value is substituted.",
+        "Current health expenditure is a 2021 value and must not be presented as current spending.",
         "WHO reports Nigerian death-registration data as unavailable or unusable for cause-of-death analysis; cause-of-death estimates require caution.",
-        "Workforce, immunisation, WASH and expenditure indicators have different source methods and must not be combined as if they share one measurement process.",
         "National values do not establish state, LGA, facility or household outcomes."
       ],
-      "interpretation": "Use as national health context and as a map of questions for deeper investigation. Preserve each indicator's reference year and measurement type. Do not use these national estimates to grade an individual facility or state programme.",
+      "interpretation": "Use as national health context and as a map of questions for deeper investigation. Preserve each indicator's reference year, measurement type and uncertainty. Do not use these national estimates to grade an individual facility or state programme.",
       "additionalMetrics": [
-        {
-          "label": "DTP3 immunisation coverage",
-          "value": "67%",
-          "unit": "of 1-year-olds",
-          "period": "2023",
-          "measurementType": "WHO/UNICEF estimate"
-        },
-        {
-          "label": "Physician density",
-          "value": "3.86",
-          "unit": "per 10,000 population",
-          "period": "2022",
-          "measurementType": "reported series"
-        },
-        {
-          "label": "Nursing and midwifery density",
-          "value": "16.5",
-          "unit": "per 10,000 population",
-          "period": "2022",
-          "measurementType": "reported series"
-        },
-        {
-          "label": "Safely managed drinking water",
-          "value": "29%",
-          "unit": "of population",
-          "period": "2022",
-          "measurementType": "WHO/UNICEF JMP estimate"
-        },
-        {
-          "label": "Safely managed sanitation",
-          "value": "31%",
-          "unit": "of population",
-          "period": "2022",
-          "measurementType": "WHO/UNICEF JMP estimate"
-        },
         {
           "label": "Current health expenditure",
           "value": "4.08%",
@@ -97,18 +46,20 @@
           "measurementType": "WHO Global Health Expenditure Database"
         },
         {
-          "label": "Government health expenditure",
-          "value": "4.3%",
-          "unit": "of general government expenditure",
-          "period": "2021",
-          "measurementType": "WHO Global Health Expenditure Database"
+          "label": "Life expectancy at birth",
+          "value": "62.9",
+          "unit": "years",
+          "period": "2023",
+          "interval": "59.8–66.2",
+          "measurementType": "modelled estimate"
         },
         {
-          "label": "Life expectancy at birth",
-          "value": "63.4",
-          "unit": "years",
-          "period": "2021",
-          "measurementType": "modelled estimate"
+          "label": "New HIV infections",
+          "value": "0.27",
+          "unit": "per 1,000 uninfected population",
+          "period": "2025",
+          "interval": "0.21–0.39",
+          "measurementType": "WHO estimate"
         }
       ]
     },
