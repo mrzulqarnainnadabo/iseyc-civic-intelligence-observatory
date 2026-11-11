@@ -20,14 +20,30 @@ describe("dated national evidence snapshots", () => {
       }
     }
   });
-  it("preserves WHO estimate intervals and separate reference years", () => {
+  it("uses the current WHO Nigeria profile and preserves indicator-specific periods and uncertainty", () => {
     const who = snapshots.records.find((record) => record.id === "who-nigeria-health-2021-23")!;
-    expect(who.metrics.map((item) => item.period)).toEqual(["2022", "2022", "2023"]);
-    expect(who.metrics.some((item) => item.label === "New HIV infections")).toBe(false);
+    expect(who.sourceUrl).toBe("https://data.who.int/countries/566");
+    expect(who.metrics).toHaveLength(1);
+    expect(who.metrics[0]).toMatchObject({
+      label: "Under-five mortality",
+      value: "117.46",
+      period: "2022",
+      interval: "104.01–132.8",
+    });
+    expect(who.additionalMetrics?.find((item) => item.label === "Life expectancy at birth")).toMatchObject({
+      value: "62.9",
+      period: "2023",
+      interval: "59.8–66.2",
+    });
+    expect(who.additionalMetrics?.find((item) => item.label === "New HIV infections")).toMatchObject({
+      value: "0.27",
+      period: "2025",
+      interval: "0.21–0.39",
+    });
     expect(who.limitations.join(" ")).toMatch(/no 2023 value for new HIV infections/);
     expect(who.additionalMetrics?.some((item) => item.measurementType === "modelled estimate")).toBe(true);
     expect(who.metrics.every((item) => Boolean(item.interval))).toBe(true);
-    expect(who.limitations.join(" ")).toMatch(/statistical estimates/);
+    expect(who.limitations.join(" ")).toMatch(/statistical\/modelled estimates/);
   });
   it("does not turn NIMC enrolment into population coverage or local data", () => {
     const nimc = snapshots.records.find((record) => record.id === "nimc-enrolment-2025-10")!;
