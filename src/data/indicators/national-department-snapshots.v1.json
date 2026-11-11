@@ -31,7 +31,7 @@
       "limitations": [
         "WHO indicators have different reference years, methods and uncertainty intervals; do not present them as one current-year dataset.",
         "Under-five mortality and life expectancy are statistical/modelled estimates; preserve the published uncertainty intervals.",
-        "The WHO country profile currently displays a 2025 new-HIV-infection estimate; it does not provide a 2023 value in the displayed profile, so no 2023 value is substituted.",
+        "The WHO profile has no 2023 value for new HIV infections; the displayed estimate is for 2025 only and must not be substituted for 2023.",
         "Current health expenditure is a 2021 value and must not be presented as current spending.",
         "WHO reports Nigerian death-registration data as unavailable or unusable for cause-of-death analysis; cause-of-death estimates require caution.",
         "National values do not establish state, LGA, facility or household outcomes."
