@@ -13,6 +13,6 @@ describe("ISEYC institutional brand", () => {
     expect(seal).toContain("ISEYC official seal");
     expect(shell).toContain('src="/iseyc-wordmark.svg"');
     expect(guide).toContain("The supplied official seal is the source of truth");
-    for (const label of ["Civic Mandate", "Civic Intelligence", "Civic Brain", "Education", "Health", "Software", "Civic Department", "Digital Operations Centre"]) expect(architecture).toContain(label);
+    for (const label of ["Civic Mandate", "Intelligence Observatory", "Civic Brain", "Education", "Health", "Software", "Civic Department", "Digital Operations Centre"]) expect(architecture).toContain(label);
   });
 });
