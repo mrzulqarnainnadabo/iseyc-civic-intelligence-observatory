@@ -2,7 +2,7 @@
 
 ## What changed
 
-The source registry now contains **54 sources** (up from 38 on the previous main baseline). New source families include:
+The source registry contains **69 registered sources** on this baseline (up from 38 on the earlier main baseline). New source families include:
 
 - WHO Global Health Observatory — Nigeria profile and indicator access.
 - IMF World Economic Outlook — October 2026 vintage and DataMapper/API documentation.
