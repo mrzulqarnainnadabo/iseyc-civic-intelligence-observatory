@@ -947,5 +947,829 @@
     ],
     "notes": "Pilot source in the Observatory evidence gateway. Use as national context only unless a separately validated subnational source is obtained.",
     "lastChecked": null
+  },
+  {
+    "id": "who-gho-nigeria",
+    "publisher": "World Health Organization (WHO)",
+    "name": "WHO Data — Nigeria country profile and health indicators",
+    "url": "https://data.who.int/countries/566",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria national aggregate; indicator-specific geography and disaggregation vary",
+    "geoLevel": "national",
+    "dataType": "Country health indicators, modelled estimates and health-system statistics; indicator-specific reference years and methods",
+    "updateFrequency": "Indicator-specific; source reference periods vary",
+    "licence": "WHO data.who.int published outputs: CC BY-NC-SA 3.0 IGO; comply with attribution and non-endorsement terms",
+    "lastChecked": "2026-11-11",
+    "checkedHow": "WHO Nigeria country profile on data.who.int reviewed; selected indicator values transcribed with their reference periods and uncertainty intervals",
+    "limitations": [
+      "Every indicator has its own reference year, methodology, uncertainty interval and source; do not treat the profile as one current-year dataset.",
+      "Under-five mortality and life expectancy are statistical/modelled estimates and must retain their uncertainty intervals.",
+      "WHO reports Nigerian death-registration data as unavailable or unusable for cause-of-death analysis; cause-of-death estimates require caution.",
+      "National estimates do not establish state, LGA, facility or household outcomes.",
+      "The legacy GHO OData API is being retired; no automated ingestion is implied by this country-profile snapshot.",
+      "WHO data use does not imply WHO endorsement; do not use WHO emblems or logos."
+    ],
+    "notes": "WHO Nigeria country profile: https://data.who.int/countries/566. Values in the Observatory snapshot are dated transcriptions; use each indicator's own period and metadata. This is not a live feed or substitute for original Nigerian administrative records."
+  },
+  {
+    "id": "imf-weo-oct-2026",
+    "publisher": "International Monetary Fund (IMF)",
+    "name": "World Economic Outlook database — October 2026 vintage",
+    "url": "https://data.imf.org/datasets/WEO",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "employment",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National macroeconomic indicators and international aggregates",
+    "geoLevel": "national",
+    "dataType": "Annual macroeconomic time series: national accounts, inflation, unemployment, fiscal indicators, trade and external balances; historical values, staff estimates and projections",
+    "updateFrequency": "Twice yearly, typically April and October",
+    "licence": "IMF data usage and copyright terms apply; verify dataset-specific reuse conditions before redistribution",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "IMF Data Portal October 2026 WEO dataset and DataMapper API documentation reviewed",
+    "limitations": [
+      "WEO mixes historical observations, IMF staff estimates and projections; every displayed year must carry its status and vintage.",
+      "IMF staff estimates may be used as proxies where complete information is unavailable and can differ from official national statistics.",
+      "Do not present projected values as observed facts or merge them into historical series without clear visual separation.",
+      "Annual national aggregates cannot explain state or LGA household/service outcomes.",
+      "Retain vintage, release date, units, definitions and revisions for every imported value."
+    ],
+    "notes": "IMF DataMapper API documentation: https://www.imf.org/external/datamapper/api/. October 2026 WEO is the current source vintage reviewed; forecast years must remain explicitly labelled."
+  },
+  {
+    "id": "nimc-enrolment-oct-2025",
+    "publisher": "National Identity Management Commission (NIMC)",
+    "name": "NIN enrolment dashboard — 31 October 2025",
+    "url": "https://nimc.gov.ng/nin/enrolment-report/october-2025",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National, state and diaspora cumulative enrolment records",
+    "geoLevel": "state",
+    "dataType": "Cumulative NIN enrolment records, disaggregated by state and sex; dashboard snapshot",
+    "updateFrequency": "Irregular dashboard releases; reference date is stated on each snapshot",
+    "licence": "NIMC reuse terms not confirmed; retain attribution and seek permission for bulk redistribution",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NIMC October 2025 enrolment dashboard reviewed; published national and state totals extracted",
+    "limitations": [
+      "Enrolment records are not a population census, active identity count or measure of access to public services.",
+      "Do not calculate coverage without a compatible population denominator, reference year and methodology.",
+      "Cumulative records may include duplicates or administrative corrections unless the source explicitly defines them as unique records.",
+      "This is a historical snapshot dated 31 October 2025, not a live 2026 count."
+    ],
+    "notes": "NIMC dashboard reports 123,906,318 total enrolment records nationally and 7,326,730 for Kaduna State as at 31 October 2025. These figures are source-reported, not independently audited by ISEYC."
+  },
+  {
+    "id": "nitda-dl4all-dashboard",
+    "publisher": "National Information Technology Development Agency (NITDA)",
+    "name": "Digital Literacy for All (DL4ALL) — National Digital Literacy Dashboard",
+    "url": "https://dashboard.digitalliteracy.nitda.gov.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "governance",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National, 36 states and FCT, 774 LGAs and reported communities",
+    "geoLevel": "varies",
+    "dataType": "Programme dashboard: verified digital-literacy training records, reach, competence areas, delivery modes, beneficiaries and partner organisations",
+    "updateFrequency": "Dashboard updated 24 October 2026; ongoing updates claimed, cadence not published",
+    "licence": "Dashboard data reuse terms not confirmed; cite NITDA and seek permission for bulk republication",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NITDA-linked DL4ALL national dashboard reviewed; headline counters, coverage and update timestamp recorded",
+    "limitations": [
+      "The dashboard's verified-beneficiary definition and deduplication method must be obtained before comparing with other training programmes.",
+      "Training or completion records do not independently establish durable competence, employment outcomes or population-wide digital literacy.",
+      "The 70% by 2027 and 95% by 2030 targets are targets, not achieved outcomes.",
+      "Dashboard counters are programme-reported; retain retrieval date and do not infer missing demographic or geographic values.",
+      "The dashboard reports different measures (people, organisations, training counts and competency counts); do not add them together."
+    ],
+    "notes": "Dashboard snapshot: 2,783,731 verified digitally literate beneficiaries; 36 states + FCT, 774 LGAs and 14,747 communities reached; 33% female participation; 2,100,027 youth under 35. It reports 5.57% progress against a 50 million target; this is programme progress against a target, not Nigeria's national digital literacy rate."
+  },
+  {
+    "id": "nitda-national-digital-literacy-framework",
+    "publisher": "National Information Technology Development Agency (NITDA)",
+    "name": "National Digital Literacy Framework (NDLF)",
+    "url": "https://nitda.gov.ng/wp-content/uploads/2023/07/Digital-Literacy-Framework.pdf",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "governance",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National policy and competence framework",
+    "geoLevel": "national",
+    "dataType": "Policy and measurement framework: six competence areas and eight proficiency levels",
+    "updateFrequency": "Policy framework; revisions not confirmed",
+    "licence": "NITDA document reuse terms not confirmed; cite the source and verify before republication",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NITDA-hosted framework PDF reviewed",
+    "limitations": [
+      "A framework defines competencies and targets; it is not evidence that citizens have achieved them.",
+      "Targets and policy statements must be separated from measured programme outcomes.",
+      "Competence-area counts should not be interpreted as unique people without a documented counting method."
+    ],
+    "notes": "Framework defines six competence areas and eight proficiency levels. Use it to align ISEYC digital skills assessment, not to claim national attainment."
+  },
+  {
+    "id": "naseni-innovation-hub",
+    "publisher": "National Agency for Science and Engineering Infrastructure (NASENI)",
+    "name": "NASENI Innovation Hub — programmes, partnerships and innovation activity",
+    "url": "https://innovation.naseni.gov.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National programmes and initiatives; geographic coverage varies by programme",
+    "geoLevel": "varies",
+    "dataType": "Official programme pages, challenge announcements, innovation support pathways, partnerships and published milestones",
+    "updateFrequency": "Irregular programme announcements and updates",
+    "licence": "Programme content reuse terms not confirmed; cite original announcements and do not imply NASENI endorsement",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NASENI Innovation Hub site, InnovateNaija announcement and FutureMakers programme pages reviewed",
+    "limitations": [
+      "Programme announcements and prize pools are not proof of grants disbursed, products commercialised, jobs created or innovations independently validated.",
+      "Keep announced, open, closed, selected, funded, deployed and independently verified stages separate.",
+      "Do not infer nationwide reach from an invitation to applicants across states; use published participant and outcome records only."
+    ],
+    "notes": "Related sources: https://innovation.naseni.gov.ng/innovatenaija-campaign/ and https://innovation.naseni.gov.ng/blog/. Current campaign page states applications are closed and Phase 2 voting has ended. The September 2025 announcement described a ₦250 million prize pool and intended 37 state/FCT winners; verified winner selection, grant disbursement and innovation outcomes remain separate evidence requirements."
+  },
+  {
+    "id": "nbs-cpi-monthly",
+    "publisher": "National Bureau of Statistics (NBS)",
+    "name": "Consumer Price Index and Inflation — monthly releases",
+    "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/related-materials",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "governance",
+      "employment"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National, urban/rural and state profiles where provided in each release",
+    "geoLevel": "varies",
+    "dataType": "Monthly CPI and inflation reports with PDF and spreadsheet tables; 2024 base year and 2023 weight reference period",
+    "updateFrequency": "Monthly",
+    "licence": "NBS microdata catalogue terms and report-specific reuse conditions apply; verify before redistribution",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "NBS Microdata Catalog verified September 2026 CPI report (published 15 October 2026) and 2024 rebasing metadata",
+    "limitations": [
+      "Do not compare pre- and post-rebasing rates without a documented bridge and source methodology.",
+      "Headline, food, core, urban, rural and other CPI series are different measures; label each.",
+      "A national CPI rate is not a household-specific cost-of-living measure or a Kaduna South price.",
+      "The latest listed report is not necessarily the latest available by the time a user reads the product; refresh the catalogue before presenting it as current."
+    ],
+    "notes": "The NBS catalogue lists the September 2026 report as published 15 October 2026. CPI base year is 2024; weight reference period is 2023; the rebased basket covers 934 product varieties across 13 COICOP divisions."
+  },
+  {
+    "id": "nbs-gdp-quarterly",
+    "publisher": "National Bureau of Statistics (NBS)",
+    "name": "Gross Domestic Product — quarterly reports and tables",
+    "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/147/related-materials",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "employment",
+      "governance",
+      "agriculture",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National quarterly national accounts; sectoral and industry breakdowns",
+    "geoLevel": "national",
+    "dataType": "Quarterly GDP reports and downloadable PDF/Excel tables; rebased national accounts",
+    "updateFrequency": "Quarterly",
+    "licence": "NBS microdata catalogue terms and report-specific reuse conditions apply; verify before redistribution",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "NBS GDP catalog reviewed; Q2 2026 report listed as published 31 August 2026 and Q1 2026 report as published 25 May 2026",
+    "limitations": [
+      "GDP is a national accounts estimate; it does not measure household welfare or local public-service quality.",
+      "Retain the GDP base year, current/constant price basis, sector, quarter and year-on-year/quarter-on-quarter definition.",
+      "Do not compare series across the 2025 rebasing without checking NBS methodological notes.",
+      "A report listing is not proof that every table has been ingested or validated."
+    ],
+    "notes": "NBS Q1 2026 release reported real GDP growth of 3.89% year-on-year. Q2 2026 report is listed in the catalogue; no Q2 rate is transcribed here until its table is extracted and checked."
+  },
+  {
+    "id": "nbs-food-price-watch",
+    "publisher": "National Bureau of Statistics (NBS)",
+    "name": "Selected Food Price Watch — monthly state and national price tables",
+    "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/162/related-materials",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "agriculture",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National, all 36 states and FCT; source describes price collection across all 774 LGAs",
+    "geoLevel": "varies",
+    "dataType": "Monthly food-price survey reports and Excel tables based on price collection from over 10,000 respondents and locations",
+    "updateFrequency": "Monthly, with release lag",
+    "licence": "NBS microdata catalogue terms and report-specific reuse conditions apply; verify before redistribution",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "NBS May 2026 Selected Food Price Watch report listing and survey methodology reviewed",
+    "limitations": [
+      "The source reports state and national averages; LGA-level collection does not automatically mean public LGA-level estimates are published.",
+      "Prices are specific to commodity, unit, location, market and reference month; do not compare mismatched units or quality grades.",
+      "A national average does not represent every household or market.",
+      "The catalogue currently lists May 2026 as the latest food-price report found in this review; refresh before describing it as current."
+    ],
+    "notes": "The May 2026 report is listed as published 25 June 2026. NBS describes fieldwork by over 700 staff, more than 10,000 respondents/locations and collection across all 774 LGAs; use the actual published tables for any numeric value."
+  },
+  {
+    "id": "isn-hubs-directory-2026",
+    "publisher": "Innovation Support Network (ISN)",
+    "name": "Nigeria innovation hub member directory",
+    "url": "https://isnhubs.org.ng/hubs-directory/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "National directory; hub locations and focus areas vary by listing",
+    "geoLevel": "varies",
+    "dataType": "Member directory of innovation, technology and impact hubs; location, sector focus and ISN certification/member status",
+    "updateFrequency": "Ongoing directory; update cadence not stated",
+    "licence": "ISN directory reuse terms not confirmed; link to original listings and do not bulk-republish without permission",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "ISN public member and hubs directory reviewed; Kaduna and Kano listings checked",
+    "limitations": [
+      "The directory is a network/member listing, not a census of every innovation hub in Nigeria.",
+      "A directory listing does not independently prove current operating status, active programmes, funding, job creation or impact.",
+      "ISN's ISO Certified label is the network's Innovation Support Organisation certification status; do not imply ISO 9001 or another international standards certification.",
+      "Hub location and sector tags are publisher-listed and may change; verify directly before partnership or referral."
+    ],
+    "notes": "Listings reviewed include StartZone Kaduna, Kano Digital Innovation Hub, CcHUB, Ventures Platform, Innovation Growth Hub, Enugu Tech Corridor and Ibadan Innovation Hub. The displayed subset is not exhaustive."
+  },
+  {
+    "id": "isn-hub-assessment-2026",
+    "publisher": "Innovation Support Network (ISN)",
+    "name": "Nigerian Innovation Hub Assessment Report — 2026 summary",
+    "url": "https://isnhubs.org.ng/nigerias-innovation-landmark-isn-launches-comprehensive-hub-assessment-report-and-unveils-2026-2030-strategic-outlook/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "National; six geopolitical zones and named state/city clusters",
+    "geoLevel": "national",
+    "dataType": "Industry ecosystem assessment summary: hub activity, size, geographic respondent shares, services, staffing, revenue and infrastructure constraints",
+    "updateFrequency": "Assessment release 22 May 2026; periodic assessments not confirmed",
+    "licence": "ISN report reuse terms apply; cite the original report and verify permission before reproducing tables or figures",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "ISN's 22 May 2026 public assessment launch summary reviewed; underlying full report link identified but its complete methodology and tables were not parsed in this review",
+    "limitations": [
+      "The public article is an executive summary; sample frame, collection period, respondent definitions, weighting and full methodology require the full report.",
+      "Geographic percentages are described as shares of respondents, not a census share of all Nigerian hubs or absolute hub counts.",
+      "More than 190 active hubs surveyed/covered and an ecosystem of more than 250 active and partially active spaces are different denominators; do not combine them.",
+      "Percentages for staffing, training, mentorship, revenue and power outages are survey-summary findings and should be attributed to ISN.",
+      "The 2026–2030 funding and startup support figures are strategic targets, not achieved results."
+    ],
+    "notes": "ISN reports over 190 active hubs surveyed/covered from an ecosystem of more than 250 active and partially active spaces. Summary findings include Lagos 32% and Abuja 16% of respondents; Kano, Kaduna, Enugu, Rivers and Abia 4% each; 68.35% with fewer than 10 full-time staff; 90% offering structured training; 60% mentorship; over 70% annual revenue below US$50,000; and over 60% experiencing recurrent power outages. Full report is referenced at https://isnhubs.org.ng/hub-assessment-report."
+  },
+  {
+    "id": "startup-support-engagement-portal",
+    "publisher": "Nigeria Startup Support and Engagement Portal",
+    "name": "Nigeria Startup Act — Startup Support and Engagement Portal",
+    "url": "https://startup.gov.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National startup ecosystem; registration and labelling records",
+    "geoLevel": "national",
+    "dataType": "Government portal for startup labelling and registration of venture capital companies, accelerators, incubators, innovation hubs and civil society organisations under the Nigeria Startup Act 2022",
+    "updateFrequency": "Ongoing portal; data refresh cadence not stated",
+    "licence": "Government portal terms and Nigeria Startup Act requirements apply; verify data access and reuse terms",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official Startup Support and Engagement Portal and About page reviewed",
+    "limitations": [
+      "Portal registration or startup labelling does not prove active operations, product quality, investment received, employment or commercial success.",
+      "Use the Startup Act definitions and registration status; do not treat all ecosystem organisations as startups.",
+      "Bulk data/API availability and reuse terms must be confirmed before automated ingestion."
+    ],
+    "notes": "The portal was established to collate and classify startups and register VCs, hubs and innovation centres in support of the Nigeria Startup Act 2022."
+  },
+  {
+    "id": "nbti-incubation-centres",
+    "publisher": "National Board for Technology Incubation (NBTI)",
+    "name": "Technology Incubation Centres, incubatees and patented products",
+    "url": "https://nbti.gov.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National; zonal offices and technology incubation centres",
+    "geoLevel": "varies",
+    "dataType": "Official directories and records for Technology Incubation Centres, incubatees, patented products, post-incubation and extension services",
+    "updateFrequency": "Irregular official updates; document dates must be retained",
+    "licence": "NBTI publication and database reuse terms not confirmed; cite source and verify before bulk redistribution",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NBTI website sections for TIC Centre and Address, Patented Products, Incubatees and Post Incubation reviewed",
+    "limitations": [
+      "A listed centre or incubatee is not proof of current activity, commercialisation, employment or independent product validation.",
+      "Downloadable directories may have different reference dates; preserve the document date and geography.",
+      "Patent listing is not proof of commercial success or market readiness."
+    ],
+    "notes": "Useful institutional source for mapping public technology incubation infrastructure and the pipeline from incubation to post-incubation."
+  },
+  {
+    "id": "afrilabs-nigeria-hubs",
+    "publisher": "AfriLabs",
+    "name": "AfriLabs Nigeria hub directory",
+    "url": "https://www.afrilabs.com/hub_country/nigeria/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "Nigeria hub profiles within a pan-African network",
+    "geoLevel": "varies",
+    "dataType": "Network member profiles, hub descriptions, locations and focus areas",
+    "updateFrequency": "Ongoing member directory; update cadence not stated",
+    "licence": "AfriLabs website content reuse terms apply; cite each profile and verify before republishing",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "AfriLabs Nigeria hub-country directory reviewed",
+    "limitations": [
+      "AfriLabs membership is not a complete national hub census.",
+      "Profiles are organisation-submitted or network-maintained; do not treat descriptions as independent performance evaluations.",
+      "Membership does not establish current operational capacity, programme outcomes or funding."
+    ],
+    "notes": "Useful cross-check and discovery source for Nigerian hub profiles; includes NASENI Innovation Hub and other regional and specialist hubs."
+  },
+  {
+    "id": "cchub-programmes-2026",
+    "publisher": "Co-creation HUB Africa (CcHUB)",
+    "name": "CcHUB programmes, research and ecosystem updates",
+    "url": "https://cchub.africa/blog/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "Nigeria and pan-African programmes; coverage varies by initiative",
+    "geoLevel": "varies",
+    "dataType": "Programme announcements, research, accelerator and innovation hub activities, partner initiatives and published outcome stories",
+    "updateFrequency": "Ongoing news and programme updates",
+    "licence": "CcHUB content reuse terms apply; cite original posts and seek permission for republication",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "CcHUB official website and blog reviewed; 2026 Nigeria GATEWAY, SAIL Innovation Lab and GCIP Nigeria items identified",
+    "limitations": [
+      "Programme announcements and partner stories are not independent evaluations.",
+      "Participant, jobs, funding and outcome counts must be tied to the specific programme, period and source method.",
+      "Do not generalise a programme's reach to the whole Nigerian innovation ecosystem."
+    ],
+    "notes": "Current public posts include Nigeria GATEWAY, SAIL Innovation Lab, GCIP Nigeria and ecosystem research; use individual programme pages for dates and outcome details."
+  },
+  {
+    "id": "nipost-digital-postcode-hub-api-2026",
+    "publisher": "Nigeria Postal Service (NIPOST) and Office for Nigerian Digital Innovation (ONDI)",
+    "name": "Digital Postcode API — innovation hub partner programme",
+    "url": "https://www.postcode.gov.ng/innovation",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National; hub partners and their startup/developer portfolios",
+    "geoLevel": "varies",
+    "dataType": "Government API-access programme for qualifying innovation hubs; partner eligibility, technical onboarding and application timeline",
+    "updateFrequency": "Time-bound application windows; this round closed 13 October 2026",
+    "licence": "Digital Postcode API terms and partner access conditions apply; API tokens are restricted to approved use",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NIPOST Digital Postcode innovation programme page reviewed",
+    "limitations": [
+      "The 8–13 October 2026 application window is closed; do not present it as open.",
+      "Eligibility criteria are not a list of selected or approved hubs.",
+      "An API access opportunity is not evidence of actual integration, usage or user outcomes.",
+      "Approved hub partner list and usage metrics are not included in the page reviewed."
+    ],
+    "notes": "The programme invited registered Nigerian hubs with at least three years' operating track record and an active portfolio of 10–15 startups/developers to apply for Digital Postcode API access."
+  },
+  {
+    "id": "fme-annual-school-census",
+    "publisher": "Federal Ministry of Education",
+    "name": "Nigeria Education Statistics 2024 — Annual School Census 2024/2025",
+    "url": "https://emis.education.gov.ng/portal/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National, state and LGA dashboard views",
+    "geoLevel": "national",
+    "dataType": "Annual school census dashboard · administrative reporting",
+    "updateFrequency": "Annual school census; dashboard reflects school year 2024/2025",
+    "licence": "Dashboard access is public; reuse terms should be checked with the publisher.",
+    "lastChecked": "2026-11-10",
+    "checkedHow": "Official Federal Ministry of Education EMIS dashboard page reviewed on 10 November 2026.",
+    "limitations": [
+      "The dashboard reports a 53.7% school reporting rate. Do not treat reported school, learner, teacher or facility totals as complete national coverage.",
+      "Administrative counts depend on school submissions and reporting completeness; they are not household survey estimates.",
+      "Learner-to-teacher and learner-to-classroom ratios are dashboard aggregates and do not establish conditions at a specific school.",
+      "Reference school year is 2024/2025; do not label the values as 2026 current conditions."
+    ],
+    "notes": "Dashboard includes national totals and state/LGA filtering. Retain the reporting rate alongside every count."
+  },
+  {
+    "id": "worldbank-ndu-2026-10",
+    "publisher": "World Bank",
+    "name": "Nigeria Development Update — October 2026: Beyond the Federal Purse",
+    "url": "https://www.worldbank.org/en/country/nigeria/publication/nigeria-development-update-ndu",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "employment",
+      "governance",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "National",
+    "geoLevel": "national",
+    "dataType": "Macroeconomic and public-finance assessment using official national sources",
+    "updateFrequency": "Biannual report series",
+    "licence": "World Bank publication; check the report's terms before reuse.",
+    "lastChecked": "2026-11-10",
+    "checkedHow": "World Bank Nigeria Development Update page and 8 October 2026 press release reviewed.",
+    "limitations": [
+      "The headline growth estimate covers H1 2026 and is not a state or LGA growth rate.",
+      "Current-account and reserve figures are national macroeconomic aggregates, not household welfare or service-delivery measures.",
+      "The World Bank report is an analytical publication; retain the underlying official source definitions and reference periods when using individual indicators.",
+      "Do not mix estimates, projections and actuals from different editions of the Nigeria Development Update."
+    ],
+    "notes": "October 2026 edition discusses national growth, fiscal revenue, external balances and state spending priorities."
+  },
+  {
+    "id": "imf-article-iv-2026",
+    "publisher": "International Monetary Fund (IMF)",
+    "name": "Nigeria 2026 Article IV Consultation — Press Release and Staff Report",
+    "url": "https://www.imf.org/en/news/articles/2026/06/09/pr26190-nigeria-imf-executive-board-concludes-2026-article-iv-consultation-with-nigeria",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "employment",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria (national macroeconomic aggregates)",
+    "geoLevel": "national",
+    "dataType": "Macroeconomic national accounts, fiscal and external-sector analysis",
+    "updateFrequency": "Article IV consultation; periodic",
+    "licence": "IMF publication terms and attribution apply.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "IMF Executive Board release and linked 2026 Article IV material reviewed; 2024 actual row separated from estimates and projections.",
+    "limitations": [
+      "IMF staff estimates may differ from official Nigerian statistical releases; retain the source and vintage.",
+      "The report includes actual, estimated and projected years; never display projections as observed facts.",
+      "National macroeconomic aggregates do not describe local household conditions or department-level service delivery."
+    ],
+    "notes": "The initial snapshot uses only 2024 real GDP growth labelled 'actual' in the IMF staff table; projections are not imported as observed facts."
+  },
+  {
+    "id": "ondi-innovation",
+    "publisher": "Office for Nigerian Digital Innovation (ONDI) — NITDA",
+    "name": "Office for Nigerian Digital Innovation",
+    "url": "https://www.ondi.nitda.gov.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; programmes and partnerships may include international participants",
+    "geoLevel": "varies",
+    "dataType": "Institutional programme, innovation-support and ecosystem information",
+    "updateFrequency": "Programme-specific",
+    "licence": "See ONDI/NITDA publication terms; reuse conditions not separately reviewed.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official ONDI public website reviewed; institutional purpose and programme information checked.",
+    "limitations": [
+      "Institutional headline metrics require their own reference date, definition and methodology before indicator use.",
+      "Programme engagement counts do not by themselves establish startup survival, investment or job creation.",
+      "The site is a programme information source, not a comprehensive national startup or hub census."
+    ],
+    "notes": "Useful for mapping public innovation support programmes and infrastructure; do not treat programme descriptions as impact evidence."
+  },
+  {
+    "id": "ubec-statistics",
+    "publisher": "Universal Basic Education Commission (UBEC)",
+    "name": "Digest of Statistics and Reports",
+    "url": "https://ubec.gov.ng/reports/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; state and school coverage varies by report",
+    "geoLevel": "varies",
+    "dataType": "Basic education annual reports, school digests, personnel audits and performance reports",
+    "updateFrequency": "Report-specific",
+    "licence": "See UBEC publication terms; reuse conditions not separately reviewed.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "UBEC official reports and Digest of Statistics pages reviewed.",
+    "limitations": [
+      "The available school digest and report editions have different reference years; preserve the edition and school year.",
+      "A report title or publication date does not mean the tables have been extracted or validated.",
+      "School administrative records may have incomplete reporting and should not be treated as a full census without the report's coverage method."
+    ],
+    "notes": "Public catalogue lists 2024 Annual Report, 2022/2023 National Personnel Audit, 2022 Digest of Public/Private Schools and 2025 Q4 key performance report."
+  },
+  {
+    "id": "unicef-nalabe-2022",
+    "publisher": "UNICEF Nigeria and Universal Basic Education Commission (UBEC)",
+    "name": "National Assessment of Learning Achievement in Basic Education (NALABE 2022)",
+    "url": "https://www.unicef.org/nigeria/reports/national-assessment-learning-achievement-basic-education",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "National sample across 36 states and FCT",
+    "geoLevel": "national",
+    "dataType": "National learning achievement assessment of P3, P5 and JS2 learners",
+    "updateFrequency": "Assessment edition; not a live feed",
+    "licence": "See UNICEF report reuse terms; attribution required.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "UNICEF report page reviewed; sample sizes, grade levels, subjects and publication date checked.",
+    "limitations": [
+      "The assessment refers to 2022 learning achievement; it is not a 2026 measure.",
+      "Preserve grade, subject, proficiency level and sampling design when extracting results.",
+      "National results do not establish performance of a specific Kaduna school or LGA."
+    ],
+    "notes": "Published December 2025. Sample includes 75,067 P3 learners, 71,041 P5 learners and 23,564 JS2 learners across sampled schools in all states and FCT. Full result tables are not yet ingested."
+  },
+  {
+    "id": "nemis-downloads",
+    "publisher": "Federal Ministry of Education — Nigeria Education Management Information System (NEMIS)",
+    "name": "NEMIS Data Visuals, School Census and Education Digest Downloads",
+    "url": "https://nemis.education.gov.ng/downloads",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; school census, state and zone tables vary by publication",
+    "geoLevel": "varies",
+    "dataType": "Education management information system downloads, school census tools and annual education digests",
+    "updateFrequency": "Publication-specific",
+    "licence": "See Federal Ministry of Education/NEMIS terms; reuse conditions not separately reviewed.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NEMIS download page reviewed; listed editions and data visual categories recorded.",
+    "limitations": [
+      "The public download page lists older national digest editions alongside current EMIS products; do not infer current coverage from an old report title.",
+      "A dashboard or data visual requires its own reference period, geography and data-quality review.",
+      "Do not merge NEMIS and the 2024/2025 Annual School Census portal without reconciling definitions and reporting frames."
+    ],
+    "notes": "The public downloads page lists 2022 and earlier Digest of Education Statistics editions, data visuals and school-census materials. The newer 2024/2025 FME EMIS portal is registered separately."
+  },
+  {
+    "id": "federal-ministry-health-msdat",
+    "publisher": "Federal Ministry of Health and Social Welfare, Nigeria",
+    "name": "MultiSource Data Analytics & Triangulation Platform (MSDAT)",
+    "url": "https://fmohconnect.gov.ng/msdat/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; indicator geography varies by underlying routine, survey and global-estimate source",
+    "geoLevel": "varies",
+    "dataType": "Health indicator comparison and triangulation platform",
+    "updateFrequency": "Underlying source-specific; not independently established",
+    "licence": "See Federal Ministry of Health platform terms; reuse conditions not separately reviewed.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Federal Ministry of Health MSDAT page reviewed; platform purpose and source categories checked.",
+    "limitations": [
+      "The platform compares routine data, surveys and global estimates; these are not interchangeable.",
+      "Every displayed indicator requires its own source, reference period, geography and method before reuse.",
+      "A dashboard view is not independent verification of facility-level service availability."
+    ],
+    "notes": "The Ministry describes MSDAT as a transparent view of key health indicators across routine, survey and global-estimate sources."
+  },
+  {
+    "id": "health-facility-registry",
+    "publisher": "Federal Ministry of Health and Social Welfare, Nigeria — Nigeria Health Facility Registry",
+    "name": "Nigeria Health Facility Registry (NHFR) and External API",
+    "url": "https://hfr.fmohconnect.gov.ng/developers",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "All 36 states and FCT; facility coverage depends on registry records",
+    "geoLevel": "facility",
+    "dataType": "National health-facility register and read-only REST/FHIR APIs",
+    "updateFrequency": "Registry updates; cadence not stated",
+    "licence": "API key required; obtain written access and reuse conditions before ingestion.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NHFR public portal and developer documentation reviewed.",
+    "limitations": [
+      "External API requires an approved API key; no authenticated data has been ingested.",
+      "Registered facility does not prove the facility is open, staffed, stocked or providing services.",
+      "Facility records must be deduplicated and checked for status, ownership, coordinates and update dates."
+    ],
+    "notes": "The public developer page documents read-only REST and FHIR endpoints with API-key authentication. Access request is a dependency for automated facility data."
+  },
+  {
+    "id": "federal-ministry-health-reports",
+    "publisher": "Federal Ministry of Health and Social Welfare, Nigeria",
+    "name": "Federal Ministry of Health Reports and Publications",
+    "url": "https://health.gov.ng/reports/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; report-specific",
+    "geoLevel": "varies",
+    "dataType": "Public health, family health, hospital services, nutrition and food/drugs reports",
+    "updateFrequency": "Publication-specific",
+    "licence": "See Ministry publication terms; reuse conditions not separately reviewed.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official Ministry reports page reviewed; report categories and public access confirmed.",
+    "limitations": [
+      "Report categories are not a harmonised indicator feed.",
+      "Each report must be reviewed for reference period, scope, geography, methods and whether findings are national or subnational.",
+      "A programme announcement is not evidence of implementation or outcomes."
+    ],
+    "notes": "The public reports page groups materials into Family Health, Public Health, Hospital Services, Food and Drugs, and Nutrition."
+  },
+  {
+    "id": "budget-office-federal",
+    "publisher": "Budget Office of the Federation, Federal Republic of Nigeria",
+    "name": "Federal Budget, Appropriation and Budget Implementation Reports",
+    "url": "https://budgetoffice.gov.ng/?page_id=1366",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "governance",
+      "education",
+      "health",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Federal Government of Nigeria; MDA and programme schedules vary by report",
+    "geoLevel": "national",
+    "dataType": "Appropriation acts, budget implementation reports, fiscal strategy papers and expenditure schedules",
+    "updateFrequency": "Quarterly and annual reports; appropriation cycles",
+    "licence": "Public government publications; verify document-specific reuse terms.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Budget Office official publication list reviewed; 2026 Q1 and Q2 budget implementation report dates checked.",
+    "limitations": [
+      "Appropriation is not actual release, cash disbursement, expenditure or completed delivery.",
+      "Budget implementation reports require line-item, MDA, programme and period reconciliation before analysis.",
+      "Federal allocations do not represent state or LGA spending."
+    ],
+    "notes": "Official page lists the 2026 Q1 Budget Implementation Report (2 November 2026) and Q2 report (7 November 2026), plus the 2026 Appropriation Act and earlier consolidated reports."
+  },
+  {
+    "id": "nphcda-phc-progress-2025",
+    "publisher": "National Primary Health Care Development Agency (NPHCDA)",
+    "name": "Insights into Priority PHC Initiative — progress as of August 2025",
+    "url": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "infrastructure",
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; some programme figures are national, zonal or combined state counts",
+    "geoLevel": "varies",
+    "dataType": "Agency-reported PHC revitalisation, BHCPF, workforce and commodity programme progress",
+    "updateFrequency": "Programme update; page dated 15 September 2025",
+    "licence": "Public agency publication; attribution required; no NPHCDA endorsement implied.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "NPHCDA official progress page dated 15 September 2025 reviewed; reference dates and programme figures transcribed.",
+    "limitations": [
+      "Figures are agency-reported programme progress, not independently audited outcomes.",
+      "The page is dated 15 September 2025 and reports some figures as of August 2025 or mid-2025; it is not a current 2026 status.",
+      "National and combined-state figures must not be presented as Kaduna South or individual-facility results.",
+      "Revitalisation, installation, procurement, distribution, disbursement and service functionality are different measures."
+    ],
+    "notes": "Reports 1,295 PHCs revitalised as of August 2025; BHCPF disbursements and workforce training are reported for 2023 to mid-2025; Kaduna and Yobe recruitment figures are combined."
+  },
+  {
+    "id": "nphcda-phc-functionality-dashboard",
+    "publisher": "National Primary Health Care Development Agency (NPHCDA)",
+    "name": "PHC Functionality Dashboard and revitalised facility directory",
+    "url": "https://phc.nphcda.gov.ng/infographic",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; facility-level dashboard",
+    "geoLevel": "facility",
+    "dataType": "Primary health-care facility functionality and revitalisation dashboard",
+    "updateFrequency": "Dashboard described as live; actual refresh cadence not independently established",
+    "licence": "Public dashboard; confirm reuse and API terms before bulk extraction.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NPHCDA progress page links to the PHC Functionality Dashboard; dashboard URL resolves but its data is not machine-readable in this review.",
+    "limitations": [
+      "Dashboard content was not available as readable structured data during this review.",
+      "Do not treat a dashboard link as an extracted or verified facility record.",
+      "Verify facility identity, status, coordinates, reporting date, staffing, commodities and service availability before publishing a local finding."
+    ],
+    "notes": "NPHCDA says the PHC Functionality Dashboard and facility directory were integrated into its website in May 2025. Machine-readable extraction remains pending."
+  },
+  {
+    "id": "federal-state-health-report-2024",
+    "publisher": "Federal Ministry of Health and Social Welfare, Nigeria",
+    "name": "The State of Health of the Nation Report 2024",
+    "url": "https://fmohconnect.gov.ng/wp-content/uploads/2025/05/The-State-of-Health-of-the-Nation-Report-2024.pdf",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "public-finance",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; chapter and indicator geography varies",
+    "geoLevel": "varies",
+    "dataType": "National health-sector performance, financing, PHC, workforce and commodity report",
+    "updateFrequency": "Annual report edition",
+    "licence": "Government report; retain attribution and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Federal Ministry-hosted 2024 State of Health report page and PDF listing reviewed.",
+    "limitations": [
+      "Report covers 2024 and is not a live 2026 dashboard.",
+      "Each figure must retain its chapter, source, reference period and geographic scope.",
+      "Policy announcements and programme descriptions are not proof of completed implementation or outcomes."
+    ],
+    "notes": "The report discusses PHC, essential medicines, health workforce and the National Health Logistics Management Information System; relevant tables require extraction."
+  },
+  {
+    "id": "federal-health-logistics-programme",
+    "publisher": "Federal Ministry of Health and Social Welfare, Nigeria — Food and Drug Services",
+    "name": "National Product Supply Chain Management Programme and essential medicines logistics",
+    "url": "https://health.gov.ng/food-and-drug-programs/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "infrastructure",
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; federal and state programme coverage varies",
+    "geoLevel": "varies",
+    "dataType": "Essential medicines, vaccines and health commodity supply-chain programme documents",
+    "updateFrequency": "Programme-specific",
+    "licence": "Government programme publications; confirm dataset-specific terms.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official Ministry Food and Drug Services programme page and State of Health report references reviewed.",
+    "limitations": [
+      "Programme documents are not current PHC stock-on-hand data.",
+      "Medicine availability requires facility-level stock-on-hand, consumption, losses/adjustments and reporting date.",
+      "Federal tertiary-hospital inventory initiatives must not be presented as PHC medicine availability."
+    ],
+    "notes": "The Ministry lists National Product Supply Chain Management Programme and health logistics publications. Current facility-level PHC medicine data are not yet ingested."
   }
 ]

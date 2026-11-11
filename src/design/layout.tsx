@@ -17,13 +17,13 @@ export function AppShell() {
   return <div className="app-shell">
     <a className="skip" href="#main">Skip to main content</a>
     <aside className="app-sidebar">
-      <a className="app-brand" href="#/" aria-label="ISEYC Observatory home"><img className="app-brand__mark" src="/iseyc-seal.svg" alt="ISEYC official seal" width="36" height="36" /><span className="app-brand__text"><strong>ISEYC</strong><span>Civic Intelligence Observatory</span></span></a>
+      <a className="app-brand" href="#/" aria-label="ISEYC Observatory home"><img src="/iseyc-wordmark.svg" alt="ISEYC — Initiative for Sustainable Evolution for Youth and Community" width="190" height="40" style={{ width: 190, height: "auto", flexShrink: 0, background: "#fff", borderRadius: 4, padding: 3 }} /><span className="app-brand__text"><span>Intelligence Observatory</span></span></a>
       <nav className="app-nav" aria-label="Main navigation">{NAV.map((item) => <NavLink key={item.to} to={item.to} end={item.end} className={({ isActive }) => 'app-nav__link' + (isActive ? ' app-nav__link--on' : '')}>{item.label}</NavLink>)}</nav>
       <div className="app-departments" aria-label="Department entry points">
         <span>DEPARTMENTS</span>
-        <NavLink to="/departments/education">Education &amp; Capacity Building</NavLink>
-        <NavLink to="/departments/health">Health &amp; Well-being</NavLink>
-        <NavLink to="/departments/software-technology">Software &amp; Technology</NavLink>
+        <NavLink to="/departments/education">Education and Capacity Building</NavLink>
+        <NavLink to="/departments/health">Department of Health and Well-being</NavLink>
+        <NavLink to="/departments/software-technology">Software and Technology</NavLink>
         <NavLink to="/departments/civic">Civic Department</NavLink>
       </div>
       <div className="app-sidebar__bottom">
@@ -40,7 +40,7 @@ export function AppShell() {
       {adapter.mode === 'demo' ? <div role="status" aria-live="polite" style={{ margin: '12px 16px 0', padding: '10px 12px', border: '1px solid #b88932', borderRadius: 6, background: '#fff8e8', color: '#493817', fontSize: 13, fontWeight: 600 }}>
         Demonstration data — synthetic records for interface review only. Not live national evidence.
       </div> : null}
-      <div className="app-main__inner"><Outlet /></div><footer className="app-footer"><p><strong>Initiative for Sustainable Evolution for Youth and Community</strong></p><p><strong>ISEYC · Understanding Public Needs. Interpreting Evidence. Strengthening Accountability.</strong></p><p>Non-partisan civic intelligence. Published community records are not prevalence estimates; publication is not independent verification.</p><div><a href="https://github.com/mrzulqarnainnadabo/iseyc-civic-intelligence-observatory/blob/main/docs/EVIDENCE-GATEWAY.md" target="_blank" rel="noopener noreferrer">Methodology</a><a href="https://github.com/mrzulqarnainnadabo/iseyc-civic-intelligence-observatory/blob/main/docs/PRODUCT-OPERATING-MODEL-v1.md" target="_blank" rel="noopener noreferrer">Non-partisan operating principles</a></div></footer></main>
+      <div className="app-main__inner"><Outlet /></div><footer className="app-footer"><p><strong>Initiative for Sustainable Evolution for Youth and Community</strong></p><p><strong>ISEYC · Understanding Public Needs. Interpreting Evidence. Strengthening Accountability.</strong></p><p>Non-partisan public-interest evidence infrastructure shared across ISEYC departments. Published community records are not prevalence estimates; publication is not independent verification.</p><div><a href="https://github.com/mrzulqarnainnadabo/iseyc-civic-intelligence-observatory/blob/main/docs/EVIDENCE-GATEWAY.md" target="_blank" rel="noopener noreferrer">Methodology</a><a href="https://github.com/mrzulqarnainnadabo/iseyc-civic-intelligence-observatory/blob/main/docs/PRODUCT-OPERATING-MODEL-v1.md" target="_blank" rel="noopener noreferrer">Non-partisan operating principles</a></div></footer></main>
   </div>;
 }
 export function PageHeader({ title, lead, children }: { title: string; lead?: ReactNode; children?: ReactNode }) {

@@ -4,6 +4,7 @@ import { useBundle } from '../lib/data';
 import { useAdapter } from '../lib/hooks';
 import { SECTOR_LABEL, SECTORS, type Sector } from '../data/types';
 import { listIndicators, fetchViaGateway, formatIndicatorValue, type IndicatorDefinition, type IndicatorObservation } from '../lib/indicators';
+import NationalSnapshotGrid from '../components/NationalSnapshotGrid';
 
 function IndicatorCard({ indicator }: { indicator: IndicatorDefinition }) {
   const [observations, setObservations] = useState<IndicatorObservation[]>([]);
@@ -60,10 +61,12 @@ export default function Overview() {
     <div className="workspace-grid observatory-kpis" aria-label={isDemo ? 'Demonstration coverage' : 'Published civic record coverage'}>
       <div className="workspace-stat"><span className="workspace-stat__label">{isDemo ? 'Demonstration records' : 'Published records'}</span><strong className="workspace-stat__value">{records.length}</strong><span className="workspace-stat__period">{isDemo ? 'Synthetic test set' : 'Current published feed'}</span></div>
       <div className="workspace-stat"><span className="workspace-stat__label">States represented</span><strong className="workspace-stat__value">{representedStates} <small>/ {states.length}</small></strong><span className="workspace-stat__period">{isDemo ? 'In synthetic test set' : 'In published community feed'}</span></div>
-      <div className="workspace-stat"><span className="workspace-stat__label">National indicators</span><strong className="workspace-stat__value">{indicators.length}</strong><span className="workspace-stat__period">Allowlisted World Bank series · national only</span></div>
+      <div className="workspace-stat"><span className="workspace-stat__label">Live indicator pilots</span><strong className="workspace-stat__value">{indicators.length}</strong><span className="workspace-stat__period">World Bank WDI · national only</span></div>
     </div>
 
     {isDemo && <p className="observatory-demo-note">Demonstration mode: synthetic records are not real community submissions or national statistics.</p>}
+
+    <NationalSnapshotGrid />
 
     <section className="observatory-section" aria-labelledby="indicators-heading">
       <div className="observatory-section__head"><div><span className="observatory-kicker observatory-kicker--dark">National data</span><h2 id="indicators-heading">Indicators that help explain the picture</h2><p>Source-retrieved series. Values are not ISEYC-produced statistics.</p></div><Link to="/evidence">Evidence library ↗</Link></div>

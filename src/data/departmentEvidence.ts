@@ -1,5 +1,5 @@
 export type DepartmentId = 'education' | 'health' | 'software-technology' | 'civic';
-export type DepartmentEvidenceStatus = 'integrated' | 'partial' | 'unavailable' | 'not-integrated';
+export type DepartmentEvidenceStatus = 'integrated' | 'partial' | 'unavailable' | 'not-integrated' | 'snapshot-only';
 export type DepartmentGeoLevel = 'national' | 'state' | 'lga' | 'ward' | 'facility';
 export interface DepartmentEvidence {
   departmentId: DepartmentId; indicatorId: string; sourceId: string; publisher: string;
@@ -9,7 +9,7 @@ export interface DepartmentEvidence {
 }
 const DEPARTMENTS: DepartmentId[] = ['education', 'health', 'software-technology', 'civic'];
 const GEO_LEVELS: DepartmentGeoLevel[] = ['national', 'state', 'lga', 'ward', 'facility'];
-const STATUSES: DepartmentEvidenceStatus[] = ['integrated', 'partial', 'unavailable', 'not-integrated'];
+const STATUSES: DepartmentEvidenceStatus[] = ['integrated', 'partial', 'unavailable', 'not-integrated', 'snapshot-only'];
 export function validateDepartmentEvidence(input: unknown): input is DepartmentEvidence {
   if (!input || typeof input !== 'object' || Array.isArray(input)) return false;
   const value = input as Record<string, unknown>;

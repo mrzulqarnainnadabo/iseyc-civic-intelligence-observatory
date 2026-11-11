@@ -16,6 +16,9 @@ describe('DepartmentEvidence contract', () => {
     expect(validateDepartmentEvidence({...valid,submitterEmail:'private@example.org'})).toBe(false);
     expect(validateDepartmentEvidence({...valid,geography:{...valid.geography,phone:'123'}})).toBe(false);
   });
+  it('accepts a dated publisher snapshot without mislabelling it as a live feed', () => {
+    expect(validateDepartmentEvidence({...valid,evidenceStatus:'snapshot-only'})).toBe(true);
+  });
   it('uses exact missing-figure copy rather than zero', () => {
     expect(DEPARTMENT_EMPTY_STATE).toBe('No official figure integrated for this geography and indicator yet.');
     expect(DEPARTMENT_EMPTY_STATE).not.toMatch(/0|zero/i);

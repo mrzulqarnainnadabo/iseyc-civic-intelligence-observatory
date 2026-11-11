@@ -1,0 +1,668 @@
+{
+  "schemaVersion": "1.0.0",
+  "title": "ISEYC national evidence snapshots",
+  "retrievedAt": "2026-11-10",
+  "note": "Dated transcriptions from linked publisher sources. These are not a continuously refreshed data feed. Every value retains its own reference period, geography, evidence type and limitations.",
+  "records": [
+    {
+      "id": "who-nigeria-health-2021-23",
+      "departmentId": "health",
+      "title": "WHO · Nigeria health indicators",
+      "publisher": "World Health Organization",
+      "sourceId": "who-gho-nigeria",
+      "sourceUrl": "https://data.who.int/countries/566",
+      "referencePeriod": "Indicator-specific · 2021–2025",
+      "retrievedAt": "2026-11-09",
+      "geography": {
+        "level": "national",
+        "label": "Nigeria"
+      },
+      "evidenceType": "WHO country profile · indicator-specific estimates and reported series",
+      "metrics": [
+        {
+          "label": "Under-five mortality",
+          "value": "117.46",
+          "unit": "per 1,000 live births",
+          "period": "2022",
+          "interval": "104.01–132.8",
+          "measurementType": "WHO statistical estimate"
+        }
+      ],
+      "limitations": [
+        "WHO indicators have different reference years, methods and uncertainty intervals; do not present them as one current-year dataset.",
+        "Under-five mortality and life expectancy are statistical/modelled estimates; preserve the published uncertainty intervals.",
+        "The WHO profile has no 2023 value for new HIV infections; the displayed estimate is for 2025 only and must not be substituted for 2023.",
+        "Current health expenditure is a 2021 value and must not be presented as current spending.",
+        "WHO reports Nigerian death-registration data as unavailable or unusable for cause-of-death analysis; cause-of-death estimates require caution.",
+        "National values do not establish state, LGA, facility or household outcomes."
+      ],
+      "interpretation": "Use as national health context and as a map of questions for deeper investigation. Preserve each indicator's reference year, measurement type and uncertainty. Do not use these national estimates to grade an individual facility or state programme.",
+      "additionalMetrics": [
+        {
+          "label": "Current health expenditure",
+          "value": "4.08%",
+          "unit": "of GDP",
+          "period": "2021",
+          "measurementType": "WHO Global Health Expenditure Database"
+        },
+        {
+          "label": "Life expectancy at birth",
+          "value": "62.9",
+          "unit": "years",
+          "period": "2023",
+          "interval": "59.8–66.2",
+          "measurementType": "modelled estimate"
+        },
+        {
+          "label": "New HIV infections",
+          "value": "0.27",
+          "unit": "per 1,000 uninfected population",
+          "period": "2025",
+          "interval": "0.21–0.39",
+          "measurementType": "WHO estimate"
+        }
+      ]
+    },
+    {
+      "id": "nimc-enrolment-2025-10",
+      "departmentId": "civic",
+      "title": "NIMC · National identity enrolment",
+      "publisher": "National Identity Management Commission",
+      "sourceId": "nimc-enrolment-oct-2025",
+      "sourceUrl": "https://nimc.gov.ng/nin/enrolment-report/october-2025",
+      "referencePeriod": "As at 31 October 2025",
+      "retrievedAt": "2026-11-09",
+      "geography": {
+        "level": "national-and-state",
+        "label": "Nigeria · national and state records"
+      },
+      "evidenceType": "Official cumulative administrative enrolment snapshot",
+      "metrics": [
+        {
+          "label": "Total enrolment records",
+          "value": "123,906,318",
+          "unit": "records",
+          "period": "31 Oct 2025",
+          "measurementType": "Cumulative administrative enrolment count"
+        },
+        {
+          "label": "Kaduna State enrolment",
+          "value": "7,326,730",
+          "unit": "records",
+          "period": "31 Oct 2025",
+          "measurementType": "Administrative enrolment count"
+        }
+      ],
+      "limitations": [
+        "Enrolment records are not a population census, active identity count or measure of access to services.",
+        "Do not calculate coverage without a compatible population denominator, reference year and methodology.",
+        "This is a historical dashboard snapshot, not a live 2026 figure.",
+        "Kaduna State is not Kaduna South; no LGA-level value is inferred."
+      ],
+      "interpretation": "Useful for understanding identity-registration administration and geographic distribution, not as a direct measure of citizenship, service access or population coverage."
+    },
+    {
+      "id": "nitda-dl4all-2026-10",
+      "title": "NITDA · Digital Literacy for All",
+      "publisher": "National Information Technology Development Agency",
+      "sourceId": "nitda-dl4all-dashboard",
+      "sourceUrl": "https://dashboard.digitalliteracy.nitda.gov.ng/",
+      "referencePeriod": "Dashboard updated 24 October 2026",
+      "retrievedAt": "2026-11-09",
+      "geography": {
+        "level": "national-and-subnational",
+        "label": "Nigeria · 36 states + FCT, LGAs and communities"
+      },
+      "evidenceType": "Government programme dashboard · verified training records",
+      "metrics": [
+        {
+          "label": "Verified digital-literacy beneficiaries",
+          "value": "2,783,731",
+          "unit": "people",
+          "period": "Since Jan 2022",
+          "measurementType": "Programme-reported beneficiary count"
+        },
+        {
+          "label": "Geographic coverage",
+          "value": "36 states + FCT",
+          "unit": "coverage",
+          "period": "Dashboard update",
+          "measurementType": "Programme geographic coverage"
+        },
+        {
+          "label": "LGAs reached",
+          "value": "774",
+          "unit": "LGAs",
+          "period": "Dashboard update",
+          "measurementType": "Programme-reported geographic reach count"
+        },
+        {
+          "label": "Communities reached",
+          "value": "14,747",
+          "unit": "communities",
+          "period": "Dashboard update",
+          "measurementType": "Programme-reported geographic reach count"
+        },
+        {
+          "label": "Female participation",
+          "value": "33%",
+          "unit": "of beneficiaries",
+          "period": "Dashboard update",
+          "measurementType": "Share of programme beneficiaries"
+        },
+        {
+          "label": "Youth under 35",
+          "value": "2,100,027",
+          "unit": "people",
+          "period": "Dashboard update",
+          "measurementType": "Programme-reported subgroup count"
+        },
+        {
+          "label": "Progress against 50m programme target",
+          "value": "5.57%",
+          "unit": "of target",
+          "period": "Dashboard update",
+          "measurementType": "Progress against programme target"
+        }
+      ],
+      "limitations": [
+        "The dashboard's verified-beneficiary definition and deduplication method must be obtained before comparison with other programmes.",
+        "Training or completion records do not independently establish durable competence, employment outcomes or population-wide digital literacy.",
+        "The 70% by 2027 and 95% by 2030 targets are targets, not achieved outcomes.",
+        "The 5.57% figure is progress against the programme's 50 million target, not Nigeria's national digital literacy rate.",
+        "Programme dashboard data are source-reported and should not be described as independently audited by ISEYC."
+      ],
+      "interpretation": "A strong operational source for tracking the digital-skills programme and its geographic reach. It can inform ISEYC's Software & Technology and Education departments, but must not be confused with a national digital-literacy prevalence survey. The dashboard also reports inclusion and partner participation; contributor totals may overlap and should not be summed as unique people.",
+      "departmentIds": [
+        "software-technology",
+        "education"
+      ],
+      "additionalMetrics": [
+        {
+          "label": "Persons with disabilities trained",
+          "value": "17,157",
+          "unit": "people",
+          "period": "Dashboard update",
+          "measurementType": "Programme-reported subgroup count"
+        },
+        {
+          "label": "Rural beneficiaries",
+          "value": "72,747",
+          "unit": "people",
+          "period": "Dashboard update",
+          "measurementType": "Programme-reported subgroup count"
+        },
+        {
+          "label": "Informal-sector workers",
+          "value": "1,609,283",
+          "unit": "people",
+          "period": "Dashboard update",
+          "measurementType": "Programme-reported subgroup count"
+        },
+        {
+          "label": "Active reporting organisations",
+          "value": "262",
+          "unit": "organisations",
+          "period": "Dashboard update",
+          "measurementType": "Programme reporting-organisation count"
+        },
+        {
+          "label": "Companies reporting",
+          "value": "155",
+          "unit": "organisations",
+          "period": "Dashboard update",
+          "measurementType": "Programme reporting-organisation count"
+        },
+        {
+          "label": "Government organisations reporting",
+          "value": "45",
+          "unit": "organisations",
+          "period": "Dashboard update",
+          "measurementType": "Programme reporting-organisation count"
+        }
+      ]
+    },
+    {
+      "id": "naseni-innovatenaija-2025",
+      "title": "NASENI · InnovateNaija challenge",
+      "publisher": "National Agency for Science and Engineering Infrastructure · NASENI Innovation Hub",
+      "sourceId": "naseni-innovation-hub",
+      "sourceUrl": "https://innovation.naseni.gov.ng/innovatenaija-campaign/",
+      "referencePeriod": "Announcement · 3 September 2025; current campaign page reviewed 9 November 2026",
+      "retrievedAt": "2026-11-09",
+      "geography": {
+        "level": "national",
+        "label": "National programme · intended state/FCT participation"
+      },
+      "evidenceType": "Official programme announcement",
+      "metrics": [
+        {
+          "label": "Announced prize pool",
+          "value": "₦250 million",
+          "unit": "programme terms",
+          "period": "3 Sep 2025",
+          "measurementType": "Announced programme prize pool"
+        },
+        {
+          "label": "Planned state/FCT finalists",
+          "value": "37",
+          "unit": "one per state and FCT",
+          "period": "Programme announcement",
+          "measurementType": "Planned selection count"
+        },
+        {
+          "label": "Planned state-level grant",
+          "value": "₦2.5 million",
+          "unit": "per selected innovator",
+          "period": "Programme announcement",
+          "measurementType": "Planned award amount"
+        },
+        {
+          "label": "Announced grand prize",
+          "value": "₦100 million",
+          "unit": "top national winner",
+          "period": "Programme announcement",
+          "measurementType": "Announced top prize"
+        },
+        {
+          "label": "Application status",
+          "value": "Closed",
+          "unit": "campaign status",
+          "period": "Current campaign page · 9 Nov 2026",
+          "measurementType": "Campaign status"
+        },
+        {
+          "label": "Phase 2 public voting",
+          "value": "Ended",
+          "unit": "campaign status",
+          "period": "Current campaign page · 9 Nov 2026",
+          "measurementType": "Campaign status"
+        }
+      ],
+      "limitations": [
+        "These are announced programme terms, not evidence that the funds were disbursed.",
+        "The announcement's planned selection and final event dates do not prove that winners were selected or products commercialised.",
+        "No independently verified beneficiary, grant-disbursement, product-readiness or employment outcome dataset is integrated here.",
+        "The official campaign page states that applications are closed and Phase 2 voting has ended; this does not identify verified winners or prove that any announced grant was paid."
+      ],
+      "interpretation": "Treat as an innovation-policy and programme activity record. Upgrade its status only when official selection, award, disbursement and outcome evidence is obtained.",
+      "departmentIds": [
+        "software-technology",
+        "education"
+      ],
+      "relatedSources": [
+        {
+          "title": "Original ₦250m announcement",
+          "url": "https://innovation.naseni.gov.ng/naseni-launches-innovatenaija-%E2%82%A6250-million-challenge-nigerias-biggest-innovation-challenge-to-empower-youth-innovation-in-nigeria-backed-by-presidential-support-naseni-innovation-h/"
+        }
+      ]
+    },
+    {
+      "id": "nbs-gdp-q1-2026",
+      "departmentId": null,
+      "title": "NBS · Real GDP growth",
+      "publisher": "National Bureau of Statistics",
+      "sourceId": "nbs-gdp-quarterly",
+      "sourceUrl": "https://microdata.nigerianstat.gov.ng/index.php/catalog/147/related-materials",
+      "referencePeriod": "Q1 2026",
+      "retrievedAt": "2026-11-09",
+      "geography": {
+        "level": "national",
+        "label": "Nigeria"
+      },
+      "evidenceType": "Official quarterly national-accounts estimate",
+      "metrics": [
+        {
+          "label": "Real GDP growth, year-on-year",
+          "value": "3.89%",
+          "unit": "annual percentage change",
+          "period": "Q1 2026",
+          "measurementType": "Official quarterly growth estimate"
+        }
+      ],
+      "limitations": [
+        "This is a national quarterly GDP estimate, not a measure of household welfare or local economic conditions.",
+        "The NBS GDP series was rebased; preserve the base year and methodology when comparing across vintages.",
+        "This is not a Kaduna State or LGA growth rate.",
+        "The linked catalogue lists the Q1 2026 report; the exact table and rebasing notes should be retained with any production indicator record."
+      ],
+      "interpretation": "Use as national economic context only. The Observatory should extract and validate the original NBS table before treating this snapshot as a reusable time series."
+    },
+    {
+      "id": "isn-innovation-hub-assessment-2026",
+      "departmentIds": [
+        "software-technology",
+        "education"
+      ],
+      "title": "ISN · Nigerian Innovation Hub Assessment",
+      "publisher": "Innovation Support Network (ISN)",
+      "sourceId": "isn-hub-assessment-2026",
+      "sourceUrl": "https://isnhubs.org.ng/nigerias-innovation-landmark-isn-launches-comprehensive-hub-assessment-report-and-unveils-2026-2030-strategic-outlook/",
+      "referencePeriod": "Summary released 22 May 2026 · survey reference period not stated in summary",
+      "retrievedAt": "2026-11-09",
+      "geography": {
+        "level": "national",
+        "label": "Nigeria · six geopolitical zones and named state/city clusters"
+      },
+      "evidenceType": "Industry ecosystem assessment summary · survey findings as reported by ISN",
+      "metrics": [
+        {
+          "label": "Active hubs surveyed / covered",
+          "value": "190+",
+          "unit": "innovation hubs",
+          "period": "2026 assessment summary",
+          "measurementType": "ISN-reported survey coverage"
+        },
+        {
+          "label": "Active and partially active ecosystem spaces",
+          "value": "250+",
+          "unit": "spaces",
+          "period": "2026 assessment summary",
+          "measurementType": "ISN-reported ecosystem estimate"
+        },
+        {
+          "label": "Hubs with fewer than 10 full-time employees",
+          "value": "68.35%",
+          "unit": "of respondents",
+          "period": "2026 assessment summary",
+          "measurementType": "survey respondent share"
+        },
+        {
+          "label": "Hubs offering structured training",
+          "value": "90%",
+          "unit": "of respondents",
+          "period": "2026 assessment summary",
+          "measurementType": "survey respondent share"
+        }
+      ],
+      "additionalMetrics": [
+        {
+          "label": "Lagos share of respondents",
+          "value": "32%",
+          "unit": "respondent share",
+          "period": "2026 assessment summary",
+          "measurementType": "survey respondent share"
+        },
+        {
+          "label": "Abuja share of respondents",
+          "value": "16%",
+          "unit": "respondent share",
+          "period": "2026 assessment summary",
+          "measurementType": "survey respondent share"
+        },
+        {
+          "label": "Kano, Kaduna, Enugu, Rivers and Abia",
+          "value": "4% each",
+          "unit": "respondent share",
+          "period": "2026 assessment summary",
+          "measurementType": "survey respondent share"
+        },
+        {
+          "label": "Hubs offering direct professional mentorship",
+          "value": "60%",
+          "unit": "of respondents",
+          "period": "2026 assessment summary",
+          "measurementType": "survey respondent share"
+        },
+        {
+          "label": "Hubs with annual revenue below US$50,000",
+          "value": ">70%",
+          "unit": "of respondents",
+          "period": "2026 assessment summary",
+          "measurementType": "survey respondent share"
+        },
+        {
+          "label": "Hubs reporting recurrent power outages",
+          "value": ">60%",
+          "unit": "of respondents",
+          "period": "2026 assessment summary",
+          "measurementType": "survey respondent share"
+        },
+        {
+          "label": "Four leading focus areas combined",
+          "value": "60%",
+          "unit": "of reported focus areas",
+          "period": "2026 assessment summary",
+          "measurementType": "survey respondent share · ICT/Software, AgriTech, FinTech, EdTech"
+        },
+        {
+          "label": "ISN 2027 funding target",
+          "value": "60+ hubs",
+          "unit": "target hubs",
+          "period": "2026–2030 strategic outlook",
+          "measurementType": "strategic target"
+        },
+        {
+          "label": "ISN 2027 startup/MSME support target",
+          "value": "150",
+          "unit": "startups/MSMEs",
+          "period": "2026–2030 strategic outlook",
+          "measurementType": "strategic target"
+        }
+      ],
+      "limitations": [
+        "The public article is an executive summary; sample frame, collection period, respondent definitions, weighting and full methodology require the full report.",
+        "Geographic percentages are described as shares of respondents, not a census share of all Nigerian hubs or absolute hub counts.",
+        "More than 190 active hubs surveyed/covered and an ecosystem of more than 250 active and partially active spaces are different denominators; do not combine them.",
+        "Percentages for staffing, training, mentorship, revenue and power outages are survey-summary findings and should be attributed to ISN.",
+        "The 2026–2030 funding and startup support figures are strategic targets, not achieved results.",
+        "The directory and assessment summary do not establish current operational capacity or local outcomes for any individual hub."
+      ],
+      "interpretation": "Use this assessment to understand structural constraints in Nigeria's innovation ecosystem and design capacity-building, digital-skills and partnership programmes. Treat it as a survey summary, not a complete national census or a live performance dashboard."
+    },
+    {
+      "id": "fme-annual-school-census-national-2024-25",
+      "departmentId": "education",
+      "title": "Federal Ministry of Education · Annual School Census",
+      "publisher": "Federal Ministry of Education · Digital Nigeria Education Management Information System",
+      "sourceId": "fme-annual-school-census",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "referencePeriod": "2024/2025 school year · portal generated 22 September 2026",
+      "retrievedAt": "2026-11-10",
+      "geography": {
+        "level": "national",
+        "label": "Nigeria"
+      },
+      "evidenceType": "Official administrative school-census dashboard",
+      "metrics": [
+        {
+          "label": "Total schools displayed",
+          "value": "230,844",
+          "unit": "schools",
+          "period": "2024/2025",
+          "measurementType": "Administrative count"
+        },
+        {
+          "label": "Schools reported",
+          "value": "124,066",
+          "unit": "schools",
+          "period": "2024/2025",
+          "measurementType": "Administrative count"
+        },
+        {
+          "label": "Reporting rate",
+          "value": "53.7%",
+          "unit": "of displayed schools",
+          "period": "2024/2025",
+          "measurementType": "Administrative reporting rate"
+        },
+        {
+          "label": "Learners",
+          "value": "39,825,932",
+          "unit": "learner records",
+          "period": "2024/2025",
+          "measurementType": "Administrative count"
+        },
+        {
+          "label": "Teachers",
+          "value": "1,185,610",
+          "unit": "teacher records",
+          "period": "2024/2025",
+          "measurementType": "Administrative count"
+        },
+        {
+          "label": "Learner–teacher ratio",
+          "value": "33.6",
+          "unit": "learners per teacher",
+          "period": "2024/2025",
+          "measurementType": "Dashboard-derived ratio"
+        },
+        {
+          "label": "Learner–classroom ratio",
+          "value": "60.1",
+          "unit": "learners per classroom",
+          "period": "2024/2025",
+          "measurementType": "Dashboard-derived ratio"
+        },
+        {
+          "label": "Learner–toilet ratio",
+          "value": "65.9",
+          "unit": "learners per toilet",
+          "period": "2024/2025",
+          "measurementType": "Dashboard-derived ratio"
+        },
+        {
+          "label": "Female learners",
+          "value": "49.6%",
+          "unit": "of learner records",
+          "period": "2024/2025",
+          "measurementType": "Share of reported learner records"
+        },
+        {
+          "label": "Female teachers",
+          "value": "55.7%",
+          "unit": "of teacher records",
+          "period": "2024/2025",
+          "measurementType": "Share of reported teacher records"
+        }
+      ],
+      "limitations": [
+        "Only 124,066 of 230,844 displayed schools are reported: a 53.7% reporting rate. Do not present learner, teacher or resource counts as complete national coverage.",
+        "These are administrative records from the 2024/2025 school year, not a household survey or a measure of learning outcomes.",
+        "The portal was generated on 22 September 2026; the dashboard may change when updated.",
+        "National aggregates do not establish state, LGA, school or classroom conditions.",
+        "Ratios are dashboard aggregates and do not establish school functionality, teaching quality or the condition of a named school."
+      ],
+      "interpretation": "Use the reporting rate alongside every count. The 53.7% reporting rate is a material completeness limitation, not a footnote."
+    },
+    {
+      "id": "fme-annual-school-census-kaduna-2024-25",
+      "departmentId": "education",
+      "title": "Federal Ministry of Education · Kaduna State school indicators",
+      "publisher": "Federal Ministry of Education · Digital Nigeria Education Management Information System",
+      "sourceId": "fme-annual-school-census",
+      "sourceUrl": "https://emis.education.gov.ng/portal/",
+      "referencePeriod": "2024/2025 school year · portal generated 22 September 2026",
+      "retrievedAt": "2026-11-10",
+      "geography": {
+        "level": "state",
+        "label": "Kaduna State"
+      },
+      "evidenceType": "Official state-level administrative school-census dashboard",
+      "metrics": [
+        {
+          "label": "Learners",
+          "value": "2,718,125",
+          "unit": "learner records",
+          "period": "2024/2025",
+          "measurementType": "Administrative count"
+        },
+        {
+          "label": "Learner–teacher ratio",
+          "value": "51.3",
+          "unit": "learners per teacher",
+          "period": "2024/2025",
+          "measurementType": "Dashboard-derived ratio"
+        },
+        {
+          "label": "Learner–classroom ratio",
+          "value": "57.0",
+          "unit": "learners per classroom",
+          "period": "2024/2025",
+          "measurementType": "Dashboard-derived ratio"
+        },
+        {
+          "label": "Learner–toilet ratio",
+          "value": "139.5",
+          "unit": "learners per toilet",
+          "period": "2024/2025",
+          "measurementType": "Dashboard-derived ratio"
+        },
+        {
+          "label": "Female learners",
+          "value": "49.9%",
+          "unit": "of learner records",
+          "period": "2024/2025",
+          "measurementType": "Share of reported learner records"
+        },
+        {
+          "label": "Female teachers",
+          "value": "54.2%",
+          "unit": "of teacher records",
+          "period": "2024/2025",
+          "measurementType": "Share of reported teacher records"
+        },
+        {
+          "label": "Learners with special needs",
+          "value": "16,520",
+          "unit": "learner records",
+          "period": "2024/2025",
+          "measurementType": "Administrative count"
+        }
+      ],
+      "limitations": [
+        "This is Kaduna State data, not Kaduna South, another LGA, a ward or a named school.",
+        "The national dashboard reports a 53.7% school reporting rate. State and learner aggregates must be interpreted with the source's reporting completeness and administrative methodology.",
+        "These are administrative records from the 2024/2025 school year, not a household survey or a measure of learning outcomes.",
+        "The portal was generated on 22 September 2026; the dashboard may change when updated.",
+        "Ratios do not establish the functionality, safety, accessibility or quality of an individual school."
+      ],
+      "interpretation": "A state-level signal for research prioritisation. It does not describe Kaduna South or any individual school and must not be used as a local estimate."
+    },
+    {
+      "id": "worldbank-ndu-2026-10",
+      "departmentId": null,
+      "title": "World Bank · Nigeria Development Update",
+      "publisher": "World Bank",
+      "sourceId": "worldbank-ndu-2026-10",
+      "sourceUrl": "https://www.worldbank.org/en/news/press-release/2026/10/08/higher-revenues-better-lives-strengthening-state-spending-growth-jobs-services",
+      "referencePeriod": "H1 2026 GDP; Q1 2026 current account; end-July 2026 reserves",
+      "retrievedAt": "2026-11-10",
+      "geography": {
+        "level": "national",
+        "label": "Nigeria"
+      },
+      "evidenceType": "International development institution assessment · national macroeconomic indicators",
+      "metrics": [
+        {
+          "label": "Real GDP growth",
+          "value": "4.2%",
+          "unit": "year-on-year growth",
+          "period": "H1 2026",
+          "measurementType": "reported estimate"
+        },
+        {
+          "label": "Current account surplus",
+          "value": "US$5.0 billion",
+          "unit": "US dollars",
+          "period": "Q1 2026",
+          "measurementType": "national accounts"
+        },
+        {
+          "label": "Gross reserves",
+          "value": "US$51.9 billion",
+          "unit": "US dollars",
+          "period": "End-July 2026",
+          "measurementType": "reported reserve stock"
+        }
+      ],
+      "limitations": [
+        "The 4.2% growth figure is a national H1 2026 estimate; it is not a state, LGA or household growth rate.",
+        "The current-account surplus and gross-reserve stock are national macroeconomic aggregates, not measures of household welfare or public-service quality.",
+        "This is a World Bank assessment and press-release summary; retain the underlying source definitions and release date when reusing the figures.",
+        "Do not mix these reported values with projections or estimates from earlier or later Nigeria Development Update editions."
+      ],
+      "interpretation": "Useful national context for understanding the macroeconomic environment and public-finance backdrop. It does not show how growth or additional revenues are distributed across individual states, LGAs or households."
+    }
+  ]
+}

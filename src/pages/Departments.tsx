@@ -4,9 +4,12 @@ import { useBundle } from '../lib/data';
 import { fetchViaGateway, type IndicatorObservation } from '../lib/indicators';
 import { fetchDepartmentCommunityRecords, departmentMatchesRecord, stateRecordScope, type DepartmentCommunityFeed, type PublishedDepartmentRecord } from '../adapters/departmentCommunityRecords';
 import { DEPARTMENT_EMPTY_STATE, type DepartmentId, type DepartmentEvidence, validateDepartmentEvidence } from '../data/departmentEvidence';
+import NationalSnapshotGrid from '../components/NationalSnapshotGrid';
+import InnovationHubDirectory from '../components/InnovationHubDirectory';
 import { PageHeader, Section } from '../design/layout';
 import inecPvc2023 from '../data/indicators/inec-pvc-2023.json';
 import inecCvr2025 from '../data/indicators/inec-cvr-2025-26.json';
+import nationalSnapshots from '../data/indicators/national-department-snapshots.v1.json';
 import stateReference from '../../contracts/states-ng.v1.json';
 
 type DepartmentConfig = {
@@ -15,25 +18,25 @@ type DepartmentConfig = {
   unknowns: string[]; facts: string[]; hypotheses: string[];
 };
 const DEPARTMENTS: DepartmentConfig[] = [
-  { id:'education', title:'Education & Capacity Building', summary:'Schooling, education access, capacity and learning evidence.',
-    sources:['ubec-digest-2019-20','ubec-npa-2022-23','ubec-reports-digests','worldbank-wdi-primary-enrolment'],
+  { id:'education', title:'Education and Capacity Building', summary:'Schooling, education access, capacity and learning evidence.',
+    sources:['ubec-digest-2019-20','ubec-npa-2022-23','ubec-reports-digests','worldbank-wdi-primary-enrolment','nbs-microdata-catalog','nitda-dl4all-dashboard','nitda-national-digital-literacy-framework','isn-hubs-directory-2026','isn-hub-assessment-2026','startup-support-engagement-portal','nbti-incubation-centres','afrilabs-nigeria-hubs','cchub-programmes-2026'],
     indicators:[{id:'wb-nga-se-prm-enrr',sourceId:'worldbank-wdi-primary-enrolment',label:'Primary school gross enrolment ratio'}],
     unknowns:['Current Kaduna South school-level enrolment, attendance and completion are not integrated.','Current teacher availability and learning outcomes for Kaduna South are not established by the registered national series.'],
     facts:['A source may be described by its publisher, dataset, reference period and stated geographic coverage.','A national gross enrolment ratio is not a Kaduna South school attendance rate.'],
     hypotheses:['A community report about a school may indicate a question for field inquiry; it does not establish how widespread the condition is.'] },
-  { id:'health', title:'Health & Well-being', summary:'Population health evidence, health-system sources and published community concerns.',
-    sources:['ndhs-2024','kaduna-ksphcb-recruitment-plan-2025','hfr','kaduna-hefa','nphcda-data-requisition','worldbank-wdi-under5-mortality'],
+  { id:'health', title:'Department of Health and Well-being', summary:'Population health evidence, health-system sources and published community concerns.',
+    sources:['ndhs-2024','kaduna-ksphcb-recruitment-plan-2025','hfr','kaduna-hefa','nphcda-data-requisition','worldbank-wdi-under5-mortality','who-gho-nigeria'],
     indicators:[{id:'wb-nga-sh-dyn-mort',sourceId:'worldbank-wdi-under5-mortality',label:'Under-five mortality rate'}],
     unknowns:['Current Kaduna South facility staffing, medicine availability and service continuity are not integrated.','The Kaduna PHC recruitment plan is a March 2025 planning baseline, not a current headcount or proof of deployment.','HFR access requires an approved API key; HEFA raw data and public bulk export are not currently integrated.'],
     facts:['A registered facility is not proof that it is staffed, stocked or operational.','A national modelled mortality estimate cannot establish performance at a named PHC.'],
     hypotheses:['A published report about a facility can guide a follow-up question; it is not proof of a system-wide condition.'] },
-  { id:'software-technology', title:'Software & Technology', summary:'Digital systems, software capacity and technology access — without unsupported indicators.',
-    sources:[], indicators:[],
-    unknowns:['No dedicated Software & Technology indicator or retrievable official dataset is integrated in the current Observatory registry.','No Kaduna South digital-access, software-sector or technology-employment figure is available in this department pack.'],
-    facts:['The Observatory currently has no integrated official figure for this department.'],
+  { id:'software-technology', title:'Software and Technology', summary:'Digital systems, software capacity, innovation infrastructure and the national hub ecosystem.',
+    sources:['nitda-dl4all-dashboard','nitda-national-digital-literacy-framework','naseni-innovation-hub','isn-hubs-directory-2026','isn-hub-assessment-2026','startup-support-engagement-portal','nbti-incubation-centres','afrilabs-nigeria-hubs','cchub-programmes-2026','nipost-digital-postcode-hub-api-2026'], indicators:[],
+    unknowns:['No official Kaduna South digital-access, software-sector or technology-employment figure is integrated.','NITDA programme reach is not a national digital-literacy prevalence measure; NASENI announcements are not proof of funded or commercialised innovations.'],
+    facts:['NITDA publishes a national programme dashboard with dated verified training records.','ISN’s 2026 assessment reports structural capacity constraints across the national hub ecosystem.','The ISN directory lists selected hubs in Kaduna, Kano, Abuja, Lagos and other states.','NASENI and NBTI publish innovation and incubation programmes; outcomes require separate award, disbursement and product evidence.'],
     hypotheses:['Anecdotes about connectivity, device access or digital skills are leads for structured research, not population estimates.'] },
   { id:'civic', title:'Civic Department', summary:'Civic participation, published public concerns and official electoral evidence.',
-    sources:['inec-voter-register-pvc','inec-cvr-2025-26'],
+    sources:['inec-voter-register-pvc','inec-cvr-2025-26','nimc-enrolment-oct-2025'],
     indicators:[],
     unknowns:['A final validated post-CVR national register and Kaduna South breakdown are not integrated.','Published community records do not establish how common a civic concern is.'],
     facts:['The CommunityRecord feed contains published records only.','INEC reference periods and measure definitions must be preserved; registration, PVC collection and turnout are different measures.'],
@@ -42,6 +45,7 @@ const DEPARTMENTS: DepartmentConfig[] = [
 const PILOT_LOCATION = 'Kaduna South, Kaduna State';
 const STATE_OPTIONS = stateReference.states;
 const ALL_STATES = 'All states + FCT';
+const SNAPSHOT_SOURCE_IDS = new Set([...nationalSnapshots.records.map((record) => record.sourceId), 'isn-hubs-directory-2026']);
 
 function RecordList({ records, scopeLabel }: { records: PublishedDepartmentRecord[]; scopeLabel: string }) {
   if (records.length === 0) return null;
@@ -110,7 +114,7 @@ export default function Departments() {
       <Link to="/departments" className="dept-back">← All departments</Link>
     </PageHeader>
     <Section title="A. Official evidence" id="official-evidence">
-      <p className="dept-note">Only sources in the Observatory registry are shown. A registered source is not automatically an integrated indicator.</p>
+      <p className="dept-note">Registered sources distinguish live indicators, dated snapshot-only records and sources not yet integrated.</p>\n      <NationalSnapshotGrid departmentId={config.id} />\n      {config.id === 'software-technology' && <InnovationHubDirectory />}
       {registeredSources.length === 0 ? <div className="dept-empty">{DEPARTMENT_EMPTY_STATE}</div> : registeredSources.map((source) => {
         const indicator = config.indicators.find((item) => item.sourceId === source.id);
         const result = indicator ? observations[indicator.id] : undefined;
@@ -122,7 +126,7 @@ export default function Departments() {
           retrievedAt: localObservation?.retrievedAt || 'not-retrieved',
           geography: { level:'lga', code:'kaduna-south', label:PILOT_LOCATION },
           value: localObservation?.value ?? null, unit: localObservation?.unit || null,
-          evidenceStatus: localObservation ? 'integrated' : (indicator && result?.status === 'error' ? 'unavailable' : 'not-integrated'),
+          evidenceStatus: localObservation ? 'integrated' : (indicator && result?.status === 'error' ? 'unavailable' : SNAPSHOT_SOURCE_IDS.has(source.id) ? 'snapshot-only' : 'not-integrated'),
           limitations: [...source.limitations, 'No Kaduna South figure is displayed unless the retrieved observation explicitly identifies this LGA.'],
         };
         if (!validateDepartmentEvidence(mapped)) return <article className="dept-source" key={source.id}><strong>{source.name}</strong><p>Evidence metadata did not pass the DepartmentEvidence contract.</p></article>;
