@@ -29,12 +29,12 @@ The Overview and relevant Department pages display compact, provenance-first car
 
 ## Department snapshot coverage and current gaps
 
-The current snapshot bundle contains nine dated records. Its department coverage is intentionally uneven and must not be presented as a complete four-department dataset.
+The current snapshot bundle contains fourteen dated records. Its department coverage is intentionally uneven and must not be presented as a complete four-department dataset.
 
 | Department | Curated snapshot evidence in this release candidate | What remains limited or unintegrated |
 |---|---|---|
 | Education and Capacity Building | FME 2024/2025 national and Kaduna State school-census dashboard snapshots; NITDA DL4ALL, NASENI InnovateNaija and ISN assessment records are cross-linked | FME national school reporting is 53.7%; the Kaduna record is state-level, not Kaduna South; no current local school-level attendance or learning outcome series |
-| Department of Health and Well-being | WHO Nigeria profile indicators for 2021–2023, with indicator-specific periods and uncertainty intervals; existing national World Bank pilot indicator | One curated WHO snapshot record, not a complete health dataset; NDHS, NPHCDA, HFR and Kaduna health sources require their own validated ingestion and geography checks; no current Kaduna South facility staffing or medicine series |
+| Department of Health and Well-being | WHO Nigeria profile indicators; five dated NPHCDA PHC programme snapshot cards covering facility/infrastructure progress, BHCPF, workforce, multi-state support and combined Kaduna–Yobe recruitment; existing national World Bank pilot indicator | NPHCDA figures are agency-reported 2025 programme outputs, not current facility functionality; combined Kaduna–Yobe recruitment is not a Kaduna-only total; NDHS, HFR and Kaduna health sources still require validated ingestion and geography checks; no current Kaduna South facility staffing or medicine series |
 | Software and Technology | NITDA DL4ALL, NASENI InnovateNaija and ISN hub assessment snapshots; selected ISN-listed hub directory | Programme-reported reach is not national digital-literacy prevalence; the directory is a selected listing, not a complete or independently verified hub census; no official Kaduna South digital-access or software-employment measure |
 | Civic Department | NIMC October 2025 national and Kaduna State enrolment snapshot; existing INEC evidence sources remain separately registered | NIMC enrolment is not a population coverage measure; INEC registration, PVC collection and turnout remain separate measures; no final validated post-CVR national register or Kaduna South civic-participation estimate |
 
@@ -71,3 +71,25 @@ The API accepts the DOC stable department identifiers `education`, `health`, `di
 - Current Kaduna South facility, school and digital-access measures.\n- The full ISN assessment methodology and underlying respondent-level tables; the current product uses only the public launch summary.\n- A complete, independently verified national hub census or live hub-activity feed; the visible hub directory is a selected subset of ISN listings.
 
 **A source listed in the registry is not an integrated dataset. A dashboard counter is not independent verification. A published target is not an achieved result.** The product displays those distinctions directly rather than hiding them in a long methodology essay.
+
+
+## NPHCDA primary healthcare programme snapshots — 11 November 2026
+
+Five additional health records are exposed through the existing read-only snapshot contract, using the already registered NPHCDA source `nphcda-phc-progress-2025` and its official progress page dated 15 September 2025.
+
+The records separate:
+- National PHC revitalisation and infrastructure progress.
+- BHCPF disbursement and facility upgrades.
+- Workforce deployment and training.
+- Multi-state commodity and cold-chain support.
+- Combined Kaduna State and Yobe State recruitment figures.
+
+**Interpretation controls**
+- All figures are historical agency-reported programme outputs, not independently audited outcomes or current 2026 status.
+- Facilities at various stages of revitalisation are not counted as completed.
+- The first-half 2025 BHCPF disbursement is included in the wider 2023–mid-2025 total; it must not be added to that total.
+- The 10-state maternal/newborn commodity distribution does not name the participating states.
+- The Kaduna and Yobe recruitment figures are combined. The source does not provide a state split, LGA breakdown or named-facility deployment list. These values must never be presented as Kaduna State-only totals.
+- No observation establishes current staffing, medicine stock, equipment functionality or service availability at a Kaduna South PHC.
+
+The older branch's July 2026 education census and June 2025 NIMC figures were not copied into this release: the current catalogue already contains later source snapshots for those sources. Older WHO observations were also excluded pending reconciliation of differing indicator values and reference periods against the current WHO country profile.
