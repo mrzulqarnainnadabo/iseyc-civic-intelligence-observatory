@@ -951,8 +951,8 @@
   {
     "id": "who-gho-nigeria",
     "publisher": "World Health Organization (WHO)",
-    "name": "Global Health Observatory — Nigeria country profile and indicator data",
-    "url": "https://www.who.int/data/gho/data/countries/country-details/GHO/nigeria",
+    "name": "WHO Data — Nigeria country profile and health indicators",
+    "url": "https://data.who.int/countries/566",
     "urlStatus": "confirmed",
     "sectors": [
       "health"
@@ -960,19 +960,20 @@
     "kind": "official-data",
     "geographicCoverage": "Nigeria national aggregate; indicator-specific geography and disaggregation vary",
     "geoLevel": "national",
-    "dataType": "Country health indicators, estimates, survey-derived and administrative series; World Health Data Hub / OData interfaces",
+    "dataType": "Country health indicators, modelled estimates and health-system statistics; indicator-specific reference years and methods",
     "updateFrequency": "Indicator-specific; source reference periods vary",
     "licence": "WHO data.who.int published outputs: CC BY-NC-SA 3.0 IGO; comply with attribution and non-endorsement terms",
-    "lastChecked": "2026-11-09",
-    "checkedHow": "WHO Nigeria country profile, WHO Global Health Observatory and API documentation reviewed",
+    "lastChecked": "2026-11-11",
+    "checkedHow": "WHO Nigeria country profile on data.who.int reviewed; selected indicator values transcribed with their reference periods and uncertainty intervals",
     "limitations": [
       "Every indicator has its own reference year, methodology, uncertainty interval and source; do not treat the profile as one current-year dataset.",
-      "WHO states that Nigerian death-registration data are unavailable or unusable for cause-of-death analysis; related mortality figures are statistical estimates and require caution.",
+      "Under-five mortality and life expectancy are statistical/modelled estimates and must retain their uncertainty intervals.",
+      "WHO reports Nigerian death-registration data as unavailable or unusable for cause-of-death analysis; cause-of-death estimates require caution.",
       "National estimates do not establish state, LGA, facility or household outcomes.",
-      "The legacy GHO OData API is being retired; use the current World Health Data Hub interface and revalidate API contracts before ingestion.",
+      "The legacy GHO OData API is being retired; no automated ingestion is implied by this country-profile snapshot.",
       "WHO data use does not imply WHO endorsement; do not use WHO emblems or logos."
     ],
-    "notes": "WHO API documentation: https://www.who.int/data/gho/info/gho-odata-api. The country profile is a discovery and indicator source, not a substitute for original Nigerian administrative records."
+    "notes": "WHO Nigeria country profile: https://data.who.int/countries/566. Values in the Observatory snapshot are dated transcriptions; use each indicator's own period and metadata. This is not a live feed or substitute for original Nigerian administrative records."
   },
   {
     "id": "imf-weo-oct-2026",
