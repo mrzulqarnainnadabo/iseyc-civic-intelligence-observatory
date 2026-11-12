@@ -18,6 +18,61 @@ The Observatory must show these denominators beside every comparison. It must ne
 
 ## What the current evidence says
 
+### Q2 2026 fiscal information availability — all 36 states
+
+BudgIT's States Fiscal Transparency League provides a Q2 2026 score for **all 36 states**. Its components are citizens' budgets (15 points), quarterly Budget Implementation Reports (16), e-procurement portals (11) and state fiscal-data websites (12), normalised to a total score out of 100.
+
+- Eight states score 100: Adamawa, Benue, Ebonyi, Ekiti, Gombe, Jigawa, Kaduna and Kebbi.
+- Sixteen states score 90 or above.
+- Rivers scores 15, the lowest in the table; Nasarawa scores 57 and Osun 67.
+- Kano and Niger score zero for e-procurement; Rivers also scores zero.
+- Osun and Rivers score zero for quarterly BIR publication; Nasarawa and Rivers score zero for citizens' budget availability.
+
+**Source:** [BudgIT States Fiscal Transparency League — Q2 2026](https://fiscalleague.budgit.org/latest-ranking)
+
+This is a measure of fiscal information availability and completeness, not a measure of public-service delivery, government effectiveness, public trust or corruption. The Observatory preserves the four component scores as well as the total so users can see what drives the score.
+
+### H1 2026 state expenditure — 34 states
+
+BudgIT reports combined approved budgets of **₦35.22 trillion** and actual expenditure of **₦8.60 trillion** across 34 states by the end of Q2 2026, equivalent to **24.4%** of their combined approved budgets.
+
+| State | H1 2026 expenditure performance |
+|---|---:|
+| Oyo | 43.4% |
+| Bauchi | 42.6% |
+| Ekiti | 37.9% |
+| Enugu | 10.5% |
+| Cross River | 11.1% |
+
+**Source:** [BudgIT — H1 2026 Total Expenditure Performance by State](https://budgit.org/post_infographics/h1-2026-total-expenditure-performance-by-state/)
+
+The infographic page does not name the two excluded states. Do not infer that they are the same states excluded from the separate revenue or health reviews.
+
+### H1 2026 education expenditure — 34 states
+
+BudgIT reports **₦1.049 trillion** in combined education expenditure across 34 states by the end of Q2 2026.
+
+- Highest reported education shares of total expenditure: Jigawa 29.9%, Ekiti 25.1%, Nasarawa 24.9%.
+- Lowest reported shares: Akwa Ibom 0.6%, Imo 4.2%, Lagos 5.8%.
+- Highest absolute education spending: Kano ₦99.23bn, Lagos ₦88.96bn, Delta ₦65.50bn.
+
+**Source:** [BudgIT — H1 2026 Education Expenditure Performance by State](https://budgit.org/post_infographics/h1-2026-education-expenditure-performance-by-state/)
+
+The infographic page does not name the two excluded states. These are budget outturn figures, not evidence of school-level receipt, teacher attendance or learning improvement.
+
+### H1 2026 health expenditure — 34 states
+
+BudgIT reports **₦614.55 billion** in combined health expenditure across 34 states by the end of Q2 2026. Rivers and Osun were excluded because their Q2 2026 BIRs were unavailable.
+
+- Highest reported health shares of total expenditure: Kano 19.7%, Kebbi 12.5%, Jigawa 11.6%.
+- Lowest reported shares: Akwa Ibom approximately 0.1%, Benue 0.7%, Cross River 1.4%.
+- Highest absolute health spending: Lagos ₦119.51bn, Kano ₦79.17bn, Bauchi ₦42.03bn.
+
+**Source:** [BudgIT — H1 2026 Health Expenditure Performance by State](https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/)
+
+Health expenditure is not evidence that medicines reached facilities, PHCs are functional or patient outcomes improved.
+
+
 ### 2025 state budget execution — 35 states
 
 Agora Policy's analysis of state Budget Implementation Reports reports the following combined figures for 35 states; Rivers was excluded because a 2025 BIR was unavailable:
