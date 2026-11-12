@@ -1269,7 +1269,9 @@
       "note": "The page reports life expectancy and health expenditure used in this snapshot. Its under-five mortality figure conflicts with other WHO series and is excluded pending reconciliation.",
       "departments": [
         "health"
-      ]
+      ],
+      "publisher": "World Health Organization (WHO) — Regional Office for Africa",
+      "url": "https://www.afro.who.int/node/992"
     },
     {
       "id": "ngf-state-public-finance-db",
@@ -1281,7 +1283,9 @@
         "health",
         "software-technology",
         "civic"
-      ]
+      ],
+      "publisher": "Nigeria Governors' Forum (NGF)",
+      "url": "https://publicfinance.ngf.org.ng/"
     },
     {
       "id": "agora-state-budget-performance-2025",
@@ -1293,7 +1297,9 @@
         "health",
         "software-technology",
         "civic"
-      ]
+      ],
+      "publisher": "Agora Policy",
+      "url": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html"
     },
     {
       "id": "budgit-state-revenue-h1-2026",
@@ -1305,7 +1311,9 @@
         "health",
         "software-technology",
         "civic"
-      ]
+      ],
+      "publisher": "BudgIT Foundation",
+      "url": "https://budgit.org/post_infographics/h1-2026-revenue-performance-by-state/"
     },
     {
       "id": "fct-budget-2026-secondary",
@@ -1317,7 +1325,9 @@
         "health",
         "software-technology",
         "civic"
-      ]
+      ],
+      "publisher": "TheCable",
+      "url": "https://www.thecable.ng/nassembly-passes-n2-28trn-fct-2026-budget/"
     }
   ],
   "reconciliationNotes": [
