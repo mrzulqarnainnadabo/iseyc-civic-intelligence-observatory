@@ -12,7 +12,16 @@ type CatalogueSource = { id: string; publisher: string; title: string; url: stri
 type ReconciliationNote = { id: string; severity: 'high' | 'medium' | 'low'; title: string; detail: string; action: string };
 type SnapshotBundle = { contractVersion: string; status: string; checkedAt: string; observations: Snapshot[]; catalogOnlySources: CatalogueSource[]; reconciliationNotes: ReconciliationNote[]; limitations: string[] };
 type FiscalTransparency = { quarter: string; citizensBudget: { score: number; max: number }; quarterlyBir: { score: number; max: number }; eProcurement: { score: number; max: number }; fiscalWebsite: { score: number; max: number }; totalScore: number; sourceId: string };
-type BudgetJurisdiction = { name: string; type: 'state' | 'fct'; status: string; officialPortalUrl: string | null; documentsLocated: string[]; note: string; fiscalTransparency?: FiscalTransparency };
+type Agora2025 = { actualRevenueBn: number; actualExpenditureBn: number; budgetExecutionPct: number; capitalExecutionPct: number; igrSharePct: number; igrBudgetPerformancePct: number };
+const AGORA_METRICS: { key: keyof Agora2025; label: string; unit: 'naira' | 'percent' }[] = [
+  { key: 'actualRevenueBn', label: 'Actual revenue', unit: 'naira' },
+  { key: 'actualExpenditureBn', label: 'Actual expenditure', unit: 'naira' },
+  { key: 'budgetExecutionPct', label: 'Total budget execution', unit: 'percent' },
+  { key: 'capitalExecutionPct', label: 'Capital budget execution', unit: 'percent' },
+  { key: 'igrSharePct', label: 'IGR share of revenue', unit: 'percent' },
+  { key: 'igrBudgetPerformancePct', label: 'IGR budget performance', unit: 'percent' },
+];
+type BudgetJurisdiction = { name: string; type: 'state' | 'fct'; status: string; officialPortalUrl: string | null; documentsLocated: string[]; note: string; fiscalTransparency?: FiscalTransparency; agora2025?: Agora2025 | null };
 const budgetJurisdictions = stateBudgetCoverage.jurisdictions as BudgetJurisdiction[];
 const locatedStatePortals = budgetJurisdictions.filter((item) => item.type === 'state' && item.status === 'official_portal_located').length;
 const locatedOfficialDocuments = budgetJurisdictions.filter((item) => item.type === 'state' && item.status === 'official_documents_located').length;
@@ -31,6 +40,7 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
   const [bundle, setBundle] = useState<SnapshotBundle | null>(null);
   const [showAll, setShowAll] = useState(false);
   const [showAllCatalogue, setShowAllCatalogue] = useState(false);
+  const [agoraMetric, setAgoraMetric] = useState<keyof Agora2025>('actualRevenueBn');
   const [status, setStatus] = useState<'loading' | 'ready' | 'unavailable'>('loading');
   useEffect(() => {
     let alive = true;
@@ -52,6 +62,8 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
   const visibleObservations = showAll ? observations : observations.slice(0, 6);
   const visibleCatalogue = showAllCatalogue ? catalogOnly : catalogOnly.slice(0, 3);
   const reconciliationNotes = bundle?.reconciliationNotes ?? [];
+  const selectedAgoraMetric = AGORA_METRICS.find((item) => item.key === agoraMetric) || AGORA_METRICS[0];
+  const showStateBudgetCoverage = !compact || departmentId === 'civic';
 
   return (
     <section className={compact ? 'national-snapshots national-snapshots--compact' : 'national-snapshots'} aria-labelledby={departmentId ? 'department-snapshots-title' : 'national-snapshots-title'}>
@@ -90,7 +102,7 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
           <strong>{item.title}</strong><p>{item.detail}</p><em>Action: {item.action}</em>
         </article>)}</div>
       </details>}
-      {!compact && <details className="state-budget-coverage">
+      {showStateBudgetCoverage && <details className="state-budget-coverage">
         <summary>State budget source coverage · {locatedStatePortals} of 36 official portals · {locatedOfficialDocuments} official document source</summary>
         <p>Portal discovery is not data extraction. Each state still requires its approved budget, appropriation law, MTEF/MTSS, quarterly implementation reports and audited outturn. States marked “not reviewed” are not being described as having no public data.</p>
         <ul>{budgetJurisdictions.map((item) => <li key={item.name}>
@@ -113,6 +125,31 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
             </tr>)}</tbody>
           </table></div>
           <p className="state-budget-coverage__source">Source: <a href="https://fiscalleague.budgit.org/latest-ranking" target="_blank" rel="noopener noreferrer">BudgIT States Fiscal Transparency League · Q2 2026 ↗</a>. The source spells Nasarawa as “Nassarawa”; the Observatory normalises the state name.</p>
+        </section>
+        <section className="state-budget-coverage__performance">
+          <h3>2025 state fiscal performance · {stateBudgetCoverage.scope.agora2025Coverage} of 36 states</h3>
+          <p>Agora Policy's analysis of state Budget Implementation Reports. Rivers is excluded; FCT is separate. Select a measure to compare the reported state outturn.</p>
+          <label htmlFor="agora-state-metric">Measure</label>
+          <select id="agora-state-metric" value={agoraMetric} onChange={(event) => setAgoraMetric(event.target.value as keyof Agora2025)}>
+            {AGORA_METRICS.map((metric) => <option key={metric.key} value={metric.key}>{metric.label}</option>)}
+          </select>
+          <div className="state-budget-coverage__table-wrap"><table className="state-budget-coverage__performance-table">
+            <thead><tr><th>State</th><th>{selectedAgoraMetric.label}{selectedAgoraMetric.unit === 'naira' ? ' (₦bn)' : ' (%)'}</th><th>Coverage</th></tr></thead>
+            <tbody>{budgetJurisdictions.filter((item) => item.type === 'state').map((item) => {
+              const value = item.agora2025?.[agoraMetric];
+              const formatted = typeof value === 'number'
+                ? selectedAgoraMetric.unit === 'naira'
+                  ? '₦' + value.toLocaleString('en-NG', { maximumFractionDigits: 2 }) + 'bn'
+                  : value.toFixed(1) + '%'
+                : 'No data';
+              return <tr key={item.name}>
+                <th scope="row">{item.name}</th>
+                <td>{formatted}</td>
+                <td>{item.agora2025 ? 'Reported' : 'Excluded from source'}</td>
+              </tr>;
+            })}</tbody>
+          </table></div>
+          <p className="state-budget-coverage__source">Source: <a href="https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html" target="_blank" rel="noopener noreferrer">Agora Policy · Review of Performance of States' Budgets in 2025 ↗</a>. Revenue and expenditure are actual amounts in ₦ billion; execution rates are shares of approved budgets; IGR share is a share of total revenue. This is secondary analysis, not an independent audit.</p>
         </section>
         <div className="state-budget-coverage__comparisons">{stateBudgetCoverage.comparativeSources.map((source: { id: string; coverage: string; note: string; url: string }) => <p key={source.id}><strong>{source.coverage}</strong> — {source.note} <a href={source.url} target="_blank" rel="noopener noreferrer">Source ↗</a></p>)}</div>
       </details>}
