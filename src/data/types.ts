@@ -3,7 +3,7 @@
 export type Sector =
   | 'education' | 'health' | 'security' | 'infrastructure'
   | 'water-sanitation' | 'employment' | 'public-finance' | 'governance'
-  | 'agriculture' | 'environment';
+  | 'agriculture' | 'environment' | 'digital-inclusion' | 'telecommunications';
 
 /** The five evidence classes the product must keep distinct. */
 export type EvidenceKind =
@@ -193,10 +193,11 @@ export const SECTOR_LABEL: Record<Sector, string> = {
   'water-sanitation': 'Water and sanitation', employment: 'Employment and livelihoods',
   'public-finance': 'Public finance and budgets', governance: 'Governance and service delivery',
   agriculture: 'Agriculture', environment: 'Environment',
+  'digital-inclusion': 'Digital inclusion', telecommunications: 'Telecommunications',
 };
 export const SECTORS: Sector[] = [
   'education', 'health', 'security', 'infrastructure', 'water-sanitation',
-  'employment', 'public-finance', 'governance', 'agriculture', 'environment',
+  'employment', 'public-finance', 'governance', 'agriculture', 'environment', 'digital-inclusion', 'telecommunications',
 ];
 
 export const KIND_LABEL: Record<EvidenceKind, string> = {
