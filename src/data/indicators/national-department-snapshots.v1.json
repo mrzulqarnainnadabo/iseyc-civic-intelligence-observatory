@@ -9,7 +9,7 @@
       "departmentId": "health",
       "title": "WHO · Nigeria health indicators",
       "publisher": "World Health Organization",
-      "sourceId": "who-gho-nigeria",
+      "sourceId": "who-nigeria-country-profile",
       "sourceUrl": "https://data.who.int/countries/566",
       "referencePeriod": "Indicator-specific · 2021–2025",
       "retrievedAt": "2026-11-09",
