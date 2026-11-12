@@ -72,6 +72,18 @@ describe("dated national evidence snapshots", () => {
     expect(naseni.metrics.find((item) => item.label === "Phase 2 public voting")?.value).toBe("Ended");
     expect(naseni.relatedSources?.[0].title).toContain("announcement");
   });
+  it("keeps NGF original-budget figures separate from actual expenditure", () => {
+    const education = snapshots.records.find((record) => record.id === "ngf-state-budget-education-2026")!;
+    const health = snapshots.records.find((record) => record.id === "ngf-state-budget-health-2026")!;
+    const profile = snapshots.records.find((record) => record.id === "ngf-state-budget-functional-profile-2026")!;
+    expect(education.metrics).toContainEqual(expect.objectContaining({ label: "Share of aggregate 36-state original expenditure", value: "14.4", unit: "%" }));
+    expect(health.metrics).toContainEqual(expect.objectContaining({ label: "Share of aggregate 36-state original expenditure", value: "9.3", unit: "%" }));
+    expect(education.geography.label).toMatch(/36 state governments; FCT excluded/);
+    expect(education.limitations.join(" ")).toMatch(/not actual expenditure/);
+    expect(profile.departmentIds).toEqual(["civic"]);
+    expect(profile.metrics).toHaveLength(9);
+    expect(profile.limitations.join(" ")).toMatch(/100.1% because of rounding/);
+  });
   it("preserves the ISN assessment as a survey summary, not a hub census or target result", () => {
     const isn = snapshots.records.find((record) => record.id === "isn-innovation-hub-assessment-2026")!;
     expect(isn.metrics.find((item) => item.label === "Hubs with fewer than 10 full-time employees")?.value).toBe("68.35%");
@@ -108,6 +120,32 @@ describe("dated national evidence snapshots", () => {
     expect(wb.metrics.find((item) => item.label === "Real GDP growth")?.period).toBe("H1 2026");
     expect(wb.metrics.find((item) => item.label === "Current account surplus")?.period).toBe("Q1 2026");
     expect(wb.limitations.join(" ")).toMatch(/not a state, LGA or household growth rate/);
+  });
+
+
+  it("keeps NPHCDA PHC programme outputs dated and separates national, multi-state and combined Kaduna/Yobe geography", () => {
+    const ids = [
+      "nphcda-phc-infrastructure-progress-2025",
+      "nphcda-bhcpf-funding-and-upgrades-2025",
+      "nphcda-phc-workforce-progress-2025",
+      "nphcda-multistate-service-support-2025",
+      "nphcda-kaduna-yobe-recruitment-2025",
+    ];
+    const records = ids.map((id) => snapshots.records.find((record) => record.id === id)!);
+    expect(records.every((record) => record.sourceId === "nphcda-phc-progress-2025")).toBe(true);
+    expect(records.every((record) => record.departmentId === "health")).toBe(true);
+    expect(records.every((record) => record.retrievedAt === "2026-11-09")).toBe(true);
+    const combined = records[4];
+    expect(combined.geography.label).toBe("Kaduna State + Yobe State · combined totals; state split not published");
+    expect(combined.metrics.find((metric) => metric.label === "Skilled birth attendants recruited")?.value).toBe("380");
+    expect(combined.metrics.find((metric) => metric.label === "Community-based health workers recruited")?.value).toBe("1,227");
+    expect(combined.limitations.join(" ")).toMatch(/do not assign either total to Kaduna State alone/);
+    const funding = records[1];
+    expect(funding.metrics.find((metric) => metric.label === "BHCPF disbursement in first half of 2025")?.measurementType).toContain("included in the wider");
+    expect(funding.interpretation).toMatch(/part of—not additional to/);
+    expect(records[3].geography.level).toBe("varies");
+    expect(records[3].limitations.join(" ")).toMatch(/does not name the 10 states/);
+    expect(records[0].limitations.join(" ")).toMatch(/not a current 2026 status/);
   });
 
 });
