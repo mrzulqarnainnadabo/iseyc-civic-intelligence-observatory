@@ -1957,13 +1957,13 @@
     "updateFrequency": "Annual approved budget and appropriation; quarterly budget implementation reports; audited financial statements and medium-term plans as published.",
     "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
     "lastChecked": "2026-11-12",
-    "checkedHow": "Official state portal page reviewed on 12 November 2026; the following publication types were listed: Q3 2026 Budget Implementation Report; 2025 audited financial statements; 2026 budget figures and source documents.",
+    "checkedHow": "Official Anambra Open Finance page reviewed; Q3 2026 BIR and 2025 audited financial statements linked. Q3 headline values cross-checked against Table 1 page 8.",
     "limitations": [
       "A document listing is not a transcribed dataset; no numeric values have been ingested from this portal yet.",
       "Appropriation, release, actual expenditure, procurement, physical completion and service functionality are distinct evidence stages.",
       "Publication availability and reporting periods vary; preserve each document's own version and date."
     ],
-    "notes": "Official portal listing located; document extraction, line-item reconciliation and comparison with actual outturn remain pending."
+    "notes": "Q3 2026 BIR published 28 October 2026; headline values transcribed from the official Open Finance page and Table 1 summary."
   },
   {
     "id": "state-budget-bauchi",
@@ -2551,5 +2551,53 @@
       "Appropriation is not release, actual expenditure or verified service delivery."
     ],
     "notes": "KDSG reports a ₦985.9bn 2026 budget, 25% for education, ₦698.9bn capital and ₦287bn recurrent."
+  },
+  {
+    "id": "state-budget-akwa-ibom-2026",
+    "publisher": "Akwa Ibom State Government",
+    "name": "Akwa Ibom State 2026 Appropriation Law",
+    "url": "https://akwaibomstate.gov.ng/appropriation-law-2026/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Akwa Ibom State",
+    "geoLevel": "state",
+    "dataType": "Official 2026 appropriation law page and linked PDF",
+    "updateFrequency": "Annual appropriation law",
+    "licence": "Publicly accessible government document; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official Akwa Ibom State Government page reviewed; page titled Appropriation Law 2026 with a download link.",
+    "limitations": [
+      "The page confirms the law is published but headline and sector schedule values have not been extracted.",
+      "An appropriation is planned expenditure, not release, actual spending or service delivery."
+    ],
+    "notes": "Source discovery completed for the 2026 appropriation law; detailed schedule extraction pending."
+  },
+  {
+    "id": "state-budget-kogi-q1-2026-bir",
+    "publisher": "Kogi State Government — Ministry of Finance, Budget and Economic Planning",
+    "name": "Kogi State Q1 2026 Budget Implementation Report",
+    "url": "https://kogistate.gov.ng/wp-content/uploads/Kogi-State-2026-Q1-BIR-Publication.pdf",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "health",
+      "education"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kogi State",
+    "geoLevel": "state",
+    "dataType": "Quarterly budget implementation report with NCOA administrative, economic, functional and programme classifications; PHC and basic education budget performance sections",
+    "updateFrequency": "Quarterly",
+    "licence": "Publicly accessible government publication; cite original source and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official Kogi State Government PDF reviewed; contents include PHC and basic education performance and programme classifications.",
+    "limitations": [
+      "Q1 2026 only; do not infer full-year performance.",
+      "Values must be extracted from the PDF and reconciled with Q2/Q3 reports before comparative use."
+    ],
+    "notes": "Official Q1 2026 BIR located; PDF includes PHC and basic education performance sections."
   }
 ]
