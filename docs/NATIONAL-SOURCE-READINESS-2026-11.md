@@ -138,6 +138,30 @@ The Budget Office's quarterly implementation index lists federal reports across 
 
 **Acquisition:** start with federal Q1 2026 and the most recent complete annual report; extract tables with period, budget version, MDA, economic/functional classification and accounting basis. Add state-level sources one state at a time. Reconcile budget figures against audited accounts and OAGF releases where possible.
 
+### Subnational public finance — Nigeria Governors' Forum (NGF) and state budget offices
+
+**Newly confirmed national entry point:** the NGF Public Finance Database describes open-access fiscal data for all 36 state governments. It presents comparable annual revenue, expenditure and financing data sourced from state budget documents and audited financial statements and aligned to the National Chart of Accounts. Its public interface separates original budgets, actual expenditure, performance indicators, state comparison and state exploration.
+
+**What this makes possible:** a defensible starting point for comparing state budget priorities, actual fiscal outturns, capital/recurrent expenditure, personnel costs and revenue performance—provided each series is checked for year, revision, accounting basis and state coverage.
+
+**Freshness caution:** the database homepage displays 2026 original-budget sector aggregates, while the state-explorer index surfaced in this review displays a June 2025 last-updated date. Treat these as different portal components until the data vintage for each table is confirmed. The separate publicfinanceapi.ngf.org.ng query interface is JavaScript-rendered; endpoint schema, bulk export, authentication and rate limits were not confirmed. Do not claim a machine-readable feed until a reproducible export or API contract is obtained.
+
+**Initial official state-source examples independently located in this research pass (not a complete 36-state inventory):**
+- Abia: 2026 Appropriation Act announcement and 2026 budget category, plus 2026 Q2 budget performance reporting.
+- Adamawa: 2026 approved budget published by the State Ministry of Finance.
+- Gombe: 2026 state budget published by the Ministry of Finance and Economic Development.
+- Imo: SFTAS disclosure portal lists 2026 approved budget, appropriation law, work plan and quarterly reports.
+- Jigawa: 2026 approved estimates, appropriation law, proposed budget and sector MTSS documents.
+- Kaduna: 2026 Appropriation Law, approved budget, citizen's budget and Q2 2026 budget implementation report on state government portals.
+- Kano: 2026 approved budget and appropriation law on the Ministry of Finance portal.
+- Kebbi: 2026 approved budget, appropriation law, citizen's budget and Q1 2026 implementation report.
+- Taraba: 2026 approved budget, citizen-friendly budget and Q1/Q2 2026 budget reports.
+- Yobe: 2026 approved budget on the Ministry of Budget and Planning portal.
+
+This is a **verified-source discovery list**, not a statement that the other 26 states have no published budgets. Their official source routes still require individual verification. No state budget totals should be copied into national comparisons until the actual source documents have been downloaded, table-extracted, reconciled and linked to the NGF series.
+
+**Acquisition protocol for every state:** preserve (1) approved appropriation law, (2) detailed approved budget estimates, (3) citizen budget, (4) revised/supplementary budget, (5) quarterly budget implementation reports, (6) audited financial statements and (7) procurement/project evidence as separate document classes. Capture the fiscal year, publication date, revision status, NCOA mapping, budget entity, function/programme/economic classification, original amount, revised amount, actual outturn, source page/table, file hash and extraction version. Never combine a proposed budget with an approved budget or an appropriation with actual expenditure.
+
 ### Procurement and projects — BPP / NOCOPO
 
 BPP's Open Contracting Disclosure Guideline identifies NOCOPO as the primary web-based publication route and describes procuring-entity upload with BPP validation. A 2025 BPP circular directs procuring entities to submit procurement records and plans and to publish contract awards monthly.
