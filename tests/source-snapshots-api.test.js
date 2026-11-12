@@ -30,6 +30,7 @@ describe("numeric source-snapshot API", () => {
     const stateRows = response.body.observations.filter((item) => item.id.startsWith("budgit-health-actual-spend-") && item.geoLevel === "state");
     expect(stateRows).toHaveLength(34);
     expect(response.body.stateBudgetCoverage.officialStateSourceRoutesLocated).toBe(19);
+    expect(response.body.catalogOnlySources.filter((item) => item.id.startsWith("state-budget-")).length).toBe(19);
     expect(response.body.stateBudgetCoverage.stateSourceRoutesNotYetIndividuallyVerified).toBe(17);
     expect(response.body.stateBudgetCoverage.budgitHealthActualExpenditureMissingStates).toEqual(["Osun", "Rivers"]);
     expect(response.body.stateBudgetCoverage.budgitHealthActualExpenditureReconciliationRequiredStates).toEqual(["Sokoto", "Kogi", "Imo", "Cross River"]);
