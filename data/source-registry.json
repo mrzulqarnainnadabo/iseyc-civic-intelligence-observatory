@@ -1046,8 +1046,8 @@
     "dataType": "Programme dashboard: verified digital-literacy training records, reach, competence areas, delivery modes, beneficiaries and partner organisations",
     "updateFrequency": "Dashboard updated 24 October 2026; ongoing updates claimed, cadence not published",
     "licence": "Dashboard data reuse terms not confirmed; cite NITDA and seek permission for bulk republication",
-    "lastChecked": "2026-11-09",
-    "checkedHow": "Official NITDA-linked DL4ALL national dashboard reviewed; headline counters, coverage and update timestamp recorded",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official NITDA-linked DL4ALL dashboard reviewed 12 November 2026; headline counters and 24 October 2026 update label recorded.",
     "limitations": [
       "The dashboard's verified-beneficiary definition and deduplication method must be obtained before comparing with other training programmes.",
       "Training or completion records do not independently establish durable competence, employment outcomes or population-wide digital literacy.",
@@ -1055,7 +1055,7 @@
       "Dashboard counters are programme-reported; retain retrieval date and do not infer missing demographic or geographic values.",
       "The dashboard reports different measures (people, organisations, training counts and competency counts); do not add them together."
     ],
-    "notes": "Dashboard snapshot: 2,783,731 verified digitally literate beneficiaries; 36 states + FCT, 774 LGAs and 14,747 communities reached; 33% female participation; 2,100,027 youth under 35. It reports 5.57% progress against a 50 million target; this is programme progress against a target, not Nigeria's national digital literacy rate."
+    "notes": "Dashboard snapshot as displayed 12 November 2026: 2,783,731 verified digital-literate beneficiaries, 5.57% progress against a 50 million target, 33% female participation, 2,100,027 youth under 35, coverage reported in all 36 states and FCT, 774 LGAs and 14,747 communities. Programme reach is not a population literacy rate."
   },
   {
     "id": "nitda-national-digital-literacy-framework",
@@ -2599,5 +2599,57 @@
       "Values must be extracted from the PDF and reconciled with Q2/Q3 reports before comparative use."
     ],
     "notes": "Official Q1 2026 BIR located; PDF includes PHC and basic education performance sections."
+  },
+  {
+    "id": "ncc-industry-statistics-2026",
+    "publisher": "Nigerian Communications Commission (NCC)",
+    "name": "NCC Industry Statistics — Subscribers and Broadband Penetration",
+    "url": "https://ncc.gov.ng/market-data-reports/industry-statistics",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "digital-inclusion",
+      "telecommunications",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria",
+    "geoLevel": "national",
+    "dataType": "Monthly active telephony and broadband subscriptions, subscription-based broadband penetration, fixed fibre subscriptions and operator statistics",
+    "updateFrequency": "Monthly industry statistics; NCC notes data are compiled from operator submissions at each reporting cutoff",
+    "licence": "Public regulatory statistics; cite NCC and link to the source page.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "NCC Industry Statistics page reviewed 12 November 2026; September 2026 subscriber and broadband rows and Q3 2026 FTTX total transcribed.",
+    "limitations": [
+      "Subscriptions are not unique individuals; one person may hold multiple SIMs or subscriptions.",
+      "Broadband penetration is subscription-based and must not be equated with the share of people who use the internet.",
+      "Operator data are based on submissions at the reporting cutoff; retain period and definition.",
+      "National aggregates do not describe state, LGA, school or household coverage."
+    ],
+    "notes": "As displayed on 12 November 2026: Sep 2026 broadband subscriptions 128,020,463 and subscription-based penetration 59.05%; Q3 2026 FTTX subscriptions 401,666."
+  },
+  {
+    "id": "world-bank-wdi-internet-use-nigeria",
+    "publisher": "World Bank — World Development Indicators (source series: ITU)",
+    "name": "Individuals using the Internet (% of population) — Nigeria",
+    "url": "https://data.worldbank.org/indicator/IT.NET.USER.ZS?locations=NG",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "digital-inclusion",
+      "telecommunications"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria",
+    "geoLevel": "national",
+    "dataType": "Annual percentage of individuals using the Internet, sourced from the ITU World Telecommunication/ICT Indicators Database",
+    "updateFrequency": "Annual; subject to revisions",
+    "licence": "World Bank Data use policy; attribute World Bank and the underlying ITU series.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "World Bank WDI series page reviewed; 2024 Nigeria value 41.21% observed.",
+    "limitations": [
+      "Latest observed value in this series is 2024; do not present as a 2026 real-time measure.",
+      "The indicator measures individuals who used the internet from any location in the previous three months.",
+      "This is distinct from NCC subscription-based broadband penetration and should not be directly compared without explaining the definitions."
+    ],
+    "notes": "2024 Nigeria value: 41.21% of individuals; underlying series is from the ITU World Telecommunication/ICT Indicators Database."
   }
 ]
