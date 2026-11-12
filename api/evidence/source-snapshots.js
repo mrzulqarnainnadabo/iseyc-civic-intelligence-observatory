@@ -86,10 +86,10 @@ function validStateBudgetCoverage() {
   return stateBudgetCoverage.scope?.states === 36 &&
     stateBudgetCoverage.scope?.fctTrackedSeparately === true &&
     stateBudgetCoverage.scope?.officialStatePortalsLocated === 15 &&
-    stateBudgetCoverage.scope?.officialStateDocumentsLocated === 1 &&
-    stateBudgetCoverage.scope?.stateBudgetSourceDiscoveryCompleted === 16 &&
+    stateBudgetCoverage.scope?.officialStateDocumentsLocated === 3 &&
+    stateBudgetCoverage.scope?.stateBudgetSourceDiscoveryCompleted === 18 &&
     states.length === 36 && uniqueStateNames && fct.length === 1 &&
-    portalCount === 15 && documentCount === 1 && notReviewedCount === 20 &&
+    portalCount === 15 && documentCount === 3 && notReviewedCount === 18 &&
     states.every((item) => Number.isFinite(item.fiscalTransparency?.totalScore) &&
       item.fiscalTransparency.totalScore >= 0 && item.fiscalTransparency.totalScore <= 100) &&
     states.every((item) => item.fiscalTransparency?.sourceId === 'budgit-state-fiscal-transparency-league-q2-2026');
