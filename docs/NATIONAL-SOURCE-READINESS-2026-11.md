@@ -7,7 +7,7 @@ ISEYC has a credible institutional source foundation, but it does not yet have a
 The next stage is to turn the catalogue into a governed acquisition and evidence system. Prioritise usable datasets and clear citizen questions over the number of institutions listed.
 
 **Current implementation facts**
-- The Observatory has a 96-source registry, six national World Bank WDI indicator pilots, and curated snapshot endpoints for WHO, NITDA, NIMC, IMF, NASENI, Innovation Support Network, FME, NPHCDA, NGF, BudgIT and Kaduna State Government publications.
+- The Observatory has a 97-source registry, six national World Bank WDI indicator pilots, and curated snapshot endpoints for WHO, NITDA, NIMC, IMF, NASENI, Innovation Support Network, FME, NPHCDA, NGF, BudgIT and Kaduna State Government publications.
 - Civic Mandate CommunityRecords and Community Observations are separate streams.
 - The Kaduna PHC pilot has source-readiness work but no imported HEFA facility observations.
 - A structured 2023 INEC voter-register/PVC table has now been transcribed for all 36 states and the FCT. Its arithmetic exceptions are explicitly retained.
@@ -19,7 +19,7 @@ The next stage is to turn the catalogue into a governed acquisition and evidence
 
 The Observatory now exposes `GET /api/evidence/snapshots`. This is a **curated transcription layer**, not a live source feed. Each observation carries a source ID, publisher, source URL, reference period, geographic scope, measurement type, department mapping and explicit limitations. The endpoint does not silently replace missing data or infer local values.
 
-Initial source-backed observations (90 rows across eleven source publishers):
+Initial source-backed observations (91 rows across eleven source publishers):
 - **WHO Global Health Observatory:** Nigeria under-five mortality estimate 59.5 per 1,000 live births (2024); life expectancy at birth 61.4 years male and 64.5 years female (2023); health expenditure 3.9% of GDP and US$61.6 per capita (2023).
 - **NITDA DL4ALL:** dashboard-reported 2,783,731 records labelled “verified digitally literate”, 5.57% progress towards the 70% programme target, 14,747 communities reached and 774 LGAs covered on the 24 October 2026 dashboard snapshot. These are programme reporting metrics, not a representative national digital-literacy survey or automatically a deduplicated count of unique people; geographic reach does not prove equal intensity or outcomes.
 - **NIMC:** 121,404,601 NIN enrolment records as at 30 June 2025. This is an administrative enrolment count, not a population census or a current 2026 population total.
@@ -37,7 +37,7 @@ Source catalogue additions also include NBS CPI reports, ONDI and NASENI program
 
 ## Department source watch — next acquisition priorities
 
-The registry now includes **96 sources**. Thirty-four source catalogue entries are explicitly marked catalogue-only, partial or reconciliation-required rather than being treated as integrated observations. This includes 19 official state budget source routes and the BudgIT report awaiting reconciliation:
+The registry now includes **97 sources**. Thirty-five source catalogue entries are explicitly marked catalogue-only, partial or reconciliation-required rather than being treated as integrated observations. This includes 19 official state budget source routes and the BudgIT report awaiting reconciliation:
 - **Education:** UBEC school digests and reports; UNICEF/UBEC NALABE 2022 learning assessment; NEMIS historical education digest and data visuals. The 2024/2025 FME EMIS Annual School Census is integrated as a source snapshot with a 57.9% reporting-rate warning.
 - **Health:** WHO national context and NPHCDA 2025 PHC programme snapshots; Federal Ministry of Health MSDAT (routine, survey and global estimates), NHFR, the NPHCDA PHC Functionality Dashboard, NPHCDA Data Requisition Portal, Ministry health reports and medicine logistics sources. NHFR API ingestion requires an approved API key; the PHC dashboard was not machine-readable in this review; 2025 commodity distribution is not current stock-on-hand.
 - **Civic/public finance:** Budget Office of the Federation reports, including the 2026 Q1 and Q2 Budget Implementation Reports published 2 and 7 November 2026. Appropriation, release, expenditure and completed delivery remain separate measures.
@@ -185,7 +185,7 @@ BudgIT's 25-page *Nigeria's Subnational Health Expenditure Report, H1 2026* anal
 3. Table 5 flags Sokoto, Kogi, Imo and Cross River because their numeric calculations differ from the underlying Q1/Q2 BIR figures.
 4. The report says the top five states account for 45.19%; the five listed amounts total ₦282.23bn, which is about 45.43% of ₦621.34bn. The 45.19% share aligns more closely with the conflicting ₦624.53bn denominator.
 
-The Observatory stores the 34 state values as **published secondary report data**, and marks the four footnoted values as **reconciliation required**. The source-snapshot API exposes the verification status and reconciliation notes directly to Civic Brain and the department-facing Observatory interface. The aggregate is also flagged. These values may be described as "BudgIT reports…" with the publication linked; they must not be described as independently verified by ISEYC or used for state rankings until reconciled against the original state BIRs. The report's PHC aggregate is not promoted as a settled snapshot.
+The Observatory stores the 34 state values as **published secondary report data**, and marks the four footnoted values as **reconciliation required**. The source-snapshot API exposes the verification status and reconciliation notes directly to Civic Brain and the department-facing Observatory interface. The aggregate is also flagged. These values may be described as "BudgIT reports…" with the publication linked; they must not be described as independently verified by ISEYC or used for state rankings until reconciled against the original state BIRs. The report's PHC aggregate is not promoted as a settled snapshot. The earlier 21 October 2026 BudgIT infographic's ₦614.55bn total is retained as a **superseded** observation linked to the later detailed report; it is excluded from ordinary Civic Brain answers and appears only when a user explicitly asks to compare versions or reconcile discrepancies.
 
 **Primary reconciliation work:** acquire the underlying Q1 and Q2 2026 state BIRs for all 34 reporting states, extract the health and PHC expenditure tables, compare the four starred states, recompute the aggregate, prorated execution rate and top-five concentration, and document any remaining differences. Keep Rivers and Osun as missing observations until official data is published.
 
