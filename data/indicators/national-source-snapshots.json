@@ -2366,6 +2366,33 @@
         "This differs from the ₦1.71 trillion Lagos IGR cited by BudgIT's 2026 State of States report; the difference is unreconciled."
       ],
       "sourceType": "published_research"
+    },
+    {
+      "id": "budgit-h1-2026-health-total",
+      "title": "Combined state health expenditure · earlier infographic total (superseded)",
+      "value": 614.55,
+      "unit": "₦ billion",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Actual health expenditure reported in earlier published infographic",
+      "geoLevel": "varies",
+      "geographicCoverage": "34 of 36 states; Rivers and Osun excluded",
+      "sourceId": "budgit-state-health-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Health Expenditure Performance by State (21 October 2026)",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/",
+      "departments": [
+        "health",
+        "civic"
+      ],
+      "interpretation": "The earlier 21 October 2026 infographic reported ₦614.55bn. A later detailed H1 2026 report reports ₦621.34bn for the same stated 34-state coverage. This earlier figure is preserved only to make the source discrepancy auditable; it is not the current headline total.",
+      "limitations": [
+        "Superseded as the current headline by the later detailed report's ₦621.34bn figure.",
+        "The public page summaries do not explain the ₦6.79bn difference; underlying state-level BIRs and accounting cut-offs require reconciliation.",
+        "Secondary analysis; not an independent audit.",
+        "Do not combine this figure with the later report or use either as a trend until reconciled."
+      ],
+      "sourceType": "published_research",
+      "recordStatus": "superseded",
+      "supersededBy": "budgit-h1-2026-health-total-report"
     }
   ],
   "catalogOnlySources": [
