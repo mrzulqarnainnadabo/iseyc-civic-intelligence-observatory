@@ -32,7 +32,9 @@ function validObservation(item) {
     item.limitations.every((limitation) => typeof limitation === 'string' && limitation.trim()) &&
     typeof item.interpretation === 'string' && item.interpretation.trim() &&
     (item.sourceUpdateDate === undefined || /^\d{4}-\d{2}-\d{2}$/.test(item.sourceUpdateDate)) &&
-    (item.verificationStatus === undefined || ['official_announcement', 'published_secondary_report', 'reconciliation_required'].includes(item.verificationStatus))
+    (item.verificationStatus === undefined || ['official_announcement', 'published_secondary_report', 'reconciliation_required'].includes(item.verificationStatus)),
+    (item.recordStatus === undefined || ['current', 'superseded'].includes(item.recordStatus)) &&
+    (item.recordStatus !== 'superseded' || (typeof item.supersededBy === 'string' && item.supersededBy.trim()))
   );
 }
 
