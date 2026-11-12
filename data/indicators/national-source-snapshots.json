@@ -2468,6 +2468,158 @@
         "civic"
       ],
       "note": "The report contains valuable H1 2026 state health expenditure data for 34 states, but internal discrepancies remain: executive summary/Tables 1 and 5 report ₦621.34bn while page 7 narrative reports ₦624.53bn; Table 1 reports PHC spending ₦61.08bn while pages 17–18 report ₦61.21bn. Table 5 flags Sokoto, Kogi, Imo and Cross River values as differing from underlying Q1/Q2 BIR calculations. Rivers and Osun are missing, not zero. Keep published values visibly provisional until reconciled against original state BIRs. The report's stated 45.19% top-five concentration also does not match the Table 2 state amounts divided by the Table 1/5 total."
+    },
+    {
+      "id": "state-budget-abia-2026",
+      "publisher": "Abia State Government",
+      "title": "Budget documents and implementation reports",
+      "url": "https://abiastate.gov.ng/document-category/budget/",
+      "status": "catalogue_only",
+      "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
+    },
+    {
+      "id": "state-budget-adamawa-2026",
+      "publisher": "Adamawa State Ministry of Finance",
+      "title": "2026 approved state budget",
+      "url": "https://finance.adamawastate.gov.ng/ova_doc/2026-approved-budget/",
+      "status": "catalogue_only",
+      "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
+    },
+    {
+      "id": "state-budget-anambra-2026",
+      "publisher": "Anambra State Government",
+      "title": "State budget transparency portal",
+      "url": "https://anambrastate.gov.ng/transparency/state-budgets/",
+      "status": "catalogue_only",
+      "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
+    },
+    {
+      "id": "state-budget-bauchi-2026",
+      "publisher": "Bauchi State Government",
+      "title": "FY 2026 Appropriation Law",
+      "url": "https://www.bauchistate.gov.ng/sdm_downloads/bauchi-state-fy-2026-appropriation-law/",
+      "status": "catalogue_only",
+      "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
+    },
+    {
+      "id": "state-budget-benue-2026",
+      "publisher": "Benue State Budget and Economic Planning Commission",
+      "title": "Downloadable budget and planning resources",
+      "url": "https://planning.benuestate.gov.ng/downloadable-resources/",
+      "status": "catalogue_only",
+      "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
+    },
+    {
+      "id": "state-budget-edo-2026",
+      "publisher": "Edo State Government",
+      "title": "2026 approved budget and appropriation-law documents",
+      "url": "https://edostate.gov.ng/category/appropriation-law/",
+      "status": "catalogue_only",
+      "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
+    },
+    {
+      "id": "state-budget-ekiti-2026",
+      "publisher": "Ekiti State Government — Finance and Budget",
+      "title": "2026 finance and budget portal",
+      "url": "https://www.ekitistate.gov.ng/finance-budget",
+      "status": "catalogue_only",
+      "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
+    },
+    {
+      "id": "state-budget-gombe-2026",
+      "publisher": "Gombe State Ministry of Finance and Economic Development",
+      "title": "2026 state budget",
+      "url": "https://www.mof.gm.gov.ng/download/gombe-state-budget-2026/",
+      "status": "catalogue_only",
+      "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
+    },
+    {
+      "id": "state-budget-imo-2026",
+      "publisher": "Imo State Government — SFTAS disclosure portal",
+      "title": "DLI 1: Improved Financial Reporting and Budget",
+      "url": "https://imostate.gov.ng/Content/SFTAS/SFTAS_1",
+      "status": "catalogue_only",
+      "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
+    },
+    {
+      "id": "state-budget-jigawa-2026",
+      "publisher": "Jigawa State Government",
+      "title": "Budget document portal",
+      "url": "https://jigawastate.gov.ng/dbudget",
+      "status": "catalogue_only",
+      "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
+    },
+    {
+      "id": "state-budget-kaduna-2026",
+      "publisher": "Kaduna State Planning and Budget Commission",
+      "title": "Budget and planning downloads",
+      "url": "https://pbc.kdsg.gov.ng/downloads/",
+      "status": "catalogue_only",
+      "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
+    },
+    {
+      "id": "state-budget-kano-2026",
+      "publisher": "Kano State Ministry of Finance",
+      "title": "2026 approved state budget",
+      "url": "https://finance.kn.gov.ng/kano-state-2026-approved-budget/",
+      "status": "catalogue_only",
+      "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
+    },
+    {
+      "id": "state-budget-katsina-2026",
+      "publisher": "Katsina State Government — SABER document portal",
+      "title": "2026 approved appropriation law and budget consolidation",
+      "url": "https://katsinastate.gov.ng/cat_doc/saber/",
+      "status": "catalogue_only",
+      "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
+    },
+    {
+      "id": "state-budget-kebbi-2026",
+      "publisher": "Kebbi State Government",
+      "title": "Budget documents portal",
+      "url": "https://www.kebbistate.gov.ng/budget-documents",
+      "status": "catalogue_only",
+      "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
+    },
+    {
+      "id": "state-budget-kogi-2026",
+      "publisher": "Kogi State Government",
+      "title": "Online document centre",
+      "url": "https://kogistate.gov.ng/online-document-centre/",
+      "status": "catalogue_only",
+      "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
+    },
+    {
+      "id": "state-budget-osun-2026",
+      "publisher": "Osun State Government",
+      "title": "Budget documents and appropriation laws",
+      "url": "https://www.osunstate.gov.ng/resources/budget-documents/",
+      "status": "catalogue_only",
+      "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
+    },
+    {
+      "id": "state-budget-sokoto-2026",
+      "publisher": "Sokoto State Ministry of Finance",
+      "title": "Budget and expenditure documents",
+      "url": "https://mof.sk.gov.ng/resources/budget/",
+      "status": "catalogue_only",
+      "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
+    },
+    {
+      "id": "state-budget-taraba-2026",
+      "publisher": "Taraba State Government",
+      "title": "Open Government budget portal",
+      "url": "https://www.tarabastate.gov.ng/open-government",
+      "status": "catalogue_only",
+      "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
+    },
+    {
+      "id": "state-budget-yobe-2026",
+      "publisher": "Yobe State Ministry of Budget and Planning",
+      "title": "Approved budgets portal",
+      "url": "https://budget.pfm.yb.gov.ng/approved-budgets/",
+      "status": "catalogue_only",
+      "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
     }
   ],
   "reconciliationNotes": [
