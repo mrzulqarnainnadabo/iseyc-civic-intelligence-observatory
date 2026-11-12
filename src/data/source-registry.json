@@ -1493,5 +1493,131 @@
       "Do not rank states as better or worse without comparable definitions, periods, denominators and data completeness."
     ],
     "notes": "Priority national entry point for state public-finance comparison across all 36 states. Verify year, budget type (original/revised/actual), NCOA classification, state coverage, source document, extraction date and arithmetic for every table. Follow each state figure back to its source budget or audited financial statement. Public pages: /budgets/original/, /budgets/actual/, /state-explorer/ and the separate interactive query portal at https://www.publicfinanceapi.ngf.org.ng/state-budget-revenue."
+  },
+  {
+    "id": "nimc-enrolment-oct-2025",
+    "publisher": "National Identity Management Commission (NIMC)",
+    "name": "NIN enrolment report — October 2025",
+    "url": "https://nimc.gov.ng/nin/enrolment-report/october-2025",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "governance",
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; national and state administrative records",
+    "geoLevel": "state",
+    "dataType": "Cumulative NIN enrolment administrative report",
+    "updateFrequency": "Periodic published snapshots",
+    "licence": "Cite NIMC and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "NIMC October 2025 enrolment report URL retained in the national snapshot record.",
+    "limitations": [
+      "Enrolment records are not a population census, active identity count or measure of service access.",
+      "Do not calculate coverage without a compatible population denominator and reference year.",
+      "The October 2025 record is historical, not a current 2026 total."
+    ],
+    "notes": "Source record for the October 2025 NIN snapshot; keep distinct from the June 2025 NIMC enrolment source."
+  },
+  {
+    "id": "nbs-gdp-quarterly",
+    "publisher": "National Bureau of Statistics (NBS)",
+    "name": "Quarterly Nigerian Gross Domestic Product report — Q1 2026",
+    "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/147/related-materials",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "employment",
+      "public-finance",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria (national accounts)",
+    "geoLevel": "national",
+    "dataType": "Quarterly national accounts release and related materials",
+    "updateFrequency": "Quarterly; publication lag varies",
+    "licence": "NBS publication terms apply; cite the exact release and table.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "NBS Microdata Catalog related-materials page linked from the Q1 2026 GDP snapshot record.",
+    "limitations": [
+      "National GDP is a macroeconomic aggregate, not household welfare or state-level growth.",
+      "Retain the GDP base year, release vintage, seasonality and revision notes.",
+      "Do not substitute IMF projections or estimates for NBS published actuals."
+    ],
+    "notes": "The catalog page is a source landing point; cite the exact report/table and extract its values before further use."
+  },
+  {
+    "id": "isn-hub-assessment-2026",
+    "publisher": "Innovation Support Network (ISN)",
+    "name": "Nigerian Innovation Hub Assessment and 2026–2030 strategic outlook",
+    "url": "https://isnhubs.org.ng/nigerias-innovation-landmark-isn-launches-comprehensive-hub-assessment-report-and-unveils-2026-2030-strategic-outlook/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "employment",
+      "education"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "Nigeria; six geopolitical zones and named state/city clusters",
+    "geoLevel": "national",
+    "dataType": "Published innovation ecosystem assessment and strategic outlook",
+    "updateFrequency": "Periodic assessment; respondent/reference period varies",
+    "licence": "Confirm ISN report reuse terms; cite the assessment and avoid implying government endorsement.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "ISN publication reviewed for the national innovation-hub snapshot.",
+    "limitations": [
+      "Published ecosystem assessment, not a government census or live directory.",
+      "Survey coverage, definitions and active-status criteria must be checked before comparisons.",
+      "Do not infer absence of hubs from omitted states or cities."
+    ],
+    "notes": "Use for ecosystem context only; underlying report tables and methods require extraction before state comparisons."
+  },
+  {
+    "id": "fme-annual-school-census",
+    "publisher": "Federal Ministry of Education (FME)",
+    "name": "Annual School Census 2024/2025 — Digital Nigeria EMIS portal",
+    "url": "https://emis.education.gov.ng/portal/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; national and state portal tables",
+    "geoLevel": "state",
+    "dataType": "Administrative annual school census dashboard and reported school/learner indicators",
+    "updateFrequency": "Annual school session; portal generation date varies",
+    "licence": "Government portal terms and data-use conditions require confirmation.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "FME Digital Nigeria EMIS portal reviewed; snapshot preserves portal generation date and reporting completeness.",
+    "limitations": [
+      "The 2024/2025 portal reports a 57.9% school reporting rate; totals are incomplete administrative returns.",
+      "State-level ratios do not establish LGA, ward or individual-school conditions.",
+      "Learner records are not necessarily unique learners or verified attendance."
+    ],
+    "notes": "Use exact portal generation date and reporting rate with every national/state indicator."
+  },
+  {
+    "id": "worldbank-ndu-2026-10",
+    "publisher": "World Bank",
+    "name": "Nigeria Development Update — October 2026",
+    "url": "https://www.worldbank.org/en/news/press-release/2026/10/08/higher-revenues-better-lives-strengthening-state-spending-growth-jobs-services",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "employment",
+      "governance"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "Nigeria; report coverage and subnational comparisons vary by table",
+    "geoLevel": "national",
+    "dataType": "Macroeconomic and public-finance analysis with state-spending context",
+    "updateFrequency": "Periodic country economic update",
+    "licence": "World Bank publication terms and attribution apply.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "World Bank Nigeria Development Update October 2026 publication referenced in the national snapshot record.",
+    "limitations": [
+      "A World Bank analysis is not a substitute for state appropriation laws or audited accounts.",
+      "Keep report reference periods and methods attached to every figure.",
+      "National aggregates do not establish state, LGA or household outcomes."
+    ],
+    "notes": "Use as independent analytical context alongside the original state budget and fiscal documents."
   }
 ]
