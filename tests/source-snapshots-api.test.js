@@ -20,7 +20,7 @@ describe("numeric source-snapshot API", () => {
     expect(response.body.contractVersion).toBe("1.0.0");
     expect(response.body.source).toBe("iseyc-observatory-curated-source-snapshots-v1");
     expect(response.body.status).toBe("curated");
-    expect(response.body.observations).toHaveLength(90);
+    expect(response.body.observations).toHaveLength(91);
     expect(response.body.checkedAt).toBe("2026-11-12");
     expect(response.body.observations.every((item) => item.sourceUrl.startsWith("https://") && item.limitations.length > 0)).toBe(true);
   });
@@ -40,10 +40,11 @@ describe("numeric source-snapshot API", () => {
 
   it("exposes aggregate report discrepancies instead of hiding them", () => {
     const response = request();
-    expect(response.body.reconciliationNotes).toHaveLength(5);
+    expect(response.body.reconciliationNotes).toHaveLength(6);
     expect(response.body.reconciliationNotes.some((note) => note.title.includes("health total discrepancy"))).toBe(true);
     expect(response.body.observations.find((item) => item.id === "budgit-health-actual-spend-34-states-h1-2026")?.value).toBe(621.34);
     expect(response.body.observations.find((item) => item.id === "budgit-health-budget-performance-h1-2026")?.value).toBe(40.48);
+    expect(response.body.observations.find((item) => item.recordStatus === "superseded")?.value).toBe(614.55);
   });
 
   it("keeps Kaduna approved allocations separate from actual expenditure", () => {
