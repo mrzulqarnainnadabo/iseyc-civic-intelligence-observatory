@@ -2665,6 +2665,30 @@
       ],
       "publisher": "State House, Abuja",
       "url": "https://statehouse.gov.ng/president-tinubu-signs-appropriation-amendment-no-4-bill-2025-extends-implementation-to-december-31-2026/"
+    },
+    {
+      "id": "state-budget-akwa-ibom-2026",
+      "title": "Akwa Ibom State 2026 Appropriation Law",
+      "publisher": "Akwa Ibom State Government",
+      "url": "https://akwaibomstate.gov.ng/appropriation-law-2026/",
+      "status": "partial",
+      "note": "Official appropriation law page located; detailed budget schedule values and implementation reports have not yet been extracted.",
+      "departments": [
+        "civic"
+      ]
+    },
+    {
+      "id": "state-budget-kogi-q1-2026-bir",
+      "title": "Kogi State Q1 2026 Budget Implementation Report",
+      "publisher": "Kogi State Government — Ministry of Finance, Budget and Economic Planning",
+      "url": "https://kogistate.gov.ng/wp-content/uploads/Kogi-State-2026-Q1-BIR-Publication.pdf",
+      "status": "partial",
+      "note": "Official Q1 2026 BIR located; PHC and basic-education schedules are present, but numeric extraction and Q2/Q3 reconciliation remain pending.",
+      "departments": [
+        "civic",
+        "health",
+        "education"
+      ]
     }
   ],
   "reconciliationNotes": [
