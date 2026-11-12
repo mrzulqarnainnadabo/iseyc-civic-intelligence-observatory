@@ -1915,5 +1915,499 @@
       "Reference period differs by indicator; do not treat profile retrieval date as observation date."
     ],
     "notes": "Separate WHO source record for data.who.int/countries/566. Keep distinct from the WHO AFRO page registered under who-gho-nigeria."
+  },
+  {
+    "id": "state-budget-abia-2026",
+    "publisher": "Abia State Government",
+    "name": "Budget documents and implementation reports",
+    "url": "https://abiastate.gov.ng/document-category/budget/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Abia State government",
+    "geoLevel": "state",
+    "dataType": "2026 budget document category, including quarterly budget performance publications",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-adamawa-2026",
+    "publisher": "Adamawa State Ministry of Finance",
+    "name": "2026 approved state budget",
+    "url": "https://finance.adamawastate.gov.ng/ova_doc/2026-approved-budget/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Adamawa State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved budget publication",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-anambra-2026",
+    "publisher": "Anambra State Government",
+    "name": "State budget transparency portal",
+    "url": "https://anambrastate.gov.ng/transparency/state-budgets/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Anambra State government",
+    "geoLevel": "state",
+    "dataType": "2026 appropriation law, approved budget and Q1–Q3 budget implementation reports",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-bauchi-2026",
+    "publisher": "Bauchi State Government",
+    "name": "FY 2026 Appropriation Law",
+    "url": "https://www.bauchistate.gov.ng/sdm_downloads/bauchi-state-fy-2026-appropriation-law/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Bauchi State government",
+    "geoLevel": "state",
+    "dataType": "2026 appropriation law download",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-benue-2026",
+    "publisher": "Benue State Budget and Economic Planning Commission",
+    "name": "Downloadable budget and planning resources",
+    "url": "https://planning.benuestate.gov.ng/downloadable-resources/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Benue State government",
+    "geoLevel": "state",
+    "dataType": "2026 appropriation law, approved budget publication and citizen's budget",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-edo-2026",
+    "publisher": "Edo State Government",
+    "name": "2026 approved budget and appropriation-law documents",
+    "url": "https://edostate.gov.ng/category/appropriation-law/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Edo State government",
+    "geoLevel": "state",
+    "dataType": "FY 2026 approved budget estimates and appropriation law",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-ekiti-2026",
+    "publisher": "Ekiti State Government — Finance and Budget",
+    "name": "2026 finance and budget portal",
+    "url": "https://www.ekitistate.gov.ng/finance-budget",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Ekiti State government",
+    "geoLevel": "state",
+    "dataType": "2026 appropriation law, approved budget and Q1–Q3 budget implementation reports",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-gombe-2026",
+    "publisher": "Gombe State Ministry of Finance and Economic Development",
+    "name": "2026 state budget",
+    "url": "https://www.mof.gm.gov.ng/download/gombe-state-budget-2026/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Gombe State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved state budget",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-imo-2026",
+    "publisher": "Imo State Government — SFTAS disclosure portal",
+    "name": "DLI 1: Improved Financial Reporting and Budget",
+    "url": "https://imostate.gov.ng/Content/SFTAS/SFTAS_1",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Imo State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved budget, appropriation law, citizen's budget, work plan and Q1–Q3 reports",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-jigawa-2026",
+    "publisher": "Jigawa State Government",
+    "name": "Budget document portal",
+    "url": "https://jigawastate.gov.ng/dbudget",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Jigawa State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved estimates, appropriation law and sector MTSS documents",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-kaduna-2026",
+    "publisher": "Kaduna State Planning and Budget Commission",
+    "name": "Budget and planning downloads",
+    "url": "https://pbc.kdsg.gov.ng/downloads/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kaduna State government",
+    "geoLevel": "state",
+    "dataType": "2026 appropriation law, approved budget and Q2 budget implementation report",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-kano-2026",
+    "publisher": "Kano State Ministry of Finance",
+    "name": "2026 approved state budget",
+    "url": "https://finance.kn.gov.ng/kano-state-2026-approved-budget/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kano State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved budget and appropriation law",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-katsina-2026",
+    "publisher": "Katsina State Government — SABER document portal",
+    "name": "2026 approved appropriation law and budget consolidation",
+    "url": "https://katsinastate.gov.ng/cat_doc/saber/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Katsina State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved appropriation law and approved budget consolidation template",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-kebbi-2026",
+    "publisher": "Kebbi State Government",
+    "name": "Budget documents portal",
+    "url": "https://www.kebbistate.gov.ng/budget-documents",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kebbi State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved budget, appropriation law, citizen's budget and Q1 implementation report",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-kogi-2026",
+    "publisher": "Kogi State Government",
+    "name": "Online document centre",
+    "url": "https://kogistate.gov.ng/online-document-centre/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kogi State government",
+    "geoLevel": "state",
+    "dataType": "2026 appropriation law and budget-related documents",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-osun-2026",
+    "publisher": "Osun State Government",
+    "name": "Budget documents and appropriation laws",
+    "url": "https://www.osunstate.gov.ng/resources/budget-documents/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Osun State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved budget, appropriation law, citizen's budget and budget implementation reporting",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-sokoto-2026",
+    "publisher": "Sokoto State Ministry of Finance",
+    "name": "Budget and expenditure documents",
+    "url": "https://mof.sk.gov.ng/resources/budget/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Sokoto State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved budget, appropriation law, citizen's budget and Q1–Q3 reports",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-taraba-2026",
+    "publisher": "Taraba State Government",
+    "name": "Open Government budget portal",
+    "url": "https://www.tarabastate.gov.ng/open-government",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Taraba State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved budget, citizen-friendly budget and Q1/Q2 reports",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-yobe-2026",
+    "publisher": "Yobe State Ministry of Budget and Planning",
+    "name": "Approved budgets portal",
+    "url": "https://budget.pfm.yb.gov.ng/approved-budgets/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Yobe State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved budget publication",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
   }
 ]
