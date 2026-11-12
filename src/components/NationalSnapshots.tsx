@@ -96,7 +96,7 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
         <ul>{budgetJurisdictions.map((item) => <li key={item.name}>
           <strong>{item.name}</strong>
           <span>{item.type === 'fct' ? 'FCT · tracked separately' : item.status === 'official_portal_located' ? 'Official portal located · extraction pending' : item.status === 'official_documents_located' ? 'Official appropriation source located · extraction pending' : 'Source discovery not completed'}</span>
-          {item.officialPortalUrl ? <a href={item.officialPortalUrl} target="_blank" rel="noopener noreferrer">Official portal ↗</a> : <small>{item.note}</small>}
+          {item.officialPortalUrl ? <a href={item.officialPortalUrl} target="_blank" rel="noopener noreferrer">{item.status === 'official_documents_located' ? 'Official source ↗' : 'Official portal ↗'}</a> : <small>{item.note}</small>}
         </li>)}</ul>
         <section className="state-budget-coverage__score">
           <h3>Fiscal information availability · Q2 2026</h3>
