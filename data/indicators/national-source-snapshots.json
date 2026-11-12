@@ -1,0 +1,1367 @@
+{
+  "schemaVersion": "1.0.0",
+  "title": "National and state evidence snapshots",
+  "description": "Dated, source-attributed transcriptions from official publishers and published fiscal analysis. These are not live feeds; every value retains its reference period, geography, source and limitations.",
+  "checkedAt": "2026-11-12",
+  "observations": [
+    {
+      "id": "who-nga-life-expectancy-male-2023",
+      "title": "Life expectancy at birth · male",
+      "value": 61.4,
+      "unit": "years",
+      "referencePeriod": "2023",
+      "measurementType": "WHO estimate",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "who-afro-nigeria",
+      "sourcePublisher": "WHO Regional Office for Africa",
+      "sourceUrl": "https://www.afro.who.int/node/992",
+      "departments": [
+        "health"
+      ],
+      "interpretation": "National life-expectancy estimate, not an individual forecast.",
+      "limitations": [
+        "National aggregate only.",
+        "Estimate depends on mortality tables and source methodology; it is not a direct count of individual lifespans."
+      ],
+      "sourceType": "official_source"
+    },
+    {
+      "id": "who-nga-life-expectancy-female-2023",
+      "title": "Life expectancy at birth · female",
+      "value": 64.5,
+      "unit": "years",
+      "referencePeriod": "2023",
+      "measurementType": "WHO estimate",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "who-afro-nigeria",
+      "sourcePublisher": "WHO Regional Office for Africa",
+      "sourceUrl": "https://www.afro.who.int/node/992",
+      "departments": [
+        "health"
+      ],
+      "interpretation": "National life-expectancy estimate, not an individual forecast.",
+      "limitations": [
+        "National aggregate only.",
+        "Estimate depends on mortality tables and source methodology; it is not a direct count of individual lifespans."
+      ],
+      "sourceType": "official_source"
+    },
+    {
+      "id": "who-nga-health-expenditure-gdp-2023",
+      "title": "Health expenditure",
+      "value": 3.9,
+      "unit": "% of GDP",
+      "referencePeriod": "2023",
+      "measurementType": "WHO-reported estimate",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "who-afro-nigeria",
+      "sourcePublisher": "WHO Regional Office for Africa",
+      "sourceUrl": "https://www.afro.who.int/node/992",
+      "departments": [
+        "health"
+      ],
+      "interpretation": "National health-spending context; not a Kaduna health budget or facility allocation.",
+      "limitations": [
+        "National percentage only; it does not identify federal, state or LGA spending distribution.",
+        "Health expenditure share is not a measure of service quality or access."
+      ],
+      "sourceType": "official_source"
+    },
+    {
+      "id": "who-nga-health-expenditure-capita-2023",
+      "title": "Health expenditure per capita",
+      "value": 61.6,
+      "unit": "US dollars per person",
+      "referencePeriod": "2023",
+      "measurementType": "WHO-reported estimate",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "who-afro-nigeria",
+      "sourcePublisher": "WHO Regional Office for Africa",
+      "sourceUrl": "https://www.afro.who.int/node/992",
+      "departments": [
+        "health"
+      ],
+      "interpretation": "National per-capita spending estimate; not household out-of-pocket spending.",
+      "limitations": [
+        "National average masks geographic and income differences.",
+        "Do not interpret as a direct allocation to each person or as a measure of effective coverage."
+      ],
+      "sourceType": "official_source"
+    },
+    {
+      "id": "nimc-nin-enrolment-2025-06-30",
+      "title": "National Identification Number enrolment",
+      "value": 121404601,
+      "unit": "NIN enrolment records",
+      "referencePeriod": "2025-06-30",
+      "measurementType": "Administrative register count",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria and diaspora",
+      "sourceId": "nimc-nin-enrolment-2025",
+      "sourcePublisher": "National Identity Management Commission (NIMC)",
+      "sourceUrl": "https://nimc.gov.ng/nin/enrolment-report/june-2025",
+      "departments": [
+        "civic"
+      ],
+      "interpretation": "NIMC reported 121,404,601 enrolment records as at 30 June 2025; this is not a population census.",
+      "limitations": [
+        "Reference date is 30 June 2025, not a current 2026 count.",
+        "NIN enrolment records are not interchangeable with census population, eligible population or voter-register totals.",
+        "State-level enrolment differences do not by themselves establish exclusion or coverage rates without an appropriate population denominator."
+      ],
+      "sourceType": "official_source"
+    },
+    {
+      "id": "imf-nga-real-gdp-growth-2024",
+      "title": "Real GDP growth",
+      "value": 4.1,
+      "unit": "% annual change",
+      "referencePeriod": "2024",
+      "measurementType": "IMF staff table · actual",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "imf-article-iv-2026",
+      "sourcePublisher": "International Monetary Fund (IMF) · Nigeria 2026 Article IV Consultation",
+      "sourceUrl": "https://www.imf.org/en/news/articles/2026/06/09/pr26190-nigeria-imf-executive-board-concludes-2026-article-iv-consultation-with-nigeria",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "The IMF report table labels 2024 as actual; this is macroeconomic context, not evidence of household welfare or sector outcomes.",
+      "limitations": [
+        "National macroeconomic aggregate only.",
+        "Do not mix IMF estimates with NBS official national accounts without retaining the source and vintage.",
+        "The IMF report contains estimates and projections for other years; this card displays only the 2024 actual row."
+      ],
+      "sourceType": "official_source"
+    },
+    {
+      "id": "who-nga-healthy-life-expectancy-2023",
+      "title": "Healthy life expectancy at birth",
+      "value": 54.1,
+      "unit": "years",
+      "referencePeriod": "2023",
+      "measurementType": "WHO estimate",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "who-afro-nigeria",
+      "sourcePublisher": "WHO Regional Office for Africa",
+      "sourceUrl": "https://www.afro.who.int/node/992",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "interpretation": "WHO's national healthy-life-expectancy estimate; it accounts for time lived in less than full health and is not an individual forecast.",
+      "limitations": [
+        "National aggregate only; not a Kaduna State, LGA or facility measure.",
+        "This measure differs from life expectancy at birth; do not compare the two as if they were the same indicator.",
+        "Retain the 2023 reference year and WHO methodology."
+      ]
+    },
+    {
+      "id": "nphcda-phc-revitalised-aug-2025",
+      "title": "PHCs reported revitalised",
+      "value": 1295,
+      "unit": "PHCs",
+      "referencePeriod": "As of August 2025",
+      "measurementType": "Agency-reported programme progress",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported 1,295 PHCs revitalised against a four-year target of 17,600.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-phc-revitalisation-underway-aug-2025",
+      "title": "PHCs at various stages of revitalisation",
+      "value": 3469,
+      "unit": "PHCs",
+      "referencePeriod": "As of August 2025",
+      "measurementType": "Agency-reported programme progress",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported another 3,469 PHCs at various stages of revitalisation; these are not counted as completed.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-solar-power-completed-2025",
+      "title": "PHCs with solar power installation completed",
+      "value": 38,
+      "unit": "PHCs",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported infrastructure output",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported solar power installation completed in 38 PHCs; the source also reported 34 ongoing.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-solar-power-ongoing-2025",
+      "title": "PHCs with solar power installation ongoing",
+      "value": 34,
+      "unit": "PHCs",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported infrastructure progress",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported solar power installation ongoing in 34 PHCs; this is not a completed installation count.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-solar-boreholes-2025",
+      "title": "PHCs with solar boreholes installed",
+      "value": 61,
+      "unit": "PHCs",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported infrastructure output",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported solar boreholes installed in 61 PHCs to support safe water supply.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-mnh-commodities-facilities-2025",
+      "title": "PHCs receiving lifesaving maternal and newborn health commodities",
+      "value": 1936,
+      "unit": "PHCs across 10 states",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported commodity distribution",
+      "geoLevel": "varies",
+      "geographicCoverage": "10 states; states not listed in the source summary",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported distribution of lifesaving maternal and newborn health commodities to 1,936 PHC facilities in 10 states; this is not a current stock-on-hand measure.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-sdd-refrigerators-2025",
+      "title": "Solar direct-drive refrigerators deployed",
+      "value": 1653,
+      "unit": "refrigerators",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported cold-chain output",
+      "geoLevel": "varies",
+      "geographicCoverage": "36 states and FCT",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported 1,653 additional solar direct-drive refrigerators procured and deployed to PHC facilities across 36 states and FCT.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-bhcpf-disbursement-2023-mid2025",
+      "title": "BHCPF funds disbursed to PHCs",
+      "value": 50.8,
+      "unit": "billion NGN",
+      "referencePeriod": "2023 to mid-2025",
+      "measurementType": "Agency-reported fund disbursement",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported ₦50.8 billion disbursed to 8,309 PHCs between 2023 and mid-2025; disbursement is not proof of completed service delivery.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-bhcpf-disbursement-h1-2025",
+      "title": "BHCPF disbursement in first half of 2025",
+      "value": 12.4,
+      "unit": "billion NGN",
+      "referencePeriod": "First half of 2025",
+      "measurementType": "Agency-reported fund disbursement",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported ₦12.4 billion disbursed in the first half of 2025; this is part of the wider 2023–mid-2025 figure.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-bhcpf-level2-upgrades-2025",
+      "title": "Facilities upgraded to Level 2 standard under BHCPF",
+      "value": 2341,
+      "unit": "facilities",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported facility upgrade count",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported 2,341 facilities upgraded to Level 2 standard under BHCPF funding.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-pfmo-deployments-2025",
+      "title": "Performance and Financial Management Officers deployed",
+      "value": 774,
+      "unit": "officers",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported workforce deployment",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria · one per LGA",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported 774 youths deployed as Performance and Financial Management Officers, one per LGA, to support PHC monitoring.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-frontline-workers-trained-2025",
+      "title": "Frontline health workers trained",
+      "value": 69106,
+      "unit": "workers",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported workforce training count",
+      "geoLevel": "national",
+      "geographicCoverage": "Nigeria",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported 69,106 frontline health workers trained against a four-year target of 120,000; this is a training count, not a competency assessment.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-kaduna-yobe-sba-recruitment-2025",
+      "title": "Skilled birth attendants recruited in Kaduna and Yobe",
+      "value": 380,
+      "unit": "staff across two states",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported workforce recruitment",
+      "geoLevel": "state",
+      "geographicCoverage": "Kaduna State and Yobe State combined",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported Kaduna and Yobe had completed recruitment of 380 skilled birth attendants combined; the source does not split the count by state.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "nphcda-kaduna-yobe-cbhw-recruitment-2025",
+      "title": "Community-based health workers recruited in Kaduna and Yobe",
+      "value": 1227,
+      "unit": "staff across two states",
+      "referencePeriod": "As reported 15 September 2025",
+      "measurementType": "Agency-reported workforce recruitment",
+      "geoLevel": "state",
+      "geographicCoverage": "Kaduna State and Yobe State combined",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourcePublisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-09-15",
+      "interpretation": "NPHCDA reported Kaduna and Yobe had completed recruitment of 1,227 community-based health workers combined; the source does not split the count by state.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Programme progress figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "agora-2025-state-revenue-35",
+      "title": "Combined state revenue reported",
+      "value": 16.64,
+      "unit": "₦ trillion",
+      "referencePeriod": "2025 full year",
+      "measurementType": "Actual revenue",
+      "geoLevel": "varies",
+      "geographicCoverage": "35 of 36 states; Rivers excluded",
+      "sourceId": "agora-state-budget-performance-2025",
+      "sourcePublisher": "Agora Policy · analysis of state Budget Implementation Reports",
+      "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "35-state aggregate revenue reported from state BIRs.",
+      "limitations": [
+        "Secondary analysis of published state Budget Implementation Reports; not an independent audit of underlying transactions.",
+        "The reporting sample is incomplete and must not be described as all 36 states.",
+        "Budget allocation, cash release, actual expenditure, procurement, physical completion and service functionality are different stages."
+      ],
+      "sourceType": "published_research"
+    },
+    {
+      "id": "agora-2025-state-expenditure-35",
+      "title": "Combined state expenditure reported",
+      "value": 19.21,
+      "unit": "₦ trillion",
+      "referencePeriod": "2025 full year",
+      "measurementType": "Actual expenditure",
+      "geoLevel": "varies",
+      "geographicCoverage": "35 of 36 states; Rivers excluded",
+      "sourceId": "agora-state-budget-performance-2025",
+      "sourcePublisher": "Agora Policy · analysis of state Budget Implementation Reports",
+      "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "35-state aggregate expenditure reported from state BIRs.",
+      "limitations": [
+        "Secondary analysis of published state Budget Implementation Reports; not an independent audit of underlying transactions.",
+        "The reporting sample is incomplete and must not be described as all 36 states.",
+        "Budget allocation, cash release, actual expenditure, procurement, physical completion and service functionality are different stages."
+      ],
+      "sourceType": "published_research"
+    },
+    {
+      "id": "agora-2025-budget-implementation-35",
+      "title": "Budget implementation rate",
+      "value": 68.2,
+      "unit": "% of final budget",
+      "referencePeriod": "2025 full year",
+      "measurementType": "Aggregate budget implementation rate",
+      "geoLevel": "varies",
+      "geographicCoverage": "35 of 36 states; Rivers excluded",
+      "sourceId": "agora-state-budget-performance-2025",
+      "sourcePublisher": "Agora Policy · analysis of state Budget Implementation Reports",
+      "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "Implementation rate is a budget-execution measure, not proof of project completion.",
+      "limitations": [
+        "Secondary analysis of published state Budget Implementation Reports; not an independent audit of underlying transactions.",
+        "The reporting sample is incomplete and must not be described as all 36 states.",
+        "Budget allocation, cash release, actual expenditure, procurement, physical completion and service functionality are different stages."
+      ],
+      "sourceType": "published_research"
+    },
+    {
+      "id": "agora-2025-capital-expenditure-35",
+      "title": "Capital expenditure",
+      "value": 11.87,
+      "unit": "₦ trillion",
+      "referencePeriod": "2025 full year",
+      "measurementType": "Actual capital expenditure",
+      "geoLevel": "varies",
+      "geographicCoverage": "35 of 36 states; Rivers excluded",
+      "sourceId": "agora-state-budget-performance-2025",
+      "sourcePublisher": "Agora Policy · analysis of state Budget Implementation Reports",
+      "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "Capital expenditure reported across the 35-state sample.",
+      "limitations": [
+        "Secondary analysis of published state Budget Implementation Reports; not an independent audit of underlying transactions.",
+        "The reporting sample is incomplete and must not be described as all 36 states.",
+        "Budget allocation, cash release, actual expenditure, procurement, physical completion and service functionality are different stages."
+      ],
+      "sourceType": "published_research"
+    },
+    {
+      "id": "agora-2025-recurrent-expenditure-35",
+      "title": "Recurrent expenditure",
+      "value": 7.34,
+      "unit": "₦ trillion",
+      "referencePeriod": "2025 full year",
+      "measurementType": "Actual recurrent expenditure",
+      "geoLevel": "varies",
+      "geographicCoverage": "35 of 36 states; Rivers excluded",
+      "sourceId": "agora-state-budget-performance-2025",
+      "sourcePublisher": "Agora Policy · analysis of state Budget Implementation Reports",
+      "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "Recurrent expenditure reported across the 35-state sample.",
+      "limitations": [
+        "Secondary analysis of published state Budget Implementation Reports; not an independent audit of underlying transactions.",
+        "The reporting sample is incomplete and must not be described as all 36 states.",
+        "Budget allocation, cash release, actual expenditure, procurement, physical completion and service functionality are different stages."
+      ],
+      "sourceType": "published_research"
+    },
+    {
+      "id": "agora-2025-capital-share-35",
+      "title": "Capital share of total expenditure",
+      "value": 62,
+      "unit": "% of actual expenditure",
+      "referencePeriod": "2025 full year",
+      "measurementType": "Capital expenditure share",
+      "geoLevel": "varies",
+      "geographicCoverage": "35 of 36 states; Rivers excluded",
+      "sourceId": "agora-state-budget-performance-2025",
+      "sourcePublisher": "Agora Policy · analysis of state Budget Implementation Reports",
+      "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "Reported capital expenditure share of combined expenditure.",
+      "limitations": [
+        "Secondary analysis of published state Budget Implementation Reports; not an independent audit of underlying transactions.",
+        "The reporting sample is incomplete and must not be described as all 36 states.",
+        "Budget allocation, cash release, actual expenditure, procurement, physical completion and service functionality are different stages."
+      ],
+      "sourceType": "published_research"
+    },
+    {
+      "id": "agora-2025-capital-implementation-35",
+      "title": "Capital budget implementation rate",
+      "value": 62.9,
+      "unit": "% of final capital budget",
+      "referencePeriod": "2025 full year",
+      "measurementType": "Capital budget implementation rate",
+      "geoLevel": "varies",
+      "geographicCoverage": "35 of 36 states; Rivers excluded",
+      "sourceId": "agora-state-budget-performance-2025",
+      "sourcePublisher": "Agora Policy · analysis of state Budget Implementation Reports",
+      "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "Capital implementation is distinct from completed infrastructure.",
+      "limitations": [
+        "Secondary analysis of published state Budget Implementation Reports; not an independent audit of underlying transactions.",
+        "The reporting sample is incomplete and must not be described as all 36 states.",
+        "Budget allocation, cash release, actual expenditure, procurement, physical completion and service functionality are different stages."
+      ],
+      "sourceType": "published_research"
+    },
+    {
+      "id": "agora-2025-recurrent-implementation-35",
+      "title": "Recurrent budget implementation rate",
+      "value": 79,
+      "unit": "% of final recurrent budget",
+      "referencePeriod": "2025 full year",
+      "measurementType": "Recurrent budget implementation rate",
+      "geoLevel": "varies",
+      "geographicCoverage": "35 of 36 states; Rivers excluded",
+      "sourceId": "agora-state-budget-performance-2025",
+      "sourcePublisher": "Agora Policy · analysis of state Budget Implementation Reports",
+      "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "Recurrent implementation rate reported in the analysis.",
+      "limitations": [
+        "Secondary analysis of published state Budget Implementation Reports; not an independent audit of underlying transactions.",
+        "The reporting sample is incomplete and must not be described as all 36 states.",
+        "Budget allocation, cash release, actual expenditure, procurement, physical completion and service functionality are different stages."
+      ],
+      "sourceType": "published_research"
+    },
+    {
+      "id": "agora-2025-deficit-revenue-ratio-35",
+      "title": "Combined fiscal deficit as share of revenue",
+      "value": 15.4,
+      "unit": "% of reported revenue",
+      "referencePeriod": "2025 full year",
+      "measurementType": "Deficit-to-revenue ratio",
+      "geoLevel": "varies",
+      "geographicCoverage": "35 of 36 states; Rivers excluded",
+      "sourceId": "agora-state-budget-performance-2025",
+      "sourcePublisher": "Agora Policy · analysis of state Budget Implementation Reports",
+      "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "Aggregate deficit relative to reported revenue.",
+      "limitations": [
+        "Secondary analysis of published state Budget Implementation Reports; not an independent audit of underlying transactions.",
+        "The reporting sample is incomplete and must not be described as all 36 states.",
+        "Budget allocation, cash release, actual expenditure, procurement, physical completion and service functionality are different stages."
+      ],
+      "sourceType": "published_research"
+    },
+    {
+      "id": "budgit-h1-2026-lagos-revenue",
+      "title": "Lagos State actual revenue",
+      "value": 1684,
+      "unit": "₦ billion",
+      "referencePeriod": "H1 2026",
+      "measurementType": "Actual revenue",
+      "geoLevel": "state",
+      "geographicCoverage": "Lagos State",
+      "sourceId": "budgit-state-revenue-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Subnational Budget Implementation Review",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-revenue-performance-by-state/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "BudgIT reports ₦1.684 trillion revenue against a ₦4.429 trillion annual target.",
+      "limitations": [
+        "Secondary analysis of state-government Budget Implementation Reports and OpenStates; not an independent audit.",
+        "Rivers and Osun are excluded from the 34-state review because Q2 2026 reports were unavailable.",
+        "Revenue target progress is not evidence of expenditure quality, service availability or project completion."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-lagos-target-progress",
+      "title": "Lagos State revenue target achieved",
+      "value": 38,
+      "unit": "% of annual target",
+      "referencePeriod": "H1 2026",
+      "measurementType": "Actual revenue as share of annual target",
+      "geoLevel": "state",
+      "geographicCoverage": "Lagos State",
+      "sourceId": "budgit-state-revenue-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Subnational Budget Implementation Review",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-revenue-performance-by-state/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "The 38% figure is half-year progress against the full-year target, not a year-end result.",
+      "limitations": [
+        "Secondary analysis of state-government Budget Implementation Reports and OpenStates; not an independent audit.",
+        "Rivers and Osun are excluded from the 34-state review because Q2 2026 reports were unavailable.",
+        "Revenue target progress is not evidence of expenditure quality, service availability or project completion."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-oyo-target-progress",
+      "title": "Oyo State revenue target achieved",
+      "value": 66.4,
+      "unit": "% of annual target",
+      "referencePeriod": "H1 2026",
+      "measurementType": "Actual revenue as share of annual target",
+      "geoLevel": "state",
+      "geographicCoverage": "Oyo State",
+      "sourceId": "budgit-state-revenue-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Subnational Budget Implementation Review",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-revenue-performance-by-state/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "Highest reported revenue target progress in the 34-state review.",
+      "limitations": [
+        "Secondary analysis of state-government Budget Implementation Reports and OpenStates; not an independent audit.",
+        "Rivers and Osun are excluded from the 34-state review because Q2 2026 reports were unavailable.",
+        "Revenue target progress is not evidence of expenditure quality, service availability or project completion."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-ondo-target-progress",
+      "title": "Ondo State revenue target achieved",
+      "value": 59,
+      "unit": "% of annual target",
+      "referencePeriod": "H1 2026",
+      "measurementType": "Actual revenue as share of annual target",
+      "geoLevel": "state",
+      "geographicCoverage": "Ondo State",
+      "sourceId": "budgit-state-revenue-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Subnational Budget Implementation Review",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-revenue-performance-by-state/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "Second-highest reported revenue target progress in the 34-state review.",
+      "limitations": [
+        "Secondary analysis of state-government Budget Implementation Reports and OpenStates; not an independent audit.",
+        "Rivers and Osun are excluded from the 34-state review because Q2 2026 reports were unavailable.",
+        "Revenue target progress is not evidence of expenditure quality, service availability or project completion."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-cross-river-target-progress",
+      "title": "Cross River State revenue target achieved",
+      "value": 12.9,
+      "unit": "% of annual target",
+      "referencePeriod": "H1 2026",
+      "measurementType": "Actual revenue as share of annual target",
+      "geoLevel": "state",
+      "geographicCoverage": "Cross River State",
+      "sourceId": "budgit-state-revenue-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Subnational Budget Implementation Review",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-revenue-performance-by-state/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "Low revenue target progress in the first half of 2026; not a service-delivery measure.",
+      "limitations": [
+        "Secondary analysis of state-government Budget Implementation Reports and OpenStates; not an independent audit.",
+        "Rivers and Osun are excluded from the 34-state review because Q2 2026 reports were unavailable.",
+        "Revenue target progress is not evidence of expenditure quality, service availability or project completion."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-imo-target-progress",
+      "title": "Imo State revenue target achieved",
+      "value": 13.5,
+      "unit": "% of annual target",
+      "referencePeriod": "H1 2026",
+      "measurementType": "Actual revenue as share of annual target",
+      "geoLevel": "state",
+      "geographicCoverage": "Imo State",
+      "sourceId": "budgit-state-revenue-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Subnational Budget Implementation Review",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-revenue-performance-by-state/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "Low revenue target progress in the first half of 2026; not a service-delivery measure.",
+      "limitations": [
+        "Secondary analysis of state-government Budget Implementation Reports and OpenStates; not an independent audit.",
+        "Rivers and Osun are excluded from the 34-state review because Q2 2026 reports were unavailable.",
+        "Revenue target progress is not evidence of expenditure quality, service availability or project completion."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-zamfara-target-progress",
+      "title": "Zamfara State revenue target achieved",
+      "value": 15.1,
+      "unit": "% of annual target",
+      "referencePeriod": "H1 2026",
+      "measurementType": "Actual revenue as share of annual target",
+      "geoLevel": "state",
+      "geographicCoverage": "Zamfara State",
+      "sourceId": "budgit-state-revenue-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Subnational Budget Implementation Review",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-revenue-performance-by-state/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "Low revenue target progress in the first half of 2026; not a service-delivery measure.",
+      "limitations": [
+        "Secondary analysis of state-government Budget Implementation Reports and OpenStates; not an independent audit.",
+        "Rivers and Osun are excluded from the 34-state review because Q2 2026 reports were unavailable.",
+        "Revenue target progress is not evidence of expenditure quality, service availability or project completion."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-states-below20",
+      "title": "States below 20% of annual revenue target",
+      "value": 11,
+      "unit": "states",
+      "referencePeriod": "H1 2026",
+      "measurementType": "Count of states below 20% target progress",
+      "geoLevel": "varies",
+      "geographicCoverage": "34 of 36 states; Rivers and Osun excluded",
+      "sourceId": "budgit-state-revenue-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Subnational Budget Implementation Review",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-revenue-performance-by-state/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "BudgIT reports 11 states below 20% of annual revenue targets in the 34-state sample.",
+      "limitations": [
+        "Secondary analysis of state-government Budget Implementation Reports and OpenStates; not an independent audit.",
+        "Rivers and Osun are excluded from the 34-state review because Q2 2026 reports were unavailable.",
+        "Revenue target progress is not evidence of expenditure quality, service availability or project completion."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "federal-2026-total-appropriation",
+      "title": "Federal 2026 total appropriation",
+      "value": 68.32,
+      "unit": "₦ trillion",
+      "referencePeriod": "2026 appropriation",
+      "measurementType": "Appropriation Act total",
+      "geoLevel": "national",
+      "geographicCoverage": "Federal Government of Nigeria",
+      "sourceId": "state-house-2026-appropriation",
+      "sourcePublisher": "State House, Abuja",
+      "sourceUrl": "https://statehouse.gov.ng/president-tinubu-assents-to-2026-appropriation-bill-and-2025-budget-extension/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "Federal appropriation context only. It does not show actual releases, expenditure or completed delivery.",
+      "limitations": [
+        "Official State House release dated 17 April 2026.",
+        "Appropriation is not actual expenditure, release or delivery.",
+        "Federal allocations are not state or FCT budgets."
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-04-17"
+    },
+    {
+      "id": "federal-2026-capital-allocation",
+      "title": "Federal 2026 capital expenditure",
+      "value": 32.2,
+      "unit": "₦ trillion",
+      "referencePeriod": "2026 appropriation",
+      "measurementType": "Development Fund for Capital Expenditure",
+      "geoLevel": "national",
+      "geographicCoverage": "Federal Government of Nigeria",
+      "sourceId": "state-house-2026-appropriation",
+      "sourcePublisher": "State House, Abuja",
+      "sourceUrl": "https://statehouse.gov.ng/president-tinubu-assents-to-2026-appropriation-bill-and-2025-budget-extension/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "Federal appropriation context only. It does not show actual releases, expenditure or completed delivery.",
+      "limitations": [
+        "Official State House release dated 17 April 2026.",
+        "Appropriation is not actual expenditure, release or delivery.",
+        "Federal allocations are not state or FCT budgets."
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-04-17"
+    },
+    {
+      "id": "federal-2026-recurrent-allocation",
+      "title": "Federal 2026 recurrent expenditure",
+      "value": 15.4,
+      "unit": "₦ trillion",
+      "referencePeriod": "2026 appropriation",
+      "measurementType": "Recurrent expenditure",
+      "geoLevel": "national",
+      "geographicCoverage": "Federal Government of Nigeria",
+      "sourceId": "state-house-2026-appropriation",
+      "sourcePublisher": "State House, Abuja",
+      "sourceUrl": "https://statehouse.gov.ng/president-tinubu-assents-to-2026-appropriation-bill-and-2025-budget-extension/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "Federal appropriation context only. It does not show actual releases, expenditure or completed delivery.",
+      "limitations": [
+        "Official State House release dated 17 April 2026.",
+        "Appropriation is not actual expenditure, release or delivery.",
+        "Federal allocations are not state or FCT budgets."
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-04-17"
+    },
+    {
+      "id": "federal-2026-debt-service",
+      "title": "Federal 2026 debt service",
+      "value": 15.8,
+      "unit": "₦ trillion",
+      "referencePeriod": "2026 appropriation",
+      "measurementType": "Debt service allocation",
+      "geoLevel": "national",
+      "geographicCoverage": "Federal Government of Nigeria",
+      "sourceId": "state-house-2026-appropriation",
+      "sourcePublisher": "State House, Abuja",
+      "sourceUrl": "https://statehouse.gov.ng/president-tinubu-assents-to-2026-appropriation-bill-and-2025-budget-extension/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "Federal appropriation context only. It does not show actual releases, expenditure or completed delivery.",
+      "limitations": [
+        "Official State House release dated 17 April 2026.",
+        "Appropriation is not actual expenditure, release or delivery.",
+        "Federal allocations are not state or FCT budgets."
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-04-17"
+    },
+    {
+      "id": "federal-2026-statutory-transfers",
+      "title": "Federal 2026 statutory transfers",
+      "value": 4.799,
+      "unit": "₦ trillion",
+      "referencePeriod": "2026 appropriation",
+      "measurementType": "Statutory transfers",
+      "geoLevel": "national",
+      "geographicCoverage": "Federal Government of Nigeria",
+      "sourceId": "state-house-2026-appropriation",
+      "sourcePublisher": "State House, Abuja",
+      "sourceUrl": "https://statehouse.gov.ng/president-tinubu-assents-to-2026-appropriation-bill-and-2025-budget-extension/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "Federal appropriation context only. It does not show actual releases, expenditure or completed delivery.",
+      "limitations": [
+        "Official State House release dated 17 April 2026.",
+        "Appropriation is not actual expenditure, release or delivery.",
+        "Federal allocations are not state or FCT budgets."
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-04-17"
+    }
+  ],
+  "catalogOnlySources": [
+    {
+      "id": "nbs-cpi-monthly",
+      "publisher": "National Bureau of Statistics (NBS)",
+      "title": "Consumer Price Index and inflation reports catalogue",
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/related-materials",
+      "status": "catalogue",
+      "note": "The official catalogue lists the September 2026 CPI report, published 15 October 2026, as a downloadable ZIP with PDF and XLSX tables. The report tables have not yet been extracted and validated into observations. CPI metadata uses a 2024 price base and 2023 weight reference.",
+      "departments": [
+        "health",
+        "education",
+        "software-technology",
+        "civic"
+      ]
+    },
+    {
+      "id": "ondi-innovation",
+      "publisher": "Office for Nigerian Digital Innovation (ONDI) — NITDA",
+      "title": "Office for Nigerian Digital Innovation",
+      "url": "https://www.ondi.nitda.gov.ng/",
+      "status": "catalogue",
+      "note": "Official ecosystem support and innovation programme information; published headline metrics require their own reference dates and methodology before being treated as national indicators.",
+      "departments": [
+        "software-technology"
+      ]
+    },
+    {
+      "id": "naseni-innovation-hub",
+      "publisher": "National Agency for Science and Engineering Infrastructure (NASENI)",
+      "title": "NASENI Innovation Hub programmes and innovation support",
+      "url": "https://innovation.naseni.gov.ng/",
+      "status": "partial",
+      "note": "A finalist-count snapshot is integrated; broader NASENI programme outputs, commercialisation results and innovation-support datasets are not yet integrated.",
+      "departments": [
+        "software-technology",
+        "education"
+      ]
+    },
+    {
+      "id": "ubec-statistics",
+      "publisher": "Universal Basic Education Commission (UBEC)",
+      "title": "Digest of Statistics and Reports",
+      "url": "https://ubec.gov.ng/reports/",
+      "status": "catalogue",
+      "note": "UBEC lists a 2024 Annual Report, 2022/2023 National Personnel Audit, 2022 public/private school digests and a 2025 Q4 key performance report. Table extraction and period harmonisation are pending.",
+      "departments": [
+        "education"
+      ]
+    },
+    {
+      "id": "unicef-nalabe-2022",
+      "publisher": "UNICEF Nigeria and Universal Basic Education Commission (UBEC)",
+      "title": "National Assessment of Learning Achievement in Basic Education (NALABE 2022)",
+      "url": "https://www.unicef.org/nigeria/reports/national-assessment-learning-achievement-basic-education",
+      "status": "catalogue",
+      "note": "Published December 2025; assesses P3, P5 and JS2 learners across all states and FCT. Result tables by grade, subject and proficiency level are not yet extracted into observations.",
+      "departments": [
+        "education"
+      ]
+    },
+    {
+      "id": "nemis-downloads",
+      "publisher": "Federal Ministry of Education — Nigeria Education Management Information System (NEMIS)",
+      "title": "NEMIS data visuals and education digest downloads",
+      "url": "https://nemis.education.gov.ng/downloads",
+      "status": "catalogue",
+      "note": "The public downloads page lists older national education digest editions and school-census materials. Keep it separate from the 2024/2025 FME EMIS portal until definitions and reporting frames are reconciled.",
+      "departments": [
+        "education"
+      ]
+    },
+    {
+      "id": "federal-ministry-health-msdat",
+      "publisher": "Federal Ministry of Health and Social Welfare, Nigeria",
+      "title": "MultiSource Data Analytics & Triangulation Platform (MSDAT)",
+      "url": "https://fmohconnect.gov.ng/msdat/",
+      "status": "catalogue",
+      "note": "The Ministry describes MSDAT as a transparent view across routine data, surveys and global estimates. Indicator-level extraction, source provenance and method reconciliation are pending.",
+      "departments": [
+        "health"
+      ]
+    },
+    {
+      "id": "health-facility-registry",
+      "publisher": "Federal Ministry of Health and Social Welfare, Nigeria — Nigeria Health Facility Registry",
+      "title": "Nigeria Health Facility Registry (NHFR) and External API",
+      "url": "https://hfr.fmohconnect.gov.ng/developers",
+      "status": "catalogue",
+      "note": "The official developer documentation describes read-only REST and FHIR endpoints requiring an approved API key. API access and data-quality review are pending; registration does not prove facility functionality.",
+      "departments": [
+        "health"
+      ]
+    },
+    {
+      "id": "federal-ministry-health-reports",
+      "publisher": "Federal Ministry of Health and Social Welfare, Nigeria",
+      "title": "Health reports and publications",
+      "url": "https://health.gov.ng/reports/",
+      "status": "catalogue",
+      "note": "Public report categories include Family Health, Public Health, Hospital Services, Food and Drugs, and Nutrition. Individual reports must be extracted with their own date, geography and method.",
+      "departments": [
+        "health"
+      ]
+    },
+    {
+      "id": "budget-office-federal",
+      "publisher": "Budget Office of the Federation, Federal Republic of Nigeria",
+      "title": "Federal budget, appropriation and implementation reports",
+      "url": "https://budgetoffice.gov.ng/?page_id=1366",
+      "status": "catalogue",
+      "note": "The official page lists the 2026 Q1 Budget Implementation Report (2 November 2026) and Q2 report (7 November 2026). Appropriation, release, expenditure and completed delivery must remain separate; report tables are not yet integrated.",
+      "departments": [
+        "civic",
+        "education",
+        "health",
+        "software-technology"
+      ]
+    },
+    {
+      "id": "nphcda-phc-functionality-dashboard",
+      "publisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "title": "PHC Functionality Dashboard and revitalised facility directory",
+      "url": "https://phc.nphcda.gov.ng/infographic",
+      "status": "catalogue",
+      "note": "NPHCDA describes this as a live PHC functionality dashboard. The page resolved but did not expose readable structured data in this review. Facility-level extraction and freshness checks are pending.",
+      "departments": [
+        "health"
+      ]
+    },
+    {
+      "id": "nphcda-data-requisition",
+      "publisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "title": "NPHCDA Data Requisition Portal",
+      "url": "https://portal.nphcda.gov.ng/",
+      "status": "catalogue",
+      "note": "Formal request route for NPHCDA PHC datasets. Dataset access, data dictionaries, permitted use and privacy conditions require approval; no dataset is integrated yet.",
+      "departments": [
+        "health"
+      ]
+    },
+    {
+      "id": "federal-state-health-report-2024",
+      "publisher": "Federal Ministry of Health and Social Welfare, Nigeria",
+      "title": "The State of Health of the Nation Report 2024",
+      "url": "https://fmohconnect.gov.ng/wp-content/uploads/2025/05/The-State-of-Health-of-the-Nation-Report-2024.pdf",
+      "status": "catalogue",
+      "note": "Official national health-sector report covering PHC, health financing, workforce and commodities. Tables and chapter-specific reference periods are not yet extracted into observations.",
+      "departments": [
+        "health"
+      ]
+    },
+    {
+      "id": "federal-health-logistics-programme",
+      "publisher": "Federal Ministry of Health and Social Welfare, Nigeria — Food and Drug Services",
+      "title": "National Product Supply Chain Management Programme",
+      "url": "https://health.gov.ng/food-and-drug-programs/",
+      "status": "catalogue",
+      "note": "Official programme and publication source for essential medicines and health commodities. Current facility-level PHC stock-on-hand, consumption and losses data are not publicly ingested.",
+      "departments": [
+        "health"
+      ]
+    },
+    {
+      "id": "who-afro-nigeria",
+      "title": "WHO AFRO Nigeria country statistics",
+      "status": "under_review",
+      "note": "The page reports life expectancy and health expenditure used in this snapshot. Its under-five mortality figure conflicts with other WHO series and is excluded pending reconciliation.",
+      "departments": [
+        "health"
+      ]
+    },
+    {
+      "id": "ngf-state-public-finance-db",
+      "title": "NGF Public Finance Database — 36 states",
+      "status": "under_review",
+      "note": "Claims state-level original, revised and actual budget data. The landing page rendered unrelated injected third-party links; no figures are ingested until site integrity and source documents are checked.",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ]
+    },
+    {
+      "id": "agora-state-budget-performance-2025",
+      "title": "State budget performance review · 2025",
+      "status": "partial",
+      "note": "Secondary analysis covers 35 of 36 states; Rivers is excluded. Nine aggregate indicators are transcribed with coverage limitations. State-by-state line items still require validation.",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ]
+    },
+    {
+      "id": "budgit-state-revenue-h1-2026",
+      "title": "State revenue performance · H1 2026",
+      "status": "partial",
+      "note": "Secondary analysis covers 34 of 36 states; Rivers and Osun are excluded. State-level revenue target progress is shown only for named states in the source.",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ]
+    },
+    {
+      "id": "fct-budget-2026-secondary",
+      "title": "FCT 2026 budget — secondary reporting only",
+      "status": "catalogue",
+      "note": "A media report describes National Assembly passage, but the final enacted FCT appropriation law and official implementation report were not confirmed. FCT is separate from the 36 states.",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ]
+    }
+  ],
+  "reconciliationNotes": [
+    {
+      "id": "who-underfive-series-conflict",
+      "severity": "high",
+      "title": "WHO under-five mortality values are not reconciled",
+      "detail": "WHO AFRO's Nigeria page lists 59.5 deaths per 1,000 live births for 2024; WHO data.who.int lists 117.46 for 2022; a WHO 2025 statistical abstract reports 98.7 for 2024. The series and methods are not reconciled. The 59.5 figure is excluded from the published snapshot; the existing static snapshot retains the WHO country-profile 2022 value with its source period.",
+      "action": "Do not create a trend line or use the 2024 AFRO figure until the underlying WHO series, model vintage and metadata are reconciled."
+    },
+    {
+      "id": "fme-asc-portal-revision",
+      "severity": "medium",
+      "title": "The 2024/2025 school census portal changed between snapshots",
+      "detail": "The 18 July 2026 capture and 22 September 2026 capture report different school totals, reporting rates and learner counts for the same school year. The Observatory's existing school census card uses the later 22 September capture; the earlier values are not presented as current.",
+      "action": "Keep the retrieval date beside the portal snapshot and request a formal revision note or downloadable source extract before calculating trends."
+    },
+    {
+      "id": "state-budget-coverage-gaps",
+      "severity": "high",
+      "title": "State budget performance is not yet a complete 36-state dataset",
+      "detail": "The 2025 Agora Policy review covers 35 of 36 states and excludes Rivers. BudgIT's H1 2026 review covers 34 of 36 states and excludes Rivers and Osun. The NGF database describes 36-state coverage, but its landing-page integrity is under review and no numeric data have been ingested from it.",
+      "action": "Show each denominator beside every aggregate; do not label these results 'all states'."
+    },
+    {
+      "id": "fct-separate-budget-coverage",
+      "severity": "medium",
+      "title": "FCT budget coverage remains separate and incomplete",
+      "detail": "FCT is not one of the 36 states. A secondary report of the 2026 budget's passage was found, but the final enacted FCT appropriation law and official implementation reports were not confirmed in this review.",
+      "action": "Do not include FCT in 36-state totals; acquire the FCTA appropriation law, MTEF, quarterly BIRs and audited accounts separately."
+    },
+    {
+      "id": "ngf-portal-integrity",
+      "severity": "high",
+      "title": "NGF public-finance portal requires integrity review",
+      "detail": "The portal advertises original, revised and actual fiscal data for 36 states, but its rendered landing page included unrelated injected third-party links. No values from it have been ingested.",
+      "action": "Verify site integrity, direct state-document provenance and downloadable data before relying on this portal."
+    }
+  ],
+  "limitations": [
+    "These are dated source transcriptions and published research summaries, not live upstream feeds.",
+    "Official publication does not equal independent verification; preserve the publisher's method and stated coverage.",
+    "A budget allocation is not a release; a release is not expenditure; expenditure is not proof of completed or functional service delivery.",
+    "The 2025 and H1 2026 state fiscal comparisons have incomplete state coverage; their denominators are displayed with every observation.",
+    "National and multi-state values do not establish conditions in a specific LGA, ward, facility or community."
+  ]
+}
