@@ -62,7 +62,7 @@ assert.match(api, /records,/);
 assert.match(api, /selectSnapshotRecords/);
 
 
-assert.ok(canonicalRegistry.some((item) => item.id === 'ngf-public-finance-database'), 'NGF source must exist in the API's canonical registry');
+assert.ok(canonicalRegistry.some((item) => item.id === 'ngf-public-finance-database'), "NGF source must exist in the API's canonical registry");
 const stateBudgetSources = registry.filter((item) => item.id.startsWith('state-budget-') && item.id.endsWith('-2026'));
 assert.equal(stateBudgetSources.length, 19, 'nineteen official state budget source routes are registered');
 for (const source of stateBudgetSources) {
