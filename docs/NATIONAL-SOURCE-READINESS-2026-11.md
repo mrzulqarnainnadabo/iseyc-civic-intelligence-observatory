@@ -7,7 +7,7 @@ ISEYC has a credible institutional source foundation, but it does not yet have a
 The next stage is to turn the catalogue into a governed acquisition and evidence system. Prioritise usable datasets and clear citizen questions over the number of institutions listed.
 
 **Current implementation facts**
-- The Observatory has a 75-source registry, six national World Bank WDI indicator pilots, and a curated snapshot endpoint for WHO, NITDA, NIMC, IMF, NASENI, Innovation Support Network, FME, NPHCDA and NGF publications.
+- The Observatory has a 94-source registry, six national World Bank WDI indicator pilots, and a curated snapshot endpoint for WHO, NITDA, NIMC, IMF, NASENI, Innovation Support Network, FME, NPHCDA and NGF publications.
 - Civic Mandate CommunityRecords and Community Observations are separate streams.
 - The Kaduna PHC pilot has source-readiness work but no imported HEFA facility observations.
 - A structured 2023 INEC voter-register/PVC table has now been transcribed for all 36 states and the FCT. Its arithmetic exceptions are explicitly retained.
@@ -37,7 +37,7 @@ Source catalogue additions also include NBS CPI reports, ONDI and NASENI program
 
 ## Department source watch — next acquisition priorities
 
-The registry now includes **75 sources**. Fourteen source catalogue entries are explicitly marked as catalogue-only or partial rather than being treated as integrated observations:
+The registry now includes **94 sources**. Fourteen source catalogue entries are explicitly marked as catalogue-only or partial rather than being treated as integrated observations:
 - **Education:** UBEC school digests and reports; UNICEF/UBEC NALABE 2022 learning assessment; NEMIS historical education digest and data visuals. The 2024/2025 FME EMIS Annual School Census is integrated as a source snapshot with a 57.9% reporting-rate warning.
 - **Health:** WHO national context and NPHCDA 2025 PHC programme snapshots; Federal Ministry of Health MSDAT (routine, survey and global estimates), NHFR, the NPHCDA PHC Functionality Dashboard, NPHCDA Data Requisition Portal, Ministry health reports and medicine logistics sources. NHFR API ingestion requires an approved API key; the PHC dashboard was not machine-readable in this review; 2025 commodity distribution is not current stock-on-hand.
 - **Civic/public finance:** Budget Office of the Federation reports, including the 2026 Q1 and Q2 Budget Implementation Reports published 2 and 7 November 2026. Appropriation, release, expenditure and completed delivery remain separate measures.
@@ -147,9 +147,18 @@ The Budget Office's quarterly implementation index lists federal reports across 
 
 **Freshness caution:** the database homepage displays 2026 original-budget sector aggregates, while the state-explorer index surfaced in this review displays a June 2025 last-updated date. Treat these as different portal components until the data vintage for each table is confirmed. The separate publicfinanceapi.ngf.org.ng query interface is JavaScript-rendered; endpoint schema, bulk export, authentication and rate limits were not confirmed. Do not claim a machine-readable feed until a reproducible export or API contract is obtained.
 
-**Initial official state-source examples independently located in this research pass (not a complete 36-state inventory):**
+**Official state-source routes independently located in this research pass: **19 of 36 states**. The remaining 17 state routes are not yet individually verified; that is a research gap, not evidence that those states lack budget documents.
 - Abia: [2026 Appropriation Act announcement](https://abiastate.gov.ng/gov-otti-signs-2026-appropriation-bill-into-law/) and [state budget document category](https://abiastate.gov.ng/document-category/budget/) (includes 2026 Q2 reporting).
 - Adamawa: [2026 approved budget](https://finance.adamawastate.gov.ng/ova_doc/2026-approved-budget/) published by the State Ministry of Finance.
+- Anambra: [State budget transparency portal](https://anambrastate.gov.ng/transparency/state-budgets/) lists the 2026 appropriation law, approved budget and Q1–Q3 implementation reports.
+- Bauchi: [FY 2026 Appropriation Law](https://www.bauchistate.gov.ng/sdm_downloads/bauchi-state-fy-2026-appropriation-law/) is published on the state government site.
+- Benue: [Budget and Economic Planning Commission publications](https://planning.benuestate.gov.ng/downloadable-resources/) lists the 2026 appropriation law, approved budget publication and citizen's budget.
+- Edo: [Appropriation-law portal](https://edostate.gov.ng/category/appropriation-law/) lists FY 2026 approved budget estimates and the appropriation law.
+- Ekiti: [Finance and Budget portal](https://www.ekitistate.gov.ng/finance-budget) lists the 2026 appropriation law, approved budget and Q1–Q3 implementation reports.
+- Katsina: [SABER document portal](https://katsinastate.gov.ng/cat_doc/saber/) lists the 2026 approved appropriation law and budget consolidation template.
+- Kogi: [Online document centre](https://kogistate.gov.ng/online-document-centre/) lists the 2026 appropriation law and related budget documents.
+- Osun: [Budget documents portal](https://www.osunstate.gov.ng/resources/budget-documents/) lists the 2026 approved budget, appropriation law, citizen's budget and implementation reports.
+- Sokoto: [Ministry of Finance budget portal](https://mof.sk.gov.ng/resources/budget/) lists the 2026 approved budget, appropriation law, citizen's budget and Q1–Q3 reports.
 - Gombe: [2026 state budget](https://www.mof.gm.gov.ng/download/gombe-state-budget-2026/) published by the Ministry of Finance and Economic Development.
 - Imo: [SFTAS disclosure portal](https://imostate.gov.ng/Content/SFTAS/SFTAS_1) lists 2026 approved budget, appropriation law, work plan and quarterly reports.
 - Jigawa: [2026 budget document portal](https://jigawastate.gov.ng/dbudget) lists approved estimates, appropriation law, proposed budget and sector MTSS documents.
@@ -159,7 +168,7 @@ The Budget Office's quarterly implementation index lists federal reports across 
 - Taraba: [Open Government](https://www.tarabastate.gov.ng/open-government) lists the 2026 approved and citizen-friendly budgets; [Resources](https://www.tarabastate.gov.ng/resources) lists Q1/Q2 2026 reports.
 - Yobe: [2026 approved budget](https://budget.pfm.yb.gov.ng/approved-budgets/) on the Ministry of Budget and Planning portal.
 
-This is a **verified-source discovery list**, not a statement that the other 26 states have no published budgets. Their official source routes still require individual verification. No state budget totals should be copied into national comparisons until the actual source documents have been downloaded, table-extracted, reconciled and linked to the NGF series.
+This is a **verified-source discovery list** covering 19 states, not a complete 36-state document acquisition. The remaining 17 state source routes still require individual verification. Their status must remain unknown—not 'no budget'—until searched. No state budget totals should be copied into national comparisons until the actual source documents have been downloaded, table-extracted, reconciled and linked to the NGF series.
 
 **Acquisition protocol for every state:** preserve (1) approved appropriation law, (2) detailed approved budget estimates, (3) citizen budget, (4) revised/supplementary budget, (5) quarterly budget implementation reports, (6) audited financial statements and (7) procurement/project evidence as separate document classes. Capture the fiscal year, publication date, revision status, NCOA mapping, budget entity, function/programme/economic classification, original amount, revised amount, actual outturn, source page/table, file hash and extraction version. Never combine a proposed budget with an approved budget or an appropriation with actual expenditure.
 
