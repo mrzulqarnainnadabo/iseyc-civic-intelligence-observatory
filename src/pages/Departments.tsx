@@ -5,6 +5,7 @@ import { fetchViaGateway, type IndicatorObservation } from '../lib/indicators';
 import { fetchDepartmentCommunityRecords, departmentMatchesRecord, stateRecordScope, type DepartmentCommunityFeed, type PublishedDepartmentRecord } from '../adapters/departmentCommunityRecords';
 import { DEPARTMENT_EMPTY_STATE, type DepartmentId, type DepartmentEvidence, validateDepartmentEvidence } from '../data/departmentEvidence';
 import NationalSnapshotGrid from '../components/NationalSnapshotGrid';
+import NationalSnapshots from '../components/NationalSnapshots';
 import InnovationHubDirectory from '../components/InnovationHubDirectory';
 import { PageHeader, Section } from '../design/layout';
 import inecPvc2023 from '../data/indicators/inec-pvc-2023.json';
@@ -114,7 +115,8 @@ export default function Departments() {
       <Link to="/departments" className="dept-back">← All departments</Link>
     </PageHeader>
     <Section title="A. Official evidence" id="official-evidence">
-      <p className="dept-note">Registered sources distinguish live indicators, dated snapshot-only records and sources not yet integrated.</p>\n      <NationalSnapshotGrid departmentId={config.id} />\n      {config.id === 'software-technology' && <InnovationHubDirectory />}
+      <p className="dept-note">Registered sources distinguish live indicators, dated snapshot-only records and sources not yet integrated.</p>\n      <NationalSnapshotGrid departmentId={config.id} />
+      <NationalSnapshots departmentId={config.id} compact />\n      {config.id === 'software-technology' && <InnovationHubDirectory />}
       {registeredSources.length === 0 ? <div className="dept-empty">{DEPARTMENT_EMPTY_STATE}</div> : registeredSources.map((source) => {
         const indicator = config.indicators.find((item) => item.sourceId === source.id);
         const result = indicator ? observations[indicator.id] : undefined;
