@@ -2409,5 +2409,61 @@
       "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
     ],
     "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "budgit-health-report",
+    "publisher": "The BudgIT Foundation",
+    "name": "Nigeria's Subnational Health Expenditure Report — H1 2026",
+    "url": "https://budgit.org/post_publications/nigerias-subnational-health-expenditure-report-h1-2026/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "public-finance"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "34 of 36 Nigerian states; Rivers and Osun H1 2026 expenditure data unavailable in the report",
+    "geoLevel": "state",
+    "dataType": "Secondary analysis of state Budget Implementation Reports; H1 health and primary healthcare actual expenditure, budget performance and fiscal priority",
+    "updateFrequency": "Periodic research publication",
+    "licence": "BudgIT states its publications are available under CC BY-ND 3.0 with attribution and backlink.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Reviewed the 25-page H1 2026 PDF and publication page. State table, executive summary and methodology were inspected; internal numeric inconsistencies were recorded.",
+    "limitations": [
+      "Secondary analysis based on state Budget Implementation Reports; ISEYC has not independently reconciled every state value against the original BIRs.",
+      "The report's executive summary and Table 1 report ₦621.34bn H1 2026 health expenditure, while a narrative paragraph on page 7 reports ₦624.53bn.",
+      "The report's Table 1 lists PHC H1 2026 expenditure as ₦61.08bn, while pages 17–18 state ₦61.21bn.",
+      "Table 5 marks Sokoto, Kogi, Imo and Cross River values with asterisks because numeric calculations differ from the underlying Q1/Q2 BIR figures.",
+      "Rivers and Osun have no H1 2026 health expenditure data in the report; missing is not zero.",
+      "Expenditure recorded under health classifications does not prove facility-level service quality, medicine availability or health outcomes."
+    ],
+    "notes": "High-value secondary evidence for subnational health financing. Treat the aggregate and state values as published secondary figures; do not present as ISEYC-verified or rank states until discrepancies are reconciled against original BIRs."
+  },
+  {
+    "id": "kdsg-2026-appropriation-release",
+    "publisher": "Kaduna State Government",
+    "name": "Governor signs 2026 budget — official sector allocations",
+    "url": "https://kdsg.gov.ng/uba-sani-signs-2026-budget-education-takes-lions-share/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "education",
+      "health",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kaduna State; statewide allocation, not Kaduna South or individual LGAs",
+    "geoLevel": "state",
+    "dataType": "Official state-government announcement of the 2026 Appropriation Act and sectoral budget allocations",
+    "updateFrequency": "Annual appropriation; revised budget and implementation reports published separately",
+    "licence": "State government publication; cite the official release and verify against the signed appropriation schedules.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Reviewed Kaduna State Government's official 23 December 2025 announcement of assent to the 2026 Appropriation Bill.",
+    "limitations": [
+      "This is an official announcement of approved budget allocations, not actual expenditure or cash releases.",
+      "The announcement is a summary; detailed schedules and the signed appropriation law remain the controlling documents.",
+      "Statewide allocations do not establish LGA, ward, school, facility or household conditions.",
+      "Do not infer Kaduna South allocations from statewide percentages."
+    ],
+    "notes": "Official source for Kaduna's ₦985.9bn 2026 budget, education 25%, health 15%, capital 70.9% and recurrent 29.1%."
   }
 ]
