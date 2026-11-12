@@ -1462,5 +1462,36 @@
       "Federal tertiary-hospital inventory initiatives must not be presented as PHC medicine availability."
     ],
     "notes": "The Ministry lists National Product Supply Chain Management Programme and health logistics publications. Current facility-level PHC medicine data are not yet ingested."
+  },
+  {
+    "id": "ngf-public-finance-database",
+    "publisher": "Nigeria Governors' Forum (NGF)",
+    "name": "Public Finance Database — 36 State Governments",
+    "url": "https://publicfinance.ngf.org.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "education",
+      "health",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "All 36 state governments; annual state-level fiscal data, with original budget, actual expenditure and performance indicators",
+    "geoLevel": "state",
+    "dataType": "Open-access comparative fiscal database sourced from state budget documents and audited financial statements; National Chart of Accounts-aligned",
+    "updateFrequency": "Portal indicates annual comparable fiscal series; dataset-specific publication and revision dates must be captured per extraction",
+    "licence": "Portal describes the database as open access; confirm attribution and reuse terms for each dataset and retain NGF source attribution.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Reviewed NGF Public Finance Database landing page, original and actual budget sections, state explorer and publicfinanceapi.ngf.org.ng interactive query portal. The API page requires JavaScript; endpoint schema and machine-readable export were not independently confirmed in this pass.",
+    "limitations": [
+      "NGF database is a harmonised secondary compilation from state government budget documents and audited financial statements; retain the original state document and NGF series as separate provenance layers.",
+      "Original budget is planned expenditure, not actual expenditure. Actual expenditure is an accounting outturn, not proof of physical project completion or service quality.",
+      "Portal homepage displays 2026 original-budget sector aggregates, while the state-explorer index displays a June 2025 last-updated date; freshness and coverage must be checked per table and state before treating a 2026 series as complete.",
+      "The publicfinanceapi.ngf.org.ng query interface is JavaScript-rendered; API schema, bulk export, authentication requirements and rate limits were not confirmed.",
+      "State-level fiscal aggregates cannot establish LGA, facility, school or community outcomes without linked evidence at those levels.",
+      "Do not rank states as better or worse without comparable definitions, periods, denominators and data completeness."
+    ],
+    "notes": "Priority national entry point for state public-finance comparison across all 36 states. Verify year, budget type (original/revised/actual), NCOA classification, state coverage, source document, extraction date and arithmetic for every table. Follow each state figure back to its source budget or audited financial statement. Public pages: /budgets/original/, /budgets/actual/, /state-explorer/ and the separate interactive query portal at https://www.publicfinanceapi.ngf.org.ng/state-budget-revenue."
   }
 ]
