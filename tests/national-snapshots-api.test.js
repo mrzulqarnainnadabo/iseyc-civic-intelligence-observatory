@@ -20,11 +20,17 @@ describe("national source snapshot endpoint", () => {
     expect(response.body.contractVersion).toBe("1.0.0");
     expect(response.body.source).toBe("iseyc-observatory-national-snapshots-v1");
     expect(response.body.status).toBe("ok");
-    expect(response.body.records.length).toBe(9);
+    expect(response.body.records.length).toBe(19);
+    expect(response.body.observations.length).toBe(90);
+    expect(response.body.observations.some((item) => item.id === "ngf-state-budget-education-share-2026" && item.value === 14.4)).toBe(true);
+    expect(response.body.observations.some((item) => item.id === "ngf-state-budget-health-share-2026" && item.value === 9.3)).toBe(true);
+    expect(response.body.checkedAt).toBe("2026-11-12");
     expect(response.body.records.every((record) => record.sourceUrl && record.referencePeriod && record.limitations.length)).toBe(true);
     expect(response.body.records.some((record) => record.id === "fme-annual-school-census-national-2024-25")).toBe(true);
     expect(response.body.records.some((record) => record.id === "fme-annual-school-census-kaduna-2024-25")).toBe(true);
     expect(response.body.records.some((record) => record.id === "worldbank-ndu-2026-10")).toBe(true);
+    expect(response.body.records.some((record) => record.id === "budgit-subnational-health-expenditure-h1-2026")).toBe(true);
+    expect(response.body.records.some((record) => record.id === "kaduna-2026-approved-budget-overview")).toBe(true);
     expect(response.body.note).toMatch(/not a continuously refreshed data feed/);
   });
 
@@ -63,6 +69,16 @@ describe("national source snapshot endpoint", () => {
     expect(all.body.records.some((record) => record.id === "nbs-gdp-q1-2026")).toBe(true);
   });
 
+  it("returns the same observations contract used by Civic Brain and filters both schemas by department", () => {
+    const health = request("/api/evidence/snapshots?departmentId=health");
+    expect(health.body.observations.some((item) => item.id === "ngf-state-budget-health-share-2026")).toBe(true);
+    expect(health.body.observations.some((item) => item.id === "ngf-state-budget-education-share-2026")).toBe(false);
+    expect(health.body.records.some((record) => record.id === "nphcda-phc-infrastructure-progress-2025")).toBe(true);
+    const education = request("/api/evidence/snapshots?departmentId=education");
+    expect(education.body.observations.some((item) => item.id === "ngf-state-budget-education-share-2026")).toBe(true);
+    expect(education.body.observations.some((item) => item.id === "ngf-state-budget-health-share-2026")).toBe(false);
+  });
+
   it("rejects unknown departments and unsupported methods", () => {
     expect(request("/api/evidence/snapshots?departmentId=finance").statusCode).toBe(400);
     const post = request("/api/evidence/snapshots", "POST");
@@ -75,4 +91,25 @@ describe("national source snapshot endpoint", () => {
     expect(response.headers["Access-Control-Allow-Origin"]).toBe("*");
     expect(response.headers["Cache-Control"]).toContain("s-maxage=1800");
   });
+
+  it("includes dated NPHCDA programme snapshots without implying current facility functionality", () => {
+    const health = request("/api/evidence/snapshots?departmentId=health");
+    expect(health.statusCode).toBe(200);
+    const ids = health.body.records.map((record) => record.id);
+    for (const id of [
+      "nphcda-phc-infrastructure-progress-2025",
+      "nphcda-bhcpf-funding-and-upgrades-2025",
+      "nphcda-phc-workforce-progress-2025",
+      "nphcda-multistate-service-support-2025",
+      "nphcda-kaduna-yobe-recruitment-2025",
+    ]) expect(ids).toContain(id);
+    const combined = health.body.records.find((record) => record.id === "nphcda-kaduna-yobe-recruitment-2025");
+    expect(combined.geography.label).toMatch(/Kaduna State \+ Yobe State/);
+    expect(combined.geography.label).toMatch(/combined totals; state split not published/);
+    expect(combined.metrics.find((metric) => metric.label === "Skilled birth attendants recruited").value).toBe("380");
+    expect(combined.limitations.join(" ")).toMatch(/do not assign either total to Kaduna State alone/);
+    const education = request("/api/evidence/snapshots?departmentId=education");
+    expect(education.body.records.some((record) => record.id.startsWith("nphcda-"))).toBe(false);
+  });
+
 });
