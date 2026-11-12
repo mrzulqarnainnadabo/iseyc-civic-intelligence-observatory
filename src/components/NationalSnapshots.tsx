@@ -25,6 +25,7 @@ type BudgetJurisdiction = { name: string; type: 'state' | 'fct'; status: string;
 const budgetJurisdictions = stateBudgetCoverage.jurisdictions as BudgetJurisdiction[];
 const locatedStatePortals = budgetJurisdictions.filter((item) => item.type === 'state' && item.status === 'official_portal_located').length;
 const locatedOfficialDocuments = budgetJurisdictions.filter((item) => item.type === 'state' && item.status === 'official_documents_located').length;
+const unreviewedStateCount = budgetJurisdictions.filter((item) => item.type === 'state' && item.status === 'not_reviewed').length;
 
 const DEPARTMENT_LABEL: Record<string, string> = {
   education: 'Education & Capacity Building', health: 'Health & Well-being',
@@ -103,7 +104,7 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
         </article>)}</div>
       </details>}
       {showStateBudgetCoverage && <details className="state-budget-coverage">
-        <summary>State budget source coverage · {locatedStatePortals} of 36 official portals · {locatedOfficialDocuments} official document source</summary>
+        <summary>State budget sources · {locatedStatePortals}/36 portals · {locatedOfficialDocuments} official documents · {unreviewedStateCount} unreviewed</summary>
         <p>Portal discovery is not data extraction. Each state still requires its approved budget, appropriation law, MTEF/MTSS, quarterly implementation reports and audited outturn. States marked “not reviewed” are not being described as having no public data.</p>
         <ul>{budgetJurisdictions.map((item) => <li key={item.name}>
           <strong>{item.name}</strong>
