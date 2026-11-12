@@ -1061,6 +1061,118 @@
         }
       ],
       "interpretation": "This functional profile shows how NGF's 36-state original-budget aggregate is distributed. Economic Affairs is a broad function, not a technology allocation. Shares total 100.1% due to rounding."
+    },
+    {
+      "id": "budgit-subnational-health-expenditure-h1-2026",
+      "departmentIds": [
+        "health",
+        "civic"
+      ],
+      "title": "BudgIT · Subnational health expenditure — H1 2026",
+      "publisher": "The BudgIT Foundation",
+      "sourceId": "budgit-health-report",
+      "sourceUrl": "https://budgit.org/post_publications/nigerias-subnational-health-expenditure-report-h1-2026/",
+      "referencePeriod": "H1 2026 (January–June)",
+      "retrievedAt": "2026-11-12",
+      "geography": {
+        "level": "varies",
+        "label": "34 of 36 states; Rivers and Osun unavailable"
+      },
+      "evidenceType": "Secondary analysis of state Budget Implementation Reports; published H1 2026 health expenditure",
+      "metrics": [
+        {
+          "label": "Health actual expenditure",
+          "value": "621.34",
+          "unit": "₦ billion",
+          "period": "H1 2026",
+          "measurementType": "secondary-reported actual expenditure"
+        },
+        {
+          "label": "Prorated health budget performance",
+          "value": "40.48",
+          "unit": "%",
+          "period": "H1 2026",
+          "measurementType": "secondary-reported budget execution"
+        },
+        {
+          "label": "Increase in approved health budgets",
+          "value": "46.17",
+          "unit": "%",
+          "period": "2026 vs 2025",
+          "measurementType": "nominal budget allocation growth"
+        }
+      ],
+      "limitations": [
+        "Secondary report based on state BIRs; not independently audited or reconciled by ISEYC.",
+        "Executive summary and Tables 1/5 report ₦621.34bn, while a page 7 narrative reports ₦624.53bn.",
+        "Rivers and Osun are missing from the report's 34-state dataset; missing is not zero.",
+        "Sokoto, Kogi, Imo and Cross River state values are flagged by BudgIT because calculations differ from underlying Q1/Q2 BIRs.",
+        "Actual expenditure does not prove facility-level service quality, medicine availability or health outcomes."
+      ],
+      "interpretation": "BudgIT reports ₦621.34bn in H1 2026 health expenditure across 34 states, with 40.48% prorated health-budget performance despite a 46.17% increase in approved health budgets. The report contains an internal alternative total of ₦624.53bn and requires reconciliation before use as an ISEYC-verified statistic."
+    },
+    {
+      "id": "kaduna-2026-approved-budget-overview",
+      "departmentIds": [
+        "education",
+        "health",
+        "civic"
+      ],
+      "title": "Kaduna State · 2026 approved budget overview",
+      "publisher": "Kaduna State Government",
+      "sourceId": "kdsg-2026-appropriation-release",
+      "sourceUrl": "https://kdsg.gov.ng/uba-sani-signs-2026-budget-education-takes-lions-share/",
+      "referencePeriod": "2026 approved budget",
+      "retrievedAt": "2026-11-12",
+      "geography": {
+        "level": "state",
+        "label": "Kaduna State; not Kaduna South or individual LGAs"
+      },
+      "evidenceType": "Official state-government announcement of the 2026 Appropriation Act",
+      "metrics": [
+        {
+          "label": "Total approved budget",
+          "value": "985.9",
+          "unit": "₦ billion",
+          "period": "2026",
+          "measurementType": "approved budget"
+        },
+        {
+          "label": "Education share",
+          "value": "25",
+          "unit": "%",
+          "period": "2026",
+          "measurementType": "budget allocation share"
+        },
+        {
+          "label": "Health share",
+          "value": "15",
+          "unit": "%",
+          "period": "2026",
+          "measurementType": "budget allocation share"
+        },
+        {
+          "label": "Capital expenditure share",
+          "value": "70.9",
+          "unit": "%",
+          "period": "2026",
+          "measurementType": "budget allocation share"
+        },
+        {
+          "label": "Recurrent expenditure share",
+          "value": "29.1",
+          "unit": "%",
+          "period": "2026",
+          "measurementType": "budget allocation share"
+        }
+      ],
+      "limitations": [
+        "Official announcement of approved allocations; signed appropriation law and detailed schedules remain controlling.",
+        "Approved allocations are not releases or actual expenditure.",
+        "Statewide data is not Kaduna South, an LGA, ward, school or facility finding.",
+        "An appropriation does not prove service quality or outcomes."
+      ],
+      "interpretation": "The Kaduna State Government announced a ₦985.9bn 2026 budget, with 25% for education, 15% for health, 70.9% capital expenditure and 29.1% recurrent expenditure. These are statewide approved allocations, not spending or service outcomes."
     }
   ]
 }
