@@ -9,8 +9,8 @@
     "officialStatePortalsLocated": 15,
     "fiscalTransparencyCoverage": 36,
     "h1_2026SectorSpendingCoverage": 34,
-    "officialStateDocumentsLocated": 1,
-    "stateBudgetSourceDiscoveryCompleted": 16
+    "officialStateDocumentsLocated": 3,
+    "stateBudgetSourceDiscoveryCompleted": 18
   },
   "comparativeSources": [
     {
@@ -151,12 +151,14 @@
     {
       "name": "Akwa Ibom",
       "type": "state",
-      "status": "not_reviewed",
-      "sourceId": null,
-      "officialPortalUrl": null,
-      "documentsLocated": [],
-      "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "status": "official_documents_located",
+      "sourceId": "state-budget-akwa-ibom-2026",
+      "officialPortalUrl": "https://akwaibomstate.gov.ng/appropriation-law-2026/",
+      "documentsLocated": [
+        "Official 2026 Appropriation Law page and downloadable law"
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official 2026 appropriation law page located. Detailed budget schedules and 2026 implementation reports still require extraction.",
       "fiscalTransparency": {
         "quarter": "Q2 2026",
         "citizensBudget": {
@@ -833,12 +835,14 @@
     {
       "name": "Kogi",
       "type": "state",
-      "status": "not_reviewed",
-      "sourceId": null,
-      "officialPortalUrl": null,
-      "documentsLocated": [],
-      "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "status": "official_documents_located",
+      "sourceId": "state-budget-kogi-q1-2026-bir",
+      "officialPortalUrl": "https://kogistate.gov.ng/wp-content/uploads/Kogi-State-2026-Q1-BIR-Publication.pdf",
+      "documentsLocated": [
+        "Official Kogi State Q1 2026 Budget Implementation Report (27 April 2026)"
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official Q1 2026 BIR PDF located; state-level sector and execution figures require extraction and reconciliation against subsequent quarters.",
       "fiscalTransparency": {
         "quarter": "Q2 2026",
         "citizensBudget": {
