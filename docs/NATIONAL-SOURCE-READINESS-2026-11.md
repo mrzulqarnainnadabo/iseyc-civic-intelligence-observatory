@@ -37,7 +37,7 @@ Source catalogue additions also include NBS CPI reports, ONDI and NASENI program
 
 ## Department source watch — next acquisition priorities
 
-The registry now includes **96 sources**. Fourteen source catalogue entries are explicitly marked as catalogue-only or partial rather than being treated as integrated observations:
+The registry now includes **96 sources**. Thirty-four source catalogue entries are explicitly marked catalogue-only, partial or reconciliation-required rather than being treated as integrated observations. This includes 19 official state budget source routes and the BudgIT report awaiting reconciliation:
 - **Education:** UBEC school digests and reports; UNICEF/UBEC NALABE 2022 learning assessment; NEMIS historical education digest and data visuals. The 2024/2025 FME EMIS Annual School Census is integrated as a source snapshot with a 57.9% reporting-rate warning.
 - **Health:** WHO national context and NPHCDA 2025 PHC programme snapshots; Federal Ministry of Health MSDAT (routine, survey and global estimates), NHFR, the NPHCDA PHC Functionality Dashboard, NPHCDA Data Requisition Portal, Ministry health reports and medicine logistics sources. NHFR API ingestion requires an approved API key; the PHC dashboard was not machine-readable in this review; 2025 commodity distribution is not current stock-on-hand.
 - **Civic/public finance:** Budget Office of the Federation reports, including the 2026 Q1 and Q2 Budget Implementation Reports published 2 and 7 November 2026. Appropriation, release, expenditure and completed delivery remain separate measures.
