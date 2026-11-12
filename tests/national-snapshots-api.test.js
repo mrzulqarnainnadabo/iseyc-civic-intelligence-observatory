@@ -21,6 +21,10 @@ describe("national source snapshot endpoint", () => {
     expect(response.body.source).toBe("iseyc-observatory-national-snapshots-v1");
     expect(response.body.status).toBe("ok");
     expect(response.body.records.length).toBe(14);
+    expect(response.body.observations.length).toBe(48);
+    expect(response.body.observations.some((item) => item.id === "ngf-state-budget-education-share-2026" && item.value === 14.4)).toBe(true);
+    expect(response.body.observations.some((item) => item.id === "ngf-state-budget-health-share-2026" && item.value === 9.3)).toBe(true);
+    expect(response.body.checkedAt).toBe("2026-11-12");
     expect(response.body.records.every((record) => record.sourceUrl && record.referencePeriod && record.limitations.length)).toBe(true);
     expect(response.body.records.some((record) => record.id === "fme-annual-school-census-national-2024-25")).toBe(true);
     expect(response.body.records.some((record) => record.id === "fme-annual-school-census-kaduna-2024-25")).toBe(true);
@@ -61,6 +65,16 @@ describe("national source snapshot endpoint", () => {
     expect(legacyCivic.body.records.some((record) => record.id === "nimc-enrolment-2025-10")).toBe(true);
     const all = request("/api/evidence/snapshots");
     expect(all.body.records.some((record) => record.id === "nbs-gdp-q1-2026")).toBe(true);
+  });
+
+  it("returns the same observations contract used by Civic Brain and filters both schemas by department", () => {
+    const health = request("/api/evidence/snapshots?departmentId=health");
+    expect(health.body.observations.some((item) => item.id === "ngf-state-budget-health-share-2026")).toBe(true);
+    expect(health.body.observations.some((item) => item.id === "ngf-state-budget-education-share-2026")).toBe(false);
+    expect(health.body.records.some((record) => record.id === "nphcda-phc-infrastructure-progress-2025")).toBe(true);
+    const education = request("/api/evidence/snapshots?departmentId=education");
+    expect(education.body.observations.some((item) => item.id === "ngf-state-budget-education-share-2026")).toBe(true);
+    expect(education.body.observations.some((item) => item.id === "ngf-state-budget-health-share-2026")).toBe(false);
   });
 
   it("rejects unknown departments and unsupported methods", () => {
