@@ -79,9 +79,19 @@ function validStateBudgetCoverage() {
   const rows = Array.isArray(stateBudgetCoverage.jurisdictions) ? stateBudgetCoverage.jurisdictions : [];
   const states = rows.filter((item) => item.type === 'state');
   const fct = rows.filter((item) => item.type === 'fct');
-  return states.length === 36 && fct.length === 1 &&
-    stateBudgetCoverage.scope?.officialStatePortalsLocated === 13 &&
-    states.every((item) => Number.isFinite(item.fiscalTransparency?.totalScore)) &&
+  const uniqueStateNames = new Set(states.map((item) => item.name)).size === 36;
+  const portalCount = states.filter((item) => item.status === 'official_portal_located').length;
+  const documentCount = states.filter((item) => item.status === 'official_documents_located').length;
+  const notReviewedCount = states.filter((item) => item.status === 'not_reviewed').length;
+  return stateBudgetCoverage.scope?.states === 36 &&
+    stateBudgetCoverage.scope?.fctTrackedSeparately === true &&
+    stateBudgetCoverage.scope?.officialStatePortalsLocated === 15 &&
+    stateBudgetCoverage.scope?.officialStateDocumentsLocated === 1 &&
+    stateBudgetCoverage.scope?.stateBudgetSourceDiscoveryCompleted === 16 &&
+    states.length === 36 && uniqueStateNames && fct.length === 1 &&
+    portalCount === 15 && documentCount === 1 && notReviewedCount === 20 &&
+    states.every((item) => Number.isFinite(item.fiscalTransparency?.totalScore) &&
+      item.fiscalTransparency.totalScore >= 0 && item.fiscalTransparency.totalScore <= 100) &&
     states.every((item) => item.fiscalTransparency?.sourceId === 'budgit-state-fiscal-transparency-league-q2-2026');
 }
 
