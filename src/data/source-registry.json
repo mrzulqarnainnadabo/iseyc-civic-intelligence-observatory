@@ -2252,5 +2252,131 @@
    "Publication availability and reporting periods vary; preserve each document's own version and date."
   ],
   "notes": "Official portal listing located; document extraction, line-item reconciliation and comparison with actual outturn remain pending."
+ },
+ {
+  "id": "budgit-state-expenditure-h1-2026",
+  "publisher": "BudgIT Foundation",
+  "name": "H1 2026 Total Expenditure Performance by State",
+  "url": "https://budgit.org/post_infographics/h1-2026-total-expenditure-performance-by-state/",
+  "urlStatus": "confirmed",
+  "sectors": [
+   "public-finance"
+  ],
+  "kind": "published-research",
+  "geographicCoverage": "34 of 36 states; exclusions not named on this infographic page",
+  "geoLevel": "state",
+  "dataType": "Combined approved budgets, actual H1 expenditure and state expenditure performance",
+  "updateFrequency": "Published infographics and quarterly state fiscal transparency updates.",
+  "licence": "BudgIT infographics are published under CC BY-ND 3.0; attribute BudgIT and link to the original page.",
+  "lastChecked": "2026-11-12",
+  "checkedHow": "Official BudgIT publication page reviewed on 12 November 2026; stated reference period, coverage and published values checked.",
+  "limitations": [
+   "The infographic page does not name the two states excluded; do not infer them from other BudgIT products.",
+   "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+   "Spending is not proof of completed or functional service delivery."
+  ],
+  "notes": "Published 21 October 2026; 34 states budgeted ₦35.22tn and spent ₦8.60tn (24.4%) by end of Q2 2026."
+ },
+ {
+  "id": "budgit-state-education-h1-2026",
+  "publisher": "BudgIT Foundation",
+  "name": "H1 2026 Education Expenditure Performance by State",
+  "url": "https://budgit.org/post_infographics/h1-2026-education-expenditure-performance-by-state/",
+  "urlStatus": "confirmed",
+  "sectors": [
+   "public-finance"
+  ],
+  "kind": "published-research",
+  "geographicCoverage": "34 of 36 states; exclusions not named on this infographic page",
+  "geoLevel": "state",
+  "dataType": "Education expenditure totals, state spending and education share of total expenditure",
+  "updateFrequency": "Published infographics and quarterly state fiscal transparency updates.",
+  "licence": "BudgIT infographics are published under CC BY-ND 3.0; attribute BudgIT and link to the original page.",
+  "lastChecked": "2026-11-12",
+  "checkedHow": "Official BudgIT publication page reviewed on 12 November 2026; stated reference period, coverage and published values checked.",
+  "limitations": [
+   "The infographic page does not name the two states excluded; do not infer them from other BudgIT products.",
+   "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+   "Spending amounts and shares do not establish school-level inputs or learning outcomes."
+  ],
+  "notes": "Published 21 October 2026; 34 states spent ₦1.049tn on education by end of Q2 2026."
+ },
+ {
+  "id": "budgit-state-health-h1-2026",
+  "publisher": "BudgIT Foundation",
+  "name": "H1 2026 Health Expenditure Performance by State",
+  "url": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/",
+  "urlStatus": "confirmed",
+  "sectors": [
+   "public-finance"
+  ],
+  "kind": "published-research",
+  "geographicCoverage": "34 of 36 states; Rivers and Osun excluded",
+  "geoLevel": "state",
+  "dataType": "Health expenditure totals, state spending and health share of total expenditure",
+  "updateFrequency": "Published infographics and quarterly state fiscal transparency updates.",
+  "licence": "BudgIT infographics are published under CC BY-ND 3.0; attribute BudgIT and link to the original page.",
+  "lastChecked": "2026-11-12",
+  "checkedHow": "Official BudgIT publication page reviewed on 12 November 2026; stated reference period, coverage and published values checked.",
+  "limitations": [
+   "Rivers and Osun are excluded because their Q2 2026 BIRs were unavailable.",
+   "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+   "Spending does not establish medicine availability, PHC functionality or patient outcomes."
+  ],
+  "notes": "Published 21 October 2026; 34 states spent ₦614.55bn on health by end of Q2 2026."
+ },
+ {
+  "id": "budgit-state-fiscal-transparency-league-q2-2026",
+  "publisher": "BudgIT Foundation",
+  "name": "States Fiscal Transparency League — Q2 2026",
+  "url": "https://fiscalleague.budgit.org/latest-ranking",
+  "urlStatus": "confirmed",
+  "sectors": [
+   "public-finance",
+   "governance"
+  ],
+  "kind": "published-research",
+  "geographicCoverage": "All 36 states; FCT is not included",
+  "geoLevel": "state",
+  "dataType": "State scores for citizens' budgets, quarterly BIR, e-procurement portals and state fiscal-data websites",
+  "updateFrequency": "Quarterly league-table updates.",
+  "licence": "BudgIT infographics are published under CC BY-ND 3.0; attribute BudgIT and link to the original page.",
+  "lastChecked": "2026-11-12",
+  "checkedHow": "Official BudgIT publication page reviewed on 12 November 2026; stated reference period, coverage and published values checked.",
+  "limitations": [
+   "Do not interpret the score as a measure of public-service quality, governance outcomes or public trust.",
+   "Component points have different maxima; preserve the component scores and source's normalized total.",
+   "The source spells Nasarawa as Nassarawa; the Observatory normalizes the state name while preserving the source spelling in metadata.",
+   "FCT is not part of the 36-state league table."
+  ],
+  "notes": "The latest quarter shown is Q2 2026. The score measures publication and accessibility of fiscal information, not service-delivery performance."
+ },
+ {
+  "id": "budgit-state-of-states-2026",
+  "publisher": "BudgIT Foundation",
+  "name": "From Allocation to Impact — 2026 State of States Report",
+  "url": "https://budgit.org/post_publications/from-allocation-to-impact-rethinking-state-spending-priorities-2026-state-of-states-report/",
+  "urlStatus": "confirmed",
+  "sectors": [
+   "public-finance",
+   "education",
+   "health",
+   "agriculture",
+   "water-sanitation"
+  ],
+  "kind": "published-research",
+  "geographicCoverage": "35 states; assessment period 2025",
+  "geoLevel": "state",
+  "dataType": "State fiscal performance, revenue, debt sustainability and sector spending across agriculture, health, education and WASH",
+  "updateFrequency": "Annual research publication.",
+  "licence": "BudgIT infographics are published under CC BY-ND 3.0; attribute BudgIT and link to the original page.",
+  "lastChecked": "2026-11-12",
+  "checkedHow": "Official BudgIT publication page reviewed on 12 November 2026; stated reference period, coverage and published values checked.",
+  "limitations": [
+   "The publication covers 35 states; do not describe it as complete 36-state coverage.",
+   "A report-level assessment is secondary analysis; underlying state BIRs and audited statements remain preferred primary sources.",
+   "Read the report methodology before comparing sector outcomes."
+  ],
+  "notes": "The 2026 State of States report assesses fiscal performance across 35 states in 2025 and introduces a greater focus on development impact."
  }
 ]
