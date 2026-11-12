@@ -9,7 +9,7 @@
       "departmentId": "health",
       "title": "WHO · Nigeria health indicators",
       "publisher": "World Health Organization",
-      "sourceId": "who-gho-nigeria",
+      "sourceId": "who-nigeria-country-profile",
       "sourceUrl": "https://data.who.int/countries/566",
       "referencePeriod": "Indicator-specific · 2021–2025",
       "retrievedAt": "2026-11-09",
@@ -663,6 +663,516 @@
         "Do not mix these reported values with projections or estimates from earlier or later Nigeria Development Update editions."
       ],
       "interpretation": "Useful national context for understanding the macroeconomic environment and public-finance backdrop. It does not show how growth or additional revenues are distributed across individual states, LGAs or households."
+    },
+    {
+      "id": "nphcda-phc-infrastructure-progress-2025",
+      "departmentId": "health",
+      "title": "NPHCDA · PHC revitalisation and infrastructure progress",
+      "publisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "referencePeriod": "Published 15 September 2025 · periods stated per measure",
+      "retrievedAt": "2026-11-09",
+      "geography": {
+        "level": "national",
+        "label": "Nigeria"
+      },
+      "evidenceType": "Agency-reported PHC programme and infrastructure outputs",
+      "metrics": [
+        {
+          "label": "PHCs reported revitalised",
+          "value": "1,295",
+          "unit": "PHCs",
+          "period": "As of August 2025",
+          "measurementType": "Agency-reported programme progress"
+        },
+        {
+          "label": "PHCs at various stages of revitalisation",
+          "value": "3,469",
+          "unit": "PHCs",
+          "period": "As of August 2025",
+          "measurementType": "Agency-reported programme progress"
+        },
+        {
+          "label": "Solar power installation completed",
+          "value": "38",
+          "unit": "PHCs",
+          "period": "As reported 15 September 2025",
+          "measurementType": "Agency-reported infrastructure output"
+        },
+        {
+          "label": "Solar power installation ongoing",
+          "value": "34",
+          "unit": "PHCs",
+          "period": "As reported 15 September 2025",
+          "measurementType": "Agency-reported infrastructure progress"
+        },
+        {
+          "label": "Solar boreholes installed",
+          "value": "61",
+          "unit": "PHCs",
+          "period": "As reported 15 September 2025",
+          "measurementType": "Agency-reported infrastructure output"
+        }
+      ],
+      "interpretation": "These are separate programme progress measures. Facilities at various stages are not counted as completed, and infrastructure installation does not by itself establish that a facility is currently functional.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, installation, procurement, distribution, disbursement and verified service functionality are different measures.",
+        "Do not add the 1,295 revitalised facilities to the 3,469 at various stages as though both were completed outputs."
+      ]
+    },
+    {
+      "id": "nphcda-bhcpf-funding-and-upgrades-2025",
+      "departmentId": "health",
+      "title": "NPHCDA · Basic Health Care Provision Fund and facility upgrades",
+      "publisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "referencePeriod": "2023 to mid-2025 · published 15 September 2025",
+      "retrievedAt": "2026-11-09",
+      "geography": {
+        "level": "national",
+        "label": "Nigeria"
+      },
+      "evidenceType": "Agency-reported fund disbursement and facility upgrade outputs",
+      "metrics": [
+        {
+          "label": "BHCPF funds disbursed to PHCs",
+          "value": "₦50.8 billion",
+          "unit": "NGN",
+          "period": "2023 to mid-2025",
+          "measurementType": "Agency-reported fund disbursement"
+        },
+        {
+          "label": "BHCPF disbursement in first half of 2025",
+          "value": "₦12.4 billion",
+          "unit": "NGN",
+          "period": "First half of 2025",
+          "measurementType": "Agency-reported fund disbursement · included in the wider 2023–mid-2025 total"
+        },
+        {
+          "label": "Facilities upgraded to Level 2 standard",
+          "value": "2,341",
+          "unit": "facilities",
+          "period": "As reported 15 September 2025",
+          "measurementType": "Agency-reported facility upgrade count"
+        }
+      ],
+      "interpretation": "NPHCDA reported BHCPF disbursements and facility upgrades. Disbursement is not proof of completed service delivery, and the first-half 2025 amount is part of—not additional to—the wider 2023 to mid-2025 amount.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, installation, procurement, distribution, disbursement and verified service functionality are different measures.",
+        "Do not add the first-half 2025 disbursement to the 2023–mid-2025 total; it is a subset.",
+        "The source summary does not provide a Kaduna South allocation or named-facility reconciliation."
+      ]
+    },
+    {
+      "id": "nphcda-phc-workforce-progress-2025",
+      "departmentId": "health",
+      "title": "NPHCDA · Primary healthcare workforce support",
+      "publisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "referencePeriod": "Programme update published 15 September 2025",
+      "retrievedAt": "2026-11-09",
+      "geography": {
+        "level": "national",
+        "label": "Nigeria"
+      },
+      "evidenceType": "Agency-reported workforce deployment and training",
+      "metrics": [
+        {
+          "label": "Performance and Financial Management Officers deployed",
+          "value": "774",
+          "unit": "officers · one per LGA",
+          "period": "As reported 15 September 2025",
+          "measurementType": "Agency-reported workforce deployment"
+        },
+        {
+          "label": "Frontline health workers trained",
+          "value": "69,106",
+          "unit": "workers",
+          "period": "As reported 15 September 2025",
+          "measurementType": "Agency-reported workforce training count"
+        }
+      ],
+      "interpretation": "The source reports 774 Performance and Financial Management Officers deployed and 69,106 frontline workers trained. Training counts do not establish assessed competency or current staffing at a facility.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, installation, procurement, distribution, disbursement and verified service functionality are different measures.",
+        "The source describes PFMO deployment as one per LGA; this does not identify a specific officer or confirm current deployment status.",
+        "A training count is not a competency assessment or a current facility staffing register."
+      ]
+    },
+    {
+      "id": "nphcda-multistate-service-support-2025",
+      "departmentId": "health",
+      "title": "NPHCDA · Multi-state maternal health and cold-chain support",
+      "publisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "referencePeriod": "Programme update published 15 September 2025",
+      "retrievedAt": "2026-11-09",
+      "geography": {
+        "level": "varies",
+        "label": "Multi-state programme reporting · state lists not provided in the source summary"
+      },
+      "evidenceType": "Agency-reported commodity distribution and cold-chain outputs",
+      "metrics": [
+        {
+          "label": "PHCs receiving maternal and newborn health commodities",
+          "value": "1,936",
+          "unit": "PHCs across 10 states",
+          "period": "As reported 15 September 2025",
+          "measurementType": "Agency-reported commodity distribution"
+        },
+        {
+          "label": "Solar direct-drive refrigerators deployed",
+          "value": "1,653",
+          "unit": "refrigerators across 36 states + FCT",
+          "period": "As reported 15 September 2025",
+          "measurementType": "Agency-reported cold-chain output"
+        }
+      ],
+      "interpretation": "These are multi-state distribution and deployment outputs. They do not show current stock-on-hand, working equipment or service availability at any named Kaduna facility.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, installation, procurement, distribution, disbursement and verified service functionality are different measures.",
+        "The source summary does not name the 10 states receiving maternal and newborn health commodities.",
+        "Deployment of refrigerators does not establish current functionality, maintenance or vaccine availability."
+      ]
+    },
+    {
+      "id": "nphcda-kaduna-yobe-recruitment-2025",
+      "departmentId": "health",
+      "title": "NPHCDA · Kaduna and Yobe workforce recruitment",
+      "publisher": "National Primary Health Care Development Agency (NPHCDA)",
+      "sourceId": "nphcda-phc-progress-2025",
+      "sourceUrl": "https://nphcda.gov.ng/insights-into-priority-phc-initiative/",
+      "referencePeriod": "Combined state recruitment figures · published 15 September 2025",
+      "retrievedAt": "2026-11-09",
+      "geography": {
+        "level": "state",
+        "label": "Kaduna State + Yobe State · combined totals; state split not published"
+      },
+      "evidenceType": "Agency-reported combined-state recruitment",
+      "metrics": [
+        {
+          "label": "Skilled birth attendants recruited",
+          "value": "380",
+          "unit": "staff across Kaduna and Yobe combined",
+          "period": "As reported 15 September 2025",
+          "measurementType": "Agency-reported workforce recruitment"
+        },
+        {
+          "label": "Community-based health workers recruited",
+          "value": "1,227",
+          "unit": "staff across Kaduna and Yobe combined",
+          "period": "As reported 15 September 2025",
+          "measurementType": "Agency-reported workforce recruitment"
+        }
+      ],
+      "interpretation": "NPHCDA reports combined recruitment totals for Kaduna and Yobe. The source does not split the figures by state, LGA or facility; neither total can be attributed to Kaduna State alone.",
+      "limitations": [
+        "Agency-reported programme progress published on 15 September 2025; it is not a current 2026 status.",
+        "Figures are not independently audited outcomes.",
+        "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
+        "Revitalisation, installation, procurement, distribution, disbursement and verified service functionality are different measures.",
+        "Kaduna and Yobe figures are combined; do not assign either total to Kaduna State alone.",
+        "The source does not identify recruitment by LGA, facility, current employment status or active deployment."
+      ]
+    },
+    {
+      "publisher": "Nigeria Governors' Forum (NGF) · Public Finance Database",
+      "sourceId": "ngf-public-finance-database",
+      "sourceUrl": "https://publicfinance.ngf.org.ng/",
+      "referencePeriod": "2026 original state budgets",
+      "retrievedAt": "2026-11-12",
+      "geography": {
+        "level": "national",
+        "label": "All 36 state governments; FCT excluded"
+      },
+      "evidenceType": "NGF-published harmonised state-budget aggregate · National Chart of Accounts functional classification · original budget",
+      "limitations": [
+        "Original budget is planned expenditure, not actual expenditure, cash release or proof of service delivery.",
+        "NGF is a secondary compilation of state budget documents; preserve the NGF series and underlying state documents as separate provenance layers.",
+        "The aggregate covers the 36 states and excludes the FCT.",
+        "The NGF homepage shows a 2026 original-budget sector distribution while the state-explorer index surfaced a June 2025 update date; confirm per-table vintage and state coverage before deeper comparison.",
+        "The displayed sector shares total 100.1% because of rounding; do not silently rescale.",
+        "National fiscal aggregates do not establish LGA, facility, school or household outcomes."
+      ],
+      "id": "ngf-state-budget-education-2026",
+      "title": "NGF · Education in 2026 original state budgets",
+      "departmentId": "education",
+      "metrics": [
+        {
+          "label": "Share of aggregate 36-state original expenditure",
+          "value": "14.4",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "Aggregate education allocation",
+          "value": "5.19",
+          "unit": "₦ trillion",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation"
+        }
+      ],
+      "interpretation": "NGF reports ₦5.19 trillion (14.4%) for education in the 2026 original budgets of Nigeria's 36 states. This is a planned allocation, not actual expenditure, school funding received or evidence of learning outcomes."
+    },
+    {
+      "publisher": "Nigeria Governors' Forum (NGF) · Public Finance Database",
+      "sourceId": "ngf-public-finance-database",
+      "sourceUrl": "https://publicfinance.ngf.org.ng/",
+      "referencePeriod": "2026 original state budgets",
+      "retrievedAt": "2026-11-12",
+      "geography": {
+        "level": "national",
+        "label": "All 36 state governments; FCT excluded"
+      },
+      "evidenceType": "NGF-published harmonised state-budget aggregate · National Chart of Accounts functional classification · original budget",
+      "limitations": [
+        "Original budget is planned expenditure, not actual expenditure, cash release or proof of service delivery.",
+        "NGF is a secondary compilation of state budget documents; preserve the NGF series and underlying state documents as separate provenance layers.",
+        "The aggregate covers the 36 states and excludes the FCT.",
+        "The NGF homepage shows a 2026 original-budget sector distribution while the state-explorer index surfaced a June 2025 update date; confirm per-table vintage and state coverage before deeper comparison.",
+        "The displayed sector shares total 100.1% because of rounding; do not silently rescale.",
+        "National fiscal aggregates do not establish LGA, facility, school or household outcomes."
+      ],
+      "id": "ngf-state-budget-health-2026",
+      "title": "NGF · Health in 2026 original state budgets",
+      "departmentId": "health",
+      "metrics": [
+        {
+          "label": "Share of aggregate 36-state original expenditure",
+          "value": "9.3",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "Aggregate health allocation",
+          "value": "3.34",
+          "unit": "₦ trillion",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation"
+        }
+      ],
+      "interpretation": "NGF reports ₦3.34 trillion (9.3%) for health in the 2026 original budgets of Nigeria's 36 states. This is a planned allocation, not actual expenditure, facility funding received, medicine availability or verified care quality."
+    },
+    {
+      "publisher": "Nigeria Governors' Forum (NGF) · Public Finance Database",
+      "sourceId": "ngf-public-finance-database",
+      "sourceUrl": "https://publicfinance.ngf.org.ng/",
+      "referencePeriod": "2026 original state budgets",
+      "retrievedAt": "2026-11-12",
+      "geography": {
+        "level": "national",
+        "label": "All 36 state governments; FCT excluded"
+      },
+      "evidenceType": "NGF-published harmonised state-budget aggregate · National Chart of Accounts functional classification · original budget",
+      "limitations": [
+        "Original budget is planned expenditure, not actual expenditure, cash release or proof of service delivery.",
+        "NGF is a secondary compilation of state budget documents; preserve the NGF series and underlying state documents as separate provenance layers.",
+        "The aggregate covers the 36 states and excludes the FCT.",
+        "The NGF homepage shows a 2026 original-budget sector distribution while the state-explorer index surfaced a June 2025 update date; confirm per-table vintage and state coverage before deeper comparison.",
+        "The displayed sector shares total 100.1% because of rounding; do not silently rescale.",
+        "National fiscal aggregates do not establish LGA, facility, school or household outcomes."
+      ],
+      "id": "ngf-state-budget-functional-profile-2026",
+      "title": "NGF · Functional distribution of 2026 original state budgets",
+      "departmentIds": [
+        "civic"
+      ],
+      "metrics": [
+        {
+          "label": "Economic Affairs",
+          "value": "33.2",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "General Public Service",
+          "value": "22.2",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "Education",
+          "value": "14.4",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "Health",
+          "value": "9.3",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "Housing and Community Amenities",
+          "value": "8.4",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "Social Protection",
+          "value": "4.9",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "Public Order and Safety",
+          "value": "3.3",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "Recreation and Culture",
+          "value": "2.5",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "Environmental Protection",
+          "value": "1.9",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        }
+      ],
+      "interpretation": "This functional profile shows how NGF's 36-state original-budget aggregate is distributed. Economic Affairs is a broad function, not a technology allocation. Shares total 100.1% due to rounding."
+    },
+    {
+      "id": "budgit-subnational-health-expenditure-h1-2026",
+      "departmentIds": [
+        "health",
+        "civic"
+      ],
+      "title": "BudgIT · Subnational health expenditure — H1 2026",
+      "publisher": "The BudgIT Foundation",
+      "sourceId": "budgit-health-report",
+      "sourceUrl": "https://budgit.org/post_publications/nigerias-subnational-health-expenditure-report-h1-2026/",
+      "referencePeriod": "H1 2026 (January–June)",
+      "retrievedAt": "2026-11-12",
+      "geography": {
+        "level": "varies",
+        "label": "34 of 36 states; Rivers and Osun unavailable"
+      },
+      "evidenceType": "Secondary analysis of state Budget Implementation Reports; published H1 2026 health expenditure",
+      "metrics": [
+        {
+          "label": "Health actual expenditure",
+          "value": "621.34",
+          "unit": "₦ billion",
+          "period": "H1 2026",
+          "measurementType": "secondary-reported actual expenditure"
+        },
+        {
+          "label": "Prorated health budget performance",
+          "value": "40.48",
+          "unit": "%",
+          "period": "H1 2026",
+          "measurementType": "secondary-reported budget execution"
+        },
+        {
+          "label": "Increase in approved health budgets",
+          "value": "46.17",
+          "unit": "%",
+          "period": "2026 vs 2025",
+          "measurementType": "nominal budget allocation growth"
+        }
+      ],
+      "limitations": [
+        "Secondary report based on state BIRs; not independently audited or reconciled by ISEYC.",
+        "Executive summary and Tables 1/5 report ₦621.34bn, while a page 7 narrative reports ₦624.53bn.",
+        "Rivers and Osun are missing from the report's 34-state dataset; missing is not zero.",
+        "Sokoto, Kogi, Imo and Cross River state values are flagged by BudgIT because calculations differ from underlying Q1/Q2 BIRs.",
+        "Actual expenditure does not prove facility-level service quality, medicine availability or health outcomes."
+      ],
+      "interpretation": "BudgIT reports ₦621.34bn in H1 2026 health expenditure across 34 states, with 40.48% prorated health-budget performance despite a 46.17% increase in approved health budgets. The report contains an internal alternative total of ₦624.53bn and requires reconciliation before use as an ISEYC-verified statistic."
+    },
+    {
+      "id": "kaduna-2026-approved-budget-overview",
+      "departmentIds": [
+        "education",
+        "health",
+        "civic"
+      ],
+      "title": "Kaduna State · 2026 approved budget overview",
+      "publisher": "Kaduna State Government",
+      "sourceId": "kdsg-2026-appropriation-release",
+      "sourceUrl": "https://kdsg.gov.ng/uba-sani-signs-2026-budget-education-takes-lions-share/",
+      "referencePeriod": "2026 approved budget",
+      "retrievedAt": "2026-11-12",
+      "geography": {
+        "level": "state",
+        "label": "Kaduna State; not Kaduna South or individual LGAs"
+      },
+      "evidenceType": "Official state-government announcement of the 2026 Appropriation Act",
+      "metrics": [
+        {
+          "label": "Total approved budget",
+          "value": "985.9",
+          "unit": "₦ billion",
+          "period": "2026",
+          "measurementType": "approved budget"
+        },
+        {
+          "label": "Education share",
+          "value": "25",
+          "unit": "%",
+          "period": "2026",
+          "measurementType": "budget allocation share"
+        },
+        {
+          "label": "Health share",
+          "value": "15",
+          "unit": "%",
+          "period": "2026",
+          "measurementType": "budget allocation share"
+        },
+        {
+          "label": "Capital expenditure share",
+          "value": "70.9",
+          "unit": "%",
+          "period": "2026",
+          "measurementType": "budget allocation share"
+        },
+        {
+          "label": "Recurrent expenditure share",
+          "value": "29.1",
+          "unit": "%",
+          "period": "2026",
+          "measurementType": "budget allocation share"
+        }
+      ],
+      "limitations": [
+        "Official announcement of approved allocations; signed appropriation law and detailed schedules remain controlling.",
+        "Approved allocations are not releases or actual expenditure.",
+        "Statewide data is not Kaduna South, an LGA, ward, school or facility finding.",
+        "An appropriation does not prove service quality or outcomes."
+      ],
+      "interpretation": "The Kaduna State Government announced a ₦985.9bn 2026 budget, with 25% for education, 15% for health, 70.9% capital expenditure and 29.1% recurrent expenditure. These are statewide approved allocations, not spending or service outcomes."
     }
   ]
 }

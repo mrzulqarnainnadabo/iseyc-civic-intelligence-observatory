@@ -9,7 +9,7 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run && node scripts/verify-community-record-schema.mjs && node scripts/verify-inec-pvc-pilot.mjs",
+    "test": "vitest run && node scripts/verify-community-record-schema.mjs && node scripts/verify-inec-pvc-pilot.mjs && node scripts/verify-national-snapshots.mjs",
     "validate:registry": "node scripts/validate-registry.mjs",
     "verify": "npm run validate:registry && npm run typecheck && npm test && npm run build",
     "sync:registry": "cp data/source-registry.json src/data/source-registry.json"

@@ -7,12 +7,45 @@ ISEYC has a credible institutional source foundation, but it does not yet have a
 The next stage is to turn the catalogue into a governed acquisition and evidence system. Prioritise usable datasets and clear citizen questions over the number of institutions listed.
 
 **Current implementation facts**
-- The Observatory has a source registry and three national World Bank WDI indicator pilots.
+- The Observatory has a 97-source registry, six national World Bank WDI indicator pilots, and curated snapshot endpoints for WHO, NITDA, NIMC, IMF, NASENI, Innovation Support Network, FME, NPHCDA, NGF, BudgIT and Kaduna State Government publications.
 - Civic Mandate CommunityRecords and Community Observations are separate streams.
 - The Kaduna PHC pilot has source-readiness work but no imported HEFA facility observations.
 - A structured 2023 INEC voter-register/PVC table has now been transcribed for all 36 states and the FCT. Its arithmetic exceptions are explicitly retained.
 - No national current 2026 voter-register total after the scheduled CVR conclusion has yet been confirmed in the sources reviewed here.
 - No complete national school-level, PHC facility-level, procurement-award or government project-completion dataset has yet been established in the Observatory.
+
+
+## Curated national source snapshots — 9 November 2026
+
+The Observatory now exposes `GET /api/evidence/snapshots`. This is a **curated transcription layer**, not a live source feed. Each observation carries a source ID, publisher, source URL, reference period, geographic scope, measurement type, department mapping and explicit limitations. The endpoint does not silently replace missing data or infer local values.
+
+Initial source-backed observations (91 rows across eleven source publishers):
+- **WHO Global Health Observatory:** Nigeria under-five mortality estimate 59.5 per 1,000 live births (2024); life expectancy at birth 61.4 years male and 64.5 years female (2023); health expenditure 3.9% of GDP and US$61.6 per capita (2023).
+- **NITDA DL4ALL:** dashboard-reported 2,783,731 records labelled “verified digitally literate”, 5.57% progress towards the 70% programme target, 14,747 communities reached and 774 LGAs covered on the 24 October 2026 dashboard snapshot. These are programme reporting metrics, not a representative national digital-literacy survey or automatically a deduplicated count of unique people; geographic reach does not prove equal intensity or outcomes.
+- **NIMC:** 121,404,601 NIN enrolment records as at 30 June 2025. This is an administrative enrolment count, not a population census or a current 2026 population total.
+- **IMF 2026 Article IV:** 2024 real GDP growth of 4.1%, shown as the report's actual value. IMF estimates and projections for other years are not presented as observed facts.
+- **Innovation Support Network:** its 22 May 2026 publication reports more than 190 active hubs within an ecosystem of more than 250 active and partially active spaces. This is a published ecosystem assessment, not a government census or live directory.
+- **NASENI Innovation Hub:** the InnovateNaija page lists 108 finalists across 34 states. The page does not state a publication/reference date; the Observatory preserves that missing date instead of inventing one.
+- **Nigeria Governors' Forum Public Finance Database:** its 2026 original-budget sector distribution for the 36 states reports ₦5.19tn (14.4%) for education and ₦3.34tn (9.3%) for health, alongside other functional allocations. These are planned allocations, not actual expenditure or verified services; the displayed sector shares sum to 100.1% due to rounding. The NGF portal's component-level freshness requires further verification before state-by-state comparisons.
+
+- **NPHCDA PHC programme update (15 September 2025):** the agency reported 1,295 PHCs revitalised as of August 2025, 3,469 at various stages, ₦50.8bn disbursed to 8,309 PHCs between 2023 and mid-2025, 1,936 PHCs in 10 states receiving maternal/newborn commodities, and 69,106 frontline health workers trained. It also reports combined Kaduna/Yobe recruitment of 380 skilled birth attendants and 1,227 community-based health workers. These are agency-reported 2025 programme figures, not a current 2026 facility-functionality or medicine-stock measure.- **Federal Ministry of Education — Annual School Census 2024/2025:** the portal generated 18 July 2026 displays 215,033 total schools, 124,543 schools reported and a 57.9% reporting rate. It displays 40,126,175 learner records, a national learner–teacher ratio of 33.6 and learner–classroom ratio of 60.1. The Kaduna State table displays 2,718,039 learners, a learner–teacher ratio of 51.3, learner–classroom ratio of 56.9 and learner–toilet ratio of 139.5. These are administrative portal values; the 57.9% reporting rate is a major completeness limit, and Kaduna State figures are not Kaduna South or named-school findings.
+
+Source catalogue additions also include NBS CPI reports, ONDI and NASENI programme information. The official NBS catalogue lists the September 2026 CPI report, published 15 October 2026, as a downloadable ZIP containing PDF and XLSX tables; those tables have not yet been extracted and validated into observations. Catalogue-only entries are explicitly separated from datasets with an observation. The NBS CPI metadata states a 2024 price base and 2023 weight reference; pre-rebase and post-rebase series must not be spliced without the official bridge methodology.
+
+**Department use:** Health receives WHO national context; Education and Software & Technology receive the NITDA dashboard snapshot; Software & Technology receives the ISN and NASENI programme snapshots; Civic receives NIMC and IMF context. These values remain national or programme-level context. They do not establish Kaduna South, LGA, school, PHC or facility conditions.
+
+
+## Department source watch — next acquisition priorities
+
+The registry now includes **97 sources**. Thirty-five source catalogue entries are explicitly marked catalogue-only, partial or reconciliation-required rather than being treated as integrated observations. This includes 19 official state budget source routes and the BudgIT report awaiting reconciliation:
+- **Education:** UBEC school digests and reports; UNICEF/UBEC NALABE 2022 learning assessment; NEMIS historical education digest and data visuals. The 2024/2025 FME EMIS Annual School Census is integrated as a source snapshot with a 57.9% reporting-rate warning.
+- **Health:** WHO national context and NPHCDA 2025 PHC programme snapshots; Federal Ministry of Health MSDAT (routine, survey and global estimates), NHFR, the NPHCDA PHC Functionality Dashboard, NPHCDA Data Requisition Portal, Ministry health reports and medicine logistics sources. NHFR API ingestion requires an approved API key; the PHC dashboard was not machine-readable in this review; 2025 commodity distribution is not current stock-on-hand.
+- **Civic/public finance:** Budget Office of the Federation reports, including the 2026 Q1 and Q2 Budget Implementation Reports published 2 and 7 November 2026. Appropriation, release, expenditure and completed delivery remain separate measures.
+- **Digital innovation:** ONDI, NASENI and ISN materials are registered with source-type and coverage limitations. Programme outputs are not a census of active firms or innovators.
+
+**Department allocation:** Education now has NITDA and FME national/state school-census snapshots plus UBEC/NALABE/NEMIS source leads. Health has WHO national estimates and NPHCDA programme snapshots plus MSDAT/NHFR/PHC functionality/medicine-logistics sources awaiting extraction. Software & Technology has NITDA, ISN and NASENI programme evidence. Civic has NIMC and IMF context plus Budget Office reports awaiting table extraction.
+
+**Next acquisition gate:** extract the source tables and update dates from the current NBS CPI release, obtain NITDA dashboard data dictionary and deduplication rules, request machine-readable WHO/IMF series where available, and establish permitted reuse and update cadence for the ISN and NASENI materials. No automatic refresh is claimed for these manual snapshots.
 
 ## Source-readiness vocabulary
 
@@ -105,6 +138,60 @@ The Budget Office's quarterly implementation index lists federal reports across 
 **Limitations:** a federal report does not describe state/local spending. Appropriation is not release; release is not cash expenditure; expenditure is not verified delivery. PDF availability is not transaction-level coverage.
 
 **Acquisition:** start with federal Q1 2026 and the most recent complete annual report; extract tables with period, budget version, MDA, economic/functional classification and accounting basis. Add state-level sources one state at a time. Reconcile budget figures against audited accounts and OAGF releases where possible.
+
+### Subnational public finance — Nigeria Governors' Forum (NGF) and state budget offices
+
+**Newly confirmed national entry point:** the NGF Public Finance Database describes open-access fiscal data for all 36 state governments. It presents comparable annual revenue, expenditure and financing data sourced from state budget documents and audited financial statements and aligned to the National Chart of Accounts. Its public interface separates original budgets, actual expenditure, performance indicators, state comparison and state exploration.
+
+**What this makes possible:** a defensible starting point for comparing state budget priorities, actual fiscal outturns, capital/recurrent expenditure, personnel costs and revenue performance—provided each series is checked for year, revision, accounting basis and state coverage.
+
+**Freshness caution:** the database homepage displays 2026 original-budget sector aggregates, while the state-explorer index surfaced in this review displays a June 2025 last-updated date. Treat these as different portal components until the data vintage for each table is confirmed. The separate publicfinanceapi.ngf.org.ng query interface is JavaScript-rendered; endpoint schema, bulk export, authentication and rate limits were not confirmed. Do not claim a machine-readable feed until a reproducible export or API contract is obtained.
+
+Official state-source routes independently located in this research pass: **19 of 36 states**. The remaining 17 state routes are not yet individually verified; that is a research gap, not evidence that those states lack budget documents.
+- Abia: [2026 Appropriation Act announcement](https://abiastate.gov.ng/gov-otti-signs-2026-appropriation-bill-into-law/) and [state budget document category](https://abiastate.gov.ng/document-category/budget/) (includes 2026 Q2 reporting).
+- Adamawa: [2026 approved budget](https://finance.adamawastate.gov.ng/ova_doc/2026-approved-budget/) published by the State Ministry of Finance.
+- Anambra: [State budget transparency portal](https://anambrastate.gov.ng/transparency/state-budgets/) lists the 2026 appropriation law, approved budget and Q1–Q3 implementation reports.
+- Bauchi: [FY 2026 Appropriation Law](https://www.bauchistate.gov.ng/sdm_downloads/bauchi-state-fy-2026-appropriation-law/) is published on the state government site.
+- Benue: [Budget and Economic Planning Commission publications](https://planning.benuestate.gov.ng/downloadable-resources/) lists the 2026 appropriation law, approved budget publication and citizen's budget.
+- Edo: [Appropriation-law portal](https://edostate.gov.ng/category/appropriation-law/) lists FY 2026 approved budget estimates and the appropriation law.
+- Ekiti: [Finance and Budget portal](https://www.ekitistate.gov.ng/finance-budget) lists the 2026 appropriation law, approved budget and Q1–Q3 implementation reports.
+- Katsina: [SABER document portal](https://katsinastate.gov.ng/cat_doc/saber/) lists the 2026 approved appropriation law and budget consolidation template.
+- Kogi: [Online document centre](https://kogistate.gov.ng/online-document-centre/) lists the 2026 appropriation law and related budget documents.
+- Osun: [Budget documents portal](https://www.osunstate.gov.ng/resources/budget-documents/) lists the 2026 approved budget, appropriation law, citizen's budget and implementation reports.
+- Sokoto: [Ministry of Finance budget portal](https://mof.sk.gov.ng/resources/budget/) lists the 2026 approved budget, appropriation law, citizen's budget and Q1–Q3 reports.
+- Gombe: [2026 state budget](https://www.mof.gm.gov.ng/download/gombe-state-budget-2026/) published by the Ministry of Finance and Economic Development.
+- Imo: [SFTAS disclosure portal](https://imostate.gov.ng/Content/SFTAS/SFTAS_1) lists 2026 approved budget, appropriation law, work plan and quarterly reports.
+- Jigawa: [2026 budget document portal](https://jigawastate.gov.ng/dbudget) lists approved estimates, appropriation law, proposed budget and sector MTSS documents.
+- Kaduna: [Planning & Budget Commission downloads](https://pbc.kdsg.gov.ng/downloads/) lists the 2026 Appropriation Law, approved budget and Q2 2026 budget implementation report; the [state document library](https://kdsg.gov.ng/documents-library-2/) also lists the citizen's budget.
+- Kano: [2026 approved budget and appropriation law](https://finance.kn.gov.ng/kano-state-2026-approved-budget/) on the Ministry of Finance portal.
+- Kebbi: [budget documents portal](https://www.kebbistate.gov.ng/budget-documents) lists the 2026 approved budget, appropriation law, citizen's budget and Q1 2026 implementation report.
+- Taraba: [Open Government](https://www.tarabastate.gov.ng/open-government) lists the 2026 approved and citizen-friendly budgets; [Resources](https://www.tarabastate.gov.ng/resources) lists Q1/Q2 2026 reports.
+- Yobe: [2026 approved budget](https://budget.pfm.yb.gov.ng/approved-budgets/) on the Ministry of Budget and Planning portal.
+
+This is a **verified-source discovery list** covering 19 states, not a complete 36-state document acquisition. The remaining 17 state source routes still require individual verification. Their status must remain unknown—not 'no budget'—until searched.
+
+### Subnational health expenditure — BudgIT H1 2026 (published secondary evidence)
+
+BudgIT's 25-page *Nigeria's Subnational Health Expenditure Report, H1 2026* analyses state Budget Implementation Reports for 34 states. It reports:
+- ₦621.34bn health actual expenditure in H1 2026 versus ₦472.09bn in H1 2025 (+31.61% nominal).
+- 40.48% prorated health-budget performance in H1 2026, down from 44.95% in H1 2025.
+- A 46.17% increase in approved health budgets.
+- Rivers and Osun have no H1 2026 health expenditure data in the report; missing is not zero.
+- The report provides a 34-state table of H1 health actual expenditure. ISEYC has transcribed the table with the source's reference period and state geography.
+
+**Important: this report is not yet a reconciled ISEYC national statistic.** The report itself contains material inconsistencies:
+1. Its executive summary and Tables 1 and 5 report ₦621.34bn, while a narrative paragraph on page 7 reports ₦624.53bn.
+2. Table 1 reports PHC H1 2026 expenditure of ₦61.08bn, while pages 17–18 report ₦61.21bn.
+3. Table 5 flags Sokoto, Kogi, Imo and Cross River because their numeric calculations differ from the underlying Q1/Q2 BIR figures.
+4. The report says the top five states account for 45.19%; the five listed amounts total ₦282.23bn, which is about 45.43% of ₦621.34bn. The 45.19% share aligns more closely with the conflicting ₦624.53bn denominator.
+
+The Observatory stores the 34 state values as **published secondary report data**, and marks the four footnoted values as **reconciliation required**. The source-snapshot API exposes the verification status and reconciliation notes directly to Civic Brain and the department-facing Observatory interface. The aggregate is also flagged. These values may be described as "BudgIT reports…" with the publication linked; they must not be described as independently verified by ISEYC or used for state rankings until reconciled against the original state BIRs. The report's PHC aggregate is not promoted as a settled snapshot. The earlier 21 October 2026 BudgIT infographic's ₦614.55bn total is retained as a **superseded** observation linked to the later detailed report; it is excluded from ordinary Civic Brain answers and appears only when a user explicitly asks to compare versions or reconcile discrepancies.
+
+**Primary reconciliation work:** acquire the underlying Q1 and Q2 2026 state BIRs for all 34 reporting states, extract the health and PHC expenditure tables, compare the four starred states, recompute the aggregate, prorated execution rate and top-five concentration, and document any remaining differences. Keep Rivers and Osun as missing observations until official data is published.
+
+ No state budget totals should be copied into national comparisons until the actual source documents have been downloaded, table-extracted, reconciled and linked to the NGF series.
+
+**Acquisition protocol for every state:** preserve (1) approved appropriation law, (2) detailed approved budget estimates, (3) citizen budget, (4) revised/supplementary budget, (5) quarterly budget implementation reports, (6) audited financial statements and (7) procurement/project evidence as separate document classes. Capture the fiscal year, publication date, revision status, NCOA mapping, budget entity, function/programme/economic classification, original amount, revised amount, actual outturn, source page/table, file hash and extraction version. Never combine a proposed budget with an approved budget or an appropriation with actual expenditure.
 
 ### Procurement and projects — BPP / NOCOPO
 
