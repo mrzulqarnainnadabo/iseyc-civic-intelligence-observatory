@@ -2452,5 +2452,104 @@
       "Nominal changes are not inflation-adjusted and do not prove service quality or outcomes."
     ],
     "notes": "Published in November 2026; reports ₦621.34bn spent by 34 states, 40.48% health budget performance, 31.61% nominal expenditure growth and 46.17% approved-budget growth."
+  },
+  {
+    "id": "state-budget-jigawa",
+    "publisher": "Jigawa State Ministry of Budget and Economic Planning",
+    "name": "Jigawa State Government — 2026 Budget and Planning Documents",
+    "url": "https://www.jsbepd.org/index.php/plans-budget/annual-budget/2026-budget",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "education",
+      "health",
+      "water-sanitation"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Jigawa State",
+    "geoLevel": "state",
+    "dataType": "2026 approved estimates, appropriation law, citizens budget, quarterly BIR, MTEF/MTSS and sector costing",
+    "updateFrequency": "Annual budget and quarterly implementation reporting",
+    "licence": "Official state government documents; cite each original publication and confirm reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official Ministry of Budget and Economic Planning page reviewed; it lists 2026 Q1 BIR, citizens budget, approved estimates, appropriation law and sector planning documents.",
+    "limitations": [
+      "Document listings are not transcribed datasets.",
+      "The ministry page includes state and local-government documents; keep jurisdiction explicit.",
+      "Appropriation is not release, expenditure or service delivery."
+    ],
+    "notes": "Official 2026 budget and planning document page located; extraction and line-item reconciliation pending."
+  },
+  {
+    "id": "state-budget-kwara",
+    "publisher": "Kwara State Government",
+    "name": "Kwara State Government — Government Data and Financial Reports",
+    "url": "https://kwarastate.gov.ng/government/government-data/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kwara State",
+    "geoLevel": "state",
+    "dataType": "Budget implementation reports, approved budgets, audited financial statements and revenue regulations",
+    "updateFrequency": "Quarterly BIR and annual financial reporting",
+    "licence": "Official state government documents; cite each original publication and confirm reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official Kwara government data page reviewed; Q1–Q3 2026 BIRs and 2025 audited accounts are listed.",
+    "limitations": [
+      "Document listings are not transcribed datasets.",
+      "Q3 BIR is a fiscal execution report, not a final audited outturn.",
+      "Preserve the reporting period and document version."
+    ],
+    "notes": "Official publication page lists Q3 2026 BIR, Q2 2026 BIR, Q1 2026 BIR and 2025 audited statements."
+  },
+  {
+    "id": "state-budget-abia",
+    "publisher": "Abia State Government",
+    "name": "Abia State Government — 2026 Appropriation assent announcement",
+    "url": "https://abiastate.gov.ng/gov-otti-signs-2026-appropriation-bill-into-law/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Abia State",
+    "geoLevel": "state",
+    "dataType": "Official announcement of the 2026 appropriation law and total approved budget",
+    "updateFrequency": "Annual appropriation announcement",
+    "licence": "Official state government announcement; cite issuing authority.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official Abia State Government page dated 29 December 2025 reviewed; it reports the 2026 appropriation total.",
+    "limitations": [
+      "Press announcement is not a substitute for the enacted appropriation schedule.",
+      "The total is an approved budget, not cash release, actual expenditure or verified delivery."
+    ],
+    "notes": "Governor signed the 2026 appropriation law on 29 December 2025; reported total is ₦1,016,228,072,651.99."
+  },
+  {
+    "id": "state-budget-kaduna-2026-appropriation-announcement",
+    "publisher": "Kaduna State Government",
+    "name": "Kaduna State Government — 2026 Budget signing announcement",
+    "url": "https://kdsg.gov.ng/uba-sani-signs-2026-budget-education-takes-lions-share/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "education"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kaduna State",
+    "geoLevel": "state",
+    "dataType": "Official announcement of 2026 appropriation headline total and expenditure composition",
+    "updateFrequency": "Annual appropriation announcement",
+    "licence": "Official state government announcement; cite issuing authority.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official KDSG page dated 23 December 2025 reviewed; headline total, capital/recurrent split and education share checked.",
+    "limitations": [
+      "Press announcement is not a substitute for the enacted appropriation schedule or detailed MDA allocations.",
+      "The education share is reported as a rounded headline percentage; verify against the appropriation schedule before detailed comparison.",
+      "Appropriation is not release, actual expenditure or verified service delivery."
+    ],
+    "notes": "KDSG reports a ₦985.9bn 2026 budget, 25% for education, ₦698.9bn capital and ₦287bn recurrent."
   }
 ]
