@@ -5,6 +5,7 @@ import { useAdapter } from '../lib/hooks';
 import { SECTOR_LABEL, SECTORS, type Sector } from '../data/types';
 import { listIndicators, fetchViaGateway, formatIndicatorValue, type IndicatorDefinition, type IndicatorObservation } from '../lib/indicators';
 import NationalSnapshotGrid from '../components/NationalSnapshotGrid';
+import NationalSnapshots from '../components/NationalSnapshots';
 
 function IndicatorCard({ indicator }: { indicator: IndicatorDefinition }) {
   const [observations, setObservations] = useState<IndicatorObservation[]>([]);
@@ -77,6 +78,8 @@ export default function Overview() {
       <div className="indicator-grid">{visibleIndicators.map((indicator) => <IndicatorCard key={indicator.id} indicator={indicator} />)}</div>
       <p className="observatory-caveat"><strong>Read carefully.</strong> These indicators are national aggregates. They cannot establish differences between states or LGAs, facility-level service quality, programme delivery or causal impact. Missing observations are not zero.</p>
     </section>
+
+    <NationalSnapshots />
 
     <section className="observatory-lower-grid">
       <div className="observatory-panel"><div className="observatory-panel__head"><div><span className="observatory-kicker observatory-kicker--dark">Public voice</span><h2>{isDemo ? 'Demonstration records' : 'Latest published community records'}</h2></div><Link to="/issues">All records →</Link></div>
