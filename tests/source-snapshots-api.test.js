@@ -45,6 +45,7 @@ describe("numeric source-snapshot API", () => {
     expect(response.body.observations.find((item) => item.id === "budgit-health-actual-spend-34-states-h1-2026")?.value).toBe(621.34);
     expect(response.body.observations.find((item) => item.id === "budgit-health-budget-performance-h1-2026")?.value).toBe(40.48);
     expect(response.body.observations.find((item) => item.recordStatus === "superseded")?.value).toBe(614.55);
+    expect(response.body.observations.find((item) => item.recordStatus === "superseded")?.supersededBy).toBe("budgit-health-actual-spend-34-states-h1-2026");
   });
 
   it("keeps Kaduna approved allocations separate from actual expenditure", () => {
