@@ -1098,6 +1098,770 @@
       ],
       "sourceType": "official_source",
       "sourceUpdateDate": "2026-04-17"
+    },
+    {
+      "id": "budgit-h1-2026-combined-approved-budgets",
+      "title": "Combined approved state budgets",
+      "value": 35.22,
+      "unit": "₦ trillion",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Combined approved budgets",
+      "geoLevel": "varies",
+      "geographicCoverage": "34 of 36 states; exclusions not named on the infographic page",
+      "sourceId": "budgit-state-expenditure-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Total Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-total-expenditure-performance-by-state/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "Combined approved budgets across the 34 states reviewed.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "The source page does not name the two states excluded; do not infer them from the revenue or health reviews."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-combined-expenditure",
+      "title": "Combined actual state expenditure",
+      "value": 8.6,
+      "unit": "₦ trillion",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Actual expenditure by end of Q2",
+      "geoLevel": "varies",
+      "geographicCoverage": "34 of 36 states; exclusions not named on the infographic page",
+      "sourceId": "budgit-state-expenditure-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Total Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-total-expenditure-performance-by-state/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "Actual expenditure reported by the end of Q2 2026 across the 34 states reviewed.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "The source page does not name the two states excluded; do not infer them from the revenue or health reviews."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-combined-expenditure-rate",
+      "title": "Combined expenditure performance",
+      "value": 24.4,
+      "unit": "% of combined approved budgets",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Actual expenditure as a share of approved budgets",
+      "geoLevel": "varies",
+      "geographicCoverage": "34 of 36 states; exclusions not named on the infographic page",
+      "sourceId": "budgit-state-expenditure-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Total Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-total-expenditure-performance-by-state/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "The 34 states spent 24.4% of their combined approved budgets by the end of Q2.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "The source page does not name the two states excluded; do not infer them from the revenue or health reviews."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-oyo-expenditure-performance",
+      "title": "Oyo state expenditure performance",
+      "value": 43.4,
+      "unit": "% of approved state budget",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Actual expenditure as a share of approved state budget",
+      "geoLevel": "state",
+      "geographicCoverage": "Oyo",
+      "sourceId": "budgit-state-expenditure-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Total Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-total-expenditure-performance-by-state/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "State-level expenditure performance reported by BudgIT for H1 2026.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "The source page does not name the two states excluded; do not infer them from the revenue or health reviews."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-bauchi-expenditure-performance",
+      "title": "Bauchi state expenditure performance",
+      "value": 42.6,
+      "unit": "% of approved state budget",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Actual expenditure as a share of approved state budget",
+      "geoLevel": "state",
+      "geographicCoverage": "Bauchi",
+      "sourceId": "budgit-state-expenditure-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Total Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-total-expenditure-performance-by-state/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "State-level expenditure performance reported by BudgIT for H1 2026.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "The source page does not name the two states excluded; do not infer them from the revenue or health reviews."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-ekiti-expenditure-performance",
+      "title": "Ekiti state expenditure performance",
+      "value": 37.9,
+      "unit": "% of approved state budget",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Actual expenditure as a share of approved state budget",
+      "geoLevel": "state",
+      "geographicCoverage": "Ekiti",
+      "sourceId": "budgit-state-expenditure-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Total Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-total-expenditure-performance-by-state/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "State-level expenditure performance reported by BudgIT for H1 2026.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "The source page does not name the two states excluded; do not infer them from the revenue or health reviews."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-enugu-expenditure-performance",
+      "title": "Enugu state expenditure performance",
+      "value": 10.5,
+      "unit": "% of approved state budget",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Actual expenditure as a share of approved state budget",
+      "geoLevel": "state",
+      "geographicCoverage": "Enugu",
+      "sourceId": "budgit-state-expenditure-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Total Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-total-expenditure-performance-by-state/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "State-level expenditure performance reported by BudgIT for H1 2026.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "The source page does not name the two states excluded; do not infer them from the revenue or health reviews."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-cross-river-expenditure-performance",
+      "title": "Cross River state expenditure performance",
+      "value": 11.1,
+      "unit": "% of approved state budget",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Actual expenditure as a share of approved state budget",
+      "geoLevel": "state",
+      "geographicCoverage": "Cross River",
+      "sourceId": "budgit-state-expenditure-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Total Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-total-expenditure-performance-by-state/",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "interpretation": "State-level expenditure performance reported by BudgIT for H1 2026.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "The source page does not name the two states excluded; do not infer them from the revenue or health reviews."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-education-total",
+      "title": "Combined state education expenditure",
+      "value": 1.049,
+      "unit": "₦ trillion",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Actual education expenditure by end of Q2",
+      "geoLevel": "varies",
+      "geographicCoverage": "34 of 36 states; exclusions not named on the infographic page",
+      "sourceId": "budgit-state-education-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Education Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-education-expenditure-performance-by-state/",
+      "departments": [
+        "education",
+        "civic"
+      ],
+      "interpretation": "The 34 states reviewed spent a combined ₦1.049 trillion on education by the end of Q2 2026.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "The source page does not name the two states excluded; do not infer them from other BudgIT reviews.",
+        "Education spending is not proof of school-level funding receipt, teacher presence or improved learning."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-education-share-jigawa",
+      "title": "Jigawa education share of total expenditure",
+      "value": 29.9,
+      "unit": "% of total expenditure",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Education expenditure as a share of total state expenditure",
+      "geoLevel": "state",
+      "geographicCoverage": "Jigawa",
+      "sourceId": "budgit-state-education-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Education Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-education-expenditure-performance-by-state/",
+      "departments": [
+        "education",
+        "civic"
+      ],
+      "interpretation": "Share of total state expenditure allocated to education in the H1 2026 outturn.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "The source page does not name the two states excluded; do not infer them from other BudgIT reviews.",
+        "Education spending is not proof of school-level funding receipt, teacher presence or improved learning."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-education-share-ekiti",
+      "title": "Ekiti education share of total expenditure",
+      "value": 25.1,
+      "unit": "% of total expenditure",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Education expenditure as a share of total state expenditure",
+      "geoLevel": "state",
+      "geographicCoverage": "Ekiti",
+      "sourceId": "budgit-state-education-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Education Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-education-expenditure-performance-by-state/",
+      "departments": [
+        "education",
+        "civic"
+      ],
+      "interpretation": "Share of total state expenditure allocated to education in the H1 2026 outturn.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "The source page does not name the two states excluded; do not infer them from other BudgIT reviews.",
+        "Education spending is not proof of school-level funding receipt, teacher presence or improved learning."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-education-share-nasarawa",
+      "title": "Nasarawa education share of total expenditure",
+      "value": 24.9,
+      "unit": "% of total expenditure",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Education expenditure as a share of total state expenditure",
+      "geoLevel": "state",
+      "geographicCoverage": "Nasarawa",
+      "sourceId": "budgit-state-education-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Education Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-education-expenditure-performance-by-state/",
+      "departments": [
+        "education",
+        "civic"
+      ],
+      "interpretation": "Share of total state expenditure allocated to education in the H1 2026 outturn.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "The source page does not name the two states excluded; do not infer them from other BudgIT reviews.",
+        "Education spending is not proof of school-level funding receipt, teacher presence or improved learning."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-education-share-akwa-ibom",
+      "title": "Akwa Ibom education share of total expenditure",
+      "value": 0.6,
+      "unit": "% of total expenditure",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Education expenditure as a share of total state expenditure",
+      "geoLevel": "state",
+      "geographicCoverage": "Akwa Ibom",
+      "sourceId": "budgit-state-education-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Education Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-education-expenditure-performance-by-state/",
+      "departments": [
+        "education",
+        "civic"
+      ],
+      "interpretation": "Share of total state expenditure allocated to education in the H1 2026 outturn.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "The source page does not name the two states excluded; do not infer them from other BudgIT reviews.",
+        "Education spending is not proof of school-level funding receipt, teacher presence or improved learning."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-education-share-imo",
+      "title": "Imo education share of total expenditure",
+      "value": 4.2,
+      "unit": "% of total expenditure",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Education expenditure as a share of total state expenditure",
+      "geoLevel": "state",
+      "geographicCoverage": "Imo",
+      "sourceId": "budgit-state-education-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Education Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-education-expenditure-performance-by-state/",
+      "departments": [
+        "education",
+        "civic"
+      ],
+      "interpretation": "Share of total state expenditure allocated to education in the H1 2026 outturn.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "The source page does not name the two states excluded; do not infer them from other BudgIT reviews.",
+        "Education spending is not proof of school-level funding receipt, teacher presence or improved learning."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-education-share-lagos",
+      "title": "Lagos education share of total expenditure",
+      "value": 5.8,
+      "unit": "% of total expenditure",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Education expenditure as a share of total state expenditure",
+      "geoLevel": "state",
+      "geographicCoverage": "Lagos",
+      "sourceId": "budgit-state-education-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Education Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-education-expenditure-performance-by-state/",
+      "departments": [
+        "education",
+        "civic"
+      ],
+      "interpretation": "Share of total state expenditure allocated to education in the H1 2026 outturn.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "The source page does not name the two states excluded; do not infer them from other BudgIT reviews.",
+        "Education spending is not proof of school-level funding receipt, teacher presence or improved learning."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-education-spend-kano",
+      "title": "Kano education expenditure",
+      "value": 99.23,
+      "unit": "₦ billion",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Actual education expenditure by end of Q2",
+      "geoLevel": "state",
+      "geographicCoverage": "Kano",
+      "sourceId": "budgit-state-education-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Education Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-education-expenditure-performance-by-state/",
+      "departments": [
+        "education",
+        "civic"
+      ],
+      "interpretation": "Absolute education expenditure reported by BudgIT for H1 2026.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "The source page does not name the two states excluded; do not infer them from other BudgIT reviews.",
+        "Education spending is not proof of school-level funding receipt, teacher presence or improved learning."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-education-spend-lagos",
+      "title": "Lagos education expenditure",
+      "value": 88.96,
+      "unit": "₦ billion",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Actual education expenditure by end of Q2",
+      "geoLevel": "state",
+      "geographicCoverage": "Lagos",
+      "sourceId": "budgit-state-education-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Education Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-education-expenditure-performance-by-state/",
+      "departments": [
+        "education",
+        "civic"
+      ],
+      "interpretation": "Absolute education expenditure reported by BudgIT for H1 2026.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "The source page does not name the two states excluded; do not infer them from other BudgIT reviews.",
+        "Education spending is not proof of school-level funding receipt, teacher presence or improved learning."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-education-spend-delta",
+      "title": "Delta education expenditure",
+      "value": 65.5,
+      "unit": "₦ billion",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Actual education expenditure by end of Q2",
+      "geoLevel": "state",
+      "geographicCoverage": "Delta",
+      "sourceId": "budgit-state-education-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Education Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-education-expenditure-performance-by-state/",
+      "departments": [
+        "education",
+        "civic"
+      ],
+      "interpretation": "Absolute education expenditure reported by BudgIT for H1 2026.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "The source page does not name the two states excluded; do not infer them from other BudgIT reviews.",
+        "Education spending is not proof of school-level funding receipt, teacher presence or improved learning."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-health-total",
+      "title": "Combined state health expenditure",
+      "value": 614.55,
+      "unit": "₦ billion",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Actual health expenditure by end of Q2",
+      "geoLevel": "varies",
+      "geographicCoverage": "34 of 36 states; Rivers and Osun excluded",
+      "sourceId": "budgit-state-health-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Health Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/",
+      "departments": [
+        "health",
+        "civic"
+      ],
+      "interpretation": "The 34 states reviewed spent a combined ₦614.55 billion on health by the end of Q2 2026.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "Rivers and Osun were excluded because their Q2 2026 Budget Implementation Reports were unavailable.",
+        "Health spending is not proof of medicine availability, PHC functionality, workforce presence or patient outcomes."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-health-share-kano",
+      "title": "Kano health share of total expenditure",
+      "value": 19.7,
+      "unit": "% of total expenditure",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Health expenditure as a share of total state expenditure",
+      "geoLevel": "state",
+      "geographicCoverage": "Kano",
+      "sourceId": "budgit-state-health-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Health Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/",
+      "departments": [
+        "health",
+        "civic"
+      ],
+      "interpretation": "Share of total state expenditure allocated to health in the H1 2026 outturn.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "Rivers and Osun were excluded because their Q2 2026 Budget Implementation Reports were unavailable.",
+        "Health spending is not proof of medicine availability, PHC functionality, workforce presence or patient outcomes."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-health-share-kebbi",
+      "title": "Kebbi health share of total expenditure",
+      "value": 12.5,
+      "unit": "% of total expenditure",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Health expenditure as a share of total state expenditure",
+      "geoLevel": "state",
+      "geographicCoverage": "Kebbi",
+      "sourceId": "budgit-state-health-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Health Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/",
+      "departments": [
+        "health",
+        "civic"
+      ],
+      "interpretation": "Share of total state expenditure allocated to health in the H1 2026 outturn.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "Rivers and Osun were excluded because their Q2 2026 Budget Implementation Reports were unavailable.",
+        "Health spending is not proof of medicine availability, PHC functionality, workforce presence or patient outcomes."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-health-share-jigawa",
+      "title": "Jigawa health share of total expenditure",
+      "value": 11.6,
+      "unit": "% of total expenditure",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Health expenditure as a share of total state expenditure",
+      "geoLevel": "state",
+      "geographicCoverage": "Jigawa",
+      "sourceId": "budgit-state-health-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Health Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/",
+      "departments": [
+        "health",
+        "civic"
+      ],
+      "interpretation": "Share of total state expenditure allocated to health in the H1 2026 outturn.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "Rivers and Osun were excluded because their Q2 2026 Budget Implementation Reports were unavailable.",
+        "Health spending is not proof of medicine availability, PHC functionality, workforce presence or patient outcomes."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-health-share-akwa-ibom",
+      "title": "Akwa Ibom health share of total expenditure",
+      "value": 0.1,
+      "unit": "% of total expenditure",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Health expenditure as a share of total state expenditure",
+      "geoLevel": "state",
+      "geographicCoverage": "Akwa Ibom",
+      "sourceId": "budgit-state-health-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Health Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/",
+      "departments": [
+        "health",
+        "civic"
+      ],
+      "interpretation": "Share of total state expenditure allocated to health in the H1 2026 outturn.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "Rivers and Osun were excluded because their Q2 2026 Budget Implementation Reports were unavailable.",
+        "Health spending is not proof of medicine availability, PHC functionality, workforce presence or patient outcomes."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-health-share-benue",
+      "title": "Benue health share of total expenditure",
+      "value": 0.7,
+      "unit": "% of total expenditure",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Health expenditure as a share of total state expenditure",
+      "geoLevel": "state",
+      "geographicCoverage": "Benue",
+      "sourceId": "budgit-state-health-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Health Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/",
+      "departments": [
+        "health",
+        "civic"
+      ],
+      "interpretation": "Share of total state expenditure allocated to health in the H1 2026 outturn.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "Rivers and Osun were excluded because their Q2 2026 Budget Implementation Reports were unavailable.",
+        "Health spending is not proof of medicine availability, PHC functionality, workforce presence or patient outcomes."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-health-share-cross-river",
+      "title": "Cross River health share of total expenditure",
+      "value": 1.4,
+      "unit": "% of total expenditure",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Health expenditure as a share of total state expenditure",
+      "geoLevel": "state",
+      "geographicCoverage": "Cross River",
+      "sourceId": "budgit-state-health-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Health Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/",
+      "departments": [
+        "health",
+        "civic"
+      ],
+      "interpretation": "Share of total state expenditure allocated to health in the H1 2026 outturn.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "Rivers and Osun were excluded because their Q2 2026 Budget Implementation Reports were unavailable.",
+        "Health spending is not proof of medicine availability, PHC functionality, workforce presence or patient outcomes."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-health-spend-lagos",
+      "title": "Lagos health expenditure",
+      "value": 119.51,
+      "unit": "₦ billion",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Actual health expenditure by end of Q2",
+      "geoLevel": "state",
+      "geographicCoverage": "Lagos",
+      "sourceId": "budgit-state-health-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Health Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/",
+      "departments": [
+        "health",
+        "civic"
+      ],
+      "interpretation": "Absolute health expenditure reported by BudgIT for H1 2026.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "Rivers and Osun were excluded because their Q2 2026 Budget Implementation Reports were unavailable.",
+        "Health spending is not proof of medicine availability, PHC functionality, workforce presence or patient outcomes."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-health-spend-kano",
+      "title": "Kano health expenditure",
+      "value": 79.17,
+      "unit": "₦ billion",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Actual health expenditure by end of Q2",
+      "geoLevel": "state",
+      "geographicCoverage": "Kano",
+      "sourceId": "budgit-state-health-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Health Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/",
+      "departments": [
+        "health",
+        "civic"
+      ],
+      "interpretation": "Absolute health expenditure reported by BudgIT for H1 2026.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "Rivers and Osun were excluded because their Q2 2026 Budget Implementation Reports were unavailable.",
+        "Health spending is not proof of medicine availability, PHC functionality, workforce presence or patient outcomes."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-health-spend-bauchi",
+      "title": "Bauchi health expenditure",
+      "value": 42.03,
+      "unit": "₦ billion",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Actual health expenditure by end of Q2",
+      "geoLevel": "state",
+      "geographicCoverage": "Bauchi",
+      "sourceId": "budgit-state-health-h1-2026",
+      "sourcePublisher": "BudgIT Foundation · H1 2026 Health Expenditure Performance by State",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/",
+      "departments": [
+        "health",
+        "civic"
+      ],
+      "interpretation": "Absolute health expenditure reported by BudgIT for H1 2026.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
+        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
+        "Rivers and Osun were excluded because their Q2 2026 Budget Implementation Reports were unavailable.",
+        "Health spending is not proof of medicine availability, PHC functionality, workforce presence or patient outcomes."
+      ],
+      "sourceType": "published_research",
+      "sourceUpdateDate": "2026-10-21"
     }
   ],
   "catalogOnlySources": [
@@ -1328,6 +2092,69 @@
       ],
       "publisher": "TheCable",
       "url": "https://www.thecable.ng/nassembly-passes-n2-28trn-fct-2026-budget/"
+    },
+    {
+      "id": "budgit-state-expenditure-h1-2026",
+      "title": "State expenditure performance · H1 2026",
+      "status": "partial",
+      "note": "34-state comparison: ₦35.22tn combined approved budgets; ₦8.60tn spent (24.4%) by end of Q2. The source page does not name the excluded states.",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "publisher": "BudgIT Foundation",
+      "url": "https://budgit.org/post_infographics/h1-2026-total-expenditure-performance-by-state/"
+    },
+    {
+      "id": "budgit-state-education-h1-2026",
+      "title": "Education expenditure performance · H1 2026",
+      "status": "partial",
+      "note": "34 states spent ₦1.049tn on education. State spending and education shares are included for named states; excluded states are not identified on the infographic page.",
+      "departments": [
+        "education",
+        "civic"
+      ],
+      "publisher": "BudgIT Foundation",
+      "url": "https://budgit.org/post_infographics/h1-2026-education-expenditure-performance-by-state/"
+    },
+    {
+      "id": "budgit-state-health-h1-2026",
+      "title": "Health expenditure performance · H1 2026",
+      "status": "partial",
+      "note": "34 states spent ₦614.55bn on health. Rivers and Osun are excluded because their Q2 2026 BIRs were unavailable.",
+      "departments": [
+        "health",
+        "civic"
+      ],
+      "publisher": "BudgIT Foundation",
+      "url": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/"
+    },
+    {
+      "id": "budgit-state-fiscal-transparency-league-q2-2026",
+      "title": "State fiscal information availability · Q2 2026",
+      "status": "partial",
+      "note": "All 36 states scored on citizens' budgets, quarterly BIR, e-procurement and fiscal-data websites. This measures information availability, not service outcomes.",
+      "departments": [
+        "civic"
+      ],
+      "publisher": "BudgIT Foundation",
+      "url": "https://fiscalleague.budgit.org/latest-ranking"
+    },
+    {
+      "id": "budgit-state-of-states-2026",
+      "title": "State of States report · 2026",
+      "status": "catalogue",
+      "note": "173-page fiscal and sector-spending assessment covering 35 states in 2025. Full state-level extraction and methodology review remain pending.",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "publisher": "BudgIT Foundation",
+      "url": "https://budgit.org/post_publications/from-allocation-to-impact-rethinking-state-spending-priorities-2026-state-of-states-report/"
     }
   ],
   "reconciliationNotes": [
@@ -1365,6 +2192,13 @@
       "title": "NGF public-finance portal requires integrity review",
       "detail": "The portal advertises original, revised and actual fiscal data for 36 states, but its rendered landing page included unrelated injected third-party links. No values from it have been ingested.",
       "action": "Verify site integrity, direct state-document provenance and downloadable data before relying on this portal."
+    },
+    {
+      "id": "budgit-sector-spend-not-service-outcome",
+      "severity": "high",
+      "title": "H1 2026 sector spending is not service delivery",
+      "detail": "BudgIT reports 34-state H1 expenditure, education and health outturns. These figures show budget execution and sector shares, not whether money reached facilities, schools or communities or improved outcomes. Coverage differs by report; the total-expenditure and education pages do not name the excluded states, while the health and revenue pages identify Rivers and Osun.",
+      "action": "Use these data to select state and sector questions, then reconcile original BIRs, releases, procurement and facility/school-level delivery evidence."
     }
   ],
   "limitations": [
@@ -1372,6 +2206,7 @@
     "Official publication does not equal independent verification; preserve the publisher's method and stated coverage.",
     "A budget allocation is not a release; a release is not expenditure; expenditure is not proof of completed or functional service delivery.",
     "The 2025 and H1 2026 state fiscal comparisons have incomplete state coverage; their denominators are displayed with every observation.",
-    "National and multi-state values do not establish conditions in a specific LGA, ward, facility or community."
+    "National and multi-state values do not establish conditions in a specific LGA, ward, facility or community.",
+    "BudgIT's H1 2026 total expenditure and education infographics each cover 34 states but do not name the two excluded states on their page; do not assume they match the revenue or health samples."
   ]
 }
