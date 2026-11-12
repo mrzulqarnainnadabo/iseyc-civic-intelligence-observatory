@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "title": "Nigeria national evidence snapshots",
   "description": "Manually transcribed, source-attributed snapshots from official and published sources. These are not live feeds. Every observation retains its reference period, source date, geographic scope and limitations.",
-  "checkedAt": "2026-11-09",
+  "checkedAt": "2026-11-12",
   "observations": [
     {
       "id": "who-nga-under5-mortality-2024",
@@ -966,6 +966,244 @@
         "Programme progress figures are not independently audited outcomes.",
         "National or combined-state programme figures do not establish Kaduna South or named-facility conditions.",
         "Revitalisation, procurement, distribution, disbursement and verified service functionality are different measures."
+      ]
+    },
+    {
+      "id": "ngf-state-budget-economic-affairs-share-2026",
+      "title": "Economic Affairs share of 36-state original budgets",
+      "value": 33.2,
+      "unit": "% of aggregate 36-state original expenditure",
+      "referencePeriod": "2026 original state budgets",
+      "measurementType": "NGF-published aggregate of state original budgets by NCOA function",
+      "geoLevel": "national",
+      "geographicCoverage": "All 36 state governments; FCT excluded",
+      "sourceId": "ngf-public-finance-database",
+      "sourcePublisher": "Nigeria Governors' Forum (NGF) · Public Finance Database",
+      "sourceUrl": "https://publicfinance.ngf.org.ng/",
+      "departments": [
+        "software-technology",
+        "civic"
+      ],
+      "sourceType": "published_research",
+      "interpretation": "NGF reports ₦11.94 trillion (33.2%) for Economic Affairs in the aggregate 2026 original budgets of Nigeria's 36 states. Economic Affairs is a broad NCOA function covering multiple economic sectors; it is not a standalone technology or digital-economy allocation.",
+      "limitations": [
+        "Original budget is planned expenditure, not actual expenditure, cash release or proof of service delivery.",
+        "This is a harmonised NGF compilation sourced from state budget documents; retain the NGF series and the underlying state documents as separate provenance layers.",
+        "The aggregate covers the 36 states and excludes the FCT; do not describe it as the entire Nigerian public-sector budget.",
+        "Portal freshness differs by component: the homepage shows a 2026 original-budget sector distribution while the state-explorer index showed a June 2025 update date. Confirm table vintage and state coverage before deeper comparison.",
+        "The displayed sector shares sum to 100.1% because of rounding; do not force them to sum to 100.0% or silently rescale.",
+        "This aggregate cannot establish LGA, facility, school, community or household outcomes."
+      ]
+    },
+    {
+      "id": "ngf-state-budget-general-public-service-share-2026",
+      "title": "General Public Service share of 36-state original budgets",
+      "value": 22.2,
+      "unit": "% of aggregate 36-state original expenditure",
+      "referencePeriod": "2026 original state budgets",
+      "measurementType": "NGF-published aggregate of state original budgets by NCOA function",
+      "geoLevel": "national",
+      "geographicCoverage": "All 36 state governments; FCT excluded",
+      "sourceId": "ngf-public-finance-database",
+      "sourcePublisher": "Nigeria Governors' Forum (NGF) · Public Finance Database",
+      "sourceUrl": "https://publicfinance.ngf.org.ng/",
+      "departments": [
+        "civic"
+      ],
+      "sourceType": "published_research",
+      "interpretation": "NGF reports ₦7.97 trillion (22.2%) for General Public Service in the aggregate 2026 original budgets of Nigeria's 36 states. This is a broad government-function allocation; it does not measure administrative efficiency, corruption or service quality.",
+      "limitations": [
+        "Original budget is planned expenditure, not actual expenditure, cash release or proof of service delivery.",
+        "This is a harmonised NGF compilation sourced from state budget documents; retain the NGF series and the underlying state documents as separate provenance layers.",
+        "The aggregate covers the 36 states and excludes the FCT; do not describe it as the entire Nigerian public-sector budget.",
+        "Portal freshness differs by component: the homepage shows a 2026 original-budget sector distribution while the state-explorer index showed a June 2025 update date. Confirm table vintage and state coverage before deeper comparison.",
+        "The displayed sector shares sum to 100.1% because of rounding; do not force them to sum to 100.0% or silently rescale.",
+        "This aggregate cannot establish LGA, facility, school, community or household outcomes."
+      ]
+    },
+    {
+      "id": "ngf-state-budget-education-share-2026",
+      "title": "Education share of 36-state original budgets",
+      "value": 14.4,
+      "unit": "% of aggregate 36-state original expenditure",
+      "referencePeriod": "2026 original state budgets",
+      "measurementType": "NGF-published aggregate of state original budgets by NCOA function",
+      "geoLevel": "national",
+      "geographicCoverage": "All 36 state governments; FCT excluded",
+      "sourceId": "ngf-public-finance-database",
+      "sourcePublisher": "Nigeria Governors' Forum (NGF) · Public Finance Database",
+      "sourceUrl": "https://publicfinance.ngf.org.ng/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "published_research",
+      "interpretation": "NGF reports ₦5.19 trillion (14.4%) for Education in the aggregate 2026 original budgets of Nigeria's 36 states. This is a state-budget allocation category, not proof of school funding release, teacher deployment, attendance or learning outcomes.",
+      "limitations": [
+        "Original budget is planned expenditure, not actual expenditure, cash release or proof of service delivery.",
+        "This is a harmonised NGF compilation sourced from state budget documents; retain the NGF series and the underlying state documents as separate provenance layers.",
+        "The aggregate covers the 36 states and excludes the FCT; do not describe it as the entire Nigerian public-sector budget.",
+        "Portal freshness differs by component: the homepage shows a 2026 original-budget sector distribution while the state-explorer index showed a June 2025 update date. Confirm table vintage and state coverage before deeper comparison.",
+        "The displayed sector shares sum to 100.1% because of rounding; do not force them to sum to 100.0% or silently rescale.",
+        "This aggregate cannot establish LGA, facility, school, community or household outcomes."
+      ]
+    },
+    {
+      "id": "ngf-state-budget-health-share-2026",
+      "title": "Health share of 36-state original budgets",
+      "value": 9.3,
+      "unit": "% of aggregate 36-state original expenditure",
+      "referencePeriod": "2026 original state budgets",
+      "measurementType": "NGF-published aggregate of state original budgets by NCOA function",
+      "geoLevel": "national",
+      "geographicCoverage": "All 36 state governments; FCT excluded",
+      "sourceId": "ngf-public-finance-database",
+      "sourcePublisher": "Nigeria Governors' Forum (NGF) · Public Finance Database",
+      "sourceUrl": "https://publicfinance.ngf.org.ng/",
+      "departments": [
+        "health"
+      ],
+      "sourceType": "published_research",
+      "interpretation": "NGF reports ₦3.34 trillion (9.3%) for Health in the aggregate 2026 original budgets of Nigeria's 36 states. This is a state-budget allocation category, not proof of health-facility funding, medicine availability, staffing or care quality.",
+      "limitations": [
+        "Original budget is planned expenditure, not actual expenditure, cash release or proof of service delivery.",
+        "This is a harmonised NGF compilation sourced from state budget documents; retain the NGF series and the underlying state documents as separate provenance layers.",
+        "The aggregate covers the 36 states and excludes the FCT; do not describe it as the entire Nigerian public-sector budget.",
+        "Portal freshness differs by component: the homepage shows a 2026 original-budget sector distribution while the state-explorer index showed a June 2025 update date. Confirm table vintage and state coverage before deeper comparison.",
+        "The displayed sector shares sum to 100.1% because of rounding; do not force them to sum to 100.0% or silently rescale.",
+        "This aggregate cannot establish LGA, facility, school, community or household outcomes."
+      ]
+    },
+    {
+      "id": "ngf-state-budget-housing-community-amenities-share-2026",
+      "title": "Housing and Community Amenities share of 36-state original budgets",
+      "value": 8.4,
+      "unit": "% of aggregate 36-state original expenditure",
+      "referencePeriod": "2026 original state budgets",
+      "measurementType": "NGF-published aggregate of state original budgets by NCOA function",
+      "geoLevel": "national",
+      "geographicCoverage": "All 36 state governments; FCT excluded",
+      "sourceId": "ngf-public-finance-database",
+      "sourcePublisher": "Nigeria Governors' Forum (NGF) · Public Finance Database",
+      "sourceUrl": "https://publicfinance.ngf.org.ng/",
+      "departments": [
+        "civic"
+      ],
+      "sourceType": "published_research",
+      "interpretation": "NGF reports ₦3.03 trillion (8.4%) for Housing and Community Amenities in the aggregate 2026 original budgets of Nigeria's 36 states. This broad function may include housing and community infrastructure; it is not a direct measure of water, sanitation or housing access.",
+      "limitations": [
+        "Original budget is planned expenditure, not actual expenditure, cash release or proof of service delivery.",
+        "This is a harmonised NGF compilation sourced from state budget documents; retain the NGF series and the underlying state documents as separate provenance layers.",
+        "The aggregate covers the 36 states and excludes the FCT; do not describe it as the entire Nigerian public-sector budget.",
+        "Portal freshness differs by component: the homepage shows a 2026 original-budget sector distribution while the state-explorer index showed a June 2025 update date. Confirm table vintage and state coverage before deeper comparison.",
+        "The displayed sector shares sum to 100.1% because of rounding; do not force them to sum to 100.0% or silently rescale.",
+        "This aggregate cannot establish LGA, facility, school, community or household outcomes."
+      ]
+    },
+    {
+      "id": "ngf-state-budget-social-protection-share-2026",
+      "title": "Social Protection share of 36-state original budgets",
+      "value": 4.9,
+      "unit": "% of aggregate 36-state original expenditure",
+      "referencePeriod": "2026 original state budgets",
+      "measurementType": "NGF-published aggregate of state original budgets by NCOA function",
+      "geoLevel": "national",
+      "geographicCoverage": "All 36 state governments; FCT excluded",
+      "sourceId": "ngf-public-finance-database",
+      "sourcePublisher": "Nigeria Governors' Forum (NGF) · Public Finance Database",
+      "sourceUrl": "https://publicfinance.ngf.org.ng/",
+      "departments": [
+        "education",
+        "health",
+        "civic"
+      ],
+      "sourceType": "published_research",
+      "interpretation": "NGF reports ₦1.75 trillion (4.9%) for Social Protection in the aggregate 2026 original budgets of Nigeria's 36 states. This is a budget classification, not a count of beneficiaries or proof that support reached households.",
+      "limitations": [
+        "Original budget is planned expenditure, not actual expenditure, cash release or proof of service delivery.",
+        "This is a harmonised NGF compilation sourced from state budget documents; retain the NGF series and the underlying state documents as separate provenance layers.",
+        "The aggregate covers the 36 states and excludes the FCT; do not describe it as the entire Nigerian public-sector budget.",
+        "Portal freshness differs by component: the homepage shows a 2026 original-budget sector distribution while the state-explorer index showed a June 2025 update date. Confirm table vintage and state coverage before deeper comparison.",
+        "The displayed sector shares sum to 100.1% because of rounding; do not force them to sum to 100.0% or silently rescale.",
+        "This aggregate cannot establish LGA, facility, school, community or household outcomes."
+      ]
+    },
+    {
+      "id": "ngf-state-budget-public-order-safety-share-2026",
+      "title": "Public Order and Safety share of 36-state original budgets",
+      "value": 3.3,
+      "unit": "% of aggregate 36-state original expenditure",
+      "referencePeriod": "2026 original state budgets",
+      "measurementType": "NGF-published aggregate of state original budgets by NCOA function",
+      "geoLevel": "national",
+      "geographicCoverage": "All 36 state governments; FCT excluded",
+      "sourceId": "ngf-public-finance-database",
+      "sourcePublisher": "Nigeria Governors' Forum (NGF) · Public Finance Database",
+      "sourceUrl": "https://publicfinance.ngf.org.ng/",
+      "departments": [
+        "civic"
+      ],
+      "sourceType": "published_research",
+      "interpretation": "NGF reports ₦1.18 trillion (3.3%) for Public Order and Safety in the aggregate 2026 original budgets of Nigeria's 36 states. This is a budget allocation category, not a measure of security outcomes or safety experienced by residents.",
+      "limitations": [
+        "Original budget is planned expenditure, not actual expenditure, cash release or proof of service delivery.",
+        "This is a harmonised NGF compilation sourced from state budget documents; retain the NGF series and the underlying state documents as separate provenance layers.",
+        "The aggregate covers the 36 states and excludes the FCT; do not describe it as the entire Nigerian public-sector budget.",
+        "Portal freshness differs by component: the homepage shows a 2026 original-budget sector distribution while the state-explorer index showed a June 2025 update date. Confirm table vintage and state coverage before deeper comparison.",
+        "The displayed sector shares sum to 100.1% because of rounding; do not force them to sum to 100.0% or silently rescale.",
+        "This aggregate cannot establish LGA, facility, school, community or household outcomes."
+      ]
+    },
+    {
+      "id": "ngf-state-budget-recreation-culture-share-2026",
+      "title": "Recreation and Culture share of 36-state original budgets",
+      "value": 2.5,
+      "unit": "% of aggregate 36-state original expenditure",
+      "referencePeriod": "2026 original state budgets",
+      "measurementType": "NGF-published aggregate of state original budgets by NCOA function",
+      "geoLevel": "national",
+      "geographicCoverage": "All 36 state governments; FCT excluded",
+      "sourceId": "ngf-public-finance-database",
+      "sourcePublisher": "Nigeria Governors' Forum (NGF) · Public Finance Database",
+      "sourceUrl": "https://publicfinance.ngf.org.ng/",
+      "departments": [
+        "education"
+      ],
+      "sourceType": "published_research",
+      "interpretation": "NGF reports ₦0.89125 trillion (2.5%) for Recreation and Culture in the aggregate 2026 original budgets of Nigeria's 36 states. This is a budget allocation category, not evidence of access to cultural or recreational services.",
+      "limitations": [
+        "Original budget is planned expenditure, not actual expenditure, cash release or proof of service delivery.",
+        "This is a harmonised NGF compilation sourced from state budget documents; retain the NGF series and the underlying state documents as separate provenance layers.",
+        "The aggregate covers the 36 states and excludes the FCT; do not describe it as the entire Nigerian public-sector budget.",
+        "Portal freshness differs by component: the homepage shows a 2026 original-budget sector distribution while the state-explorer index showed a June 2025 update date. Confirm table vintage and state coverage before deeper comparison.",
+        "The displayed sector shares sum to 100.1% because of rounding; do not force them to sum to 100.0% or silently rescale.",
+        "This aggregate cannot establish LGA, facility, school, community or household outcomes."
+      ]
+    },
+    {
+      "id": "ngf-state-budget-environmental-protection-share-2026",
+      "title": "Environmental Protection share of 36-state original budgets",
+      "value": 1.9,
+      "unit": "% of aggregate 36-state original expenditure",
+      "referencePeriod": "2026 original state budgets",
+      "measurementType": "NGF-published aggregate of state original budgets by NCOA function",
+      "geoLevel": "national",
+      "geographicCoverage": "All 36 state governments; FCT excluded",
+      "sourceId": "ngf-public-finance-database",
+      "sourcePublisher": "Nigeria Governors' Forum (NGF) · Public Finance Database",
+      "sourceUrl": "https://publicfinance.ngf.org.ng/",
+      "departments": [
+        "health",
+        "civic"
+      ],
+      "sourceType": "published_research",
+      "interpretation": "NGF reports ₦0.69847 trillion (1.9%) for Environmental Protection in the aggregate 2026 original budgets of Nigeria's 36 states. This is a budget allocation category, not a measure of environmental quality or public-health outcomes.",
+      "limitations": [
+        "Original budget is planned expenditure, not actual expenditure, cash release or proof of service delivery.",
+        "This is a harmonised NGF compilation sourced from state budget documents; retain the NGF series and the underlying state documents as separate provenance layers.",
+        "The aggregate covers the 36 states and excludes the FCT; do not describe it as the entire Nigerian public-sector budget.",
+        "Portal freshness differs by component: the homepage shows a 2026 original-budget sector distribution while the state-explorer index showed a June 2025 update date. Confirm table vintage and state coverage before deeper comparison.",
+        "The displayed sector shares sum to 100.1% because of rounding; do not force them to sum to 100.0% or silently rescale.",
+        "This aggregate cannot establish LGA, facility, school, community or household outcomes."
       ]
     }
   ],
