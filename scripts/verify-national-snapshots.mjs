@@ -116,7 +116,7 @@ assert.match(overview, /<NationalSnapshots \/>/);
 assert.match(departments, /import NationalSnapshots from/);
 assert.match(departments, /<NationalSnapshots departmentId=\{config\.id\} compact \/>/);
 assert.match(component, /api\/evidence\/source-snapshots/);
-assert.match(component, /State budget source coverage/);
+assert.match(component, /State budget sources/);
 assert.match(component, /Data reconciliation/);
 assert.match(component, /2025 state fiscal performance/);
 assert.match(component, /AGORA_METRICS/);
