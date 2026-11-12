@@ -21,7 +21,7 @@ describe("national source snapshot endpoint", () => {
     expect(response.body.source).toBe("iseyc-observatory-national-snapshots-v1");
     expect(response.body.status).toBe("ok");
     expect(response.body.records.length).toBe(19);
-    expect(response.body.observations.length).toBe(90);
+    expect(response.body.observations.length).toBe(91);
     expect(response.body.observations.some((item) => item.id === "ngf-state-budget-education-share-2026" && item.value === 14.4)).toBe(true);
     expect(response.body.observations.some((item) => item.id === "ngf-state-budget-health-share-2026" && item.value === 9.3)).toBe(true);
     expect(response.body.checkedAt).toBe("2026-11-12");
