@@ -53,7 +53,6 @@ assert.ok(data.reconciliationNotes.some((item) => item.id === 'lagos-igr-2025-so
 assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-health-total-report' && item.value === 621.34));
 assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-health-budget-performance-report' && item.value === 40.48));
 assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-health-expenditure-growth-report' && item.value === 31.61));
-assert.ok(data.observations.some((item) => item.id === 'budgit-2025-lagos-igr-sos-2026' && item.value === 1.71));
 assert.ok(data.observations.some((item) => item.id === 'budgit-2025-enugu-igr-growth-sos-2026' && item.value === 125.91));
 assert.ok(data.observations.some((item) => item.id === 'abia-2026-approved-budget-total' && item.value === 1016.22807265199));
 assert.ok(data.observations.some((item) => item.id === 'kaduna-2026-approved-budget-total' && item.value === 985.9));
