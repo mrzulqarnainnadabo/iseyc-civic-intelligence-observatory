@@ -1,5 +1,6 @@
 import snapshotData from '../../data/indicators/national-source-snapshots.json' with { type: 'json' };
 import sourceRegistry from '../../data/source-registry.json' with { type: 'json' };
+import stateBudgetCoverage from '../../data/indicators/state-budget-source-coverage.v1.json' with { type: 'json' };
 
 const sourceById = new Map(sourceRegistry.map((source) => [source.id, source]));
 const allowedDepartments = new Set(['education', 'health', 'software-technology', 'civic']);
@@ -74,6 +75,16 @@ function validReconciliationNote(item) {
   );
 }
 
+function validStateBudgetCoverage() {
+  const rows = Array.isArray(stateBudgetCoverage.jurisdictions) ? stateBudgetCoverage.jurisdictions : [];
+  const states = rows.filter((item) => item.type === 'state');
+  const fct = rows.filter((item) => item.type === 'fct');
+  return states.length === 36 && fct.length === 1 &&
+    stateBudgetCoverage.scope?.officialStatePortalsLocated === 13 &&
+    states.every((item) => Number.isFinite(item.fiscalTransparency?.totalScore)) &&
+    states.every((item) => item.fiscalTransparency?.sourceId === 'budgit-state-fiscal-transparency-league-q2-2026');
+}
+
 function validBundle() {
   const observations = Array.isArray(snapshotData.observations) ? snapshotData.observations : [];
   const catalogue = Array.isArray(snapshotData.catalogOnlySources) ? snapshotData.catalogOnlySources : [];
@@ -82,6 +93,7 @@ function validBundle() {
   const noteIds = notes.map((item) => item?.id);
   return snapshotData.schemaVersion === '1.0.0' &&
     validIsoDate(snapshotData.checkedAt) &&
+    validStateBudgetCoverage() &&
     new Set(observationIds).size === observationIds.length &&
     new Set(noteIds).size === noteIds.length &&
     observations.every(validObservation) &&
@@ -148,6 +160,12 @@ export default function handler(req, res) {
     source: 'iseyc-observatory-curated-source-snapshots-v1',
     checkedAt: snapshotData.checkedAt,
     reconciliationNotes: snapshotData.reconciliationNotes,
+    stateBudgetCoverage: {
+      checkedAt: stateBudgetCoverage.checkedAt,
+      scope: stateBudgetCoverage.scope,
+      jurisdictions: stateBudgetCoverage.jurisdictions,
+      comparativeSources: stateBudgetCoverage.comparativeSources
+    },
     limitations: snapshotData.limitations
   };
 
