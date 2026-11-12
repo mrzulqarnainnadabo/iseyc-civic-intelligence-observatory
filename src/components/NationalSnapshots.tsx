@@ -5,7 +5,7 @@ type Snapshot = {
   id: string; title: string; value: number; unit: string; valueQualifier?: string; referencePeriod: string;
   measurementType: string; geoLevel: string; geographicCoverage: string; sourceId: string; sourceUpdateDate?: string;
   sourcePublisher: string; sourceUrl: string; departments: string[]; interpretation: string;
-  limitations: string[]; verificationStatus?: string;
+  limitations: string[]; verificationStatus?: string; recordStatus?: 'current' | 'superseded'; supersededBy?: string;
 };
 type CatalogueSource = { id: string; publisher: string; title: string; url: string; status: string; note: string; departments: string[] };
 type SnapshotBundle = { contractVersion: string; status: string; checkedAt: string; observations: Snapshot[]; catalogOnlySources: CatalogueSource[]; limitations: string[]; reconciliationNotes?: { id: string; severity: string; title: string; detail: string }[]; stateBudgetCoverage?: { officialStateSourceRoutesLocated: number; totalStates: number; budgitHealthActualExpenditureStates: number; budgitHealthActualExpenditureMissingStates: string[] } };
@@ -73,7 +73,7 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
        ) : <p className="national-snapshots__empty">No curated snapshot is currently assigned to {departmentId ? DEPARTMENT_LABEL[departmentId] || 'this department' : 'this view'}.</p>}
       {catalogOnly.length > 0 && <div className="national-catalogue">
         <div className="national-catalogue__head"><strong>Sources under assessment</strong><span>Catalogue status is source-specific</span></div>
-        <div className="national-catalogue__grid">{visibleCatalogue.map((item) => <article key={item.id}><span>{item.publisher} · {item.status === "partial" ? "Partial integration" : item.status === "reconciliation_required" ? "Reconciliation required" : "Catalogue only"}</span><strong>{item.title}</strong><details><summary>Coverage & access</summary><p>{item.note}</p></details><a href={item.url} target="_blank" rel="noopener noreferrer">Open source ↗</a></article>)}</div>
+        <div className="national-catalogue__grid">{visibleCatalogue.map((item) => <article key={item.id}><span>{item.publisher} · {item.status === "partial" ? "Partial integration" : item.status === "reconciliation_required" ? "Reconciliation required" : item.status === "superseded" ? "Superseded source" : "Catalogue only"}</span><strong>{item.title}</strong><details><summary>Coverage & access</summary><p>{item.note}</p></details><a href={item.url} target="_blank" rel="noopener noreferrer">Open source ↗</a></article>)}</div>
       </div>}
       {catalogOnly.length > 3 && <button type="button" className="national-snapshots__toggle" onClick={() => setShowAllCatalogue((value) => !value)}>{showAllCatalogue ? "Show fewer sources" : "View all " + catalogOnly.length + " sources"}</button>}
       {!compact && <p className="national-snapshots__disclaimer">Curated transcriptions, not live feeds. Source publishers own the original data. A national statistic is not a local service-delivery finding.</p>}
