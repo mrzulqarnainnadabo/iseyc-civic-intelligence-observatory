@@ -1,0 +1,81 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+
+const data = JSON.parse(fs.readFileSync('data/indicators/national-source-snapshots.json', 'utf8'));
+const registry = JSON.parse(fs.readFileSync('data/source-registry.json', 'utf8'));
+const registryCopy = JSON.parse(fs.readFileSync('src/data/source-registry.json', 'utf8'));
+const coverage = JSON.parse(fs.readFileSync('data/indicators/state-budget-source-coverage.v1.json', 'utf8'));
+const api = fs.readFileSync('api/evidence/source-snapshots.js', 'utf8');
+const existingApi = fs.readFileSync('api/evidence/snapshots.js', 'utf8');
+const overview = fs.readFileSync('src/pages/Overview.tsx', 'utf8');
+const departments = fs.readFileSync('src/pages/Departments.tsx', 'utf8');
+const component = fs.readFileSync('src/components/NationalSnapshots.tsx', 'utf8');
+
+assert.equal(data.schemaVersion, '1.0.0');
+assert.equal(data.checkedAt, '2026-11-12');
+assert.ok(data.observations.length >= 35, 'source snapshots must cover multiple national and subnational domains');
+assert.deepEqual(registryCopy, registry, 'source registry copies must remain identical');
+const sourceById = new Map(registry.map((item) => [item.id, item]));
+const observationIds = new Set();
+for (const item of data.observations) {
+  assert.ok(item.id && item.title, 'every observation needs a stable id and title');
+  assert.ok(!observationIds.has(item.id), 'observation ids must be unique: ' + item.id);
+  observationIds.add(item.id);
+  assert.equal(typeof item.value, 'number');
+  assert.ok(Number.isFinite(item.value));
+  assert.ok(item.unit && item.referencePeriod && item.measurementType);
+  assert.ok(item.sourceUrl.startsWith('https://'));
+  const source = sourceById.get(item.sourceId);
+  assert.ok(source, 'observation source must exist: ' + item.sourceId);
+  assert.equal(new URL(item.sourceUrl).hostname, new URL(source.url).hostname, 'source URL host must match registry: ' + item.id);
+  assert.equal(item.sourceType, source.kind === 'official-data' ? 'official_source' : 'published_research');
+  assert.ok(['national','state','varies'].includes(item.geoLevel));
+  assert.ok(Array.isArray(item.departments) && item.departments.length > 0);
+  assert.ok(item.departments.every((id) => ['education','health','software-technology','civic'].includes(id)));
+  assert.ok(Array.isArray(item.limitations) && item.limitations.length > 0);
+  if (item.sourceUpdateDate) assert.match(item.sourceUpdateDate, /^\d{4}-\d{2}-\d{2}$/);
+}
+const catalogueIds = new Set();
+for (const item of data.catalogOnlySources) {
+  assert.ok(!catalogueIds.has(item.id), 'catalogue source ids must be unique: ' + item.id);
+  catalogueIds.add(item.id);
+  assert.ok(sourceById.has(item.id), 'catalogue source must exist: ' + item.id);
+  assert.ok(['catalogue','partial','under_review'].includes(item.status));
+  assert.ok(item.url.startsWith('https://'));
+  assert.ok(Array.isArray(item.departments) && item.departments.length > 0);
+}
+assert.ok(data.reconciliationNotes.some((item) => item.id === 'who-underfive-series-conflict'));
+assert.ok(data.reconciliationNotes.some((item) => item.id === 'state-budget-coverage-gaps'));
+assert.ok(!data.observations.some((item) => item.id === 'who-nga-under5-mortality-2024' && item.value === 59.5), 'unreconciled WHO under-five value must not be published as confirmed');
+assert.ok(data.observations.some((item) => item.id === 'nphcda-phc-revitalised-aug-2025' && item.value === 1295));
+assert.ok(data.observations.some((item) => item.id === 'agora-2025-budget-implementation-35' && item.value === 68.2));
+assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-lagos-revenue' && item.value === 1684));
+assert.ok(data.observations.some((item) => item.id === 'federal-2026-total-appropriation' && item.value === 68.32));
+
+const states = coverage.jurisdictions.filter((item) => item.type === 'state');
+const fct = coverage.jurisdictions.filter((item) => item.type === 'fct');
+assert.equal(states.length, 36);
+assert.equal(fct.length, 1);
+assert.equal(coverage.scope.officialStatePortalsLocated, 13);
+assert.equal(states.filter((item) => item.status === 'official_portal_located').length, 13);
+assert.equal(states.filter((item) => item.status === 'not_reviewed').length, 23);
+assert.equal(fct[0].status, 'official_law_not_confirmed');
+assert.ok(coverage.comparativeSources.some((item) => item.coverage.includes('35 of 36')));
+assert.ok(coverage.comparativeSources.some((item) => item.coverage.includes('34 of 36')));
+
+assert.match(api, /validObservation/);
+assert.match(api, /validCatalogueSource/);
+assert.match(api, /validReconciliationNote/);
+assert.ok(api.includes('/^\\d{4}-\\d{2}-\\d{2}$/'), 'API must validate ISO dates with a real digit regex');
+assert.match(api, /SNAPSHOT_CONTRACT_INVALID/);
+assert.match(api, /source-snapshots/);
+assert.match(existingApi, /national-department-snapshots\.v1\.json/, 'existing Evidence Gateway snapshot contract must remain intact');
+assert.match(existingApi, /records: records\.map\(publicDepartmentRecord\)/);
+assert.match(overview, /import NationalSnapshots from/);
+assert.match(overview, /<NationalSnapshots \/>/);
+assert.match(departments, /import NationalSnapshots from/);
+assert.match(departments, /<NationalSnapshots departmentId=\{config\.id\} compact \/>/);
+assert.match(component, /api\/evidence\/source-snapshots/);
+assert.match(component, /State budget source coverage/);
+assert.match(component, /Data reconciliation/);
+console.log('National source snapshots, source integrity and 36-state budget coverage checks passed.');
