@@ -950,30 +950,28 @@
   },
   {
     "id": "who-gho-nigeria",
-    "publisher": "World Health Organization (WHO)",
-    "name": "WHO Data — Nigeria country profile and health indicators",
-    "url": "https://data.who.int/countries/566",
+    "publisher": "World Health Organization (WHO) — Regional Office for Africa",
+    "name": "Nigeria Data & Statistics — Global Health Observatory",
+    "url": "https://www.afro.who.int/node/992",
     "urlStatus": "confirmed",
     "sectors": [
       "health"
     ],
     "kind": "official-data",
-    "geographicCoverage": "Nigeria national aggregate; indicator-specific geography and disaggregation vary",
+    "geographicCoverage": "Nigeria (national aggregate)",
     "geoLevel": "national",
-    "dataType": "Country health indicators, modelled estimates and health-system statistics; indicator-specific reference years and methods",
-    "updateFrequency": "Indicator-specific; source reference periods vary",
-    "licence": "WHO data.who.int published outputs: CC BY-NC-SA 3.0 IGO; comply with attribution and non-endorsement terms",
-    "lastChecked": "2026-11-11",
-    "checkedHow": "WHO Nigeria country profile on data.who.int reviewed; selected indicator values transcribed with their reference periods and uncertainty intervals",
+    "dataType": "Health estimates and national health-system indicators",
+    "updateFrequency": "Source-dependent; indicator-specific",
+    "licence": "WHO publication and data terms apply; attribution required; no WHO endorsement implied.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "WHO AFRO country data page reviewed; displayed indicator values and reference years transcribed.",
     "limitations": [
-      "Every indicator has its own reference year, methodology, uncertainty interval and source; do not treat the profile as one current-year dataset.",
-      "Under-five mortality and life expectancy are statistical/modelled estimates and must retain their uncertainty intervals.",
-      "WHO reports Nigerian death-registration data as unavailable or unusable for cause-of-death analysis; cause-of-death estimates require caution.",
-      "National estimates do not establish state, LGA, facility or household outcomes.",
-      "The legacy GHO OData API is being retired; no automated ingestion is implied by this country-profile snapshot.",
-      "WHO data use does not imply WHO endorsement; do not use WHO emblems or logos."
+      "The page contains indicators with different reference years; retain the reference year for every value.",
+      "National estimates cannot establish state, LGA, ward or facility-level service conditions.",
+      "WHO estimates may differ from Nigerian administrative statistics because of source methods, modelling and revisions.",
+      "Do not use the WHO name or emblem to imply endorsement of ISEYC."
     ],
-    "notes": "WHO Nigeria country profile: https://data.who.int/countries/566. Values in the Observatory snapshot are dated transcriptions; use each indicator's own period and metadata. This is not a live feed or substitute for original Nigerian administrative records."
+    "notes": "Initial source snapshots include under-five mortality (2024), life expectancy (2023) and health expenditure (2023)."
   },
   {
     "id": "imf-weo-oct-2026",
@@ -1006,56 +1004,54 @@
   {
     "id": "nimc-enrolment-oct-2025",
     "publisher": "National Identity Management Commission (NIMC)",
-    "name": "NIN enrolment dashboard — 31 October 2025",
+    "name": "NIN enrolment report — October 2025",
     "url": "https://nimc.gov.ng/nin/enrolment-report/october-2025",
     "urlStatus": "confirmed",
     "sectors": [
-      "governance"
+      "governance",
+      "public-finance"
     ],
     "kind": "official-data",
-    "geographicCoverage": "National, state and diaspora cumulative enrolment records",
+    "geographicCoverage": "Nigeria; national and state administrative records",
     "geoLevel": "state",
-    "dataType": "Cumulative NIN enrolment records, disaggregated by state and sex; dashboard snapshot",
-    "updateFrequency": "Irregular dashboard releases; reference date is stated on each snapshot",
-    "licence": "NIMC reuse terms not confirmed; retain attribution and seek permission for bulk redistribution",
-    "lastChecked": "2026-11-09",
-    "checkedHow": "Official NIMC October 2025 enrolment dashboard reviewed; published national and state totals extracted",
+    "dataType": "Cumulative NIN enrolment administrative report",
+    "updateFrequency": "Periodic published snapshots",
+    "licence": "Cite NIMC and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "NIMC October 2025 enrolment report URL retained in the national snapshot record.",
     "limitations": [
-      "Enrolment records are not a population census, active identity count or measure of access to public services.",
-      "Do not calculate coverage without a compatible population denominator, reference year and methodology.",
-      "Cumulative records may include duplicates or administrative corrections unless the source explicitly defines them as unique records.",
-      "This is a historical snapshot dated 31 October 2025, not a live 2026 count."
+      "Enrolment records are not a population census, active identity count or measure of service access.",
+      "Do not calculate coverage without a compatible population denominator and reference year.",
+      "The October 2025 record is historical, not a current 2026 total."
     ],
-    "notes": "NIMC dashboard reports 123,906,318 total enrolment records nationally and 7,326,730 for Kaduna State as at 31 October 2025. These figures are source-reported, not independently audited by ISEYC."
+    "notes": "Source record for the October 2025 NIN snapshot; keep distinct from the June 2025 NIMC enrolment source."
   },
   {
     "id": "nitda-dl4all-dashboard",
     "publisher": "National Information Technology Development Agency (NITDA)",
-    "name": "Digital Literacy for All (DL4ALL) — National Digital Literacy Dashboard",
+    "name": "DL4ALL National Digital Literacy Dashboard",
     "url": "https://dashboard.digitalliteracy.nitda.gov.ng/",
     "urlStatus": "confirmed",
     "sectors": [
       "education",
       "employment",
-      "governance",
-      "infrastructure"
+      "governance"
     ],
     "kind": "official-data",
-    "geographicCoverage": "National, 36 states and FCT, 774 LGAs and reported communities",
+    "geographicCoverage": "Dashboard reports all 36 states, FCT and 774 LGAs",
     "geoLevel": "varies",
-    "dataType": "Programme dashboard: verified digital-literacy training records, reach, competence areas, delivery modes, beneficiaries and partner organisations",
-    "updateFrequency": "Dashboard updated 24 October 2026; ongoing updates claimed, cadence not published",
-    "licence": "Dashboard data reuse terms not confirmed; cite NITDA and seek permission for bulk republication",
+    "dataType": "Administrative digital-literacy programme reporting dashboard",
+    "updateFrequency": "Dashboard updates; cadence not independently established",
+    "licence": "See NITDA dashboard terms; reuse conditions not separately reviewed.",
     "lastChecked": "2026-11-09",
-    "checkedHow": "Official NITDA-linked DL4ALL national dashboard reviewed; headline counters, coverage and update timestamp recorded",
+    "checkedHow": "Public NITDA dashboard reviewed; displayed national progress, reporting organisations and geographic coverage transcribed with dashboard update date.",
     "limitations": [
-      "The dashboard's verified-beneficiary definition and deduplication method must be obtained before comparing with other training programmes.",
-      "Training or completion records do not independently establish durable competence, employment outcomes or population-wide digital literacy.",
-      "The 70% by 2027 and 95% by 2030 targets are targets, not achieved outcomes.",
-      "Dashboard counters are programme-reported; retain retrieval date and do not infer missing demographic or geographic values.",
-      "The dashboard reports different measures (people, organisations, training counts and competency counts); do not add them together."
+      "Dashboard-reported programme achievements are not a nationally representative digital-skills survey.",
+      "Do not assume each dashboard record is a unique person unless deduplication rules are published and checked.",
+      "The 50 million target is a programme target, not a population estimate.",
+      "Reported coverage across LGAs does not establish equal intensity, quality or learning outcomes in every LGA."
     ],
-    "notes": "Dashboard snapshot: 2,783,731 verified digitally literate beneficiaries; 36 states + FCT, 774 LGAs and 14,747 communities reached; 33% female participation; 2,100,027 youth under 35. It reports 5.57% progress against a 50 million target; this is programme progress against a target, not Nigeria's national digital literacy rate."
+    "notes": "The dashboard displayed 2,783,731 as 'verified digitally literate' and 5.57% of a 50 million target on 24 October 2026; preserve the exact dashboard label and update date."
   },
   {
     "id": "nitda-national-digital-literacy-framework",
@@ -1086,30 +1082,29 @@
   },
   {
     "id": "naseni-innovation-hub",
-    "publisher": "National Agency for Science and Engineering Infrastructure (NASENI)",
-    "name": "NASENI Innovation Hub — programmes, partnerships and innovation activity",
+    "publisher": "National Agency for Science and Engineering Infrastructure (NASENI) — Innovation Hub",
+    "name": "NASENI Innovation Hub programmes and InnovateNaija",
     "url": "https://innovation.naseni.gov.ng/",
     "urlStatus": "confirmed",
     "sectors": [
       "education",
       "employment",
-      "infrastructure",
-      "governance"
+      "infrastructure"
     ],
     "kind": "official-data",
-    "geographicCoverage": "National programmes and initiatives; geographic coverage varies by programme",
+    "geographicCoverage": "Nigeria; programme coverage varies by initiative",
     "geoLevel": "varies",
-    "dataType": "Official programme pages, challenge announcements, innovation support pathways, partnerships and published milestones",
-    "updateFrequency": "Irregular programme announcements and updates",
-    "licence": "Programme content reuse terms not confirmed; cite original announcements and do not imply NASENI endorsement",
+    "dataType": "Innovation programmes, finalist lists and institutional programme information",
+    "updateFrequency": "Programme-specific",
+    "licence": "See NASENI Innovation Hub publication terms; reuse conditions not separately reviewed.",
     "lastChecked": "2026-11-09",
-    "checkedHow": "Official NASENI Innovation Hub site, InnovateNaija announcement and FutureMakers programme pages reviewed",
+    "checkedHow": "Official NASENI Innovation Hub programme and finalist pages reviewed.",
     "limitations": [
-      "Programme announcements and prize pools are not proof of grants disbursed, products commercialised, jobs created or innovations independently validated.",
-      "Keep announced, open, closed, selected, funded, deployed and independently verified stages separate.",
-      "Do not infer nationwide reach from an invitation to applicants across states; use published participant and outcome records only."
+      "Programme finalist counts are not a national census of innovators, startups or technology firms.",
+      "Some pages do not state publication or reference dates; retain 'date not stated' where applicable.",
+      "Programme announcements and selection lists do not prove commercialisation, job creation or sustained operations."
     ],
-    "notes": "Related sources: https://innovation.naseni.gov.ng/innovatenaija-campaign/ and https://innovation.naseni.gov.ng/blog/. Current campaign page states applications are closed and Phase 2 voting has ended. The September 2025 announcement described a ₦250 million prize pool and intended 37 state/FCT winners; verified winner selection, grant disbursement and innovation outcomes remain separate evidence requirements."
+    "notes": "The InnovateNaija finalist page lists 108 innovators across 34 states; the page does not state a publication date."
   },
   {
     "id": "nbs-cpi-monthly",
@@ -1141,31 +1136,28 @@
   {
     "id": "nbs-gdp-quarterly",
     "publisher": "National Bureau of Statistics (NBS)",
-    "name": "Gross Domestic Product — quarterly reports and tables",
+    "name": "Quarterly Nigerian Gross Domestic Product report — Q1 2026",
     "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/147/related-materials",
     "urlStatus": "confirmed",
     "sectors": [
-      "public-finance",
       "employment",
-      "governance",
-      "agriculture",
-      "infrastructure"
+      "public-finance",
+      "governance"
     ],
     "kind": "official-data",
-    "geographicCoverage": "National quarterly national accounts; sectoral and industry breakdowns",
+    "geographicCoverage": "Nigeria (national accounts)",
     "geoLevel": "national",
-    "dataType": "Quarterly GDP reports and downloadable PDF/Excel tables; rebased national accounts",
-    "updateFrequency": "Quarterly",
-    "licence": "NBS microdata catalogue terms and report-specific reuse conditions apply; verify before redistribution",
-    "lastChecked": "2026-11-09",
-    "checkedHow": "NBS GDP catalog reviewed; Q2 2026 report listed as published 31 August 2026 and Q1 2026 report as published 25 May 2026",
+    "dataType": "Quarterly national accounts release and related materials",
+    "updateFrequency": "Quarterly; publication lag varies",
+    "licence": "NBS publication terms apply; cite the exact release and table.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "NBS Microdata Catalog related-materials page linked from the Q1 2026 GDP snapshot record.",
     "limitations": [
-      "GDP is a national accounts estimate; it does not measure household welfare or local public-service quality.",
-      "Retain the GDP base year, current/constant price basis, sector, quarter and year-on-year/quarter-on-quarter definition.",
-      "Do not compare series across the 2025 rebasing without checking NBS methodological notes.",
-      "A report listing is not proof that every table has been ingested or validated."
+      "National GDP is a macroeconomic aggregate, not household welfare or state-level growth.",
+      "Retain the GDP base year, release vintage, seasonality and revision notes.",
+      "Do not substitute IMF projections or estimates for NBS published actuals."
     ],
-    "notes": "NBS Q1 2026 release reported real GDP growth of 3.89% year-on-year. Q2 2026 report is listed in the catalogue; no Q2 rate is transcribed here until its table is extracted and checked."
+    "notes": "The catalog page is a source landing point; cite the exact report/table and extract its values before further use."
   },
   {
     "id": "nbs-food-price-watch",
@@ -1224,31 +1216,27 @@
   {
     "id": "isn-hub-assessment-2026",
     "publisher": "Innovation Support Network (ISN)",
-    "name": "Nigerian Innovation Hub Assessment Report — 2026 summary",
+    "name": "Nigerian Innovation Hub Assessment and 2026–2030 strategic outlook",
     "url": "https://isnhubs.org.ng/nigerias-innovation-landmark-isn-launches-comprehensive-hub-assessment-report-and-unveils-2026-2030-strategic-outlook/",
     "urlStatus": "confirmed",
     "sectors": [
-      "education",
       "employment",
-      "infrastructure",
-      "governance"
+      "education"
     ],
     "kind": "published-research",
-    "geographicCoverage": "National; six geopolitical zones and named state/city clusters",
+    "geographicCoverage": "Nigeria; six geopolitical zones and named state/city clusters",
     "geoLevel": "national",
-    "dataType": "Industry ecosystem assessment summary: hub activity, size, geographic respondent shares, services, staffing, revenue and infrastructure constraints",
-    "updateFrequency": "Assessment release 22 May 2026; periodic assessments not confirmed",
-    "licence": "ISN report reuse terms apply; cite the original report and verify permission before reproducing tables or figures",
-    "lastChecked": "2026-11-09",
-    "checkedHow": "ISN's 22 May 2026 public assessment launch summary reviewed; underlying full report link identified but its complete methodology and tables were not parsed in this review",
+    "dataType": "Published innovation ecosystem assessment and strategic outlook",
+    "updateFrequency": "Periodic assessment; respondent/reference period varies",
+    "licence": "Confirm ISN report reuse terms; cite the assessment and avoid implying government endorsement.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "ISN publication reviewed for the national innovation-hub snapshot.",
     "limitations": [
-      "The public article is an executive summary; sample frame, collection period, respondent definitions, weighting and full methodology require the full report.",
-      "Geographic percentages are described as shares of respondents, not a census share of all Nigerian hubs or absolute hub counts.",
-      "More than 190 active hubs surveyed/covered and an ecosystem of more than 250 active and partially active spaces are different denominators; do not combine them.",
-      "Percentages for staffing, training, mentorship, revenue and power outages are survey-summary findings and should be attributed to ISN.",
-      "The 2026–2030 funding and startup support figures are strategic targets, not achieved results."
+      "Published ecosystem assessment, not a government census or live directory.",
+      "Survey coverage, definitions and active-status criteria must be checked before comparisons.",
+      "Do not infer absence of hubs from omitted states or cities."
     ],
-    "notes": "ISN reports over 190 active hubs surveyed/covered from an ecosystem of more than 250 active and partially active spaces. Summary findings include Lagos 32% and Abuja 16% of respondents; Kano, Kaduna, Enugu, Rivers and Abia 4% each; 68.35% with fewer than 10 full-time staff; 90% offering structured training; 60% mentorship; over 70% annual revenue below US$50,000; and over 60% experiencing recurrent power outages. Full report is referenced at https://isnhubs.org.ng/hub-assessment-report."
+    "notes": "Use for ecosystem context only; underlying report tables and methods require extraction before state comparisons."
   },
   {
     "id": "startup-support-engagement-portal",
@@ -1388,56 +1376,53 @@
   },
   {
     "id": "fme-annual-school-census",
-    "publisher": "Federal Ministry of Education",
-    "name": "Nigeria Education Statistics 2024 — Annual School Census 2024/2025",
+    "publisher": "Federal Ministry of Education (FME)",
+    "name": "Annual School Census 2024/2025 — Digital Nigeria EMIS portal",
     "url": "https://emis.education.gov.ng/portal/",
     "urlStatus": "confirmed",
     "sectors": [
       "education"
     ],
     "kind": "official-data",
-    "geographicCoverage": "National, state and LGA dashboard views",
-    "geoLevel": "national",
-    "dataType": "Annual school census dashboard · administrative reporting",
-    "updateFrequency": "Annual school census; dashboard reflects school year 2024/2025",
-    "licence": "Dashboard access is public; reuse terms should be checked with the publisher.",
-    "lastChecked": "2026-11-10",
-    "checkedHow": "Official Federal Ministry of Education EMIS dashboard page reviewed on 10 November 2026.",
+    "geographicCoverage": "Nigeria; national and state portal tables",
+    "geoLevel": "state",
+    "dataType": "Administrative annual school census dashboard and reported school/learner indicators",
+    "updateFrequency": "Annual school session; portal generation date varies",
+    "licence": "Government portal terms and data-use conditions require confirmation.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "FME Digital Nigeria EMIS portal reviewed; snapshot preserves portal generation date and reporting completeness.",
     "limitations": [
-      "The dashboard reports a 53.7% school reporting rate. Do not treat reported school, learner, teacher or facility totals as complete national coverage.",
-      "Administrative counts depend on school submissions and reporting completeness; they are not household survey estimates.",
-      "Learner-to-teacher and learner-to-classroom ratios are dashboard aggregates and do not establish conditions at a specific school.",
-      "Reference school year is 2024/2025; do not label the values as 2026 current conditions."
+      "The 2024/2025 portal reports a 57.9% school reporting rate; totals are incomplete administrative returns.",
+      "State-level ratios do not establish LGA, ward or individual-school conditions.",
+      "Learner records are not necessarily unique learners or verified attendance."
     ],
-    "notes": "Dashboard includes national totals and state/LGA filtering. Retain the reporting rate alongside every count."
+    "notes": "Use exact portal generation date and reporting rate with every national/state indicator."
   },
   {
     "id": "worldbank-ndu-2026-10",
     "publisher": "World Bank",
-    "name": "Nigeria Development Update — October 2026: Beyond the Federal Purse",
-    "url": "https://www.worldbank.org/en/country/nigeria/publication/nigeria-development-update-ndu",
+    "name": "Nigeria Development Update — October 2026",
+    "url": "https://www.worldbank.org/en/news/press-release/2026/10/08/higher-revenues-better-lives-strengthening-state-spending-growth-jobs-services",
     "urlStatus": "confirmed",
     "sectors": [
       "public-finance",
       "employment",
-      "governance",
-      "infrastructure"
+      "governance"
     ],
-    "kind": "official-data",
-    "geographicCoverage": "National",
+    "kind": "published-research",
+    "geographicCoverage": "Nigeria; report coverage and subnational comparisons vary by table",
     "geoLevel": "national",
-    "dataType": "Macroeconomic and public-finance assessment using official national sources",
-    "updateFrequency": "Biannual report series",
-    "licence": "World Bank publication; check the report's terms before reuse.",
-    "lastChecked": "2026-11-10",
-    "checkedHow": "World Bank Nigeria Development Update page and 8 October 2026 press release reviewed.",
+    "dataType": "Macroeconomic and public-finance analysis with state-spending context",
+    "updateFrequency": "Periodic country economic update",
+    "licence": "World Bank publication terms and attribution apply.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "World Bank Nigeria Development Update October 2026 publication referenced in the national snapshot record.",
     "limitations": [
-      "The headline growth estimate covers H1 2026 and is not a state or LGA growth rate.",
-      "Current-account and reserve figures are national macroeconomic aggregates, not household welfare or service-delivery measures.",
-      "The World Bank report is an analytical publication; retain the underlying official source definitions and reference periods when using individual indicators.",
-      "Do not mix estimates, projections and actuals from different editions of the Nigeria Development Update."
+      "A World Bank analysis is not a substitute for state appropriation laws or audited accounts.",
+      "Keep report reference periods and methods attached to every figure.",
+      "National aggregates do not establish state, LGA or household outcomes."
     ],
-    "notes": "October 2026 edition discusses national growth, fiscal revenue, external balances and state spending priorities."
+    "notes": "Use as independent analytical context alongside the original state budget and fiscal documents."
   },
   {
     "id": "imf-article-iv-2026",
@@ -1771,5 +1756,714 @@
       "Federal tertiary-hospital inventory initiatives must not be presented as PHC medicine availability."
     ],
     "notes": "The Ministry lists National Product Supply Chain Management Programme and health logistics publications. Current facility-level PHC medicine data are not yet ingested."
+  },
+  {
+    "id": "nimc-nin-enrolment-2025",
+    "publisher": "National Identity Management Commission (NIMC)",
+    "name": "NIN Enrolment Dashboard — June 2025",
+    "url": "https://nimc.gov.ng/nin/enrolment-report/june-2025",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria, states and diaspora",
+    "geoLevel": "varies",
+    "dataType": "Administrative identity-enrolment records",
+    "updateFrequency": "Periodic dashboard publication; cadence not stated",
+    "licence": "See NIMC publication terms; reuse conditions not separately reviewed.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "NIMC public enrolment dashboard reviewed; national and state totals transcribed for 30 June 2025.",
+    "limitations": [
+      "The published total is dated 30 June 2025, not a current 2026 total.",
+      "NIN enrolment records are not a population census or a measure of eligible-population coverage.",
+      "Do not infer identity inclusion or exclusion without an appropriate population denominator and deduplication methodology."
+    ],
+    "notes": "NIMC reported 121,404,601 total enrolment records as at 30 June 2025."
+  },
+  {
+    "id": "nbs-cpi-catalog",
+    "publisher": "National Bureau of Statistics (NBS)",
+    "name": "Consumer Price Index and Inflation — report catalogue",
+    "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/related-materials",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "employment",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; index tables include national and state profiles depending on release",
+    "geoLevel": "varies",
+    "dataType": "Monthly consumer price index reports and downloadable tables",
+    "updateFrequency": "Monthly publication schedule; release availability varies",
+    "licence": "NBS publication terms; attribution required.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Official NBS Microdata Catalog page reviewed; CPI metadata and downloadable report catalogue checked.",
+    "limitations": [
+      "NBS rebased CPI with 2024 price base and 2023 weight reference; preserve the correct series and methodology.",
+      "Pre-rebase and post-rebase series must not be joined without the NBS bridge methodology.",
+      "The catalogue is a report index, not a harmonised live API; every report's tables and reference month require extraction and review before indicator integration."
+    ],
+    "notes": "The official catalogue lists the September 2026 CPI report, published 15 October 2026, as a downloadable ZIP with PDF and XLSX tables. The report tables have not yet been extracted and validated into observations. CPI metadata states a 2024 price base, 2023 weight reference and 934 product varieties across 13 COICOP divisions."
+  },
+  {
+    "id": "isn-innovation-hub-assessment",
+    "publisher": "Innovation Support Network (ISN)",
+    "name": "Nigerian Innovation Hub Assessment Report and 2026–2030 Strategic Outlook",
+    "url": "https://isnhubs.org.ng/nigerias-innovation-landmark-isn-launches-comprehensive-hub-assessment-report-and-unveils-2026-2030-strategic-outlook/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "infrastructure"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "Nigeria (national ecosystem assessment)",
+    "geoLevel": "national",
+    "dataType": "Innovation hub ecosystem assessment and directory research",
+    "updateFrequency": "Report edition; not a live register",
+    "licence": "See ISN report terms; reuse conditions not separately reviewed.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "ISN publication dated 22 May 2026 reviewed; reported active-hub and ecosystem counts transcribed.",
+    "limitations": [
+      "Published by an ecosystem network, not a government statistical agency.",
+      "The report's definition of active, partially active and surveyed hub must be checked before comparison.",
+      "Do not treat the reported count as a live directory or proof that every listed hub remains operational."
+    ],
+    "notes": "ISN reports more than 190 active hubs within an ecosystem of more than 250 active and partially active spaces."
+  },
+  {
+    "id": "fme-education-emis-asc-2024-25",
+    "publisher": "Federal Ministry of Education, Nigeria — Digital Nigeria Education Management Information System",
+    "name": "Nigeria Education Statistics 2024 — Annual School Census 2024/2025",
+    "url": "https://emis.education.gov.ng/portal/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "education",
+      "employment",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria national and state-level tables; state-level figures do not establish LGA or school-level conditions",
+    "geoLevel": "varies",
+    "dataType": "Annual School Census administrative counts and school resource ratios",
+    "updateFrequency": "School-year census publication; portal generated 18 July 2026",
+    "licence": "See Federal Ministry of Education portal terms; reuse conditions not separately reviewed.",
+    "lastChecked": "2026-11-09",
+    "checkedHow": "Federal Ministry of Education Annual School Census portal reviewed; school year, national reporting totals and Kaduna State table transcribed from the portal.",
+    "limitations": [
+      "Portal reports a 57.9% reporting rate: 124,543 schools reported out of 215,033 total schools displayed.",
+      "Learner and resource counts must be read in the context of incomplete reporting; do not automatically describe them as a complete national census total.",
+      "State-level Kaduna ratios are not Kaduna South, LGA, ward or named-school measurements.",
+      "The portal is generated on 18 July 2026; values may change when the portal is updated.",
+      "Administrative school-census counts and ratios do not independently establish learning quality or school functionality."
+    ],
+    "notes": "School year 2024/2025. Portal generated 18 July 2026. Kaduna State table shows 2,718,039 learners, learner–teacher ratio 51.3, learner–classroom ratio 56.9 and learner–toilet ratio 139.5."
+  },
+  {
+    "id": "ngf-public-finance-database",
+    "publisher": "Nigeria Governors' Forum (NGF)",
+    "name": "Public Finance Database — 36 State Governments",
+    "url": "https://publicfinance.ngf.org.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "education",
+      "health",
+      "infrastructure",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "All 36 state governments; annual state-level fiscal data, with original budget, actual expenditure and performance indicators",
+    "geoLevel": "state",
+    "dataType": "Open-access comparative fiscal database sourced from state budget documents and audited financial statements; National Chart of Accounts-aligned",
+    "updateFrequency": "Portal indicates annual comparable fiscal series; dataset-specific publication and revision dates must be captured per extraction",
+    "licence": "Portal describes the database as open access; confirm attribution and reuse terms for each dataset and retain NGF source attribution.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Reviewed NGF Public Finance Database landing page, original and actual budget sections, state explorer and publicfinanceapi.ngf.org.ng interactive query portal. The API page requires JavaScript; endpoint schema and machine-readable export were not independently confirmed in this pass.",
+    "limitations": [
+      "NGF database is a harmonised secondary compilation from state government budget documents and audited financial statements; retain the original state document and NGF series as separate provenance layers.",
+      "Original budget is planned expenditure, not actual expenditure. Actual expenditure is an accounting outturn, not proof of physical project completion or service quality.",
+      "Portal homepage displays 2026 original-budget sector aggregates, while the state-explorer index displays a June 2025 last-updated date; freshness and coverage must be checked per table and state before treating a 2026 series as complete.",
+      "The publicfinanceapi.ngf.org.ng query interface is JavaScript-rendered; API schema, bulk export, authentication requirements and rate limits were not confirmed.",
+      "State-level fiscal aggregates cannot establish LGA, facility, school or community outcomes without linked evidence at those levels.",
+      "Do not rank states as better or worse without comparable definitions, periods, denominators and data completeness."
+    ],
+    "notes": "Priority national entry point for state public-finance comparison across all 36 states. Verify year, budget type (original/revised/actual), NCOA classification, state coverage, source document, extraction date and arithmetic for every table. Follow each state figure back to its source budget or audited financial statement. Public pages: /budgets/original/, /budgets/actual/, /state-explorer/ and the separate interactive query portal at https://www.publicfinanceapi.ngf.org.ng/state-budget-revenue."
+  },
+  {
+    "id": "who-nigeria-country-profile",
+    "publisher": "World Health Organization (WHO)",
+    "name": "WHO Nigeria country profile — Global Health Observatory",
+    "url": "https://data.who.int/countries/566",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria national country profile; indicator-specific reference periods",
+    "geoLevel": "national",
+    "dataType": "WHO country profile with indicator-specific statistical estimates and reported series",
+    "updateFrequency": "Indicator-specific; revised as WHO data are updated",
+    "licence": "WHO data terms and attribution apply; cite the exact indicator and period.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Current WHO Nigeria country profile URL used by the dated national health snapshot record.",
+    "limitations": [
+      "Values are indicator-specific estimates or reported series; preserve measurement type and uncertainty intervals.",
+      "A national profile is not state, LGA, facility or household evidence.",
+      "Reference period differs by indicator; do not treat profile retrieval date as observation date."
+    ],
+    "notes": "Separate WHO source record for data.who.int/countries/566. Keep distinct from the WHO AFRO page registered under who-gho-nigeria."
+  },
+  {
+    "id": "state-budget-abia-2026",
+    "publisher": "Abia State Government",
+    "name": "Budget documents and implementation reports",
+    "url": "https://abiastate.gov.ng/document-category/budget/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Abia State government",
+    "geoLevel": "state",
+    "dataType": "2026 budget document category, including quarterly budget performance publications",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-adamawa-2026",
+    "publisher": "Adamawa State Ministry of Finance",
+    "name": "2026 approved state budget",
+    "url": "https://finance.adamawastate.gov.ng/ova_doc/2026-approved-budget/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Adamawa State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved budget publication",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-anambra-2026",
+    "publisher": "Anambra State Government",
+    "name": "State budget transparency portal",
+    "url": "https://anambrastate.gov.ng/transparency/state-budgets/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Anambra State government",
+    "geoLevel": "state",
+    "dataType": "2026 appropriation law, approved budget and Q1–Q3 budget implementation reports",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-bauchi-2026",
+    "publisher": "Bauchi State Government",
+    "name": "FY 2026 Appropriation Law",
+    "url": "https://www.bauchistate.gov.ng/sdm_downloads/bauchi-state-fy-2026-appropriation-law/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Bauchi State government",
+    "geoLevel": "state",
+    "dataType": "2026 appropriation law download",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-benue-2026",
+    "publisher": "Benue State Budget and Economic Planning Commission",
+    "name": "Downloadable budget and planning resources",
+    "url": "https://planning.benuestate.gov.ng/downloadable-resources/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Benue State government",
+    "geoLevel": "state",
+    "dataType": "2026 appropriation law, approved budget publication and citizen's budget",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-edo-2026",
+    "publisher": "Edo State Government",
+    "name": "2026 approved budget and appropriation-law documents",
+    "url": "https://edostate.gov.ng/category/appropriation-law/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Edo State government",
+    "geoLevel": "state",
+    "dataType": "FY 2026 approved budget estimates and appropriation law",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-ekiti-2026",
+    "publisher": "Ekiti State Government — Finance and Budget",
+    "name": "2026 finance and budget portal",
+    "url": "https://www.ekitistate.gov.ng/finance-budget",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Ekiti State government",
+    "geoLevel": "state",
+    "dataType": "2026 appropriation law, approved budget and Q1–Q3 budget implementation reports",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-gombe-2026",
+    "publisher": "Gombe State Ministry of Finance and Economic Development",
+    "name": "2026 state budget",
+    "url": "https://www.mof.gm.gov.ng/download/gombe-state-budget-2026/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Gombe State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved state budget",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-imo-2026",
+    "publisher": "Imo State Government — SFTAS disclosure portal",
+    "name": "DLI 1: Improved Financial Reporting and Budget",
+    "url": "https://imostate.gov.ng/Content/SFTAS/SFTAS_1",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Imo State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved budget, appropriation law, citizen's budget, work plan and Q1–Q3 reports",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-jigawa-2026",
+    "publisher": "Jigawa State Government",
+    "name": "Budget document portal",
+    "url": "https://jigawastate.gov.ng/dbudget",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Jigawa State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved estimates, appropriation law and sector MTSS documents",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-kaduna-2026",
+    "publisher": "Kaduna State Planning and Budget Commission",
+    "name": "Budget and planning downloads",
+    "url": "https://pbc.kdsg.gov.ng/downloads/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kaduna State government",
+    "geoLevel": "state",
+    "dataType": "2026 appropriation law, approved budget and Q2 budget implementation report",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-kano-2026",
+    "publisher": "Kano State Ministry of Finance",
+    "name": "2026 approved state budget",
+    "url": "https://finance.kn.gov.ng/kano-state-2026-approved-budget/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kano State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved budget and appropriation law",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-katsina-2026",
+    "publisher": "Katsina State Government — SABER document portal",
+    "name": "2026 approved appropriation law and budget consolidation",
+    "url": "https://katsinastate.gov.ng/cat_doc/saber/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Katsina State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved appropriation law and approved budget consolidation template",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-kebbi-2026",
+    "publisher": "Kebbi State Government",
+    "name": "Budget documents portal",
+    "url": "https://www.kebbistate.gov.ng/budget-documents",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kebbi State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved budget, appropriation law, citizen's budget and Q1 implementation report",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-kogi-2026",
+    "publisher": "Kogi State Government",
+    "name": "Online document centre",
+    "url": "https://kogistate.gov.ng/online-document-centre/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kogi State government",
+    "geoLevel": "state",
+    "dataType": "2026 appropriation law and budget-related documents",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-osun-2026",
+    "publisher": "Osun State Government",
+    "name": "Budget documents and appropriation laws",
+    "url": "https://www.osunstate.gov.ng/resources/budget-documents/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Osun State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved budget, appropriation law, citizen's budget and budget implementation reporting",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-sokoto-2026",
+    "publisher": "Sokoto State Ministry of Finance",
+    "name": "Budget and expenditure documents",
+    "url": "https://mof.sk.gov.ng/resources/budget/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Sokoto State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved budget, appropriation law, citizen's budget and Q1–Q3 reports",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-taraba-2026",
+    "publisher": "Taraba State Government",
+    "name": "Open Government budget portal",
+    "url": "https://www.tarabastate.gov.ng/open-government",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Taraba State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved budget, citizen-friendly budget and Q1/Q2 reports",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "state-budget-yobe-2026",
+    "publisher": "Yobe State Ministry of Budget and Planning",
+    "name": "Approved budgets portal",
+    "url": "https://budget.pfm.yb.gov.ng/approved-budgets/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Yobe State government",
+    "geoLevel": "state",
+    "dataType": "2026 approved budget publication",
+    "updateFrequency": "Annual approved budget with quarterly implementation and periodic revisions where published",
+    "licence": "State government publication; cite the exact document and confirm document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state government or state ministry portal located in a November 2026 source-discovery review; individual files remain to be downloaded and reconciled.",
+    "limitations": [
+      "A portal listing or appropriation law is not evidence that funds were released, spent or converted into completed services.",
+      "Proposed, approved, revised and supplementary budgets are distinct document versions; never combine them.",
+      "Quarterly budget implementation reports and audited financial statements must be captured separately from the approved budget.",
+      "The portal landing page is a source-discovery entry; capture the exact file URL, publication date, table, fiscal year and file hash at ingestion.",
+      "State-level budget data does not establish LGA, ward, facility, school or household outcomes."
+    ],
+    "notes": "Verified official source route for 2026 state-budget acquisition. No numeric budget total has been transcribed from this portal entry."
+  },
+  {
+    "id": "budgit-health-report",
+    "publisher": "The BudgIT Foundation",
+    "name": "Nigeria's Subnational Health Expenditure Report — H1 2026",
+    "url": "https://budgit.org/post_publications/nigerias-subnational-health-expenditure-report-h1-2026/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "public-finance"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "34 of 36 Nigerian states; Rivers and Osun H1 2026 expenditure data unavailable in the report",
+    "geoLevel": "state",
+    "dataType": "Secondary analysis of state Budget Implementation Reports; H1 health and primary healthcare actual expenditure, budget performance and fiscal priority",
+    "updateFrequency": "Periodic research publication",
+    "licence": "BudgIT states its publications are available under CC BY-ND 3.0 with attribution and backlink.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Reviewed the 25-page H1 2026 PDF and publication page. State table, executive summary and methodology were inspected; internal numeric inconsistencies were recorded.",
+    "limitations": [
+      "Secondary analysis based on state Budget Implementation Reports; ISEYC has not independently reconciled every state value against the original BIRs.",
+      "The report's executive summary and Table 1 report ₦621.34bn H1 2026 health expenditure, while a narrative paragraph on page 7 reports ₦624.53bn.",
+      "The report's Table 1 lists PHC H1 2026 expenditure as ₦61.08bn, while pages 17–18 state ₦61.21bn.",
+      "Table 5 marks Sokoto, Kogi, Imo and Cross River values with asterisks because numeric calculations differ from the underlying Q1/Q2 BIR figures.",
+      "Rivers and Osun have no H1 2026 health expenditure data in the report; missing is not zero.",
+      "Expenditure recorded under health classifications does not prove facility-level service quality, medicine availability or health outcomes."
+    ],
+    "notes": "High-value secondary evidence for subnational health financing. Treat the aggregate and state values as published secondary figures; do not present as ISEYC-verified or rank states until discrepancies are reconciled against original BIRs."
+  },
+  {
+    "id": "kdsg-2026-appropriation-release",
+    "publisher": "Kaduna State Government",
+    "name": "Governor signs 2026 budget — official sector allocations",
+    "url": "https://kdsg.gov.ng/uba-sani-signs-2026-budget-education-takes-lions-share/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "education",
+      "health",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kaduna State; statewide allocation, not Kaduna South or individual LGAs",
+    "geoLevel": "state",
+    "dataType": "Official state-government announcement of the 2026 Appropriation Act and sectoral budget allocations",
+    "updateFrequency": "Annual appropriation; revised budget and implementation reports published separately",
+    "licence": "State government publication; cite the official release and verify against the signed appropriation schedules.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Reviewed Kaduna State Government's official 23 December 2025 announcement of assent to the 2026 Appropriation Bill.",
+    "limitations": [
+      "This is an official announcement of approved budget allocations, not actual expenditure or cash releases.",
+      "The announcement is a summary; detailed schedules and the signed appropriation law remain the controlling documents.",
+      "Statewide allocations do not establish LGA, ward, school, facility or household conditions.",
+      "Do not infer Kaduna South allocations from statewide percentages."
+    ],
+    "notes": "Official source for Kaduna's ₦985.9bn 2026 budget, education 25%, health 15%, capital 70.9% and recurrent 29.1%."
   }
 ]
