@@ -90,7 +90,7 @@ The source snapshot pack contains dated observations, catalogue-only sources and
 
 ## Current evidence inventory
 
-This feature branch contains 103 registered sources, 92 curated dated observations and 26 catalogue-only or partially integrated sources. The snapshot pack is manually transcribed and source-attributed; it is not a live feed or a complete 36-state dataset. See [state budget source readiness](docs/STATE-BUDGET-SOURCE-READINESS-2026-11.md) for the current state-by-state coverage and limitations.
+This feature branch contains 103 registered sources, 92 curated dated observations and 28 catalogue-only or partially integrated sources. The snapshot pack is manually transcribed and source-attributed; it is not a live feed or a complete 36-state dataset. See [state budget source readiness](docs/STATE-BUDGET-SOURCE-READINESS-2026-11.md) for the current state-by-state coverage and limitations.
 
 
 ## Automated quality gates
