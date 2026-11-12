@@ -80,4 +80,9 @@ The merged main branch contains the Evidence Gateway implementation, but the Obs
 Evidence governance: [Community Observation contract](docs/COMMUNITY-OBSERVATION-CONTRACT.md) · [Evidence Vault contract](docs/EVIDENCE-VAULT-CONTRACT-V1.md) · [Kaduna HEFA access review](docs/HEFA-ACCESS-REVIEW-2026-11.md)
 
 
-National evidence readiness: [Source readiness assessment](docs/NATIONAL-SOURCE-READINESS-2026-11.md) · [Community Observation contract](docs/COMMUNITY-OBSERVATION-CONTRACT.md) · [Evidence Vault contract](docs/EVIDENCE-VAULT-CONTRACT-V1.md) · [Kaduna HEFA access review](docs/HEFA-ACCESS-REVIEW-2026-11.md)
+National evidence readiness: [Source readiness assessment](docs/NATIONAL-SOURCE-READINESS-2026-11.md) · [State budget source readiness](docs/STATE-BUDGET-SOURCE-READINESS-2026-11.md) · [Community Observation contract](docs/COMMUNITY-OBSERVATION-CONTRACT.md) · [Evidence Vault contract](docs/EVIDENCE-VAULT-CONTRACT-V1.md) · [Kaduna HEFA access review](docs/HEFA-ACCESS-REVIEW-2026-11.md)
+
+
+## Curated source snapshots
+
+The source snapshot pack contains dated observations, catalogue-only sources and explicit reconciliation notes. It is not a live feed. A source listed in the registry is not proof that its data have been ingested.
