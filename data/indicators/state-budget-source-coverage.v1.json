@@ -1,0 +1,476 @@
+{
+  "schemaVersion": "1.0.0",
+  "checkedAt": "2026-11-12",
+  "title": "Nigeria state budget and planning source coverage",
+  "note": "This is a source-discovery and readiness register, not a complete state budget dataset. A portal located does not mean its tables have been extracted or validated. States marked not_reviewed are not being described as having no public data.",
+  "scope": {
+    "states": 36,
+    "fctTrackedSeparately": true,
+    "officialStatePortalsLocated": 13
+  },
+  "comparativeSources": [
+    {
+      "id": "ngf-state-public-finance-db",
+      "coverage": "Portal describes comparable fiscal data for all 36 states",
+      "status": "under_integrity_review",
+      "url": "https://publicfinance.ngf.org.ng/",
+      "note": "The page describes original, revised and actual budget data sourced from state budget documents and audited financial statements. Unrelated injected third-party links appeared in the rendered landing page; no numbers have been ingested."
+    },
+    {
+      "id": "agora-state-budget-performance-2025",
+      "coverage": "35 of 36 states; Rivers excluded",
+      "status": "published_secondary_analysis",
+      "url": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+      "note": "2025 budget implementation analysis based on state Budget Implementation Reports."
+    },
+    {
+      "id": "budgit-state-revenue-h1-2026",
+      "coverage": "34 of 36 states; Rivers and Osun excluded",
+      "status": "published_secondary_analysis",
+      "url": "https://budgit.org/post_infographics/h1-2026-revenue-performance-by-state/",
+      "note": "H1 2026 revenue target performance analysis based on OpenStates and state-government Q2 Budget Implementation Reports."
+    }
+  ],
+  "requiredDocuments": [
+    "Approved budget and appropriation law",
+    "Medium-Term Expenditure Framework / Fiscal Strategy Paper / Medium-Term Sector Strategy",
+    "Citizens budget and consultation record",
+    "Quarterly budget implementation reports (Q1–Q4)",
+    "Audited financial statements and Auditor-General report",
+    "Sector work plans and programme budgets",
+    "Procurement award, contract, payment and project completion evidence"
+  ],
+  "jurisdictions": [
+    {
+      "name": "Abia",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Adamawa",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Akwa Ibom",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Anambra",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-anambra",
+      "officialPortalUrl": "https://smart.anambrastate.gov.ng/open-finance",
+      "documentsLocated": [
+        "Q3 2026 Budget Implementation Report",
+        "2025 audited financial statements",
+        "2026 budget figures and source documents."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending."
+    },
+    {
+      "name": "Bauchi",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-bauchi",
+      "officialPortalUrl": "https://www.bauchistate.gov.ng/financial-reports-2/",
+      "documentsLocated": [
+        "2026 Q1 Budget Implementation Report",
+        "2026 approved budget",
+        "appropriation law",
+        "citizens budget",
+        "2025 Q4 report."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending."
+    },
+    {
+      "name": "Bayelsa",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Benue",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Borno",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-borno",
+      "officialPortalUrl": "https://pfm.bo.gov.ng/budgets/",
+      "documentsLocated": [
+        "2026 Q1 and Q2 Budget Implementation Reports",
+        "approved budget",
+        "appropriation law",
+        "citizens budget."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending."
+    },
+    {
+      "name": "Cross River",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Delta",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Ebonyi",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-ebonyi",
+      "officialPortalUrl": "https://www.ebonyistate.gov.ng/laws/and/financials",
+      "documentsLocated": [
+        "2026 Q3 and Q2 Budget Implementation Reports",
+        "2025 audited financial statements",
+        "2026 approved budget and appropriation law."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending."
+    },
+    {
+      "name": "Edo",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-edo",
+      "officialPortalUrl": "https://edostate.gov.ng/fy-2026-approved-appropriation-law/",
+      "documentsLocated": [
+        "2026 approved appropriation law",
+        "broader implementation and audited-outturn documents require separate extraction."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending."
+    },
+    {
+      "name": "Ekiti",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-ekiti",
+      "officialPortalUrl": "https://www.ekitistate.gov.ng/finance-budget",
+      "documentsLocated": [
+        "2026 approved budget",
+        "appropriation law",
+        "Q1–Q3 2026 Budget Implementation Reports",
+        "2026–2028 MTSS."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending."
+    },
+    {
+      "name": "Enugu",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-enugu",
+      "officialPortalUrl": "https://enugustate.gov.ng/downloads/",
+      "documentsLocated": [
+        "2026 approved budget",
+        "Q4 2025 Budget Implementation Report",
+        "2025 Accountant-General and Auditor-General financial statements."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending."
+    },
+    {
+      "name": "Gombe",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Imo",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-imo",
+      "officialPortalUrl": "https://www.imostate.gov.ng/Content/SFTAS/SFTAS_1",
+      "documentsLocated": [
+        "2026 approved budget",
+        "appropriation law",
+        "Q1–Q3 2026 Budget Implementation Reports",
+        "citizen budget",
+        "2025 audited statements."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending."
+    },
+    {
+      "name": "Jigawa",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Kaduna",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-kaduna",
+      "officialPortalUrl": "https://pbc.kdsg.gov.ng/downloads/",
+      "documentsLocated": [
+        "2026 approved budget and appropriation law",
+        "Q2 2026 Budget Implementation Report",
+        "2026 Citizens Budget",
+        "2027–2029 expenditure call circular."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending."
+    },
+    {
+      "name": "Kano",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-kano",
+      "officialPortalUrl": "https://finance.kn.gov.ng/budget/",
+      "documentsLocated": [
+        "2026 approved budget and appropriation law",
+        "2025 audited financial statement."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending."
+    },
+    {
+      "name": "Katsina",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Kebbi",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-kebbi",
+      "officialPortalUrl": "https://kebbistate.gov.ng/budget-documents",
+      "documentsLocated": [
+        "2026 approved budget and appropriation law",
+        "Q1–Q3 2026 Budget Implementation Reports",
+        "citizens budget",
+        "2027–2029 MTEF."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending."
+    },
+    {
+      "name": "Kogi",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Kwara",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Lagos",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Nasarawa",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Niger",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Ogun",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Ondo",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Osun",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-osun",
+      "officialPortalUrl": "https://www.osunstate.gov.ng/resources/budget-documents/all-budget-documents/",
+      "documentsLocated": [
+        "2026 approved budget and citizens budget",
+        "Q4 2025 Budget Implementation Report",
+        "2026–2028 MTEF."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending."
+    },
+    {
+      "name": "Oyo",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Plateau",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Rivers",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Sokoto",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-sokoto",
+      "officialPortalUrl": "https://mbep.sk.gov.ng/budget/",
+      "documentsLocated": [
+        "2026 approved budget and appropriation law",
+        "Q2 2026 Budget Implementation Report",
+        "2025 Q4 and earlier reports."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending."
+    },
+    {
+      "name": "Taraba",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Yobe",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Zamfara",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+    },
+    {
+      "name": "Federal Capital Territory",
+      "type": "fct",
+      "status": "official_law_not_confirmed",
+      "sourceId": "fct-budget-2026-secondary",
+      "officialPortalUrl": null,
+      "documentsLocated": [
+        "National Assembly second-reading report (12 March 2026)",
+        "Secondary report of National Assembly passage (7 May 2026)"
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "FCT is tracked separately from the 36 states. The final enacted appropriation law and official implementation reports were not confirmed in this source review."
+    }
+  ]
+}
