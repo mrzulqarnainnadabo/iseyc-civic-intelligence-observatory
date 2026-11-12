@@ -2465,5 +2465,30 @@
       "Do not infer Kaduna South allocations from statewide percentages."
     ],
     "notes": "Official source for Kaduna's ₦985.9bn 2026 budget, education 25%, health 15%, capital 70.9% and recurrent 29.1%."
+  },
+  {
+    "id": "budgit-state-health-h1-2026",
+    "publisher": "The BudgIT Foundation",
+    "name": "H1 2026 state health expenditure infographic — earlier release",
+    "url": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health",
+      "public-finance"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "34 of 36 Nigerian states; Rivers and Osun unavailable in the report",
+    "geoLevel": "varies",
+    "dataType": "Earlier infographic release of H1 2026 state health expenditure and budget performance",
+    "updateFrequency": "One-time publication; superseded by later detailed report",
+    "licence": "BudgIT states its publications are available under CC BY-ND 3.0 with attribution and backlink.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Earlier infographic reviewed and compared with BudgIT's later detailed H1 2026 report.",
+    "limitations": [
+      "This earlier infographic reports ₦614.55bn and is superseded by the later detailed report's ₦621.34bn executive-summary/Table 1 and Table 5 figure.",
+      "The later detailed report itself contains an internal alternative total of ₦624.53bn on page 7.",
+      "Retain this source only for explicit version comparison and reconciliation; do not use its value as the current total."
+    ],
+    "notes": "Superseded source retained to document version history and avoid silently replacing the earlier published figure."
   }
 ]
