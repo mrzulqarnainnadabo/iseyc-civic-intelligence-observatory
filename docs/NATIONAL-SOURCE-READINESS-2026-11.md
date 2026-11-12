@@ -7,7 +7,7 @@ ISEYC has a credible institutional source foundation, but it does not yet have a
 The next stage is to turn the catalogue into a governed acquisition and evidence system. Prioritise usable datasets and clear citizen questions over the number of institutions listed.
 
 **Current implementation facts**
-- The Observatory has a 96-source registry, six national World Bank WDI indicator pilots, and a curated snapshot endpoint for WHO, NITDA, NIMC, IMF, NASENI, Innovation Support Network, FME, NPHCDA and NGF publications.
+- The Observatory has a 96-source registry, six national World Bank WDI indicator pilots, and curated snapshot endpoints for WHO, NITDA, NIMC, IMF, NASENI, Innovation Support Network, FME, NPHCDA, NGF, BudgIT and Kaduna State Government publications.
 - Civic Mandate CommunityRecords and Community Observations are separate streams.
 - The Kaduna PHC pilot has source-readiness work but no imported HEFA facility observations.
 - A structured 2023 INEC voter-register/PVC table has now been transcribed for all 36 states and the FCT. Its arithmetic exceptions are explicitly retained.
@@ -147,7 +147,7 @@ The Budget Office's quarterly implementation index lists federal reports across 
 
 **Freshness caution:** the database homepage displays 2026 original-budget sector aggregates, while the state-explorer index surfaced in this review displays a June 2025 last-updated date. Treat these as different portal components until the data vintage for each table is confirmed. The separate publicfinanceapi.ngf.org.ng query interface is JavaScript-rendered; endpoint schema, bulk export, authentication and rate limits were not confirmed. Do not claim a machine-readable feed until a reproducible export or API contract is obtained.
 
-**Official state-source routes independently located in this research pass: **19 of 36 states**. The remaining 17 state routes are not yet individually verified; that is a research gap, not evidence that those states lack budget documents.
+Official state-source routes independently located in this research pass: **19 of 36 states**. The remaining 17 state routes are not yet individually verified; that is a research gap, not evidence that those states lack budget documents.
 - Abia: [2026 Appropriation Act announcement](https://abiastate.gov.ng/gov-otti-signs-2026-appropriation-bill-into-law/) and [state budget document category](https://abiastate.gov.ng/document-category/budget/) (includes 2026 Q2 reporting).
 - Adamawa: [2026 approved budget](https://finance.adamawastate.gov.ng/ova_doc/2026-approved-budget/) published by the State Ministry of Finance.
 - Anambra: [State budget transparency portal](https://anambrastate.gov.ng/transparency/state-budgets/) lists the 2026 appropriation law, approved budget and Q1–Q3 implementation reports.
