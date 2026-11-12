@@ -39,7 +39,7 @@ describe("numeric source-snapshot API", () => {
 
   it("exposes aggregate report discrepancies instead of hiding them", () => {
     const response = request();
-    expect(response.body.reconciliationNotes).toHaveLength(4);
+    expect(response.body.reconciliationNotes).toHaveLength(5);
     expect(response.body.reconciliationNotes.some((note) => note.title.includes("health total discrepancy"))).toBe(true);
     expect(response.body.observations.find((item) => item.id === "budgit-health-actual-spend-34-states-h1-2026")?.value).toBe(621.34);
     expect(response.body.observations.find((item) => item.id === "budgit-health-budget-performance-h1-2026")?.value).toBe(40.48);
