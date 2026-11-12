@@ -2378,5 +2378,53 @@
    "Read the report methodology before comparing sector outcomes."
   ],
   "notes": "The 2026 State of States report assesses fiscal performance across 35 states in 2025 and introduces a greater focus on development impact."
+ },
+ {
+  "id": "budgetoffice-q2-2026-bir",
+  "publisher": "Budget Office of the Federation",
+  "name": "Second Quarter 2026 Budget Implementation Report",
+  "url": "https://budgetoffice.gov.ng/index.php/second-quarter-2026-budget-implementation-report",
+  "urlStatus": "confirmed",
+  "sectors": [
+   "public-finance"
+  ],
+  "kind": "official-data",
+  "geographicCoverage": "Federal Government of Nigeria",
+  "geoLevel": "national",
+  "dataType": "Federal Q2 2026 budget implementation, revenue and expenditure report",
+  "updateFrequency": "Quarterly",
+  "licence": "Official federal government report; document-specific reuse conditions not separately confirmed.",
+  "lastChecked": "2026-11-12",
+  "checkedHow": "Official Budget Office page reviewed; page lists the 2.1 MB PDF as published 7 November 2026. Both Download and View actions redirected to a login page during this review.",
+  "limitations": [
+   "The PDF could not be accessed through the public Download or View actions during this review.",
+   "No numeric observations have been transcribed from this report.",
+   "Do not infer federal sector execution from the appropriation alone."
+  ],
+  "notes": "Published 7 November 2026; document access currently redirects to a login page."
+ },
+ {
+  "id": "state-house-2025-extension-dec2026",
+  "publisher": "State House, Abuja",
+  "name": "2025 Appropriation Amendment No. 4 — implementation extended to 31 December 2026",
+  "url": "https://statehouse.gov.ng/president-tinubu-signs-appropriation-amendment-no-4-bill-2025-extends-implementation-to-december-31-2026/",
+  "urlStatus": "confirmed",
+  "sectors": [
+   "public-finance",
+   "governance"
+  ],
+  "kind": "official-data",
+  "geographicCoverage": "Federal Government of Nigeria",
+  "geoLevel": "national",
+  "dataType": "Official notice of extended 2025 federal appropriation implementation period",
+  "updateFrequency": "One-off legislative amendment",
+  "licence": "Official government press release; cite the issuing authority.",
+  "lastChecked": "2026-11-12",
+  "checkedHow": "Official State House press release dated 30 September 2026 reviewed.",
+  "limitations": [
+   "This is a federal budget extension, not a state or FCT budget extension.",
+   "The extension changes the implementation period; it does not establish actual releases or expenditure."
+  ],
+  "notes": "The 2025 federal budget implementation period was extended from 30 September to 31 December 2026."
  }
 ]
