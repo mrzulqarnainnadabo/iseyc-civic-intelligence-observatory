@@ -12,7 +12,7 @@ The current evidence points to three important realities:
 2. **Education and health spending vary sharply between states.** BudgIT reports ₦1.049 trillion in education expenditure across 34 states. Its later detailed H1 health report reports ₦621.34 billion in health expenditure across 34 states; an earlier infographic reported ₦614.55 billion, a difference that remains under reconciliation. State shares and amounts vary; these are expenditure records, not proof of school or facility outcomes.
 3. **Public fiscal information is uneven.** BudgIT's Q2 2026 fiscal transparency table scores all 36 states. Eight score 100, while Rivers scores 15. The score measures the availability of citizens' budgets, quarterly BIRs, e-procurement and fiscal-data websites—not the quality of public services.
 
-The Observatory has located 15 official state budget portals and one additional official state appropriation announcement in its source-discovery pass. Twenty states remain unreviewed in that pass. The all-state fiscal transparency table provides a separate 36-state disclosure view. Neither should be presented as a complete 36-state budget execution dataset.
+The Observatory has located 15 official state budget portals and three additional official state budget documents in its source-discovery pass. Eighteen states remain unreviewed in that pass. The all-state fiscal transparency table provides a separate 36-state disclosure view. Neither should be presented as a complete 36-state budget execution dataset.
 
 ## Slide 1 — State budgets: appropriation versus expenditure
 
@@ -142,7 +142,7 @@ These are programme-reported reach figures, not independently verified digital c
 
 ## Slide 7 — What is still unknown
 
-- The current portal-discovery register has official budget portals for 15 states and one additional official appropriation announcement; 20 states remain unreviewed in this pass.
+- The current portal-discovery register has official budget portals for 15 states and one additional official appropriation announcement; 18 states remain unreviewed in this pass.
 - The NGF Public Finance Database describes all-36-state budget and audited-account coverage, but its landing page rendered unrelated injected third-party links. No numeric values have been ingested from it.
 - BudgIT's 2026 State of States report assesses 35 states' 2025 fiscal performance. Its publication page reports Lagos IGR of ₦1.71tn and Enugu IGR of ₦407.76bn in 2025, up 125.91% nominally from ₦180.5bn in 2024. Detailed state-level extraction and methodology review remain pending.
 - BudgIT's H1 2026 total-expenditure and education pages cover 34 states but do not identify the excluded states in their page text.
