@@ -2344,6 +2344,28 @@
       ],
       "sourceType": "official_source",
       "sourceUpdateDate": "2026-10-28"
+    },
+    {
+      "id": "agora-state-budget-performance-2025-lagos-igr",
+      "title": "Lagos internally generated revenue",
+      "value": 1.85,
+      "unit": "₦ trillion",
+      "referencePeriod": "2025",
+      "measurementType": "State internally generated revenue",
+      "geoLevel": "state",
+      "geographicCoverage": "Lagos State",
+      "sourceId": "agora-state-budget-performance-2025",
+      "sourcePublisher": "Agora Policy",
+      "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+      "departments": [
+        "civic"
+      ],
+      "interpretation": "Agora Policy's 2025 state budget review cites ₦1.85 trillion in Lagos internally generated revenue.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "This differs from the ₦1.71 trillion Lagos IGR cited by BudgIT's 2026 State of States report; the difference is unreconciled."
+      ],
+      "sourceType": "published_research"
     }
   ],
   "catalogOnlySources": [
@@ -2761,6 +2783,13 @@
       "title": "Anambra Q3 2026 execution must be compared with the elapsed-year period",
       "detail": "Anambra's official Q3 2026 BIR covers 1 January–30 September 2026 and reports 30.0% total expenditure performance and 27.8% capital execution. The report explicitly uses 75.0% as the elapsed-year yardstick after nine months. These ratios are fiscal execution indicators, not evidence of service failure or successful delivery.",
       "action": "Extract the sectoral and project tables, reconcile with the Q2 BIR and audited 2025 accounts, then verify project outputs and service functionality independently."
+    },
+    {
+      "id": "lagos-igr-2025-source-difference",
+      "severity": "medium",
+      "title": "Lagos 2025 IGR differs between Agora Policy and BudgIT",
+      "detail": "Agora Policy cites ₦1.85 trillion in Lagos 2025 IGR; BudgIT's 2026 State of States report cites ₦1.71 trillion. The ₦140 billion difference is not explained by the published pages.",
+      "action": "Keep both values source-attributed; do not average or select one as definitive. Reconcile against Lagos audited accounts and the original state BIR."
     }
   ],
   "limitations": [
