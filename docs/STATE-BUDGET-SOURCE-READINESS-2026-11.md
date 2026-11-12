@@ -196,7 +196,7 @@ The Budget Office lists the [Second Quarter 2026 Budget Implementation Report](h
 
 ## Expanded state source discovery — 12 November 2026
 
-The register now identifies **15 official state budget portals** and **three additional official state budget documents** across the 36 states. Eighteen states remain unreviewed in this portal-discovery pass. The FCT is tracked separately.
+The register now identifies **15 official state budget portals** and **three additional official state budget documents** across the 36 states: Abia's appropriation announcement, Akwa Ibom's 2026 Appropriation Law page and Kogi's Q1 2026 Budget Implementation Report. Eighteen states remain unreviewed in this portal-discovery pass. Anambra's official Open Finance portal has also published its Q3 2026 BIR and 2025 audited accounts; the Q3 headline outturn has been transcribed separately. The FCT is tracked separately.
 
 Newly confirmed portals:
 - [Jigawa Ministry of Budget and Economic Planning](https://www.jsbepd.org/index.php/plans-budget/annual-budget/2026-budget) lists 2026 approved estimates, appropriation law, citizens budget, Q1 BIR and sector-planning documents.
