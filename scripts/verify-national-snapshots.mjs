@@ -13,11 +13,19 @@ const component = fs.readFileSync('src/components/NationalSnapshots.tsx', 'utf8'
 
 assert.equal(data.schemaVersion, '1.0.0');
 assert.equal(data.checkedAt, '2026-11-12');
-assert.ok(data.observations.length >= 93, 'source snapshots must cover national, state and sector domains');
+assert.ok(data.observations.length >= 104, 'source snapshots must cover national, state and sector domains');
 assert.ok(data.catalogOnlySources.length >= 28, 'catalogue must include all current source gaps and partial integrations');
-assert.ok(registry.length >= 103, 'registry must retain current source coverage');
+assert.ok(registry.length >= 105, 'registry must retain current source coverage');
 assert.deepEqual(registryCopy, registry, 'source registry copies must remain identical');
 const sourceById = new Map(registry.map((item) => [item.id, item]));
+assert.ok(data.observations.some((item) => item.id === 'nitda-dl4all-target-progress-2026' && item.value === 5.57));
+assert.ok(data.observations.some((item) => item.id === 'ncc-broadband-penetration-sep-2026' && item.value === 59.05));
+assert.ok(data.observations.some((item) => item.id === 'ncc-broadband-subscriptions-sep-2026' && item.value === 128020463));
+assert.ok(data.observations.some((item) => item.id === 'world-bank-nigeria-internet-use-2024' && item.value === 41.21));
+const softwareEvidence = data.observations.filter((item) => item.departments.includes('software-technology'));
+const nonTechnologyRows = softwareEvidence.filter((item) => !/digital|technology|software|internet|broadband|telecom|ict|innovation|connectivity|literacy|fibre|fiber/i.test(item.title + ' ' + item.measurementType + ' ' + item.sourcePublisher));
+assert.equal(nonTechnologyRows.length, 0, 'general fiscal indicators must not be labelled Software & Technology evidence');
+
 const observationIds = new Set();
 for (const item of data.observations) {
   assert.ok(item.id && item.title, 'every observation needs a stable id and title');
@@ -50,6 +58,7 @@ assert.ok(data.reconciliationNotes.some((item) => item.id === 'who-underfive-ser
 assert.ok(data.reconciliationNotes.some((item) => item.id === 'state-budget-coverage-gaps'));
 assert.ok(data.reconciliationNotes.some((item) => item.id === 'budgit-h1-health-total-revision'));
 assert.ok(data.reconciliationNotes.some((item) => item.id === 'lagos-igr-2025-source-difference'));
+assert.ok(data.reconciliationNotes.some((item) => item.id === 'digital-access-measurement-definitions'));
 assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-health-total-report' && item.value === 621.34));
 assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-health-budget-performance-report' && item.value === 40.48));
 assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-health-expenditure-growth-report' && item.value === 31.61));
