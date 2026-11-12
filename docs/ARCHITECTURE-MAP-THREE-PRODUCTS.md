@@ -58,10 +58,11 @@ Each department interprets its own field. The Observatory supplies evidence and 
 
 ## 6. Current Observatory evidence boundaries
 
-- The source registry contains 103 source entries in this feature branch. A registry entry is metadata, not an observation.
-- The curated source snapshot pack contains 94 dated observations and 28 catalogue-only or partially integrated sources.
+- The source registry contains 105 source entries in this feature branch. A registry entry is metadata, not an observation.
+- The curated source snapshot pack contains 104 dated observations and 28 catalogue-only or partially integrated sources.
 - The new snapshot API is `GET /api/evidence/source-snapshots`.
 - The existing `GET /api/evidence/snapshots` endpoint remains unchanged because it serves the existing National Department Snapshot contract and downstream consumers.
+- Software & Technology now has field-specific evidence from NITDA's DL4ALL programme dashboard, NCC broadband/fibre statistics and the World Bank/ITU internet-use series. General fiscal indicators are not classified as technology evidence.
 - The state-budget coverage register tracks all 36 states and the FCT separately. Fifteen official state budget portals and three additional official state budget documents were located in the current source-discovery pass; 18 states remain unreviewed. A BudgIT Q2 2026 fiscal-information availability table covers all 36 states, but it measures publication completeness rather than service delivery.
 - Agora Policy's 2025 analysis covers 35/36 states, excluding Rivers. BudgIT's H1 2026 revenue analysis covers 34/36 states, excluding Rivers and Osun.
 - The NGF Public Finance Database claims 36-state coverage, but its landing page showed unrelated injected third-party links during review. It remains under integrity review and contributes no numeric values.
