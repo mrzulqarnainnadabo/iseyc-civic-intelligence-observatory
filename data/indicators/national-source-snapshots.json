@@ -1594,33 +1594,6 @@
       "sourceUpdateDate": "2026-10-21"
     },
     {
-      "id": "budgit-h1-2026-health-total",
-      "title": "Combined state health expenditure",
-      "value": 614.55,
-      "unit": "₦ billion",
-      "referencePeriod": "H1 2026 (through Q2)",
-      "measurementType": "Actual health expenditure by end of Q2",
-      "geoLevel": "varies",
-      "geographicCoverage": "34 of 36 states; Rivers and Osun excluded",
-      "sourceId": "budgit-state-health-h1-2026",
-      "sourcePublisher": "BudgIT Foundation · H1 2026 Health Expenditure Performance by State",
-      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/",
-      "departments": [
-        "health",
-        "civic"
-      ],
-      "interpretation": "The 34 states reviewed spent a combined ₦614.55 billion on health by the end of Q2 2026.",
-      "limitations": [
-        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
-        "Spending does not establish project completion, facility functionality, learning outcomes or patient outcomes.",
-        "Preserve the report's own denominator and reporting period; do not infer missing state values.",
-        "Rivers and Osun were excluded because their Q2 2026 Budget Implementation Reports were unavailable.",
-        "Health spending is not proof of medicine availability, PHC functionality, workforce presence or patient outcomes."
-      ],
-      "sourceType": "published_research",
-      "sourceUpdateDate": "2026-10-21"
-    },
-    {
       "id": "budgit-h1-2026-health-share-kano",
       "title": "Kano health share of total expenditure",
       "value": 19.7,
@@ -1862,6 +1835,190 @@
       ],
       "sourceType": "published_research",
       "sourceUpdateDate": "2026-10-21"
+    },
+    {
+      "id": "budgit-h1-2026-health-total-report",
+      "title": "Combined state health expenditure · updated report",
+      "value": 621.34,
+      "unit": "₦ billion",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Actual health expenditure reported in detailed subnational review",
+      "geoLevel": "varies",
+      "geographicCoverage": "34 of 36 states; Rivers and Osun excluded",
+      "sourceId": "budgit-subnational-health-h1-2026-report",
+      "sourcePublisher": "BudgIT Foundation · Nigeria’s Subnational Health Expenditure Report, H1 2026",
+      "sourceUrl": "https://budgit.org/post_publications/nigerias-subnational-health-expenditure-report-h1-2026/",
+      "departments": [
+        "health",
+        "civic"
+      ],
+      "interpretation": "The later detailed H1 report states that 34 states spent ₦621.34 billion on health by the end of Q2 2026. An earlier BudgIT infographic reported a different aggregate; see the reconciliation note.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+        "Rivers and Osun are excluded because their Q2 2026 BIRs were unavailable.",
+        "The detailed report's ₦621.34bn aggregate differs from the earlier 21 October infographic's ₦614.55bn; underlying state-level data must be reconciled before trend or comparative use.",
+        "Spending does not establish medicine availability, PHC functionality, workforce presence or patient outcomes."
+      ],
+      "sourceType": "published_research"
+    },
+    {
+      "id": "budgit-h1-2026-health-budget-performance-report",
+      "title": "Health budget performance · H1 2026",
+      "value": 40.48,
+      "unit": "% of approved health budgets",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Actual health expenditure as a share of approved health budgets",
+      "geoLevel": "varies",
+      "geographicCoverage": "34 of 36 states; Rivers and Osun excluded",
+      "sourceId": "budgit-subnational-health-h1-2026-report",
+      "sourcePublisher": "BudgIT Foundation · Nigeria’s Subnational Health Expenditure Report, H1 2026",
+      "sourceUrl": "https://budgit.org/post_publications/nigerias-subnational-health-expenditure-report-h1-2026/",
+      "departments": [
+        "health",
+        "civic"
+      ],
+      "interpretation": "The report states 40.48% health budget performance across 34 states in H1 2026.",
+      "limitations": [
+        "Secondary analysis of state Budget Implementation Reports.",
+        "Rivers and Osun are excluded.",
+        "The rate is a fiscal execution measure, not a measure of service quality or health outcomes."
+      ],
+      "sourceType": "published_research"
+    },
+    {
+      "id": "budgit-h1-2025-health-budget-performance-report",
+      "title": "Health budget performance · H1 2025 comparison",
+      "value": 44.95,
+      "unit": "% of approved health budgets",
+      "referencePeriod": "H1 2025 (comparison period)",
+      "measurementType": "Actual health expenditure as a share of approved health budgets",
+      "geoLevel": "varies",
+      "geographicCoverage": "34-state comparison as reported in H1 2026 publication",
+      "sourceId": "budgit-subnational-health-h1-2026-report",
+      "sourcePublisher": "BudgIT Foundation · Nigeria’s Subnational Health Expenditure Report, H1 2026",
+      "sourceUrl": "https://budgit.org/post_publications/nigerias-subnational-health-expenditure-report-h1-2026/",
+      "departments": [
+        "health",
+        "civic"
+      ],
+      "interpretation": "The report gives 44.95% as the H1 2025 comparison rate; preserve the report's own comparison cohort.",
+      "limitations": [
+        "Secondary analysis; the page summary does not provide state-by-state reconciliations.",
+        "Do not infer individual state or facility performance from this aggregate."
+      ],
+      "sourceType": "published_research"
+    },
+    {
+      "id": "budgit-h1-2026-health-approved-budget-growth-report",
+      "title": "Growth in approved state health budgets",
+      "value": 46.17,
+      "unit": "% nominal increase",
+      "referencePeriod": "H1 2026 compared with H1 2025",
+      "measurementType": "Nominal change in approved health budgets",
+      "geoLevel": "varies",
+      "geographicCoverage": "34-state comparison as reported in H1 2026 publication",
+      "sourceId": "budgit-subnational-health-h1-2026-report",
+      "sourcePublisher": "BudgIT Foundation · Nigeria’s Subnational Health Expenditure Report, H1 2026",
+      "sourceUrl": "https://budgit.org/post_publications/nigerias-subnational-health-expenditure-report-h1-2026/",
+      "departments": [
+        "health",
+        "civic"
+      ],
+      "interpretation": "Approved health budgets increased by 46.17% nominally while the reported execution rate declined.",
+      "limitations": [
+        "Nominal growth is not inflation-adjusted.",
+        "Secondary analysis; preserve the publication's comparison cohort."
+      ],
+      "sourceType": "published_research"
+    },
+    {
+      "id": "budgit-h1-2026-health-expenditure-growth-report",
+      "title": "Growth in actual state health expenditure",
+      "value": 31.61,
+      "unit": "% nominal increase",
+      "referencePeriod": "H1 2026 compared with H1 2025",
+      "measurementType": "Nominal change in actual health expenditure",
+      "geoLevel": "varies",
+      "geographicCoverage": "34-state comparison as reported in H1 2026 publication",
+      "sourceId": "budgit-subnational-health-h1-2026-report",
+      "sourcePublisher": "BudgIT Foundation · Nigeria’s Subnational Health Expenditure Report, H1 2026",
+      "sourceUrl": "https://budgit.org/post_publications/nigerias-subnational-health-expenditure-report-h1-2026/",
+      "departments": [
+        "health",
+        "civic"
+      ],
+      "interpretation": "Actual health expenditure increased by 31.61% nominally year-on-year.",
+      "limitations": [
+        "Nominal growth is not inflation-adjusted.",
+        "Secondary analysis; preserve the publication's comparison cohort."
+      ],
+      "sourceType": "published_research"
+    },
+    {
+      "id": "budgit-2025-lagos-igr-sos-2026",
+      "title": "Lagos State internally generated revenue",
+      "value": 1.71,
+      "unit": "₦ trillion",
+      "referencePeriod": "2025 full year",
+      "measurementType": "Internally generated revenue",
+      "geoLevel": "state",
+      "geographicCoverage": "Lagos State",
+      "sourceId": "budgit-state-of-states-2026",
+      "sourcePublisher": "BudgIT Foundation · 2026 State of States Report",
+      "sourceUrl": "https://budgit.org/post_publications/from-allocation-to-impact-rethinking-state-spending-priorities-2026-state-of-states-report/",
+      "departments": [
+        "civic"
+      ],
+      "interpretation": "BudgIT's 2026 State of States report reports Lagos IGR of ₦1.71 trillion for 2025.",
+      "limitations": [
+        "Secondary fiscal analysis; not an independently audited transaction ledger.",
+        "Do not infer that IGR alone measures service delivery or fiscal sustainability."
+      ],
+      "sourceType": "published_research"
+    },
+    {
+      "id": "budgit-2025-enugu-igr-sos-2026",
+      "title": "Enugu State internally generated revenue",
+      "value": 407.76,
+      "unit": "₦ billion",
+      "referencePeriod": "2025 full year",
+      "measurementType": "Internally generated revenue",
+      "geoLevel": "state",
+      "geographicCoverage": "Enugu State",
+      "sourceId": "budgit-state-of-states-2026",
+      "sourcePublisher": "BudgIT Foundation · 2026 State of States Report",
+      "sourceUrl": "https://budgit.org/post_publications/from-allocation-to-impact-rethinking-state-spending-priorities-2026-state-of-states-report/",
+      "departments": [
+        "civic"
+      ],
+      "interpretation": "The report states that Enugu IGR rose from ₦180.5bn in 2024 to ₦407.76bn in 2025, a 125.91% increase.",
+      "limitations": [
+        "Secondary fiscal analysis; not an independently audited transaction ledger.",
+        "The 125.91% growth figure is nominal and not adjusted for inflation."
+      ],
+      "sourceType": "published_research"
+    },
+    {
+      "id": "budgit-2025-enugu-igr-growth-sos-2026",
+      "title": "Enugu State IGR growth",
+      "value": 125.91,
+      "unit": "% nominal increase",
+      "referencePeriod": "2025 compared with 2024",
+      "measurementType": "Year-on-year change in internally generated revenue",
+      "geoLevel": "state",
+      "geographicCoverage": "Enugu State",
+      "sourceId": "budgit-state-of-states-2026",
+      "sourcePublisher": "BudgIT Foundation · 2026 State of States Report",
+      "sourceUrl": "https://budgit.org/post_publications/from-allocation-to-impact-rethinking-state-spending-priorities-2026-state-of-states-report/",
+      "departments": [
+        "civic"
+      ],
+      "interpretation": "BudgIT reports Enugu IGR increasing from ₦180.5bn in 2024 to ₦407.76bn in 2025.",
+      "limitations": [
+        "Nominal increase; not adjusted for inflation.",
+        "Secondary fiscal analysis."
+      ],
+      "sourceType": "published_research"
     }
   ],
   "catalogOnlySources": [
@@ -2241,6 +2398,13 @@
       "title": "The 2025 federal budget implementation period runs to 31 December 2026",
       "detail": "The State House announced on 30 September 2026 that the federal 2025 budget implementation period was extended to 31 December 2026. A 2025 outturn reported before that date is not necessarily the final federal outturn.",
       "action": "Label the reporting cut-off and extension status on every federal 2025 comparison; do not treat an interim outturn as final."
+    },
+    {
+      "id": "budgit-h1-health-total-revision",
+      "severity": "high",
+      "title": "BudgIT H1 2026 health expenditure totals differ across publications",
+      "detail": "The 21 October 2026 infographic reports ₦614.55bn for 34 states; the later H1 2026 Subnational Health Expenditure Report reports ₦621.34bn for 34 states. The published summaries do not explain the ₦6.79bn difference. The later detailed report is shown as the latest source, but the discrepancy remains visible and the totals must not be combined or used as a trend until underlying state-level BIRs are reconciled.",
+      "action": "Obtain the report's state-level annex and underlying 34 BIR extracts, compare state coverage and accounting cut-off, and record a human-reviewed reconciliation before treating the total as final."
     }
   ],
   "limitations": [
