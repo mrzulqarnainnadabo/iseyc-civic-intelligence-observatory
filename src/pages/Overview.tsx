@@ -55,7 +55,7 @@ export default function Overview() {
 
   return <>
     <section className="observatory-hero">
-      <div className="observatory-hero__copy"><span className="observatory-kicker">ISEYC · Civic intelligence</span><span className="observatory-mode">{isDemo ? "Demonstration data" : "Published Civic Mandate feed"}</span><h1>Nigeria</h1><p className="observatory-hero__dek">Understood through evidence.</p><p>Explore public records, national indicators and source material. Every figure keeps its publisher, reference period and limitations attached.</p><div className="observatory-hero__actions"><Link to="/evidence">Explore evidence <span aria-hidden="true">↗</span></Link><Link to="/geography">Open national map</Link></div></div>
+      <div className="observatory-hero__copy"><span className="observatory-kicker">ISEYC · National intelligence</span><span className="observatory-mode">{isDemo ? "Demonstration data" : "Published Civic Mandate feed"}</span><h1>Nigeria</h1><p className="observatory-hero__dek">Understanding public needs. Interpreting evidence. Strengthening accountability.</p><p>Explore public records, national indicators and source material. Every figure keeps its publisher, reference period and limitations attached.</p><div className="observatory-hero__actions"><Link to="/evidence">Explore evidence <span aria-hidden="true">↗</span></Link><Link to="/geography">Open national map</Link></div></div>
       <div className="observatory-hero__seal" aria-hidden="true"><span>ISEYC</span><strong>Evidence<br/>before<br/>conclusion</strong><i>National observatory</i></div>
     </section>
 
