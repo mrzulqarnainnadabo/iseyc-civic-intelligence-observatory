@@ -13,7 +13,7 @@ const component = fs.readFileSync('src/components/NationalSnapshots.tsx', 'utf8'
 
 assert.equal(data.schemaVersion, '1.0.0');
 assert.equal(data.checkedAt, '2026-11-12');
-assert.ok(data.observations.length >= 35, 'source snapshots must cover multiple national and subnational domains');
+assert.ok(data.observations.length >= 70, 'source snapshots must cover national, state and sector domains');
 assert.deepEqual(registryCopy, registry, 'source registry copies must remain identical');
 const sourceById = new Map(registry.map((item) => [item.id, item]));
 const observationIds = new Set();
@@ -50,6 +50,9 @@ assert.ok(!data.observations.some((item) => item.id === 'who-nga-under5-mortalit
 assert.ok(data.observations.some((item) => item.id === 'nphcda-phc-revitalised-aug-2025' && item.value === 1295));
 assert.ok(data.observations.some((item) => item.id === 'agora-2025-budget-implementation-35' && item.value === 68.2));
 assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-lagos-revenue' && item.value === 1684));
+assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-combined-expenditure-rate' && item.value === 24.4));
+assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-education-total' && item.value === 1.049));
+assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-health-total' && item.value === 614.55));
 assert.ok(data.observations.some((item) => item.id === 'federal-2026-total-appropriation' && item.value === 68.32));
 
 const states = coverage.jurisdictions.filter((item) => item.type === 'state');
@@ -57,6 +60,9 @@ const fct = coverage.jurisdictions.filter((item) => item.type === 'fct');
 assert.equal(states.length, 36);
 assert.equal(fct.length, 1);
 assert.equal(coverage.scope.officialStatePortalsLocated, 13);
+assert.equal(coverage.scope.fiscalTransparencyCoverage, 36);
+assert.equal(coverage.scope.h1_2026SectorSpendingCoverage, 34);
+assert.ok(states.every((item) => item.fiscalTransparency?.quarter === 'Q2 2026' && Number.isFinite(item.fiscalTransparency.totalScore)));
 assert.equal(states.filter((item) => item.status === 'official_portal_located').length, 13);
 assert.equal(states.filter((item) => item.status === 'not_reviewed').length, 23);
 assert.equal(fct[0].status, 'official_law_not_confirmed');
