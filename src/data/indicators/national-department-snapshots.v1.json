@@ -890,6 +890,177 @@
         "Kaduna and Yobe figures are combined; do not assign either total to Kaduna State alone.",
         "The source does not identify recruitment by LGA, facility, current employment status or active deployment."
       ]
+    },
+    {
+      "publisher": "Nigeria Governors' Forum (NGF) · Public Finance Database",
+      "sourceId": "ngf-public-finance-database",
+      "sourceUrl": "https://publicfinance.ngf.org.ng/",
+      "referencePeriod": "2026 original state budgets",
+      "retrievedAt": "2026-11-12",
+      "geography": {
+        "level": "national",
+        "label": "All 36 state governments; FCT excluded"
+      },
+      "evidenceType": "NGF-published harmonised state-budget aggregate · National Chart of Accounts functional classification · original budget",
+      "limitations": [
+        "Original budget is planned expenditure, not actual expenditure, cash release or proof of service delivery.",
+        "NGF is a secondary compilation of state budget documents; preserve the NGF series and underlying state documents as separate provenance layers.",
+        "The aggregate covers the 36 states and excludes the FCT.",
+        "The NGF homepage shows a 2026 original-budget sector distribution while the state-explorer index surfaced a June 2025 update date; confirm per-table vintage and state coverage before deeper comparison.",
+        "The displayed sector shares total 100.1% because of rounding; do not silently rescale.",
+        "National fiscal aggregates do not establish LGA, facility, school or household outcomes."
+      ],
+      "id": "ngf-state-budget-education-2026",
+      "title": "NGF · Education in 2026 original state budgets",
+      "departmentId": "education",
+      "metrics": [
+        {
+          "label": "Share of aggregate 36-state original expenditure",
+          "value": "14.4",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "Aggregate education allocation",
+          "value": "5.19",
+          "unit": "₦ trillion",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation"
+        }
+      ],
+      "interpretation": "NGF reports ₦5.19 trillion (14.4%) for education in the 2026 original budgets of Nigeria's 36 states. This is a planned allocation, not actual expenditure, school funding received or evidence of learning outcomes."
+    },
+    {
+      "publisher": "Nigeria Governors' Forum (NGF) · Public Finance Database",
+      "sourceId": "ngf-public-finance-database",
+      "sourceUrl": "https://publicfinance.ngf.org.ng/",
+      "referencePeriod": "2026 original state budgets",
+      "retrievedAt": "2026-11-12",
+      "geography": {
+        "level": "national",
+        "label": "All 36 state governments; FCT excluded"
+      },
+      "evidenceType": "NGF-published harmonised state-budget aggregate · National Chart of Accounts functional classification · original budget",
+      "limitations": [
+        "Original budget is planned expenditure, not actual expenditure, cash release or proof of service delivery.",
+        "NGF is a secondary compilation of state budget documents; preserve the NGF series and underlying state documents as separate provenance layers.",
+        "The aggregate covers the 36 states and excludes the FCT.",
+        "The NGF homepage shows a 2026 original-budget sector distribution while the state-explorer index surfaced a June 2025 update date; confirm per-table vintage and state coverage before deeper comparison.",
+        "The displayed sector shares total 100.1% because of rounding; do not silently rescale.",
+        "National fiscal aggregates do not establish LGA, facility, school or household outcomes."
+      ],
+      "id": "ngf-state-budget-health-2026",
+      "title": "NGF · Health in 2026 original state budgets",
+      "departmentId": "health",
+      "metrics": [
+        {
+          "label": "Share of aggregate 36-state original expenditure",
+          "value": "9.3",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "Aggregate health allocation",
+          "value": "3.34",
+          "unit": "₦ trillion",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation"
+        }
+      ],
+      "interpretation": "NGF reports ₦3.34 trillion (9.3%) for health in the 2026 original budgets of Nigeria's 36 states. This is a planned allocation, not actual expenditure, facility funding received, medicine availability or verified care quality."
+    },
+    {
+      "publisher": "Nigeria Governors' Forum (NGF) · Public Finance Database",
+      "sourceId": "ngf-public-finance-database",
+      "sourceUrl": "https://publicfinance.ngf.org.ng/",
+      "referencePeriod": "2026 original state budgets",
+      "retrievedAt": "2026-11-12",
+      "geography": {
+        "level": "national",
+        "label": "All 36 state governments; FCT excluded"
+      },
+      "evidenceType": "NGF-published harmonised state-budget aggregate · National Chart of Accounts functional classification · original budget",
+      "limitations": [
+        "Original budget is planned expenditure, not actual expenditure, cash release or proof of service delivery.",
+        "NGF is a secondary compilation of state budget documents; preserve the NGF series and underlying state documents as separate provenance layers.",
+        "The aggregate covers the 36 states and excludes the FCT.",
+        "The NGF homepage shows a 2026 original-budget sector distribution while the state-explorer index surfaced a June 2025 update date; confirm per-table vintage and state coverage before deeper comparison.",
+        "The displayed sector shares total 100.1% because of rounding; do not silently rescale.",
+        "National fiscal aggregates do not establish LGA, facility, school or household outcomes."
+      ],
+      "id": "ngf-state-budget-functional-profile-2026",
+      "title": "NGF · Functional distribution of 2026 original state budgets",
+      "departmentIds": [
+        "civic"
+      ],
+      "metrics": [
+        {
+          "label": "Economic Affairs",
+          "value": "33.2",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "General Public Service",
+          "value": "22.2",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "Education",
+          "value": "14.4",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "Health",
+          "value": "9.3",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "Housing and Community Amenities",
+          "value": "8.4",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "Social Protection",
+          "value": "4.9",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "Public Order and Safety",
+          "value": "3.3",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "Recreation and Culture",
+          "value": "2.5",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        },
+        {
+          "label": "Environmental Protection",
+          "value": "1.9",
+          "unit": "%",
+          "period": "2026 original budgets",
+          "measurementType": "Budget allocation share"
+        }
+      ],
+      "interpretation": "This functional profile shows how NGF's 36-state original-budget aggregate is distributed. Economic Affairs is a broad function, not a technology allocation. Shares total 100.1% due to rounding."
     }
   ]
 }
