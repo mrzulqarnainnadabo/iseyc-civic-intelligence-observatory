@@ -15,6 +15,7 @@ type FiscalTransparency = { quarter: string; citizensBudget: { score: number; ma
 type BudgetJurisdiction = { name: string; type: 'state' | 'fct'; status: string; officialPortalUrl: string | null; documentsLocated: string[]; note: string; fiscalTransparency?: FiscalTransparency };
 const budgetJurisdictions = stateBudgetCoverage.jurisdictions as BudgetJurisdiction[];
 const locatedStatePortals = budgetJurisdictions.filter((item) => item.type === 'state' && item.status === 'official_portal_located').length;
+const locatedOfficialDocuments = budgetJurisdictions.filter((item) => item.type === 'state' && item.status === 'official_documents_located').length;
 
 const DEPARTMENT_LABEL: Record<string, string> = {
   education: 'Education & Capacity Building', health: 'Health & Well-being',
@@ -90,11 +91,11 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
         </article>)}</div>
       </details>}
       {!compact && <details className="state-budget-coverage">
-        <summary>State budget source coverage · {locatedStatePortals} of 36 official portals located</summary>
+        <summary>State budget source coverage · {locatedStatePortals} of 36 official portals · {locatedOfficialDocuments} official document source</summary>
         <p>Portal discovery is not data extraction. Each state still requires its approved budget, appropriation law, MTEF/MTSS, quarterly implementation reports and audited outturn. States marked “not reviewed” are not being described as having no public data.</p>
         <ul>{budgetJurisdictions.map((item) => <li key={item.name}>
           <strong>{item.name}</strong>
-          <span>{item.type === 'fct' ? 'FCT · tracked separately' : item.status === 'official_portal_located' ? 'Official portal located · extraction pending' : 'Source discovery not completed'}</span>
+          <span>{item.type === 'fct' ? 'FCT · tracked separately' : item.status === 'official_portal_located' ? 'Official portal located · extraction pending' : item.status === 'official_documents_located' ? 'Official appropriation source located · extraction pending' : 'Source discovery not completed'}</span>
           {item.officialPortalUrl ? <a href={item.officialPortalUrl} target="_blank" rel="noopener noreferrer">Official portal ↗</a> : <small>{item.note}</small>}
         </li>)}</ul>
         <section className="state-budget-coverage__score">
