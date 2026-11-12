@@ -88,15 +88,22 @@ Key findings:
 ## Slide 4A — 2025 state fiscal performance
 
 Agora Policy's review of 35 states' 2025 Budget Implementation Reports (Rivers excluded) reports:
-- Combined revenue: **₦16.64tn**
-- Combined expenditure: **₦19.21tn**
-- Budget implementation: **68.2%**
-- Capital expenditure: **₦11.87tn**; recurrent expenditure: **₦7.34tn**
-- Capital implementation: **62.9%**; recurrent implementation: **79%**
+- Combined revenue: **₦16.64tn**; combined expenditure: **₦19.21tn**.
+- Total budget implementation: **68.2%**; capital expenditure: **₦11.87tn**; recurrent expenditure: **₦7.34tn**.
+- Capital implementation: **62.9%**; recurrent implementation: **79%**.
+- FAAC supplied approximately **75%** of actual revenue and IGR **25%**; 27 states did not meet projected revenue targets.
 
-The later [BudgIT 2026 State of States Report](https://budgit.org/post_publications/from-allocation-to-impact-rethinking-state-spending-priorities-2026-state-of-states-report/) also reports 2025 Lagos IGR of ₦1.71tn and Enugu IGR of ₦407.76bn, a 125.91% nominal increase from 2024.
+Selected state comparisons:
+- Highest total budget execution: Yobe 99.8%, Delta 97.2%, Ekiti 87.9%.
+- Lowest total budget execution: Taraba 34.0%, Kebbi 41.3%, Abia 45.5%, Niger 47.1%, Plateau 47.5%, Cross River 48.9%.
+- Highest actual revenue: Lagos ₦2,627.9bn, Delta ₦1,449.4bn, Akwa Ibom ₦1,113.2bn.
+- Highest IGR share of revenue: Lagos 70%, Enugu 61%, Ogun 54%; lowest: Bayelsa 5%, Yobe 6%, Sokoto 7%.
 
-**Source:** [Agora Policy — Review of Performance of States' Budgets in 2025](https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html) · [BudgIT — 2026 State of States Report](https://budgit.org/post_publications/from-allocation-to-impact-rethinking-state-spending-priorities-2026-state-of-states-report/)
+The Observatory now provides an interactive 35-state table for actual revenue, actual expenditure, total budget execution, capital execution, IGR share and IGR budget performance. Rivers is marked unavailable, not zero.
+
+**Sources:** [Agora Policy — Review of Performance of States' Budgets in 2025](https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html) · [BudgIT — 2026 State of States Report](https://budgit.org/post_publications/from-allocation-to-impact-rethinking-state-spending-priorities-2026-state-of-states-report/)
+
+BudgIT reports Lagos 2025 IGR of **₦1.71tn** and Enugu IGR of **₦407.76bn**, up 125.91% nominally from 2024. Agora Policy cites **₦1.85tn** for Lagos IGR. The **₦140bn difference is unreconciled**; keep both source-attributed and do not average or present either as definitive without primary audited accounts.
 
 **Interpretation boundary:** Secondary analysis of 35 state BIRs; not a 36-state audited dataset. A fiscal execution rate does not prove project completion or service quality.
 
