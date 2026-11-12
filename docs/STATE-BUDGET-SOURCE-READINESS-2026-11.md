@@ -118,7 +118,7 @@ The State House release of 17 April 2026 reports a federal appropriation of **â‚
 
 **Source:** [State House â€” 2026 Appropriation assent](https://statehouse.gov.ng/president-tinubu-assents-to-2026-appropriation-bill-and-2025-budget-extension/)
 
-These are federal figures, not state or FCT budgets. The listed components are not an exhaustive reconciliation of the total appropriation. The 2025 federal budget implementation period was subsequently extended; compare outturns only after accounting for the applicable extension.
+These are federal figures, not state or FCT budgets. The listed components are not an exhaustive reconciliation of the total appropriation. The 2025 federal budget implementation period was extended to 31 December 2026; interim federal outturns before that cut-off are not necessarily final. [State House extension notice](https://statehouse.gov.ng/president-tinubu-signs-appropriation-amendment-no-4-bill-2025-extends-implementation-to-december-31-2026/).
 
 ### Federal Capital Territory
 
@@ -187,3 +187,8 @@ The Observatory supplies evidence and uncertainty. The departments interpret the
 The Observatory source-snapshot API is `GET /api/evidence/source-snapshots`. It is a curated public transcription endpoint, not a live connection to every state portal. The existing `GET /api/evidence/snapshots` Evidence Gateway contract is kept unchanged for current consumers.
 
 The 36-state coverage register and the source catalogue expose what is located, partial, under review or not yet reviewed. Numeric state-level observations will be added only after source documents have been extracted and validated.
+
+
+## Federal Q2 2026 BIR access
+
+The Budget Office lists the [Second Quarter 2026 Budget Implementation Report](https://budgetoffice.gov.ng/index.php/second-quarter-2026-budget-implementation-report) as published on 7 November 2026. The public Download and View actions redirected to a login page during this review. No figures from the report have been extracted; the source remains under review until an accessible official copy or open data extract is available.
