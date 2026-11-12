@@ -2019,6 +2019,123 @@
         "Secondary fiscal analysis."
       ],
       "sourceType": "published_research"
+    },
+    {
+      "id": "abia-2026-approved-budget-total",
+      "title": "Abia State approved 2026 budget",
+      "value": 1016.22807265199,
+      "unit": "₦ billion",
+      "referencePeriod": "2026 approved appropriation",
+      "measurementType": "Official government-reported appropriation headline",
+      "geoLevel": "state",
+      "geographicCoverage": "Abia State",
+      "sourceId": "state-budget-abia",
+      "sourcePublisher": "Abia State Government",
+      "sourceUrl": "https://abiastate.gov.ng/gov-otti-signs-2026-appropriation-bill-into-law/",
+      "departments": [
+        "civic"
+      ],
+      "interpretation": "Abia State Government announced a 2026 appropriation total of ₦1,016,228,072,651.99.",
+      "limitations": [
+        "Official press announcement, not a transcribed appropriation schedule.",
+        "Approved budget is not cash release, actual expenditure or verified delivery."
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-12-23"
+    },
+    {
+      "id": "kaduna-2026-approved-budget-total",
+      "title": "Kaduna State approved 2026 budget",
+      "value": 985.9,
+      "unit": "₦ billion",
+      "referencePeriod": "2026 approved appropriation",
+      "measurementType": "Official government-reported appropriation headline",
+      "geoLevel": "state",
+      "geographicCoverage": "Kaduna State",
+      "sourceId": "state-budget-kaduna-2026-appropriation-announcement",
+      "sourcePublisher": "Kaduna State Government",
+      "sourceUrl": "https://kdsg.gov.ng/uba-sani-signs-2026-budget-education-takes-lions-share/",
+      "departments": [
+        "education",
+        "civic"
+      ],
+      "interpretation": "Kaduna State Government announced a 2026 budget of ₦985.9bn.",
+      "limitations": [
+        "Rounded government-reported headline; verify against enacted appropriation schedule before detailed comparison.",
+        "Approved budget is not cash release, actual expenditure or verified delivery."
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-12-23"
+    },
+    {
+      "id": "kaduna-2026-capital-expenditure",
+      "title": "Kaduna State 2026 capital expenditure",
+      "value": 698.9,
+      "unit": "₦ billion",
+      "referencePeriod": "2026 approved appropriation",
+      "measurementType": "Official government-reported appropriation headline",
+      "geoLevel": "state",
+      "geographicCoverage": "Kaduna State",
+      "sourceId": "state-budget-kaduna-2026-appropriation-announcement",
+      "sourcePublisher": "Kaduna State Government",
+      "sourceUrl": "https://kdsg.gov.ng/uba-sani-signs-2026-budget-education-takes-lions-share/",
+      "departments": [
+        "civic"
+      ],
+      "interpretation": "The state government reported ₦698.9bn for capital expenditure, or 70.9% of the 2026 budget.",
+      "limitations": [
+        "Government-reported headline; verify against enacted appropriation schedule.",
+        "Capital appropriation is not proof of project completion or service functionality."
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-12-23"
+    },
+    {
+      "id": "kaduna-2026-recurrent-expenditure",
+      "title": "Kaduna State 2026 recurrent expenditure",
+      "value": 287,
+      "unit": "₦ billion",
+      "referencePeriod": "2026 approved appropriation",
+      "measurementType": "Official government-reported appropriation headline",
+      "geoLevel": "state",
+      "geographicCoverage": "Kaduna State",
+      "sourceId": "state-budget-kaduna-2026-appropriation-announcement",
+      "sourcePublisher": "Kaduna State Government",
+      "sourceUrl": "https://kdsg.gov.ng/uba-sani-signs-2026-budget-education-takes-lions-share/",
+      "departments": [
+        "civic"
+      ],
+      "interpretation": "The state government reported ₦287bn for recurrent expenditure, or 29.1% of the 2026 budget.",
+      "limitations": [
+        "Government-reported headline; verify against enacted appropriation schedule.",
+        "Recurrent appropriation is not proof that staff, facilities or services were adequately resourced."
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-12-23"
+    },
+    {
+      "id": "kaduna-2026-education-budget-share",
+      "title": "Kaduna State 2026 education budget share",
+      "value": 25,
+      "unit": "% of total state budget",
+      "referencePeriod": "2026 approved appropriation",
+      "measurementType": "Official government-reported appropriation headline",
+      "geoLevel": "state",
+      "geographicCoverage": "Kaduna State",
+      "sourceId": "state-budget-kaduna-2026-appropriation-announcement",
+      "sourcePublisher": "Kaduna State Government",
+      "sourceUrl": "https://kdsg.gov.ng/uba-sani-signs-2026-budget-education-takes-lions-share/",
+      "departments": [
+        "education",
+        "civic"
+      ],
+      "interpretation": "The state government reported education as the largest budget sector at 25% of the 2026 budget.",
+      "limitations": [
+        "Rounded government-reported headline; confirm exact MDA and programme allocations in the approved budget.",
+        "Budget share is not proof of actual expenditure, classroom inputs or learning outcomes."
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2025-12-23"
     }
   ],
   "catalogOnlySources": [
