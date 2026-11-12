@@ -2205,6 +2205,145 @@
         "These are selected published values, not a complete state-by-state IGR dataset."
       ],
       "sourceType": "published_research"
+    },
+    {
+      "id": "anambra-2026-q3-total-revenue",
+      "title": "Anambra total revenue including opening balance · Q3 2026",
+      "value": 300.80226147912,
+      "unit": "₦ billion",
+      "referencePeriod": "1 Jan–30 Sep 2026",
+      "measurementType": "Actual revenue including opening balance",
+      "geoLevel": "state",
+      "geographicCoverage": "Anambra State",
+      "sourceId": "state-budget-anambra",
+      "sourcePublisher": "Anambra State Government — Office of the Accountant General / Open Finance",
+      "sourceUrl": "https://smart.anambrastate.gov.ng/open-finance",
+      "departments": [
+        "civic"
+      ],
+      "interpretation": "Total revenue received was ₦300.80bn, 39.3% of the ₦766.37bn 2026 original budget.",
+      "limitations": [
+        "Official state BIR summary; amounts include opening balance.",
+        "Revenue receipt does not establish expenditure or service delivery."
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-10-28"
+    },
+    {
+      "id": "anambra-2026-q3-independent-revenue",
+      "title": "Anambra internally generated revenue · Q3 2026",
+      "value": 50.09202439593,
+      "unit": "₦ billion",
+      "referencePeriod": "1 Jan–30 Sep 2026",
+      "measurementType": "Actual independent revenue",
+      "geoLevel": "state",
+      "geographicCoverage": "Anambra State",
+      "sourceId": "state-budget-anambra",
+      "sourcePublisher": "Anambra State Government — Office of the Accountant General / Open Finance",
+      "sourceUrl": "https://smart.anambrastate.gov.ng/open-finance",
+      "departments": [
+        "civic"
+      ],
+      "interpretation": "Independent revenue was ₦50.09bn, 69.6% of the ₦72.00bn budgeted.",
+      "limitations": [
+        "Official state BIR summary.",
+        "This is a state-level aggregate; do not infer household tax burden or economic prosperity."
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-10-28"
+    },
+    {
+      "id": "anambra-2026-q3-total-expenditure",
+      "title": "Anambra total expenditure · Q3 2026",
+      "value": 229.80122370748,
+      "unit": "₦ billion",
+      "referencePeriod": "1 Jan–30 Sep 2026",
+      "measurementType": "Actual expenditure",
+      "geoLevel": "state",
+      "geographicCoverage": "Anambra State",
+      "sourceId": "state-budget-anambra",
+      "sourcePublisher": "Anambra State Government — Office of the Accountant General / Open Finance",
+      "sourceUrl": "https://smart.anambrastate.gov.ng/open-finance",
+      "departments": [
+        "civic"
+      ],
+      "interpretation": "Total expenditure was ₦229.80bn, 30.0% of the ₦766.37bn 2026 original budget after nine months.",
+      "limitations": [
+        "Official state BIR summary, Table 1 page 8.",
+        "The report's 75% elapsed-year yardstick is a timing reference, not an automatic service-performance target.",
+        "Aggregate spending does not prove project completion or service functionality."
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-10-28"
+    },
+    {
+      "id": "anambra-2026-q3-total-expenditure-rate",
+      "title": "Anambra total expenditure performance · Q3 2026",
+      "value": 30,
+      "unit": "% of 2026 original budget",
+      "referencePeriod": "1 Jan–30 Sep 2026",
+      "measurementType": "Actual expenditure as share of approved original budget",
+      "geoLevel": "state",
+      "geographicCoverage": "Anambra State",
+      "sourceId": "state-budget-anambra",
+      "sourcePublisher": "Anambra State Government — Office of the Accountant General / Open Finance",
+      "sourceUrl": "https://smart.anambrastate.gov.ng/open-finance",
+      "departments": [
+        "civic"
+      ],
+      "interpretation": "30.0% of the annual original budget was expended after nine months; the report uses 75.0% as the elapsed-year comparison yardstick.",
+      "limitations": [
+        "Official state BIR summary.",
+        "Execution rate is a fiscal measure, not service delivery or project quality."
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-10-28"
+    },
+    {
+      "id": "anambra-2026-q3-capital-expenditure",
+      "title": "Anambra capital expenditure · Q3 2026",
+      "value": 165.75665369878,
+      "unit": "₦ billion",
+      "referencePeriod": "1 Jan–30 Sep 2026",
+      "measurementType": "Actual capital expenditure",
+      "geoLevel": "state",
+      "geographicCoverage": "Anambra State",
+      "sourceId": "state-budget-anambra",
+      "sourcePublisher": "Anambra State Government — Office of the Accountant General / Open Finance",
+      "sourceUrl": "https://smart.anambrastate.gov.ng/open-finance",
+      "departments": [
+        "civic"
+      ],
+      "interpretation": "Capital expenditure was ₦165.76bn, 27.8% of the ₦596.77bn capital budget.",
+      "limitations": [
+        "Official state BIR summary.",
+        "Spending does not establish physical completion, quality or operation of assets."
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-10-28"
+    },
+    {
+      "id": "anambra-2026-q3-capital-expenditure-rate",
+      "title": "Anambra capital expenditure performance · Q3 2026",
+      "value": 27.8,
+      "unit": "% of capital budget",
+      "referencePeriod": "1 Jan–30 Sep 2026",
+      "measurementType": "Actual capital expenditure as share of capital budget",
+      "geoLevel": "state",
+      "geographicCoverage": "Anambra State",
+      "sourceId": "state-budget-anambra",
+      "sourcePublisher": "Anambra State Government — Office of the Accountant General / Open Finance",
+      "sourceUrl": "https://smart.anambrastate.gov.ng/open-finance",
+      "departments": [
+        "civic"
+      ],
+      "interpretation": "Capital execution stood at 27.8% after nine months.",
+      "limitations": [
+        "Official state BIR summary.",
+        "Do not infer project-level delivery without contract, site and commissioning evidence."
+      ],
+      "sourceType": "official_source",
+      "sourceUpdateDate": "2026-10-28"
     }
   ],
   "catalogOnlySources": [
@@ -2591,6 +2730,13 @@
       "title": "BudgIT H1 2026 health expenditure totals differ across publications",
       "detail": "The 21 October 2026 infographic reports ₦614.55bn for 34 states; the later H1 2026 Subnational Health Expenditure Report reports ₦621.34bn for 34 states. The published summaries do not explain the ₦6.79bn difference. The later detailed report is shown as the latest source, but the discrepancy remains visible and the totals must not be combined or used as a trend until underlying state-level BIRs are reconciled.",
       "action": "Obtain the report's state-level annex and underlying 34 BIR extracts, compare state coverage and accounting cut-off, and record a human-reviewed reconciliation before treating the total as final."
+    },
+    {
+      "id": "anambra-q3-2026-nine-month-comparison",
+      "severity": "medium",
+      "title": "Anambra Q3 2026 execution must be compared with the elapsed-year period",
+      "detail": "Anambra's official Q3 2026 BIR covers 1 January–30 September 2026 and reports 30.0% total expenditure performance and 27.8% capital execution. The report explicitly uses 75.0% as the elapsed-year yardstick after nine months. These ratios are fiscal execution indicators, not evidence of service failure or successful delivery.",
+      "action": "Extract the sectoral and project tables, reconcile with the Q2 BIR and audited 2025 accounts, then verify project outputs and service functionality independently."
     }
   ],
   "limitations": [
