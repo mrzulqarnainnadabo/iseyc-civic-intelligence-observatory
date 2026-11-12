@@ -2155,6 +2155,34 @@
       ],
       "publisher": "BudgIT Foundation",
       "url": "https://budgit.org/post_publications/from-allocation-to-impact-rethinking-state-spending-priorities-2026-state-of-states-report/"
+    },
+    {
+      "id": "budgetoffice-q2-2026-bir",
+      "title": "Federal Q2 2026 Budget Implementation Report",
+      "status": "under_review",
+      "note": "Budget Office lists the 2.1 MB report as published 7 November 2026, but Download and View both redirect to a login page. No figures have been extracted.",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "publisher": "Budget Office of the Federation",
+      "url": "https://budgetoffice.gov.ng/index.php/second-quarter-2026-budget-implementation-report"
+    },
+    {
+      "id": "state-house-2025-extension-dec2026",
+      "title": "Federal 2025 budget implementation extension",
+      "status": "catalogue",
+      "note": "The State House confirms the federal 2025 budget implementation period was extended to 31 December 2026. This affects federal outturn interpretation; it is not a state-budget extension.",
+      "departments": [
+        "education",
+        "health",
+        "software-technology",
+        "civic"
+      ],
+      "publisher": "State House, Abuja",
+      "url": "https://statehouse.gov.ng/president-tinubu-signs-appropriation-amendment-no-4-bill-2025-extends-implementation-to-december-31-2026/"
     }
   ],
   "reconciliationNotes": [
@@ -2199,6 +2227,20 @@
       "title": "H1 2026 sector spending is not service delivery",
       "detail": "BudgIT reports 34-state H1 expenditure, education and health outturns. These figures show budget execution and sector shares, not whether money reached facilities, schools or communities or improved outcomes. Coverage differs by report; the total-expenditure and education pages do not name the excluded states, while the health and revenue pages identify Rivers and Osun.",
       "action": "Use these data to select state and sector questions, then reconcile original BIRs, releases, procurement and facility/school-level delivery evidence."
+    },
+    {
+      "id": "federal-q2-2026-bir-access",
+      "severity": "medium",
+      "title": "Federal Q2 2026 BIR is listed but not publicly downloadable in this review",
+      "detail": "The Budget Office page lists the Second Quarter 2026 Budget Implementation Report as published 7 November 2026. Both Download and View actions redirected to a login page. No federal execution values have been extracted from this report.",
+      "action": "Obtain an accessible official copy or open data extract before publishing federal Q2 2026 execution figures."
+    },
+    {
+      "id": "federal-2025-budget-extension",
+      "severity": "medium",
+      "title": "The 2025 federal budget implementation period runs to 31 December 2026",
+      "detail": "The State House announced on 30 September 2026 that the federal 2025 budget implementation period was extended to 31 December 2026. A 2025 outturn reported before that date is not necessarily the final federal outturn.",
+      "action": "Label the reporting cut-off and extension status on every federal 2025 comparison; do not treat an interim outturn as final."
     }
   ],
   "limitations": [
