@@ -70,7 +70,7 @@ assert.ok(canonicalRegistry.some((item) => item.id === 'ngf-public-finance-datab
 assert.ok(canonicalRegistry.some((item) => item.id === 'budgit-health-report'), 'BudgIT H1 2026 health report source must be registered');
 assert.ok(canonicalRegistry.some((item) => item.id === 'kdsg-2026-appropriation-release'), 'Kaduna 2026 appropriation source must be registered');
 assert.equal(data.observations.filter((item) => item.id.startsWith('budgit-health-actual-spend-') && item.geoLevel === 'state').length, 34);
-assert.equal(data.reconciliationNotes.length, 4);
+assert.equal(data.reconciliationNotes.length, 5);
 assert.equal(data.stateBudgetCoverage.officialStateSourceRoutesLocated, 19);
 assert.deepEqual(data.stateBudgetCoverage.budgitHealthActualExpenditureMissingStates, ['Osun', 'Rivers']);
 assert.equal(data.observations.find((item) => item.id === 'kaduna-education-budget-share-2026')?.value, 25);
