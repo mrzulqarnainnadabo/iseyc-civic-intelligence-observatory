@@ -83,13 +83,19 @@ function validStateBudgetCoverage() {
   const portalCount = states.filter((item) => item.status === 'official_portal_located').length;
   const documentCount = states.filter((item) => item.status === 'official_documents_located').length;
   const notReviewedCount = states.filter((item) => item.status === 'not_reviewed').length;
+  const agoraRows = states.filter((item) => item.agora2025 &&
+    ['actualRevenueBn', 'actualExpenditureBn', 'budgetExecutionPct', 'capitalExecutionPct', 'igrSharePct', 'igrBudgetPerformancePct']
+      .every((key) => Number.isFinite(item.agora2025[key])));
+  const rivers = states.find((item) => item.name === 'Rivers');
   return stateBudgetCoverage.scope?.states === 36 &&
     stateBudgetCoverage.scope?.fctTrackedSeparately === true &&
     stateBudgetCoverage.scope?.officialStatePortalsLocated === 15 &&
     stateBudgetCoverage.scope?.officialStateDocumentsLocated === 3 &&
     stateBudgetCoverage.scope?.stateBudgetSourceDiscoveryCompleted === 18 &&
+    stateBudgetCoverage.scope?.agora2025Coverage === 35 &&
     states.length === 36 && uniqueStateNames && fct.length === 1 &&
     portalCount === 15 && documentCount === 3 && notReviewedCount === 18 &&
+    agoraRows.length === 35 && rivers?.agora2025 === null &&
     states.every((item) => Number.isFinite(item.fiscalTransparency?.totalScore) &&
       item.fiscalTransparency.totalScore >= 0 && item.fiscalTransparency.totalScore <= 100) &&
     states.every((item) => item.fiscalTransparency?.sourceId === 'budgit-state-fiscal-transparency-league-q2-2026');
