@@ -172,13 +172,25 @@ Anambra's official Q3 2026 Budget Implementation Report covers **1 January to 30
 - The FCT is tracked separately; its final enacted 2026 appropriation law and official implementation reports were not confirmed in this source review.
 - The Budget Office lists a Q2 2026 federal BIR, published 7 November 2026, but its Download and View links redirect to a login page. No values have been extracted from that report. [Official report listing](https://budgetoffice.gov.ng/index.php/second-quarter-2026-budget-implementation-report).
 
+## Slide 6B — Digital inclusion: three measures, three denominators
+
+The digital evidence base now has three distinct national measures. They answer different questions and must not be combined into one “digital literacy rate”.
+
+- **Programme reach:** NITDA's DL4ALL dashboard reports **2,783,731 verified beneficiaries**, or **5.57% of its 50 million programme target**, with reported reach across all 36 states and the FCT, 774 LGAs and 14,747 communities. The dashboard also reports 33% female participation and 2,100,027 beneficiaries under age 35. This is programme-reported training reach, not a population survey or national digital-literacy prevalence rate. [NITDA DL4ALL dashboard](https://dashboard.digitalliteracy.nitda.gov.ng/)
+- **Network subscriptions:** NCC reports **128.02 million active broadband subscriptions** and **59.05% subscription-based broadband penetration** for September 2026, plus **401,666 fixed-fibre (FTTX) subscriptions** in Q3 2026. Subscriptions are not unique people or households. [NCC Industry Statistics](https://ncc.gov.ng/market-data-reports/industry-statistics)
+- **People using the internet:** The World Bank/ITU series reports **41.21%** of Nigeria's population used the internet in 2024, defined as use from any location during the previous three months. This is the latest observed year in the series reviewed here, not a 2026 measure. [World Bank WDI — IT.NET.USER.ZS](https://data.worldbank.org/indicator/IT.NET.USER.ZS?locations=NG)
+
+**Interpretation:** Nigeria has expanding network subscriptions and a national digital-skills programme, but subscription penetration, recent internet use and programme training reach are different indicators. None alone establishes affordability, speed, reliability, device access, meaningful use or digital competence in a specific state or community.
+
+**Software & Technology follow-up:** obtain state/LGA-level NCC coverage and quality measures, DL4ALL participant and completion records with deduplication methodology, school connectivity and device inventories, and public ICT procurement/uptime data. Do not extrapolate national averages to Kaduna or any LGA.
+
 ## Department priorities
 
 | Department | Immediate evidence-led priority |
 |---|---|
 | Education & Capacity Building | Obtain state/LGA school census and school-level education outturn; verify teacher, classroom, sanitation and learning gaps |
 | Health & Well-being | Reconcile health outturn with PHC functionality, staffing, medicines, NHFR and facility receipts |
-| Software & Technology | Verify digital skills outcomes and state ICT procurement, connectivity, uptime and active use |
+| Software & Technology | Reconcile DL4ALL training outcomes with state/LGA connectivity, affordability, uptime, school access and ICT procurement; keep subscription and internet-use definitions separate |
 | Civic Department | Close budget/BIR/audit/procurement disclosure gaps and map each issue to documented institutional duties |
 
 ## Publication rules
