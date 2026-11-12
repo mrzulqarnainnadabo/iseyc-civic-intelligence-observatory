@@ -1,5 +1,5 @@
 import '../styles/national-snapshots.css';
-import stateBudgetCoverage from '../data/indicators/state-budget-source-coverage.v1.json';
+import stateBudgetCoverage from '../../data/indicators/state-budget-source-coverage.v1.json';
 import { useEffect, useMemo, useState } from 'react';
 
 type Snapshot = {
@@ -50,6 +50,7 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
   const catalogOnly = useMemo(() => (bundle?.catalogOnlySources || []).filter((item) => !departmentId || item.departments.includes(departmentId)), [bundle, departmentId]);
   const visibleObservations = showAll ? observations : observations.slice(0, 6);
   const visibleCatalogue = showAllCatalogue ? catalogOnly : catalogOnly.slice(0, 3);
+  const reconciliationNotes = bundle?.reconciliationNotes ?? [];
 
   return (
     <section className={compact ? 'national-snapshots national-snapshots--compact' : 'national-snapshots'} aria-labelledby={departmentId ? 'department-snapshots-title' : 'national-snapshots-title'}>
@@ -81,9 +82,9 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
         <div className="national-catalogue__grid">{visibleCatalogue.map((item) => <article key={item.id}><span>{item.publisher} · {item.status === "partial" ? "Partial integration" : item.status === "under_review" ? "Under review" : "Catalogue only"}</span><strong>{item.title}</strong><details><summary>Coverage & access</summary><p>{item.note}</p></details><a href={item.url} target="_blank" rel="noopener noreferrer">Open source ↗</a></article>)}</div>
       </div>}
       {catalogOnly.length > 3 && <button type="button" className="national-snapshots__toggle" onClick={() => setShowAllCatalogue((value) => !value)}>{showAllCatalogue ? "Show fewer sources" : "View all " + catalogOnly.length + " sources"}</button>}
-      {bundle?.reconciliationNotes?.length > 0 && <details className="national-snapshots__reconciliation">
-        <summary>Data reconciliation · {bundle.reconciliationNotes.length} documented issues</summary>
-        <div>{bundle.reconciliationNotes.map((item) => <article key={item.id}>
+      {reconciliationNotes.length > 0 && <details className="national-snapshots__reconciliation">
+        <summary>Data reconciliation · {reconciliationNotes.length} documented issues</summary>
+        <div>{reconciliationNotes.map((item) => <article key={item.id}>
           <span className={`national-snapshots__severity national-snapshots__severity--${item.severity}`}>{item.severity} priority</span>
           <strong>{item.title}</strong><p>{item.detail}</p><em>Action: {item.action}</em>
         </article>)}</div>
@@ -112,7 +113,7 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
           </table></div>
           <p className="state-budget-coverage__source">Source: <a href="https://fiscalleague.budgit.org/latest-ranking" target="_blank" rel="noopener noreferrer">BudgIT States Fiscal Transparency League · Q2 2026 ↗</a>. The source spells Nasarawa as “Nassarawa”; the Observatory normalises the state name.</p>
         </section>
-        <div className="state-budget-coverage__comparisons">{stateBudgetCoverage.comparativeSources.map((source) => <p key={source.id}><strong>{source.coverage}</strong> — {source.note} <a href={source.url} target="_blank" rel="noopener noreferrer">Source ↗</a></p>)}</div>
+        <div className="state-budget-coverage__comparisons">{stateBudgetCoverage.comparativeSources.map((source: { id: string; coverage: string; note: string; url: string }) => <p key={source.id}><strong>{source.coverage}</strong> — {source.note} <a href={source.url} target="_blank" rel="noopener noreferrer">Source ↗</a></p>)}</div>
       </details>}
       {!compact && <p className="national-snapshots__disclaimer">Curated transcriptions, not live feeds. Source publishers own the original data. A national statistic is not a local service-delivery finding.</p>}
     </section>
