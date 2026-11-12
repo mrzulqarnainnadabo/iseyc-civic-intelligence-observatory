@@ -8,7 +8,7 @@
 The Observatory can now present a dated, source-attributed view of national fiscal context and selected state budget performance. It cannot yet claim complete, primary-source budget coverage for all 36 states and the FCT.
 
 - **15 of 36 state official budget portals** were located in this source-discovery pass. Their documents still require extraction and line-item validation.
-- **20 states remain unreviewed** in this pass. This means discovery is incomplete, not that their documents are unavailable.
+- **18 states remain unreviewed** in this pass. This means discovery is incomplete, not that their documents are unavailable.
 - The Nigeria Governors' Forum Public Finance Database describes comparable original, revised and actual fiscal data for all 36 states. Its landing page rendered unrelated injected third-party links during this review, so the portal is under integrity review and no figures have been ingested from it.
 - Agora Policy's 2025 state-budget review covers **35 of 36 states**, excluding Rivers.
 - BudgIT's H1 2026 revenue review covers **34 of 36 states**, excluding Rivers and Osun.
@@ -196,7 +196,7 @@ The Budget Office lists the [Second Quarter 2026 Budget Implementation Report](h
 
 ## Expanded state source discovery — 12 November 2026
 
-The register now identifies **15 official state budget portals** and **one additional official appropriation announcement** across the 36 states. Twenty states remain unreviewed in this portal-discovery pass. The FCT is tracked separately.
+The register now identifies **15 official state budget portals** and **three additional official state budget documents** across the 36 states. Eighteen states remain unreviewed in this portal-discovery pass. The FCT is tracked separately.
 
 Newly confirmed portals:
 - [Jigawa Ministry of Budget and Economic Planning](https://www.jsbepd.org/index.php/plans-budget/annual-budget/2026-budget) lists 2026 approved estimates, appropriation law, citizens budget, Q1 BIR and sector-planning documents.
