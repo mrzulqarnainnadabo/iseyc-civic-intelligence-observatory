@@ -72,6 +72,18 @@ describe("dated national evidence snapshots", () => {
     expect(naseni.metrics.find((item) => item.label === "Phase 2 public voting")?.value).toBe("Ended");
     expect(naseni.relatedSources?.[0].title).toContain("announcement");
   });
+  it("keeps NGF original-budget figures separate from actual expenditure", () => {
+    const education = snapshots.records.find((record) => record.id === "ngf-state-budget-education-2026")!;
+    const health = snapshots.records.find((record) => record.id === "ngf-state-budget-health-2026")!;
+    const profile = snapshots.records.find((record) => record.id === "ngf-state-budget-functional-profile-2026")!;
+    expect(education.metrics).toContainEqual(expect.objectContaining({ label: "Share of aggregate 36-state original expenditure", value: "14.4", unit: "%" }));
+    expect(health.metrics).toContainEqual(expect.objectContaining({ label: "Share of aggregate 36-state original expenditure", value: "9.3", unit: "%" }));
+    expect(education.geography.label).toMatch(/36 state governments; FCT excluded/);
+    expect(education.limitations.join(" ")).toMatch(/not actual expenditure/);
+    expect(profile.departmentIds).toEqual(["civic"]);
+    expect(profile.metrics).toHaveLength(9);
+    expect(profile.limitations.join(" ")).toMatch(/100.1% because of rounding/);
+  });
   it("preserves the ISN assessment as a survey summary, not a hub census or target result", () => {
     const isn = snapshots.records.find((record) => record.id === "isn-innovation-hub-assessment-2026")!;
     expect(isn.metrics.find((item) => item.label === "Hubs with fewer than 10 full-time employees")?.value).toBe("68.35%");
