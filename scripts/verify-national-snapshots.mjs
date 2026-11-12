@@ -48,6 +48,13 @@ for (const item of data.catalogOnlySources) {
 }
 assert.ok(data.reconciliationNotes.some((item) => item.id === 'who-underfive-series-conflict'));
 assert.ok(data.reconciliationNotes.some((item) => item.id === 'state-budget-coverage-gaps'));
+assert.ok(data.reconciliationNotes.some((item) => item.id === 'budgit-h1-health-total-revision'));
+assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-health-total-report' && item.value === 621.34));
+assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-health-budget-performance-report' && item.value === 40.48));
+assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-health-expenditure-growth-report' && item.value === 31.61));
+assert.ok(data.observations.some((item) => item.id === 'budgit-2025-lagos-igr-sos-2026' && item.value === 1.71));
+assert.ok(data.observations.some((item) => item.id === 'budgit-2025-enugu-igr-growth-sos-2026' && item.value === 125.91));
+assert.ok(!data.observations.some((item) => item.id === 'budgit-h1-2026-health-total' && item.value === 614.55), 'earlier infographic total must not remain the current headline observation');
 assert.ok(!data.observations.some((item) => item.id === 'who-nga-under5-mortality-2024' && item.value === 59.5), 'unreconciled WHO under-five value must not be published as confirmed');
 assert.ok(data.observations.some((item) => item.id === 'nphcda-phc-revitalised-aug-2025' && item.value === 1295));
 assert.ok(data.observations.some((item) => item.id === 'agora-2025-budget-implementation-35' && item.value === 68.2));
