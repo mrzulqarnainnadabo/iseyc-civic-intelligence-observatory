@@ -63,7 +63,8 @@ assert.ok(data.observations.some((item) => item.id === 'anambra-2026-q3-total-ex
 assert.ok(data.observations.some((item) => item.id === 'anambra-2026-q3-capital-expenditure-rate' && item.value === 27.8));
 assert.ok(data.reconciliationNotes.some((item) => item.id === 'anambra-q3-2026-nine-month-comparison'));
 assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-health-total' && item.value === 614.55), 'earlier infographic total must remain source-attributed for reconciliation');
-assert.ok(data.observations.some((item) => item.id === 'agora-state-of-states-2025-lagos-igr' && item.value === 1.71));
+assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-health-total' && item.recordStatus === 'superseded' && item.supersededBy === 'budgit-h1-2026-health-total-report'));
+assert.ok(data.observations.some((item) => item.id === 'budgit-state-of-states-2025-lagos-igr' && item.value === 1.71));
 assert.ok(data.observations.some((item) => item.id === 'agora-state-budget-performance-2025-lagos-igr' && item.value === 1.85));
 assert.ok(!data.observations.some((item) => item.id === 'who-nga-under5-mortality-2024' && item.value === 59.5), 'unreconciled WHO under-five value must not be published as confirmed');
 assert.ok(data.observations.some((item) => item.id === 'nphcda-phc-revitalised-aug-2025' && item.value === 1295));
