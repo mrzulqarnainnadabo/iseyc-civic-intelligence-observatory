@@ -62,7 +62,7 @@ Each department interprets its own field. The Observatory supplies evidence and 
 - The curated source snapshot pack contains 83 dated observations and 26 catalogue-only or partially integrated sources.
 - The new snapshot API is `GET /api/evidence/source-snapshots`.
 - The existing `GET /api/evidence/snapshots` endpoint remains unchanged because it serves the existing National Department Snapshot contract and downstream consumers.
-- The state-budget coverage register tracks all 36 states and the FCT separately. Thirteen official state portals were located in the current source-discovery pass; 23 states remain unreviewed. A BudgIT Q2 2026 fiscal-information availability table covers all 36 states, but it measures publication completeness rather than service delivery.
+- The state-budget coverage register tracks all 36 states and the FCT separately. Fifteen official state budget portals and one additional official state appropriation announcement were located in the current source-discovery pass; 20 states remain unreviewed. A BudgIT Q2 2026 fiscal-information availability table covers all 36 states, but it measures publication completeness rather than service delivery.
 - Agora Policy's 2025 analysis covers 35/36 states, excluding Rivers. BudgIT's H1 2026 revenue analysis covers 34/36 states, excluding Rivers and Osun.
 - The NGF Public Finance Database claims 36-state coverage, but its landing page showed unrelated injected third-party links during review. It remains under integrity review and contributes no numeric values.
 - The FCT's final 2026 appropriation law and official implementation reports were not confirmed in the current source review.
