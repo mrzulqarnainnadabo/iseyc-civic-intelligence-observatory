@@ -14,6 +14,8 @@ const component = fs.readFileSync('src/components/NationalSnapshots.tsx', 'utf8'
 assert.equal(data.schemaVersion, '1.0.0');
 assert.equal(data.checkedAt, '2026-11-12');
 assert.ok(data.observations.length >= 70, 'source snapshots must cover national, state and sector domains');
+assert.ok(data.catalogOnlySources.length >= 26, 'catalogue must include all current source gaps and partial integrations');
+assert.ok(registry.length >= 96, 'registry must retain current source coverage');
 assert.deepEqual(registryCopy, registry, 'source registry copies must remain identical');
 const sourceById = new Map(registry.map((item) => [item.id, item]));
 const observationIds = new Set();
