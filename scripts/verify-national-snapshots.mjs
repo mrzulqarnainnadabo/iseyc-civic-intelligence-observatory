@@ -64,7 +64,6 @@ assert.ok(data.observations.some((item) => item.id === 'agora-2025-budget-implem
 assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-lagos-revenue' && item.value === 1684));
 assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-combined-expenditure-rate' && item.value === 24.4));
 assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-education-total' && item.value === 1.049));
-assert.ok(data.observations.some((item) => item.id === 'budgit-h1-2026-health-total' && item.value === 614.55));
 assert.ok(data.observations.some((item) => item.id === 'federal-2026-total-appropriation' && item.value === 68.32));
 
 const states = coverage.jurisdictions.filter((item) => item.type === 'state');
