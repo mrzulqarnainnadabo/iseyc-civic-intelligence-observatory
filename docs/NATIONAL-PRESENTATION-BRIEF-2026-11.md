@@ -92,7 +92,7 @@ The State House reports that the 2026 federal appropriation is **₦68.32tn**, c
 
 **Source:** [State House — 2026 Appropriation assent, 17 April 2026](https://statehouse.gov.ng/president-tinubu-assents-to-2026-appropriation-bill-and-2025-budget-extension/)
 
-The 2025 federal budget implementation period was subsequently extended to **31 December 2026**.
+The 2025 federal budget implementation period was subsequently extended to **31 December 2026**. This means interim 2025 federal outturns should not be described as final before that cut-off. [State House extension notice](https://statehouse.gov.ng/president-tinubu-signs-appropriation-amendment-no-4-bill-2025-extends-implementation-to-december-31-2026/).
 
 **Source:** [State House — 2025 budget implementation extension, 30 September 2026](https://statehouse.gov.ng/president-tinubu-signs-appropriation-amendment-no-4-bill-2025-extends-implementation-to-december-31-2026/)
 
@@ -100,7 +100,15 @@ The 2025 federal budget implementation period was subsequently extended to **31 
 
 ## Slide 6 — Technology: distinguish reach from outcomes
 
-NITDA's Digital Literacy for All programme reports national reach and programme progress in its dashboard. Those figures describe programme-reported reach, not independently verified digital competence, sustained employment, device access or service adoption.
+NITDA's Digital Literacy for All dashboard, updated 24 October 2026, reports:
+- **2,783,731** verified programme beneficiaries since January 2022.
+- **5.57%** progress against the 50 million beneficiary target.
+- **14,747 communities** and **774 LGAs** reached; dashboard reports coverage across 36 states and the FCT.
+- **33% female participation** and 2,100,027 beneficiaries under age 35.
+
+**Source:** [NITDA Digital Literacy for All dashboard](https://dashboard.digitalliteracy.nitda.gov.ng/)
+
+These are programme-reported reach figures, not independently verified digital competence, sustained employment, device access or service adoption. The dashboard's national coverage does not provide state-level beneficiary or outcome breakdowns in this snapshot.
 
 **Department interpretation:** Ask for state/LGA-level participant registers, completion and assessment results, competency tests, certification, employment outcomes, connectivity and device access, programme costs and independent verification. Do not turn national programme reach into a state-level digital skills estimate.
 
@@ -111,7 +119,7 @@ NITDA's Digital Literacy for All programme reports national reach and programme 
 - BudgIT's 2025 State of States report covers 35 states; detailed state-level extraction and methodology review remain pending.
 - BudgIT's H1 2026 total-expenditure and education pages cover 34 states but do not identify the excluded states in their page text.
 - The FCT is tracked separately; its final enacted 2026 appropriation law and official implementation reports were not confirmed in this source review.
-- The Budget Office lists a Q2 2026 federal BIR, published 7 November 2026, but its Download and View links redirect to a login page. No values have been extracted from that report.
+- The Budget Office lists a Q2 2026 federal BIR, published 7 November 2026, but its Download and View links redirect to a login page. No values have been extracted from that report. [Official report listing](https://budgetoffice.gov.ng/index.php/second-quarter-2026-budget-implementation-report).
 
 ## Department priorities
 
