@@ -5,10 +5,10 @@ type Snapshot = {
   id: string; title: string; value: number; unit: string; valueQualifier?: string; referencePeriod: string;
   measurementType: string; geoLevel: string; geographicCoverage: string; sourceId: string; sourceUpdateDate?: string;
   sourcePublisher: string; sourceUrl: string; departments: string[]; interpretation: string;
-  limitations: string[];
+  limitations: string[]; verificationStatus?: string;
 };
 type CatalogueSource = { id: string; publisher: string; title: string; url: string; status: string; note: string; departments: string[] };
-type SnapshotBundle = { contractVersion: string; status: string; checkedAt: string; observations: Snapshot[]; catalogOnlySources: CatalogueSource[]; limitations: string[] };
+type SnapshotBundle = { contractVersion: string; status: string; checkedAt: string; observations: Snapshot[]; catalogOnlySources: CatalogueSource[]; limitations: string[]; reconciliationNotes?: { id: string; severity: string; title: string; detail: string }[]; stateBudgetCoverage?: { officialStateSourceRoutesLocated: number; totalStates: number; budgitHealthActualExpenditureStates: number; budgitHealthActualExpenditureMissingStates: string[] } };
 
 const DEPARTMENT_LABEL: Record<string, string> = {
   education: 'Education & Capacity Building', health: 'Health & Well-being',
@@ -27,7 +27,7 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
   const [status, setStatus] = useState<'loading' | 'ready' | 'unavailable'>('loading');
   useEffect(() => {
     let alive = true;
-    fetch('/api/evidence/snapshots', { headers: { Accept: 'application/json' } })
+    fetch('/api/evidence/source-snapshots', { headers: { Accept: 'application/json' } })
       .then(async (response) => {
         const data = await response.json();
         if (!response.ok || data?.contractVersion !== '1.0.0' || !Array.isArray(data.observations)) throw new Error('Snapshot source unavailable');
@@ -46,6 +46,8 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
     <section className={compact ? 'national-snapshots national-snapshots--compact' : 'national-snapshots'} aria-labelledby={departmentId ? 'department-snapshots-title' : 'national-snapshots-title'}>
       <div className="national-snapshots__head">
         <div><span className="national-snapshots__kicker">Source-attributed data</span><h2 id={departmentId ? 'department-snapshots-title' : 'national-snapshots-title'}>{departmentId ? 'Evidence context for this department' : 'National evidence snapshots'}</h2></div>
+      {status === 'ready' && bundle?.stateBudgetCoverage && <p className="national-snapshots__coverage">State budget portals located · {bundle.stateBudgetCoverage.officialStateSourceRoutesLocated}/{bundle.stateBudgetCoverage.totalStates} · H1 2026 health expenditure report · {bundle.stateBudgetCoverage.budgitHealthActualExpenditureStates}/36 states</p>}
+      {status === 'ready' && (bundle?.reconciliationNotes?.length || 0) > 0 && <details className="national-snapshots__quality"><summary>Data quality notes · {bundle?.reconciliationNotes?.length}</summary><ul>{bundle?.reconciliationNotes?.map((note) => <li key={note.id}><strong>{note.title}.</strong> {note.detail}</li>)}</ul></details>}
         <span className="national-snapshots__meta">{status === 'ready' ? observations.length + ' snapshots · checked ' + bundle?.checkedAt : status === 'loading' ? 'Loading source snapshots' : 'Snapshot service unavailable'}</span>
       </div>
       {status === 'loading' ? <p className="national-snapshots__empty">Retrieving curated source snapshots…</p> :
@@ -55,6 +57,8 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
            <div className="national-snapshot-grid">{visibleObservations.map((item) => (
              <article className="national-snapshot" key={item.id}>
                <div className="national-snapshot__top"><span>{item.measurementType}</span><span>{item.geographicCoverage}</span></div>
+               {item.verificationStatus === "reconciliation_required" && <p className="national-snapshot__status national-snapshot__status--warning">Published figure · reconciliation required</p>}
+               {item.verificationStatus === "published_secondary_report" && <p className="national-snapshot__status">Secondary report · not independently verified by ISEYC</p>}
                <h3>{item.title}</h3>
                <strong className="national-snapshot__value">{valueLabel(item.value, item.unit, item.valueQualifier)}</strong>
                <p className="national-snapshot__period">Reference period · {item.referencePeriod}{item.sourceUpdateDate ? ' · Source generated ' + item.sourceUpdateDate : ''}</p>
@@ -69,7 +73,7 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
        ) : <p className="national-snapshots__empty">No curated snapshot is currently assigned to {departmentId ? DEPARTMENT_LABEL[departmentId] || 'this department' : 'this view'}.</p>}
       {catalogOnly.length > 0 && <div className="national-catalogue">
         <div className="national-catalogue__head"><strong>Sources under assessment</strong><span>Catalogue status is source-specific</span></div>
-        <div className="national-catalogue__grid">{visibleCatalogue.map((item) => <article key={item.id}><span>{item.publisher} · {item.status === "partial" ? "Partial integration" : "Catalogue only"}</span><strong>{item.title}</strong><details><summary>Coverage & access</summary><p>{item.note}</p></details><a href={item.url} target="_blank" rel="noopener noreferrer">Open source ↗</a></article>)}</div>
+        <div className="national-catalogue__grid">{visibleCatalogue.map((item) => <article key={item.id}><span>{item.publisher} · {item.status === "partial" ? "Partial integration" : item.status === "reconciliation_required" ? "Reconciliation required" : "Catalogue only"}</span><strong>{item.title}</strong><details><summary>Coverage & access</summary><p>{item.note}</p></details><a href={item.url} target="_blank" rel="noopener noreferrer">Open source ↗</a></article>)}</div>
       </div>}
       {catalogOnly.length > 3 && <button type="button" className="national-snapshots__toggle" onClick={() => setShowAllCatalogue((value) => !value)}>{showAllCatalogue ? "Show fewer sources" : "View all " + catalogOnly.length + " sources"}</button>}
       {!compact && <p className="national-snapshots__disclaimer">Curated transcriptions, not live feeds. Source publishers own the original data. A national statistic is not a local service-delivery finding.</p>}
