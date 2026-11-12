@@ -72,6 +72,7 @@ assert.ok(canonicalRegistry.some((item) => item.id === 'kdsg-2026-appropriation-
 assert.equal(data.observations.filter((item) => item.id.startsWith('budgit-health-actual-spend-') && item.geoLevel === 'state').length, 34);
 assert.equal(data.reconciliationNotes.length, 5);
 assert.equal(data.stateBudgetCoverage.officialStateSourceRoutesLocated, 19);
+assert.equal(data.catalogOnlySources.filter((item) => item.id.startsWith('state-budget-')).length, 19);
 assert.deepEqual(data.stateBudgetCoverage.budgitHealthActualExpenditureMissingStates, ['Osun', 'Rivers']);
 assert.equal(data.observations.find((item) => item.id === 'kaduna-education-budget-share-2026')?.value, 25);
 assert.equal(data.observations.find((item) => item.id === 'kaduna-health-budget-share-2026')?.value, 15);
