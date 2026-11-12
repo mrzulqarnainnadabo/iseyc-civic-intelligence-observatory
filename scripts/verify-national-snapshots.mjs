@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 
 const data = JSON.parse(fs.readFileSync('data/indicators/national-source-snapshots.json', 'utf8'));
 const registry = JSON.parse(fs.readFileSync('src/data/source-registry.json', 'utf8'));
+const legacy = JSON.parse(fs.readFileSync('src/data/indicators/national-department-snapshots.v1.json', 'utf8'));
 const canonicalRegistry = JSON.parse(fs.readFileSync('data/source-registry.json', 'utf8'));
 const api = fs.readFileSync('api/evidence/snapshots.js', 'utf8');
 const overview = fs.readFileSync('src/pages/Overview.tsx', 'utf8');
@@ -26,7 +27,7 @@ for (const item of data.observations) {
 for (const item of data.catalogOnlySources) {
   assert.ok(sourceIds.has(item.id), 'catalogue-only source must exist in registry: ' + item.id);
 }
-for (const id of ['who-gho-nigeria','nitda-dl4all-dashboard','nimc-nin-enrolment-2025','imf-article-iv-2026','nbs-cpi-catalog','naseni-innovation-hub','isn-innovation-hub-assessment','ondi-innovation','fme-education-emis-asc-2024-25','ubec-statistics','unicef-nalabe-2022','nemis-downloads','federal-ministry-health-msdat','health-facility-registry','federal-ministry-health-reports','budget-office-federal','nphcda-phc-progress-2025','nphcda-phc-functionality-dashboard','nphcda-data-requisition','federal-state-health-report-2024','federal-health-logistics-programme','ngf-public-finance-database']) {
+for (const id of ['who-gho-nigeria','nitda-dl4all-dashboard','nimc-nin-enrolment-2025','imf-article-iv-2026','nbs-cpi-catalog','naseni-innovation-hub','isn-innovation-hub-assessment','ondi-innovation','fme-education-emis-asc-2024-25','ubec-statistics','unicef-nalabe-2022','nemis-downloads','federal-ministry-health-msdat','health-facility-registry','federal-ministry-health-reports','budget-office-federal','nphcda-phc-progress-2025','nphcda-phc-functionality-dashboard','nphcda-data-requisition','federal-state-health-report-2024','federal-health-logistics-programme','ngf-public-finance-database','nimc-enrolment-oct-2025','nbs-gdp-quarterly','isn-hub-assessment-2026','fme-annual-school-census','worldbank-ndu-2026-10']) {
   assert.ok(sourceIds.has(id), 'national registry is missing ' + id);
 }
 assert.match(api, /validObservation/);
@@ -49,6 +50,17 @@ assert.ok(data.observations.some((item) => item.id === 'fme-asc-reporting-rate-2
 assert.ok(data.observations.some((item) => item.id === 'fme-asc-kaduna-learner-teacher-ratio-2024-25' && item.value === 51.3 && item.geographicCoverage === 'Kaduna State'));
 assert.ok(data.observations.some((item) => item.id === 'nphcda-phc-revitalised-aug-2025' && item.value === 1295 && item.referencePeriod === 'As of August 2025'));
 assert.ok(data.observations.some((item) => item.id === 'nphcda-kaduna-yobe-sba-recruitment-2025' && item.geographicCoverage === 'Kaduna State and Yobe State combined'));
+
+assert.ok(legacy.records.length >= 14, 'legacy department record schema must remain available');
+for (const record of legacy.records) {
+  assert.ok(sourceIds.has(record.sourceId), 'legacy snapshot source must exist in registry: ' + record.sourceId);
+  assert.ok(record.sourceUrl.startsWith('https://'), 'legacy snapshot must retain HTTPS provenance');
+}
+assert.match(api, /legacySnapshotData/);
+assert.match(api, /observations: selectedObservations/);
+assert.match(api, /records,/);
+assert.match(api, /selectSnapshotRecords/);
+
 
 assert.ok(canonicalRegistry.some((item) => item.id === 'ngf-public-finance-database'), 'NGF source must exist in the API's canonical registry');
 const ngfEducation = data.observations.find((item) => item.id === 'ngf-state-budget-education-share-2026');
