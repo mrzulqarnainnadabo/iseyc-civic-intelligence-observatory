@@ -1891,5 +1891,29 @@
       "Do not rank states as better or worse without comparable definitions, periods, denominators and data completeness."
     ],
     "notes": "Priority national entry point for state public-finance comparison across all 36 states. Verify year, budget type (original/revised/actual), NCOA classification, state coverage, source document, extraction date and arithmetic for every table. Follow each state figure back to its source budget or audited financial statement. Public pages: /budgets/original/, /budgets/actual/, /state-explorer/ and the separate interactive query portal at https://www.publicfinanceapi.ngf.org.ng/state-budget-revenue."
+  },
+  {
+    "id": "who-nigeria-country-profile",
+    "publisher": "World Health Organization (WHO)",
+    "name": "WHO Nigeria country profile — Global Health Observatory",
+    "url": "https://data.who.int/countries/566",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "health"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria national country profile; indicator-specific reference periods",
+    "geoLevel": "national",
+    "dataType": "WHO country profile with indicator-specific statistical estimates and reported series",
+    "updateFrequency": "Indicator-specific; revised as WHO data are updated",
+    "licence": "WHO data terms and attribution apply; cite the exact indicator and period.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Current WHO Nigeria country profile URL used by the dated national health snapshot record.",
+    "limitations": [
+      "Values are indicator-specific estimates or reported series; preserve measurement type and uncertainty intervals.",
+      "A national profile is not state, LGA, facility or household evidence.",
+      "Reference period differs by indicator; do not treat profile retrieval date as observation date."
+    ],
+    "notes": "Separate WHO source record for data.who.int/countries/566. Keep distinct from the WHO AFRO page registered under who-gho-nigeria."
   }
 ]
