@@ -70,3 +70,17 @@
  .state-budget-coverage ul { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 @media(max-width:460px) { .state-budget-coverage ul { grid-template-columns:1fr; } }
+
+
+.state-budget-coverage__score { margin-top:14px; padding-top:12px; border-top:1px solid #e0e7e0; }
+.state-budget-coverage__score h3 { margin:0 0 6px; color:#314b3a; font-size:11px; }
+.state-budget-coverage__score>p { color:#657269; font-size:10px; line-height:1.5; }
+.state-budget-coverage__table-wrap { overflow-x:auto; border:1px solid #e1e8e1; border-radius:7px; background:#fff; }
+.state-budget-coverage__table-wrap table { width:100%; min-width:620px; border-collapse:collapse; font-size:10px; text-align:right; }
+.state-budget-coverage__table-wrap th,.state-budget-coverage__table-wrap td { padding:7px 8px; border-bottom:1px solid #edf1ed; white-space:nowrap; }
+.state-budget-coverage__table-wrap thead th { position:sticky; top:0; background:#f2f6f2; color:#526357; font-size:9px; font-weight:800; }
+.state-budget-coverage__table-wrap tbody th { color:#2f4939; font-weight:700; text-align:left; }
+.state-budget-coverage__table-wrap tbody td { color:#56665a; font-variant-numeric:tabular-nums; }
+.state-budget-coverage__table-wrap tbody tr:last-child th,.state-budget-coverage__table-wrap tbody tr:last-child td { border-bottom:0; }
+.state-budget-coverage__table-wrap tbody td:last-child { color:#234a37; font-weight:800; }
+.state-budget-coverage__source { margin-top:7px !important; }
