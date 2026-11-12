@@ -6,13 +6,14 @@ const registry = JSON.parse(fs.readFileSync('src/data/source-registry.json', 'ut
 const legacy = JSON.parse(fs.readFileSync('src/data/indicators/national-department-snapshots.v1.json', 'utf8'));
 const canonicalRegistry = JSON.parse(fs.readFileSync('data/source-registry.json', 'utf8'));
 const api = fs.readFileSync('api/evidence/snapshots.js', 'utf8');
+const sourceApi = fs.readFileSync('api/evidence/source-snapshots.js', 'utf8');
 const overview = fs.readFileSync('src/pages/Overview.tsx', 'utf8');
 const departments = fs.readFileSync('src/pages/Departments.tsx', 'utf8');
 const component = fs.readFileSync('src/components/NationalSnapshots.tsx', 'utf8');
 const architecture = fs.readFileSync('docs/ARCHITECTURE-MAP-THREE-PRODUCTS.md', 'utf8');
 
 assert.equal(data.schemaVersion, '1.0.0');
-assert.ok(data.observations.length >= 20, 'national source snapshots must cover multiple institutions and departments');
+assert.equal(data.observations.length, 90, 'national source snapshots include the 34-state H1 health dataset and current budget evidence');
 const sourceIds = new Set(registry.map((item) => item.id));
 for (const item of data.observations) {
   assert.ok(item.id && item.title, 'snapshot needs a stable id and title');
@@ -51,7 +52,7 @@ assert.ok(data.observations.some((item) => item.id === 'fme-asc-kaduna-learner-t
 assert.ok(data.observations.some((item) => item.id === 'nphcda-phc-revitalised-aug-2025' && item.value === 1295 && item.referencePeriod === 'As of August 2025'));
 assert.ok(data.observations.some((item) => item.id === 'nphcda-kaduna-yobe-sba-recruitment-2025' && item.geographicCoverage === 'Kaduna State and Yobe State combined'));
 
-assert.ok(legacy.records.length >= 14, 'legacy department record schema must remain available');
+assert.ok(legacy.records.length >= 19, 'legacy department record schema must remain available');
 for (const record of legacy.records) {
   assert.ok(sourceIds.has(record.sourceId), 'legacy snapshot source must exist in registry: ' + record.sourceId);
   assert.ok(record.sourceUrl.startsWith('https://'), 'legacy snapshot must retain HTTPS provenance');
@@ -60,9 +61,22 @@ assert.match(api, /legacySnapshotData/);
 assert.match(api, /observations: selectedObservations/);
 assert.match(api, /records,/);
 assert.match(api, /selectSnapshotRecords/);
+assert.match(sourceApi, /SOURCE = 'iseyc-observatory-curated-source-snapshots-v1'/);
+assert.match(sourceApi, /verificationStatus/);
+assert.match(sourceApi, /reconciliationNotes/);
 
 
 assert.ok(canonicalRegistry.some((item) => item.id === 'ngf-public-finance-database'), "NGF source must exist in the API's canonical registry");
+assert.ok(canonicalRegistry.some((item) => item.id === 'budgit-health-report'), 'BudgIT H1 2026 health report source must be registered');
+assert.ok(canonicalRegistry.some((item) => item.id === 'kdsg-2026-appropriation-release'), 'Kaduna 2026 appropriation source must be registered');
+assert.equal(data.observations.filter((item) => item.id.startsWith('budgit-health-actual-spend-') && item.geoLevel === 'state').length, 34);
+assert.equal(data.reconciliationNotes.length, 4);
+assert.equal(data.stateBudgetCoverage.officialStateSourceRoutesLocated, 19);
+assert.deepEqual(data.stateBudgetCoverage.budgitHealthActualExpenditureMissingStates, ['Osun', 'Rivers']);
+assert.equal(data.observations.find((item) => item.id === 'kaduna-education-budget-share-2026')?.value, 25);
+assert.equal(data.observations.find((item) => item.id === 'kaduna-health-budget-share-2026')?.value, 15);
+assert.equal(data.catalogOnlySources.find((item) => item.id === 'budgit-health-report')?.status, 'reconciliation_required');
+
 const stateBudgetSources = registry.filter((item) => item.id.startsWith('state-budget-') && item.id.endsWith('-2026'));
 assert.equal(stateBudgetSources.length, 19, 'nineteen official state budget source routes are registered');
 for (const source of stateBudgetSources) {
