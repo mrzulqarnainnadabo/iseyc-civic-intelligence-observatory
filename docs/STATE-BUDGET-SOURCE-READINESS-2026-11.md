@@ -186,7 +186,7 @@ The Observatory supplies evidence and uncertainty. The departments interpret the
 
 The Observatory source-snapshot API is `GET /api/evidence/source-snapshots`. It is a curated public transcription endpoint, not a live connection to every state portal. The existing `GET /api/evidence/snapshots` Evidence Gateway contract is kept unchanged for current consumers.
 
-The 36-state coverage register and the source catalogue expose what is located, partial, under review or not yet reviewed. Numeric state-level observations will be added only after source documents have been extracted and validated.
+The 36-state coverage register and source catalogue expose what is located, partial, under review or not yet reviewed. The 2025 Agora state table is transcribed for 35 states; 2026 H1 state expenditure, education and health observations are available only for their published 34-state samples. Original state BIRs and audited accounts remain the preferred primary sources.
 
 
 ## Federal Q2 2026 BIR access
@@ -203,7 +203,11 @@ Newly confirmed portals:
 - [Kwara Government Data](https://kwarastate.gov.ng/government/government-data/) lists Q1–Q3 2026 BIRs and 2025 audited financial statements.
 
 Additional official document source:
-- [Abia 2026 appropriation assent announcement](https://abiastate.gov.ng/gov-otti-signs-2026-appropriation-bill-into-law/) reports the signed 2026 budget total. The full appropriation schedule still requires extraction.
+- [Abia 2026 appropriation assent announcement](https://abiastate.gov.ng/gov-otti-signs-2026-appropriation-bill-into-law/) reports the signed 2026 budget total.
+- [Akwa Ibom 2026 Appropriation Law](https://akwaibomstate.gov.ng/appropriation-law-2026/) provides the official law page and downloadable document.
+- [Kogi Q1 2026 Budget Implementation Report](https://kogistate.gov.ng/wp-content/uploads/Kogi-State-2026-Q1-BIR-Publication.pdf) provides an official Q1 2026 BIR PDF.
+
+The detailed schedules and subsequent implementation reports still require extraction and reconciliation.
 
 ### Newly added state appropriation headlines
 
@@ -221,6 +225,24 @@ These are appropriation headlines, not actual expenditure. They must not be used
 - BudgIT's [2026 State of States Report](https://budgit.org/post_publications/from-allocation-to-impact-rethinking-state-spending-priorities-2026-state-of-states-report/) assesses 35 states' 2025 fiscal performance, including revenue, debt sustainability and sector spending. Its page reports Lagos IGR of ₦1.71tn and Enugu IGR of ₦407.76bn in 2025, a 125.91% nominal increase from 2024.
 - BudgIT's [H1 2026 Subnational Health Expenditure Report](https://budgit.org/post_publications/nigerias-subnational-health-expenditure-report-h1-2026/) covers 34 states, excluding Rivers and Osun. Its page reports ₦621.34bn health expenditure, 40.48% budget performance, 31.61% nominal expenditure growth and 46.17% growth in approved health budgets.
 - The later detailed health report's ₦621.34bn total differs from the earlier 21 October infographic's ₦614.55bn. The discrepancy is preserved in the Observatory reconciliation register.
+
+### 2025 state fiscal performance — 35 states
+
+The Observatory now transcribes Agora Policy's 35-state 2025 BIR comparison into a state-by-state table. Rivers is excluded; FCT is separate. The table provides actual revenue, actual expenditure, total budget execution, capital execution, IGR share of total revenue and IGR budget performance. Users can switch the displayed measure in the Observatory.
+
+Published aggregate findings:
+- Combined state revenue: **₦16.64tn**; combined expenditure: **₦19.21tn**.
+- Total budget implementation: **68.2%**; capital implementation: **62.9%**; recurrent implementation: **79.0%**.
+- Top reported budget execution: Yobe 99.8%, Delta 97.2%, Ekiti 87.9%.
+- Lowest reported budget execution: Taraba 34.0%, Kebbi 41.3%, Abia 45.5%.
+- Top actual revenue: Lagos ₦2,627.9bn, Delta ₦1,449.4bn, Akwa Ibom ₦1,113.2bn.
+- Highest IGR shares: Lagos 70%, Enugu 61%, Ogun 54%; lowest: Bayelsa 5%, Yobe 6%, Sokoto 7%.
+
+**Source:** [Agora Policy — Review of Performance of States' Budgets in 2025](https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html)
+
+This is secondary analysis of state BIRs, not an independent audit. The 35-state sample excludes Rivers; the table explicitly shows Rivers as unavailable, not zero.
+
+**Lagos IGR reconciliation:** Agora Policy cites ₦1.85tn in 2025 Lagos IGR, while BudgIT's 2026 State of States report cites ₦1.71tn. The ₦140bn difference is not explained by the published pages. Both values are preserved with their sources; do not average them or present either as definitive without primary audited accounts.
 
 ### Fiscal transparency availability
 
