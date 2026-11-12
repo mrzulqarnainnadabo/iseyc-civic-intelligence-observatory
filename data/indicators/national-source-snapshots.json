@@ -2293,6 +2293,34 @@
         "Statewide data is not Kaduna South, an LGA, ward, school or facility finding.",
         "An appropriation does not prove service quality or outcomes."
       ]
+    },
+    {
+      "id": "budgit-health-total-h1-2026-earlier-infographic",
+      "title": "Earlier H1 2026 combined state health expenditure total — superseded",
+      "value": 614.55,
+      "unit": "₦ billion",
+      "referencePeriod": "H1 2026 (through Q2)",
+      "measurementType": "Actual health expenditure reported in earlier published infographic",
+      "geoLevel": "varies",
+      "geographicCoverage": "34 of 36 states; Rivers and Osun excluded",
+      "sourceId": "budgit-state-health-h1-2026",
+      "sourcePublisher": "The BudgIT Foundation",
+      "sourceUrl": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/",
+      "sourceType": "published_research",
+      "departments": [
+        "health",
+        "civic"
+      ],
+      "verificationStatus": "published_secondary_report",
+      "recordStatus": "superseded",
+      "supersededBy": "budgit-health-actual-spend-34-states-h1-2026",
+      "interpretation": "BudgIT's earlier 21 October 2026 infographic reports ₦614.55bn. A later detailed H1 2026 report supersedes this with ₦621.34bn in its executive summary and Tables 1/5, while the later report itself contains a conflicting page 7 total of ₦624.53bn. Retain this earlier value only for explicit version comparison and reconciliation.",
+      "limitations": [
+        "Superseded by the later detailed BudgIT H1 2026 report; do not use as the current aggregate.",
+        "The later report contains an internal aggregate discrepancy between ₦621.34bn and ₦624.53bn.",
+        "Rivers and Osun are missing from the 34-state dataset; missing is not zero.",
+        "Secondary report value, not independently audited or reconciled by ISEYC."
+      ]
     }
   ],
   "catalogOnlySources": [
@@ -2620,6 +2648,14 @@
       "url": "https://budget.pfm.yb.gov.ng/approved-budgets/",
       "status": "catalogue_only",
       "note": "Official state source route located in the November 2026 source-discovery review. The exact budget file, appropriation schedule and implementation reports have not yet all been downloaded, reconciled and ingested as numeric observations. A portal listing is not evidence of actual expenditure or service delivery."
+    },
+    {
+      "id": "budgit-state-health-h1-2026",
+      "publisher": "The BudgIT Foundation",
+      "title": "Earlier H1 2026 state health expenditure infographic — superseded",
+      "url": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/",
+      "status": "superseded",
+      "note": "Earlier infographic total ₦614.55bn is superseded by the later detailed H1 2026 report. Retained only for version comparison; do not use as the current aggregate."
     }
   ],
   "reconciliationNotes": [
@@ -2652,6 +2688,12 @@
       "severity": "medium",
       "title": "BudgIT top-five concentration share needs reconciliation",
       "detail": "The report states the top five states account for 45.19% of health expenditure. Their Table 2 amounts sum to ₦282.23bn; divided by the Table 1/5 total of ₦621.34bn this is about 45.43%. The published 45.19% aligns more closely with the conflicting ₦624.53bn narrative total. Do not repeat the 45.19% share without reconciling the denominator."
+    },
+    {
+      "id": "budgit-earlier-infographic",
+      "severity": "medium",
+      "title": "Earlier BudgIT infographic total is superseded",
+      "detail": "The earlier 21 October infographic reports ₦614.55bn. The later detailed report supersedes it with ₦621.34bn in the executive summary and Tables 1/5, but the later report's page 7 narrative says ₦624.53bn. The earlier figure is retained only for explicit reconciliation and excluded from normal answers."
     }
   ],
   "stateBudgetCoverage": {
