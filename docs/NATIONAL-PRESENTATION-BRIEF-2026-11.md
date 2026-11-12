@@ -142,7 +142,7 @@ These are programme-reported reach figures, not independently verified digital c
 
 ## Slide 7 — What is still unknown
 
-- The current portal-discovery register has official budget portals for 15 states and one additional official appropriation announcement; 18 states remain unreviewed in this pass.
+- The current portal-discovery register has official budget portals for 15 states and three additional official state budget documents; 18 states remain unreviewed in this pass.
 - The NGF Public Finance Database describes all-36-state budget and audited-account coverage, but its landing page rendered unrelated injected third-party links. No numeric values have been ingested from it.
 - BudgIT's 2026 State of States report assesses 35 states' 2025 fiscal performance. Its publication page reports Lagos IGR of ₦1.71tn and Enugu IGR of ₦407.76bn in 2025, up 125.91% nominally from ₦180.5bn in 2024. Detailed state-level extraction and methodology review remain pending.
 - BudgIT's H1 2026 total-expenditure and education pages cover 34 states but do not identify the excluded states in their page text.
