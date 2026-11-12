@@ -6,7 +6,9 @@
   "scope": {
     "states": 36,
     "fctTrackedSeparately": true,
-    "officialStatePortalsLocated": 13
+    "officialStatePortalsLocated": 13,
+    "fiscalTransparencyCoverage": 36,
+    "h1_2026SectorSpendingCoverage": 34
   },
   "comparativeSources": [
     {
@@ -29,6 +31,41 @@
       "status": "published_secondary_analysis",
       "url": "https://budgit.org/post_infographics/h1-2026-revenue-performance-by-state/",
       "note": "H1 2026 revenue target performance analysis based on OpenStates and state-government Q2 Budget Implementation Reports."
+    },
+    {
+      "id": "budgit-state-fiscal-transparency-league-q2-2026",
+      "coverage": "All 36 states; Q2 2026",
+      "status": "published_secondary_dataset",
+      "url": "https://fiscalleague.budgit.org/latest-ranking",
+      "note": "Component scores cover citizens' budgets, quarterly BIR, e-procurement and state fiscal-data websites. This is a fiscal information disclosure score, not a service-delivery or governance-outcome score."
+    },
+    {
+      "id": "budgit-state-expenditure-h1-2026",
+      "coverage": "34 of 36 states; excluded states not named on infographic page",
+      "status": "published_secondary_analysis",
+      "url": "https://budgit.org/post_infographics/h1-2026-total-expenditure-performance-by-state/",
+      "note": "Combined approved budgets ₦35.22tn; actual expenditure ₦8.60tn; 24.4% by end of Q2 2026."
+    },
+    {
+      "id": "budgit-state-education-h1-2026",
+      "coverage": "34 of 36 states; excluded states not named on infographic page",
+      "status": "published_secondary_analysis",
+      "url": "https://budgit.org/post_infographics/h1-2026-education-expenditure-performance-by-state/",
+      "note": "Combined education expenditure ₦1.049tn by end of Q2 2026; state shares vary substantially."
+    },
+    {
+      "id": "budgit-state-health-h1-2026",
+      "coverage": "34 of 36 states; Rivers and Osun excluded",
+      "status": "published_secondary_analysis",
+      "url": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/",
+      "note": "Combined health expenditure ₦614.55bn by end of Q2 2026; state shares vary substantially."
+    },
+    {
+      "id": "budgit-state-of-states-2026",
+      "coverage": "35 states; fiscal assessment period 2025",
+      "status": "published_secondary_analysis",
+      "url": "https://budgit.org/post_publications/from-allocation-to-impact-rethinking-state-spending-priorities-2026-state-of-states-report/",
+      "note": "A 173-page report on revenue, debt sustainability, expenditure and sector spending; use the report's methodology and state coverage."
     }
   ],
   "requiredDocuments": [
@@ -49,7 +86,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Abia"
+      }
     },
     {
       "name": "Adamawa",
@@ -59,7 +119,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 100,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Adamawa"
+      }
     },
     {
       "name": "Akwa Ibom",
@@ -69,7 +152,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 6,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 72,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Akwa Ibom"
+      }
     },
     {
       "name": "Anambra",
@@ -83,7 +189,30 @@
         "2026 budget figures and source documents."
       ],
       "lastChecked": "2026-11-12",
-      "note": "Official publication page located; extraction and reconciliation remain pending."
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 96,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Anambra"
+      }
     },
     {
       "name": "Bauchi",
@@ -99,7 +228,30 @@
         "2025 Q4 report."
       ],
       "lastChecked": "2026-11-12",
-      "note": "Official publication page located; extraction and reconciliation remain pending."
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 89,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Bauchi"
+      }
     },
     {
       "name": "Bayelsa",
@@ -109,7 +261,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 89,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Bayelsa"
+      }
     },
     {
       "name": "Benue",
@@ -119,7 +294,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 100,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Benue"
+      }
     },
     {
       "name": "Borno",
@@ -134,7 +332,30 @@
         "citizens budget."
       ],
       "lastChecked": "2026-11-12",
-      "note": "Official publication page located; extraction and reconciliation remain pending."
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Borno"
+      }
     },
     {
       "name": "Cross River",
@@ -144,7 +365,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Cross River"
+      }
     },
     {
       "name": "Delta",
@@ -154,7 +398,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 9,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 93,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Delta"
+      }
     },
     {
       "name": "Ebonyi",
@@ -168,7 +435,30 @@
         "2026 approved budget and appropriation law."
       ],
       "lastChecked": "2026-11-12",
-      "note": "Official publication page located; extraction and reconciliation remain pending."
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 100,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Ebonyi"
+      }
     },
     {
       "name": "Edo",
@@ -181,7 +471,30 @@
         "broader implementation and audited-outturn documents require separate extraction."
       ],
       "lastChecked": "2026-11-12",
-      "note": "Official publication page located; extraction and reconciliation remain pending."
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 10,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 94,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Edo"
+      }
     },
     {
       "name": "Ekiti",
@@ -196,7 +509,30 @@
         "2026–2028 MTSS."
       ],
       "lastChecked": "2026-11-12",
-      "note": "Official publication page located; extraction and reconciliation remain pending."
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 100,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Ekiti"
+      }
     },
     {
       "name": "Enugu",
@@ -210,7 +546,30 @@
         "2025 Accountant-General and Auditor-General financial statements."
       ],
       "lastChecked": "2026-11-12",
-      "note": "Official publication page located; extraction and reconciliation remain pending."
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 10,
+          "max": 12
+        },
+        "totalScore": 93,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Enugu"
+      }
     },
     {
       "name": "Gombe",
@@ -220,7 +579,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 100,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Gombe"
+      }
     },
     {
       "name": "Imo",
@@ -236,7 +618,30 @@
         "2025 audited statements."
       ],
       "lastChecked": "2026-11-12",
-      "note": "Official publication page located; extraction and reconciliation remain pending."
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Imo"
+      }
     },
     {
       "name": "Jigawa",
@@ -246,7 +651,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 100,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Jigawa"
+      }
     },
     {
       "name": "Kaduna",
@@ -261,7 +689,30 @@
         "2027–2029 expenditure call circular."
       ],
       "lastChecked": "2026-11-12",
-      "note": "Official publication page located; extraction and reconciliation remain pending."
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 100,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Kaduna"
+      }
     },
     {
       "name": "Kano",
@@ -274,7 +725,30 @@
         "2025 audited financial statement."
       ],
       "lastChecked": "2026-11-12",
-      "note": "Official publication page located; extraction and reconciliation remain pending."
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 0,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 76,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Kano"
+      }
     },
     {
       "name": "Katsina",
@@ -284,7 +758,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 10,
+          "max": 12
+        },
+        "totalScore": 81,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Katsina"
+      }
     },
     {
       "name": "Kebbi",
@@ -299,7 +796,30 @@
         "2027–2029 MTEF."
       ],
       "lastChecked": "2026-11-12",
-      "note": "Official publication page located; extraction and reconciliation remain pending."
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 100,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Kebbi"
+      }
     },
     {
       "name": "Kogi",
@@ -309,7 +829,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 10,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 10,
+          "max": 12
+        },
+        "totalScore": 91,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Kogi"
+      }
     },
     {
       "name": "Kwara",
@@ -319,7 +862,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Kwara"
+      }
     },
     {
       "name": "Lagos",
@@ -329,7 +895,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Lagos"
+      }
     },
     {
       "name": "Nasarawa",
@@ -339,7 +928,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 0,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 10,
+          "max": 12
+        },
+        "totalScore": 57,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Nassarawa"
+      }
     },
     {
       "name": "Niger",
@@ -349,7 +961,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 0,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 76,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Niger"
+      }
     },
     {
       "name": "Ogun",
@@ -359,7 +994,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Ogun"
+      }
     },
     {
       "name": "Ondo",
@@ -369,7 +1027,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 96,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Ondo"
+      }
     },
     {
       "name": "Osun",
@@ -383,7 +1064,30 @@
         "2026–2028 MTEF."
       ],
       "lastChecked": "2026-11-12",
-      "note": "Official publication page located; extraction and reconciliation remain pending."
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 0,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 67,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Osun"
+      }
     },
     {
       "name": "Oyo",
@@ -393,7 +1097,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Oyo"
+      }
     },
     {
       "name": "Plateau",
@@ -403,7 +1130,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Plateau"
+      }
     },
     {
       "name": "Rivers",
@@ -413,7 +1163,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 0,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 0,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 0,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 8,
+          "max": 12
+        },
+        "totalScore": 15,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Rivers"
+      }
     },
     {
       "name": "Sokoto",
@@ -427,7 +1200,30 @@
         "2025 Q4 and earlier reports."
       ],
       "lastChecked": "2026-11-12",
-      "note": "Official publication page located; extraction and reconciliation remain pending."
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 10,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 98,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Sokoto"
+      }
     },
     {
       "name": "Taraba",
@@ -437,7 +1233,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Taraba"
+      }
     },
     {
       "name": "Yobe",
@@ -447,7 +1266,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Yobe"
+      }
     },
     {
       "name": "Zamfara",
@@ -457,7 +1299,30 @@
       "officialPortalUrl": null,
       "documentsLocated": [],
       "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable."
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Zamfara"
+      }
     },
     {
       "name": "Federal Capital Territory",
