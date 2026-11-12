@@ -7,7 +7,7 @@ ISEYC has a credible institutional source foundation, but it does not yet have a
 The next stage is to turn the catalogue into a governed acquisition and evidence system. Prioritise usable datasets and clear citizen questions over the number of institutions listed.
 
 **Current implementation facts**
-- The Observatory has a 59-source registry, six national World Bank WDI indicator pilots, and a curated snapshot endpoint for WHO, NITDA, NIMC, IMF, NASENI, Innovation Support Network, FME, NPHCDA and NGF publications.
+- The Observatory has a 64-source registry, six national World Bank WDI indicator pilots, and a curated snapshot endpoint for WHO, NITDA, NIMC, IMF, NASENI, Innovation Support Network, FME, NPHCDA and NGF publications.
 - Civic Mandate CommunityRecords and Community Observations are separate streams.
 - The Kaduna PHC pilot has source-readiness work but no imported HEFA facility observations.
 - A structured 2023 INEC voter-register/PVC table has now been transcribed for all 36 states and the FCT. Its arithmetic exceptions are explicitly retained.
@@ -37,7 +37,7 @@ Source catalogue additions also include NBS CPI reports, ONDI and NASENI program
 
 ## Department source watch — next acquisition priorities
 
-The registry now includes **59 sources**. Fourteen source catalogue entries are explicitly marked as catalogue-only or partial rather than being treated as integrated observations:
+The registry now includes **64 sources**. Fourteen source catalogue entries are explicitly marked as catalogue-only or partial rather than being treated as integrated observations:
 - **Education:** UBEC school digests and reports; UNICEF/UBEC NALABE 2022 learning assessment; NEMIS historical education digest and data visuals. The 2024/2025 FME EMIS Annual School Census is integrated as a source snapshot with a 57.9% reporting-rate warning.
 - **Health:** WHO national context and NPHCDA 2025 PHC programme snapshots; Federal Ministry of Health MSDAT (routine, survey and global estimates), NHFR, the NPHCDA PHC Functionality Dashboard, NPHCDA Data Requisition Portal, Ministry health reports and medicine logistics sources. NHFR API ingestion requires an approved API key; the PHC dashboard was not machine-readable in this review; 2025 commodity distribution is not current stock-on-hand.
 - **Civic/public finance:** Budget Office of the Federation reports, including the 2026 Q1 and Q2 Budget Implementation Reports published 2 and 7 November 2026. Appropriation, release, expenditure and completed delivery remain separate measures.
