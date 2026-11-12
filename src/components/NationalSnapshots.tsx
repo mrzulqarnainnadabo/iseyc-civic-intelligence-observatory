@@ -11,7 +11,8 @@ type Snapshot = {
 type CatalogueSource = { id: string; publisher: string; title: string; url: string; status: string; note: string; departments: string[] };
 type ReconciliationNote = { id: string; severity: 'high' | 'medium' | 'low'; title: string; detail: string; action: string };
 type SnapshotBundle = { contractVersion: string; status: string; checkedAt: string; observations: Snapshot[]; catalogOnlySources: CatalogueSource[]; reconciliationNotes: ReconciliationNote[]; limitations: string[] };
-type BudgetJurisdiction = { name: string; type: 'state' | 'fct'; status: string; officialPortalUrl: string | null; documentsLocated: string[]; note: string };
+type FiscalTransparency = { quarter: string; citizensBudget: { score: number; max: number }; quarterlyBir: { score: number; max: number }; eProcurement: { score: number; max: number }; fiscalWebsite: { score: number; max: number }; totalScore: number; sourceId: string };
+type BudgetJurisdiction = { name: string; type: 'state' | 'fct'; status: string; officialPortalUrl: string | null; documentsLocated: string[]; note: string; fiscalTransparency?: FiscalTransparency };
 const budgetJurisdictions = stateBudgetCoverage.jurisdictions as BudgetJurisdiction[];
 const locatedStatePortals = budgetJurisdictions.filter((item) => item.type === 'state' && item.status === 'official_portal_located').length;
 
@@ -95,6 +96,22 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
           <span>{item.type === 'fct' ? 'FCT · tracked separately' : item.status === 'official_portal_located' ? 'Official portal located · extraction pending' : 'Source discovery not completed'}</span>
           {item.officialPortalUrl ? <a href={item.officialPortalUrl} target="_blank" rel="noopener noreferrer">Official portal ↗</a> : <small>{item.note}</small>}
         </li>)}</ul>
+        <section className="state-budget-coverage__score">
+          <h3>Fiscal information availability · Q2 2026</h3>
+          <p>BudgIT scores all 36 states on citizens' budgets (15), quarterly BIRs (16), e-procurement portals (11) and fiscal-data websites (12). The normalized score is about public fiscal information availability—not service quality or government performance.</p>
+          <div className="state-budget-coverage__table-wrap"><table>
+            <thead><tr><th>State</th><th>Citizens' budget</th><th>Quarterly BIR</th><th>e-Procurement</th><th>Fiscal website</th><th>Total</th></tr></thead>
+            <tbody>{budgetJurisdictions.filter((item) => item.type === 'state').map((item) => <tr key={item.name}>
+              <th scope="row">{item.name}</th>
+              <td>{item.fiscalTransparency?.citizensBudget.score}/{item.fiscalTransparency?.citizensBudget.max}</td>
+              <td>{item.fiscalTransparency?.quarterlyBir.score}/{item.fiscalTransparency?.quarterlyBir.max}</td>
+              <td>{item.fiscalTransparency?.eProcurement.score}/{item.fiscalTransparency?.eProcurement.max}</td>
+              <td>{item.fiscalTransparency?.fiscalWebsite.score}/{item.fiscalTransparency?.fiscalWebsite.max}</td>
+              <td><strong>{item.fiscalTransparency?.totalScore}%</strong></td>
+            </tr>)}</tbody>
+          </table></div>
+          <p className="state-budget-coverage__source">Source: <a href="https://fiscalleague.budgit.org/latest-ranking" target="_blank" rel="noopener noreferrer">BudgIT States Fiscal Transparency League · Q2 2026 ↗</a>. The source spells Nasarawa as “Nassarawa”; the Observatory normalises the state name.</p>
+        </section>
         <div className="state-budget-coverage__comparisons">{stateBudgetCoverage.comparativeSources.map((source) => <p key={source.id}><strong>{source.coverage}</strong> — {source.note} <a href={source.url} target="_blank" rel="noopener noreferrer">Source ↗</a></p>)}</div>
       </details>}
       {!compact && <p className="national-snapshots__disclaimer">Curated transcriptions, not live feeds. Source publishers own the original data. A national statistic is not a local service-delivery finding.</p>}
