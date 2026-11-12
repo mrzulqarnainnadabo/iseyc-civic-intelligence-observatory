@@ -144,6 +144,7 @@ export default function handler(req, res) {
     catalogOnlySources: Array.isArray(snapshotData.catalogOnlySources) ? snapshotData.catalogOnlySources : [],
     note: legacySnapshotData.note || snapshotData.description,
     limitations: [
+      'Manually transcribed source snapshots, not live feeds from publishers.',
       'Snapshots are manually curated source transcriptions, not continuously refreshed publisher feeds.',
       'Legacy department records and numeric observations are separate evidence schemas; do not combine their counts.',
       'Each item retains its own source, reference period, geography, measurement type and limitations.',
