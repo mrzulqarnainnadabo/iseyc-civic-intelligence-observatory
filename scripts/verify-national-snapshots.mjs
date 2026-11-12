@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 
 const data = JSON.parse(fs.readFileSync('data/indicators/national-source-snapshots.json', 'utf8'));
 const registry = JSON.parse(fs.readFileSync('src/data/source-registry.json', 'utf8'));
+const canonicalRegistry = JSON.parse(fs.readFileSync('data/source-registry.json', 'utf8'));
 const api = fs.readFileSync('api/evidence/snapshots.js', 'utf8');
 const overview = fs.readFileSync('src/pages/Overview.tsx', 'utf8');
 const departments = fs.readFileSync('src/pages/Departments.tsx', 'utf8');
@@ -25,7 +26,7 @@ for (const item of data.observations) {
 for (const item of data.catalogOnlySources) {
   assert.ok(sourceIds.has(item.id), 'catalogue-only source must exist in registry: ' + item.id);
 }
-for (const id of ['who-gho-nigeria','nitda-dl4all-dashboard','nimc-nin-enrolment-2025','imf-article-iv-2026','nbs-cpi-catalog','naseni-innovation-hub','isn-innovation-hub-assessment','ondi-innovation','fme-education-emis-asc-2024-25','ubec-statistics','unicef-nalabe-2022','nemis-downloads','federal-ministry-health-msdat','health-facility-registry','federal-ministry-health-reports','budget-office-federal','nphcda-phc-progress-2025','nphcda-phc-functionality-dashboard','nphcda-data-requisition','federal-state-health-report-2024','federal-health-logistics-programme']) {
+for (const id of ['who-gho-nigeria','nitda-dl4all-dashboard','nimc-nin-enrolment-2025','imf-article-iv-2026','nbs-cpi-catalog','naseni-innovation-hub','isn-innovation-hub-assessment','ondi-innovation','fme-education-emis-asc-2024-25','ubec-statistics','unicef-nalabe-2022','nemis-downloads','federal-ministry-health-msdat','health-facility-registry','federal-ministry-health-reports','budget-office-federal','nphcda-phc-progress-2025','nphcda-phc-functionality-dashboard','nphcda-data-requisition','federal-state-health-report-2024','federal-health-logistics-programme','ngf-public-finance-database']) {
   assert.ok(sourceIds.has(id), 'national registry is missing ' + id);
 }
 assert.match(api, /validObservation/);
@@ -48,4 +49,15 @@ assert.ok(data.observations.some((item) => item.id === 'fme-asc-reporting-rate-2
 assert.ok(data.observations.some((item) => item.id === 'fme-asc-kaduna-learner-teacher-ratio-2024-25' && item.value === 51.3 && item.geographicCoverage === 'Kaduna State'));
 assert.ok(data.observations.some((item) => item.id === 'nphcda-phc-revitalised-aug-2025' && item.value === 1295 && item.referencePeriod === 'As of August 2025'));
 assert.ok(data.observations.some((item) => item.id === 'nphcda-kaduna-yobe-sba-recruitment-2025' && item.geographicCoverage === 'Kaduna State and Yobe State combined'));
+
+assert.ok(canonicalRegistry.some((item) => item.id === 'ngf-public-finance-database'), 'NGF source must exist in the API's canonical registry');
+const ngfEducation = data.observations.find((item) => item.id === 'ngf-state-budget-education-share-2026');
+const ngfHealth = data.observations.find((item) => item.id === 'ngf-state-budget-health-share-2026');
+assert.equal(ngfEducation?.value, 14.4);
+assert.equal(ngfHealth?.value, 9.3);
+assert.equal(ngfEducation?.referencePeriod, '2026 original state budgets');
+assert.match(ngfEducation?.limitations.join(' ') || '', /not actual expenditure/);
+assert.match(ngfHealth?.limitations.join(' ') || '', /FCT excluded/);
+assert.equal(data.observations.filter((item) => item.id.startsWith('ngf-state-budget-')).length, 9);
+
 console.log('National source snapshots and department evidence checks passed.');
