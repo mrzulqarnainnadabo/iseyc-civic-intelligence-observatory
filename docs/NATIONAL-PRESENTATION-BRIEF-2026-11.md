@@ -9,10 +9,10 @@
 The current evidence points to three important realities:
 
 1. **State budgets are not translating into reported spending at the same pace.** BudgIT reports that 34 states had combined approved budgets of ₦35.22 trillion but spent ₦8.60 trillion by the end of Q2 2026 — 24.4% of the combined budgets. The arithmetic gap is ₦26.62 trillion, calculated from those two reported figures; it is not a separate audited balance.
-2. **Education and health spending vary sharply between states.** BudgIT reports ₦1.049 trillion in education expenditure and ₦614.55 billion in health expenditure across 34 states by end-Q2 2026. State shares and amounts vary; these are expenditure records, not proof of school or facility outcomes.
+2. **Education and health spending vary sharply between states.** BudgIT reports ₦1.049 trillion in education expenditure across 34 states. Its later detailed H1 health report reports ₦621.34 billion in health expenditure across 34 states; an earlier infographic reported ₦614.55 billion, a difference that remains under reconciliation. State shares and amounts vary; these are expenditure records, not proof of school or facility outcomes.
 3. **Public fiscal information is uneven.** BudgIT's Q2 2026 fiscal transparency table scores all 36 states. Eight score 100, while Rivers scores 15. The score measures the availability of citizens' budgets, quarterly BIRs, e-procurement and fiscal-data websites—not the quality of public services.
 
-The Observatory has located 13 official state budget portals in its own source-discovery pass. Twenty-three states remain unreviewed in that pass. The all-state fiscal transparency table provides a separate 36-state disclosure view. Neither should be presented as a complete 36-state budget execution dataset.
+The Observatory has located 15 official state budget portals and one additional official state appropriation announcement in its source-discovery pass. Twenty states remain unreviewed in that pass. The all-state fiscal transparency table provides a separate 36-state disclosure view. Neither should be presented as a complete 36-state budget execution dataset.
 
 ## Slide 1 — State budgets: appropriation versus expenditure
 
@@ -50,14 +50,17 @@ Selected state indicators:
 
 ## Slide 3 — Health: budget execution and service verification
 
-BudgIT reports **₦614.55bn** in combined health expenditure across 34 states by end-Q2 2026. Rivers and Osun were excluded because their Q2 BIRs were unavailable.
+BudgIT's later detailed H1 2026 report reports **₦621.34bn** in combined health expenditure across 34 states by end-Q2 2026. Rivers and Osun were excluded because their Q2 BIRs were unavailable. The earlier 21 October infographic reported ₦614.55bn; the difference is not explained in the public page summaries and remains a high-priority reconciliation issue.
 
 Selected state indicators:
 - Health share of total expenditure: Kano 19.7%, Kebbi 12.5%, Jigawa 11.6%.
 - Lower reported shares: Akwa Ibom approximately 0.1%, Benue 0.7%, Cross River 1.4%.
 - Highest absolute spending: Lagos ₦119.51bn, Kano ₦79.17bn, Bauchi ₦42.03bn.
 
-**Source:** [BudgIT — H1 2026 Health Expenditure Performance by State](https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/)
+**Current source:** [BudgIT — Nigeria’s Subnational Health Expenditure Report, H1 2026](https://budgit.org/post_publications/nigerias-subnational-health-expenditure-report-h1-2026/)  
+**Earlier source:** [BudgIT — H1 2026 Health Expenditure Performance by State](https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/)
+
+The detailed report also states that health budget performance declined from **44.95% in H1 2025 to 40.48% in H1 2026**, despite a **46.17% nominal increase** in approved health budgets; actual health expenditure increased by **31.61% nominally**. These are secondary aggregates for the 34-state comparison, not inflation-adjusted service outcomes.
 
 **Department interpretation:** Reconcile state BIRs with facility-level NHFR records, staffing, opening hours, medicine stock, NHLMIS consumption, BHCPF disbursement and PHC functionality. Spending is not proof that a medicine reached a facility or a PHC is operational.
 
@@ -81,6 +84,31 @@ Key findings:
 **Source:** [BudgIT States Fiscal Transparency League — Q2 2026](https://fiscalleague.budgit.org/latest-ranking)
 
 **Civic Department interpretation:** Treat these as gaps in public fiscal information. Prioritise source acquisition, accessible citizens' budgets, complete BIRs, functioning e-procurement records and public audit trails. Do not present the score as a measure of corruption, public trust or service delivery.
+
+## Slide 4A — 2025 state fiscal performance
+
+Agora Policy's review of 35 states' 2025 Budget Implementation Reports (Rivers excluded) reports:
+- Combined revenue: **₦16.64tn**
+- Combined expenditure: **₦19.21tn**
+- Budget implementation: **68.2%**
+- Capital expenditure: **₦11.87tn**; recurrent expenditure: **₦7.34tn**
+- Capital implementation: **62.9%**; recurrent implementation: **79%**
+
+The later [BudgIT 2026 State of States Report](https://budgit.org/post_publications/from-allocation-to-impact-rethinking-state-spending-priorities-2026-state-of-states-report/) also reports 2025 Lagos IGR of ₦1.71tn and Enugu IGR of ₦407.76bn, a 125.91% nominal increase from 2024.
+
+**Source:** [Agora Policy — Review of Performance of States' Budgets in 2025](https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html) · [BudgIT — 2026 State of States Report](https://budgit.org/post_publications/from-allocation-to-impact-rethinking-state-spending-priorities-2026-state-of-states-report/)
+
+**Interpretation boundary:** Secondary analysis of 35 state BIRs; not a 36-state audited dataset. A fiscal execution rate does not prove project completion or service quality.
+
+## State appropriation examples — 2026
+
+Official state-government announcements report:
+- **Abia:** ₦1,016.228bn approved 2026 budget.
+- **Kaduna:** ₦985.9bn approved 2026 budget; ₦698.9bn capital (70.9%), ₦287bn recurrent (29.1%) and education at 25%.
+
+Sources: [Abia State Government](https://abiastate.gov.ng/gov-otti-signs-2026-appropriation-bill-into-law/) · [Kaduna State Government](https://kdsg.gov.ng/uba-sani-signs-2026-budget-education-takes-lions-share/)
+
+These are official appropriation headlines, not actual expenditure. The full schedules must be extracted and reconciled before detailed cross-state comparison.
 
 ## Slide 5 — Federal fiscal context
 
@@ -114,9 +142,9 @@ These are programme-reported reach figures, not independently verified digital c
 
 ## Slide 7 — What is still unknown
 
-- The current portal-discovery register has official budget portals for 13 states; 23 states remain unreviewed in this pass.
+- The current portal-discovery register has official budget portals for 15 states and one additional official appropriation announcement; 20 states remain unreviewed in this pass.
 - The NGF Public Finance Database describes all-36-state budget and audited-account coverage, but its landing page rendered unrelated injected third-party links. No numeric values have been ingested from it.
-- BudgIT's 2025 State of States report covers 35 states; detailed state-level extraction and methodology review remain pending.
+- BudgIT's 2026 State of States report assesses 35 states' 2025 fiscal performance. Its publication page reports Lagos IGR of ₦1.71tn and Enugu IGR of ₦407.76bn in 2025, up 125.91% nominally from ₦180.5bn in 2024. Detailed state-level extraction and methodology review remain pending.
 - BudgIT's H1 2026 total-expenditure and education pages cover 34 states but do not identify the excluded states in their page text.
 - The FCT is tracked separately; its final enacted 2026 appropriation law and official implementation reports were not confirmed in this source review.
 - The Budget Office lists a Q2 2026 federal BIR, published 7 November 2026, but its Download and View links redirect to a login page. No values have been extracted from that report. [Official report listing](https://budgetoffice.gov.ng/index.php/second-quarter-2026-budget-implementation-report).
