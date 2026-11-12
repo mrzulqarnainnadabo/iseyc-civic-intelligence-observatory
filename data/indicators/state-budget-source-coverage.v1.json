@@ -6,9 +6,11 @@
   "scope": {
     "states": 36,
     "fctTrackedSeparately": true,
-    "officialStatePortalsLocated": 13,
+    "officialStatePortalsLocated": 15,
     "fiscalTransparencyCoverage": 36,
-    "h1_2026SectorSpendingCoverage": 34
+    "h1_2026SectorSpendingCoverage": 34,
+    "officialStateDocumentsLocated": 1,
+    "stateBudgetSourceDiscoveryCompleted": 16
   },
   "comparativeSources": [
     {
@@ -81,12 +83,14 @@
     {
       "name": "Abia",
       "type": "state",
-      "status": "not_reviewed",
-      "sourceId": null,
-      "officialPortalUrl": null,
-      "documentsLocated": [],
-      "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "status": "official_documents_located",
+      "sourceId": "state-budget-abia",
+      "officialPortalUrl": "https://abiastate.gov.ng/gov-otti-signs-2026-appropriation-bill-into-law/",
+      "documentsLocated": [
+        "Official announcement of 2026 appropriation law and approved budget total"
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official appropriation announcement located; full approved budget schedule and implementation reports still require extraction.",
       "fiscalTransparency": {
         "quarter": "Q2 2026",
         "citizensBudget": {
@@ -646,12 +650,17 @@
     {
       "name": "Jigawa",
       "type": "state",
-      "status": "not_reviewed",
-      "sourceId": null,
-      "officialPortalUrl": null,
-      "documentsLocated": [],
-      "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-jigawa",
+      "officialPortalUrl": "https://www.jsbepd.org/index.php/plans-budget/annual-budget/2026-budget",
+      "documentsLocated": [
+        "2026 approved estimates and appropriation law",
+        "2026 Citizens Budget",
+        "Q1 2026 Budget Implementation Report",
+        "2026–2028 sector planning documents"
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official Ministry of Budget and Economic Planning page located; extraction and line-item reconciliation pending.",
       "fiscalTransparency": {
         "quarter": "Q2 2026",
         "citizensBudget": {
@@ -857,12 +866,16 @@
     {
       "name": "Kwara",
       "type": "state",
-      "status": "not_reviewed",
-      "sourceId": null,
-      "officialPortalUrl": null,
-      "documentsLocated": [],
-      "lastChecked": null,
-      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-kwara",
+      "officialPortalUrl": "https://kwarastate.gov.ng/government/government-data/",
+      "documentsLocated": [
+        "Q1–Q3 2026 Budget Implementation Reports",
+        "2025 audited state financial statements",
+        "2025 Accountant-General annual report"
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official government data page located; extraction and line-item reconciliation pending.",
       "fiscalTransparency": {
         "quarter": "Q2 2026",
         "citizensBudget": {
