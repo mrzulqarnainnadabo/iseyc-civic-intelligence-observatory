@@ -91,3 +91,8 @@ The source snapshot pack contains dated observations, catalogue-only sources and
 ## Current evidence inventory
 
 This feature branch contains 101 registered sources, 83 curated dated observations and 26 catalogue-only or partially integrated sources. The snapshot pack is manually transcribed and source-attributed; it is not a live feed or a complete 36-state dataset. See [state budget source readiness](docs/STATE-BUDGET-SOURCE-READINESS-2026-11.md) for the current state-by-state coverage and limitations.
+
+
+## Automated quality gates
+
+GitHub Actions validates the source registry, runs the complete test suite, and builds the production application for every pull request. A Vercel preview result is not a substitute for these checks.
