@@ -1955,28 +1955,6 @@
       "sourceType": "published_research"
     },
     {
-      "id": "budgit-2025-lagos-igr-sos-2026",
-      "title": "Lagos State internally generated revenue",
-      "value": 1.71,
-      "unit": "₦ trillion",
-      "referencePeriod": "2025 full year",
-      "measurementType": "Internally generated revenue",
-      "geoLevel": "state",
-      "geographicCoverage": "Lagos State",
-      "sourceId": "budgit-state-of-states-2026",
-      "sourcePublisher": "BudgIT Foundation · 2026 State of States Report",
-      "sourceUrl": "https://budgit.org/post_publications/from-allocation-to-impact-rethinking-state-spending-priorities-2026-state-of-states-report/",
-      "departments": [
-        "civic"
-      ],
-      "interpretation": "BudgIT's 2026 State of States report reports Lagos IGR of ₦1.71 trillion for 2025.",
-      "limitations": [
-        "Secondary fiscal analysis; not an independently audited transaction ledger.",
-        "Do not infer that IGR alone measures service delivery or fiscal sustainability."
-      ],
-      "sourceType": "published_research"
-    },
-    {
       "id": "budgit-2025-enugu-igr-sos-2026",
       "title": "Enugu State internally generated revenue",
       "value": 407.76,
