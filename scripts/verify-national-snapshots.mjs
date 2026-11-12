@@ -13,7 +13,7 @@ const component = fs.readFileSync('src/components/NationalSnapshots.tsx', 'utf8'
 const architecture = fs.readFileSync('docs/ARCHITECTURE-MAP-THREE-PRODUCTS.md', 'utf8');
 
 assert.equal(data.schemaVersion, '1.0.0');
-assert.equal(data.observations.length, 90, 'national source snapshots include the 34-state H1 health dataset and current budget evidence');
+assert.equal(data.observations.length, 91, 'national source snapshots include the 34-state H1 health dataset and current budget evidence');
 const sourceIds = new Set(registry.map((item) => item.id));
 for (const item of data.observations) {
   assert.ok(item.id && item.title, 'snapshot needs a stable id and title');
@@ -70,7 +70,8 @@ assert.ok(canonicalRegistry.some((item) => item.id === 'ngf-public-finance-datab
 assert.ok(canonicalRegistry.some((item) => item.id === 'budgit-health-report'), 'BudgIT H1 2026 health report source must be registered');
 assert.ok(canonicalRegistry.some((item) => item.id === 'kdsg-2026-appropriation-release'), 'Kaduna 2026 appropriation source must be registered');
 assert.equal(data.observations.filter((item) => item.id.startsWith('budgit-health-actual-spend-') && item.geoLevel === 'state').length, 34);
-assert.equal(data.reconciliationNotes.length, 5);
+assert.equal(data.reconciliationNotes.length, 6);
+assert.ok(data.observations.some((item) => item.recordStatus === 'superseded' && item.supersededBy === 'budgit-health-actual-spend-34-states-h1-2026'));
 assert.equal(data.stateBudgetCoverage.officialStateSourceRoutesLocated, 19);
 assert.equal(data.catalogOnlySources.filter((item) => item.id.startsWith('state-budget-')).length, 19);
 assert.deepEqual(data.stateBudgetCoverage.budgitHealthActualExpenditureMissingStates, ['Osun', 'Rivers']);
