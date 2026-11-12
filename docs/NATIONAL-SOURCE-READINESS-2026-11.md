@@ -147,16 +147,16 @@ The Budget Office's quarterly implementation index lists federal reports across 
 **Freshness caution:** the database homepage displays 2026 original-budget sector aggregates, while the state-explorer index surfaced in this review displays a June 2025 last-updated date. Treat these as different portal components until the data vintage for each table is confirmed. The separate publicfinanceapi.ngf.org.ng query interface is JavaScript-rendered; endpoint schema, bulk export, authentication and rate limits were not confirmed. Do not claim a machine-readable feed until a reproducible export or API contract is obtained.
 
 **Initial official state-source examples independently located in this research pass (not a complete 36-state inventory):**
-- Abia: 2026 Appropriation Act announcement and 2026 budget category, plus 2026 Q2 budget performance reporting.
-- Adamawa: 2026 approved budget published by the State Ministry of Finance.
-- Gombe: 2026 state budget published by the Ministry of Finance and Economic Development.
-- Imo: SFTAS disclosure portal lists 2026 approved budget, appropriation law, work plan and quarterly reports.
-- Jigawa: 2026 approved estimates, appropriation law, proposed budget and sector MTSS documents.
-- Kaduna: 2026 Appropriation Law, approved budget, citizen's budget and Q2 2026 budget implementation report on state government portals.
-- Kano: 2026 approved budget and appropriation law on the Ministry of Finance portal.
-- Kebbi: 2026 approved budget, appropriation law, citizen's budget and Q1 2026 implementation report.
-- Taraba: 2026 approved budget, citizen-friendly budget and Q1/Q2 2026 budget reports.
-- Yobe: 2026 approved budget on the Ministry of Budget and Planning portal.
+- Abia: [2026 Appropriation Act announcement](https://abiastate.gov.ng/gov-otti-signs-2026-appropriation-bill-into-law/) and [state budget document category](https://abiastate.gov.ng/document-category/budget/) (includes 2026 Q2 reporting).
+- Adamawa: [2026 approved budget](https://finance.adamawastate.gov.ng/ova_doc/2026-approved-budget/) published by the State Ministry of Finance.
+- Gombe: [2026 state budget](https://www.mof.gm.gov.ng/download/gombe-state-budget-2026/) published by the Ministry of Finance and Economic Development.
+- Imo: [SFTAS disclosure portal](https://imostate.gov.ng/Content/SFTAS/SFTAS_1) lists 2026 approved budget, appropriation law, work plan and quarterly reports.
+- Jigawa: [2026 budget document portal](https://jigawastate.gov.ng/dbudget) lists approved estimates, appropriation law, proposed budget and sector MTSS documents.
+- Kaduna: [Planning & Budget Commission downloads](https://pbc.kdsg.gov.ng/downloads/) lists the 2026 Appropriation Law, approved budget and Q2 2026 budget implementation report; the [state document library](https://kdsg.gov.ng/documents-library-2/) also lists the citizen's budget.
+- Kano: [2026 approved budget and appropriation law](https://finance.kn.gov.ng/kano-state-2026-approved-budget/) on the Ministry of Finance portal.
+- Kebbi: [budget documents portal](https://www.kebbistate.gov.ng/budget-documents) lists the 2026 approved budget, appropriation law, citizen's budget and Q1 2026 implementation report.
+- Taraba: [Open Government](https://www.tarabastate.gov.ng/open-government) lists the 2026 approved and citizen-friendly budgets; [Resources](https://www.tarabastate.gov.ng/resources) lists Q1/Q2 2026 reports.
+- Yobe: [2026 approved budget](https://budget.pfm.yb.gov.ng/approved-budgets/) on the Ministry of Budget and Planning portal.
 
 This is a **verified-source discovery list**, not a statement that the other 26 states have no published budgets. Their official source routes still require individual verification. No state budget totals should be copied into national comparisons until the actual source documents have been downloaded, table-extracted, reconciled and linked to the NGF series.
 
