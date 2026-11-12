@@ -58,7 +58,7 @@ Each department interprets its own field. The Observatory supplies evidence and 
 
 ## 6. Current Observatory evidence boundaries
 
-- The source registry contains 101 source entries in this feature branch. A registry entry is metadata, not an observation.
+- The source registry contains 103 source entries in this feature branch. A registry entry is metadata, not an observation.
 - The curated source snapshot pack contains 92 dated observations and 28 catalogue-only or partially integrated sources.
 - The new snapshot API is `GET /api/evidence/source-snapshots`.
 - The existing `GET /api/evidence/snapshots` endpoint remains unchanged because it serves the existing National Department Snapshot contract and downstream consumers.
