@@ -58,8 +58,8 @@ Each department interprets its own field. The Observatory supplies evidence and 
 
 ## 6. Current Observatory evidence boundaries
 
-- The source registry contains 94 source entries in this feature branch. A registry entry is metadata, not an observation.
-- The curated source snapshot pack contains 71 dated observations and 24 catalogue-only or partially integrated sources.
+- The source registry contains 96 source entries in this feature branch. A registry entry is metadata, not an observation.
+- The curated source snapshot pack contains 71 dated observations and 26 catalogue-only or partially integrated sources.
 - The new snapshot API is `GET /api/evidence/source-snapshots`.
 - The existing `GET /api/evidence/snapshots` endpoint remains unchanged because it serves the existing National Department Snapshot contract and downstream consumers.
 - The state-budget coverage register tracks all 36 states and the FCT separately. Thirteen official state portals were located in the current source-discovery pass; 23 states remain unreviewed. A BudgIT Q2 2026 fiscal-information availability table covers all 36 states, but it measures publication completeness rather than service delivery.
