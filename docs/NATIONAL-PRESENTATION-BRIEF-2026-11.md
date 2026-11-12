@@ -140,6 +140,22 @@ These are programme-reported reach figures, not independently verified digital c
 
 **Department interpretation:** Ask for state/LGA-level participant registers, completion and assessment results, competency tests, certification, employment outcomes, connectivity and device access, programme costs and independent verification. Do not turn national programme reach into a state-level digital skills estimate.
 
+## Slide 6A — Anambra: nine-month fiscal outturn from an official Q3 report
+
+Anambra's official Q3 2026 Budget Implementation Report covers **1 January to 30 September 2026** and was published on **28 October 2026**. The state reports:
+- Total revenue including opening balance: **₦300.80bn**, or **39.3%** of the ₦766.37bn original budget.
+- Total expenditure: **₦229.80bn**, or **30.0%** of the original budget.
+- Capital expenditure: **₦165.76bn**, or **27.8%** of the ₦596.77bn capital budget.
+- Independent revenue: **₦50.09bn**, or **69.6%** of the ₦72.00bn budget.
+
+**Primary source:** [Anambra Government — Open Finance, Q3 2026 BIR](https://smart.anambrastate.gov.ng/open-finance) (Table 1, page 8 of the report; prepared by the Office of the Accountant General, Ministry of Finance and Ministry of Budget and Economic Planning).
+
+**What this means:** The report's own nine-month elapsed-time yardstick is 75.0%. Total and capital expenditure ratios are below that yardstick, while independent revenue is closer to its annual budget. This is a fiscal execution comparison only.
+
+**Do not claim:** That the difference between budget and expenditure is cash available, lost funds, abandoned projects or proof of service failure. The report does not by itself establish whether roads, schools, PHCs or other assets were completed and are functioning.
+
+**Civic Department follow-up:** Reconcile Q1–Q3 BIRs, 2026 revised budget/virements, procurement awards, payment records, contract milestones and physical verification. Sector departments should use the PHC and basic-education sections in the same BIR only after those tables are separately extracted and checked.
+
 ## Slide 7 — What is still unknown
 
 - The current portal-discovery register has official budget portals for 15 states and three additional official state budget documents; 18 states remain unreviewed in this pass.
