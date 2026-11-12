@@ -37,7 +37,7 @@ export default function NationalSnapshots({ departmentId, compact = false }: { d
     return () => { alive = false; };
   }, []);
 
-  const observations = useMemo(() => (bundle?.observations || []).filter((item) => !departmentId || item.departments.includes(departmentId)), [bundle, departmentId]);
+  const observations = useMemo(() => (bundle?.observations || []).filter((item) => item.recordStatus !== "superseded" && (!departmentId || item.departments.includes(departmentId))), [bundle, departmentId]);
   const catalogOnly = useMemo(() => (bundle?.catalogOnlySources || []).filter((item) => !departmentId || item.departments.includes(departmentId)), [bundle, departmentId]);
   const visibleObservations = showAll ? observations : observations.slice(0, 6);
   const visibleCatalogue = showAllCatalogue ? catalogOnly : catalogOnly.slice(0, 3);
