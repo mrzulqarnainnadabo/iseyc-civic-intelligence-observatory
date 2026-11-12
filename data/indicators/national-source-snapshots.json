@@ -981,11 +981,10 @@
       "sourcePublisher": "Nigeria Governors' Forum (NGF) · Public Finance Database",
       "sourceUrl": "https://publicfinance.ngf.org.ng/",
       "departments": [
-        "software-technology",
         "civic"
       ],
       "sourceType": "published_research",
-      "interpretation": "NGF reports ₦11.94 trillion (33.2%) for Economic Affairs in the aggregate 2026 original budgets of Nigeria's 36 states. Economic Affairs is a broad NCOA function covering multiple economic sectors; it is not a standalone technology or digital-economy allocation.",
+      "interpretation": "NGF reports ₦11.94 trillion (33.2%) for Economic Affairs in the aggregate 2026 original budgets of Nigeria's 36 states. This broad NCOA function spans multiple economic sectors; it is not a standalone technology or digital-economy allocation.",
       "limitations": [
         "Original budget is planned expenditure, not actual expenditure, cash release or proof of service delivery.",
         "This is a harmonised NGF compilation sourced from state budget documents; retain the NGF series and the underlying state documents as separate provenance layers.",
