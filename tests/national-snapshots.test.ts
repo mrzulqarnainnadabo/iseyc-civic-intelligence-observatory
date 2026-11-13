@@ -110,4 +110,30 @@ describe("dated national evidence snapshots", () => {
     expect(wb.limitations.join(" ")).toMatch(/not a state, LGA or household growth rate/);
   });
 
+
+  it("keeps NPHCDA PHC programme outputs dated and separates national, multi-state and combined Kaduna/Yobe geography", () => {
+    const ids = [
+      "nphcda-phc-infrastructure-progress-2025",
+      "nphcda-bhcpf-funding-and-upgrades-2025",
+      "nphcda-phc-workforce-progress-2025",
+      "nphcda-multistate-service-support-2025",
+      "nphcda-kaduna-yobe-recruitment-2025",
+    ];
+    const records = ids.map((id) => snapshots.records.find((record) => record.id === id)!);
+    expect(records.every((record) => record.sourceId === "nphcda-phc-progress-2025")).toBe(true);
+    expect(records.every((record) => record.departmentId === "health")).toBe(true);
+    expect(records.every((record) => record.retrievedAt === "2026-11-09")).toBe(true);
+    const combined = records[4];
+    expect(combined.geography.label).toBe("Kaduna State + Yobe State · combined totals; state split not published");
+    expect(combined.metrics.find((metric) => metric.label === "Skilled birth attendants recruited")?.value).toBe("380");
+    expect(combined.metrics.find((metric) => metric.label === "Community-based health workers recruited")?.value).toBe("1,227");
+    expect(combined.limitations.join(" ")).toMatch(/do not assign either total to Kaduna State alone/);
+    const funding = records[1];
+    expect(funding.metrics.find((metric) => metric.label === "BHCPF disbursement in first half of 2025")?.measurementType).toContain("included in the wider");
+    expect(funding.interpretation).toMatch(/part of—not additional to/);
+    expect(records[3].geography.level).toBe("varies");
+    expect(records[3].limitations.join(" ")).toMatch(/does not name the 10 states/);
+    expect(records[0].limitations.join(" ")).toMatch(/not a current 2026 status/);
+  });
+
 });
