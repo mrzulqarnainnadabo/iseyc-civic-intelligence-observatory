@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0.0",
+  "fixture": true,
+  "label": "TEST FIXTURE — not a real community submission or completed intervention",
+  "problemId": "prob-fixture-2026-11-14-001",
+  "problemStatement": "Communities in pilot states report difficulty understanding how state budget allocations for primary healthcare relate to actual facility-level service availability.",
+  "geography": {
+    "level": "multi_state_pilot",
+    "note": "Illustrative only; not a prevalence claim."
+  },
+  "reportingPeriod": "2025-2026 evidence window",
+  "origin": "official_evidence",
+  "supportingEvidence": [
+    {
+      "type": "observatory_coverage",
+      "ref": "data/indicators/inec-national-evidence-coverage.v1.json",
+      "note": "Electoral coverage is separate; included only to demonstrate cross-link pattern."
+    },
+    {
+      "type": "observatory_secondary",
+      "ref": "BudgIT H1-2026 health expenditure (publisher-supported secondary)",
+      "note": "Health expenditure is not facility functionality."
+    }
+  ],
+  "evidenceConfidence": "publisher_supported",
+  "evidenceLimitations": [
+    "Budget allocation is not release, expenditure, or facility functionality.",
+    "No claim that any specific PHC is non-functional.",
+    "This is a test fixture for workflow wiring only."
+  ],
+  "relatedMandateId": null,
+  "responsibleInstitution": {
+    "name": "State Primary Health Care Development Agency / State Ministry of Health (varies by state)",
+    "duty": "Primary healthcare delivery and facility oversight within state mandate"
+  },
+  "leadIseycDepartment": "civic",
+  "supportingIseycDepartments": ["health", "education"],
+  "governmentResponsibility": "Publish and implement facility-level service and expenditure information consistent with legal duties.",
+  "iseycResponsibility": "Clarify public demand after human review; attach evidence with limitations; support budget and health literacy — not deliver clinical services.",
+  "partnerResponsibility": "Qualified health partners for any clinical or facility assessment.",
+  "communityParticipation": "Submit clarified observations; participate in literacy sessions if offered.",
+  "proposedIntervention": "Civic prepares a draft public demand for clearer facility-level reporting after specialist Health review of evidence limits; Education may support a budget-literacy module.",
+  "requiredExpertiseAndResources": "Human reviewer (Civic); Health evidence review; optional Education curriculum support.",
+  "expectedOutputs": [
+    "Specialist evidence note (internal)",
+    "Draft mandate text (unpublished until human approval)",
+    "Optional literacy session outline"
+  ],
+  "expectedOutcomes": [
+    "Clearer public understanding of the distinction between expenditure figures and service availability",
+    "Traceable published demand if approved"
+  ],
+  "verificationMethod": "Publication decision log; any literacy session pre/post competency check — not national prevalence.",
+  "currentStatus": "recorded",
+  "reviewHistory": [
+    {
+      "at": "2026-11-14",
+      "actor": "system_fixture",
+      "action": "created_test_fixture",
+      "note": "Not a real community problem. Do not publish."
+    }
+  ]
+}
