@@ -1046,8 +1046,8 @@
     "dataType": "Programme dashboard: verified digital-literacy training records, reach, competence areas, delivery modes, beneficiaries and partner organisations",
     "updateFrequency": "Dashboard updated 24 October 2026; ongoing updates claimed, cadence not published",
     "licence": "Dashboard data reuse terms not confirmed; cite NITDA and seek permission for bulk republication",
-    "lastChecked": "2026-11-09",
-    "checkedHow": "Official NITDA-linked DL4ALL national dashboard reviewed; headline counters, coverage and update timestamp recorded",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official NITDA-linked DL4ALL dashboard reviewed 12 November 2026; headline counters and 24 October 2026 update label recorded.",
     "limitations": [
       "The dashboard's verified-beneficiary definition and deduplication method must be obtained before comparing with other training programmes.",
       "Training or completion records do not independently establish durable competence, employment outcomes or population-wide digital literacy.",
@@ -1055,7 +1055,7 @@
       "Dashboard counters are programme-reported; retain retrieval date and do not infer missing demographic or geographic values.",
       "The dashboard reports different measures (people, organisations, training counts and competency counts); do not add them together."
     ],
-    "notes": "Dashboard snapshot: 2,783,731 verified digitally literate beneficiaries; 36 states + FCT, 774 LGAs and 14,747 communities reached; 33% female participation; 2,100,027 youth under 35. It reports 5.57% progress against a 50 million target; this is programme progress against a target, not Nigeria's national digital literacy rate."
+    "notes": "Dashboard snapshot as displayed 12 November 2026: 2,783,731 verified digital-literate beneficiaries, 5.57% progress against a 50 million target, 33% female participation, 2,100,027 youth under 35, coverage reported in all 36 states and FCT, 774 LGAs and 14,747 communities. Programme reach is not a population literacy rate."
   },
   {
     "id": "nitda-national-digital-literacy-framework",
@@ -1771,5 +1771,885 @@
       "Federal tertiary-hospital inventory initiatives must not be presented as PHC medicine availability."
     ],
     "notes": "The Ministry lists National Product Supply Chain Management Programme and health logistics publications. Current facility-level PHC medicine data are not yet ingested."
+  },
+  {
+    "id": "who-afro-nigeria",
+    "publisher": "World Health Organization (WHO) — Regional Office for Africa",
+    "name": "Nigeria Data & Statistics — Global Health Observatory",
+    "url": "https://www.afro.who.int/node/992",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria; indicator-specific reference periods",
+    "geoLevel": "national",
+    "dataType": "Country-level health indicators and WHO estimates",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly implementation reports; audited statements where published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Source page reviewed on 12 November 2026; publication listings and stated coverage checked. No numerical budget figures transcribed in this source-discovery step.",
+    "limitations": [
+      "Indicators have distinct reference years and methods; preserve each period.",
+      "WHO AFRO page lists under-five mortality 59.5 for 2024, while other WHO sources report materially different values; do not use that figure until the series are reconciled.",
+      "National estimates do not establish state, LGA or facility conditions."
+    ],
+    "notes": "The AFRO country page reports life expectancy and health expenditure for 2023. Its under-five mortality value conflicts with other WHO presentations and is not used in the current snapshot."
+  },
+  {
+    "id": "nimc-nin-enrolment-2025",
+    "publisher": "National Identity Management Commission (NIMC)",
+    "name": "National Identification Number enrolment report — June 2025",
+    "url": "https://nimc.gov.ng/nin/enrolment-report/june-2025",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria and diaspora; state breakdown varies",
+    "geoLevel": "varies",
+    "dataType": "Cumulative administrative NIN enrolment counts",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly implementation reports; audited statements where published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Source page reviewed on 12 November 2026; publication listings and stated coverage checked. No numerical budget figures transcribed in this source-discovery step.",
+    "limitations": [
+      "Cumulative enrolment records are not unique active residents without deduplication and status definitions.",
+      "National and state enrolment counts do not establish full identity coverage or service access."
+    ],
+    "notes": "NIMC reported 121,404,601 enrolment records as at 30 June 2025. A later October 2025 snapshot is registered separately."
+  },
+  {
+    "id": "ngf-state-public-finance-db",
+    "publisher": "Nigeria Governors' Forum (NGF)",
+    "name": "Public Finance Database — 36 state governments",
+    "url": "https://publicfinance.ngf.org.ng/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "All 36 states; FCT is not included",
+    "geoLevel": "state",
+    "dataType": "Comparable original, revised and actual budget, revenue, expenditure and public-finance indicators aligned to NCOA",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly implementation reports; audited statements where published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Source page reviewed on 12 November 2026; publication listings and stated coverage checked. No numerical budget figures transcribed in this source-discovery step.",
+    "limitations": [
+      "FCT is outside the 36-state dataset and requires separate coverage.",
+      "Portal values were not extracted or independently reconciled in this pass.",
+      "The landing page rendered unrelated injected third-party links; treat as a discovery lead until website integrity is confirmed.",
+      "Original budget, revised budget and actual expenditure must remain separate."
+    ],
+    "notes": "The portal describes state-government budget and audited-account sources and claims coverage of all 36 states. The landing page currently rendered unrelated injected third-party links; source integrity and downloadable data must be checked before any numeric ingestion."
+  },
+  {
+    "id": "agora-state-budget-performance-2025",
+    "publisher": "Agora Policy",
+    "name": "Review of Performance of States' Budgets in 2025",
+    "url": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "35 of 36 states; Rivers State excluded because a 2025 BIR was unavailable",
+    "geoLevel": "varies",
+    "dataType": "Secondary analysis of state budget implementation reports: revenue, expenditure, capital/recurrent spending and implementation rates",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly implementation reports; audited statements where published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Source page reviewed on 12 November 2026; publication listings and stated coverage checked. No numerical budget figures transcribed in this source-discovery step.",
+    "limitations": [
+      "Secondary analysis of state Budget Implementation Reports; not an independent audit of the underlying transactions.",
+      "Rivers is excluded; do not describe the aggregate as all 36 states.",
+      "Nominal amounts and implementation rates must retain the report's denominator and budget version.",
+      "Budget execution is not proof of completed or functional public services."
+    ],
+    "notes": "Published analysis reports 2025 fiscal aggregates for 35 states and explicitly excludes Rivers."
+  },
+  {
+    "id": "budgit-state-revenue-h1-2026",
+    "publisher": "BudgIT Foundation",
+    "name": "H1 2026 Subnational Budget Implementation Review — State Revenue Performance",
+    "url": "https://budgit.org/post_infographics/h1-2026-revenue-performance-by-state/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "34 of 36 states; Rivers and Osun excluded because Q2 2026 BIRs were unavailable",
+    "geoLevel": "state",
+    "dataType": "State revenue target performance based on OpenStates and state-government budget implementation reports",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly implementation reports; audited statements where published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Source page reviewed on 12 November 2026; publication listings and stated coverage checked. No numerical budget figures transcribed in this source-discovery step.",
+    "limitations": [
+      "Rivers and Osun are excluded; this is not complete 36-state coverage.",
+      "Secondary analysis of state budget implementation reports; preserve the source's reporting period and denominator.",
+      "Revenue performance is not service-delivery performance or proof of expenditure quality."
+    ],
+    "notes": "Published 21 October 2026; reports H1 2026 revenue performance across 34 states."
+  },
+  {
+    "id": "state-house-2026-appropriation",
+    "publisher": "State House, Abuja",
+    "name": "President assents to 2026 Appropriation Bill and 2025 budget extension",
+    "url": "https://statehouse.gov.ng/president-tinubu-assents-to-2026-appropriation-bill-and-2025-budget-extension/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Federal Government of Nigeria",
+    "geoLevel": "national",
+    "dataType": "Federal 2026 appropriation totals and expenditure composition",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly implementation reports; audited statements where published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Source page reviewed on 12 November 2026; publication listings and stated coverage checked. No numerical budget figures transcribed in this source-discovery step.",
+    "limitations": [
+      "Federal appropriation is not state or FCT appropriation.",
+      "Appropriation is not cash release, actual expenditure or verified delivery.",
+      "2025 implementation periods were subsequently extended; do not compare fiscal-year outturns without accounting for the extension."
+    ],
+    "notes": "State House release dated 17 April 2026 reports the ₦68.32 trillion federal appropriation and headline expenditure categories."
+  },
+  {
+    "id": "fct-budget-2026-secondary",
+    "publisher": "TheCable",
+    "name": "National Assembly passes ₦2.285tn FCT 2026 budget",
+    "url": "https://www.thecable.ng/nassembly-passes-n2-28trn-fct-2026-budget/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "media-report",
+    "geographicCoverage": "Federal Capital Territory",
+    "geoLevel": "varies",
+    "dataType": "Secondary report of the National Assembly's passage of the FCT 2026 appropriation",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly implementation reports; audited statements where published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Source page reviewed on 12 November 2026; publication listings and stated coverage checked. No numerical budget figures transcribed in this source-discovery step.",
+    "limitations": [
+      "Secondary reporting is not a substitute for the enacted FCT appropriation law.",
+      "Do not treat the reported approval as expenditure or project delivery.",
+      "FCT is a separate jurisdiction, not one of Nigeria's 36 states."
+    ],
+    "notes": "Secondary report dated 7 May 2026; the final signed FCT appropriation law and official implementation reports were not located in this source review."
+  },
+  {
+    "id": "state-budget-anambra",
+    "publisher": "Anambra State Government — Open Finance",
+    "name": "Anambra State Government — Open Finance",
+    "url": "https://smart.anambrastate.gov.ng/open-finance",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Anambra State",
+    "geoLevel": "state",
+    "dataType": "State budget, appropriation, citizen budget, MTEF/MTSS, budget implementation and audited financial publications",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly budget implementation reports; audited financial statements and medium-term plans as published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official Anambra Open Finance page reviewed; Q3 2026 BIR and 2025 audited financial statements linked. Q3 headline values cross-checked against Table 1 page 8.",
+    "limitations": [
+      "A document listing is not a transcribed dataset; no numeric values have been ingested from this portal yet.",
+      "Appropriation, release, actual expenditure, procurement, physical completion and service functionality are distinct evidence stages.",
+      "Publication availability and reporting periods vary; preserve each document's own version and date."
+    ],
+    "notes": "Q3 2026 BIR published 28 October 2026; headline values transcribed from the official Open Finance page and Table 1 summary."
+  },
+  {
+    "id": "state-budget-bauchi",
+    "publisher": "Bauchi State Government — Budget Publications",
+    "name": "Bauchi State Government — Budget Publications",
+    "url": "https://www.bauchistate.gov.ng/financial-reports-2/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Bauchi State",
+    "geoLevel": "state",
+    "dataType": "State budget, appropriation, citizen budget, MTEF/MTSS, budget implementation and audited financial publications",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly budget implementation reports; audited financial statements and medium-term plans as published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state portal page reviewed on 12 November 2026; the following publication types were listed: 2026 Q1 Budget Implementation Report; 2026 approved budget; appropriation law; citizens budget; 2025 Q4 report.",
+    "limitations": [
+      "A document listing is not a transcribed dataset; no numeric values have been ingested from this portal yet.",
+      "Appropriation, release, actual expenditure, procurement, physical completion and service functionality are distinct evidence stages.",
+      "Publication availability and reporting periods vary; preserve each document's own version and date."
+    ],
+    "notes": "Official portal listing located; document extraction, line-item reconciliation and comparison with actual outturn remain pending."
+  },
+  {
+    "id": "state-budget-borno",
+    "publisher": "Borno State Public Finance Management",
+    "name": "Borno State Public Finance Management",
+    "url": "https://pfm.bo.gov.ng/budgets/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Borno State",
+    "geoLevel": "state",
+    "dataType": "State budget, appropriation, citizen budget, MTEF/MTSS, budget implementation and audited financial publications",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly budget implementation reports; audited financial statements and medium-term plans as published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state portal page reviewed on 12 November 2026; the following publication types were listed: 2026 Q1 and Q2 Budget Implementation Reports; approved budget; appropriation law; citizens budget.",
+    "limitations": [
+      "A document listing is not a transcribed dataset; no numeric values have been ingested from this portal yet.",
+      "Appropriation, release, actual expenditure, procurement, physical completion and service functionality are distinct evidence stages.",
+      "Publication availability and reporting periods vary; preserve each document's own version and date."
+    ],
+    "notes": "Official portal listing located; document extraction, line-item reconciliation and comparison with actual outturn remain pending."
+  },
+  {
+    "id": "state-budget-ebonyi",
+    "publisher": "Ebonyi State Government — Laws, Budgets and Financials",
+    "name": "Ebonyi State Government — Laws, Budgets and Financials",
+    "url": "https://www.ebonyistate.gov.ng/laws/and/financials",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Ebonyi State",
+    "geoLevel": "state",
+    "dataType": "State budget, appropriation, citizen budget, MTEF/MTSS, budget implementation and audited financial publications",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly budget implementation reports; audited financial statements and medium-term plans as published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state portal page reviewed on 12 November 2026; the following publication types were listed: 2026 Q3 and Q2 Budget Implementation Reports; 2025 audited financial statements; 2026 approved budget and appropriation law.",
+    "limitations": [
+      "A document listing is not a transcribed dataset; no numeric values have been ingested from this portal yet.",
+      "Appropriation, release, actual expenditure, procurement, physical completion and service functionality are distinct evidence stages.",
+      "Publication availability and reporting periods vary; preserve each document's own version and date."
+    ],
+    "notes": "Official portal listing located; document extraction, line-item reconciliation and comparison with actual outturn remain pending."
+  },
+  {
+    "id": "state-budget-edo",
+    "publisher": "Edo State Government — FY 2026 Appropriation Law",
+    "name": "Edo State Government — FY 2026 Appropriation Law",
+    "url": "https://edostate.gov.ng/fy-2026-approved-appropriation-law/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Edo State",
+    "geoLevel": "state",
+    "dataType": "State budget, appropriation, citizen budget, MTEF/MTSS, budget implementation and audited financial publications",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly budget implementation reports; audited financial statements and medium-term plans as published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state portal page reviewed on 12 November 2026; the following publication types were listed: 2026 approved appropriation law; broader implementation and audited-outturn documents require separate extraction.",
+    "limitations": [
+      "A document listing is not a transcribed dataset; no numeric values have been ingested from this portal yet.",
+      "Appropriation, release, actual expenditure, procurement, physical completion and service functionality are distinct evidence stages.",
+      "Publication availability and reporting periods vary; preserve each document's own version and date."
+    ],
+    "notes": "Official portal listing located; document extraction, line-item reconciliation and comparison with actual outturn remain pending."
+  },
+  {
+    "id": "state-budget-ekiti",
+    "publisher": "Ekiti State Government — Finance & Budget",
+    "name": "Ekiti State Government — Finance & Budget",
+    "url": "https://www.ekitistate.gov.ng/finance-budget",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Ekiti State",
+    "geoLevel": "state",
+    "dataType": "State budget, appropriation, citizen budget, MTEF/MTSS, budget implementation and audited financial publications",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly budget implementation reports; audited financial statements and medium-term plans as published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state portal page reviewed on 12 November 2026; the following publication types were listed: 2026 approved budget; appropriation law; Q1–Q3 2026 Budget Implementation Reports; 2026–2028 MTSS.",
+    "limitations": [
+      "A document listing is not a transcribed dataset; no numeric values have been ingested from this portal yet.",
+      "Appropriation, release, actual expenditure, procurement, physical completion and service functionality are distinct evidence stages.",
+      "Publication availability and reporting periods vary; preserve each document's own version and date."
+    ],
+    "notes": "Official portal listing located; document extraction, line-item reconciliation and comparison with actual outturn remain pending."
+  },
+  {
+    "id": "state-budget-enugu",
+    "publisher": "Enugu State Government — Publications",
+    "name": "Enugu State Government — Publications",
+    "url": "https://enugustate.gov.ng/downloads/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Enugu State",
+    "geoLevel": "state",
+    "dataType": "State budget, appropriation, citizen budget, MTEF/MTSS, budget implementation and audited financial publications",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly budget implementation reports; audited financial statements and medium-term plans as published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state portal page reviewed on 12 November 2026; the following publication types were listed: 2026 approved budget; Q4 2025 Budget Implementation Report; 2025 Accountant-General and Auditor-General financial statements.",
+    "limitations": [
+      "A document listing is not a transcribed dataset; no numeric values have been ingested from this portal yet.",
+      "Appropriation, release, actual expenditure, procurement, physical completion and service functionality are distinct evidence stages.",
+      "Publication availability and reporting periods vary; preserve each document's own version and date."
+    ],
+    "notes": "Official portal listing located; document extraction, line-item reconciliation and comparison with actual outturn remain pending."
+  },
+  {
+    "id": "state-budget-imo",
+    "publisher": "Imo State Government — SFTAS DLI 1",
+    "name": "Imo State Government — SFTAS DLI 1",
+    "url": "https://www.imostate.gov.ng/Content/SFTAS/SFTAS_1",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Imo State",
+    "geoLevel": "state",
+    "dataType": "State budget, appropriation, citizen budget, MTEF/MTSS, budget implementation and audited financial publications",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly budget implementation reports; audited financial statements and medium-term plans as published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state portal page reviewed on 12 November 2026; the following publication types were listed: 2026 approved budget; appropriation law; Q1–Q3 2026 Budget Implementation Reports; citizen budget; 2025 audited statements.",
+    "limitations": [
+      "A document listing is not a transcribed dataset; no numeric values have been ingested from this portal yet.",
+      "Appropriation, release, actual expenditure, procurement, physical completion and service functionality are distinct evidence stages.",
+      "Publication availability and reporting periods vary; preserve each document's own version and date."
+    ],
+    "notes": "Official portal listing located; document extraction, line-item reconciliation and comparison with actual outturn remain pending."
+  },
+  {
+    "id": "state-budget-kaduna",
+    "publisher": "Kaduna State Planning & Budget Commission — Downloads",
+    "name": "Kaduna State Planning & Budget Commission — Downloads",
+    "url": "https://pbc.kdsg.gov.ng/downloads/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kaduna State",
+    "geoLevel": "state",
+    "dataType": "State budget, appropriation, citizen budget, MTEF/MTSS, budget implementation and audited financial publications",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly budget implementation reports; audited financial statements and medium-term plans as published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state portal page reviewed on 12 November 2026; the following publication types were listed: 2026 approved budget and appropriation law; Q2 2026 Budget Implementation Report; 2026 Citizens Budget; 2027–2029 expenditure call circular.",
+    "limitations": [
+      "A document listing is not a transcribed dataset; no numeric values have been ingested from this portal yet.",
+      "Appropriation, release, actual expenditure, procurement, physical completion and service functionality are distinct evidence stages.",
+      "Publication availability and reporting periods vary; preserve each document's own version and date."
+    ],
+    "notes": "Official portal listing located; document extraction, line-item reconciliation and comparison with actual outturn remain pending."
+  },
+  {
+    "id": "state-budget-kano",
+    "publisher": "Kano State Ministry of Finance and Economic Development — Budget",
+    "name": "Kano State Ministry of Finance and Economic Development — Budget",
+    "url": "https://finance.kn.gov.ng/budget/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kano State",
+    "geoLevel": "state",
+    "dataType": "State budget, appropriation, citizen budget, MTEF/MTSS, budget implementation and audited financial publications",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly budget implementation reports; audited financial statements and medium-term plans as published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state portal page reviewed on 12 November 2026; the following publication types were listed: 2026 approved budget and appropriation law; 2025 audited financial statement.",
+    "limitations": [
+      "A document listing is not a transcribed dataset; no numeric values have been ingested from this portal yet.",
+      "Appropriation, release, actual expenditure, procurement, physical completion and service functionality are distinct evidence stages.",
+      "Publication availability and reporting periods vary; preserve each document's own version and date."
+    ],
+    "notes": "Official portal listing located; document extraction, line-item reconciliation and comparison with actual outturn remain pending."
+  },
+  {
+    "id": "state-budget-kebbi",
+    "publisher": "Kebbi State Government — Budget Documents",
+    "name": "Kebbi State Government — Budget Documents",
+    "url": "https://kebbistate.gov.ng/budget-documents",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kebbi State",
+    "geoLevel": "state",
+    "dataType": "State budget, appropriation, citizen budget, MTEF/MTSS, budget implementation and audited financial publications",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly budget implementation reports; audited financial statements and medium-term plans as published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state portal page reviewed on 12 November 2026; the following publication types were listed: 2026 approved budget and appropriation law; Q1–Q3 2026 Budget Implementation Reports; citizens budget; 2027–2029 MTEF.",
+    "limitations": [
+      "A document listing is not a transcribed dataset; no numeric values have been ingested from this portal yet.",
+      "Appropriation, release, actual expenditure, procurement, physical completion and service functionality are distinct evidence stages.",
+      "Publication availability and reporting periods vary; preserve each document's own version and date."
+    ],
+    "notes": "Official portal listing located; document extraction, line-item reconciliation and comparison with actual outturn remain pending."
+  },
+  {
+    "id": "state-budget-osun",
+    "publisher": "Osun State Government — Budget Documents",
+    "name": "Osun State Government — Budget Documents",
+    "url": "https://www.osunstate.gov.ng/resources/budget-documents/all-budget-documents/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Osun State",
+    "geoLevel": "state",
+    "dataType": "State budget, appropriation, citizen budget, MTEF/MTSS, budget implementation and audited financial publications",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly budget implementation reports; audited financial statements and medium-term plans as published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state portal page reviewed on 12 November 2026; the following publication types were listed: 2026 approved budget and citizens budget; Q4 2025 Budget Implementation Report; 2026–2028 MTEF.",
+    "limitations": [
+      "A document listing is not a transcribed dataset; no numeric values have been ingested from this portal yet.",
+      "Appropriation, release, actual expenditure, procurement, physical completion and service functionality are distinct evidence stages.",
+      "Publication availability and reporting periods vary; preserve each document's own version and date."
+    ],
+    "notes": "Official portal listing located; document extraction, line-item reconciliation and comparison with actual outturn remain pending."
+  },
+  {
+    "id": "state-budget-sokoto",
+    "publisher": "Sokoto State Ministry of Budget and Economic Planning — Budget",
+    "name": "Sokoto State Ministry of Budget and Economic Planning — Budget",
+    "url": "https://mbep.sk.gov.ng/budget/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Sokoto State",
+    "geoLevel": "state",
+    "dataType": "State budget, appropriation, citizen budget, MTEF/MTSS, budget implementation and audited financial publications",
+    "updateFrequency": "Annual approved budget and appropriation; quarterly budget implementation reports; audited financial statements and medium-term plans as published.",
+    "licence": "Publicly accessible government or research publication; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official state portal page reviewed on 12 November 2026; the following publication types were listed: 2026 approved budget and appropriation law; Q2 2026 Budget Implementation Report; 2025 Q4 and earlier reports.",
+    "limitations": [
+      "A document listing is not a transcribed dataset; no numeric values have been ingested from this portal yet.",
+      "Appropriation, release, actual expenditure, procurement, physical completion and service functionality are distinct evidence stages.",
+      "Publication availability and reporting periods vary; preserve each document's own version and date."
+    ],
+    "notes": "Official portal listing located; document extraction, line-item reconciliation and comparison with actual outturn remain pending."
+  },
+  {
+    "id": "budgit-state-expenditure-h1-2026",
+    "publisher": "BudgIT Foundation",
+    "name": "H1 2026 Total Expenditure Performance by State",
+    "url": "https://budgit.org/post_infographics/h1-2026-total-expenditure-performance-by-state/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "34 of 36 states; exclusions not named on this infographic page",
+    "geoLevel": "state",
+    "dataType": "Combined approved budgets, actual H1 expenditure and state expenditure performance",
+    "updateFrequency": "Published infographics and quarterly state fiscal transparency updates.",
+    "licence": "BudgIT infographics are published under CC BY-ND 3.0; attribute BudgIT and link to the original page.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official BudgIT publication page reviewed on 12 November 2026; stated reference period, coverage and published values checked.",
+    "limitations": [
+      "The infographic page does not name the two states excluded; do not infer them from other BudgIT products.",
+      "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+      "Spending is not proof of completed or functional service delivery."
+    ],
+    "notes": "Published 21 October 2026; 34 states budgeted ₦35.22tn and spent ₦8.60tn (24.4%) by end of Q2 2026."
+  },
+  {
+    "id": "budgit-state-education-h1-2026",
+    "publisher": "BudgIT Foundation",
+    "name": "H1 2026 Education Expenditure Performance by State",
+    "url": "https://budgit.org/post_infographics/h1-2026-education-expenditure-performance-by-state/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "34 of 36 states; exclusions not named on this infographic page",
+    "geoLevel": "state",
+    "dataType": "Education expenditure totals, state spending and education share of total expenditure",
+    "updateFrequency": "Published infographics and quarterly state fiscal transparency updates.",
+    "licence": "BudgIT infographics are published under CC BY-ND 3.0; attribute BudgIT and link to the original page.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official BudgIT publication page reviewed on 12 November 2026; stated reference period, coverage and published values checked.",
+    "limitations": [
+      "The infographic page does not name the two states excluded; do not infer them from other BudgIT products.",
+      "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+      "Spending amounts and shares do not establish school-level inputs or learning outcomes."
+    ],
+    "notes": "Published 21 October 2026; 34 states spent ₦1.049tn on education by end of Q2 2026."
+  },
+  {
+    "id": "budgit-state-health-h1-2026",
+    "publisher": "BudgIT Foundation",
+    "name": "H1 2026 Health Expenditure Performance by State",
+    "url": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "34 of 36 states; Rivers and Osun excluded",
+    "geoLevel": "state",
+    "dataType": "Health expenditure totals, state spending and health share of total expenditure",
+    "updateFrequency": "Published infographics and quarterly state fiscal transparency updates.",
+    "licence": "BudgIT infographics are published under CC BY-ND 3.0; attribute BudgIT and link to the original page.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official BudgIT publication page reviewed on 12 November 2026; stated reference period, coverage and published values checked.",
+    "limitations": [
+      "Rivers and Osun are excluded because their Q2 2026 BIRs were unavailable.",
+      "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+      "Spending does not establish medicine availability, PHC functionality or patient outcomes."
+    ],
+    "notes": "Published 21 October 2026; 34 states spent ₦614.55bn on health by end of Q2 2026."
+  },
+  {
+    "id": "budgit-state-fiscal-transparency-league-q2-2026",
+    "publisher": "BudgIT Foundation",
+    "name": "States Fiscal Transparency League — Q2 2026",
+    "url": "https://fiscalleague.budgit.org/latest-ranking",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "governance"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "All 36 states; FCT is not included",
+    "geoLevel": "state",
+    "dataType": "State scores for citizens' budgets, quarterly BIR, e-procurement portals and state fiscal-data websites",
+    "updateFrequency": "Quarterly league-table updates.",
+    "licence": "BudgIT infographics are published under CC BY-ND 3.0; attribute BudgIT and link to the original page.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official BudgIT publication page reviewed on 12 November 2026; stated reference period, coverage and published values checked.",
+    "limitations": [
+      "Do not interpret the score as a measure of public-service quality, governance outcomes or public trust.",
+      "Component points have different maxima; preserve the component scores and source's normalized total.",
+      "The source spells Nasarawa as Nassarawa; the Observatory normalizes the state name while preserving the source spelling in metadata.",
+      "FCT is not part of the 36-state league table."
+    ],
+    "notes": "The latest quarter shown is Q2 2026. The score measures publication and accessibility of fiscal information, not service-delivery performance."
+  },
+  {
+    "id": "budgit-state-of-states-2026",
+    "publisher": "BudgIT Foundation",
+    "name": "From Allocation to Impact — 2026 State of States Report",
+    "url": "https://budgit.org/post_publications/from-allocation-to-impact-rethinking-state-spending-priorities-2026-state-of-states-report/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "education",
+      "health",
+      "agriculture",
+      "water-sanitation"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "35 states; assessment period 2025",
+    "geoLevel": "state",
+    "dataType": "State fiscal performance, revenue, debt sustainability and sector spending across agriculture, health, education and WASH",
+    "updateFrequency": "Annual research publication.",
+    "licence": "BudgIT infographics are published under CC BY-ND 3.0; attribute BudgIT and link to the original page.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official BudgIT publication page reviewed on 12 November 2026; stated reference period, coverage and published values checked.",
+    "limitations": [
+      "The publication covers 35 states; do not describe it as complete 36-state coverage.",
+      "A report-level assessment is secondary analysis; underlying state BIRs and audited statements remain preferred primary sources.",
+      "Read the report methodology before comparing sector outcomes."
+    ],
+    "notes": "The 2026 State of States report assesses fiscal performance across 35 states in 2025 and introduces a greater focus on development impact."
+  },
+  {
+    "id": "budgetoffice-q2-2026-bir",
+    "publisher": "Budget Office of the Federation",
+    "name": "Second Quarter 2026 Budget Implementation Report",
+    "url": "https://budgetoffice.gov.ng/index.php/second-quarter-2026-budget-implementation-report",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Federal Government of Nigeria",
+    "geoLevel": "national",
+    "dataType": "Federal Q2 2026 budget implementation, revenue and expenditure report",
+    "updateFrequency": "Quarterly",
+    "licence": "Official federal government report; document-specific reuse conditions not separately confirmed.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official Budget Office page reviewed; page lists the 2.1 MB PDF as published 7 November 2026. Both Download and View actions redirected to a login page during this review.",
+    "limitations": [
+      "The PDF could not be accessed through the public Download or View actions during this review.",
+      "No numeric observations have been transcribed from this report.",
+      "Do not infer federal sector execution from the appropriation alone."
+    ],
+    "notes": "Published 7 November 2026; document access currently redirects to a login page."
+  },
+  {
+    "id": "state-house-2025-extension-dec2026",
+    "publisher": "State House, Abuja",
+    "name": "2025 Appropriation Amendment No. 4 — implementation extended to 31 December 2026",
+    "url": "https://statehouse.gov.ng/president-tinubu-signs-appropriation-amendment-no-4-bill-2025-extends-implementation-to-december-31-2026/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "governance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Federal Government of Nigeria",
+    "geoLevel": "national",
+    "dataType": "Official notice of extended 2025 federal appropriation implementation period",
+    "updateFrequency": "One-off legislative amendment",
+    "licence": "Official government press release; cite the issuing authority.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official State House press release dated 30 September 2026 reviewed.",
+    "limitations": [
+      "This is a federal budget extension, not a state or FCT budget extension.",
+      "The extension changes the implementation period; it does not establish actual releases or expenditure."
+    ],
+    "notes": "The 2025 federal budget implementation period was extended from 30 September to 31 December 2026."
+  },
+  {
+    "id": "budgit-subnational-health-h1-2026-report",
+    "publisher": "BudgIT Foundation",
+    "name": "Nigeria’s Subnational Health Expenditure Report, H1 2026",
+    "url": "https://budgit.org/post_publications/nigerias-subnational-health-expenditure-report-h1-2026/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "health"
+    ],
+    "kind": "published-research",
+    "geographicCoverage": "34 of 36 states; Rivers and Osun excluded",
+    "geoLevel": "varies",
+    "dataType": "State health expenditure, budget execution, approved health budget growth and PHC spending analysis",
+    "updateFrequency": "Published analytical report; reporting period H1 2026",
+    "licence": "BudgIT publications are made available under CC BY-ND 3.0; attribute BudgIT and link to the original publication.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "BudgIT publication page reviewed on 12 November 2026; headline aggregate and comparison rates checked against the published page summary.",
+    "limitations": [
+      "Secondary analysis of state Budget Implementation Reports; not an independent audit.",
+      "Rivers and Osun are excluded because Q2 2026 BIRs were unavailable.",
+      "The report's ₦621.34bn total differs from the earlier 21 October infographic's ₦614.55bn; source-level reconciliation remains pending.",
+      "Nominal changes are not inflation-adjusted and do not prove service quality or outcomes."
+    ],
+    "notes": "Published in November 2026; reports ₦621.34bn spent by 34 states, 40.48% health budget performance, 31.61% nominal expenditure growth and 46.17% approved-budget growth."
+  },
+  {
+    "id": "state-budget-jigawa",
+    "publisher": "Jigawa State Ministry of Budget and Economic Planning",
+    "name": "Jigawa State Government — 2026 Budget and Planning Documents",
+    "url": "https://www.jsbepd.org/index.php/plans-budget/annual-budget/2026-budget",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "education",
+      "health",
+      "water-sanitation"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Jigawa State",
+    "geoLevel": "state",
+    "dataType": "2026 approved estimates, appropriation law, citizens budget, quarterly BIR, MTEF/MTSS and sector costing",
+    "updateFrequency": "Annual budget and quarterly implementation reporting",
+    "licence": "Official state government documents; cite each original publication and confirm reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official Ministry of Budget and Economic Planning page reviewed; it lists 2026 Q1 BIR, citizens budget, approved estimates, appropriation law and sector planning documents.",
+    "limitations": [
+      "Document listings are not transcribed datasets.",
+      "The ministry page includes state and local-government documents; keep jurisdiction explicit.",
+      "Appropriation is not release, expenditure or service delivery."
+    ],
+    "notes": "Official 2026 budget and planning document page located; extraction and line-item reconciliation pending."
+  },
+  {
+    "id": "state-budget-kwara",
+    "publisher": "Kwara State Government",
+    "name": "Kwara State Government — Government Data and Financial Reports",
+    "url": "https://kwarastate.gov.ng/government/government-data/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kwara State",
+    "geoLevel": "state",
+    "dataType": "Budget implementation reports, approved budgets, audited financial statements and revenue regulations",
+    "updateFrequency": "Quarterly BIR and annual financial reporting",
+    "licence": "Official state government documents; cite each original publication and confirm reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official Kwara government data page reviewed; Q1–Q3 2026 BIRs and 2025 audited accounts are listed.",
+    "limitations": [
+      "Document listings are not transcribed datasets.",
+      "Q3 BIR is a fiscal execution report, not a final audited outturn.",
+      "Preserve the reporting period and document version."
+    ],
+    "notes": "Official publication page lists Q3 2026 BIR, Q2 2026 BIR, Q1 2026 BIR and 2025 audited statements."
+  },
+  {
+    "id": "state-budget-abia",
+    "publisher": "Abia State Government",
+    "name": "Abia State Government — 2026 Appropriation assent announcement",
+    "url": "https://abiastate.gov.ng/gov-otti-signs-2026-appropriation-bill-into-law/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Abia State",
+    "geoLevel": "state",
+    "dataType": "Official announcement of the 2026 appropriation law and total approved budget",
+    "updateFrequency": "Annual appropriation announcement",
+    "licence": "Official state government announcement; cite issuing authority.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official Abia State Government page dated 29 December 2025 reviewed; it reports the 2026 appropriation total.",
+    "limitations": [
+      "Press announcement is not a substitute for the enacted appropriation schedule.",
+      "The total is an approved budget, not cash release, actual expenditure or verified delivery."
+    ],
+    "notes": "Governor signed the 2026 appropriation law on 29 December 2025; reported total is ₦1,016,228,072,651.99."
+  },
+  {
+    "id": "state-budget-kaduna-2026-appropriation-announcement",
+    "publisher": "Kaduna State Government",
+    "name": "Kaduna State Government — 2026 Budget signing announcement",
+    "url": "https://kdsg.gov.ng/uba-sani-signs-2026-budget-education-takes-lions-share/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "education"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kaduna State",
+    "geoLevel": "state",
+    "dataType": "Official announcement of 2026 appropriation headline total and expenditure composition",
+    "updateFrequency": "Annual appropriation announcement",
+    "licence": "Official state government announcement; cite issuing authority.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official KDSG page dated 23 December 2025 reviewed; headline total, capital/recurrent split and education share checked.",
+    "limitations": [
+      "Press announcement is not a substitute for the enacted appropriation schedule or detailed MDA allocations.",
+      "The education share is reported as a rounded headline percentage; verify against the appropriation schedule before detailed comparison.",
+      "Appropriation is not release, actual expenditure or verified service delivery."
+    ],
+    "notes": "KDSG reports a ₦985.9bn 2026 budget, 25% for education, ₦698.9bn capital and ₦287bn recurrent."
+  },
+  {
+    "id": "state-budget-akwa-ibom-2026",
+    "publisher": "Akwa Ibom State Government",
+    "name": "Akwa Ibom State 2026 Appropriation Law",
+    "url": "https://akwaibomstate.gov.ng/appropriation-law-2026/",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Akwa Ibom State",
+    "geoLevel": "state",
+    "dataType": "Official 2026 appropriation law page and linked PDF",
+    "updateFrequency": "Annual appropriation law",
+    "licence": "Publicly accessible government document; cite the original publisher and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official Akwa Ibom State Government page reviewed; page titled Appropriation Law 2026 with a download link.",
+    "limitations": [
+      "The page confirms the law is published but headline and sector schedule values have not been extracted.",
+      "An appropriation is planned expenditure, not release, actual spending or service delivery."
+    ],
+    "notes": "Source discovery completed for the 2026 appropriation law; detailed schedule extraction pending."
+  },
+  {
+    "id": "state-budget-kogi-q1-2026-bir",
+    "publisher": "Kogi State Government — Ministry of Finance, Budget and Economic Planning",
+    "name": "Kogi State Q1 2026 Budget Implementation Report",
+    "url": "https://kogistate.gov.ng/wp-content/uploads/Kogi-State-2026-Q1-BIR-Publication.pdf",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "public-finance",
+      "health",
+      "education"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Kogi State",
+    "geoLevel": "state",
+    "dataType": "Quarterly budget implementation report with NCOA administrative, economic, functional and programme classifications; PHC and basic education budget performance sections",
+    "updateFrequency": "Quarterly",
+    "licence": "Publicly accessible government publication; cite original source and verify document-specific reuse terms.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "Official Kogi State Government PDF reviewed; contents include PHC and basic education performance and programme classifications.",
+    "limitations": [
+      "Q1 2026 only; do not infer full-year performance.",
+      "Values must be extracted from the PDF and reconciled with Q2/Q3 reports before comparative use."
+    ],
+    "notes": "Official Q1 2026 BIR located; PDF includes PHC and basic education performance sections."
+  },
+  {
+    "id": "ncc-industry-statistics-2026",
+    "publisher": "Nigerian Communications Commission (NCC)",
+    "name": "NCC Industry Statistics — Subscribers and Broadband Penetration",
+    "url": "https://ncc.gov.ng/market-data-reports/industry-statistics",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "digital-inclusion",
+      "telecommunications",
+      "infrastructure"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria",
+    "geoLevel": "national",
+    "dataType": "Monthly active telephony and broadband subscriptions, subscription-based broadband penetration, fixed fibre subscriptions and operator statistics",
+    "updateFrequency": "Monthly industry statistics; NCC notes data are compiled from operator submissions at each reporting cutoff",
+    "licence": "Public regulatory statistics; cite NCC and link to the source page.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "NCC Industry Statistics page reviewed 12 November 2026; September 2026 subscriber and broadband rows and Q3 2026 FTTX total transcribed.",
+    "limitations": [
+      "Subscriptions are not unique individuals; one person may hold multiple SIMs or subscriptions.",
+      "Broadband penetration is subscription-based and must not be equated with the share of people who use the internet.",
+      "Operator data are based on submissions at the reporting cutoff; retain period and definition.",
+      "National aggregates do not describe state, LGA, school or household coverage."
+    ],
+    "notes": "As displayed on 12 November 2026: Sep 2026 broadband subscriptions 128,020,463 and subscription-based penetration 59.05%; Q3 2026 FTTX subscriptions 401,666."
+  },
+  {
+    "id": "world-bank-wdi-internet-use-nigeria",
+    "publisher": "World Bank — World Development Indicators (source series: ITU)",
+    "name": "Individuals using the Internet (% of population) — Nigeria",
+    "url": "https://data.worldbank.org/indicator/IT.NET.USER.ZS?locations=NG",
+    "urlStatus": "confirmed",
+    "sectors": [
+      "digital-inclusion",
+      "telecommunications"
+    ],
+    "kind": "official-data",
+    "geographicCoverage": "Nigeria",
+    "geoLevel": "national",
+    "dataType": "Annual percentage of individuals using the Internet, sourced from the ITU World Telecommunication/ICT Indicators Database",
+    "updateFrequency": "Annual; subject to revisions",
+    "licence": "World Bank Data use policy; attribute World Bank and the underlying ITU series.",
+    "lastChecked": "2026-11-12",
+    "checkedHow": "World Bank WDI series page reviewed; 2024 Nigeria value 41.21% observed.",
+    "limitations": [
+      "Latest observed value in this series is 2024; do not present as a 2026 real-time measure.",
+      "The indicator measures individuals who used the internet from any location in the previous three months.",
+      "This is distinct from NCC subscription-based broadband penetration and should not be directly compared without explaining the definitions."
+    ],
+    "notes": "2024 Nigeria value: 41.21% of individuals; underlying series is from the ITU World Telecommunication/ICT Indicators Database."
   }
 ]

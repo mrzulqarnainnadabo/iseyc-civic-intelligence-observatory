@@ -104,3 +104,10 @@
   .innovation-hubs__head { align-items:flex-start; flex-direction:column; }
   .innovation-hubs__grid { grid-template-columns:1fr; }
 }
+
+
+.dept-priorities { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; }
+.dept-priority { display:flex; flex-direction:column; min-width:0; min-height:128px; padding:13px; border:1px solid var(--line); border-radius:9px; background:#fff; }
+.dept-priority>span { color:#9a7437; font-size:9px; font-weight:800; letter-spacing:.12em; }
+.dept-priority>strong { margin-top:12px; color:var(--g900); font-size:12px; line-height:1.5; }
+@media(max-width:760px) { .dept-priorities { grid-template-columns:1fr; } .dept-priority { min-height:0; } }

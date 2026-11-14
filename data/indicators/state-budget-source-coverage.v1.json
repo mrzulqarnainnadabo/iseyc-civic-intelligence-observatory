@@ -1,0 +1,1783 @@
+{
+  "schemaVersion": "1.0.0",
+  "checkedAt": "2026-11-12",
+  "title": "Nigeria state budget and planning source coverage",
+  "note": "This is a source-discovery and readiness register, not a complete state budget dataset. A portal located does not mean its tables have been extracted or validated. States marked not_reviewed are not being described as having no public data.",
+  "scope": {
+    "states": 36,
+    "fctTrackedSeparately": true,
+    "officialStatePortalsLocated": 15,
+    "fiscalTransparencyCoverage": 36,
+    "h1_2026SectorSpendingCoverage": 34,
+    "officialStateDocumentsLocated": 3,
+    "stateBudgetSourceDiscoveryCompleted": 18,
+    "agora2025Coverage": 35,
+    "agora2025ExcludedStates": [
+      "Rivers"
+    ]
+  },
+  "comparativeSources": [
+    {
+      "id": "ngf-state-public-finance-db",
+      "coverage": "Portal describes comparable fiscal data for all 36 states",
+      "status": "under_integrity_review",
+      "url": "https://publicfinance.ngf.org.ng/",
+      "note": "The page describes original, revised and actual budget data sourced from state budget documents and audited financial statements. Unrelated injected third-party links appeared in the rendered landing page; no numbers have been ingested."
+    },
+    {
+      "id": "agora-state-budget-performance-2025",
+      "coverage": "35 of 36 states; Rivers excluded",
+      "status": "published_secondary_analysis",
+      "url": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+      "note": "2025 budget implementation analysis based on state Budget Implementation Reports."
+    },
+    {
+      "id": "budgit-state-revenue-h1-2026",
+      "coverage": "34 of 36 states; Rivers and Osun excluded",
+      "status": "published_secondary_analysis",
+      "url": "https://budgit.org/post_infographics/h1-2026-revenue-performance-by-state/",
+      "note": "H1 2026 revenue target performance analysis based on OpenStates and state-government Q2 Budget Implementation Reports."
+    },
+    {
+      "id": "budgit-state-fiscal-transparency-league-q2-2026",
+      "coverage": "All 36 states; Q2 2026",
+      "status": "published_secondary_dataset",
+      "url": "https://fiscalleague.budgit.org/latest-ranking",
+      "note": "Component scores cover citizens' budgets, quarterly BIR, e-procurement and state fiscal-data websites. This is a fiscal information disclosure score, not a service-delivery or governance-outcome score."
+    },
+    {
+      "id": "budgit-state-expenditure-h1-2026",
+      "coverage": "34 of 36 states; excluded states not named on infographic page",
+      "status": "published_secondary_analysis",
+      "url": "https://budgit.org/post_infographics/h1-2026-total-expenditure-performance-by-state/",
+      "note": "Combined approved budgets ₦35.22tn; actual expenditure ₦8.60tn; 24.4% by end of Q2 2026."
+    },
+    {
+      "id": "budgit-state-education-h1-2026",
+      "coverage": "34 of 36 states; excluded states not named on infographic page",
+      "status": "published_secondary_analysis",
+      "url": "https://budgit.org/post_infographics/h1-2026-education-expenditure-performance-by-state/",
+      "note": "Combined education expenditure ₦1.049tn by end of Q2 2026; state shares vary substantially."
+    },
+    {
+      "id": "budgit-state-health-h1-2026",
+      "coverage": "34 of 36 states; Rivers and Osun excluded",
+      "status": "published_secondary_analysis",
+      "url": "https://budgit.org/post_infographics/h1-2026-health-expenditure-performance-by-state/",
+      "note": "Combined health expenditure ₦614.55bn by end of Q2 2026; state shares vary substantially."
+    },
+    {
+      "id": "budgit-state-of-states-2026",
+      "coverage": "35 states; fiscal assessment period 2025",
+      "status": "published_secondary_analysis",
+      "url": "https://budgit.org/post_publications/from-allocation-to-impact-rethinking-state-spending-priorities-2026-state-of-states-report/",
+      "note": "A 173-page report on revenue, debt sustainability, expenditure and sector spending; use the report's methodology and state coverage."
+    }
+  ],
+  "requiredDocuments": [
+    "Approved budget and appropriation law",
+    "Medium-Term Expenditure Framework / Fiscal Strategy Paper / Medium-Term Sector Strategy",
+    "Citizens budget and consultation record",
+    "Quarterly budget implementation reports (Q1–Q4)",
+    "Audited financial statements and Auditor-General report",
+    "Sector work plans and programme budgets",
+    "Procurement award, contract, payment and project completion evidence"
+  ],
+  "jurisdictions": [
+    {
+      "name": "Abia",
+      "type": "state",
+      "status": "official_documents_located",
+      "sourceId": "state-budget-abia",
+      "officialPortalUrl": "https://abiastate.gov.ng/gov-otti-signs-2026-appropriation-bill-into-law/",
+      "documentsLocated": [
+        "Official announcement of 2026 appropriation law and approved budget total"
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official appropriation announcement located; full approved budget schedule and implementation reports still require extraction.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Abia"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 382.7,
+        "actualExpenditureBn": 409.56,
+        "budgetExecutionPct": 45.5,
+        "capitalExecutionPct": 46,
+        "igrSharePct": 17,
+        "igrBudgetPerformancePct": 55.4
+      }
+    },
+    {
+      "name": "Adamawa",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 100,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Adamawa"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 235.5,
+        "actualExpenditureBn": 326.99,
+        "budgetExecutionPct": 52.6,
+        "capitalExecutionPct": 39.8,
+        "igrSharePct": 10,
+        "igrBudgetPerformancePct": 98.2
+      }
+    },
+    {
+      "name": "Akwa Ibom",
+      "type": "state",
+      "status": "official_documents_located",
+      "sourceId": "state-budget-akwa-ibom-2026",
+      "officialPortalUrl": "https://akwaibomstate.gov.ng/appropriation-law-2026/",
+      "documentsLocated": [
+        "Official 2026 Appropriation Law page and downloadable law"
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official 2026 appropriation law page located. Detailed budget schedules and 2026 implementation reports still require extraction.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 6,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 72,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Akwa Ibom"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 1113.2,
+        "actualExpenditureBn": 1330.57,
+        "budgetExecutionPct": 80.6,
+        "capitalExecutionPct": 83.9,
+        "igrSharePct": 8,
+        "igrBudgetPerformancePct": 99.8
+      }
+    },
+    {
+      "name": "Anambra",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-anambra",
+      "officialPortalUrl": "https://smart.anambrastate.gov.ng/open-finance",
+      "documentsLocated": [
+        "Q3 2026 Budget Implementation Report",
+        "2025 audited financial statements",
+        "2026 budget figures and source documents."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 96,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Anambra"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 390.3,
+        "actualExpenditureBn": 354.78,
+        "budgetExecutionPct": 58.4,
+        "capitalExecutionPct": 60.8,
+        "igrSharePct": 14,
+        "igrBudgetPerformancePct": 90.4
+      }
+    },
+    {
+      "name": "Bauchi",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-bauchi",
+      "officialPortalUrl": "https://www.bauchistate.gov.ng/financial-reports-2/",
+      "documentsLocated": [
+        "2026 Q1 Budget Implementation Report",
+        "2026 approved budget",
+        "appropriation law",
+        "citizens budget",
+        "2025 Q4 report."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 89,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Bauchi"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 361.5,
+        "actualExpenditureBn": 532.31,
+        "budgetExecutionPct": 85.6,
+        "capitalExecutionPct": 79.4,
+        "igrSharePct": 13,
+        "igrBudgetPerformancePct": 91.8
+      }
+    },
+    {
+      "name": "Bayelsa",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 89,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Bayelsa"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 976.9,
+        "actualExpenditureBn": 1061.14,
+        "budgetExecutionPct": 82,
+        "capitalExecutionPct": 82.4,
+        "igrSharePct": 5,
+        "igrBudgetPerformancePct": 85.5
+      }
+    },
+    {
+      "name": "Benue",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 100,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Benue"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 310.7,
+        "actualExpenditureBn": 402.26,
+        "budgetExecutionPct": 73.1,
+        "capitalExecutionPct": 66.3,
+        "igrSharePct": 9,
+        "igrBudgetPerformancePct": 69
+      }
+    },
+    {
+      "name": "Borno",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-borno",
+      "officialPortalUrl": "https://pfm.bo.gov.ng/budgets/",
+      "documentsLocated": [
+        "2026 Q1 and Q2 Budget Implementation Reports",
+        "approved budget",
+        "appropriation law",
+        "citizens budget."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Borno"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 325.8,
+        "actualExpenditureBn": 469.38,
+        "budgetExecutionPct": 71.5,
+        "capitalExecutionPct": 76.4,
+        "igrSharePct": 11,
+        "igrBudgetPerformancePct": 118.9
+      }
+    },
+    {
+      "name": "Cross River",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Cross River"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 319.6,
+        "actualExpenditureBn": 314.29,
+        "budgetExecutionPct": 48.9,
+        "capitalExecutionPct": 38.2,
+        "igrSharePct": 18,
+        "igrBudgetPerformancePct": 95.2
+      }
+    },
+    {
+      "name": "Delta",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 9,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 93,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Delta"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 1449.4,
+        "actualExpenditureBn": 1146.65,
+        "budgetExecutionPct": 97.2,
+        "capitalExecutionPct": 99.9,
+        "igrSharePct": 14,
+        "igrBudgetPerformancePct": 148.4
+      }
+    },
+    {
+      "name": "Ebonyi",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-ebonyi",
+      "officialPortalUrl": "https://www.ebonyistate.gov.ng/laws/and/financials",
+      "documentsLocated": [
+        "2026 Q3 and Q2 Budget Implementation Reports",
+        "2025 audited financial statements",
+        "2026 approved budget and appropriation law."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 100,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Ebonyi"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 235,
+        "actualExpenditureBn": 304.3,
+        "budgetExecutionPct": 56.7,
+        "capitalExecutionPct": 46.3,
+        "igrSharePct": 10,
+        "igrBudgetPerformancePct": 74.5
+      }
+    },
+    {
+      "name": "Edo",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-edo",
+      "officialPortalUrl": "https://edostate.gov.ng/fy-2026-approved-appropriation-law/",
+      "documentsLocated": [
+        "2026 approved appropriation law",
+        "broader implementation and audited-outturn documents require separate extraction."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 10,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 94,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Edo"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 511.2,
+        "actualExpenditureBn": 556.53,
+        "budgetExecutionPct": 69.6,
+        "capitalExecutionPct": 59.5,
+        "igrSharePct": 19,
+        "igrBudgetPerformancePct": 83.6
+      }
+    },
+    {
+      "name": "Ekiti",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-ekiti",
+      "officialPortalUrl": "https://www.ekitistate.gov.ng/finance-budget",
+      "documentsLocated": [
+        "2026 approved budget",
+        "appropriation law",
+        "Q1–Q3 2026 Budget Implementation Reports",
+        "2026–2028 MTSS."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 100,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Ekiti"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 275.6,
+        "actualExpenditureBn": 349.97,
+        "budgetExecutionPct": 87.9,
+        "capitalExecutionPct": 76.1,
+        "igrSharePct": 19,
+        "igrBudgetPerformancePct": 107.7
+      }
+    },
+    {
+      "name": "Enugu",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-enugu",
+      "officialPortalUrl": "https://enugustate.gov.ng/downloads/",
+      "documentsLocated": [
+        "2026 approved budget",
+        "Q4 2025 Budget Implementation Report",
+        "2025 Accountant-General and Auditor-General financial statements."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 10,
+          "max": 12
+        },
+        "totalScore": 93,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Enugu"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 665.9,
+        "actualExpenditureBn": 645.52,
+        "budgetExecutionPct": 66.5,
+        "capitalExecutionPct": 62.4,
+        "igrSharePct": 61,
+        "igrBudgetPerformancePct": 79.8
+      }
+    },
+    {
+      "name": "Gombe",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 100,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Gombe"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 264.9,
+        "actualExpenditureBn": 333.12,
+        "budgetExecutionPct": 72.2,
+        "capitalExecutionPct": 64.1,
+        "igrSharePct": 14,
+        "igrBudgetPerformancePct": 111
+      }
+    },
+    {
+      "name": "Imo",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-imo",
+      "officialPortalUrl": "https://www.imostate.gov.ng/Content/SFTAS/SFTAS_1",
+      "documentsLocated": [
+        "2026 approved budget",
+        "appropriation law",
+        "Q1–Q3 2026 Budget Implementation Reports",
+        "citizen budget",
+        "2025 audited statements."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Imo"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 379.1,
+        "actualExpenditureBn": 494.31,
+        "budgetExecutionPct": 61.2,
+        "capitalExecutionPct": 55.3,
+        "igrSharePct": 10,
+        "igrBudgetPerformancePct": 86.3
+      }
+    },
+    {
+      "name": "Jigawa",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-jigawa",
+      "officialPortalUrl": "https://www.jsbepd.org/index.php/plans-budget/annual-budget/2026-budget",
+      "documentsLocated": [
+        "2026 approved estimates and appropriation law",
+        "2026 Citizens Budget",
+        "Q1 2026 Budget Implementation Report",
+        "2026–2028 sector planning documents"
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official Ministry of Budget and Economic Planning page located; extraction and line-item reconciliation pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 100,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Jigawa"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 388.5,
+        "actualExpenditureBn": 569.41,
+        "budgetExecutionPct": 75.3,
+        "capitalExecutionPct": 71.5,
+        "igrSharePct": 9,
+        "igrBudgetPerformancePct": 49.2
+      }
+    },
+    {
+      "name": "Kaduna",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-kaduna",
+      "officialPortalUrl": "https://pbc.kdsg.gov.ng/downloads/",
+      "documentsLocated": [
+        "2026 approved budget and appropriation law",
+        "Q2 2026 Budget Implementation Report",
+        "2026 Citizens Budget",
+        "2027–2029 expenditure call circular."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 100,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Kaduna"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 357.9,
+        "actualExpenditureBn": 510.91,
+        "budgetExecutionPct": 64.6,
+        "capitalExecutionPct": 59.1,
+        "igrSharePct": 24,
+        "igrBudgetPerformancePct": 77.3
+      }
+    },
+    {
+      "name": "Kano",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-kano",
+      "officialPortalUrl": "https://finance.kn.gov.ng/budget/",
+      "documentsLocated": [
+        "2026 approved budget and appropriation law",
+        "2025 audited financial statement."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 0,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 76,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Kano"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 486.8,
+        "actualExpenditureBn": 583.99,
+        "budgetExecutionPct": 62.5,
+        "capitalExecutionPct": 55.2,
+        "igrSharePct": 21,
+        "igrBudgetPerformancePct": 96.9
+      }
+    },
+    {
+      "name": "Katsina",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 10,
+          "max": 12
+        },
+        "totalScore": 81,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Katsina"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 362.1,
+        "actualExpenditureBn": 482.41,
+        "budgetExecutionPct": 69.7,
+        "capitalExecutionPct": 64.1,
+        "igrSharePct": 13,
+        "igrBudgetPerformancePct": 68.3
+      }
+    },
+    {
+      "name": "Kebbi",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-kebbi",
+      "officialPortalUrl": "https://kebbistate.gov.ng/budget-documents",
+      "documentsLocated": [
+        "2026 approved budget and appropriation law",
+        "Q1–Q3 2026 Budget Implementation Reports",
+        "citizens budget",
+        "2027–2029 MTEF."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 100,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Kebbi"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 191.2,
+        "actualExpenditureBn": 239.77,
+        "budgetExecutionPct": 41.3,
+        "capitalExecutionPct": 34.6,
+        "igrSharePct": 10,
+        "igrBudgetPerformancePct": 70.9
+      }
+    },
+    {
+      "name": "Kogi",
+      "type": "state",
+      "status": "official_documents_located",
+      "sourceId": "state-budget-kogi-q1-2026-bir",
+      "officialPortalUrl": "https://kogistate.gov.ng/wp-content/uploads/Kogi-State-2026-Q1-BIR-Publication.pdf",
+      "documentsLocated": [
+        "Official Kogi State Q1 2026 Budget Implementation Report (27 April 2026)"
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official Q1 2026 BIR PDF located; state-level sector and execution figures require extraction and reconciliation against subsequent quarters.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 10,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 10,
+          "max": 12
+        },
+        "totalScore": 91,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Kogi"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 306.6,
+        "actualExpenditureBn": 430.21,
+        "budgetExecutionPct": 71.2,
+        "capitalExecutionPct": 59.5,
+        "igrSharePct": 12,
+        "igrBudgetPerformancePct": 104.4
+      }
+    },
+    {
+      "name": "Kwara",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-kwara",
+      "officialPortalUrl": "https://kwarastate.gov.ng/government/government-data/",
+      "documentsLocated": [
+        "Q1–Q3 2026 Budget Implementation Reports",
+        "2025 audited state financial statements",
+        "2025 Accountant-General annual report"
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official government data page located; extraction and line-item reconciliation pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Kwara"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 307.7,
+        "actualExpenditureBn": 329.02,
+        "budgetExecutionPct": 52.5,
+        "capitalExecutionPct": 37.7,
+        "igrSharePct": 28,
+        "igrBudgetPerformancePct": 103.5
+      }
+    },
+    {
+      "name": "Lagos",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Lagos"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 2627.9,
+        "actualExpenditureBn": 2838.2,
+        "budgetExecutionPct": 84.3,
+        "capitalExecutionPct": 85.6,
+        "igrSharePct": 70,
+        "igrBudgetPerformancePct": 80.6
+      }
+    },
+    {
+      "name": "Nasarawa",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 0,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 10,
+          "max": 12
+        },
+        "totalScore": 57,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Nassarawa"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 188.6,
+        "actualExpenditureBn": 296.25,
+        "budgetExecutionPct": 62.2,
+        "capitalExecutionPct": 54.2,
+        "igrSharePct": 21,
+        "igrBudgetPerformancePct": 63.9
+      }
+    },
+    {
+      "name": "Niger",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 0,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 76,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Niger"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 354.5,
+        "actualExpenditureBn": 514.3,
+        "budgetExecutionPct": 47.1,
+        "capitalExecutionPct": 39.4,
+        "igrSharePct": 19,
+        "igrBudgetPerformancePct": 29.9
+      }
+    },
+    {
+      "name": "Ogun",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Ogun"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 436.5,
+        "actualExpenditureBn": 610.28,
+        "budgetExecutionPct": 57.9,
+        "capitalExecutionPct": 47,
+        "igrSharePct": 54,
+        "igrBudgetPerformancePct": 75.5
+      }
+    },
+    {
+      "name": "Ondo",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 96,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Ondo"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 345.6,
+        "actualExpenditureBn": 310.09,
+        "budgetExecutionPct": 63.3,
+        "capitalExecutionPct": 49.3,
+        "igrSharePct": 13,
+        "igrBudgetPerformancePct": 107.8
+      }
+    },
+    {
+      "name": "Osun",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-osun",
+      "officialPortalUrl": "https://www.osunstate.gov.ng/resources/budget-documents/all-budget-documents/",
+      "documentsLocated": [
+        "2026 approved budget and citizens budget",
+        "Q4 2025 Budget Implementation Report",
+        "2026–2028 MTEF."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 0,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 11,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 67,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Osun"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 304,
+        "actualExpenditureBn": 351.78,
+        "budgetExecutionPct": 82.2,
+        "capitalExecutionPct": 79.7,
+        "igrSharePct": 19,
+        "igrBudgetPerformancePct": 61.1
+      }
+    },
+    {
+      "name": "Oyo",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Oyo"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 467.9,
+        "actualExpenditureBn": 668.76,
+        "budgetExecutionPct": 68,
+        "capitalExecutionPct": 66.1,
+        "igrSharePct": 22,
+        "igrBudgetPerformancePct": 71.6
+      }
+    },
+    {
+      "name": "Plateau",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Plateau"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 289,
+        "actualExpenditureBn": 289.26,
+        "budgetExecutionPct": 47.5,
+        "capitalExecutionPct": 26.2,
+        "igrSharePct": 11,
+        "igrBudgetPerformancePct": 59.4
+      }
+    },
+    {
+      "name": "Rivers",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 0,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 0,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 0,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 8,
+          "max": 12
+        },
+        "totalScore": 15,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Rivers"
+      },
+      "agora2025": null
+    },
+    {
+      "name": "Sokoto",
+      "type": "state",
+      "status": "official_portal_located",
+      "sourceId": "state-budget-sokoto",
+      "officialPortalUrl": "https://mbep.sk.gov.ng/budget/",
+      "documentsLocated": [
+        "2026 approved budget and appropriation law",
+        "Q2 2026 Budget Implementation Report",
+        "2025 Q4 and earlier reports."
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "Official publication page located; extraction and reconciliation remain pending.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 15,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 10,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 98,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Sokoto"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 310.3,
+        "actualExpenditureBn": 322.71,
+        "budgetExecutionPct": 61.2,
+        "capitalExecutionPct": 50.9,
+        "igrSharePct": 7,
+        "igrBudgetPerformancePct": 42.9
+      }
+    },
+    {
+      "name": "Taraba",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Taraba"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 249.3,
+        "actualExpenditureBn": 195.55,
+        "budgetExecutionPct": 34,
+        "capitalExecutionPct": 20.1,
+        "igrSharePct": 7,
+        "igrBudgetPerformancePct": 35.8
+      }
+    },
+    {
+      "name": "Yobe",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Yobe"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 262.2,
+        "actualExpenditureBn": 381.23,
+        "budgetExecutionPct": 99.8,
+        "capitalExecutionPct": 100,
+        "igrSharePct": 6,
+        "igrBudgetPerformancePct": 105.9
+      }
+    },
+    {
+      "name": "Zamfara",
+      "type": "state",
+      "status": "not_reviewed",
+      "sourceId": null,
+      "officialPortalUrl": null,
+      "documentsLocated": [],
+      "lastChecked": null,
+      "note": "Source discovery not completed in this review; this is not evidence that documents are unavailable.",
+      "fiscalTransparency": {
+        "quarter": "Q2 2026",
+        "citizensBudget": {
+          "score": 13,
+          "max": 15
+        },
+        "quarterlyBir": {
+          "score": 16,
+          "max": 16
+        },
+        "eProcurement": {
+          "score": 5,
+          "max": 11
+        },
+        "fiscalWebsite": {
+          "score": 12,
+          "max": 12
+        },
+        "totalScore": 85,
+        "sourceId": "budgit-state-fiscal-transparency-league-q2-2026",
+        "sourceLabel": "BudgIT States Fiscal Transparency League",
+        "sourceStateSpelling": "Zamfara"
+      },
+      "agora2025": {
+        "sourceId": "agora-state-budget-performance-2025",
+        "sourceUrl": "https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html",
+        "referencePeriod": "2025 full year (Q1–Q4)",
+        "coverage": "35 of 36 states; Rivers excluded",
+        "actualRevenueBn": 204.9,
+        "actualExpenditureBn": 254.42,
+        "budgetExecutionPct": 51,
+        "capitalExecutionPct": 50.7,
+        "igrSharePct": 15,
+        "igrBudgetPerformancePct": 74.4
+      }
+    },
+    {
+      "name": "Federal Capital Territory",
+      "type": "fct",
+      "status": "official_law_not_confirmed",
+      "sourceId": "fct-budget-2026-secondary",
+      "officialPortalUrl": null,
+      "documentsLocated": [
+        "National Assembly second-reading report (12 March 2026)",
+        "Secondary report of National Assembly passage (7 May 2026)"
+      ],
+      "lastChecked": "2026-11-12",
+      "note": "FCT is tracked separately from the 36 states. The final enacted appropriation law and official implementation reports were not confirmed in this source review."
+    }
+  ]
+}

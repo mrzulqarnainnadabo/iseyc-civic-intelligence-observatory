@@ -5,6 +5,7 @@ import { useAdapter } from '../lib/hooks';
 import { SECTOR_LABEL, SECTORS, type Sector } from '../data/types';
 import { listIndicators, fetchViaGateway, formatIndicatorValue, type IndicatorDefinition, type IndicatorObservation } from '../lib/indicators';
 import NationalSnapshotGrid from '../components/NationalSnapshotGrid';
+import NationalSnapshots from '../components/NationalSnapshots';
 
 function IndicatorCard({ indicator }: { indicator: IndicatorDefinition }) {
   const [observations, setObservations] = useState<IndicatorObservation[]>([]);
@@ -54,7 +55,7 @@ export default function Overview() {
 
   return <>
     <section className="observatory-hero">
-      <div className="observatory-hero__copy"><span className="observatory-kicker">ISEYC · Civic intelligence</span><span className="observatory-mode">{isDemo ? "Demonstration data" : "Published Civic Mandate feed"}</span><h1>Nigeria</h1><p className="observatory-hero__dek">Understood through evidence.</p><p>Explore public records, national indicators and source material. Every figure keeps its publisher, reference period and limitations attached.</p><div className="observatory-hero__actions"><Link to="/evidence">Explore evidence <span aria-hidden="true">↗</span></Link><Link to="/geography">Open national map</Link></div></div>
+      <div className="observatory-hero__copy"><span className="observatory-kicker">ISEYC · National intelligence</span><span className="observatory-mode">{isDemo ? "Demonstration data" : "Published Civic Mandate feed"}</span><h1>Nigeria</h1><p className="observatory-hero__dek">Understanding public needs. Interpreting evidence. Strengthening accountability.</p><p>Explore public records, national indicators and source material. Every figure keeps its publisher, reference period and limitations attached.</p><div className="observatory-hero__actions"><Link to="/evidence">Explore evidence <span aria-hidden="true">↗</span></Link><Link to="/geography">Open national map</Link></div></div>
       <div className="observatory-hero__seal" aria-hidden="true"><span>ISEYC</span><strong>Evidence<br/>before<br/>conclusion</strong><i>National observatory</i></div>
     </section>
 
@@ -77,6 +78,8 @@ export default function Overview() {
       <div className="indicator-grid">{visibleIndicators.map((indicator) => <IndicatorCard key={indicator.id} indicator={indicator} />)}</div>
       <p className="observatory-caveat"><strong>Read carefully.</strong> These indicators are national aggregates. They cannot establish differences between states or LGAs, facility-level service quality, programme delivery or causal impact. Missing observations are not zero.</p>
     </section>
+
+    <NationalSnapshots />
 
     <section className="observatory-lower-grid">
       <div className="observatory-panel"><div className="observatory-panel__head"><div><span className="observatory-kicker observatory-kicker--dark">Public voice</span><h2>{isDemo ? 'Demonstration records' : 'Latest published community records'}</h2></div><Link to="/issues">All records →</Link></div>

@@ -1,0 +1,160 @@
+import '../styles/national-snapshots.css';
+import stateBudgetCoverage from '../../data/indicators/state-budget-source-coverage.v1.json';
+import { useEffect, useMemo, useState } from 'react';
+
+type Snapshot = {
+  id: string; title: string; value: number; unit: string; valueQualifier?: string; referencePeriod: string;
+  measurementType: string; geoLevel: string; geographicCoverage: string; sourceId: string; sourceUpdateDate?: string;
+  sourcePublisher: string; sourceUrl: string; departments: string[]; interpretation: string;
+  limitations: string[];
+};
+type CatalogueSource = { id: string; publisher: string; title: string; url: string; status: string; note: string; departments: string[] };
+type ReconciliationNote = { id: string; severity: 'high' | 'medium' | 'low'; title: string; detail: string; action: string };
+type SnapshotBundle = { contractVersion: string; status: string; checkedAt: string; observations: Snapshot[]; catalogOnlySources: CatalogueSource[]; reconciliationNotes: ReconciliationNote[]; limitations: string[] };
+type FiscalTransparency = { quarter: string; citizensBudget: { score: number; max: number }; quarterlyBir: { score: number; max: number }; eProcurement: { score: number; max: number }; fiscalWebsite: { score: number; max: number }; totalScore: number; sourceId: string };
+type Agora2025 = { actualRevenueBn: number; actualExpenditureBn: number; budgetExecutionPct: number; capitalExecutionPct: number; igrSharePct: number; igrBudgetPerformancePct: number };
+const AGORA_METRICS: { key: keyof Agora2025; label: string; unit: 'naira' | 'percent' }[] = [
+  { key: 'actualRevenueBn', label: 'Actual revenue', unit: 'naira' },
+  { key: 'actualExpenditureBn', label: 'Actual expenditure', unit: 'naira' },
+  { key: 'budgetExecutionPct', label: 'Total budget execution', unit: 'percent' },
+  { key: 'capitalExecutionPct', label: 'Capital budget execution', unit: 'percent' },
+  { key: 'igrSharePct', label: 'IGR share of revenue', unit: 'percent' },
+  { key: 'igrBudgetPerformancePct', label: 'IGR budget performance', unit: 'percent' },
+];
+type BudgetJurisdiction = { name: string; type: 'state' | 'fct'; status: string; officialPortalUrl: string | null; documentsLocated: string[]; note: string; fiscalTransparency?: FiscalTransparency; agora2025?: Agora2025 | null };
+const budgetJurisdictions = stateBudgetCoverage.jurisdictions as BudgetJurisdiction[];
+const locatedStatePortals = budgetJurisdictions.filter((item) => item.type === 'state' && item.status === 'official_portal_located').length;
+const locatedOfficialDocuments = budgetJurisdictions.filter((item) => item.type === 'state' && item.status === 'official_documents_located').length;
+const unreviewedStateCount = budgetJurisdictions.filter((item) => item.type === 'state' && item.status === 'not_reviewed').length;
+
+const DEPARTMENT_LABEL: Record<string, string> = {
+  education: 'Education & Capacity Building', health: 'Health & Well-being',
+  'software-technology': 'Software & Technology', civic: 'Civic Department',
+};
+
+function valueLabel(value: number, unit: string, qualifier?: string) {
+  const formatted = value.toLocaleString('en-NG', { maximumFractionDigits: 2 });
+  return (qualifier ? qualifier + ' ' : '') + formatted + (unit.startsWith('%') ? ' ' + unit : ' ' + unit);
+}
+
+export default function NationalSnapshots({ departmentId, compact = false }: { departmentId?: string; compact?: boolean }) {
+  const [bundle, setBundle] = useState<SnapshotBundle | null>(null);
+  const [showAll, setShowAll] = useState(false);
+  const [showAllCatalogue, setShowAllCatalogue] = useState(false);
+  const [agoraMetric, setAgoraMetric] = useState<keyof Agora2025>('actualRevenueBn');
+  const [status, setStatus] = useState<'loading' | 'ready' | 'unavailable'>('loading');
+  useEffect(() => {
+    let alive = true;
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+    fetch('/api/evidence/source-snapshots', { headers: { Accept: 'application/json' }, signal: controller.signal })
+      .then(async (response) => {
+        const data = await response.json();
+        if (!response.ok || data?.contractVersion !== '1.0.0' || !Array.isArray(data.observations) || !Array.isArray(data.catalogOnlySources) || !Array.isArray(data.reconciliationNotes)) throw new Error('Snapshot source unavailable');
+        if (alive) { setBundle(data); setStatus('ready'); }
+      })
+      .catch(() => { if (alive) setStatus('unavailable'); })
+      .finally(() => clearTimeout(timeout));
+    return () => { alive = false; controller.abort(); clearTimeout(timeout); };
+  }, []);
+
+  const observations = useMemo(() => (bundle?.observations || []).filter((item) => !departmentId || item.departments.includes(departmentId)), [bundle, departmentId]);
+  const catalogOnly = useMemo(() => (bundle?.catalogOnlySources || []).filter((item) => !departmentId || item.departments.includes(departmentId)), [bundle, departmentId]);
+  const visibleObservations = showAll ? observations : observations.slice(0, 6);
+  const visibleCatalogue = showAllCatalogue ? catalogOnly : catalogOnly.slice(0, 3);
+  const reconciliationNotes = bundle?.reconciliationNotes ?? [];
+  const selectedAgoraMetric = AGORA_METRICS.find((item) => item.key === agoraMetric) || AGORA_METRICS[0];
+  const showStateBudgetCoverage = !compact || departmentId === 'civic';
+
+  return (
+    <section className={compact ? 'national-snapshots national-snapshots--compact' : 'national-snapshots'} aria-labelledby={departmentId ? 'department-snapshots-title' : 'national-snapshots-title'}>
+      <div className="national-snapshots__head">
+        <div><span className="national-snapshots__kicker">Source-attributed data</span><h2 id={departmentId ? 'department-snapshots-title' : 'national-snapshots-title'}>{departmentId ? 'Evidence context for this department' : 'National evidence snapshots'}</h2></div>
+        <span className="national-snapshots__meta">{status === 'ready' ? observations.length + ' snapshots · checked ' + bundle?.checkedAt : status === 'loading' ? 'Loading source snapshots' : 'Snapshot service unavailable'}</span>
+      </div>
+      {status === 'loading' ? <p className="national-snapshots__empty">Retrieving curated source snapshots…</p> :
+       status === 'unavailable' ? <p className="national-snapshots__empty">Source snapshots could not be loaded. No substitute figures are displayed.</p> :
+       observations.length ? (
+         <>
+           <div className="national-snapshot-grid">{visibleObservations.map((item) => (
+             <article className="national-snapshot" key={item.id}>
+               <div className="national-snapshot__top"><span>{item.measurementType}</span><span>{item.geographicCoverage}</span></div>
+               <h3>{item.title}</h3>
+               <strong className="national-snapshot__value">{valueLabel(item.value, item.unit, item.valueQualifier)}</strong>
+               <p className="national-snapshot__period">Reference period · {item.referencePeriod}{item.sourceUpdateDate ? ' · Source generated ' + item.sourceUpdateDate : ''}</p>
+               <p className="national-snapshot__publisher">{item.sourcePublisher}</p>
+               <p className="national-snapshot__interpretation">{item.interpretation}</p>
+               <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">Original source ↗</a>
+               <details><summary>Limitations</summary><ul>{item.limitations.map((limit) => <li key={limit}>{limit}</li>)}</ul></details>
+             </article>
+           ))}</div>
+           {observations.length > 6 && <button type="button" className="national-snapshots__toggle" onClick={() => setShowAll((value) => !value)}>{showAll ? 'Show fewer snapshots' : 'Show all ' + observations.length + ' snapshots'}</button>}
+         </>
+       ) : <p className="national-snapshots__empty">No curated snapshot is currently assigned to {departmentId ? DEPARTMENT_LABEL[departmentId] || 'this department' : 'this view'}.</p>}
+      {catalogOnly.length > 0 && <div className="national-catalogue">
+        <div className="national-catalogue__head"><strong>Sources under assessment</strong><span>Catalogue status is source-specific</span></div>
+        <div className="national-catalogue__grid">{visibleCatalogue.map((item) => <article key={item.id}><span>{item.publisher} · {item.status === "partial" ? "Partial integration" : item.status === "under_review" ? "Under review" : "Catalogue only"}</span><strong>{item.title}</strong><details><summary>Coverage & access</summary><p>{item.note}</p></details><a href={item.url} target="_blank" rel="noopener noreferrer">Open source ↗</a></article>)}</div>
+      </div>}
+      {catalogOnly.length > 3 && <button type="button" className="national-snapshots__toggle" onClick={() => setShowAllCatalogue((value) => !value)}>{showAllCatalogue ? "Show fewer sources" : "View all " + catalogOnly.length + " sources"}</button>}
+      {reconciliationNotes.length > 0 && <details className="national-snapshots__reconciliation">
+        <summary>Data reconciliation · {reconciliationNotes.length} documented issues</summary>
+        <div>{reconciliationNotes.map((item) => <article key={item.id}>
+          <span className={`national-snapshots__severity national-snapshots__severity--${item.severity}`}>{item.severity} priority</span>
+          <strong>{item.title}</strong><p>{item.detail}</p><em>Action: {item.action}</em>
+        </article>)}</div>
+      </details>}
+      {showStateBudgetCoverage && <details className="state-budget-coverage">
+        <summary>State budget sources · {locatedStatePortals}/36 portals · {locatedOfficialDocuments} official documents · {unreviewedStateCount} unreviewed</summary>
+        <p>Portal discovery is not data extraction. Each state still requires its approved budget, appropriation law, MTEF/MTSS, quarterly implementation reports and audited outturn. States marked “not reviewed” are not being described as having no public data.</p>
+        <ul>{budgetJurisdictions.map((item) => <li key={item.name}>
+          <strong>{item.name}</strong>
+          <span>{item.type === 'fct' ? 'FCT · tracked separately' : item.status === 'official_portal_located' ? 'Official portal located · extraction pending' : item.status === 'official_documents_located' ? 'Official appropriation source located · extraction pending' : 'Source discovery not completed'}</span>
+          {item.officialPortalUrl ? <a href={item.officialPortalUrl} target="_blank" rel="noopener noreferrer">{item.status === 'official_documents_located' ? 'Official source ↗' : 'Official portal ↗'}</a> : <small>{item.note}</small>}
+        </li>)}</ul>
+        <section className="state-budget-coverage__score">
+          <h3>Fiscal information availability · Q2 2026</h3>
+          <p>BudgIT scores all 36 states on citizens' budgets (15), quarterly BIRs (16), e-procurement portals (11) and fiscal-data websites (12). The normalized score is about public fiscal information availability—not service quality or government performance.</p>
+          <div className="state-budget-coverage__table-wrap"><table>
+            <thead><tr><th>State</th><th>Citizens' budget</th><th>Quarterly BIR</th><th>e-Procurement</th><th>Fiscal website</th><th>Total</th></tr></thead>
+            <tbody>{budgetJurisdictions.filter((item) => item.type === 'state').map((item) => <tr key={item.name}>
+              <th scope="row">{item.name}</th>
+              <td>{item.fiscalTransparency?.citizensBudget.score}/{item.fiscalTransparency?.citizensBudget.max}</td>
+              <td>{item.fiscalTransparency?.quarterlyBir.score}/{item.fiscalTransparency?.quarterlyBir.max}</td>
+              <td>{item.fiscalTransparency?.eProcurement.score}/{item.fiscalTransparency?.eProcurement.max}</td>
+              <td>{item.fiscalTransparency?.fiscalWebsite.score}/{item.fiscalTransparency?.fiscalWebsite.max}</td>
+              <td><strong>{item.fiscalTransparency?.totalScore}%</strong></td>
+            </tr>)}</tbody>
+          </table></div>
+          <p className="state-budget-coverage__source">Source: <a href="https://fiscalleague.budgit.org/latest-ranking" target="_blank" rel="noopener noreferrer">BudgIT States Fiscal Transparency League · Q2 2026 ↗</a>. The source spells Nasarawa as “Nassarawa”; the Observatory normalises the state name.</p>
+        </section>
+        <section className="state-budget-coverage__performance">
+          <h3>2025 state fiscal performance · {stateBudgetCoverage.scope.agora2025Coverage} of 36 states</h3>
+          <p>Agora Policy's analysis of state Budget Implementation Reports. Rivers is excluded; FCT is separate. Select a measure to compare the reported state outturn.</p>
+          <label htmlFor="agora-state-metric">Measure</label>
+          <select id="agora-state-metric" value={agoraMetric} onChange={(event) => setAgoraMetric(event.target.value as keyof Agora2025)}>
+            {AGORA_METRICS.map((metric) => <option key={metric.key} value={metric.key}>{metric.label}</option>)}
+          </select>
+          <div className="state-budget-coverage__table-wrap"><table className="state-budget-coverage__performance-table">
+            <thead><tr><th>State</th><th>{selectedAgoraMetric.label}{selectedAgoraMetric.unit === 'naira' ? ' (₦bn)' : ' (%)'}</th><th>Coverage</th></tr></thead>
+            <tbody>{budgetJurisdictions.filter((item) => item.type === 'state').map((item) => {
+              const value = item.agora2025?.[agoraMetric];
+              const formatted = typeof value === 'number'
+                ? selectedAgoraMetric.unit === 'naira'
+                  ? '₦' + value.toLocaleString('en-NG', { maximumFractionDigits: 2 }) + 'bn'
+                  : value.toFixed(1) + '%'
+                : 'No data';
+              return <tr key={item.name}>
+                <th scope="row">{item.name}</th>
+                <td>{formatted}</td>
+                <td>{item.agora2025 ? 'Reported' : 'Excluded from source'}</td>
+              </tr>;
+            })}</tbody>
+          </table></div>
+          <p className="state-budget-coverage__source">Source: <a href="https://agorapolicy.org/our-blogs/251-review-of-performance-of-states-budgets-in-2025.html" target="_blank" rel="noopener noreferrer">Agora Policy · Review of Performance of States' Budgets in 2025 ↗</a>. Revenue and expenditure are actual amounts in ₦ billion; execution rates are shares of approved budgets; IGR share is a share of total revenue. This is secondary analysis, not an independent audit.</p>
+        </section>
+        <div className="state-budget-coverage__comparisons">{stateBudgetCoverage.comparativeSources.map((source: { id: string; coverage: string; note: string; url: string }) => <p key={source.id}><strong>{source.coverage}</strong> — {source.note} <a href={source.url} target="_blank" rel="noopener noreferrer">Source ↗</a></p>)}</div>
+      </details>}
+      {!compact && <p className="national-snapshots__disclaimer">Curated transcriptions, not live feeds. Source publishers own the original data. A national statistic is not a local service-delivery finding.</p>}
+    </section>
+  );
+}
