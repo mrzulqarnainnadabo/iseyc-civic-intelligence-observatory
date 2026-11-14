@@ -89,8 +89,12 @@ type CommunityRecordV01 = {
   relatedSuggestedIds: string[];
 };
 type CommunityRecordsResponse = {
-  contractVersion: string; publicationBoundary: string; page: number; pageSize: number;
-  total: number; totalPages: number; truncatedUpstream: boolean; records: CommunityRecordV01[];
+  contractVersion: string; publicationBoundary: string;
+  verificationNote: string; prevalenceNote: string;
+  page: number; pageSize: number; total: number; totalPages: number;
+  truncatedUpstream: boolean;
+  filters: { state: string | null; lga: string | null; duty: string | null; sector: string | null; since: string | null; until: string | null };
+  records: CommunityRecordV01[];
 };
 
 function slugState(name: string): string {
@@ -260,11 +264,28 @@ export function createMandatePulseAdapter(cfg: MandatePulseConfig = {}): Observa
   function validatePage(value: unknown, expectedPage: number, first?: CommunityRecordsResponse): asserts value is CommunityRecordsResponse {
     if (!value || typeof value !== 'object') throw new Error('Unsupported CommunityRecord contract response');
     const page = value as CommunityRecordsResponse;
-    const pageKeys = new Set(['contractVersion', 'publicationBoundary', 'page', 'pageSize', 'total', 'totalPages', 'truncatedUpstream', 'records']);
+    // Match the complete, documented Mandate API envelope. The three metadata
+    // fields are public contract fields, not unexpected/private payload.
+    const requiredPageKeys = [
+      'contractVersion', 'publicationBoundary', 'verificationNote', 'prevalenceNote',
+      'page', 'pageSize', 'total', 'totalPages', 'truncatedUpstream', 'filters', 'records',
+    ];
+    const pageKeys = new Set(requiredPageKeys);
     const rawPage = value as Record<string, unknown>;
+    const filters = rawPage.filters;
+    const filterKeys = ['state', 'lga', 'duty', 'sector', 'since', 'until'];
+    const validFilters = !!filters && typeof filters === 'object' && !Array.isArray(filters) &&
+      Object.keys(filters).length === filterKeys.length &&
+      Object.keys(filters).every((key) => filterKeys.includes(key)) &&
+      filterKeys.every((key) => Object.prototype.hasOwnProperty.call(filters, key) &&
+        (filters as Record<string, unknown>)[key] !== undefined &&
+        ((filters as Record<string, unknown>)[key] === null || typeof (filters as Record<string, unknown>)[key] === 'string'));
     if (Object.keys(rawPage).length !== pageKeys.size ||
         Object.keys(rawPage).some((key) => !pageKeys.has(key)) ||
-        [...pageKeys].some((key) => !Object.prototype.hasOwnProperty.call(rawPage, key)) ||
+        requiredPageKeys.some((key) => !Object.prototype.hasOwnProperty.call(rawPage, key)) ||
+        typeof rawPage.verificationNote !== 'string' || !rawPage.verificationNote.trim() ||
+        typeof rawPage.prevalenceNote !== 'string' || !rawPage.prevalenceNote.trim() ||
+        !validFilters ||
         page.contractVersion !== COMMUNITY_CONTRACT_VERSION ||
         page.publicationBoundary !== 'published-only' ||
         page.page !== expectedPage ||
