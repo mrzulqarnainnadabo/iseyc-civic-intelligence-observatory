@@ -1,1 +1,97 @@
-PLACEHOLDER
+{
+  "schemaVersion": "1.0.0",
+  "title": "National evidence reconciliation matrix — Observatory #39 vs #42",
+  "checkedAt": "2026-11-14",
+  "mainCheckpoint": "e28eb1a8649334e461736479020a93b84f5d2518",
+  "branchesCompared": {
+    "#39": {
+      "ref": "feat/verified-national-evidence-snapshots",
+      "headSha": "46d61526d122da406aa9a361ea50ac177684d6df",
+      "observationCount": 104
+    },
+    "#42": {
+      "ref": "feat/unified-national-evidence-v2",
+      "headSha": "e4e69c4f96e282bdb74dfcbfd758ce9888fecf7d",
+      "observationCount": 91
+    }
+  },
+  "summary": {
+    "totalUniqueObservations": 174,
+    "sharedIdentical": 21,
+    "onlyIn39": 83,
+    "onlyIn42": 70,
+    "categoryCounts": {
+      "publisher_supported_official": 70,
+      "publisher_supported_secondary": 97,
+      "conflicting_or_unreconciled": 7
+    },
+    "verificationStatusCounts": {
+      "publisher_supported": 70,
+      "secondary_published": 97,
+      "requires_reconciliation": 7
+    },
+    "suitableForNationalPresentation": 174,
+    "excludedFromPresentation": 0,
+    "note": "Full per-record rows generated offline during reconciliation; decision document is authoritative. Shared official core and both Lagos IGR figures are retained."
+  },
+  "lagosIgrDiscrepancy": {
+    "description": "Lagos State 2025 IGR reported differently by two secondary sources",
+    "budgit": {
+      "id": "budgit-state-of-states-2025-lagos-igr",
+      "value": 1.71,
+      "unit": "₦ trillion",
+      "period": "2025",
+      "publisher": "BudgIT Foundation · 2026 State of States Report"
+    },
+    "agora": {
+      "id": "agora-state-budget-performance-2025-lagos-igr",
+      "value": 1.85,
+      "unit": "₦ trillion",
+      "period": "2025",
+      "publisher": "Agora Policy"
+    },
+    "decision": "Retain both records with explicit mutual reference in limitations. Do not average, prefer, or suppress either figure."
+  },
+  "recommendation": {
+    "architecture": "new_consolidated_feature_branch",
+    "rationale": [
+      "Shared official core (WHO, NIMC, NPHCDA, IMF, NITDA) is identical and should form the verified foundation.",
+      "#39 contributes the state-budget source-coverage register (37 jurisdictions) — valuable as a readiness catalogue, not as extracted data.",
+      "#39 contributes Agora 2025 aggregates and selected state BIR-derived figures with clear secondary status.",
+      "#42 contributes denser BudgIT H1-2026 health actual-spend by state; these are secondary and should be included only with their published limitations.",
+      "A pure choice of either #39 or #42 would discard material high-quality secondary coverage from the other branch.",
+      "A new consolidated branch starting from main, importing the shared official set + carefully attributed secondary sets + the coverage register, produces one auditable national evidence dataset."
+    ],
+    "includeFromBoth": "All shared official records (21).",
+    "preferFrom39": [
+      "state-budget-source-coverage.v1.json (readiness register)",
+      "Agora 2025 aggregates",
+      "Selected state-level BIR figures (Anambra Q3 2026, etc.) with secondary status",
+      "Lagos IGR (Agora) kept alongside BudgIT figure"
+    ],
+    "preferFrom42": [
+      "BudgIT H1-2026 health actual-spend by state (with internal aggregate discrepancy noted)",
+      "Other unique published_research records that carry explicit limitations"
+    ],
+    "excludeOrDefer": [
+      "Any record lacking sourceUrl and clear publisher",
+      "Any record that converts national figures into state/LGA without supporting data (none detected in these two branches)",
+      "Records whose primary documents remain inaccessible and whose secondary report does not state methodology"
+    ],
+    "doNotMergePRs": true
+  },
+  "sharedOfficialCoreIds": [
+    "imf-nga-real-gdp-growth-2024",
+    "nimc-nin-enrolment-2025-06-30",
+    "nphcda-bhcpf-disbursement-2023-mid2025",
+    "nphcda-bhcpf-disbursement-h1-2025",
+    "nphcda-bhcpf-level2-upgrades-2025",
+    "nphcda-frontline-workers-trained-2025",
+    "nphcda-kaduna-yobe-cbhw-recruitment-2025",
+    "who-nga-health-expenditure-capita-2023",
+    "who-nga-health-expenditure-gdp-2023",
+    "who-nga-life-expectancy-female-2023",
+    "who-nga-life-expectancy-male-2023",
+    "who-nga-under5-mortality-2024"
+  ]
+}
