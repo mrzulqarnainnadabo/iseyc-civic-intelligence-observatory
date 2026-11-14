@@ -4,11 +4,14 @@ import { createMandatePulseAdapter } from '../src/adapters/mandatePulseAdapter';
 const emptyPage = (boundary: string) => ({
   contractVersion: '0.1.0',
   publicationBoundary: boundary,
+  verificationNote: 'Publication after human review is not independent verification.',
+  prevalenceNote: 'Published records are not a measure of national need.',
   page: 1,
   pageSize: 50,
   total: 0,
   totalPages: 1,
   truncatedUpstream: false,
+  filters: { state: null, lga: null, duty: null, sector: null, since: null, until: null },
   records: [],
 });
 
