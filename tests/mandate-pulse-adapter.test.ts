@@ -13,8 +13,12 @@ const makeRecord = (overrides: Record<string, unknown> = {}) => ({
 });
 const makePage = (records: ReturnType<typeof makeRecord>[], overrides: Record<string, unknown> = {}) => ({
   contractVersion: '0.1.0', publicationBoundary: 'published-only',
+  verificationNote: 'Publication after human review is not independent verification.',
+  prevalenceNote: 'Published records are not a measure of national need.',
   page: 1, pageSize: 50, total: records.length, totalPages: 1,
-  truncatedUpstream: false, records, ...overrides,
+  truncatedUpstream: false,
+  filters: { state: null, lga: null, duty: null, sector: null, since: null, until: null },
+  records, ...overrides,
 });
 
 describe('mandate CommunityRecord adapter', () => {
