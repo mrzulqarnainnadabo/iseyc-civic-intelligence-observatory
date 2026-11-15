@@ -249,3 +249,34 @@
 @media(prefers-reduced-motion:reduce) {
  .observatory-hero__actions a { transform:none; }
 }
+
+
+/* National geography explorer: search-first controls and explicit coverage language. */
+.geo-total { color:var(--g800); font-size:12px; font-weight:700; white-space:nowrap; }
+.geo-explorer-intro { display:grid; grid-template-columns:minmax(170px,.55fr) minmax(0,1.45fr); gap:18px; align-items:center; margin:-10px 0 22px; padding:16px 18px; border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:8px; background:var(--paper); }
+.geo-explorer-intro > div { display:grid; gap:3px; }
+.geo-explorer-intro strong { color:var(--g950); font-size:23px; line-height:1.1; letter-spacing:-.04em; }
+.geo-explorer-intro span,.geo-explorer-intro p { color:var(--muted); font-size:11px; line-height:1.55; }
+.geo-explorer-intro p { margin:0; max-width:72ch; }
+.geo-controls { display:grid; grid-template-columns:minmax(190px,.8fr) minmax(0,1.4fr) auto; gap:14px; align-items:end; }
+.geo-search { display:grid; gap:6px; color:var(--muted); font-size:11px; font-weight:650; }
+.geo-search input { width:100%; min-height:38px; padding:0 11px; border:1px solid var(--line); border-radius:7px; background:#fff; color:var(--ink); font-size:12px; }
+.geo-search input:focus { outline:3px solid var(--gold-bg); border-color:var(--g700); }
+.geo-layout { align-items:start; }
+.geo-detail-stats { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:0 0 18px; }
+.geo-detail-stats > div { display:grid; gap:3px; padding:12px; border:1px solid var(--line); border-radius:7px; }
+.geo-detail-stats strong { color:var(--g950); font-size:21px; line-height:1.1; }
+.geo-detail-stats span { color:var(--muted); font-size:10px; line-height:1.4; }
+.geo-map-note,.geo-method-note { margin:12px 0 0; color:var(--muted); font-size:11px; line-height:1.6; }
+.geo-method-note { padding:13px 15px; border-left:3px solid var(--gold); background:var(--paper); }
+.geo-method-note strong { color:var(--g950); }
+@media(max-width:900px) {
+ .geo-controls { grid-template-columns:1fr; }
+ .geo-controls .viewtoggle { justify-self:start; }
+}
+@media(max-width:760px) {
+ .geo-explorer-intro { grid-template-columns:1fr; gap:8px; padding:13px 14px; }
+ .geo-total { font-size:10px; }
+ .geo-detail-stats { gap:6px; }
+ .geo-detail-stats > div { padding:10px; }
+}

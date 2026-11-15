@@ -58,13 +58,20 @@ describe('pages', () => {
     fireEvent.change(screen.getByLabelText('Search'), { target: { value: 'zzzz-no-match' } });
     expect(screen.getByText(/A missing match is not evidence that a need is absent/)).toBeInTheDocument();
   });
-  it('Places selects a state from the table view and lists source coverage without claiming state observations', () => {
+  it('Geography searches jurisdictions and separates community records from linked evidence', () => {
     render(wrap(<Geography />));
-    fireEvent.click(screen.getByRole('button', { name: 'Table' }));
-    fireEvent.click(screen.getByRole('button', { name: 'Select Kaduna' }));
+    expect(screen.getByRole('heading', { name: 'Explore Nigeria' })).toBeInTheDocument();
+    expect(screen.getByText(/jurisdictions represented in this community-record feed/)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'List' }));
+    fireEvent.change(screen.getByRole('searchbox', { name: 'Search states and FCT' }), { target: { value: 'Kaduna' } });
+    expect(screen.getByRole('row', { name: /Kaduna/ })).toBeInTheDocument();
+    expect(screen.queryByRole('row', { name: /Lagos/ })).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Inspect Kaduna' }));
     expect(screen.getByRole('heading', { name: 'Kaduna' })).toBeInTheDocument();
+    expect(screen.getByText('Published community records')).toBeInTheDocument();
+    expect(screen.getByText('Linked evidence items')).toBeInTheDocument();
     expect(screen.getByText(/Registered subnational sources/)).toBeInTheDocument();
-    expect(screen.getByText(/does not confirm observations for Kaduna/)).toBeInTheDocument();
+    expect(screen.getByText(/does not confirm that observations have been ingested for Kaduna/)).toBeInTheDocument();
   });
   it('Evidence shows national indicators and registered sources', () => {
     render(wrap(<Evidence />));
