@@ -1,11 +1,13 @@
-# Stage 1 status — ISEYC Civic Intelligence Observatory
+# Historical Stage 1 status snapshot — ISEYC Civic Intelligence Observatory
 
 **Branch:** `feat/stage1-observatory-import`  
 **PR:** https://github.com/mrzulqarnainnadabo/iseyc-civic-intelligence-observatory/pull/1  
 **Product version:** 0.2.1  
 **Last documentation revision:** 2026-11-02
 
-This document describes the **actual Stage 1 implementation on this branch**. It is not a roadmap and does not claim production readiness.
+> **Archived historical snapshot (2026-11-02).** The content below describes the earlier Stage 1 branch only; it does not describe current `main`. For repository-code status, see [implementation-status.md](implementation-status.md) and [system-architecture.md](system-architecture.md). None of these documents establishes production deployment, live-feed availability, or founder release approval.
+
+This document records the **historical Stage 1 implementation on the branch named above**. It is retained for history and must not be used as a current implementation or release report.
 
 ---
 
