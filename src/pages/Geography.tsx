@@ -41,7 +41,7 @@ export default function Geography() {
       <p>The map shows published community records, not population prevalence or the completeness of official state statistics. The FCT is included as a separate jurisdiction.</p>
     </section>
     <div className="workspace-section geo-controls">
-      <label className="geo-search"><span>Find a state or the FCT</span><input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search jurisdictions" aria-label="Search states and FCT" /></label>
+      <label className="geo-search"><span>Find a state or the FCT</span><input type="search" value={query} onChange={(event) => { const next = event.target.value; setQuery(next); if (next.trim()) setView("table"); }} placeholder="Search jurisdictions" aria-label="Search states and FCT" /></label>
       <ChipGroup<Sector> label="Sector" value={sector} onChange={setSector} options={SECTORS.map((item) => ({ value: item, label: SECTOR_LABEL[item] }))} />
       <div className="viewtoggle" role="group" aria-label="Geography view">
         <Button disabled={lite} variant={effectiveView === 'map' ? 'primary' : 'secondary'} aria-pressed={effectiveView === 'map'} onClick={() => setView('map')}>Map</Button>
