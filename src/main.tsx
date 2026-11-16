@@ -1,6 +1,6 @@
 import { StrictMode, useMemo, useState, lazy, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
-import { HashRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import './styles/tokens.css';
 import './styles/base.css';
 import './styles/components.css';
@@ -39,5 +39,5 @@ function AppRoutes() {
     </DataProvider></LiteContext.Provider>
   </AdapterContext.Provider>;
 }
-function App() { return <HashRouter><AppRoutes /></HashRouter>; }
+function App() { return <BrowserRouter><AppRoutes /></BrowserRouter>; }
 createRoot(document.getElementById('root')!).render(<StrictMode><App /></StrictMode>);
