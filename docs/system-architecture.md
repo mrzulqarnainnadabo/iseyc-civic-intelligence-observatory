@@ -1,29 +1,41 @@
-# System architecture — ISEYC Civic Intelligence (v1)
+# System architecture — ISEYC Civic Intelligence ecosystem
 
-## Principle
+**Code snapshot:** Observatory `main` at `310d881f099887071e184d902e987c9585b3c761`. This describes repository contracts, not deployed production behavior.
 
-Two independently deployable applications share **versioned contracts**, not a monorepo or a third production service (yet).
+## Institutional product roles
 
+- **ISEYC** is the institution and parent identity.
+- **Civic Mandate Nigeria** is the citizen entry point for participation and moderated intake.
+- **Intelligence Observatory** is the central public evidence and accountability workspace.
+- **Civic Brain** interprets published evidence and produces human-review drafts; it is not an independent verifier or referral-delivery system.
+- **Digital Operations Centre** coordinates internal work and must retain its restricted-data boundary.
+- The departments are Education & Capacity Building, Health & Well-being, Software & Technology, and Civic Department.
+
+## Public data flow
+
+```text
+Civic Mandate private intake and moderation
+                 |
+                 | published CommunityRecord contract only
+                 v
+       Intelligence Observatory <---- curated and allowlisted public sources
+                 |                    (published observations, evidence, snapshots,
+                 |                     official-source transcriptions, pilot indicators)
+                 |
+                 +--------------------> Civic Brain interpretation
+                                        (published inputs; human review required)
 ```
-Civic Mandate Nigeria          Civic Intelligence Observatory         Civic Brain
-(intake + moderation)          (coverage + sources + briefs UI)       (evidence interpretation)
-        |                                    |                               |
-        +-------- PublicMandateRecord.v1 ----+------- published-only --------+
-        |                                    |                               |
-        +-------- geographic / duty codes ---+-------------------------------+
-```
 
-Observatory is the public evidence and accountability layer. It must not gain private submitter data because products are connected.
+Only reviewed, published, allowlisted fields may cross a public product boundary. Unpublished submission content, contact details, device data, reviewer notes, and private operator records do not flow to the Observatory or Civic Brain. A publication status is not an independent verification status, and neither a referral nor an announcement establishes implementation or verified delivery.
 
-## Non-negotiables
+## Observatory implementation boundary
 
-- Non-partisan; no rankings or endorsements
-- Published-only public surfaces
-- Referral ≠ acknowledgement ≠ implementation ≠ independent verification
-- AI analysis is not independent verification
-- Live adapters disabled by default until governance approval
+Current `src/adapters/index.ts` selects the published CommunityRecord adapter by default. Synthetic demonstration fixtures require an explicit recognized `?demo=` selection and must remain clearly labelled. Other adapters and API handlers validate versioned envelopes, source allowlists, payload bounds, publication state, and completeness; invalid or incomplete upstream data must fail closed or display an explicit unavailable/limited state.
 
-## Stage 1 vs Stage 2
+The serverless-style World Bank gateway is restricted to configured Nigeria pilot indicators and allowlisted hosts. Its short-lived in-memory cache is not durable storage. The Observatory has no first-party database, authentication, or write/admin workflow in this snapshot. Curated snapshots and catalogued sources are not proof of live publisher availability or nationwide coverage.
 
-Stage 1: Observatory standalone, synthetic/demo data, verified validators and build.  
-Stage 2: Governed read-only integration with Mandate published records and Brain contracts.
+## Release, privacy, and verification boundaries
+
+- Repository code and green CI checks do not establish production configuration, upstream availability, data freshness, or intended-hostname behavior.
+- No production API or deployment was contacted for this snapshot. Keep the founder release gate in force and do not make a production-readiness or national-coverage claim without explicit approval and authorized deployed-source verification.
+- Preserve published-only mappings, source attribution, evidence limitations, and human review. Never move private intake or applicant data between the products.
