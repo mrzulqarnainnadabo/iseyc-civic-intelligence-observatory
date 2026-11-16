@@ -20,7 +20,7 @@ describe("national source snapshot endpoint", () => {
     expect(response.body.contractVersion).toBe("1.0.0");
     expect(response.body.source).toBe("iseyc-observatory-national-snapshots-v1");
     expect(response.body.status).toBe("ok");
-    expect(response.body.records.length).toBe(9);
+    expect(response.body.records.length).toBe(14);
     expect(response.body.records.every((record) => record.sourceUrl && record.referencePeriod && record.limitations.length)).toBe(true);
     expect(response.body.records.some((record) => record.id === "fme-annual-school-census-national-2024-25")).toBe(true);
     expect(response.body.records.some((record) => record.id === "fme-annual-school-census-kaduna-2024-25")).toBe(true);
@@ -75,4 +75,25 @@ describe("national source snapshot endpoint", () => {
     expect(response.headers["Access-Control-Allow-Origin"]).toBe("*");
     expect(response.headers["Cache-Control"]).toContain("s-maxage=1800");
   });
+
+  it("includes dated NPHCDA programme snapshots without implying current facility functionality", () => {
+    const health = request("/api/evidence/snapshots?departmentId=health");
+    expect(health.statusCode).toBe(200);
+    const ids = health.body.records.map((record) => record.id);
+    for (const id of [
+      "nphcda-phc-infrastructure-progress-2025",
+      "nphcda-bhcpf-funding-and-upgrades-2025",
+      "nphcda-phc-workforce-progress-2025",
+      "nphcda-multistate-service-support-2025",
+      "nphcda-kaduna-yobe-recruitment-2025",
+    ]) expect(ids).toContain(id);
+    const combined = health.body.records.find((record) => record.id === "nphcda-kaduna-yobe-recruitment-2025");
+    expect(combined.geography.label).toMatch(/Kaduna State \+ Yobe State/);
+    expect(combined.geography.label).toMatch(/combined totals; state split not published/);
+    expect(combined.metrics.find((metric) => metric.label === "Skilled birth attendants recruited").value).toBe("380");
+    expect(combined.limitations.join(" ")).toMatch(/do not assign either total to Kaduna State alone/);
+    const education = request("/api/evidence/snapshots?departmentId=education");
+    expect(education.body.records.some((record) => record.id.startsWith("nphcda-"))).toBe(false);
+  });
+
 });
