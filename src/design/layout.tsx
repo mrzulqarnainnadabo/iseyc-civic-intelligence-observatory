@@ -17,7 +17,7 @@ export function AppShell() {
   return <div className="app-shell">
     <a className="skip" href="#main">Skip to main content</a>
     <aside className="app-sidebar">
-      <a className="app-brand" href="#/" aria-label="ISEYC Observatory home"><img src="/iseyc-wordmark.svg" alt="ISEYC — Initiative for Sustainable Evolution for Youth and Community" width="190" height="40" style={{ width: 190, height: "auto", flexShrink: 0, background: "#fff", borderRadius: 4, padding: 3 }} /><span className="app-brand__text"><span>Intelligence Observatory</span></span></a>
+      <a className="app-brand" href="/" aria-label="ISEYC Observatory home"><img src="/iseyc-wordmark.svg" alt="ISEYC — Initiative for Sustainable Evolution for Youth and Community" width="190" height="40" style={{ width: 190, height: "auto", flexShrink: 0, background: "#fff", borderRadius: 4, padding: 3 }} /><span className="app-brand__text"><span>Intelligence Observatory</span></span></a>
       <nav className="app-nav" aria-label="Main navigation">{NAV.map((item) => <NavLink key={item.to} to={item.to} end={item.end} className={({ isActive }) => 'app-nav__link' + (isActive ? ' app-nav__link--on' : '')}>{item.label}</NavLink>)}</nav>
       <div className="app-departments" aria-label="Department entry points">
         <span>DEPARTMENTS</span>
